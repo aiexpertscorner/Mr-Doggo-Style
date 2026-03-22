@@ -1,242 +1,290 @@
 ---
 /**
- * /dog-names/[breed].astro
- * Dynamic breed + inspiration theme name pages.
+ * dog-names/[breed].astro — Breed name generator page
+ * Uses dog-names.json filtered by breed name_styles + name_inspirations
  */
-
-import NameBreedHero from '../../components/names/NameBreedHero.astro';
-import TopNamesList  from '../../components/names/TopNamesList.astro';
-import NameFilters   from '../../components/names/NameFilters.astro';
-import NameGrid      from '../../components/names/NameGrid.astro';
-import NameShortlist from '../../components/names/NameShortlist.astro';
-import NameCTA       from '../../components/names/NameCTA.astro';
-import Header        from '../../components/ui/Header.astro';
-import Footer        from '../../components/ui/Footer.astro';
-
-import allNames from '../../data/dog-names.json';
-import breedMap from '../../data/breed-name-map.json';
-
-const INSPIRATION_THEMES: Record<string, { label: string; inspiration: string; emoji: string }> = {
-  'gaming':      { label: 'Gaming',        inspiration: 'Gaming',        emoji: '🎮' },
-  'mythology':   { label: 'Mythology',     inspiration: 'Mythology',     emoji: '⚡' },
-  'movies-tv':   { label: 'Movie/TV',      inspiration: 'Movie/TV',      emoji: '🎬' },
-  'music':       { label: 'Music',         inspiration: 'Music',         emoji: '🎵' },
-  'nature':      { label: 'Nature',        inspiration: 'Nature',        emoji: '🌿' },
-  'food':        { label: 'Food',          inspiration: 'Food',          emoji: '🍕' },
-  'meme':        { label: 'Meme/Internet', inspiration: 'Meme/Internet', emoji: '🐸' },
-  'sports':      { label: 'Sports',        inspiration: 'Sports',        emoji: '⚽' },
-  'classic-pet': { label: 'Classic Pet',   inspiration: 'Classic Pet',   emoji: '🐾' },
-};
+import BaseLayout  from '../../layouts/BaseLayout.astro';
+import Breadcrumb  from '../../components/ui/Breadcrumb.astro';
+import masterBreeds from '../../data/master-breeds.json';
+import allNames     from '../../data/dog-names.json';
+import breedLinkMap from '../../data/breed-link-map.json';
 
 export function getStaticPaths() {
-  const paths = [];
-  for (const slug of Object.keys(breedMap as object)) {
-    paths.push({ params: { breed: slug }, props: { type: 'breed', slug } });
-  }
-  for (const slug of Object.keys(INSPIRATION_THEMES)) {
-    paths.push({ params: { breed: slug }, props: { type: 'inspiration', slug } });
-  }
-  return paths;
+  return (masterBreeds as any[]).map(b => ({ params: { breed: b.slug } }));
 }
 
-const { type, slug } = Astro.props as { type: 'breed' | 'inspiration'; slug: string };
+const { breed: slug } = Astro.params;
+const b = (masterBreeds as any[]).find(x => x.slug === slug);
+if (!b) return Astro.redirect('/dog-names');
 
-type BreedEntry = { styles: string[]; insps: string[]; desc: string };
-const bm = breedMap as Record<string, BreedEntry>;
+const links = (breedLinkMap as any)[slug] || {};
 
-function slugToTitle(s: string) {
-  return s.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');
+const styles = b.name_styles || ['Classic','Trendy'];
+const insps  = b.name_inspirations || ['Classic Pet','Nature'];
+
+type NameEntry = { name: string; gender: string; category: string; inspiration: string; rank: number; enriched: boolean };
+
+function filterNames(gender: string, count: number): string[] {
+  return (allNames as NameEntry[])
+    .filter(n => n.gender === gender && (styles.includes(n.category) || insps.includes(n.inspiration)))
+    .sort((a, b) => (a.rank||9999) - (b.rank||9999))
+    .slice(0, count)
+    .map(n => n.name);
 }
 
-let pageTitle = '';
-let pageDesc  = '';
-let canonicalUrl = `https://mrdoggostyle.com/dog-names/${slug}`;
-let heroProps: any = null;
-let topNames: any[] = [];
-let prefilterCategory    = 'all';
-let prefilterInspiration = 'all';
-let ctaBreedHref  = '/breeds';
-let ctaBreedText  = 'BEKIJK ALLE RASSEN →';
-let ctaBreedTitle = 'Klaar met kiezen? Bekijk de complete breed guide.';
-
-if (type === 'breed') {
-  const cfg = bm[slug];
-  const breedName = slugToTitle(slug);
-  pageTitle = `Best Dog Names for ${breedName}s 2026 — ${cfg.styles.join(' + ')} Names | MR. DOGGO STYLE`;
-  pageDesc  = `Find the perfect name for your ${breedName}. ${cfg.styles.join(' and ')} names matched to the ${breedName}'s personality. Top picks + interactive generator with 7,000+ names.`;
-  heroProps = {
-    breedName,
-    breedSlug:    slug,
-    nameStyles:   cfg.styles,
-    inspirations: cfg.insps,
-    topNames:     [],
-    breedGuideUrl: `/breeds/${slug}`,
-  };
-  prefilterCategory    = cfg.styles[0] ?? 'all';
-  prefilterInspiration = cfg.insps[0] ?? 'all';
-
-  const enriched = (allNames as any[]).filter(n => n.enriched);
-  const matched  = enriched.filter(n =>
-    cfg.styles.includes(n.category) || cfg.insps.includes(n.inspiration)
-  );
-  matched.sort((a, b) => b.rank - a.rank || a.name.localeCompare(b.name));
-  const boys  = matched.filter(n => n.gender === 'boy').slice(0, 5);
-  const girls = matched.filter(n => n.gender === 'girl').slice(0, 5);
-  topNames = [...boys, ...girls];
-
-  ctaBreedHref  = `/breeds/${slug}`;
-  ctaBreedText  = `${breedName.toUpperCase()} BREED GUIDE →`;
-  ctaBreedTitle = `Complete gids voor ${breedName} eigenaren — food, toys, beds en meer.`;
+function getByCategory(category: string, count: number): string[] {
+  return (allNames as NameEntry[])
+    .filter(n => n.category === category)
+    .sort((a, b) => (a.rank||9999) - (b.rank||9999))
+    .slice(0, count)
+    .map(n => n.name);
 }
 
-if (type === 'inspiration') {
-  const theme = INSPIRATION_THEMES[slug];
-  pageTitle = `${theme.emoji} ${theme.label} Dog Names 2026 — ${theme.label}-Inspired Names | MR. DOGGO STYLE`;
-  pageDesc  = `Dog names inspired by ${theme.label}. Find the best ${theme.label.toLowerCase()}-themed names for your dog, from popular to rare.`;
-  prefilterInspiration = theme.inspiration;
-  const matched = (allNames as any[]).filter(n => n.enriched && n.inspiration === theme.inspiration);
-  matched.sort((a, b) => b.rank - a.rank || a.name.localeCompare(b.name));
-  topNames = matched.slice(0, 10);
+function getByInspiration(inspiration: string, count: number): string[] {
+  return (allNames as NameEntry[])
+    .filter(n => n.inspiration === inspiration)
+    .sort((a, b) => (a.rank||9999) - (b.rank||9999))
+    .slice(0, count)
+    .map(n => n.name);
 }
 
-const pageH1 = type === 'breed'
-  ? `Namen voor ${slugToTitle(slug)}s`
-  : `${INSPIRATION_THEMES[slug]?.emoji} ${INSPIRATION_THEMES[slug]?.label} Hondennamen`;
+const boyNames   = filterNames('boy',  15);
+const girlNames  = filterNames('girl', 15);
+const toughNames = getByCategory('Tough', 10);
+const cuteNames  = getByCategory('Cute',  10);
+const mythNames  = getByInspiration('Mythology', 10);
+const natureNames= getByInspiration('Nature', 10);
+const classicNames=getByCategory('Classic', 10);
 
-const schemaPage = {
-  '@context': 'https://schema.org',
-  '@type':    'WebPage',
-  name:       pageTitle,
-  description: pageDesc,
-  url:        canonicalUrl,
-  breadcrumb: {
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home',      item: 'https://mrdoggostyle.com' },
-      { '@type': 'ListItem', position: 2, name: 'Dog Names', item: 'https://mrdoggostyle.com/dog-names' },
-      { '@type': 'ListItem', position: 3, name: pageH1,      item: canonicalUrl },
-    ],
-  },
-};
+const n    = b.name;
+const temp = b.temperament || '';
+const sz   = b.size_category;
+const en   = b.energy_level;
+const rank = b.ranking_data || {};
 
-const filteredForPage = (allNames as any[]).filter(n => {
-  if (type === 'inspiration') return n.inspiration === INSPIRATION_THEMES[slug]?.inspiration;
-  const cfg = bm[slug];
-  return cfg ? (cfg.styles.includes(n.category) || n.enriched) : true;
-});
+const personalityNote = temp.toLowerCase().includes('friendly') ? 'friendly, social'
+  : temp.toLowerCase().includes('loyal') ? 'loyal, protective'
+  : temp.toLowerCase().includes('intelligent') || temp.toLowerCase().includes('smart') ? 'intelligent, sharp-minded'
+  : temp.toLowerCase().includes('gentle') ? 'gentle, calm-natured'
+  : `${en}-energy`;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{pageTitle}</title>
-  <meta name="description" content={pageDesc} />
-  <link rel="canonical" href={canonicalUrl} />
-  <meta property="og:title"       content={pageTitle} />
-  <meta property="og:description" content={pageDesc} />
-  <meta property="og:type"        content="website" />
+<BaseLayout
+  title={`Best ${n} Names 2026 — ${styles.join(' & ')} Picks for Boys & Girls`}
+  description={`The best names for ${n}s matched to their ${personalityNote} personality. ${styles.join(' and ')} options for boy and girl ${n}s.`}
+  canonicalUrl={`https://mrdoggostyle.com/dog-names/${slug}`}
+>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="/styles/names.css" />
-  <script type="application/ld+json" set:html={JSON.stringify(schemaPage)} />
-</head>
-<body>
-  <Header />
-
-  {type === 'breed' && heroProps && (
-    <NameBreedHero {...heroProps} />
-  )}
-
-  {type === 'inspiration' && (
-    <section class="ng-hero">
-      <div class="ng-hero__inner">
-        <span class="ng-hero__eyebrow">
-          <a href="/dog-names" style="color:inherit;text-decoration:none">← Dog Names</a>
-        </span>
-        <h1 class="ng-hero__title">
-          {INSPIRATION_THEMES[slug]?.emoji}<br/>
-          <span>{INSPIRATION_THEMES[slug]?.label.toUpperCase()}</span><br/>
-          NAMES.
-        </h1>
-        <p class="ng-hero__lead">
-          Dog names inspired by {INSPIRATION_THEMES[slug]?.label}.
-          {topNames.length} curated picks.
-        </p>
+  <div class="page-hero">
+    <div class="container page-hero__inner">
+      <Breadcrumb items={[
+        { label:'Home', href:'/' },
+        { label:'Dog Names', href:'/dog-names' },
+        { label:`${n} Names`, current:true },
+      ]} />
+      <h1 class="page-hero__title">{n} Names 2026</h1>
+      <p class="page-hero__desc">
+        {n}s are {personalityNote} dogs — these names are matched to their character.
+        {rank.intelligence_rank && `Ranked #${rank.intelligence_rank} in canine intelligence, they respond best to short, distinct names.`}
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-4)">
+        {styles.map((s: string) => <span class="badge badge--primary">{s}</span>)}
+        {insps.map((i: string)  => <span class="badge badge--muted">{i}</span>)}
       </div>
-    </section>
-  )}
-
-  <main>
-    {topNames.length > 0 && (
-      <TopNamesList
-        heading={pageH1}
-        subheading={`Top ${topNames.length} namen — klik om toe te voegen aan je shortlist`}
-        names={topNames}
-      />
-    )}
-
-    <div style="max-width:1400px;margin:0 auto;padding:0 1.5rem">
-      <NameCTA
-        eyebrow="COMPLETE GIDS"
-        title={ctaBreedTitle}
-        href={ctaBreedHref}
-        btnText={ctaBreedText}
-      />
     </div>
+  </div>
 
-    <div id="generator" style="max-width:1400px;margin:0 auto;padding:1.5rem;padding-top:2.5rem">
-      <h2 style="font-family:var(--ng-font-display);font-size:clamp(1.5rem,3.5vw,2.25rem);text-transform:uppercase;letter-spacing:-0.02em;color:var(--ng-offwhite);margin-bottom:1.25rem">
-        INTERACTIEVE <span style="color:var(--ng-lime)">GENERATOR</span>
-      </h2>
-    </div>
+  <main class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 300px;gap:var(--space-10);align-items:start">
 
-    <div style="max-width:1400px;margin:0 auto;padding:0 1.5rem">
-      <button class="ng-filter-toggle" data-ng-filter-toggle type="button">
-        ⚙ SHOW FILTERS
-      </button>
-    </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-10)">
 
-    <div class="ng-layout">
-      <NameFilters
-        activeCategory={prefilterCategory}
-        activeInspiration={prefilterInspiration}
-      />
-      <div>
-        <NameGrid />
-        <NameShortlist />
-        <NameCTA
-          eyebrow="FOOD, TOYS & BEDS"
-          title={type === 'breed'
-            ? `Naam gekozen? Bekijk de beste producten voor ${slugToTitle(slug)}s.`
-            : 'Naam gekozen? Vind de beste producten voor jouw hond.'}
-          href={type === 'breed' ? `/breeds/${slug}` : '/blog'}
-          btnText="BEKIJK PRODUCT PICKS →"
-        />
+          <!-- Boy names -->
+          <section>
+            <div class="section-header">
+              <div>
+                <span class="section-eyebrow">Top picks</span>
+                <h2 class="section-title">Best Boy Names for {n}s</h2>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:var(--space-3)">
+              {boyNames.map((name: string, i: number) => (
+                <div style="padding:var(--space-3) var(--space-4);border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-bg);text-align:center">
+                  <span style="font-size:var(--text-xs);color:var(--color-muted);display:block;margin-bottom:2px">#{i+1}</span>
+                  <strong style="font-size:var(--text-base);color:var(--color-heading)">{name}</strong>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <!-- Girl names -->
+          <section>
+            <div class="section-header">
+              <div>
+                <span class="section-eyebrow">Top picks</span>
+                <h2 class="section-title">Best Girl Names for {n}s</h2>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:var(--space-3)">
+              {girlNames.map((name: string, i: number) => (
+                <div style="padding:var(--space-3) var(--space-4);border:1px solid var(--color-border);border-radius:var(--radius-lg);background:var(--color-bg);text-align:center">
+                  <span style="font-size:var(--text-xs);color:var(--color-muted);display:block;margin-bottom:2px">#{i+1}</span>
+                  <strong style="font-size:var(--text-base);color:var(--color-heading)">{name}</strong>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <!-- Themed lists -->
+          <section>
+            <div class="section-header">
+              <div>
+                <span class="section-eyebrow">By style</span>
+                <h2 class="section-title">Names by Theme</h2>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:var(--space-5)">
+
+              {styles.includes('Tough') && (
+                <div style="border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-5)">
+                  <h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-3)">💪 Tough Names</h3>
+                  <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                    {toughNames.map((name: string) => <span style="padding:4px 10px;background:var(--color-bg-muted);border-radius:99px;font-size:var(--text-sm)">{name}</span>)}
+                  </div>
+                </div>
+              )}
+
+              {styles.includes('Cute') && (
+                <div style="border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-5)">
+                  <h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-3)">🌸 Cute Names</h3>
+                  <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                    {cuteNames.map((name: string) => <span style="padding:4px 10px;background:var(--color-bg-muted);border-radius:99px;font-size:var(--text-sm)">{name}</span>)}
+                  </div>
+                </div>
+              )}
+
+              {insps.includes('Mythology') && (
+                <div style="border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-5)">
+                  <h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-3)">⚡ Mythology Names</h3>
+                  <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                    {mythNames.map((name: string) => <span style="padding:4px 10px;background:var(--color-bg-muted);border-radius:99px;font-size:var(--text-sm)">{name}</span>)}
+                  </div>
+                </div>
+              )}
+
+              {insps.includes('Nature') && (
+                <div style="border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-5)">
+                  <h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-3)">🌿 Nature Names</h3>
+                  <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                    {natureNames.map((name: string) => <span style="padding:4px 10px;background:var(--color-bg-muted);border-radius:99px;font-size:var(--text-sm)">{name}</span>)}
+                  </div>
+                </div>
+              )}
+
+              <div style="border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-5)">
+                <h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-3)">⭐ Classic Picks</h3>
+                <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                  {classicNames.map((name: string) => <span style="padding:4px 10px;background:var(--color-bg-muted);border-radius:99px;font-size:var(--text-sm)">{name}</span>)}
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Naming guide -->
+          <section style="background:var(--color-bg-soft);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6)">
+            <h2 class="section-title" style="margin-bottom:var(--space-5)">How to Pick the Right Name for Your {n}</h2>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4);font-size:var(--text-sm);color:var(--color-body)">
+              <div>
+                <strong style="color:var(--color-heading);display:block;margin-bottom:4px">Keep it short — 1–2 syllables</strong>
+                {n}s, like all dogs, distinguish names from surrounding sounds most easily when the name is short and ends in a vowel (Bella, Milo, Luna, Charlie). Long names get shortened anyway.
+              </div>
+              <div>
+                <strong style="color:var(--color-heading);display:block;margin-bottom:4px">Avoid command sounds</strong>
+                Names that sound like "sit," "stay," "no," "down," or "come" create confusion. Also avoid names that rhyme with family members' names.
+              </div>
+              <div>
+                <strong style="color:var(--color-heading);display:block;margin-bottom:4px">Test it in three tones</strong>
+                Say it excited ("Milo!"), firm ("Milo, no!"), and calling ("Come here, Milo!"). A good name works in all three.
+              </div>
+              {rank.intelligence_rank && (
+                <div>
+                  <strong style="color:var(--color-heading);display:block;margin-bottom:4px">Intelligence matters for name choice</strong>
+                  {n}s rank #{rank.intelligence_rank} in canine intelligence — they pick up their name quickly. Shorter names are easier to distinguish from commands, but intelligent breeds adapt fast regardless.
+                </div>
+              )}
+            </div>
+          </section>
+
+          <!-- FAQ -->
+          <section>
+            <h2 class="section-title" style="margin-bottom:var(--space-5)">Frequently Asked Questions</h2>
+            <div class="faq-list">
+              {[
+                [`What names work best for ${n}s?`,
+                 `Based on the ${n}'s ${personalityNote} personality, the best names lean ${styles[0].toLowerCase()} — names like ${boyNames.slice(0,3).join(', ')} for boys and ${girlNames.slice(0,3).join(', ')} for girls tend to fit the breed character well.`],
+                [`Can I change my ${n}'s name?`,
+                 `Yes — dogs adapt to new names within 1–2 weeks when done correctly. Pair the new name with high-value treats consistently for the first 5–7 days. ${n}s are ${en === 'active' ? 'eager learners' : 'adaptable'} so the transition is usually fast.`],
+                [`Should I name my ${n} before seeing it?`,
+                 `Choosing a shortlist of 3–5 names before bringing your ${n} home is helpful. Many owners find the name that "fits" changes after seeing the dog's personality in person. Having options ready makes the decision easier.`],
+                [`What are the most popular ${n} names?`,
+                 `The consistently most popular dog names are Max, Buddy, Cooper, Charlie (boys) and Bella, Luna, Daisy, Lucy (girls). These aren't ${n}-specific but are crowd favourites for a reason — they're short, distinct, and age well.`],
+              ].map(([q, a]) => (
+                <details class="faq-item">
+                  <summary>{q}</summary>
+                  <div class="faq-item__answer">{a}</div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside style="position:sticky;top:var(--space-8);display:flex;flex-direction:column;gap:var(--space-5)">
+
+          <!-- Top name picks summary -->
+          <div style="border:2px solid var(--color-primary);border-radius:var(--radius-xl);overflow:hidden">
+            <div style="padding:var(--space-3) var(--space-4);background:var(--color-primary);color:white;font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.06em">
+              Top {n} Names
+            </div>
+            <div style="padding:var(--space-4)">
+              <p style="font-size:var(--text-xs);font-weight:700;color:var(--color-muted);margin-bottom:var(--space-2)">Boys</p>
+              <div style="display:flex;flex-direction:column;gap:var(--space-1);margin-bottom:var(--space-4)">
+                {boyNames.slice(0,5).map((name: string, i: number) => (
+                  <div style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm)">
+                    <span style="color:var(--color-muted);width:16px">#{i+1}</span>
+                    <strong style="color:var(--color-heading)">{name}</strong>
+                  </div>
+                ))}
+              </div>
+              <p style="font-size:var(--text-xs);font-weight:700;color:var(--color-muted);margin-bottom:var(--space-2)">Girls</p>
+              <div style="display:flex;flex-direction:column;gap:var(--space-1)">
+                {girlNames.slice(0,5).map((name: string, i: number) => (
+                  <div style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm)">
+                    <span style="color:var(--color-muted);width:16px">#{i+1}</span>
+                    <strong style="color:var(--color-heading)">{name}</strong>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- Related links -->
+          <div style="border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-4)">
+            <p style="font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--color-muted);margin-bottom:var(--space-3)">{n} guides</p>
+            <div style="display:flex;flex-direction:column;gap:var(--space-1)">
+              {links.hub && <a href={links.hub} style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-body);text-decoration:none;padding:6px var(--space-2);border-radius:var(--radius-md)"><span>🐾</span><span>{n} complete guide →</span></a>}
+              {links.food_post && <a href={links.food_post} style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-body);text-decoration:none;padding:6px var(--space-2);border-radius:var(--radius-md)"><span>🍖</span><span>Best food for {n}s →</span></a>}
+              {links.toy_post  && <a href={links.toy_post}  style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-body);text-decoration:none;padding:6px var(--space-2);border-radius:var(--radius-md)"><span>🎾</span><span>Best toys for {n}s →</span></a>}
+              {links.health_post && <a href={links.health_post} style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-body);text-decoration:none;padding:6px var(--space-2);border-radius:var(--radius-md)"><span>🩺</span><span>{n} health guide →</span></a>}
+            </div>
+          </div>
+
+        </aside>
       </div>
     </div>
   </main>
 
-  <Footer />
-
-  <!-- Inject pre-filtered data then load ES module -->
-  <script define:vars={{ filteredForPage, prefilterCategory, prefilterInspiration }}>
-    window.DOG_NAMES = filteredForPage;
-    window.NG_PREFILTER = { category: prefilterCategory, inspiration: prefilterInspiration };
-  </script>
-  <script type="module" src="/scripts/name-generator.mjs"></script>
-  <script type="module">
-    // Apply prefilter immediately after module boots
-    const pf = window.NG_PREFILTER;
-    if (pf?.category !== 'all') {
-      document.querySelector(`[data-filter="category"][data-value="${pf.category}"]`)?.click();
-    }
-  </script>
-</body>
-</html>
+</BaseLayout>
