@@ -1,361 +1,212 @@
 ---
-// src/pages/index.astro — passes product.image from products.json directly
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import ProductCard from '../components/ProductCard.astro';
-import BreedCard from '../components/BreedCard.astro';
-import Newsletter from '../components/Newsletter.astro';
+/**
+ * pages/index.astro — Homepage
+ */
+import BaseLayout    from '../layouts/BaseLayout.astro';
+import CategoryCard  from '../components/content/CategoryCard.astro';
+import BlogCard      from '../components/content/BlogCard.astro';
+import QuickCard     from '../components/content/QuickCard.astro';
 import { getCollection } from 'astro:content';
-import breedsData  from '../data/breeds.json';
-import productsData from '../data/products.json';
 
 const posts = await getCollection('blog');
 const latest = posts
-  .sort((a,b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
-  .slice(0,6);
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+  .slice(0, 3);
 
-const topBreeds = breedsData
-  .filter(b => b.popularity && b.popularity <= 8)
-  .sort((a,b) => (a.popularity||99) - (b.popularity||99))
-  .slice(0,6);
-
-// All products flat, for the bento grid
-const allProducts = {
-  food:        productsData['dog-food']    || [],
-  toys:        productsData['toys']        || [],
-  beds:        productsData['beds']        || [],
-  training:    productsData['training']    || [],
-  grooming:    productsData['grooming']    || [],
-  supplements: productsData['supplements'] || [],
-};
-
-const heroProduct   = allProducts.food[0];   // Purina Pro Plan
-const featuredGrid  = [
-  allProducts.food[1],        // Blue Buffalo
-  allProducts.toys[0],        // KONG Extreme
-  allProducts.toys[1],        // Goughnuts
-  allProducts.beds[0],        // Big Barker
-  allProducts.supplements[0], // Cosequin
+const categories = [
+  { slug: 'dog-food',   theme: 'food'     as const, emoji: '🍖', title: 'Dog Food',      desc: 'Dry, wet, grain-free and breed-specific formulas — all independently tested.',       reviewCount: 11, href: '/categories/dog-food',   linkText: 'Explore food reviews' },
+  { slug: 'toys',       theme: 'toys'     as const, emoji: '🎾', title: 'Toys & Gear',   desc: 'Durable chew toys, interactive puzzles, harnesses, GPS trackers and beds.',          reviewCount: 21, href: '/categories/toys',       linkText: 'Find the best gear'   },
+  { slug: 'health',     theme: 'health'   as const, emoji: '🩺', title: 'Dog Health',    desc: 'Supplements, flea control, dental care, DNA tests and expert health advice.',        reviewCount: 14, href: '/categories/health',     linkText: 'Boost their health'   },
+  { slug: 'training',   theme: 'training' as const, emoji: '🦮', title: 'Training',      desc: 'Harnesses, GPS collars, training treats, long lines and professional techniques.',   reviewCount: 9,  href: '/categories/training',   linkText: 'Train smarter'        },
+  { slug: 'grooming',   theme: 'grooming' as const, emoji: '✂️', title: 'Grooming',      desc: 'Brushes, shampoos, nail trimmers and professional grooming guides by coat type.',    reviewCount: 6,  href: '/categories/grooming',   linkText: 'Grooming guides'      },
+  { slug: 'beds',       theme: 'beds'     as const, emoji: '🛏️', title: 'Beds & Sleep',  desc: 'Orthopedic, elevated and crate beds — matched to size, age and sleeping style.',    reviewCount: 6,  href: '/categories/beds',       linkText: 'Find the right bed'   },
 ];
 
-const SITE = "https://mrdoggostyle.com";
-const TAG  = "aiexpertscorn-20";
-const marqueeItems  = ["HONEST REVIEWS ONLY","ZERO PAID SPOTS","DOGS APPROVED","NO FLUFF","REAL DATA","EXPERT TESTED","277 BREED GUIDES"];
-const marqueeItems2 = ["★★★★★ TOP RATED","NEW DROPS WEEKLY","FREE GEAR GUIDE","AMAZON VERIFIED","MONEY BACK RATED","BRUTALLY HONEST"];
+const quickLinks = [
+  { label: 'Best Dog Food',      value: 'French Bulldog',      href: '/blog/best-food-for-french-bulldogs'     },
+  { label: 'Durable Toys',       value: 'Heavy Chewers',       href: '/blog/best-toys-for-aggressive-chewers'  },
+  { label: 'Orthopedic Beds',    value: 'Senior Dogs',         href: '/blog/best-orthopedic-dog-bed-senior'    },
+  { label: 'Top Harness',        value: 'Active Retrievers',   href: '/blog/best-harness-for-active-breeds'    },
+  { label: 'Smartest Breeds',    value: 'Intelligence Ranked', href: '/blog/smartest-dog-breeds'               },
+  { label: 'DNA Test',           value: 'Embark vs Wisdom',    href: '/blog/embark-vs-wisdom-panel'            },
+  { label: 'Budget Food',        value: 'Under $50/month',     href: '/blog/best-dog-food-under-50'            },
+  { label: 'Dog Names',          value: '7,000+ Curated',      href: '/dog-names'                              },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Mr. Doggo Style — Expert Dog Product Reviews',
+  description: 'Independent, data-driven dog product reviews, breed guides and safety-verified insights for conscientious dog owners.',
+  url: 'https://mrdoggostyle.com',
+};
 ---
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>MR. DOGGO STYLE — Unfiltered Dog Gear Reviews 2026</title>
-  <meta name="description" content="The most brutally honest dog product reviews on the internet. Expert-tested food, toys, beds, training gear and 277 breed guides. Zero paid placements."/>
-  <link rel="canonical" href={SITE}/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="MR. DOGGO STYLE — Unfiltered Dog Gear Reviews"/>
-  <meta property="og:description" content="Zero fluff. Zero paid placements. Just unfiltered dog gear truth."/>
-  <meta property="og:url" content={SITE}/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <link rel="alternate" type="application/rss+xml" href="/rss.xml"/>
-  <style>
-    :root{--midnight:#0A0A0A;--concrete:#222;--cl:#2E2E2E;--lime:#CCFF00;--ash:#888;--smoke:#AAA;--white:#F0F0F0}
-    *{box-sizing:border-box} html{background:var(--midnight)} body{font-family:'Barlow Condensed',sans-serif;background:var(--midnight);color:var(--white);margin:0;overflow-x:hidden}
-    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:998;opacity:.5}
-    .fd{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:-.02em}
-    .fh{font-family:'Archivo Black',sans-serif}
-    .fm{font-family:'Space Mono',monospace}
-    .btn-lime{display:inline-block;background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;padding:.75rem 1.5rem;border:2px solid var(--midnight);box-shadow:4px 4px 0 var(--midnight);text-decoration:none;transition:all .1s}
-    .btn-lime:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--midnight)}
-    .btn-out{display:inline-block;background:transparent;color:var(--white);font-family:'Archivo Black',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;padding:.75rem 1.5rem;border:2px solid rgba(255,255,255,.25);box-shadow:4px 4px 0 rgba(255,255,255,.08);text-decoration:none;transition:all .1s}
-    .btn-out:hover{background:var(--white);color:var(--midnight)}
-    .marquee-track{display:flex;width:max-content;will-change:transform}
-    .marquee-track.fast{animation:marquee 7s linear infinite}
-    .marquee-track.rev{animation:marqueeRev 16s linear infinite}
-    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-    @keyframes marqueeRev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-    ::selection{background:var(--lime);color:var(--midnight)}
-    ::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:var(--midnight)} ::-webkit-scrollbar-thumb{background:var(--cl)} ::-webkit-scrollbar-thumb:hover{background:var(--lime)}
-    #rpb{position:fixed;top:0;left:0;height:3px;background:var(--lime);z-index:9999;box-shadow:0 0 8px var(--lime)}
-    .section{max-width:1400px;margin:0 auto;padding:5rem 1.5rem}
-  </style>
-</head>
-<body>
-<div id="rpb" style="width:0%"></div>
-<Header/>
 
-<!-- ══ HERO ════════════════════════════════════════════════════ -->
-<section style="min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:4rem 1.5rem;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
-  <div style="position:absolute;top:-15%;right:-8%;width:600px;height:600px;background:radial-gradient(circle,rgba(204,255,0,.07) 0%,transparent 65%);pointer-events:none"></div>
+<BaseLayout
+  title="Mr. Doggo Style | Verified Dog Product Reviews & Breed Guides 2026"
+  description="Expert, data-driven dog product reviews, breed-specific guides and safety-verified insights. 51 products tested. 277 breed guides. Zero paid placements."
+  canonicalUrl="https://mrdoggostyle.com"
+>
 
-  <div style="max-width:1400px;margin:0 auto;width:100%;position:relative;z-index:1">
-    <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:center" id="hero-grid">
-      <!-- Text -->
-      <div>
-        <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.75rem">
-          <span style="background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;padding:.2rem .6rem;border:2px solid var(--midnight);transform:rotate(-2deg);display:inline-block">🔥 NEW DROP</span>
-          <span style="background:#FF3B3B;color:#fff;font-family:'Archivo Black',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;padding:.2rem .6rem;border:2px solid #fff;transform:rotate(-1deg);display:inline-block">277 BREEDS</span>
-        </div>
-        <h1 class="fd" style="font-size:clamp(3.5rem,11vw,9rem);line-height:.87;color:var(--white);margin:0 0 .75rem">
-          THE DOG<br/><span style="color:var(--lime)">GEAR</span><br/>AUTHORITY.
-        </h1>
-        <p style="font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;color:var(--smoke);max-width:500px;line-height:1.5;margin:0 0 2rem">
-          Zero paid placements. Zero fake five-stars. Expert-matched products for every breed, size, and budget.
-        </p>
-        <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.5rem">
-          <a href="/blog" class="btn-lime">BROWSE ALL REVIEWS →</a>
-          <a href="/breeds" class="btn-out">FIND YOUR BREED →</a>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:2rem">
-          {[["25+","REVIEWS"],["277","BREEDS"],["51","PRODUCTS"],["0","PAID ADS"]].map(([n,l])=>(
-            <div>
-              <div class="fd" style="font-size:1.85rem;color:var(--lime);line-height:1">{n}</div>
-              <div class="fm" style="font-size:.52rem;color:var(--ash);text-transform:uppercase;letter-spacing:.08em">{l}</div>
-            </div>
-          ))}
-        </div>
-      </div>
+  <!-- ── HERO ──────────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__inner">
 
-      <!-- Hero product card with real image from products.json -->
-      <div id="hero-product" style="display:none">
-        <div style="background:var(--concrete);border:2px solid var(--lime);box-shadow:8px 8px 0 var(--lime);overflow:hidden">
-          <div style="background:var(--lime);padding:.4rem 1rem;display:flex;align-items:center;justify-content:space-between">
-            <span class="fh" style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--midnight)">EDITOR'S #1 PICK</span>
-            <span class="fm" style="font-size:.55rem;color:rgba(0,0,0,.4)">2026</span>
-          </div>
-          <!-- Real image from products.json -->
-          <a href={`https://www.amazon.com/dp/${heroProduct.asin}/?tag=${TAG}`} rel="nofollow sponsored" target="_blank"
-             style="display:block;background:#fff;overflow:hidden">
-            {heroProduct.image ? (
-              <img src={heroProduct.image} alt={heroProduct.name} loading="eager" width="500" height="500"
-                   style="width:100%;aspect-ratio:1;object-fit:contain;padding:1rem;transition:transform .3s;display:block"
-                   onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''"/>
-            ) : (
-              <div style="width:100%;aspect-ratio:1;background:#111;display:flex;align-items:center;justify-content:center">
-                <span style="font-size:4rem">🐾</span>
-              </div>
-            )}
-          </a>
-          <div style="padding:1.25rem">
-            <h3 class="fh" style="font-size:.95rem;text-transform:uppercase;color:var(--white);margin:0 0 .4rem;line-height:1.2">{heroProduct.name}</h3>
-            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.9rem;flex-wrap:wrap">
-              <span style="color:var(--lime)">★★★★★</span>
-              <span class="fm" style="font-size:.58rem;color:var(--ash)">{heroProduct.rating?.toFixed(1)} ({((heroProduct.reviewCount||25000)/1000).toFixed(0)}K)</span>
-              <span class="fh" style="color:var(--lime);font-size:1rem">${heroProduct.price?.toFixed(2)}</span>
-            </div>
-            {heroProduct.features?.[0] && <p style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;color:var(--smoke);margin:0 0 1rem">{heroProduct.features[0]}</p>}
-            <a href={`https://www.amazon.com/dp/${heroProduct.asin}/?tag=${TAG}`} rel="nofollow sponsored" target="_blank"
-               style="display:block;background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;padding:.85rem;border:2px solid var(--midnight);box-shadow:3px 3px 0 var(--midnight);text-decoration:none;text-align:center;transition:all .1s"
-               onmouseover="this.style.transform='translate(-2px,-2px)';this.style.boxShadow='5px 5px 0 var(--midnight)'"
-               onmouseout="this.style.transform='';this.style.boxShadow='3px 3px 0 var(--midnight)'">
-              CHECK PRICE ON AMAZON →
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ MARQUEE 1 ══════════════════════════════════════════════ -->
-<div style="overflow:hidden;background:var(--lime);border-top:2px solid rgba(0,0,0,.15);border-bottom:2px solid rgba(0,0,0,.15);padding:.45rem 0">
-  <div class="marquee-track fast" style="display:flex;white-space:nowrap">
-    {Array.from({length:2}).map(()=>(
-      <span style="display:flex;align-items:center">
-        {marqueeItems.map(t=>(
-          <span style="font-family:'Archivo Black',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--midnight);padding:0 2rem">
-            {t} <span style="opacity:.3;margin-left:.5rem">◆</span>
-          </span>
-        ))}
+      <span class="hero__eyebrow">
+        <span class="hero__eyebrow-dot"></span>
+        Verified Dog Product Research · Est. 2023
+        <span class="hero__eyebrow-dot"></span>
       </span>
-    ))}
-  </div>
-</div>
 
-<!-- ══ FEATURED PRODUCTS ══════════════════════════════════════ -->
-<section style="background:var(--concrete);border-top:2px solid rgba(255,255,255,.06)">
-  <div class="section">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem">
-      <div>
-        <span class="fm" style="font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:var(--lime)">THIS MONTH'S TOP PICKS</span>
-        <h2 class="fd reveal" style="font-size:clamp(2rem,6vw,4rem);color:var(--white);margin:.2rem 0 0">THE <span style="color:var(--lime)">RANKED</span><br/>LINEUP.</h2>
+      <h1 class="hero__title" id="hero-title">
+        Your Trusted Guide to the<br>
+        <em>Best Dog Products</em>
+      </h1>
+
+      <p class="hero__subtitle">
+        "Expert reviews, data-driven comparisons, and safety-verified insights
+        to make the best decisions for your canine family member."
+      </p>
+
+      <div class="hero__actions">
+        <a href="/blog" class="btn btn--primary btn--lg">
+          Explore Trending Now
+        </a>
+        <a href="/about" class="btn btn--outline btn--lg">
+          How We Test Products
+        </a>
       </div>
-      <span style="background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;padding:.2rem .6rem;border:2px solid var(--midnight)">EXPERT TESTED</span>
+
+      <div class="hero__trust-bar">
+        <span class="hero__trust-item">
+          <span class="hero__trust-icon">✓</span> 51 products tested
+        </span>
+        <span class="hero__trust-item">
+          <span class="hero__trust-icon">✓</span> 277 breed guides
+        </span>
+        <span class="hero__trust-item">
+          <span class="hero__trust-icon">✓</span> Zero paid placements
+        </span>
+        <span class="hero__trust-item">
+          <span class="hero__trust-icon">✓</span> Updated March 2026
+        </span>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Bento: hero card left + grid right -->
-    <div style="display:grid;grid-template-columns:1fr;gap:1rem" id="prod-bento">
-      <!-- Hero pick -->
-      <div style="background:var(--midnight);border:2px solid var(--lime);box-shadow:6px 6px 0 var(--lime);overflow:hidden">
-        <div style="background:var(--lime);padding:.4rem 1.25rem;font-family:'Archivo Black',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--midnight);display:flex;justify-content:space-between">
-          <span>EDITOR'S #1 PICK</span><span style="opacity:.4">2026</span>
+  <!-- ── CATEGORIES ────────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="categories-heading">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Browse by category</span>
+          <h2 class="section-title" id="categories-heading">
+            Explore Product Categories
+          </h2>
         </div>
-        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;padding:1.5rem" id="hero-pick-row">
-          <a href={`https://www.amazon.com/dp/${heroProduct.asin}/?tag=${TAG}`} rel="nofollow sponsored" target="_blank"
-             style="display:block;background:#fff;overflow:hidden;flex-shrink:0;border:1px solid rgba(255,255,255,.1)" id="hero-pick-img">
-            {heroProduct.image ? (
-              <img src={heroProduct.image} alt={heroProduct.name} loading="lazy" width="300" height="300"
-                   style="object-fit:contain;padding:.5rem;transition:transform .3s;display:block"
-                   onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''"/>
-            ) : (
-              <div style="display:flex;align-items:center;justify-content:center;background:#111;padding:2rem">
-                <span style="font-size:3rem">🐾</span>
-              </div>
-            )}
-          </a>
-          <div style="flex:1;min-width:200px">
-            <h3 class="fh" style="font-size:1.1rem;text-transform:uppercase;color:var(--white);margin:0 0 .4rem;line-height:1.2">{heroProduct.name}</h3>
-            <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.65rem;flex-wrap:wrap">
-              <span style="color:var(--lime);font-size:.9rem">★★★★★</span>
-              <span class="fm" style="font-size:.6rem;color:var(--ash)">{heroProduct.rating?.toFixed(1)} ({((heroProduct.reviewCount||25000)/1000).toFixed(0)}K)</span>
-              <span class="fh" style="color:var(--lime);font-size:1.1rem">${heroProduct.price?.toFixed(2)}</span>
-            </div>
-            {heroProduct.features?.slice(0,3).map(f=>(
-              <div style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;color:var(--smoke);margin-bottom:.2rem">→ {f}</div>
-            ))}
-          </div>
-        </div>
-        <div style="padding:0 1.5rem 1.5rem">
-          <a href={`https://www.amazon.com/dp/${heroProduct.asin}/?tag=${TAG}`} rel="nofollow sponsored" target="_blank"
-             style="display:block;background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;padding:.9rem;border:2px solid var(--midnight);box-shadow:3px 3px 0 var(--midnight);text-decoration:none;text-align:center;transition:all .1s"
-             onmouseover="this.style.transform='translate(-2px,-2px)';this.style.boxShadow='5px 5px 0 var(--midnight)'"
-             onmouseout="this.style.transform='';this.style.boxShadow='3px 3px 0 var(--midnight)'">
-            CHECK PRICE ON AMAZON →
-          </a>
-        </div>
+        <a href="/categories" class="btn btn--ghost btn--sm">
+          View all →
+        </a>
       </div>
 
-      <!-- Product grid — passes product.image from products.json -->
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem" id="mini-prod-grid">
-        {featuredGrid.filter(Boolean).map(p => (
-          <ProductCard
-            name={p.name}
-            asin={p.asin}
-            price={p.price}
-            rating={p.rating}
-            reviewCount={p.reviewCount}
-            image={p.image}
-            features={p.features}
-            badge={p.asin === 'B0002AR0II' ? 'BEST SELLER' : p.asin === 'B0040QQ07C' ? 'NEW DROP' : undefined}
-            tag={TAG}
-          />
+      <div class="grid grid-3" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))">
+        {categories.map(cat => (
+          <CategoryCard {...cat} />
         ))}
       </div>
     </div>
+  </section>
 
-    <div style="text-align:center;margin-top:2.5rem">
-      <a href="/blog" class="btn-lime">SEE ALL 51 RANKED PRODUCTS →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ MARQUEE 2 ══════════════════════════════════════════════ -->
-<div style="overflow:hidden;background:var(--midnight);border-top:2px solid rgba(255,255,255,.05);border-bottom:2px solid rgba(255,255,255,.05);padding:.45rem 0">
-  <div class="marquee-track rev" style="display:flex;white-space:nowrap">
-    {Array.from({length:2}).map(()=>(
-      <span style="display:flex;align-items:center">
-        {marqueeItems2.map(t=>(
-          <span style="font-family:'Archivo Black',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--lime);padding:0 2rem">
-            {t} <span style="opacity:.3;margin-left:.5rem">◆</span>
-          </span>
-        ))}
-      </span>
-    ))}
-  </div>
-</div>
-
-<!-- ══ BREEDS ═════════════════════════════════════════════════ -->
-<section>
-  <div class="section">
-    <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:start" id="breed-section">
-      <div>
-        <span class="fm" style="font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:var(--lime)">BREED GUIDES</span>
-        <h2 class="fd reveal" style="font-size:clamp(2.5rem,7vw,5rem);color:var(--white);margin:.2rem 0 1rem;line-height:.92">
-          277 BREEDS.<br/><span style="color:var(--lime)">ONE GUIDE</span><br/>EACH.
-        </h2>
-        <p style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:var(--smoke);max-width:480px;margin:0 0 2rem;line-height:1.5">
-          Expert picks matched to every breed's exact size, energy, and coat type.
-        </p>
-        <div style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a href="/breeds" class="btn-lime">FIND YOUR BREED →</a>
-          <a href="/breeds/labrador-retriever" class="btn-out" style="font-size:.75rem">LABRADOR →</a>
+  <!-- ── QUICK LINKS ────────────────────────────────────────────── -->
+  <section class="section section--soft" aria-labelledby="quicklinks-heading">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Jump straight in</span>
+          <h2 class="section-title" id="quicklinks-heading">
+            Verified Top Choices, Instantly
+          </h2>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem" id="breed-grid">
-        {topBreeds.slice(0,4).map(b=>(
-          <BreedCard slug={b.slug} name={b.name} group={b.group} temperament={b.temperament}
-            popularity={b.popularity} size_category={b.size_category} energy={b.energy}
-            shedding={b.shedding} dogCeoBreed={b.dogCeoBreed} compact={true}/>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-4)">
+        {quickLinks.map(q => (
+          <QuickCard {...q} />
         ))}
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══ LATEST REVIEWS ═════════════════════════════════════════ -->
-<section style="background:var(--concrete);border-top:2px solid rgba(255,255,255,.06)">
-  <div class="section">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem">
-      <div>
-        <span class="fm" style="font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:var(--lime)">FRESH DROPS</span>
-        <h2 class="fd reveal" style="font-size:clamp(2rem,5vw,3.5rem);color:var(--white);margin:.2rem 0 0">LATEST <span style="color:var(--lime)">REVIEWS.</span></h2>
+  <!-- ── LATEST POSTS ───────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="blog-heading">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">From the experts</span>
+          <h2 class="section-title" id="blog-heading">
+            Latest Expert Insights
+          </h2>
+        </div>
+        <a href="/blog" class="btn btn--ghost btn--sm">
+          All posts →
+        </a>
       </div>
-      <a href="/blog" class="btn-out" style="font-size:.7rem">ALL POSTS →</a>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
-      {latest.map((post,i)=>(
-        <article style="background:var(--midnight);border:2px solid rgba(255,255,255,.08);overflow:hidden;display:flex;flex-direction:column;transition:all .15s"
-                 onmouseover="this.style.borderColor='var(--lime)';this.style.transform='translate(-2px,-2px)';this.style.boxShadow='4px 4px 0 var(--lime)'"
-                 onmouseout="this.style.borderColor='rgba(255,255,255,.08)';this.style.transform='';this.style.boxShadow=''">
-          <div style="background:var(--concrete);height:130px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;border-bottom:1px solid rgba(255,255,255,.06);position:relative">
-            🐾
-            {i<2&&<span style="position:absolute;top:8px;right:8px;background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.52rem;text-transform:uppercase;padding:.15rem .5rem">NEW</span>}
-          </div>
-          <div style="padding:1rem;flex:1;display:flex;flex-direction:column;gap:.4rem">
-            <span style="font-family:'Archivo Black',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:var(--lime)">{post.data.category?.toUpperCase()}</span>
-            <h3 style="font-family:'Archivo Black',sans-serif;font-size:.82rem;text-transform:uppercase;color:var(--white);margin:0;line-height:1.2;flex:1">
-              <a href={`/blog/${post.slug}`} style="text-decoration:none;color:inherit">{post.data.title}</a>
-            </h3>
-            <a href={`/blog/${post.slug}`} style="font-family:'Archivo Black',sans-serif;font-size:.62rem;text-transform:uppercase;color:var(--lime);text-decoration:none;margin-top:.25rem">READ →</a>
-          </div>
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
 
-<div class="section" style="padding-top:0">
-  <Newsletter/>
-</div>
-<Footer/>
+      <div class="grid grid-3">
+        {latest.length > 0
+          ? latest.map(post => (
+              <BlogCard
+                title={post.data.title}
+                excerpt={post.data.description ?? ''}
+                category={post.data.category ?? 'Review'}
+                href={`/blog/${post.slug}`}
+                pubDate={post.data.pubDate}
+                readTime={post.data.readTime}
+                image={post.data.heroImage}
+              />
+            ))
+          : [
+              { title: 'Best Harnesses for Active Breeds', cat: 'Gear',   emoji: '🦮', excerpt: 'We tested 10 harnesses on active Retrievers and Pointers. This is the definitive winner.',     href: '/blog/best-harness-active-breeds'   },
+              { title: '5 Critical Signs of Aging',        cat: 'Health', emoji: '🩺', excerpt: 'How to spot joint pain, cognitive decline, and other senior health issues early.',               href: '/blog/signs-of-dog-aging'           },
+              { title: 'Top Indestructible Chew Toys',     cat: 'Toys',   emoji: '🎾', excerpt: 'Verified reviews from heavy chewers — Bulldogs and Great Danes included.',                      href: '/blog/best-indestructible-chew-toys' },
+            ].map(p => (
+              <BlogCard title={p.title} excerpt={p.excerpt} category={p.cat} href={p.href} emoji={p.emoji} />
+            ))
+        }
+      </div>
+    </div>
+  </section>
 
-<script>
-  const rpb=document.getElementById('rpb');
-  if(rpb)window.addEventListener('scroll',()=>{const h=document.documentElement;rpb.style.width=Math.min(100,(h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%';},{passive:true});
-  function resize(){
-    const w=window.innerWidth;
-    const heroGrid=document.getElementById('hero-grid'), heroProd=document.getElementById('hero-product');
-    const prodBento=document.getElementById('prod-bento'), miniGrid=document.getElementById('mini-prod-grid');
-    const heroPickRow=document.getElementById('hero-pick-row'), heroPickImg=document.getElementById('hero-pick-img');
-    const breedSec=document.getElementById('breed-section'), breedGrid=document.getElementById('breed-grid');
-    if(heroGrid)heroGrid.style.gridTemplateColumns=w>=1100?'1.2fr 1fr':'1fr';
-    if(heroProd)heroProd.style.display=w>=1100?'block':'none';
-    if(prodBento)prodBento.style.gridTemplateColumns=w>=900?'1fr 1fr':'1fr';
-    if(miniGrid)miniGrid.style.gridTemplateColumns=w>=700?'repeat(3,1fr)':'repeat(2,1fr)';
-    if(heroPickRow)heroPickRow.style.flexDirection=w>=700?'row':'column';
-    if(heroPickImg){heroPickImg.style.width=w>=900?'200px':'120px';heroPickImg.style.height=w>=900?'200px':'120px';}
-    if(breedSec)breedSec.style.gridTemplateColumns=w>=1024?'1fr 1fr':'1fr';
-    if(breedGrid)breedGrid.style.gridTemplateColumns=w>=640?'repeat(4,1fr)':'repeat(2,1fr)';
-  }
-  resize(); window.addEventListener('resize',resize);
-  document.querySelectorAll('.reveal').forEach(el=>{
-    new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:.1}).observe(el);
-  });
-</script>
-</body>
-</html>
+  <!-- ── NEWSLETTER ────────────────────────────────────────────── -->
+  <section class="section section--soft" aria-labelledby="newsletter-heading">
+    <div class="container" style="max-width: var(--max-width-prose); text-align: center">
+      <span class="section-eyebrow">Weekly gear drops</span>
+      <h2 class="section-title" id="newsletter-heading" style="margin-bottom: var(--space-4)">
+        The Dog Gear Drop
+      </h2>
+      <p class="section-subtitle" style="margin-inline: auto; margin-bottom: var(--space-8)">
+        3 product picks, 1 deal, 1 breed spotlight. Every Tuesday. Zero spam.
+      </p>
+      <form class="newsletter-form" style="margin-inline: auto" action="#" method="POST">
+        <input
+          type="email"
+          name="email"
+          class="form-input"
+          placeholder="your@email.com"
+          required
+          aria-label="Email address"
+        />
+        <button type="submit" class="btn btn--primary">
+          Subscribe
+        </button>
+      </form>
+      <p style="font-size: var(--text-xs); color: var(--color-subtle); margin-top: var(--space-3)">
+        No spam. Unsubscribe anytime. 
+      </p>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+</BaseLayout>

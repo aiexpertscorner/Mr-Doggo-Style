@@ -1,0 +1,40 @@
+---
+/**
+ * NameGrid.astro
+ * Results area: toolbar (count + actions) + grid container + pagination.
+ * Grid content is rendered client-side by name-generator.js.
+ * This component only provides the structural shell.
+ */
+---
+
+<section class="ng-results" data-ng-results aria-label="Naam resultaten" aria-live="polite">
+
+  <!-- Toolbar -->
+  <div class="ng-results__toolbar">
+    <p class="ng-results__count" data-ng-count aria-live="polite">
+      <strong>—</strong> namen
+    </p>
+    <div class="ng-results__actions">
+      <button class="ng-action-btn" data-ng-random type="button" title="Verras me met een willekeurige naam">
+        🎲 VERRAS ME
+      </button>
+      <button class="ng-action-btn" data-ng-shuffle type="button" title="Gooi de volgorde door elkaar">
+        ⇅ SHUFFLE
+      </button>
+    </div>
+  </div>
+
+  <!-- Name grid — populated by name-generator.js -->
+  <div class="ng-grid" data-ng-grid aria-label="Namenlijst" role="list">
+    <!-- Loading skeleton: shown before JS kicks in -->
+    {Array.from({ length: 24 }).map(() => (
+      <div class="ng-card" aria-hidden="true" style="opacity:0.3;pointer-events:none">
+        <div class="ng-card__name" style="background:rgba(255,255,255,.08);color:transparent;border-radius:2px">Loading</div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Pagination — populated by name-generator.js -->
+  <nav class="ng-pagination" data-ng-pagination aria-label="Pagina navigatie"></nav>
+
+</section>

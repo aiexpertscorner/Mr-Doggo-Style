@@ -1,0 +1,31 @@
+---
+/**
+ * NameShortlist.astro
+ * Panel showing the user's saved favourite names.
+ * State managed by name-generator.js via localStorage.
+ */
+---
+
+<aside class="ng-shortlist" aria-label="Jouw shortlist">
+  <div class="ng-shortlist__header">
+    <span>
+      ⭐ MIJN SHORTLIST
+      (<span data-ng-shortlist-count>0</span>/<span>20</span>)
+    </span>
+    <div style="display:flex;gap:0.5rem">
+      <button class="ng-action-btn" data-ng-copy type="button" title="Kopieer namen naar klembord">
+        📋 KOPIEER
+      </button>
+      <button class="ng-action-btn" data-ng-clear-shortlist type="button" title="Verwijder alle namen">
+        ✕ CLEAR
+      </button>
+    </div>
+  </div>
+  <div class="ng-shortlist__body">
+    <div data-ng-shortlist-names>
+      <p class="ng-shortlist__empty">
+        Klik op een naam om hem toe te voegen aan je shortlist →
+      </p>
+    </div>
+  </div>
+</aside>

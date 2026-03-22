@@ -1,25 +1,128 @@
 ---
-import { getCollection } from 'astro:content';
+/**
+ * pages/blog/[slug].astro — Single blog post
+ */
 import BlogLayout from '../../layouts/BlogLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+import BlogCard   from '../../components/content/BlogCard.astro';
+import ProductCard from '../../components/content/ProductCard.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  return posts.map(post => ({ params: { slug: post.slug }, props: { post } }));
+  return posts.map(p => ({ params: { slug: p.slug }, props: { post: p } }));
 }
 
 const { post } = Astro.props;
-const { Content, headings } = await post.render();
+const { Content } = await post.render();
+
+// Related posts (same category, excluding current)
+const allPosts = await getCollection('blog');
+const related  = allPosts
+  .filter(p => p.slug !== post.slug && p.data.category === post.data.category)
+  .slice(0, 3);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  url: `https://mrdoggostyle.com/blog/${post.slug}`,
+  datePublished: post.data.pubDate,
+  dateModified: post.data.updatedDate ?? post.data.pubDate,
+  publisher: {
+    '@type': 'Organization',
+    name: 'Mr. Doggo Style',
+    url: 'https://mrdoggostyle.com',
+  },
+};
 ---
+
 <BlogLayout
-  title={post.data.title}
-  description={post.data.description}
+  title={`${post.data.title} | Mr. Doggo Style`}
+  description={post.data.description ?? post.data.title}
+  canonicalUrl={`https://mrdoggostyle.com/blog/${post.slug}`}
   pubDate={post.data.pubDate}
   updatedDate={post.data.updatedDate}
-  image={post.data.image}
-  category={post.data.category}
-  tags={post.data.tags}
-  author={post.data.author}
-  readingTime={Math.ceil((post.body?.split(' ')?.length || 1500) / 200)}
+  category={post.data.category ?? 'Review'}
+  readTime={post.data.readTime}
+  heroImage={post.data.heroImage}
+  {schema}
 >
+
+  <!-- Article body -->
   <Content />
+
+  <!-- Related posts (below article) -->
+  {related.length > 0 && (
+    <section style="margin-top: var(--space-16); padding-top: var(--space-10); border-top: 1px solid var(--color-border)">
+      <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-8)">Related Articles</h2>
+      <div class="grid grid-3">
+        {related.map(p => (
+          <BlogCard
+            title={p.data.title}
+            excerpt={p.data.description ?? ''}
+            category={p.data.category ?? 'Review'}
+            href={`/blog/${p.slug}`}
+            pubDate={p.data.pubDate}
+            image={p.data.heroImage}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Sidebar slot -->
+  <Fragment slot="sidebar">
+    <div style="position: sticky; top: 80px; display: flex; flex-direction: column; gap: var(--space-6)">
+
+      <!-- Table of contents placeholder -->
+      <nav class="toc" aria-label="Table of contents">
+        <h3 class="toc__title">In this article</h3>
+        <ul class="toc__list" id="toc-list">
+          <li><a href="#" class="toc__link">Loading…</a></li>
+        </ul>
+      </nav>
+
+      <!-- Top product pick -->
+      {post.data.topProduct && (
+        <div>
+          <span class="section-eyebrow" style="margin-bottom: var(--space-3); display: block">Top pick</span>
+          <ProductCard
+            name={post.data.topProduct.name}
+            asin={post.data.topProduct.asin}
+            price={post.data.topProduct.price}
+            rating={post.data.topProduct.rating}
+            image={post.data.topProduct.image}
+            badge="Editor's Pick"
+          />
+        </div>
+      )}
+
+      <!-- Affiliate note -->
+      <p class="affiliate-note">
+        As an Amazon Associate, Mr. Doggo Style earns from qualifying purchases.
+        Prices and availability subject to change.
+      </p>
+    </div>
+  </Fragment>
+
 </BlogLayout>
+
+<script type="module">
+  // Auto-build TOC from article headings
+  const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+  const tocList  = document.getElementById('toc-list');
+  if (tocList && headings.length) {
+    tocList.innerHTML = '';
+    headings.forEach((h, i) => {
+      if (!h.id) h.id = `heading-${i}`;
+      const li = document.createElement('li');
+      const a  = document.createElement('a');
+      a.href       = `#${h.id}`;
+      a.textContent = h.textContent;
+      a.className   = `toc__link ${h.tagName === 'H3' ? 'toc__link--sub' : ''}`;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  }
+</script>

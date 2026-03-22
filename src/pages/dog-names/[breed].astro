@@ -1,0 +1,242 @@
+---
+/**
+ * /dog-names/[breed].astro
+ * Dynamic breed + inspiration theme name pages.
+ */
+
+import NameBreedHero from '../../components/names/NameBreedHero.astro';
+import TopNamesList  from '../../components/names/TopNamesList.astro';
+import NameFilters   from '../../components/names/NameFilters.astro';
+import NameGrid      from '../../components/names/NameGrid.astro';
+import NameShortlist from '../../components/names/NameShortlist.astro';
+import NameCTA       from '../../components/names/NameCTA.astro';
+import Header        from '../../components/ui/Header.astro';
+import Footer        from '../../components/ui/Footer.astro';
+
+import allNames from '../../data/dog-names.json';
+import breedMap from '../../data/breed-name-map.json';
+
+const INSPIRATION_THEMES: Record<string, { label: string; inspiration: string; emoji: string }> = {
+  'gaming':      { label: 'Gaming',        inspiration: 'Gaming',        emoji: '🎮' },
+  'mythology':   { label: 'Mythology',     inspiration: 'Mythology',     emoji: '⚡' },
+  'movies-tv':   { label: 'Movie/TV',      inspiration: 'Movie/TV',      emoji: '🎬' },
+  'music':       { label: 'Music',         inspiration: 'Music',         emoji: '🎵' },
+  'nature':      { label: 'Nature',        inspiration: 'Nature',        emoji: '🌿' },
+  'food':        { label: 'Food',          inspiration: 'Food',          emoji: '🍕' },
+  'meme':        { label: 'Meme/Internet', inspiration: 'Meme/Internet', emoji: '🐸' },
+  'sports':      { label: 'Sports',        inspiration: 'Sports',        emoji: '⚽' },
+  'classic-pet': { label: 'Classic Pet',   inspiration: 'Classic Pet',   emoji: '🐾' },
+};
+
+export function getStaticPaths() {
+  const paths = [];
+  for (const slug of Object.keys(breedMap as object)) {
+    paths.push({ params: { breed: slug }, props: { type: 'breed', slug } });
+  }
+  for (const slug of Object.keys(INSPIRATION_THEMES)) {
+    paths.push({ params: { breed: slug }, props: { type: 'inspiration', slug } });
+  }
+  return paths;
+}
+
+const { type, slug } = Astro.props as { type: 'breed' | 'inspiration'; slug: string };
+
+type BreedEntry = { styles: string[]; insps: string[]; desc: string };
+const bm = breedMap as Record<string, BreedEntry>;
+
+function slugToTitle(s: string) {
+  return s.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');
+}
+
+let pageTitle = '';
+let pageDesc  = '';
+let canonicalUrl = `https://mrdoggostyle.com/dog-names/${slug}`;
+let heroProps: any = null;
+let topNames: any[] = [];
+let prefilterCategory    = 'all';
+let prefilterInspiration = 'all';
+let ctaBreedHref  = '/breeds';
+let ctaBreedText  = 'BEKIJK ALLE RASSEN →';
+let ctaBreedTitle = 'Klaar met kiezen? Bekijk de complete breed guide.';
+
+if (type === 'breed') {
+  const cfg = bm[slug];
+  const breedName = slugToTitle(slug);
+  pageTitle = `Best Dog Names for ${breedName}s 2026 — ${cfg.styles.join(' + ')} Names | MR. DOGGO STYLE`;
+  pageDesc  = `Find the perfect name for your ${breedName}. ${cfg.styles.join(' and ')} names matched to the ${breedName}'s personality. Top picks + interactive generator with 7,000+ names.`;
+  heroProps = {
+    breedName,
+    breedSlug:    slug,
+    nameStyles:   cfg.styles,
+    inspirations: cfg.insps,
+    topNames:     [],
+    breedGuideUrl: `/breeds/${slug}`,
+  };
+  prefilterCategory    = cfg.styles[0] ?? 'all';
+  prefilterInspiration = cfg.insps[0] ?? 'all';
+
+  const enriched = (allNames as any[]).filter(n => n.enriched);
+  const matched  = enriched.filter(n =>
+    cfg.styles.includes(n.category) || cfg.insps.includes(n.inspiration)
+  );
+  matched.sort((a, b) => b.rank - a.rank || a.name.localeCompare(b.name));
+  const boys  = matched.filter(n => n.gender === 'boy').slice(0, 5);
+  const girls = matched.filter(n => n.gender === 'girl').slice(0, 5);
+  topNames = [...boys, ...girls];
+
+  ctaBreedHref  = `/breeds/${slug}`;
+  ctaBreedText  = `${breedName.toUpperCase()} BREED GUIDE →`;
+  ctaBreedTitle = `Complete gids voor ${breedName} eigenaren — food, toys, beds en meer.`;
+}
+
+if (type === 'inspiration') {
+  const theme = INSPIRATION_THEMES[slug];
+  pageTitle = `${theme.emoji} ${theme.label} Dog Names 2026 — ${theme.label}-Inspired Names | MR. DOGGO STYLE`;
+  pageDesc  = `Dog names inspired by ${theme.label}. Find the best ${theme.label.toLowerCase()}-themed names for your dog, from popular to rare.`;
+  prefilterInspiration = theme.inspiration;
+  const matched = (allNames as any[]).filter(n => n.enriched && n.inspiration === theme.inspiration);
+  matched.sort((a, b) => b.rank - a.rank || a.name.localeCompare(b.name));
+  topNames = matched.slice(0, 10);
+}
+
+const pageH1 = type === 'breed'
+  ? `Namen voor ${slugToTitle(slug)}s`
+  : `${INSPIRATION_THEMES[slug]?.emoji} ${INSPIRATION_THEMES[slug]?.label} Hondennamen`;
+
+const schemaPage = {
+  '@context': 'https://schema.org',
+  '@type':    'WebPage',
+  name:       pageTitle,
+  description: pageDesc,
+  url:        canonicalUrl,
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home',      item: 'https://mrdoggostyle.com' },
+      { '@type': 'ListItem', position: 2, name: 'Dog Names', item: 'https://mrdoggostyle.com/dog-names' },
+      { '@type': 'ListItem', position: 3, name: pageH1,      item: canonicalUrl },
+    ],
+  },
+};
+
+const filteredForPage = (allNames as any[]).filter(n => {
+  if (type === 'inspiration') return n.inspiration === INSPIRATION_THEMES[slug]?.inspiration;
+  const cfg = bm[slug];
+  return cfg ? (cfg.styles.includes(n.category) || n.enriched) : true;
+});
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDesc} />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:title"       content={pageTitle} />
+  <meta property="og:description" content={pageDesc} />
+  <meta property="og:type"        content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/styles/names.css" />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaPage)} />
+</head>
+<body>
+  <Header />
+
+  {type === 'breed' && heroProps && (
+    <NameBreedHero {...heroProps} />
+  )}
+
+  {type === 'inspiration' && (
+    <section class="ng-hero">
+      <div class="ng-hero__inner">
+        <span class="ng-hero__eyebrow">
+          <a href="/dog-names" style="color:inherit;text-decoration:none">← Dog Names</a>
+        </span>
+        <h1 class="ng-hero__title">
+          {INSPIRATION_THEMES[slug]?.emoji}<br/>
+          <span>{INSPIRATION_THEMES[slug]?.label.toUpperCase()}</span><br/>
+          NAMES.
+        </h1>
+        <p class="ng-hero__lead">
+          Dog names inspired by {INSPIRATION_THEMES[slug]?.label}.
+          {topNames.length} curated picks.
+        </p>
+      </div>
+    </section>
+  )}
+
+  <main>
+    {topNames.length > 0 && (
+      <TopNamesList
+        heading={pageH1}
+        subheading={`Top ${topNames.length} namen — klik om toe te voegen aan je shortlist`}
+        names={topNames}
+      />
+    )}
+
+    <div style="max-width:1400px;margin:0 auto;padding:0 1.5rem">
+      <NameCTA
+        eyebrow="COMPLETE GIDS"
+        title={ctaBreedTitle}
+        href={ctaBreedHref}
+        btnText={ctaBreedText}
+      />
+    </div>
+
+    <div id="generator" style="max-width:1400px;margin:0 auto;padding:1.5rem;padding-top:2.5rem">
+      <h2 style="font-family:var(--ng-font-display);font-size:clamp(1.5rem,3.5vw,2.25rem);text-transform:uppercase;letter-spacing:-0.02em;color:var(--ng-offwhite);margin-bottom:1.25rem">
+        INTERACTIEVE <span style="color:var(--ng-lime)">GENERATOR</span>
+      </h2>
+    </div>
+
+    <div style="max-width:1400px;margin:0 auto;padding:0 1.5rem">
+      <button class="ng-filter-toggle" data-ng-filter-toggle type="button">
+        ⚙ SHOW FILTERS
+      </button>
+    </div>
+
+    <div class="ng-layout">
+      <NameFilters
+        activeCategory={prefilterCategory}
+        activeInspiration={prefilterInspiration}
+      />
+      <div>
+        <NameGrid />
+        <NameShortlist />
+        <NameCTA
+          eyebrow="FOOD, TOYS & BEDS"
+          title={type === 'breed'
+            ? `Naam gekozen? Bekijk de beste producten voor ${slugToTitle(slug)}s.`
+            : 'Naam gekozen? Vind de beste producten voor jouw hond.'}
+          href={type === 'breed' ? `/breeds/${slug}` : '/blog'}
+          btnText="BEKIJK PRODUCT PICKS →"
+        />
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+
+  <!-- Inject pre-filtered data then load ES module -->
+  <script define:vars={{ filteredForPage, prefilterCategory, prefilterInspiration }}>
+    window.DOG_NAMES = filteredForPage;
+    window.NG_PREFILTER = { category: prefilterCategory, inspiration: prefilterInspiration };
+  </script>
+  <script type="module" src="/scripts/name-generator.mjs"></script>
+  <script type="module">
+    // Apply prefilter immediately after module boots
+    const pf = window.NG_PREFILTER;
+    if (pf?.category !== 'all') {
+      document.querySelector(`[data-filter="category"][data-value="${pf.category}"]`)?.click();
+    }
+  </script>
+</body>
+</html>

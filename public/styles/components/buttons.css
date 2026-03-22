@@ -1,0 +1,239 @@
+/* =============================================================
+   BUTTONS & BADGES — All interactive control styles
+   ============================================================= */
+
+/* ── Base button reset ────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-sm);
+  line-height: 1;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius-xl);
+  padding: 0.7rem var(--space-6);
+  cursor: pointer;
+  transition: var(--transition-hover);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.975);
+}
+
+/* ── Size variants ────────────────────────────────────────────── */
+.btn--sm {
+  font-size: var(--text-xs);
+  padding: 0.45rem var(--space-4);
+  border-radius: var(--radius-lg);
+}
+
+.btn--lg {
+  font-size: var(--text-base);
+  padding: 0.9rem var(--space-8);
+  border-radius: var(--radius-xl);
+}
+
+.btn--xl {
+  font-size: var(--text-lg);
+  padding: 1.1rem var(--space-10);
+  border-radius: var(--radius-2xl);
+}
+
+/* ── Colour variants ──────────────────────────────────────────── */
+
+/* Primary — teal */
+.btn--primary {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: #ffffff;
+  box-shadow: var(--shadow-primary-lg);
+  transform: translateY(-1px);
+}
+
+/* Dark / CTA */
+.btn--dark {
+  background: var(--color-heading);
+  color: #ffffff;
+  border-color: var(--color-heading);
+}
+
+.btn--dark:hover {
+  background: #1e293b;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Outline */
+.btn--outline {
+  background: transparent;
+  color: var(--color-heading);
+  border-color: var(--color-border-strong);
+}
+
+.btn--outline:hover {
+  background: var(--color-bg-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Ghost — minimal */
+.btn--ghost {
+  background: transparent;
+  color: var(--color-body);
+  border-color: transparent;
+}
+
+.btn--ghost:hover {
+  background: var(--color-bg-muted);
+  color: var(--color-heading);
+}
+
+/* White — on dark backgrounds */
+.btn--white {
+  background: #ffffff;
+  color: var(--color-heading);
+  border-color: #ffffff;
+}
+
+.btn--white:hover {
+  background: var(--color-bg-soft);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Accent — amber */
+.btn--accent {
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+}
+
+.btn--accent:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.35);
+}
+
+/* ── Icon button ──────────────────────────────────────────────── */
+.btn--icon {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: var(--radius-lg);
+}
+
+.btn--icon-sm {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: var(--radius-md);
+}
+
+/* ── Full width ───────────────────────────────────────────────── */
+.btn--full { width: 100%; }
+
+/* ── Loading state ────────────────────────────────────────────── */
+.btn.is-loading {
+  opacity: 0.7;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* ── Disabled state ───────────────────────────────────────────── */
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.45;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* =============================================================
+   BADGES & LABELS
+   ============================================================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* Colour variants */
+.badge--primary  { background: var(--color-primary-light);  color: var(--color-primary-hover); }
+.badge--accent   { background: var(--color-accent-light);   color: var(--color-accent-hover);  }
+.badge--success  { background: var(--color-success-light);  color: var(--color-success);       }
+.badge--warning  { background: var(--color-warning-light);  color: var(--color-warning);       }
+.badge--danger   { background: var(--color-danger-light);   color: var(--color-danger);        }
+.badge--muted    { background: var(--color-bg-muted);       color: var(--color-muted);         }
+.badge--dark     { background: var(--color-heading);        color: #ffffff;                    }
+
+/* Category colour variants */
+.badge--food     { background: var(--cat-food-bg);     color: var(--cat-food-text);     border: 1px solid var(--cat-food-border);     }
+.badge--toys     { background: var(--cat-toys-bg);     color: var(--cat-toys-text);     border: 1px solid var(--cat-toys-border);     }
+.badge--health   { background: var(--cat-health-bg);   color: var(--cat-health-text);   border: 1px solid var(--cat-health-border);   }
+.badge--training { background: var(--cat-training-bg); color: var(--cat-training-text); border: 1px solid var(--cat-training-border); }
+.badge--grooming { background: var(--cat-grooming-bg); color: var(--cat-grooming-text); border: 1px solid var(--cat-grooming-border); }
+.badge--beds     { background: var(--cat-beds-bg);     color: var(--cat-beds-text);     border: 1px solid var(--cat-beds-border);     }
+
+/* ── Tag / pill ───────────────────────────────────────────────── */
+.tag {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-muted);
+  background: var(--color-bg-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0.2rem 0.65rem;
+  text-decoration: none;
+  transition: var(--transition-base);
+  white-space: nowrap;
+}
+
+.tag:hover {
+  background: var(--color-primary-subtle);
+  border-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* ── Inline text link ─────────────────────────────────────────── */
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--weight-semi);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-base);
+}
+
+.link:hover {
+  color: var(--color-primary-hover);
+  border-color: var(--color-primary);
+}
+
+.link--arrow::after {
+  content: ' →';
+  font-weight: var(--weight-normal);
+}

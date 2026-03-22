@@ -1,0 +1,107 @@
+---
+/**
+ * NameBreedHero.astro
+ * Hero block for /dog-names/[breed] pages.
+ * Shows breed name, recommended name styles, and optional breed image.
+ */
+
+export interface Props {
+  breedName:       string;         // e.g. "Labrador Retriever"
+  breedSlug:       string;         // e.g. "labrador-retriever"
+  nameStyles:      string[];       // e.g. ["Classic", "Trendy"]
+  inspirations:    string[];       // e.g. ["Classic Pet", "Nature"]
+  topNames:        string[];       // e.g. ["Buddy", "Luna", "Max"]
+  breedImageUrl?:  string;
+  breedGuideUrl?:  string;
+}
+
+const {
+  breedName,
+  breedSlug,
+  nameStyles,
+  inspirations,
+  topNames,
+  breedImageUrl,
+  breedGuideUrl = `/breeds/${breedSlug}`,
+} = Astro.props;
+
+const styleLabels: Record<string, string> = {
+  Classic:   '🏆 Classic',
+  Trendy:    '✨ Trendy',
+  Cute:      '🎀 Cute',
+  Tough:     '💪 Tough',
+  General:   '📋 General',
+};
+
+const inspLabels: Record<string, string> = {
+  'Classic Pet':   '🐾 Classic Pet',
+  Mythology:       '⚡ Mythology',
+  Nature:          '🌿 Nature',
+  Gaming:          '🎮 Gaming',
+  Food:            '🍕 Food',
+  'Movie/TV':      '🎬 Movie/TV',
+  Music:           '🎵 Music',
+  'Meme/Internet': '🐸 Meme',
+  Sports:          '⚽ Sports',
+  Human:           '👤 Human',
+};
+---
+
+<section class="ng-breed-hero">
+  <div class="ng-breed-hero__inner">
+    <div>
+      <!-- Breadcrumb -->
+      <nav class="ng-breed-hero__breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/dog-names">Dog Names</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{breedName}</span>
+      </nav>
+
+      <!-- Title -->
+      <h1 class="ng-breed-hero__title">
+        NAMEN VOOR<br/>
+        <span>{breedName}S</span>
+      </h1>
+
+      <p class="ng-breed-hero__desc">
+        Expert-aanbevolen namen afgestemd op het karakter van de {breedName}.
+        Kies uit {nameStyles.join(', ')} stijlen — of gebruik de generator hieronder.
+      </p>
+
+      <!-- Style + Inspiration tags -->
+      <div class="ng-breed-hero__tags">
+        {nameStyles.map(s => (
+          <span class="ng-breed-hero__tag">{styleLabels[s] ?? s}</span>
+        ))}
+        {inspirations.map(i => (
+          <span class="ng-breed-hero__tag">{inspLabels[i] ?? i}</span>
+        ))}
+      </div>
+
+      <!-- Quicklinks -->
+      <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.25rem">
+        <a href="#generator" class="ng-cta__btn">
+          🎲 GEBRUIK GENERATOR
+        </a>
+        <a href={breedGuideUrl} class="ng-action-btn">
+          BREED GUIDE: {breedName.toUpperCase()} →
+        </a>
+      </div>
+    </div>
+
+    <!-- Breed image -->
+    {breedImageUrl && (
+      <img
+        src={breedImageUrl}
+        alt={`${breedName} hond`}
+        class="ng-breed-hero__image"
+        width="160"
+        height="120"
+        loading="lazy"
+        decoding="async"
+      />
+    )}
+  </div>
+</section>

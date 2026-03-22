@@ -1,0 +1,159 @@
+---
+/**
+ * NameFilters.astro
+ * Sidebar filter panel for the name generator.
+ * All styling via src/styles/names.css.
+ */
+
+export interface Props {
+  activeGender?:      string;
+  activeCategory?:    string;
+  activeInspiration?: string;
+  activeLetter?:      string;
+}
+
+const {
+  activeGender      = 'all',
+  activeCategory    = 'all',
+  activeInspiration = 'all',
+  activeLetter      = 'all',
+} = Astro.props;
+
+const genders = [
+  { value: 'all',  label: 'Alle' },
+  { value: 'boy',  label: '♂ Jongen' },
+  { value: 'girl', label: '♀ Meisje' },
+];
+
+const categories = [
+  { value: 'all',     label: 'Alle' },
+  { value: 'Classic', label: 'Classic' },
+  { value: 'Trendy',  label: 'Trendy' },
+  { value: 'Cute',    label: 'Cute' },
+  { value: 'Tough',   label: 'Tough' },
+];
+
+const inspirations = [
+  { value: 'all',           label: 'Alle' },
+  { value: 'Gaming',        label: '🎮 Gaming' },
+  { value: 'Mythology',     label: '⚡ Mythology' },
+  { value: 'Movie/TV',      label: '🎬 Movie/TV' },
+  { value: 'Music',         label: '🎵 Music' },
+  { value: 'Nature',        label: '🌿 Nature' },
+  { value: 'Food',          label: '🍕 Food' },
+  { value: 'Meme/Internet', label: '🐸 Meme' },
+  { value: 'Sports',        label: '⚽ Sports' },
+  { value: 'Classic Pet',   label: '🐾 Classic' },
+];
+
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+---
+
+<aside class="ng-filters" data-ng-filter-panel aria-label="Naam filters">
+  <div class="ng-filters__header">
+    <span>FILTERS</span>
+    <span id="ng-active-count"></span>
+  </div>
+
+  <!-- Search -->
+  <div class="ng-filters__section">
+    <label for="ng-search" class="ng-filters__label">Zoeken</label>
+    <input
+      id="ng-search"
+      type="text"
+      class="ng-filters__search"
+      placeholder="Bijv. Luna, Max, Thor..."
+      data-ng-search
+      autocomplete="off"
+      spellcheck="false"
+    />
+  </div>
+
+  <!-- Gender -->
+  <div class="ng-filters__section">
+    <span class="ng-filters__label" id="ng-gender-label">Geslacht</span>
+    <div class="ng-filters__chips" role="group" aria-labelledby="ng-gender-label">
+      {genders.map(g => (
+        <button
+          class={`ng-chip ${g.value === 'boy' ? 'gender-boy' : g.value === 'girl' ? 'gender-girl' : ''} ${activeGender === g.value ? 'is-active' : ''}`}
+          data-filter="gender"
+          data-value={g.value}
+          aria-pressed={activeGender === g.value ? 'true' : 'false'}
+          type="button"
+        >
+          {g.label}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <!-- Category -->
+  <div class="ng-filters__section">
+    <span class="ng-filters__label" id="ng-cat-label">Stijl</span>
+    <div class="ng-filters__chips" role="group" aria-labelledby="ng-cat-label">
+      {categories.map(c => (
+        <button
+          class={`ng-chip ${activeCategory === c.value ? 'is-active' : ''}`}
+          data-filter="category"
+          data-value={c.value}
+          aria-pressed={activeCategory === c.value ? 'true' : 'false'}
+          type="button"
+        >
+          {c.label}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <!-- Inspiration (only for enriched names) -->
+  <div class="ng-filters__section">
+    <span class="ng-filters__label" id="ng-insp-label">Inspiratie</span>
+    <div class="ng-filters__chips" role="group" aria-labelledby="ng-insp-label">
+      {inspirations.map(i => (
+        <button
+          class={`ng-chip ${activeInspiration === i.value ? 'is-active' : ''}`}
+          data-filter="inspiration"
+          data-value={i.value}
+          aria-pressed={activeInspiration === i.value ? 'true' : 'false'}
+          type="button"
+        >
+          {i.label}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <!-- First letter -->
+  <div class="ng-filters__section">
+    <span class="ng-filters__label" id="ng-letter-label">Beginletter</span>
+    <div class="ng-filters__chips" role="group" aria-labelledby="ng-letter-label">
+      <button
+        class={`ng-chip ng-chip--letter ${activeLetter === 'all' ? 'is-active' : ''}`}
+        data-filter="letter"
+        data-value="all"
+        aria-pressed={activeLetter === 'all' ? 'true' : 'false'}
+        type="button"
+      >
+        Alle
+      </button>
+      {letters.map(l => (
+        <button
+          class={`ng-chip ng-chip--letter ${activeLetter === l ? 'is-active' : ''}`}
+          data-filter="letter"
+          data-value={l}
+          aria-pressed={activeLetter === l ? 'true' : 'false'}
+          type="button"
+        >
+          {l}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <!-- Reset -->
+  <div class="ng-filters__section">
+    <button class="ng-reset-btn" data-ng-reset type="button">
+      ✕ Reset alle filters
+    </button>
+  </div>
+</aside>

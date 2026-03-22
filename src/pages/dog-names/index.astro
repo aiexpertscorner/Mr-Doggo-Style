@@ -1,0 +1,239 @@
+---
+/**
+ * /dog-names/index.astro
+ * Main dog name generator page.
+ */
+
+import NameFilters   from '../../components/names/NameFilters.astro';
+import NameGrid      from '../../components/names/NameGrid.astro';
+import NameShortlist from '../../components/names/NameShortlist.astro';
+import NameCTA       from '../../components/names/NameCTA.astro';
+import Header        from '../../components/ui/Header.astro';
+import Footer        from '../../components/ui/Footer.astro';
+
+import allNames from '../../data/dog-names.json';
+
+const title       = 'Dog Name Generator 2026 — 7,000+ Names | MR. DOGGO STYLE';
+const description = 'Find the perfect name for your dog. Filter by gender, style (Classic, Trendy, Cute, Tough), inspiration (Gaming, Mythology, Food, Movies) and first letter. 7,267 curated dog names.';
+const canonical   = 'https://mrdoggostyle.com/dog-names';
+
+const totalNames    = allNames.length;
+const boyCount      = allNames.filter((n: any) => n.gender === 'boy').length;
+const girlCount     = allNames.filter((n: any) => n.gender === 'girl').length;
+const enrichedCount = allNames.filter((n: any) => n.enriched).length;
+
+const faqs = [
+  {
+    q: 'Hoeveel hondennamen staan er in de generator?',
+    a: `De generator bevat ${totalNames.toLocaleString('nl-NL')} unieke hondennamen — ${boyCount} voor jongens en ${girlCount} voor meisjes. Van die namen zijn er ${enrichedCount} volledig verrijkt met stijlcategorie en inspiratiebron.`,
+  },
+  {
+    q: 'Kan ik filteren op ras?',
+    a: "Ja. Kies op de breed-specifieke naam pagina's (/dog-names/labrador-retriever, etc.) voor namen die specifiek zijn afgestemd op het karakter van dat ras.",
+  },
+  {
+    q: 'Wat betekent de populariteitsrank?',
+    a: '4 stippen = meest populair, 1 stip = zeldzamer. De rank is gebaseerd op gebruik in dierennaamregistraties.',
+  },
+  {
+    q: 'Kan ik een favorieten-lijst aanmaken?',
+    a: 'Ja. Klik op een naam om hem aan je shortlist toe te voegen. De shortlist wordt opgeslagen in je browser en is maximaal 20 namen.',
+  },
+  {
+    q: 'Wat is het verschil tussen Classic, Trendy, Cute en Tough?',
+    a: 'Classic zijn tijdloze namen als Max en Daisy. Trendy zijn populaire namen zoals Luna en Milo. Cute zijn lieve namen als Cookie of Biscuit. Tough zijn stoere namen als Bear, Duke en Rex.',
+  },
+];
+
+const schemaFAQ = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const schemaWebPage = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: canonical,
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mrdoggostyle.com' },
+      { '@type': 'ListItem', position: 2, name: 'Dog Names', item: canonical },
+    ],
+  },
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:title"       content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content={canonical} />
+  <meta name="twitter:card"       content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/styles/names.css" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaWebPage)} />
+</head>
+<body>
+  <Header />
+
+  <section class="ng-hero">
+    <div class="ng-hero__inner">
+      <span class="ng-hero__eyebrow">🐾 Dog Name Generator 2026</span>
+      <h1 class="ng-hero__title">
+        FIND THE<br/>
+        <span>PERFECT</span><br/>
+        NAME.
+      </h1>
+      <p class="ng-hero__lead">
+        {totalNames.toLocaleString('nl-NL')} dog names — filtered by gender, style, inspiration
+        and first letter. Build your shortlist and copy with one click.
+      </p>
+      <div class="ng-hero__stats">
+        <div>
+          <span class="ng-hero__stat-n">{totalNames.toLocaleString('nl-NL')}</span>
+          <span class="ng-hero__stat-l">Total names</span>
+        </div>
+        <div>
+          <span class="ng-hero__stat-n">{boyCount.toLocaleString('nl-NL')}</span>
+          <span class="ng-hero__stat-l">Boy names</span>
+        </div>
+        <div>
+          <span class="ng-hero__stat-n">{girlCount.toLocaleString('nl-NL')}</span>
+          <span class="ng-hero__stat-l">Girl names</span>
+        </div>
+        <div>
+          <span class="ng-hero__stat-n">26</span>
+          <span class="ng-hero__stat-l">Letters covered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width:1400px;margin:0 auto;padding:1rem 1.5rem 0">
+    <button class="ng-filter-toggle" data-ng-filter-toggle type="button">
+      ⚙ SHOW FILTERS
+    </button>
+  </div>
+
+  <main id="generator">
+    <div class="ng-layout">
+      <NameFilters />
+      <div>
+        <NameGrid />
+        <NameShortlist />
+
+        <section class="ng-section" style="padding-top:3rem">
+          <h2 style="font-family:var(--ng-font-display);font-size:clamp(1.75rem,4vw,2.5rem);text-transform:uppercase;letter-spacing:-0.02em;color:var(--ng-offwhite);margin-bottom:1.25rem">
+            BROWSE BY <span style="color:var(--ng-lime)">INSPIRATION</span>
+          </h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.6rem">
+            {[
+              { slug:'gaming',      label:'🎮 Gaming',      count: 63 },
+              { slug:'mythology',   label:'⚡ Mythology',    count: 40 },
+              { slug:'movies-tv',   label:'🎬 Movie/TV',     count: 41 },
+              { slug:'music',       label:'🎵 Music',        count: 45 },
+              { slug:'nature',      label:'🌿 Nature',       count: 29 },
+              { slug:'food',        label:'🍕 Food',         count: 21 },
+              { slug:'meme',        label:'🐸 Meme/Internet',count: 47 },
+              { slug:'sports',      label:'⚽ Sports',       count: 18 },
+              { slug:'classic-pet', label:'🐾 Classic Pet',  count: 16 },
+            ].map(insp => (
+              <a
+                href={`/dog-names/${insp.slug}`}
+                style="display:flex;flex-direction:column;background:var(--ng-concrete);border:2px solid rgba(255,255,255,.1);padding:0.9rem 0.85rem;text-decoration:none;transition:all .15s"
+                onmouseover="this.style.borderColor='var(--ng-lime)';this.style.transform='translate(-2px,-2px)';this.style.boxShadow='4px 4px 0 var(--ng-lime)'"
+                onmouseout="this.style.borderColor='rgba(255,255,255,.1)';this.style.transform='';this.style.boxShadow=''"
+              >
+                <span style="font-family:var(--ng-font-head);font-size:0.8rem;text-transform:uppercase;color:var(--ng-offwhite)">{insp.label}</span>
+                <span style="font-family:var(--ng-font-mono);font-size:0.55rem;color:var(--ng-ash);margin-top:0.3rem">{insp.count} NAMEN</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section class="ng-section" aria-labelledby="ng-faq-heading">
+          <h2 id="ng-faq-heading" style="font-family:var(--ng-font-display);font-size:clamp(1.75rem,4vw,2.5rem);text-transform:uppercase;letter-spacing:-0.02em;color:var(--ng-offwhite);margin-bottom:1.25rem">
+            VEELGESTELDE <span style="color:var(--ng-lime)">VRAGEN</span>
+          </h2>
+          <dl style="display:flex;flex-direction:column;gap:0.75rem">
+            {faqs.map(faq => (
+              <div style="background:var(--ng-concrete);border:2px solid rgba(255,255,255,.08);padding:1rem 1.25rem">
+                <dt style="font-family:var(--ng-font-head);font-size:0.85rem;text-transform:uppercase;color:var(--ng-offwhite);margin-bottom:0.4rem">
+                  {faq.q}
+                </dt>
+                <dd style="font-family:var(--ng-font-body);font-size:0.95rem;color:var(--ng-smoke);margin:0">
+                  {faq.a}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        <section class="ng-section" style="padding-top:0" aria-labelledby="ng-breed-names-heading">
+          <h2 id="ng-breed-names-heading" style="font-family:var(--ng-font-display);font-size:clamp(1.75rem,4vw,2.5rem);text-transform:uppercase;letter-spacing:-0.02em;color:var(--ng-offwhite);margin-bottom:0.4rem">
+            NAMEN PER <span style="color:var(--ng-lime)">RAS</span>
+          </h2>
+          <p style="font-family:var(--ng-font-body);font-size:0.95rem;color:var(--ng-smoke);margin-bottom:1.25rem">
+            Elk ras heeft zijn eigen karakter. Bekijk namen die specifiek passen bij jouw hond.
+          </p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.6rem">
+            {[
+              'labrador-retriever','german-shepherd','golden-retriever',
+              'french-bulldog','bulldog','beagle','poodle','rottweiler',
+              'siberian-husky','doberman-pinscher','border-collie','shih-tzu',
+            ].map(slug => {
+              const name = slug.split('-').map((w: string) => w[0].toUpperCase() + w.slice(1)).join(' ');
+              return (
+                <a
+                  href={`/dog-names/${slug}`}
+                  style="display:block;background:var(--ng-concrete);border:2px solid rgba(255,255,255,.1);padding:0.8rem 1rem;text-decoration:none;font-family:var(--ng-font-head);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--ng-offwhite);transition:all .15s"
+                  onmouseover="this.style.borderColor='var(--ng-lime)';this.style.color='var(--ng-lime)'"
+                  onmouseout="this.style.borderColor='rgba(255,255,255,.1)';this.style.color='var(--ng-offwhite)'"
+                >
+                  {name} →
+                </a>
+              );
+            })}
+          </div>
+          <div style="margin-top:1rem">
+            <a href="/breeds" style="font-family:var(--ng-font-head);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--ng-lime);text-decoration:none">
+              ALLE 277 RASSEN BEKIJKEN →
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+
+  <!-- Inject data then load ES module -->
+  <script define:vars={{ allNames }}>
+    window.DOG_NAMES = allNames;
+  </script>
+  <script type="module" src="/scripts/name-generator.mjs"></script>
+</body>
+</html>
