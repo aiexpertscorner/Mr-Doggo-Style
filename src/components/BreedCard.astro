@@ -1,0 +1,108 @@
+---
+// BreedCard.astro — reads breed images from image-lookup.json
+import imageLookup from '../data/image-lookup.json';
+
+export interface Props {
+  slug: string;
+  name: string;
+  group: string;
+  temperament?: string;
+  popularity?: number;
+  size_category?: string;
+  energy?: { category: string };
+  shedding?: { category: string };
+  dogCeoBreed?: string;
+  compact?: boolean;
+}
+const {
+  slug, name, group, temperament, popularity,
+  size_category = 'medium', energy, shedding, dogCeoBreed, compact = false,
+} = Astro.props;
+
+const href = `/breeds/${slug}`;
+
+const energyEmoji = {
+  "Needs Lots of Activity": "🔥",
+  "Energetic":              "⚡",
+  "Regular Exercise":       "🚶",
+  "Calm":                   "😌",
+  "Couch Potato":           "🛋️",
+}[energy?.category || ''] || "🐕";
+
+// Get real image from lookup JSON (populated by fetch-all-images.mjs)
+const lookupUrl = (imageLookup as any).breeds?.[slug];
+const hasImage  = lookupUrl && lookupUrl.startsWith('https://images.dog.ceo');
+---
+<a href={href}
+   style={`display:flex;flex-direction:column;background:#222;border:2px solid rgba(255,255,255,.1);text-decoration:none;overflow:hidden;transition:all .15s`}
+   onmouseover="this.style.borderColor='#CCFF00';this.style.transform='translate(-2px,-2px)';this.style.boxShadow='4px 4px 0 #CCFF00'"
+   onmouseout="this.style.borderColor='rgba(255,255,255,.1)';this.style.transform='';this.style.boxShadow=''">
+
+  <!-- Breed photo -->
+  <div style={`background:#1a1a1a;overflow:hidden;position:relative;${compact ? 'height:140px' : 'aspect-ratio:4/3'}`}>
+    {hasImage ? (
+      <img
+        src={lookupUrl}
+        alt={`${name} dog`}
+        loading="lazy"
+        class="breed-card-img"
+        data-slug={slug}
+        style="width:100%;height:100%;object-fit:cover;transition:transform .35s,filter .35s"
+      />
+    ) : (
+      <!-- Placeholder while image-lookup.json hasn't been populated yet -->
+      <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.3rem;background:linear-gradient(135deg,#1a1a1a,#2a2a2a)">
+        <span style="font-size:2.5rem">🐕</span>
+        <span style="font-family:'Space Mono',monospace;font-size:.45rem;color:#444;text-transform:uppercase;letter-spacing:.06em">{name}</span>
+      </div>
+    )}
+    <!-- Lime gradient overlay -->
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.65),transparent 50%);pointer-events:none"></div>
+    <!-- Popularity badge -->
+    {popularity && popularity <= 20 && (
+      <div style="position:absolute;top:8px;left:8px;background:#CCFF00;color:#0A0A0A;font-family:'Archivo Black',sans-serif;font-size:.52rem;text-transform:uppercase;padding:.12rem .45rem;border:1px solid #0A0A0A">
+        #{popularity}
+      </div>
+    )}
+  </div>
+
+  <div style="padding:.82rem">
+    <h3 style="font-family:'Archivo Black',sans-serif;font-size:.8rem;text-transform:uppercase;color:#F0F0F0;margin:0 0 .18rem;line-height:1.2">{name}</h3>
+    {!compact && (
+      <p style="font-family:'Space Mono',monospace;font-size:.5rem;color:#555;text-transform:uppercase;margin:0 0 .4rem;letter-spacing:.04em">
+        {group.replace(' Group','').replace(' Service','')}
+      </p>
+    )}
+    {temperament && !compact && (
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:.78rem;color:#CCFF00;margin:0 0 .35rem;text-transform:uppercase;letter-spacing:.03em">
+        {temperament.split(',')[0].trim()}
+      </p>
+    )}
+    <div style="display:flex;flex-wrap:wrap;gap:.28rem">
+      <span style="background:rgba(255,255,255,.06);font-family:'Archivo Black',sans-serif;font-size:.52rem;text-transform:uppercase;padding:.12rem .38rem;color:#888">{size_category}</span>
+      <span style="background:rgba(255,255,255,.06);font-family:'Archivo Black',sans-serif;font-size:.52rem;text-transform:uppercase;padding:.12rem .38rem;color:#888">{energyEmoji}</span>
+    </div>
+    <div style="font-family:'Archivo Black',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;color:#CCFF00;margin-top:.55rem">VIEW GUIDE →</div>
+  </div>
+</a>
+
+<script>
+  document.querySelectorAll('img.breed-card-img').forEach(img => {
+    img.addEventListener('mouseover', () => {
+      img.style.transform = 'scale(1.08)';
+    });
+    img.addEventListener('mouseout', () => {
+      img.style.transform = '';
+    });
+    img.addEventListener('error', function() {
+      // Replace with emoji placeholder on error
+      const parent = this.parentElement;
+      if (parent) {
+        parent.innerHTML =
+          '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.3rem;background:linear-gradient(135deg,#1a1a1a,#2a2a2a)">' +
+          '<span style="font-size:2.5rem">🐕</span>' +
+          '</div>';
+      }
+    });
+  });
+</script>

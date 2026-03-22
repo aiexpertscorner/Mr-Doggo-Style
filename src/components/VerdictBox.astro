@@ -1,0 +1,29 @@
+---
+export interface Props { winner:string; winnerAsin:string; winnerNote:string; budgetPick?:string; budgetAsin?:string; budgetNote?:string; tag?:string; }
+const { winner, winnerAsin, winnerNote, budgetPick, budgetAsin, budgetNote, tag="aiexpertscorn-20" } = Astro.props;
+---
+<div style="border:2px solid var(--lime);box-shadow:6px 6px 0 var(--lime);margin:2.5rem 0;overflow:hidden">
+  <div style="background:var(--lime);padding:.6rem 1.25rem;font-family:'Archivo Black',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--midnight)">
+    🏆 OUR VERDICT
+  </div>
+  <div style="background:var(--concrete);padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+    <div style="display:flex;align-items:flex-start;gap:.9rem">
+      <span style="font-size:1.5rem;flex-shrink:0">🥇</span>
+      <div>
+        <p style="font-family:'Archivo Black',sans-serif;font-size:.85rem;text-transform:uppercase;color:var(--offwhite);margin:0 0 .2rem">BEST OVERALL: {winner}</p>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:var(--smoke);margin:0 0 .7rem">{winnerNote}</p>
+        <a href={`https://www.amazon.com/dp/${winnerAsin}/?tag=${tag}`} rel="nofollow sponsored" target="_blank" class="btn-lime" style="font-size:.65rem;padding:.5rem 1rem;display:inline-block">CHECK PRICE →</a>
+      </div>
+    </div>
+    {budgetPick && (
+      <div style="display:flex;align-items:flex-start;gap:.9rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.08)">
+        <span style="font-size:1.5rem;flex-shrink:0">💰</span>
+        <div>
+          <p style="font-family:'Archivo Black',sans-serif;font-size:.85rem;text-transform:uppercase;color:var(--offwhite);margin:0 0 .2rem">BEST VALUE: {budgetPick}</p>
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:var(--smoke);margin:0 0 .7rem">{budgetNote}</p>
+          {budgetAsin && <a href={`https://www.amazon.com/dp/${budgetAsin}/?tag=${tag}`} rel="nofollow sponsored" target="_blank" class="btn-outline" style="font-size:.65rem;padding:.5rem 1rem;display:inline-block">CHECK PRICE →</a>}
+        </div>
+      </div>
+    )}
+  </div>
+</div>

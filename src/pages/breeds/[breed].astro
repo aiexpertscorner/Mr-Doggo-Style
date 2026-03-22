@@ -1,0 +1,345 @@
+---
+// src/pages/breeds/[breed].astro — uses image-lookup.json for all images
+import breedsRaw   from '../../data/breeds.json';
+import imageLookup from '../../data/image-lookup.json';
+import Header      from '../../components/Header.astro';
+import Footer      from '../../components/Footer.astro';
+import Newsletter  from '../../components/Newsletter.astro';
+import AffiliateDisclosure from '../../components/AffiliateDisclosure.astro';
+
+const TAG  = "aiexpertscorn-20";
+const SITE = "https://mrdoggostyle.com";
+
+export function getStaticPaths() {
+  return breedsRaw.map(b => ({ params: { breed: b.slug }, props: { breed: b } }));
+}
+const { breed } = Astro.props;
+const canon = `${SITE}/breeds/${breed.slug}`;
+
+// ── Image resolution with fallback chain ─────────────────────────────────────
+const breedImg = (imageLookup as any).breeds?.[breed.slug] || null;
+const prodImg  = (asin: string) => {
+  const lookup = (imageLookup as any).products?.[asin];
+  return lookup || `https://m.media-amazon.com/images/P/${asin}.01._SL300_.jpg`;
+};
+
+// ── Labels ────────────────────────────────────────────────────────────────────
+const energyEmoji = {"Needs Lots of Activity":"🔥","Energetic":"⚡","Regular Exercise":"🚶","Calm":"😌","Couch Potato":"🛋️"};
+const shedLabel   = {"Regularly":"Heavy Shedder","Seasonal":"Seasonal Shedder","Occasionally":"Light Shedder","Infrequent":"Minimal Shedder"};
+const trainLabel  = {"Eager to Please":"Highly Trainable","Agreeable":"Moderately Trainable","May Be Stubborn":"Independent"};
+
+const em = energyEmoji[breed.energy.category] || "🐕";
+const sl = shedLabel[breed.shedding.category]  || breed.shedding.category;
+const tl = trainLabel[breed.trainability.category] || breed.trainability.category;
+const wStr    = breed.weight.min_lbs && breed.weight.max_lbs ? `${breed.weight.min_lbs}–${breed.weight.max_lbs} lbs` : breed.weight.max_lbs ? `Up to ${breed.weight.max_lbs} lbs` : "Varies";
+const hStr    = breed.height.min_in  && breed.height.max_in  ? `${breed.height.min_in}–${breed.height.max_in} in`   : "Varies";
+const lifeStr = breed.life_expectancy.min && breed.life_expectancy.max ? `${breed.life_expectancy.min}–${breed.life_expectancy.max} yrs` : "Varies";
+
+const faqs = [
+  { q:`What is the best food for ${breed.name}s?`, a:`For ${breed.name}s we recommend ${breed.products.food.name}. ${breed.size_category==='large'?'Large breed formulas provide controlled calcium and joint-supporting glucosamine.':'Look for high-quality protein as the first ingredient with an AAFCO feeding trial statement.'}` },
+  { q:`How much exercise does a ${breed.name} need?`, a: breed.energy.category==="Needs Lots of Activity" ? `${breed.name}s need 90+ minutes of vigorous exercise daily.` : breed.energy.category==="Calm" ? `${breed.name}s do well with 20–30 minutes of gentle daily walks.` : `${breed.name}s need 30–60 minutes of daily activity.` },
+  { q:`Do ${breed.name}s shed a lot?`, a: breed.shedding.category==="Regularly" ? `Yes — heavy year-round shedders. Brush 3–4× weekly.` : `${breed.name}s are ${breed.shedding.category.toLowerCase()} shedders. Regular brushing is sufficient.` },
+  { q:`Are ${breed.name}s easy to train?`, a: breed.trainability.category==="Eager to Please" ? `Highly trainable — responds excellently to positive reinforcement.` : `Requires consistent, patient training with high-value rewards.` },
+  { q:`How big does a ${breed.name} get?`, a:`${breed.name}s typically weigh ${wStr} and stand ${hStr}. Lifespan: ${lifeStr}.` },
+];
+
+const jsonLd = JSON.stringify({"@context":"https://schema.org","@graph":[
+  {"@type":"Article","headline":breed.seo.title,"description":breed.seo.description,"url":canon,
+   "author":{"@type":"Organization","name":"Mr. Doggo Style"},
+   "image": breedImg || `${SITE}/images/og-default.jpg`},
+  {"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":SITE},
+    {"@type":"ListItem","position":2,"name":"Breed Guides","item":`${SITE}/breeds`},
+    {"@type":"ListItem","position":3,"name":breed.name,"item":canon}]},
+  {"@type":"FAQPage","mainEntity":faqs.map(f=>({"@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}}))},
+]});
+---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>{breed.seo.title} | MR. DOGGO STYLE</title>
+  <meta name="description" content={breed.seo.description}/>
+  <link rel="canonical" href={canon}/>
+  <meta property="og:title" content={breed.seo.title}/>
+  <meta property="og:description" content={breed.seo.description}/>
+  {breedImg && <meta property="og:image" content={breedImg}/>}
+  <meta name="twitter:card" content="summary_large_image"/>
+  {breedImg && <meta name="twitter:image" content={breedImg}/>}
+  <script type="application/ld+json" set:html={jsonLd}/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <style>
+    :root{--midnight:#0A0A0A;--concrete:#222;--cl:#2E2E2E;--lime:#CCFF00;--ash:#888;--smoke:#AAA;--white:#F0F0F0}
+    *{box-sizing:border-box} html{background:var(--midnight)} body{font-family:'Barlow Condensed',sans-serif;background:var(--midnight);color:var(--white);margin:0}
+    body::before{content:'';position:fixed;inset:0;opacity:.4;pointer-events:none;z-index:998;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")}
+    .fd{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:-.02em}
+    .fh{font-family:'Archivo Black',sans-serif}
+    .fm{font-family:'Space Mono',monospace}
+    .btn-lime{display:inline-block;background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;padding:.75rem 1.5rem;border:2px solid var(--midnight);box-shadow:4px 4px 0 var(--midnight);text-decoration:none;transition:all .1s}
+    .btn-lime:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--midnight)}
+    .btn-az{display:block;background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;padding:.72rem;border:2px solid var(--midnight);box-shadow:3px 3px 0 var(--midnight);text-decoration:none;text-align:center;transition:all .1s}
+    .btn-az:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--midnight)}
+    ::selection{background:var(--lime);color:var(--midnight)}
+    ::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:var(--midnight)} ::-webkit-scrollbar-thumb{background:var(--cl)} ::-webkit-scrollbar-thumb:hover{background:var(--lime)}
+    #rpb{position:fixed;top:0;left:0;height:3px;background:var(--lime);z-index:9999;box-shadow:0 0 8px var(--lime)}
+    .faq-b{width:100%;text-align:left;padding:1rem 1.25rem;font-family:'Archivo Black',sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;background:transparent;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--white)}
+    .faq-b:hover{background:rgba(204,255,0,.05)}
+    .faq-c{display:none;padding:.25rem 1.25rem 1rem;font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--smoke);line-height:1.7;border-top:1px solid rgba(255,255,255,.05)}
+    @media(min-width:1024px){.sidebar-sticky{position:sticky;top:80px}}
+    .prod-img-wrap{background:#fff;overflow:hidden;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+    .prod-img-wrap img{width:100%;height:100%;object-fit:contain;padding:.5rem;transition:transform .25s,filter .25s}
+    .prod-img-wrap img:hover{transform:scale(1.06);filter:saturate(1.4)}
+  </style>
+</head>
+<body>
+<div id="rpb"></div>
+<Header/>
+
+<!-- ── HERO with real breed photo ─────────────────────────────── -->
+<div style="position:relative;min-height:380px;background:#111;border-bottom:2px solid rgba(255,255,255,.07);overflow:hidden">
+  {breedImg && (
+    <img
+      src={breedImg}
+      alt={`${breed.name} dog`}
+      loading="eager"
+      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.28) saturate(.75)"
+      class="hero-bg-img"
+      data-slug={breed.slug}
+    />
+  )}
+  <!-- Gradient overlay -->
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.95) 0%,rgba(10,10,10,.7) 50%,rgba(10,10,10,.2) 100%)"></div>
+
+  <div style="position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:3.5rem 1.5rem;display:grid;gap:2rem;align-items:center" id="hero-layout">
+    <div>
+      <nav class="fm" style="font-size:.52rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ash);margin-bottom:1rem;display:flex;flex-wrap:wrap;gap:.3rem">
+        <a href="/" style="color:inherit;text-decoration:none">HOME</a><span>/</span>
+        <a href="/breeds" style="color:inherit;text-decoration:none">BREEDS</a><span>/</span>
+        <span style="color:var(--lime)">{breed.name.toUpperCase()}</span>
+      </nav>
+      <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem">
+        <span style="background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.55rem;text-transform:uppercase;padding:.18rem .55rem;border:2px solid var(--midnight);transform:rotate(-2deg);display:inline-block">{breed.group.replace(' Group','').replace(' Service','')}</span>
+        {breed.popularity && breed.popularity <= 50 && <span style="background:#FF3B3B;color:#fff;font-family:'Archivo Black',sans-serif;font-size:.55rem;text-transform:uppercase;padding:.18rem .55rem;border:2px solid #fff;transform:rotate(-1deg);display:inline-block">#{breed.popularity} POPULAR</span>}
+      </div>
+      <h1 class="fd" style="font-size:clamp(2.5rem,8vw,5rem);color:var(--white);margin:0 0 .5rem;line-height:.9">
+        {breed.name.toUpperCase()}<br/><span style="color:var(--lime)">GUIDE.</span>
+      </h1>
+      {breed.temperament && <p class="fh" style="font-size:.82rem;color:var(--lime);text-transform:uppercase;letter-spacing:.06em;margin:0 0 .75rem">{breed.temperament}</p>}
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--smoke);max-width:460px;margin:0 0 1.5rem;line-height:1.5">Expert food, toys, beds &amp; grooming — matched to this breed's exact size, energy, and coat type.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.4rem">
+        <span style="background:rgba(204,255,0,.12);color:var(--lime);font-family:'Archivo Black',sans-serif;font-size:.58rem;text-transform:uppercase;padding:.25rem .65rem;border:1px solid rgba(204,255,0,.25)">{em} {breed.energy.category}</span>
+        <span style="background:rgba(255,255,255,.06);color:var(--smoke);font-family:'Archivo Black',sans-serif;font-size:.58rem;text-transform:uppercase;padding:.25rem .65rem;border:1px solid rgba(255,255,255,.1)">🪮 {sl}</span>
+        <span style="background:rgba(255,255,255,.06);color:var(--smoke);font-family:'Archivo Black',sans-serif;font-size:.58rem;text-transform:uppercase;padding:.25rem .65rem;border:1px solid rgba(255,255,255,.1)">🎓 {tl}</span>
+      </div>
+    </div>
+
+    <!-- Hero photo frame (desktop) -->
+    <div id="hero-photo-frame" style="display:none">
+      {breedImg && (
+        <div style="border:3px solid var(--lime);box-shadow:6px 6px 0 var(--lime);overflow:hidden;aspect-ratio:4/3">
+          <img
+            src={breedImg}
+            alt={breed.name}
+            loading="eager"
+            style="width:100%;height:100%;object-fit:cover;transition:transform .4s"
+            onmouseover="this.style.transform='scale(1.06)'"
+            onmouseout="this.style.transform=''"
+            class="hero-frame-img"
+            data-slug={breed.slug}
+          />
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN BODY ────────────────────────────────────────────────── -->
+<div style="max-width:1400px;margin:0 auto;padding:2.5rem 1.5rem">
+  <div style="display:grid;grid-template-columns:1fr;gap:2.5rem" id="main-grid">
+
+    <div>
+      <AffiliateDisclosure/>
+
+      <!-- Stats -->
+      <h2 class="fd" style="font-size:1.6rem;color:var(--white);margin:0 0 1rem">AT A GLANCE</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-bottom:2rem" id="stats-grid">
+        {[["⚖️","WEIGHT",wStr],["📏","HEIGHT",hStr],["🕰️","LIFESPAN",lifeStr],[em,"ENERGY",breed.energy.category],["🪮","SHEDDING",sl],["🎓","TRAINING",tl]].map(([ico,lbl,val])=>(
+          <div style="background:var(--concrete);border:2px solid rgba(255,255,255,.08);padding:.9rem;text-align:center;transition:border-color .15s" onmouseover="this.style.borderColor='var(--lime)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+            <div style="font-size:1.4rem;margin-bottom:.2rem">{ico}</div>
+            <div class="fm" style="font-size:.5rem;color:var(--ash);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.12rem">{lbl}</div>
+            <div class="fh" style="font-size:.7rem;text-transform:uppercase;color:var(--white)">{val}</div>
+          </div>
+        ))}
+      </div>
+
+      <div style="background:var(--concrete);border:2px solid rgba(255,255,255,.08);padding:1.4rem;margin-bottom:2rem">
+        <h3 class="fh" style="font-size:.82rem;text-transform:uppercase;color:var(--lime);margin:0 0 .7rem">ABOUT THE {breed.name.toUpperCase()}</h3>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--smoke);line-height:1.7;margin:0">{breed.description}</p>
+      </div>
+
+      <!-- Products with lookup images -->
+      <h2 class="fd" style="font-size:1.6rem;color:var(--white);margin:0 0 1rem">TOP PICKS FOR {breed.name.toUpperCase()}S</h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem;margin-bottom:2rem" id="prod-grid">
+        {[
+          {label:"🥩 BEST FOOD",   p:breed.products.food,     note:breed.size_category==='large'?'Large breed formula w/ glucosamine':'Quality protein matched to this breed'},
+          {label:"🎾 BEST TOY",    p:breed.products.toy,      note:breed.energy.category==='Needs Lots of Activity'?'High-energy toy for athletic play':'Mental enrichment for this breed'},
+          {label:"🛏️ BEST BED",   p:breed.products.bed,      note:breed.size_category==='large'?'7-inch foam for heavy breeds':'Memory foam support for daily sleep'},
+          {label:"✂️ BEST GROOMING",p:breed.products.grooming,note:['Regularly','Seasonal'].includes(breed.shedding.category)?'Reduces shedding up to 90%':'Gentle maintenance brush'},
+        ].map(({label,p,note})=>(
+          <div style="background:var(--concrete);border:2px solid rgba(255,255,255,.08);overflow:hidden;display:flex;flex-direction:column;transition:all .15s"
+               onmouseover="this.style.borderColor='var(--lime)';this.style.transform='translate(-2px,-2px)';this.style.boxShadow='4px 4px 0 var(--lime)'"
+               onmouseout="this.style.borderColor='rgba(255,255,255,.08)';this.style.transform='';this.style.boxShadow=''">
+            <div style="background:rgba(204,255,0,.08);padding:.32rem .75rem;font-family:'Archivo Black',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.08em;color:var(--lime)">{label}</div>
+            <a href={`https://www.amazon.com/dp/${p.asin}/?tag=${TAG}`} rel="nofollow sponsored" target="_blank"
+               class="prod-img-wrap" style="display:block;border-bottom:1px solid rgba(255,255,255,.06)">
+              <img
+                src={prodImg(p.asin)}
+                alt={p.name}
+                loading="lazy"
+                class="breed-prod-img"
+                data-asin={p.asin}
+              />
+            </a>
+            <div style="padding:.9rem;flex:1;display:flex;flex-direction:column;gap:.4rem">
+              <h3 class="fh" style="font-size:.78rem;text-transform:uppercase;color:var(--white);margin:0;line-height:1.2">{p.name}</h3>
+              <div style="display:flex;align-items:center;gap:.4rem">
+                <span style="color:var(--lime)">{'★'.repeat(Math.round(p.rating))}</span>
+                <span class="fh" style="color:var(--lime)">${p.price.toFixed(2)}</span>
+              </div>
+              <p style="font-family:'Barlow Condensed',sans-serif;font-size:.8rem;color:var(--ash);margin:0;flex:1">{note}</p>
+              <a href={`https://www.amazon.com/dp/${p.asin}/?tag=${TAG}`} rel="nofollow sponsored" target="_blank" class="btn-az" style="font-size:.6rem">CHECK PRICE →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Care Tips -->
+      {breed.care_tips.length > 0 && (
+        <div style="margin-bottom:2rem">
+          <h2 class="fd" style="font-size:1.6rem;color:var(--white);margin:0 0 1rem">CARE TIPS</h2>
+          <div style="display:flex;flex-direction:column;gap:.45rem">
+            {breed.care_tips.map(tip=>(
+              <div style="border-left:3px solid var(--lime);padding:.55rem .85rem;background:var(--concrete);font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:var(--smoke)">
+                <span style="color:var(--lime);margin-right:.35rem">▸</span>{tip}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- FAQ -->
+      <h2 class="fd" style="font-size:1.6rem;color:var(--white);margin:0 0 1rem">FAQ</h2>
+      <div style="display:flex;flex-direction:column;gap:.45rem;margin-bottom:2rem">
+        {faqs.map((f,i)=>(
+          <div style="border:2px solid rgba(255,255,255,.08);background:var(--concrete);overflow:hidden">
+            <button class="faq-b" id={`btn${i}`} data-i={i} aria-expanded="false">
+              <span>{f.q}</span>
+              <span id={`ico${i}`} style="color:var(--lime);transition:transform .2s;flex-shrink:0;margin-left:.4rem">▼</span>
+            </button>
+            <div class="faq-c" id={`body${i}`}>{f.a}</div>
+          </div>
+        ))}
+      </div>
+
+      <a href="/breeds" class="btn-lime" style="font-size:.72rem">← ALL 277 BREED GUIDES</a>
+      <div style="margin-top:3rem"><Newsletter/></div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" style="display:none">
+      <div class="sidebar-sticky" style="display:flex;flex-direction:column;gap:1.1rem">
+        <!-- Breed photo widget -->
+        {breedImg && (
+          <div style="border:2px solid var(--lime);box-shadow:4px 4px 0 var(--lime);overflow:hidden">
+            <div style="background:var(--lime);padding:.32rem .85rem;font-family:'Archivo Black',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:var(--midnight)">{breed.name.toUpperCase()}</div>
+            <img src={breedImg} alt={breed.name} loading="lazy"
+                 style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .3s"
+                 onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''"
+                 class="sidebar-breed-img" data-slug={breed.slug}/>
+          </div>
+        )}
+
+        <!-- Quick facts -->
+        <div style="background:var(--concrete);border:2px solid rgba(255,255,255,.08);padding:1.1rem">
+          <h4 class="fh" style="font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--lime);margin:0 0 .85rem">QUICK FACTS</h4>
+          {[["Group",breed.group],["Weight",wStr],["Lifespan",lifeStr],["Energy",breed.energy.category],["Shedding",sl]].map(([k,v])=>(
+            <div style="display:flex;justify-content:space-between;padding:.38rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-family:'Barlow Condensed',sans-serif;font-size:.82rem">
+              <span style="color:var(--ash);text-transform:uppercase;font-size:.7rem">{k}</span>
+              <span class="fh" style="font-size:.72rem;text-transform:uppercase;color:var(--white);text-align:right;max-width:55%">{v}</span>
+            </div>
+          ))}
+        </div>
+
+        <!-- Top food pick with image -->
+        <div style="background:var(--concrete);border:2px solid var(--lime);box-shadow:4px 4px 0 var(--lime);overflow:hidden">
+          <div style="background:rgba(204,255,0,.1);padding:.32rem .85rem;font-family:'Archivo Black',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.08em;color:var(--lime)">TOP FOOD PICK</div>
+          <a href={`https://www.amazon.com/dp/${breed.products.food.asin}/?tag=${TAG}`} rel="nofollow sponsored" target="_blank"
+             class="prod-img-wrap" style="display:block;border-bottom:1px solid rgba(255,255,255,.06)">
+            <img src={prodImg(breed.products.food.asin)} alt={breed.products.food.name} loading="lazy"
+                 class="breed-prod-img" data-asin={breed.products.food.asin}/>
+          </a>
+          <div style="padding:1rem">
+            <h4 class="fh" style="font-size:.78rem;text-transform:uppercase;color:var(--white);margin:0 0 .4rem;line-height:1.2">{breed.products.food.name}</h4>
+            <div style="color:var(--lime);font-size:.78rem;margin-bottom:.75rem">{'★'.repeat(Math.round(breed.products.food.rating))} <span class="fh">${breed.products.food.price.toFixed(2)}</span></div>
+            <a href={`https://www.amazon.com/dp/${breed.products.food.asin}/?tag=${TAG}`} rel="nofollow sponsored" target="_blank" class="btn-az">CHECK PRICE →</a>
+          </div>
+        </div>
+
+        <a href="/breeds" style="display:block;background:var(--midnight);border:2px solid rgba(255,255,255,.08);padding:1rem;text-align:center;text-decoration:none;transition:border-color .15s"
+           onmouseover="this.style.borderColor='var(--lime)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)'">
+          <span class="fd" style="font-size:1.35rem;color:var(--white);display:block;line-height:1">ALL 277<br/><span style="color:var(--lime)">BREEDS</span></span>
+        </a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<Footer/>
+<script>
+  // FAQ
+  document.querySelectorAll('.faq-b').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const i=btn.dataset.i, body=document.getElementById('body'+i), ico=document.getElementById('ico'+i);
+      const open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',String(!open));
+      if(body)body.style.display=open?'none':'block';
+      if(ico)ico.style.transform=open?'':'rotate(180deg)';
+    });
+  });
+  // Progress
+  const rpb=document.getElementById('rpb');
+  if(rpb)window.addEventListener('scroll',()=>{const h=document.documentElement;rpb.style.width=Math.min(100,(h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%';},{passive:true});
+  // Layout
+  function resize(){
+    const w=window.innerWidth;
+    const sidebar=document.getElementById('sidebar'), main=document.getElementById('main-grid');
+    const heroLayout=document.getElementById('hero-layout'), heroFrame=document.getElementById('hero-photo-frame');
+    const statsGrid=document.getElementById('stats-grid'), prodGrid=document.getElementById('prod-grid');
+    if(sidebar&&main){sidebar.style.display=w>=1024?'block':'none';main.style.gridTemplateColumns=w>=1024?'1fr 300px':'1fr';}
+    if(heroLayout)heroLayout.style.gridTemplateColumns=w>=1100?'1fr 1fr':'1fr';
+    if(heroFrame)heroFrame.style.display=w>=1100?'block':'none';
+    if(statsGrid)statsGrid.style.gridTemplateColumns=w>=640?'repeat(6,1fr)':'repeat(3,1fr)';
+    if(prodGrid)prodGrid.style.gridTemplateColumns=w>=640?'repeat(4,1fr)':'repeat(2,1fr)';
+  }
+  resize(); window.addEventListener('resize',resize);
+
+  // Image error handling for product images
+  document.querySelectorAll('img.breed-prod-img').forEach(img=>{
+    let attempts=0;
+    img.addEventListener('error',function(){
+      attempts++;
+      const asin=this.dataset.asin;
+      if(attempts===1){this.src=`https://images-na.ssl-images-amazon.com/images/P/${asin}.01.LZZZZZZZ.jpg`;}
+      else{this.parentElement.innerHTML='<span style="font-size:2rem;display:flex;align-items:center;justify-content:center;height:100%;background:#1a1a1a">🐾</span>';}
+    });
+  });
+
+  // Breed image error handling
+  document.querySelectorAll('img.hero-bg-img, img.hero-frame-img, img.sidebar-breed-img').forEach(img=>{
+    img.addEventListener('error',function(){this.style.display='none';});
+  });
+</script>
+</body>
+</html>

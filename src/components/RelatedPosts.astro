@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+export interface Props { currentTags?: string[]; currentSlug?: string; }
+const { currentTags = [], currentSlug = '' } = Astro.props;
+const all = await getCollection('blog');
+const related = all
+  .filter(p => `/blog/${p.slug}` !== currentSlug && (currentTags.some(t => (p.data.tags||[]).includes(t))))
+  .slice(0, 3);
+const posts = related.length >= 2 ? related : all.filter(p => `/blog/${p.slug}` !== currentSlug).slice(0, 3);
+---
+{posts.length > 0 && (
+  <div style="margin-top:3rem">
+    <h3 style="font-family:'Anton',sans-serif;font-size:1.75rem;text-transform:uppercase;color:var(--offwhite);margin:0 0 1.25rem;letter-spacing:-.02em">
+      MORE DROPS <span style="color:var(--lime)">YOU'LL WANT</span>
+    </h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem">
+      {posts.map(post => (
+        <a href={`/blog/${post.slug}`}
+           style="display:block;background:var(--concrete);border:2px solid rgba(255,255,255,0.1);text-decoration:none;overflow:hidden;transition:all .15s"
+           onmouseover="this.style.borderColor='var(--lime)';this.style.transform='translate(-2px,-2px)';this.style.boxShadow='4px 4px 0 var(--lime)'"
+           onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='';this.style.boxShadow=''">
+          <div style="background:var(--concrete-light);height:80px;display:flex;align-items:center;justify-content:center;font-size:2rem;border-bottom:1px solid rgba(255,255,255,.06)">🐾</div>
+          <div style="padding:.75rem">
+            <span style="font-family:'Space Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.08em;color:var(--lime)">{post.data.category}</span>
+            <h4 style="font-family:'Archivo Black',sans-serif;font-size:.75rem;text-transform:uppercase;color:var(--offwhite);margin:.2rem 0 0;line-height:1.2">{post.data.title}</h4>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+)}

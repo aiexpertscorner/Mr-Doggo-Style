@@ -1,0 +1,216 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import Newsletter from '../components/Newsletter.astro';
+import SidebarWidget from '../components/SidebarWidget.astro';
+
+export interface Props {
+  title: string; description?: string; pubDate?: Date; updatedDate?: Date;
+  image?: string; category?: string; tags?: string[]; author?: string;
+  featuredProduct?: { name:string; asin:string; price?:number; rating?:number; };
+  faqs?: Array<{question:string; answer:string}>;
+  readingTime?: number;
+}
+const {
+  title, description, pubDate, updatedDate,
+  image="/images/og-default.jpg", category="Reviews", tags=[], author="Mr. Doggo Style",
+  featuredProduct, faqs=[], readingTime=8,
+} = Astro.props;
+
+const SITE = "https://mrdoggostyle.com";
+const canon = new URL(Astro.url.pathname, SITE).href;
+const catSlug = category.toLowerCase().replace(/ /g,'-');
+const fmtDate = (d:Date|undefined) => d ? new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric'}).format(new Date(d)) : null;
+
+const jsonLd = JSON.stringify({ "@context":"https://schema.org","@graph":[
+  { "@type":"Article","headline":title,"description":description,"url":canon,"datePublished":pubDate?.toISOString(),"dateModified":(updatedDate||pubDate)?.toISOString(),"author":{"@type":"Person","name":author},"publisher":{"@type":"Organization","name":"Mr. Doggo Style","url":SITE} },
+  { "@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":SITE},{"@type":"ListItem","position":2,"name":"Blog","item":`${SITE}/blog`},{"@type":"ListItem","position":3,"name":category,"item":`${SITE}/categories/${catSlug}`}] },
+  ...(faqs.length>0?[{"@type":"FAQPage","mainEntity":faqs.map(f=>({ "@type":"Question","name":f.question,"acceptedAnswer":{"@type":"Answer","text":f.answer} }))}]:[]),
+]});
+---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>{title} | MR. DOGGO STYLE</title>
+  <meta name="description" content={description}/>
+  <link rel="canonical" href={canon}/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content={title}/>
+  <meta property="og:description" content={description}/>
+  <meta property="og:url" content={canon}/>
+  {pubDate && <meta property="article:published_time" content={pubDate.toISOString()}/>}
+  <meta name="twitter:card" content="summary_large_image"/>
+  <script type="application/ld+json" set:html={jsonLd}/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml"/>
+  <style>
+    :root{--midnight:#0A0A0A;--concrete:#222222;--concrete-light:#2E2E2E;--lime:#CCFF00;--ash:#888888;--smoke:#AAAAAA;--offwhite:#F0F0F0}
+    *{box-sizing:border-box} html{background:var(--midnight)}
+    body{font-family:'Barlow Condensed',sans-serif;background:var(--midnight);color:var(--offwhite);margin:0}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:998;opacity:.5}
+    .font-display{font-family:'Anton','Impact',sans-serif} .font-heading{font-family:'Archivo Black',sans-serif} .font-mono{font-family:'Space Mono',monospace}
+    .btn-lime{display:inline-block;background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;padding:.75rem 1.5rem;border:2px solid var(--midnight);box-shadow:4px 4px 0px var(--midnight);text-decoration:none;transition:all .1s;cursor:pointer}
+    .btn-lime:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0px var(--midnight)}
+    .btn-outline{display:inline-block;background:transparent;color:var(--offwhite);font-family:'Archivo Black',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;padding:.75rem 1.5rem;border:2px solid rgba(255,255,255,.2);box-shadow:4px 4px 0px rgba(255,255,255,.1);text-decoration:none;transition:all .1s}
+    .btn-outline:hover{background:var(--offwhite);color:var(--midnight)}
+    .btn-amazon-street{display:block;background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;padding:.8rem;border:2px solid var(--midnight);box-shadow:3px 3px 0 var(--midnight);text-decoration:none;text-align:center;transition:all .1s}
+    .btn-amazon-street:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--midnight)}
+    .sticker{display:inline-block;font-family:'Archivo Black',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;padding:.3rem .7rem;border:2px solid currentColor}
+    .sticker-lime{background:var(--lime);color:var(--midnight);border-color:var(--midnight);transform:rotate(-2deg)}
+    .sticker-white{background:var(--offwhite);color:var(--midnight);border-color:var(--midnight);transform:rotate(1.5deg)}
+    .card-dark{background:var(--concrete);border:2px solid rgba(255,255,255,.12)}
+    .disclosure-street{border:2px solid rgba(204,255,0,.3);background:rgba(204,255,0,.05);padding:.75rem 1rem;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--lime);text-transform:uppercase;letter-spacing:.04em}
+    ::selection{background:var(--lime);color:var(--midnight)}
+    ::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:var(--midnight)} ::-webkit-scrollbar-thumb{background:var(--concrete-light)} ::-webkit-scrollbar-thumb:hover{background:var(--lime)}
+    #rpb{position:fixed;top:0;left:0;height:3px;background:var(--lime);z-index:9999;box-shadow:0 0 8px var(--lime);transition:width .1s}
+    .prose-street{font-family:'Source Serif 4',Georgia,serif;color:var(--smoke);font-size:1.05rem;line-height:1.75}
+    .prose-street h1,.prose-street h2,.prose-street h3{font-family:'Archivo Black',sans-serif;text-transform:uppercase;color:var(--offwhite);letter-spacing:-.01em}
+    .prose-street h2{font-size:1.4rem;border-bottom:2px solid var(--concrete-light);padding-bottom:.5rem;margin-top:2.5rem}
+    .prose-street h3{font-size:1.1rem;color:var(--lime)}
+    .prose-street a{color:var(--lime);text-decoration-thickness:2px}
+    .prose-street a:hover{color:#fff}
+    .prose-street strong{color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700}
+    .prose-street ul li::marker{color:var(--lime)}
+    .prose-street blockquote{border-left:4px solid var(--lime);padding:.75rem 1rem;background:var(--concrete);color:var(--smoke);font-style:italic;margin:1.5rem 0}
+    .prose-street table{width:100%;border-collapse:collapse}
+    .prose-street th{background:var(--concrete-light);color:var(--lime);font-family:'Archivo Black',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;padding:.6rem .75rem;text-align:left;border:1px solid rgba(255,255,255,.1)}
+    .prose-street td{padding:.6rem .75rem;border:1px solid rgba(255,255,255,.08);font-family:'Barlow Condensed',sans-serif;font-size:.95rem}
+    .prose-street tr:nth-child(even) td{background:rgba(255,255,255,.03)}
+    @media(min-width:1024px){.sidebar-sticky{position:sticky;top:80px}}
+  </style>
+</head>
+<body>
+<div id="rpb" style="width:0%"></div>
+<Header/>
+
+<!-- Post hero -->
+<div style="background:var(--concrete);border-bottom:2px solid rgba(255,255,255,.08)">
+  <div style="max-width:1280px;margin:0 auto;padding:2.5rem 1.5rem">
+    <!-- Breadcrumbs -->
+    <nav style="font-family:'Space Mono',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ash);margin-bottom:1rem;display:flex;flex-wrap:wrap;gap:.3rem;align-items:center">
+      <a href="/" style="color:inherit;text-decoration:none">HOME</a><span>/</span>
+      <a href="/blog" style="color:inherit;text-decoration:none">REVIEWS</a><span>/</span>
+      <a href={`/categories/${catSlug}`} style="color:var(--lime);text-decoration:none">{category.toUpperCase()}</a>
+    </nav>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem">
+      {tags.slice(0,3).map(t => <span class="sticker sticker-lime" style="font-size:.55rem">{t}</span>)}
+      {updatedDate && <span class="sticker sticker-white" style="font-size:.55rem">UPDATED {fmtDate(updatedDate)?.toUpperCase()}</span>}
+    </div>
+    <h1 style="font-family:'Anton',sans-serif;font-size:clamp(2rem,5vw,3.5rem);text-transform:uppercase;color:var(--offwhite);margin:0 0 .75rem;letter-spacing:-.02em;line-height:.95">{title}</h1>
+    {description && <p style="font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;color:var(--smoke);max-width:680px;margin:0 0 1rem">{description}</p>}
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;font-family:'Space Mono',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ash);align-items:center">
+      {author && <span>BY <span style="color:var(--offwhite)">{author.toUpperCase()}</span></span>}
+      {pubDate && <span>PUBLISHED {fmtDate(pubDate)?.toUpperCase()}</span>}
+      <span>⏱ {readingTime} MIN READ</span>
+    </div>
+  </div>
+</div>
+
+<!-- Body: article + sidebar -->
+<div style="max-width:1280px;margin:0 auto;padding:2.5rem 1.5rem">
+  <div id="main-layout" style="display:grid;grid-template-columns:1fr;gap:2.5rem">
+
+    <!-- Article -->
+    <div style="min-width:0">
+      <AffiliateDisclosure/>
+      <article class="prose-street">
+        <slot/>
+      </article>
+      <div style="margin-top:3rem"><Newsletter/></div>
+      <RelatedPosts currentTags={tags} currentSlug={Astro.url.pathname}/>
+    </div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" style="display:none">
+      <div class="sidebar-sticky" style="display:flex;flex-direction:column;gap:1.25rem">
+        {featuredProduct && <SidebarWidget name={featuredProduct.name} asin={featuredProduct.asin} price={featuredProduct.price} rating={featuredProduct.rating}/>}
+        <!-- Top reviews widget -->
+        <div class="card-dark" style="padding:1.25rem">
+          <h4 style="font-family:'Archivo Black',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--lime);margin:0 0 .9rem">TOP REVIEWS</h4>
+          {[
+            ["Best Large Breed Food","best-dog-food-large-breeds"],
+            ["Indestructible Toys","best-indestructible-dog-toys"],
+            ["Orthopedic Beds","best-dog-beds-orthopedic"],
+            ["GPS Trackers","best-gps-dog-trackers"],
+            ["No-Pull Harnesses","best-no-pull-harnesses"],
+          ].map(([t,s]) => (
+            <a href={`/blog/${s}`} style="display:flex;align-items:start;gap:.4rem;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;text-transform:uppercase;color:var(--smoke);text-decoration:none;padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.05);letter-spacing:.03em;transition:color .15s"
+               onmouseover="this.style.color='var(--lime)'" onmouseout="this.style.color='var(--smoke)'">
+              <span style="color:var(--lime);flex-shrink:0;font-size:.7rem">▶</span>{t}
+            </a>
+          ))}
+        </div>
+        <!-- Newsletter mini -->
+        <div style="background:var(--lime);padding:1.25rem;border:2px solid var(--midnight);box-shadow:4px 4px 0 var(--midnight)">
+          <h4 style="font-family:'Anton',sans-serif;font-size:1.3rem;text-transform:uppercase;color:var(--midnight);margin:0 0 .4rem;line-height:1">GET THE FREE GUIDE</h4>
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;color:#333;margin:0 0 .9rem">Top 10 products every dog owner needs</p>
+          <a href="#newsletter" class="btn-amazon-street" style="background:var(--midnight);color:var(--lime);border-color:var(--midnight);box-shadow:2px 2px 0 rgba(0,0,0,.5)">JOIN FREE →</a>
+        </div>
+        <!-- All breeds -->
+        <a href="/breeds" style="display:block;background:var(--concrete);border:2px solid rgba(255,255,255,.12);padding:1rem;text-align:center;text-decoration:none;transition:all .15s"
+           onmouseover="this.style.borderColor='var(--lime)'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)'">
+          <span style="font-family:'Anton',sans-serif;font-size:1.5rem;color:var(--offwhite);text-transform:uppercase;display:block;line-height:1">277 BREED<br/><span style="color:var(--lime)">GUIDES</span></span>
+          <span style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--ash);text-transform:uppercase;margin-top:.4rem;display:block">FIND YOUR BREED →</span>
+        </a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- Exit popup -->
+<div id="exit-popup" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);align-items:center;justify-content:center">
+  <div style="background:#111;border:2px solid var(--lime);box-shadow:8px 8px 0 var(--lime);max-width:440px;width:calc(100% - 2rem);padding:2rem;position:relative">
+    <button id="close-popup" style="position:absolute;top:.75rem;right:1rem;background:none;border:none;color:var(--ash);font-size:1.5rem;cursor:pointer">✕</button>
+    <div style="font-family:'Anton',sans-serif;font-size:2rem;color:var(--lime);text-transform:uppercase;margin-bottom:.5rem">WAIT UP 🐾</div>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--smoke);margin:0 0 1.25rem">Free guide: the 10 products every dog owner actually needs.</p>
+    <form id="exit-form" style="display:flex;flex-direction:column;gap:.75rem">
+      <input type="email" placeholder="YOUR@EMAIL.COM" required style="background:var(--concrete);border:2px solid rgba(255,255,255,.2);color:#fff;padding:.75rem;font-family:'Barlow Condensed',sans-serif;font-size:1rem;text-transform:uppercase;outline:none;width:100%"/>
+      <button type="submit" class="btn-lime" style="width:100%;font-size:.75rem">SEND FREE GUIDE →</button>
+    </form>
+  </div>
+</div>
+
+<Footer/>
+
+<script>
+  // Progress bar
+  const bar = document.getElementById('rpb');
+  if (bar) window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    bar.style.width = Math.min(100, (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100) + '%';
+  }, { passive: true });
+
+  // Show sidebar on desktop
+  const sidebar = document.getElementById('sidebar');
+  const layout = document.getElementById('main-layout');
+  function checkWidth() {
+    if (!sidebar || !layout) return;
+    if (window.innerWidth >= 1024) { sidebar.style.display='block'; layout.style.gridTemplateColumns='1fr 300px'; }
+    else { sidebar.style.display='none'; layout.style.gridTemplateColumns='1fr'; }
+  }
+  checkWidth();
+  window.addEventListener('resize', checkWidth);
+
+  // Exit intent
+  if (!sessionStorage.getItem('exitShown')) {
+    document.addEventListener('mouseleave', function h(e) {
+      if (e.clientY < 5) {
+        document.getElementById('exit-popup')?.classList.add('show');
+        document.getElementById('exit-popup').style.display='flex';
+        sessionStorage.setItem('exitShown','1');
+        document.removeEventListener('mouseleave', h);
+      }
+    });
+  }
+  document.getElementById('close-popup')?.addEventListener('click', () => { document.getElementById('exit-popup').style.display='none'; });
+  document.getElementById('exit-popup')?.addEventListener('click', e => { if(e.target===e.currentTarget) e.currentTarget.style.display='none'; });
+  document.getElementById('exit-form')?.addEventListener('submit', e => { e.preventDefault(); document.getElementById('exit-popup').style.display='none'; });
+</script>
+</body>
+</html>

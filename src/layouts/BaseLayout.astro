@@ -1,0 +1,424 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: string;
+  publishDate?: string;
+  updatedDate?: string;
+  author?: string;
+  breadcrumbs?: Array<{ name: string; href: string }>;
+  faqs?: Array<{ question: string; answer: string }>;
+}
+
+const {
+  title,
+  description = "The most unfiltered dog gear reviews on the internet. Real talk, zero fluff.",
+  image = "/images/og-default.jpg",
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  type = "website",
+  publishDate,
+  updatedDate,
+  author = "Mr. Doggo Style",
+  breadcrumbs = [],
+  faqs = [],
+} = Astro.props;
+
+const SITE = "https://mrdoggostyle.com";
+const siteName = "MR. DOGGO STYLE";
+const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || '';
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "WebSite", "name": siteName, "url": SITE },
+    { "@type": "WebPage", "url": canonicalURL, "name": fullTitle, "description": description },
+    ...(breadcrumbs.length > 0 ? [{
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE },
+        ...breadcrumbs.map((b, i) => ({ "@type": "ListItem", "position": i + 2, "name": b.name, "item": new URL(b.href, SITE).href })),
+      ],
+    }] : []),
+    ...(faqs.length > 0 ? [{
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })),
+    }] : []),
+  ],
+});
+---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- OG -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, SITE).href} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content={siteName} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(image, SITE).href} />
+
+  <!-- Schema -->
+  <script type="application/ld+json" set:html={jsonLd} />
+
+  <!-- Fonts: Anton + Archivo Black + Barlow Condensed + Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet" />
+
+  <!-- GA4 -->
+  {GA_ID && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+      <script define:vars={{ GA_ID }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+        document.addEventListener('click', e => {
+          const a = e.target.closest('a[rel*="sponsored"]');
+          if (a) { const asin = a.href.split('/dp/')[1]?.split('/')[0]; gtag('event','affiliate_click',{asin}); }
+        });
+      </script>
+    </>
+  )}
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
+
+  <style is:global>
+    /* ── DESIGN TOKENS ─────────────────────────────────── */
+    :root {
+      --midnight: #0A0A0A;
+      --concrete: #222222;
+      --concrete-light: #2E2E2E;
+      --lime: #CCFF00;
+      --lime-dim: #AADD00;
+      --ash: #888888;
+      --smoke: #AAAAAA;
+      --offwhite: #F0F0F0;
+      --shadow-hard: 4px 4px 0px var(--lime);
+      --shadow-white: 4px 4px 0px #ffffff;
+      --shadow-lg: 6px 6px 0px var(--lime);
+    }
+
+    /* ── RESET / BASE ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { background: var(--midnight); }
+
+    body {
+      font-family: 'Barlow Condensed', 'Barlow', sans-serif;
+      background: var(--midnight);
+      color: var(--offwhite);
+      margin: 0;
+      min-height: 100vh;
+      /* Grain overlay */
+      position: relative;
+    }
+
+    /* Grain texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.6;
+    }
+
+    /* ── TYPOGRAPHY ────────────────────────────────────── */
+    .font-display { font-family: 'Anton', 'Impact', sans-serif; }
+    .font-heading  { font-family: 'Archivo Black', 'Arial Black', sans-serif; }
+    .font-body     { font-family: 'Barlow Condensed', sans-serif; }
+    .font-mono     { font-family: 'Space Mono', monospace; }
+    .font-serif    { font-family: 'Source Serif 4', Georgia, serif; }
+
+    /* Uppercase display text */
+    .display-text {
+      font-family: 'Anton', 'Impact', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.92;
+    }
+
+    /* ── BUTTONS ───────────────────────────────────────── */
+    .btn-lime {
+      display: inline-block;
+      background: var(--lime);
+      color: var(--midnight);
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid var(--midnight);
+      box-shadow: var(--shadow-hard);
+      text-decoration: none;
+      transition: transform 0.1s, box-shadow 0.1s;
+      cursor: pointer;
+    }
+    .btn-lime:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--midnight);
+    }
+    .btn-lime:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--midnight); }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--offwhite);
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid var(--offwhite);
+      box-shadow: 4px 4px 0px var(--ash);
+      text-decoration: none;
+      transition: all 0.1s;
+    }
+    .btn-outline:hover { background: var(--offwhite); color: var(--midnight); box-shadow: 4px 4px 0px var(--lime); }
+
+    .btn-amazon-street {
+      display: block;
+      background: var(--lime);
+      color: var(--midnight);
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.8rem 1rem;
+      border: 2px solid var(--midnight);
+      box-shadow: 3px 3px 0px var(--midnight);
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+    .btn-amazon-street:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px var(--midnight);
+    }
+
+    /* ── CARDS / BORDERS ───────────────────────────────── */
+    .card-dark {
+      background: var(--concrete);
+      border: 2px solid rgba(255,255,255,0.12);
+    }
+    .card-lime-border {
+      background: var(--concrete);
+      border: 2px solid var(--lime);
+      box-shadow: var(--shadow-hard);
+    }
+
+    /* ── STICKER BADGES ────────────────────────────────── */
+    .sticker {
+      display: inline-block;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.7rem;
+      border: 2px solid currentColor;
+    }
+    .sticker-lime  { background: var(--lime);    color: var(--midnight); border-color: var(--midnight); transform: rotate(-2deg); }
+    .sticker-white { background: var(--offwhite); color: var(--midnight); border-color: var(--midnight); transform: rotate(1.5deg); }
+    .sticker-red   { background: #FF3B3B;         color: #fff;            border-color: #fff;            transform: rotate(-1deg); }
+    .sticker-black { background: var(--midnight);  color: var(--lime);    border-color: var(--lime);     transform: rotate(2deg); }
+
+    /* ── MARQUEE ───────────────────────────────────────── */
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      will-change: transform;
+    }
+    .marquee-track.play    { animation: marquee 12s linear infinite; }
+    .marquee-track.slow    { animation: marquee 25s linear infinite; }
+    .marquee-track.fast    { animation: marquee 6s linear infinite; }
+    .marquee-track.reverse { animation: marquee-reverse 14s linear infinite; }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @keyframes marquee-reverse {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0); }
+    }
+
+    /* ── GLITCH HOVER ──────────────────────────────────── */
+    .glitch-wrap { position: relative; overflow: hidden; }
+    .glitch-wrap::after {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      color: var(--lime);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .glitch-wrap:hover::after {
+      animation: glitch-text 0.3s steps(2) forwards;
+    }
+    @keyframes glitch-text {
+      0%   { opacity: 1; transform: translate(-3px, 2px) skew(-2deg); }
+      25%  { opacity: 0; transform: translate(3px, -2px) skew(2deg); }
+      50%  { opacity: 1; transform: translate(-2px, -2px); clip-path: inset(30% 0 50% 0); }
+      75%  { opacity: 0; transform: translate(2px, 2px); }
+      100% { opacity: 0; transform: translate(0); }
+    }
+
+    /* Glitch effect on product image hover */
+    .glitch-img { position: relative; display: block; overflow: hidden; }
+    .glitch-img img { transition: filter 0.1s; }
+    .glitch-img:hover img { filter: hue-rotate(90deg) saturate(2) contrast(1.2); animation: glitch-img 0.3s steps(2) 1; }
+    @keyframes glitch-img {
+      0%   { transform: translate(0,0) scale(1.02); filter: hue-rotate(90deg); }
+      20%  { transform: translate(-4px,2px); clip-path: inset(10% 0 80% 0); }
+      40%  { transform: translate(4px,-2px); clip-path: inset(60% 0 20% 0); }
+      60%  { transform: translate(-2px,-4px); filter: hue-rotate(180deg) invert(0.1); }
+      80%  { transform: translate(2px,4px); clip-path: inset(40% 0 40% 0); }
+      100% { transform: translate(0,0); filter: none; clip-path: none; }
+    }
+
+    /* ── READING PROGRESS ──────────────────────────────── */
+    #read-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--lime); z-index: 9997;
+      transition: width 0.1s linear;
+      box-shadow: 0 0 10px var(--lime);
+    }
+
+    /* ── SCROLLBAR ─────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--midnight); }
+    ::-webkit-scrollbar-thumb { background: var(--concrete-light); border-radius: 0; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--lime); }
+
+    /* ── SELECTION ─────────────────────────────────────── */
+    ::selection { background: var(--lime); color: var(--midnight); }
+
+    /* ── PROSE OVERRIDE (blog posts) ───────────────────── */
+    .prose-street {
+      font-family: 'Source Serif 4', Georgia, serif;
+      color: var(--smoke);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+    .prose-street h1,.prose-street h2,.prose-street h3 {
+      font-family: 'Archivo Black', sans-serif;
+      text-transform: uppercase;
+      color: var(--offwhite);
+      letter-spacing: -0.01em;
+    }
+    .prose-street h2 { font-size: 1.5rem; border-bottom: 2px solid var(--concrete-light); padding-bottom: 0.5rem; margin-top: 2.5rem; }
+    .prose-street h3 { font-size: 1.15rem; color: var(--lime); }
+    .prose-street a { color: var(--lime); text-decoration-thickness: 2px; }
+    .prose-street a:hover { color: #fff; }
+    .prose-street strong { color: var(--offwhite); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; }
+    .prose-street ul li::marker { color: var(--lime); }
+    .prose-street blockquote { border-left: 4px solid var(--lime); padding-left: 1rem; color: var(--smoke); font-style: italic; background: var(--concrete); padding: .75rem 1rem; }
+    .prose-street table { width: 100%; border-collapse: collapse; }
+    .prose-street th { background: var(--concrete-light); color: var(--lime); font-family: 'Archivo Black', sans-serif; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; padding: .6rem .75rem; text-align: left; border: 1px solid rgba(255,255,255,.1); }
+    .prose-street td { padding: .6rem .75rem; border: 1px solid rgba(255,255,255,.08); font-family: 'Barlow Condensed', sans-serif; font-size: .95rem; }
+    .prose-street tr:nth-child(even) td { background: rgba(255,255,255,.03); }
+
+    /* ── BENTO GRID ────────────────────────────────────── */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+
+    /* ── DISCLOSURE ────────────────────────────────────── */
+    .disclosure-street {
+      border: 2px solid rgba(204,255,0,0.3);
+      background: rgba(204,255,0,0.05);
+      padding: 0.75rem 1rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--lime);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── EXIT POPUP ────────────────────────────────────── */
+    #exit-popup { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,.85); align-items: center; justify-content: center; }
+    #exit-popup.show { display: flex; }
+
+    /* ── UTILITY ───────────────────────────────────────── */
+    .noise-bg {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    }
+    .lime-glow { text-shadow: 0 0 20px rgba(204,255,0,0.5); }
+    .border-accent { border-color: rgba(255,255,255,0.12); }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <div id="read-progress" style="width:0%"></div>
+  <slot />
+
+  <!-- Exit Intent Popup -->
+  <div id="exit-popup" role="dialog" aria-modal="true">
+    <div style="background:#111;border:2px solid var(--lime);box-shadow:8px 8px 0 var(--lime);max-width:440px;width:calc(100% - 2rem);padding:2rem;position:relative">
+      <button id="close-popup" style="position:absolute;top:.75rem;right:1rem;background:none;border:none;color:var(--ash);font-size:1.5rem;cursor:pointer;font-family:'Space Mono',monospace">✕</button>
+      <div style="font-family:'Anton',sans-serif;font-size:2rem;color:var(--lime);text-transform:uppercase;line-height:1;margin-bottom:.5rem">WAIT UP. 🐾</div>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--smoke);margin:0 0 1.25rem">Get our <strong style="color:#fff">FREE gear guide</strong> — the 10 products every dog owner actually needs. No spam, ever.</p>
+      <form id="exit-form" style="display:flex;flex-direction:column;gap:.75rem">
+        <input type="email" placeholder="your@email.com" required
+          style="background:var(--concrete);border:2px solid rgba(255,255,255,.2);color:#fff;padding:.75rem 1rem;font-family:'Barlow Condensed',sans-serif;font-size:1rem;outline:none;width:100%"/>
+        <button type="submit" class="btn-lime" style="width:100%;text-align:center">SEND ME THE GUIDE →</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Reading progress
+    const bar = document.getElementById('read-progress');
+    if (bar) window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      bar.style.width = Math.min(100, (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100) + '%';
+    }, { passive: true });
+
+    // Exit intent
+    if (!sessionStorage.getItem('exitShown')) {
+      document.addEventListener('mouseleave', function handler(e) {
+        if (e.clientY < 5) {
+          document.getElementById('exit-popup')?.classList.add('show');
+          sessionStorage.setItem('exitShown', '1');
+          document.removeEventListener('mouseleave', handler);
+        }
+      });
+    }
+    document.getElementById('close-popup')?.addEventListener('click', () => document.getElementById('exit-popup')?.classList.remove('show'));
+    document.getElementById('exit-popup')?.addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.classList.remove('show'); });
+    document.getElementById('exit-form')?.addEventListener('submit', e => { e.preventDefault(); document.getElementById('exit-popup')?.classList.remove('show'); });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

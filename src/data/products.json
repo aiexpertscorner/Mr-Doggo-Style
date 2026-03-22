@@ -1,0 +1,1535 @@
+{
+  "dog-food": [
+    {
+      "id": "purina-pro-plan-large",
+      "name": "Purina Pro Plan Large Breed Adult",
+      "asin": "B0042EFNXW",
+      "price": 54.99,
+      "rating": 4.8,
+      "reviewCount": 25000,
+      "image": "https://m.media-amazon.com/images/I/81+Q02Rk6RL._AC_SL500_.jpg",
+      "features": [
+        "Real chicken as #1 ingredient",
+        "Glucosamine & EPA for joint health",
+        "Live probiotics for digestive support"
+      ],
+      "pros": [
+        "Excellent protein-to-fat ratio (26%/12%)",
+        "Contains glucosamine for joint health",
+        "Highly palatable \u2014 dogs consistently enjoy it",
+        "25,000+ verified 5-star reviews on Amazon"
+      ],
+      "cons": [
+        "Contains some chicken by-product meal",
+        "Not grain-free (not suitable for grain-sensitive dogs)"
+      ],
+      "category": "dog-food",
+      "tags": [
+        "large-breed",
+        "adult",
+        "high-protein",
+        "joint-health"
+      ]
+    },
+    {
+      "id": "blue-buffalo-life-protection",
+      "name": "Blue Buffalo Life Protection Large Breed",
+      "asin": "B001650OE0",
+      "price": 62.99,
+      "rating": 4.7,
+      "reviewCount": 18000,
+      "image": "https://m.media-amazon.com/images/I/81JwGAcpNpL._AC_SL500_.jpg",
+      "features": [
+        "Real chicken as first ingredient",
+        "No corn, wheat or soy",
+        "LifeSource Bits with antioxidants"
+      ],
+      "pros": [
+        "No artificial preservatives or flavors",
+        "LifeSource Bits provide targeted nutrition",
+        "Good ingredient transparency"
+      ],
+      "cons": [
+        "Pricier than Purina alternatives",
+        "Some reports of formula changes affecting palatability"
+      ],
+      "category": "dog-food",
+      "tags": [
+        "large-breed",
+        "adult",
+        "natural",
+        "no-corn-wheat-soy"
+      ]
+    },
+    {
+      "id": "hills-science-diet-adult",
+      "name": "Hill's Science Diet Adult Large Breed",
+      "asin": "B00135X34O",
+      "price": 59.99,
+      "rating": 4.7,
+      "reviewCount": 12000,
+      "image": "https://m.media-amazon.com/images/I/71r81vl0MRL._AC_SL500_.jpg",
+      "features": [
+        "Chicken meal as first ingredient",
+        "Precise nutrition for large breeds",
+        "Vet recommended brand"
+      ],
+      "pros": [
+        "Most recommended by veterinarians",
+        "Consistent formula \u2014 very few complaints about changes",
+        "Proven digestibility research"
+      ],
+      "cons": [
+        "Chicken meal (not fresh chicken) is #1 ingredient",
+        "Contains corn"
+      ],
+      "category": "dog-food",
+      "tags": [
+        "large-breed",
+        "adult",
+        "vet-recommended"
+      ]
+    },
+    {
+      "id": "royal-canin-large-breed",
+      "name": "Royal Canin Size Health Nutrition Large Breed",
+      "asin": "B001ELPTDS",
+      "price": 68.99,
+      "rating": 4.8,
+      "reviewCount": 9500,
+      "image": "https://m.media-amazon.com/images/I/71hkpZtGMuL._AC_SL500_.jpg",
+      "features": [
+        "Kibble size designed for large breed jaws",
+        "EPA & DHA for healthy skin and coat",
+        "Glucosamine & chondroitin for joints"
+      ],
+      "pros": [
+        "Precise breed-size nutrition science",
+        "Dogs tend to love the taste",
+        "Excellent for picky large-breed dogs"
+      ],
+      "cons": [
+        "Most expensive option in this category",
+        "Uses corn and wheat as fillers"
+      ],
+      "category": "dog-food",
+      "tags": [
+        "large-breed",
+        "adult",
+        "premium",
+        "joint-health"
+      ]
+    },
+    {
+      "id": "taste-of-the-wild",
+      "name": "Taste of the Wild High Prairie",
+      "asin": "B000QFHZ6E",
+      "price": 52.99,
+      "rating": 4.7,
+      "reviewCount": 22000,
+      "image": "https://m.media-amazon.com/images/I/81Kp5Bah-tL._AC_SL500_.jpg",
+      "features": [
+        "Real bison and roasted venison",
+        "Grain-free formula",
+        "Probiotics for digestive health"
+      ],
+      "pros": [
+        "Excellent grain-free option at mid-range price",
+        "Novel proteins good for allergy-prone dogs",
+        "Strong track record and loyal following"
+      ],
+      "cons": [
+        "Grain-free diets under FDA investigation for DCM link",
+        "Some batches have had palatability complaints"
+      ],
+      "category": "dog-food",
+      "tags": [
+        "grain-free",
+        "adult",
+        "buffalo",
+        "novel-protein"
+      ]
+    },
+    {
+      "id": "wellness-core-large-breed",
+      "name": "Wellness CORE Large Breed Adult",
+      "asin": "B003WJQZQ2",
+      "price": 71.99,
+      "rating": 4.6,
+      "reviewCount": 7500,
+      "image": "https://m.media-amazon.com/images/I/71YT1hBVLnL._AC_SL500_.jpg",
+      "features": [
+        "Deboned turkey & chicken as first ingredients",
+        "Grain-free, high-protein formula",
+        "Glucosamine and chondroitin included"
+      ],
+      "pros": [
+        "High protein content (34%)",
+        "No artificial preservatives, colors, or flavors",
+        "Excellent for active large breeds"
+      ],
+      "cons": [
+        "One of the priciest grain-free options",
+        "High protein not ideal for dogs with kidney issues"
+      ],
+      "category": "dog-food",
+      "tags": [
+        "large-breed",
+        "grain-free",
+        "high-protein"
+      ]
+    },
+    {
+      "id": "iams-proactive-large-breed",
+      "name": "Iams Proactive Health Large Breed Adult",
+      "asin": "B004QOKRH2",
+      "price": 35.99,
+      "rating": 4.6,
+      "reviewCount": 14000,
+      "image": "https://m.media-amazon.com/images/I/81pCr2NdAAL._AC_SL500_.jpg",
+      "features": [
+        "Real farm-raised chicken #1 ingredient",
+        "L-Carnitine for healthy metabolism",
+        "No artificial preservatives"
+      ],
+      "pros": [
+        "Budget-friendly without sacrificing quality",
+        "Good palatability",
+        "Widely available"
+      ],
+      "cons": [
+        "Contains beet pulp and brewers rice as fillers",
+        "Not grain-free"
+      ],
+      "category": "dog-food",
+      "tags": [
+        "large-breed",
+        "budget",
+        "adult"
+      ]
+    },
+    {
+      "id": "merrick-grain-free-senior",
+      "name": "Merrick Grain Free Senior Real Chicken",
+      "asin": "B00K1P9J2Q",
+      "price": 58.99,
+      "rating": 4.5,
+      "reviewCount": 4200,
+      "image": "https://m.media-amazon.com/images/I/71d3oEANLuL._AC_SL500_.jpg",
+      "features": [
+        "Deboned chicken as #1 ingredient",
+        "Glucosamine & chondroitin for aging joints",
+        "Omega fatty acids for coat health"
+      ],
+      "pros": [
+        "Excellent for senior dogs with joint issues",
+        "Lower phosphorus good for aging kidneys",
+        "Good digestibility for older digestive systems"
+      ],
+      "cons": [
+        "Grain-free with DCM considerations",
+        "Premium price point"
+      ],
+      "category": "dog-food",
+      "tags": [
+        "senior",
+        "grain-free",
+        "joint-health"
+      ]
+    },
+    {
+      "id": "blue-wilderness-large",
+      "name": "Blue Buffalo Wilderness Large Breed Chicken",
+      "asin": "B003LPJLFS",
+      "price": 69.99,
+      "rating": 4.6,
+      "reviewCount": 8200,
+      "image": "https://m.media-amazon.com/images/I/81M4cN11ExL._AC_SL500_.jpg",
+      "features": [
+        "High protein 34% - grain free",
+        "DHA for brain/eye support",
+        "No corn, wheat or soy"
+      ],
+      "pros": [
+        "High protein grain-free formula",
+        "DHA included",
+        "Popular with active large breeds"
+      ],
+      "cons": [
+        "Grain-free DCM consideration",
+        "Premium price"
+      ],
+      "category": "dog-food",
+      "tags": [
+        "large-breed",
+        "grain-free",
+        "high-protein"
+      ]
+    },
+    {
+      "id": "diamond-naturals-large",
+      "name": "Diamond Naturals Large Breed Adult",
+      "asin": "B001UVXN7I",
+      "price": 44.99,
+      "rating": 4.5,
+      "reviewCount": 11000,
+      "image": "https://m.media-amazon.com/images/I/71bBGFGWxWL._AC_SL500_.jpg",
+      "features": [
+        "Cage-free chicken #1 ingredient",
+        "Guaranteed live probiotics",
+        "No corn, wheat or filler grains"
+      ],
+      "pros": [
+        "Excellent value for quality",
+        "Probiotics included",
+        "Very consistent formula"
+      ],
+      "cons": [
+        "Less research-heavy than Hill's or Purina",
+        "Limited variety of protein sources"
+      ],
+      "category": "dog-food",
+      "tags": [
+        "large-breed",
+        "adult",
+        "budget-premium"
+      ]
+    },
+    {
+      "id": "canidae-pure-large",
+      "name": "CANIDAE PURE Large Breed Real Salmon",
+      "asin": "B01A3GZXIO",
+      "price": 67.99,
+      "rating": 4.5,
+      "reviewCount": 4100,
+      "image": "https://m.media-amazon.com/images/I/71TFKMdLVHL._AC_SL500_.jpg",
+      "features": [
+        "10 key ingredients or fewer",
+        "Salmon as #1 ingredient",
+        "Grain-free limited ingredient"
+      ],
+      "pros": [
+        "Truly limited ingredient for allergy dogs",
+        "Novel protein",
+        "Clean label"
+      ],
+      "cons": [
+        "Grain-free",
+        "Expensive per pound"
+      ],
+      "category": "dog-food",
+      "tags": [
+        "large-breed",
+        "limited-ingredient",
+        "salmon",
+        "allergy"
+      ]
+    }
+  ],
+  "toys": [
+    {
+      "id": "kong-extreme",
+      "name": "KONG Extreme Dog Toy",
+      "asin": "B0002AR0II",
+      "price": 17.99,
+      "rating": 4.7,
+      "reviewCount": 42000,
+      "image": "https://m.media-amazon.com/images/I/71oCHFwBPeL._AC_SL500_.jpg",
+      "features": [
+        "Ultra-durable natural black rubber",
+        "Stuffable for mental stimulation",
+        "Dishwasher safe"
+      ],
+      "pros": [
+        "Virtually indestructible for most dogs",
+        "Doubles as puzzle toy when stuffed",
+        "Available in multiple sizes",
+        "Vet recommended"
+      ],
+      "cons": [
+        "Truly determined power chewers can eventually destroy it",
+        "Not a fetch toy \u2014 limited for high-energy fetch dogs"
+      ],
+      "category": "toys",
+      "tags": [
+        "chew-toy",
+        "indestructible",
+        "puzzle",
+        "power-chewer"
+      ]
+    },
+    {
+      "id": "goughnuts-maxx-ring",
+      "name": "Goughnuts MAXX Ring Chew Toy",
+      "asin": "B004RWVB5K",
+      "price": 38.99,
+      "rating": 4.5,
+      "reviewCount": 3800,
+      "image": "https://m.media-amazon.com/images/I/61r0iGiuqtL._AC_SL500_.jpg",
+      "features": [
+        "Safety indicator system (red layer inside)",
+        "Natural rubber construction",
+        "Designed for extreme chewers"
+      ],
+      "pros": [
+        "Safety indicator tells you when to replace",
+        "Backed by a manufacturer guarantee",
+        "Excellent for dogs that destroy KONGs"
+      ],
+      "cons": [
+        "Pricier than KONG",
+        "Limited shape variety",
+        "Not stuffable"
+      ],
+      "category": "toys",
+      "tags": [
+        "chew-toy",
+        "indestructible",
+        "power-chewer",
+        "safety"
+      ]
+    },
+    {
+      "id": "west-paw-zogoflex-hurley",
+      "name": "West Paw Zogoflex Hurley Dog Bone",
+      "asin": "B001W0EIOU",
+      "price": 20.99,
+      "rating": 4.4,
+      "reviewCount": 8200,
+      "image": "https://m.media-amazon.com/images/I/71mvqvdDiAL._AC_SL500_.jpg",
+      "features": [
+        "Made in USA from non-toxic Zogoflex material",
+        "Floats in water",
+        "Dishwasher safe"
+      ],
+      "pros": [
+        "Eco-friendly US-made material",
+        "Floats \u2014 great for water-loving dogs",
+        "Guaranteed tough (replacement policy)"
+      ],
+      "cons": [
+        "Not quite as tough as KONG Extreme for extreme chewers",
+        "Some dogs show little interest in it"
+      ],
+      "category": "toys",
+      "tags": [
+        "chew-toy",
+        "fetch",
+        "water",
+        "usa-made"
+      ]
+    },
+    {
+      "id": "chuckit-ultra-ball",
+      "name": "Chuckit! Ultra Ball",
+      "asin": "B000F4AVPA",
+      "price": 12.99,
+      "rating": 4.7,
+      "reviewCount": 31000,
+      "image": "https://m.media-amazon.com/images/I/71w0CZOaG6L._AC_SL500_.jpg",
+      "features": [
+        "High-bounce natural rubber",
+        "Works with Chuckit! launchers",
+        "Highly visible colors"
+      ],
+      "pros": [
+        "Extremely popular and proven",
+        "High bounce makes fetch more exciting",
+        "Compatible with ball launchers for hands-free throwing"
+      ],
+      "cons": [
+        "Not suitable for power chewers",
+        "Smaller dogs may struggle with large size"
+      ],
+      "category": "toys",
+      "tags": [
+        "fetch",
+        "ball",
+        "active",
+        "outdoor"
+      ]
+    },
+    {
+      "id": "benebone-wishbone",
+      "name": "Benebone Real Flavor Wishbone",
+      "asin": "B00S86XKL2",
+      "price": 15.99,
+      "rating": 4.5,
+      "reviewCount": 19000,
+      "image": "https://m.media-amazon.com/images/I/51RFBXRoUmL._AC_SL500_.jpg",
+      "features": [
+        "Real food ingredients (bacon, chicken, etc.)",
+        "Ergonomic design dogs can hold",
+        "Durable nylon construction"
+      ],
+      "pros": [
+        "Real flavoring drives serious chew engagement",
+        "Ergonomic shape is easy for dogs to grip",
+        "Long-lasting for moderate chewers"
+      ],
+      "cons": [
+        "Not for extreme power chewers \u2014 can splinter",
+        "Not meant to be consumed, requires supervision"
+      ],
+      "category": "toys",
+      "tags": [
+        "chew-toy",
+        "flavored",
+        "nylon"
+      ]
+    },
+    {
+      "id": "outward-hound-hide-a-squirrel",
+      "name": "Outward Hound Hide-A-Squirrel Puzzle",
+      "asin": "B0006NJF02",
+      "price": 14.99,
+      "rating": 4.5,
+      "reviewCount": 28000,
+      "image": "https://m.media-amazon.com/images/I/81XSWbRg5gL._AC_SL500_.jpg",
+      "features": [
+        "Squeaky squirrels hide in tree trunk",
+        "Great for mental stimulation",
+        "Multiple difficulty levels available"
+      ],
+      "pros": [
+        "Fantastic for mental engagement and boredom",
+        "Dogs love the squeaking squirrels",
+        "Replaceable squirrel plush toys available"
+      ],
+      "cons": [
+        "Not for dogs who destroy soft toys",
+        "Squeakers may be chewed out quickly"
+      ],
+      "category": "toys",
+      "tags": [
+        "puzzle",
+        "mental-stimulation",
+        "plush",
+        "interactive"
+      ]
+    },
+    {
+      "id": "tether-tug-interactive",
+      "name": "Tether Tug Interactive Tug Toy",
+      "asin": "B00BQVJRNE",
+      "price": 54.99,
+      "rating": 4.4,
+      "reviewCount": 5600,
+      "image": "https://m.media-amazon.com/images/I/71jx8q6TBQL._AC_SL500_.jpg",
+      "features": [
+        "Stakes into ground for solo play",
+        "Spring mechanism for realistic resistance",
+        "Multiple toy attachment options"
+      ],
+      "pros": [
+        "Dog can play tug independently",
+        "Great for high-energy dogs",
+        "Burns energy without human participation"
+      ],
+      "cons": [
+        "Requires yard or large space",
+        "Stakes may pull out in soft soil"
+      ],
+      "category": "toys",
+      "tags": [
+        "interactive",
+        "tug",
+        "outdoor",
+        "high-energy"
+      ]
+    },
+    {
+      "id": "kong-wobbler",
+      "name": "KONG Wobbler Treat Dispensing Toy",
+      "asin": "B000NLKGQ4",
+      "price": 14.99,
+      "rating": 4.5,
+      "reviewCount": 22000,
+      "image": "https://m.media-amazon.com/images/I/71qiECTZvKL._AC_SL500_.jpg",
+      "features": [
+        "Weighted base wobbles unpredictably",
+        "Adjustable opening for difficulty",
+        "Dishwasher safe top"
+      ],
+      "pros": [
+        "Great mental stimulation at mealtime",
+        "Adjustable difficulty",
+        "Very durable ABS plastic"
+      ],
+      "cons": [
+        "Can be loud on hard floors",
+        "Some dogs figure it out quickly"
+      ],
+      "category": "toys",
+      "tags": [
+        "puzzle",
+        "treat-dispenser",
+        "mental-stimulation"
+      ]
+    },
+    {
+      "id": "chuck-it-flying-squirrel",
+      "name": "Chuckit! Flying Squirrel Fetch Toy",
+      "asin": "B000PJQWJI",
+      "price": 13.99,
+      "rating": 4.4,
+      "reviewCount": 7800,
+      "image": "https://m.media-amazon.com/images/I/71LZl8NxIkL._AC_SL500_.jpg",
+      "features": [
+        "Unique shape for unpredictable flight",
+        "Works with Chuckit! launchers",
+        "Highly visible neon colors"
+      ],
+      "pros": [
+        "Unpredictable flight keeps dogs engaged",
+        "Soft material safe for catching",
+        "High visibility"
+      ],
+      "cons": [
+        "Less durable than rubber toys for chewers",
+        "Not ideal for heavy chewers"
+      ],
+      "category": "toys",
+      "tags": [
+        "fetch",
+        "outdoor",
+        "flying"
+      ]
+    },
+    {
+      "id": "starmark-everlasting-treat-ball",
+      "name": "Starmark Everlasting Treat Ball",
+      "asin": "B000FGZQIO",
+      "price": 12.99,
+      "rating": 4.3,
+      "reviewCount": 6400,
+      "image": "https://m.media-amazon.com/images/I/71sScPRb1WL._AC_SL500_.jpg",
+      "features": [
+        "Refillable treat wheels last hours",
+        "Durable TPR material",
+        "Works as fetch and puzzle toy"
+      ],
+      "pros": [
+        "Treat wheels extend engagement dramatically",
+        "More durable than standard rubber",
+        "Dual purpose: fetch + puzzle"
+      ],
+      "cons": [
+        "Treat refills are additional cost",
+        "Some dogs lose interest once treats run out"
+      ],
+      "category": "toys",
+      "tags": [
+        "treat-dispenser",
+        "fetch",
+        "durable"
+      ]
+    },
+    {
+      "id": "nylabone-dura-chew",
+      "name": "Nylabone DuraChew Textured Dog Chew",
+      "asin": "B000KV0AHY",
+      "price": 9.99,
+      "rating": 4.4,
+      "reviewCount": 16000,
+      "image": "https://m.media-amazon.com/images/I/71SKHQbdFEL._AC_SL500_.jpg",
+      "features": [
+        "Nylon flavored chew",
+        "Bristles clean teeth while chewing",
+        "Long-lasting for moderate chewers"
+      ],
+      "pros": [
+        "Very affordable",
+        "Cleans teeth while chewing",
+        "Multiple flavor options"
+      ],
+      "cons": [
+        "Not for power chewers \u2014 chunk risk",
+        "Must supervise and discard when small"
+      ],
+      "category": "toys",
+      "tags": [
+        "chew-toy",
+        "nylon",
+        "dental",
+        "flavored"
+      ]
+    },
+    {
+      "id": "mammoth-flossy-rope",
+      "name": "Mammoth Flossy Chews Cottonblend Rope",
+      "asin": "B00164KFCI",
+      "price": 18.99,
+      "rating": 4.5,
+      "reviewCount": 12000,
+      "image": "https://m.media-amazon.com/images/I/81AZNkrLnLL._AC_SL500_.jpg",
+      "features": [
+        "100% cotton rope fibers",
+        "Flosses teeth while playing tug",
+        "Multiple knot and loop options"
+      ],
+      "pros": [
+        "Great for interactive tug play",
+        "Cotton fibers are digestible if ingested in small amounts",
+        "Good for teeth"
+      ],
+      "cons": [
+        "Not for solo chewing \u2014 comes apart fast",
+        "Not for power chewers"
+      ],
+      "category": "toys",
+      "tags": [
+        "rope",
+        "tug",
+        "interactive",
+        "dental"
+      ]
+    }
+  ],
+  "beds": [
+    {
+      "id": "big-barker-orthopedic",
+      "name": "Big Barker 7\" Orthopedic Dog Bed",
+      "asin": "B00LPPNXE0",
+      "price": 239.95,
+      "rating": 4.7,
+      "reviewCount": 6800,
+      "image": "https://m.media-amazon.com/images/I/61zv9JhbbpL._AC_SL500_.jpg",
+      "features": [
+        "7-inch American-made therapeutic foam",
+        "Clinically proven to reduce joint pain",
+        "10-year guarantee against flattening"
+      ],
+      "pros": [
+        "Clinically tested in a university study \u2014 actually works",
+        "10-year guarantee is unmatched in the industry",
+        "Made in the USA from quality foam"
+      ],
+      "cons": [
+        "Very expensive compared to competitors",
+        "Heavy and not easy to move",
+        "Cover is removable but replacement covers cost extra"
+      ],
+      "category": "beds",
+      "tags": [
+        "orthopedic",
+        "large-breed",
+        "joint-pain",
+        "premium"
+      ]
+    },
+    {
+      "id": "friends-forever-orthopedic",
+      "name": "Friends Forever Orthopedic Dog Bed Lounge",
+      "asin": "B07PYFZP5G",
+      "price": 79.99,
+      "rating": 4.5,
+      "reviewCount": 9200,
+      "image": "https://m.media-amazon.com/images/I/71Kpf1pkBtL._AC_SL500_.jpg",
+      "features": [
+        "Memory foam with bolster surround",
+        "Waterproof liner inside cover",
+        "Removable, machine-washable cover"
+      ],
+      "pros": [
+        "Excellent value for memory foam quality",
+        "Bolster sides support dogs who like to lean",
+        "Machine-washable cover"
+      ],
+      "cons": [
+        "Memory foam may flatten after 6-12 months with heavy dogs",
+        "Not as durable as Big Barker long-term"
+      ],
+      "category": "beds",
+      "tags": [
+        "orthopedic",
+        "memory-foam",
+        "bolster",
+        "washable"
+      ]
+    },
+    {
+      "id": "kh-elevated-cooling",
+      "name": "K&H Pet Products Elevated Dog Bed",
+      "asin": "B001AZBRB2",
+      "price": 49.99,
+      "rating": 4.5,
+      "reviewCount": 7100,
+      "image": "https://m.media-amazon.com/images/I/71dLcA-CXBL._AC_SL500_.jpg",
+      "features": [
+        "Elevated mesh allows airflow underneath",
+        "Aluminum frame \u2014 rust resistant",
+        "Indoor/outdoor use"
+      ],
+      "pros": [
+        "Excellent for hot climates \u2014 keeps dogs cool",
+        "Very easy to clean",
+        "Durable frame lasts years"
+      ],
+      "cons": [
+        "No padding \u2014 not ideal for dogs with joint pain",
+        "Some dogs dislike the mesh texture initially"
+      ],
+      "category": "beds",
+      "tags": [
+        "elevated",
+        "cooling",
+        "outdoor",
+        "summer"
+      ]
+    },
+    {
+      "id": "furhaven-ultra-plush",
+      "name": "FurHaven Ultra Plush Luxe Lounger",
+      "asin": "B07BLDP2TT",
+      "price": 44.99,
+      "rating": 4.4,
+      "reviewCount": 11000,
+      "image": "https://m.media-amazon.com/images/I/81mTKkm4e1L._AC_SL500_.jpg",
+      "features": [
+        "Egg-crate orthopedic foam base",
+        "Ultra-soft plush top surface",
+        "Machine-washable cover"
+      ],
+      "pros": [
+        "Excellent value for a plush orthopedic bed",
+        "Most dogs love the soft surface immediately",
+        "Good size options for all breeds"
+      ],
+      "cons": [
+        "Cover pills over time with machine washing",
+        "Egg-crate foam less supportive than solid memory foam"
+      ],
+      "category": "beds",
+      "tags": [
+        "orthopedic",
+        "plush",
+        "budget",
+        "washable"
+      ]
+    },
+    {
+      "id": "coolaroo-elevated-outdoor",
+      "name": "Coolaroo Elevated Pet Bed",
+      "asin": "B001KFZH12",
+      "price": 42.99,
+      "rating": 4.4,
+      "reviewCount": 14500,
+      "image": "https://m.media-amazon.com/images/I/71AQJL6bJcL._AC_SL500_.jpg",
+      "features": [
+        "HDPE knitted fabric resists mold & mildew",
+        "Steel frame for durability",
+        "360-degree airflow"
+      ],
+      "pros": [
+        "Extremely durable for outdoor use",
+        "360 airflow keeps dogs remarkably cool",
+        "Easy to clean with a hose"
+      ],
+      "cons": [
+        "No cushioning \u2014 not for dogs with joint pain",
+        "Replacement covers can be hard to source"
+      ],
+      "category": "beds",
+      "tags": [
+        "elevated",
+        "outdoor",
+        "cooling",
+        "durable"
+      ]
+    },
+    {
+      "id": "midwest-bolster-bed",
+      "name": "MidWest Homes Deluxe Bolster Pet Bed",
+      "asin": "B0743G98GH",
+      "price": 32.99,
+      "rating": 4.3,
+      "reviewCount": 8900,
+      "image": "https://m.media-amazon.com/images/I/81tJ3JeBt9L._AC_SL500_.jpg",
+      "features": [
+        "Soft plush bolster sides",
+        "Machine washable cover",
+        "Non-skid bottom"
+      ],
+      "pros": [
+        "Most affordable bolster bed option",
+        "Machine washable",
+        "Non-slip bottom stays in place"
+      ],
+      "cons": [
+        "Foam is basic \u2014 not orthopedic grade",
+        "Smaller dogs may sink through the plush"
+      ],
+      "category": "beds",
+      "tags": [
+        "bolster",
+        "budget",
+        "washable"
+      ]
+    }
+  ],
+  "training": [
+    {
+      "id": "fi-smart-collar",
+      "name": "Fi Series 3 Smart Dog Collar",
+      "asin": "B087QMRR76",
+      "price": 149.0,
+      "rating": 4.4,
+      "reviewCount": 4200,
+      "image": "https://m.media-amazon.com/images/I/61DkAAK2qcL._AC_SL500_.jpg",
+      "features": [
+        "GPS + LTE + WiFi tracking",
+        "Step counter and sleep monitoring",
+        "Requires $99/year subscription"
+      ],
+      "pros": [
+        "Best GPS accuracy in our testing",
+        "Activity tracking is genuinely useful",
+        "3-month battery life is exceptional"
+      ],
+      "cons": [
+        "Subscription required for GPS ($99/year)",
+        "Bulkier than standard collars",
+        "Subscription adds real long-term cost"
+      ],
+      "category": "training",
+      "tags": [
+        "gps",
+        "tracker",
+        "smart-collar",
+        "safety"
+      ]
+    },
+    {
+      "id": "whistle-go-explore",
+      "name": "Whistle Go Explore GPS Tracker",
+      "asin": "B07RMQCX9S",
+      "price": 79.95,
+      "rating": 4.2,
+      "reviewCount": 6100,
+      "image": "https://m.media-amazon.com/images/I/61JVzA5LsBL._AC_SL500_.jpg",
+      "features": [
+        "AT&T LTE network GPS",
+        "Health and fitness monitoring",
+        "Attaches to existing collar"
+      ],
+      "pros": [
+        "Lower upfront cost than Fi",
+        "Attaches to any collar \u2014 no full collar replacement",
+        "Good health monitoring features"
+      ],
+      "cons": [
+        "Subscription required ($9.95/month)",
+        "Less accurate GPS than Fi Series 3",
+        "Battery life 7-10 days only"
+      ],
+      "category": "training",
+      "tags": [
+        "gps",
+        "tracker",
+        "health-monitor"
+      ]
+    },
+    {
+      "id": "petsafe-gentle-leader",
+      "name": "PetSafe Gentle Leader Headcollar",
+      "asin": "B00074L4W2",
+      "price": 22.95,
+      "rating": 4.3,
+      "reviewCount": 16000,
+      "image": "https://m.media-amazon.com/images/I/61bpz7Gt-OL._AC_SL500_.jpg",
+      "features": [
+        "Nose loop redirects pulling behavior",
+        "Padded nose band for comfort",
+        "Recommended by trainers and vets"
+      ],
+      "pros": [
+        "Immediately effective for strong pullers",
+        "Much less strain on your shoulder than a flat collar",
+        "Vet and trainer endorsed"
+      ],
+      "cons": [
+        "Dogs need an adjustment period",
+        "Some dogs resist the nose loop initially",
+        "Not suitable for very flat-faced (brachycephalic) breeds"
+      ],
+      "category": "training",
+      "tags": [
+        "head-collar",
+        "no-pull",
+        "leash-training"
+      ]
+    },
+    {
+      "id": "rabbitgoo-no-pull-harness",
+      "name": "Rabbitgoo No-Pull Dog Harness",
+      "asin": "B01N6LAQUS",
+      "price": 25.99,
+      "rating": 4.5,
+      "reviewCount": 38000,
+      "image": "https://m.media-amazon.com/images/I/71J1eTJBRPL._AC_SL500_.jpg",
+      "features": [
+        "Front & back D-ring attachment points",
+        "Reflective strips for nighttime safety",
+        "4 adjustment points for custom fit"
+      ],
+      "pros": [
+        "Excellent value \u2014 one of the best budget harnesses",
+        "Front clip significantly reduces pulling",
+        "Reflective stitching for safety"
+      ],
+      "cons": [
+        "Velcro chest strap can catch fur",
+        "Some sizing inconsistency \u2014 measure your dog carefully"
+      ],
+      "category": "training",
+      "tags": [
+        "harness",
+        "no-pull",
+        "reflective",
+        "budget"
+      ]
+    },
+    {
+      "id": "ruffwear-front-range-harness",
+      "name": "Ruffwear Front Range Harness",
+      "asin": "B00N6OHGGA",
+      "price": 49.95,
+      "rating": 4.6,
+      "reviewCount": 12000,
+      "image": "https://m.media-amazon.com/images/I/71+VR5E7kXL._AC_SL500_.jpg",
+      "features": [
+        "Dual leash attachment points",
+        "Four-point adjustment for perfect fit",
+        "Foam-padded chest and belly panels"
+      ],
+      "pros": [
+        "Premium quality materials that last years",
+        "Extremely comfortable for all-day wear",
+        "ID pocket and reflective trim included"
+      ],
+      "cons": [
+        "Pricier than most harnesses",
+        "Not specifically designed as a no-pull tool"
+      ],
+      "category": "training",
+      "tags": [
+        "harness",
+        "premium",
+        "outdoor",
+        "adventure"
+      ]
+    },
+    {
+      "id": "flexi-new-classic-leash",
+      "name": "Flexi New Classic Retractable Leash",
+      "asin": "B07M8BKDPK",
+      "price": 26.99,
+      "rating": 4.4,
+      "reviewCount": 22000,
+      "image": "https://m.media-amazon.com/images/I/71vQN0PxKGL._AC_SL500_.jpg",
+      "features": [
+        "Up to 26 ft extension",
+        "One-button brake and lock",
+        "Ergonomic grip handle"
+      ],
+      "pros": [
+        "Gives dogs freedom in open areas",
+        "Durable brake mechanism",
+        "Good for dogs who are already leash-trained"
+      ],
+      "cons": [
+        "NOT recommended for training pullers",
+        "Cord can cause rope burn if grabbed",
+        "Can tangle around legs"
+      ],
+      "category": "training",
+      "tags": [
+        "leash",
+        "retractable",
+        "walking"
+      ]
+    },
+    {
+      "id": "mighty-paw-bungee-leash",
+      "name": "Mighty Paw Bungee Dog Leash",
+      "asin": "B07D3Y8GBH",
+      "price": 22.99,
+      "rating": 4.5,
+      "reviewCount": 9100,
+      "image": "https://m.media-amazon.com/images/I/81ZRkR+MIAL._AC_SL500_.jpg",
+      "features": [
+        "Dual-handle bungee leash",
+        "Shock-absorbing for joint protection",
+        "Reflective stitching"
+      ],
+      "pros": [
+        "Budget-friendly shock-absorbing leash",
+        "Two handles for close control",
+        "Good for runners"
+      ],
+      "cons": [
+        "Bungee may encourage pulling in some dogs",
+        "Less premium feel than EzyDog"
+      ],
+      "category": "training",
+      "tags": [
+        "leash",
+        "bungee",
+        "reflective",
+        "running"
+      ]
+    },
+    {
+      "id": "lupine-pet-martingale",
+      "name": "Lupine Pet Martingale Collar",
+      "asin": "B00A4QUYP4",
+      "price": 18.99,
+      "rating": 4.7,
+      "reviewCount": 12000,
+      "image": "https://m.media-amazon.com/images/I/71l6Rf5KZKL._AC_SL500_.jpg",
+      "features": [
+        "Limited-slip safety collar",
+        "Made in USA",
+        "Even if chewed guarantee"
+      ],
+      "pros": [
+        "Best martingale quality for price",
+        "Made in USA",
+        "Lifetime guarantee even if chewed"
+      ],
+      "cons": [
+        "Metal loop clicks \u2014 some dogs react to sound",
+        "Limited color selection in larger sizes"
+      ],
+      "category": "training",
+      "tags": [
+        "collar",
+        "martingale",
+        "safety",
+        "usa-made"
+      ]
+    },
+    {
+      "id": "halti-headcollar",
+      "name": "The Company of Animals HALTI Headcollar",
+      "asin": "B0002DH2FC",
+      "price": 19.99,
+      "rating": 4.3,
+      "reviewCount": 7200,
+      "image": "https://m.media-amazon.com/images/I/71A1nC8h3yL._AC_SL500_.jpg",
+      "features": [
+        "Padded noseband for comfort",
+        "Safety strap attaches to collar",
+        "Reflective strip"
+      ],
+      "pros": [
+        "Padded nose piece more comfortable than Gentle Leader for some dogs",
+        "Safety strap is a nice addition",
+        "Good for transitioning to harness"
+      ],
+      "cons": [
+        "Some dogs resist nose loops generally",
+        "Adjustment takes more practice than Gentle Leader"
+      ],
+      "category": "training",
+      "tags": [
+        "head-collar",
+        "no-pull",
+        "padded"
+      ]
+    }
+  ],
+  "grooming": [
+    {
+      "id": "furminator-deshedding",
+      "name": "FURminator deShedding Tool for Large Dogs",
+      "asin": "B0040QQ07C",
+      "price": 29.99,
+      "rating": 4.6,
+      "reviewCount": 18000,
+      "image": "https://m.media-amazon.com/images/I/71h2BCLYENL._AC_SL500_.jpg",
+      "features": [
+        "Stainless steel deShedding edge",
+        "FURejector button for easy cleaning",
+        "Reduces shedding up to 90%"
+      ],
+      "pros": [
+        "Genuinely reduces shedding dramatically",
+        "Works on both short and long coats",
+        "Built-in ejector button is very convenient"
+      ],
+      "cons": [
+        "Can irritate skin if used too aggressively",
+        "Not for double-coated breeds in blow-coat season (use with care)",
+        "Handle can feel cheap at this price point"
+      ],
+      "category": "grooming",
+      "tags": [
+        "deshedding",
+        "brush",
+        "coat-care"
+      ]
+    },
+    {
+      "id": "safari-nail-trimmer",
+      "name": "Safari Professional Nail Trimmer for Dogs",
+      "asin": "B0002RJM8C",
+      "price": 16.99,
+      "rating": 4.4,
+      "reviewCount": 9800,
+      "image": "https://m.media-amazon.com/images/I/71fQe0vD3FL._AC_SL500_.jpg",
+      "features": [
+        "Sharp stainless steel blades",
+        "Safety stop to prevent overcutting",
+        "Comfortable non-slip handles"
+      ],
+      "pros": [
+        "Professional-grade sharpness",
+        "Safety stop reduces risk of quicking",
+        "Veterinary professional recommended"
+      ],
+      "cons": [
+        "Some users find handles less comfortable for arthritic hands",
+        "Not cordless (manual only)"
+      ],
+      "category": "grooming",
+      "tags": [
+        "nail-trimmer",
+        "grooming-tool"
+      ]
+    },
+    {
+      "id": "burt-bees-shampoo",
+      "name": "Burt's Bees Hypoallergenic Shampoo",
+      "asin": "B00EFFLKB0",
+      "price": 8.99,
+      "rating": 4.5,
+      "reviewCount": 14000,
+      "image": "https://m.media-amazon.com/images/I/61JkHYD3wdL._AC_SL500_.jpg",
+      "features": [
+        "pH balanced for dogs",
+        "No sulfates, colorants, or harsh chemicals",
+        "Contains shea butter & honey"
+      ],
+      "pros": [
+        "Excellent for sensitive skin",
+        "Natural ingredients dog owners trust",
+        "Very affordable"
+      ],
+      "cons": [
+        "Less lather than synthetic shampoos (some people dislike this)",
+        "Scent is mild \u2014 won't fully mask doggy odor"
+      ],
+      "category": "grooming",
+      "tags": [
+        "shampoo",
+        "sensitive-skin",
+        "natural",
+        "hypoallergenic"
+      ]
+    },
+    {
+      "id": "wahl-clean-quiet-shampoo",
+      "name": "Wahl 4-in-1 Calming Pet Shampoo",
+      "asin": "B003ENJX7G",
+      "price": 9.99,
+      "rating": 4.5,
+      "reviewCount": 8400,
+      "image": "https://m.media-amazon.com/images/I/71t5J3Xk5iL._AC_SL500_.jpg",
+      "features": [
+        "Lavender chamomile formula",
+        "Conditions, detangles, and moisturizes",
+        "Plant-derived ingredients"
+      ],
+      "pros": [
+        "Lavender scent genuinely calms anxious dogs",
+        "4-in-1 formula saves time and money",
+        "Good lather for easy application"
+      ],
+      "cons": [
+        "Lavender scent not for everyone",
+        "Some dogs may be sensitive to botanical extracts"
+      ],
+      "category": "grooming",
+      "tags": [
+        "shampoo",
+        "calming",
+        "conditioner",
+        "natural"
+      ]
+    },
+    {
+      "id": "andis-deshedding-blade",
+      "name": "Andis Premium Dematting Comb",
+      "asin": "B07DRPG59H",
+      "price": 16.99,
+      "rating": 4.5,
+      "reviewCount": 5600,
+      "image": "https://m.media-amazon.com/images/I/71A8HMFQvXL._AC_SL500_.jpg",
+      "features": [
+        "17 stainless steel teeth",
+        "Removes mats without cutting skin",
+        "Ergonomic handle"
+      ],
+      "pros": [
+        "Removes severe mats effectively",
+        "Stainless steel teeth stay sharp",
+        "Safer than scissors for mat removal"
+      ],
+      "cons": [
+        "Only for mat removal \u2014 not a regular brush",
+        "Requires technique to avoid discomfort"
+      ],
+      "category": "grooming",
+      "tags": [
+        "dematting",
+        "mat-removal",
+        "long-coat"
+      ]
+    },
+    {
+      "id": "chris-christensen-slicker",
+      "name": "Chris Christensen Big G Slicker Brush",
+      "asin": "B07X9GLMC8",
+      "price": 31.99,
+      "rating": 4.7,
+      "reviewCount": 3200,
+      "image": "https://m.media-amazon.com/images/I/71Sp7BsDhQL._AC_SL500_.jpg",
+      "features": [
+        "Extra-long 1.5in pins",
+        "Professional grade for long/double coats",
+        "Swedish steel pins"
+      ],
+      "pros": [
+        "Professional quality that lasts years",
+        "Best-in-class for Golden Retrievers and similar coats",
+        "Swedish steel pins stay sharp"
+      ],
+      "cons": [
+        "Expensive for a brush",
+        "Overkill for short-coated breeds"
+      ],
+      "category": "grooming",
+      "tags": [
+        "slicker-brush",
+        "long-coat",
+        "professional",
+        "premium"
+      ]
+    }
+  ],
+  "supplements": [
+    {
+      "id": "nutramax-cosequin",
+      "name": "Nutramax Cosequin DS Joint Supplement",
+      "asin": "B0002AQFQK",
+      "price": 41.99,
+      "rating": 4.7,
+      "reviewCount": 21000,
+      "image": "https://m.media-amazon.com/images/I/71Vj3Cq+T3L._AC_SL500_.jpg",
+      "features": [
+        "Glucosamine HCl + chondroitin sulfate",
+        "#1 veterinarian recommended joint supplement",
+        "Available in chewable tablet form"
+      ],
+      "pros": [
+        "Most recommended joint supplement by US vets",
+        "NASC Quality Seal \u2014 third party tested",
+        "Genuine clinical evidence behind the formula"
+      ],
+      "cons": [
+        "Takes 4-6 weeks to see results",
+        "Some dogs don't like the chewable tablet form",
+        "More expensive than generic glucosamine"
+      ],
+      "category": "supplements",
+      "tags": [
+        "joint-health",
+        "glucosamine",
+        "chondroitin",
+        "senior"
+      ]
+    },
+    {
+      "id": "zesty-paws-multivitamin",
+      "name": "Zesty Paws Multivitamin Bites for Dogs",
+      "asin": "B01NAWEPE0",
+      "price": 29.97,
+      "rating": 4.6,
+      "reviewCount": 32000,
+      "image": "https://m.media-amazon.com/images/I/71RCMNz+WPL._AC_SL500_.jpg",
+      "features": [
+        "8-in-1 formula covers major health areas",
+        "Soft chew form dogs love",
+        "Contains CoQ10, vitamins A, B, C, D, E"
+      ],
+      "pros": [
+        "One of the bestselling dog supplements on Amazon",
+        "Broad spectrum formula covers many bases",
+        "Dogs accept the soft chews readily"
+      ],
+      "cons": [
+        "Not a replacement for a complete balanced diet",
+        "Some fillers in the formula",
+        "Less clinically proven than targeted supplements"
+      ],
+      "category": "supplements",
+      "tags": [
+        "multivitamin",
+        "immune",
+        "coat",
+        "soft-chew"
+      ]
+    },
+    {
+      "id": "vetri-science-dental",
+      "name": "Milk-Bone Daily Dental Chews for Dogs",
+      "asin": "B001HCJJD8",
+      "price": 12.99,
+      "rating": 4.5,
+      "reviewCount": 15000,
+      "image": "https://m.media-amazon.com/images/I/81w3IDL3PoL._AC_SL500_.jpg",
+      "features": [
+        "Reduces tartar and freshens breath",
+        "Accepted by the VOHC (Veterinary Oral Health Council)",
+        "Flexible ridges clean hard-to-reach spots"
+      ],
+      "pros": [
+        "VOHC seal means clinical evidence of dental benefit",
+        "Dogs love the taste",
+        "Budget-friendly daily option"
+      ],
+      "cons": [
+        "Adds calories \u2014 count toward daily intake",
+        "Not a substitute for regular tooth brushing"
+      ],
+      "category": "supplements",
+      "tags": [
+        "dental",
+        "treats",
+        "breath",
+        "tartar"
+      ]
+    },
+    {
+      "id": "zesty-paws-omega",
+      "name": "Zesty Paws Pure Wild Alaskan Salmon Oil",
+      "asin": "B01NBPNQ9P",
+      "price": 22.97,
+      "rating": 4.7,
+      "reviewCount": 25000,
+      "image": "https://m.media-amazon.com/images/I/71U3WRobBjL._AC_SL500_.jpg",
+      "features": [
+        "Wild-caught Alaskan salmon",
+        "Omega-3, Omega-6, Omega-9",
+        "Pump dispenser"
+      ],
+      "pros": [
+        "One of the bestselling dog supplements",
+        "Wild-caught sourcing",
+        "Pump bottle is easy to use daily"
+      ],
+      "cons": [
+        "Strong fish smell",
+        "Must refrigerate after opening"
+      ],
+      "category": "supplements",
+      "tags": [
+        "fish-oil",
+        "omega-3",
+        "coat",
+        "joint"
+      ]
+    },
+    {
+      "id": "vetri-digest-platinum",
+      "name": "Vetri-Science Vetri-Digest Platinum",
+      "asin": "B00B3FEOEI",
+      "price": 28.99,
+      "rating": 4.5,
+      "reviewCount": 3400,
+      "image": "https://m.media-amazon.com/images/I/71yWoKu+DNSL._AC_SL500_.jpg",
+      "features": [
+        "8-strain probiotic blend",
+        "Digestive enzyme complex",
+        "Soft chew form"
+      ],
+      "pros": [
+        "Comprehensive probiotic + enzyme formula",
+        "Dogs accept soft chews readily",
+        "Good for chronic digestive issues"
+      ],
+      "cons": [
+        "More expensive than basic probiotic options",
+        "Results vary by individual dog"
+      ],
+      "category": "supplements",
+      "tags": [
+        "probiotic",
+        "digestive",
+        "enzyme",
+        "soft-chew"
+      ]
+    },
+    {
+      "id": "grizzly-salmon-oil",
+      "name": "Grizzly Salmon Oil Plus for Dogs",
+      "asin": "B001HKFKKO",
+      "price": 24.99,
+      "rating": 4.6,
+      "reviewCount": 14000,
+      "image": "https://m.media-amazon.com/images/I/81M8+BEwO+L._AC_SL500_.jpg",
+      "features": [
+        "Wild Alaskan salmon + pollock oil",
+        "Omega-3 for coat and joints",
+        "Easy pump dispenser"
+      ],
+      "pros": [
+        "Combined salmon + pollock = broader omega profile",
+        "Very consistent palatability",
+        "Pump bottle lasts ages"
+      ],
+      "cons": [
+        "Premium price vs generic fish oil",
+        "Strong fish smell"
+      ],
+      "category": "supplements",
+      "tags": [
+        "fish-oil",
+        "omega-3",
+        "coat",
+        "premium"
+      ]
+    },
+    {
+      "id": "purina-fortiflora",
+      "name": "Purina Pro Plan Veterinary FortiFlora",
+      "asin": "B001650OEC",
+      "price": 27.99,
+      "rating": 4.7,
+      "reviewCount": 19000,
+      "image": "https://m.media-amazon.com/images/I/51XiSmAn7kL._AC_SL500_.jpg",
+      "features": [
+        "#1 vet-recommended probiotic for dogs",
+        "Saccharomyces boulardii strain",
+        "Sprinkle-on powder sachets"
+      ],
+      "pros": [
+        "#1 vet-recommended \u2014 huge trust factor",
+        "Works quickly for acute digestive issues",
+        "Easy powder form sprinkled on food"
+      ],
+      "cons": [
+        "More expensive than other probiotics",
+        "Sachets mean you can't easily adjust dose"
+      ],
+      "category": "supplements",
+      "tags": [
+        "probiotic",
+        "digestive",
+        "vet-recommended"
+      ]
+    }
+  ]
+}

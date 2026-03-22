@@ -1,0 +1,77 @@
+---
+const nav = [
+  { label: 'REVIEWS', href: '/blog' },
+  { label: 'DOG FOOD', href: '/categories/dog-food' },
+  { label: 'TOYS', href: '/categories/toys' },
+  { label: 'BEDS', href: '/categories/beds' },
+  { label: 'TRAINING', href: '/categories/training' },
+  { label: 'BREEDS', href: '/breeds' },
+];
+---
+<header style="position:sticky;top:0;z-index:100;background:var(--midnight);border-bottom:2px solid rgba(255,255,255,0.1)">
+
+  <!-- Top ticker strip -->
+  <div style="background:var(--lime);overflow:hidden;height:28px;display:flex;align-items:center">
+    <div class="marquee-track fast" style="display:flex;gap:0;white-space:nowrap">
+      {Array.from({length: 2}).map(() => (
+        <span style="font-family:'Archivo Black',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--midnight);display:flex;align-items:center;gap:0">
+          {["NEW DROP: GPS TRACKERS RANKED", "★★★★★ HONEST REVIEWS ONLY", "ZERO PAID PLACEMENTS", "DOGS TESTED & APPROVED", "FREE SHIPPING ON AMAZON", "NO BS. JUST FACTS.", "277 BREED GUIDES LIVE"].map(t => (
+            <span style="padding:0 2rem">{t} <span style="opacity:.4;margin-left:.5rem">◆</span></span>
+          ))}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <!-- Main nav -->
+  <div style="max-width:1400px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;gap:1rem">
+
+    <!-- Logo -->
+    <a href="/" style="text-decoration:none;flex-shrink:0;display:flex;align-items:center;gap:.4rem">
+      <span style="font-family:'Anton',sans-serif;font-size:1.4rem;color:var(--offwhite);text-transform:uppercase;letter-spacing:-0.02em;line-height:1">MR.<span style="color:var(--lime)">DOGGO</span></span>
+      <span style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--ash);text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--concrete-light);padding:.1rem .35rem;line-height:1.4">STYLE</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav style="display:none;gap:.25rem;align-items:center" id="desk-nav">
+      {nav.map(n => (
+        <a href={n.href}
+           style="font-family:'Archivo Black',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--smoke);text-decoration:none;padding:.4rem .6rem;transition:color .15s"
+           onmouseover="this.style.color='var(--lime)'" onmouseout="this.style.color='var(--smoke)'">
+          {n.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- CTA + mobile toggle -->
+    <div style="display:flex;align-items:center;gap:.75rem">
+      <a href="/blog" class="btn-lime" style="font-size:.65rem;padding:.5rem 1rem;display:none" id="desk-cta">TOP PICKS →</a>
+      <button id="menu-toggle" style="background:none;border:2px solid rgba(255,255,255,.2);color:var(--offwhite);width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem" aria-label="Menu">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" style="display:none;background:var(--concrete);border-top:2px solid rgba(255,255,255,.1);padding:1rem 1.5rem">
+    {nav.map(n => (
+      <a href={n.href} style="display:block;font-family:'Archivo Black',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--smoke);text-decoration:none;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.07)">
+        {n.label}
+      </a>
+    ))}
+    <a href="/blog" class="btn-lime" style="display:block;text-align:center;margin-top:1rem">TOP PICKS →</a>
+  </div>
+</header>
+
+<style>
+  @media(min-width:768px) {
+    #desk-nav { display:flex !important; }
+    #desk-cta { display:inline-block !important; }
+    #menu-toggle { display:none !important; }
+  }
+</style>
+
+<script>
+  document.getElementById('menu-toggle')?.addEventListener('click', () => {
+    const m = document.getElementById('mobile-menu');
+    if (m) m.style.display = m.style.display === 'none' ? 'block' : 'none';
+  });
+</script>

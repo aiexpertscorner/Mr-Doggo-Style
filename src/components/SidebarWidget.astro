@@ -1,0 +1,34 @@
+---
+export interface Props { name:string; asin:string; price?:number; rating?:number; badge?:string; image?:string; tag?:string; }
+const { name, asin, price, rating=4.7, badge="EDITOR'S PICK", image, tag="aiexpertscorn-20" } = Astro.props;
+const url = `https://www.amazon.com/dp/${asin}/?tag=${tag}`;
+---
+<div style="border:2px solid #CCFF00;box-shadow:4px 4px 0 #CCFF00;background:#222;overflow:hidden">
+  <div style="background:#CCFF00;padding:.35rem .9rem;font-family:'Archivo Black',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:#0A0A0A">{badge}</div>
+  <a href={url} rel="nofollow sponsored" target="_blank"
+     style="display:block;background:#fff;overflow:hidden;aspect-ratio:1">
+    {image ? (
+      <img src={image} alt={name} loading="lazy" width="300" height="300"
+           style="width:100%;height:100%;object-fit:contain;padding:.75rem;transition:transform .25s;display:block"
+           onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform=''"/>
+    ) : (
+      <div style="width:100%;height:100%;background:#111;display:flex;align-items:center;justify-content:center">
+        <span style="font-size:2.5rem">🐾</span>
+      </div>
+    )}
+  </a>
+  <div style="padding:1.1rem">
+    <h4 style="font-family:'Archivo Black',sans-serif;font-size:.8rem;text-transform:uppercase;color:#F0F0F0;margin:0 0 .4rem;line-height:1.2">{name}</h4>
+    <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem">
+      <span style="color:#CCFF00;font-size:.8rem">{'★'.repeat(Math.round(rating))}</span>
+      {price && <span style="font-family:'Archivo Black',sans-serif;color:#CCFF00;font-size:.95rem">${price.toFixed(2)}</span>}
+    </div>
+    <a href={url} rel="nofollow sponsored" target="_blank"
+       style="display:block;background:#CCFF00;color:#0A0A0A;font-family:'Archivo Black',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;padding:.7rem;border:2px solid #0A0A0A;box-shadow:3px 3px 0 #0A0A0A;text-decoration:none;text-align:center;transition:all .1s"
+       onmouseover="this.style.transform='translate(-2px,-2px)';this.style.boxShadow='5px 5px 0 #0A0A0A'"
+       onmouseout="this.style.transform='';this.style.boxShadow='3px 3px 0 #0A0A0A'">
+      CHECK PRICE →
+    </a>
+    <p style="font-family:'Space Mono',monospace;font-size:.52rem;color:#555;text-align:center;margin:.45rem 0 0;text-transform:uppercase">FREE PRIME SHIPPING</p>
+  </div>
+</div>

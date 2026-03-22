@@ -1,0 +1,30 @@
+---
+export interface Props { name:string; asin:string; amazonPrice?:number; chewyPrice?:number; petcoPrice?:number; chewySlug?:string; tag?:string; }
+const { name, asin, amazonPrice, chewyPrice, petcoPrice, chewySlug, tag="aiexpertscorn-20" } = Astro.props;
+const rows = [
+  { store:"AMAZON", url:`https://www.amazon.com/dp/${asin}/?tag=${tag}`, price:amazonPrice, note:"PRIME SHIPPING", color:"#FF9900" },
+  { store:"CHEWY",  url:chewySlug?`https://www.chewy.com/${chewySlug}`:`https://www.chewy.com/s?query=${encodeURIComponent(name)}`, price:chewyPrice, note:"AUTOSHIP SAVINGS", color:"#00a3e0" },
+  { store:"PETCO",  url:`https://www.petco.com/shop/en/petcostore/search?query=${encodeURIComponent(name)}`, price:petcoPrice, note:"IN-STORE PICKUP", color:"#0073c9" },
+];
+const lowestIdx = rows.reduce((li,r,i,a)=>(r.price&&(!a[li].price||r.price<a[li].price))?i:li, 0);
+---
+<div style="border:2px solid rgba(255,255,255,0.12);overflow:hidden;margin:2rem 0">
+  <div style="background:var(--concrete-light);padding:.5rem 1rem;font-family:'Archivo Black',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--lime)">
+    💰 PRICE COMPARISON — {name}
+  </div>
+  {rows.map((r,i)=>(
+    <div style={`display:flex;align-items:center;gap:1rem;padding:.75rem 1rem;border-top:1px solid rgba(255,255,255,0.06);${i===lowestIdx&&r.price?'background:rgba(204,255,0,0.05)':''}`}>
+      <span style={`font-family:'Archivo Black',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:${r.color};width:60px;flex-shrink:0`}>{r.store}</span>
+      <div style="flex:1;display:flex;flex-wrap:wrap;align-items:center;gap:.4rem">
+        {r.price ? <span style={`font-family:'Archivo Black',sans-serif;font-size:1rem;${i===lowestIdx?'color:var(--lime)':'color:var(--offwhite)'}`}>${r.price.toFixed(2)}</span>
+                 : <span style="font-family:'Barlow Condensed',sans-serif;font-size:.85rem;color:var(--ash)">CHECK PRICE</span>}
+        {i===lowestIdx&&r.price && <span style="font-family:'Archivo Black',sans-serif;font-size:.55rem;text-transform:uppercase;letter-spacing:.08em;background:var(--lime);color:var(--midnight);padding:.15rem .45rem">LOWEST</span>}
+        <span style={`font-family:'Space Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.04em;color:${r.color};opacity:.7`}>{r.note}</span>
+      </div>
+      <a href={r.url} rel="nofollow" target="_blank" class="btn-lime" style="font-size:.6rem;padding:.4rem .7rem;flex-shrink:0">SHOP →</a>
+    </div>
+  ))}
+  <div style="padding:.4rem .9rem;font-family:'Space Mono',monospace;font-size:.55rem;color:var(--ash);text-transform:uppercase;border-top:1px solid rgba(255,255,255,.06)">
+    PRICES APPROXIMATE — VERIFY ON RETAILER SITE
+  </div>
+</div>

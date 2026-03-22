@@ -1,0 +1,48 @@
+---
+export interface Product { name:string; asin:string; price?:number; rating?:number; highlight?:string; badge?:string; }
+export interface Props { products: Product[]; columns?: string[]; tag?: string; }
+const { products, columns = ['PRODUCT','PRICE','RATING','VERDICT','LINK'], tag = "aiexpertscorn-20" } = Astro.props;
+---
+<div style="overflow-x:auto;margin:2rem 0;border:2px solid rgba(255,255,255,0.12)">
+  <table style="width:100%;border-collapse:collapse;font-family:'Barlow Condensed',sans-serif;font-size:.9rem">
+    <thead>
+      <tr>
+        {columns.map(c => (
+          <th style="text-align:left;padding:.6rem .9rem;font-family:'Archivo Black',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--lime);background:var(--concrete);border-bottom:2px solid rgba(204,255,0,.3);white-space:nowrap">
+            {c}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {products.map((p, i) => (
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.06)"
+            onmouseover="this.style.background='rgba(204,255,0,0.04)'"
+            onmouseout="this.style.background=''">
+          <td style="padding:.65rem .9rem">
+            <div style="display:flex;align-items:center;gap:.5rem">
+              {p.badge && <span class="sticker sticker-lime" style="font-size:.55rem;padding:.15rem .45rem">{p.badge}</span>}
+              <span style="font-family:'Archivo Black',sans-serif;font-size:.8rem;text-transform:uppercase;color:var(--offwhite)">{p.name}</span>
+            </div>
+          </td>
+          <td style="padding:.65rem .9rem;font-family:'Archivo Black',sans-serif;color:var(--lime);white-space:nowrap">
+            {p.price ? `$${p.price.toFixed(2)}` : '—'}
+          </td>
+          <td style="padding:.65rem .9rem;white-space:nowrap;color:var(--smoke)">
+            {p.rating && <>
+              <span style="color:var(--lime)">{'★'.repeat(Math.round(p.rating))}</span>
+              <span style="font-family:'Space Mono',monospace;font-size:.65rem;margin-left:.3rem">{p.rating.toFixed(1)}</span>
+            </>}
+          </td>
+          <td style="padding:.65rem .9rem;color:var(--smoke);max-width:240px">{p.highlight}</td>
+          <td style="padding:.65rem .9rem">
+            <a href={`https://www.amazon.com/dp/${p.asin}/?tag=${tag}`} rel="nofollow sponsored" target="_blank"
+               class="btn-lime" style="font-size:.6rem;padding:.4rem .75rem;display:inline-block">
+              VIEW →
+            </a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
