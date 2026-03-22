@@ -1,0 +1,140 @@
+---
+const AFFILIATE_TAG = 'aiexpertscorn-20';
+
+export interface Props {
+  products:    any[];
+  heading?:    string;
+  eyebrow?:    string;
+  compact?:    boolean;
+  maxItems?:   number;
+}
+
+const {
+  products,
+  heading,
+  eyebrow,
+  compact  = false,
+  maxItems = 6,
+} = Astro.props;
+
+const shown = products.slice(0, maxItems);
+
+function amazonUrl(asin: string) {
+  if (!asin || asin === 'SUBSCRIPTION') return null;
+  return `https://www.amazon.com/dp/${asin}/?tag=${AFFILIATE_TAG}`;
+}
+
+function starsHtml(r: number) {
+  const full = Math.round(r || 4.5);
+  return '★'.repeat(full) + '☆'.repeat(5 - full);
+}
+---
+
+{shown.length > 0 && (
+  <section class="section-block">
+    {(eyebrow || heading) && (
+      <div class="section-header" style="margin-bottom: var(--space-5)">
+        <div>
+          {eyebrow && <span class="section-eyebrow">{eyebrow}</span>}
+          {heading && <h2 class="section-title">{heading}</h2>}
+        </div>
+      </div>
+    )}
+
+    <div class={compact ? 'product-grid product-grid--compact' : 'product-grid'}>
+      {shown.map((p: any, i: number) => {
+        const url = amazonUrl(p.asin);
+        const hasImage = p.image?.includes('media-amazon.com');
+        const isSubscription = p.asin === 'SUBSCRIPTION';
+
+        return (
+          <div class="product-card">
+            {/* Image */}
+            <div class="product-card__image-wrap">
+              {url ? (
+                <a href={url} rel="nofollow sponsored" target="_blank" tabindex="-1" aria-hidden="true">
+                  {hasImage
+                    ? <img src={p.image} alt={p.name} class="product-card__image" loading="lazy" width="160" height="160" />
+                    : <span class="product-card__image-placeholder">🐾</span>
+                  }
+                </a>
+              ) : (
+                hasImage
+                  ? <img src={p.image} alt={p.name} class="product-card__image" loading="lazy" width="160" height="160" />
+                  : <span class="product-card__image-placeholder">🐾</span>
+              )}
+              {i === 0 && (
+                <div class="product-card__badge">
+                  <span class="badge badge--accent">Editor's Pick</span>
+                </div>
+              )}
+              {i === 1 && (
+                <div class="product-card__badge">
+                  <span class="badge badge--success">Best Seller</span>
+                </div>
+              )}
+            </div>
+
+            {/* Body */}
+            <div class="product-card__body">
+              {p.category_key && (
+                <span class="product-card__category">
+                  {(p.category_key || p.category || '').replace(/-/g,' ')}
+                </span>
+              )}
+              <h3 class="product-card__name">
+                {url
+                  ? <a href={url} rel="nofollow sponsored" target="_blank">{p.name}</a>
+                  : p.name
+                }
+              </h3>
+              <div class="product-card__rating">
+                <span class="product-card__stars" aria-label={`${p.rating} out of 5 stars`}>
+                  {starsHtml(p.rating)}
+                </span>
+                <span class="product-card__rating-text">{parseFloat(p.rating || 4.5).toFixed(1)}</span>
+                {p.reviewCount && (
+                  <span class="product-card__rating-text">
+                    ({p.reviewCount >= 1000 ? `${(p.reviewCount/1000).toFixed(0)}K` : p.reviewCount})
+                  </span>
+                )}
+              </div>
+              {p.score && (
+                <span class="product-card__score">⭐ {p.score}/10</span>
+              )}
+              {p.verdict && (
+                <p class="product-card__verdict">{p.verdict}</p>
+              )}
+              {p.features && p.features.length > 0 && (
+                <ul class="product-card__features">
+                  {p.features.slice(0, 3).map((f: string) => (
+                    <li class="product-card__feature">{f}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            {/* Footer */}
+            <div class="product-card__footer">
+              {!isSubscription && p.price
+                ? <span class="product-card__price">${parseFloat(p.price).toFixed(2)}</span>
+                : <span class="product-card__price">{isSubscription ? 'Subscription' : '—'}</span>
+              }
+              {url && (
+                <a
+                  href={url}
+                  rel="nofollow sponsored"
+                  target="_blank"
+                  class="product-card__cta"
+                  aria-label={`Check price for ${p.name} on Amazon`}
+                >
+                  {isSubscription ? 'View plan' : 'Check price'} →
+                </a>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+)}

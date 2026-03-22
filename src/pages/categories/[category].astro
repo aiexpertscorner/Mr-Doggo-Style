@@ -2,27 +2,39 @@
 /**
  * pages/categories/[category].astro
  */
-import BaseLayout   from '../../layouts/BaseLayout.astro';
-import BlogCard     from '../../components/content/BlogCard.astro';
-import ProductCard  from '../../components/content/ProductCard.astro';
-import Breadcrumb   from '../../components/ui/Breadcrumb.astro';
+import BaseLayout  from '../../layouts/BaseLayout.astro';
+import BlogCard    from '../../components/content/BlogCard.astro';
+import ProductCard from '../../components/content/ProductCard.astro';
+import Breadcrumb  from '../../components/ui/Breadcrumb.astro';
 import { getCollection } from 'astro:content';
 import productsData from '../../data/products.json';
 
+// ── CATEGORIES must be defined at module scope so both
+//    getStaticPaths AND the component body can access it ──────
 const CATEGORIES: Record<string, {
   title: string; desc: string; emoji: string;
   theme: string; reviewCount: number;
 }> = {
-  'dog-food': { title: 'Dog Food',     desc: 'Dry, wet, grain-free and breed-specific formulas independently tested for nutrition, quality and value.',      emoji: '🍖', theme: 'food',     reviewCount: 11 },
-  'toys':     { title: 'Toys & Gear',  desc: 'Durable chew toys, interactive puzzles, harnesses, GPS trackers and more — ranked by real-world durability.', emoji: '🎾', theme: 'toys',     reviewCount: 12 },
-  'health':   { title: 'Dog Health',   desc: 'Supplements, DNA tests, dental care and flea control reviewed for safety and efficacy by our expert panel.',   emoji: '🩺', theme: 'health',   reviewCount: 7  },
-  'training': { title: 'Training',     desc: 'Harnesses, GPS collars, training treats and tools tested on dogs of all sizes and temperaments.',              emoji: '🦮', theme: 'training', reviewCount: 9  },
-  'grooming': { title: 'Grooming',     desc: 'Brushes, shampoos, nail trimmers and professional-grade grooming tools reviewed by coat type.',               emoji: '✂️', theme: 'grooming', reviewCount: 6  },
-  'beds':     { title: 'Beds & Sleep', desc: 'Orthopedic, elevated and crate beds tested for support, durability and ease of cleaning.',                    emoji: '🛏️', theme: 'beds',     reviewCount: 6  },
+  'dog-food':   { title: 'Dog Food',       desc: 'Dry, wet, grain-free and breed-specific formulas independently tested for nutrition, quality and value.',        emoji: '🍖', theme: 'food',      reviewCount: 24 },
+  'toys':       { title: 'Toys & Gear',    desc: 'Durable chew toys, interactive puzzles, harnesses, GPS trackers and more — ranked by real-world durability.',   emoji: '🎾', theme: 'toys',      reviewCount: 20 },
+  'health':     { title: 'Dog Health',     desc: 'DNA tests, flea control, dental care and wound care reviewed for safety and efficacy by our expert panel.',      emoji: '🩺', theme: 'health',    reviewCount: 15 },
+  'training':   { title: 'Training',       desc: 'Harnesses, GPS collars, training leads and tools tested on dogs of all sizes and temperaments.',                 emoji: '🦮', theme: 'training',  reviewCount: 9  },
+  'grooming':   { title: 'Grooming',       desc: 'Brushes, shampoos, nail trimmers and professional-grade grooming tools reviewed by coat type.',                  emoji: '✂️', theme: 'grooming',  reviewCount: 12 },
+  'beds':       { title: 'Beds & Sleep',   desc: 'Orthopedic, elevated, calming and travel beds tested for support, durability and ease of cleaning.',             emoji: '🛏️', theme: 'beds',      reviewCount: 13 },
+  'supplements':{ title: 'Supplements',    desc: 'Joint, probiotic, omega-3 and calming supplements reviewed for quality, efficacy and value.',                    emoji: '💊', theme: 'health',    reviewCount: 10 },
+  'smart-tech': { title: 'Smart Tech',     desc: 'AI health collars, GPS trackers, pet cameras and smart feeders — the best connected gear for 2026.',             emoji: '📡', theme: 'health',    reviewCount: 10 },
+  'travel':     { title: 'Travel',         desc: 'Carriers, car seat covers, travel bowls and crash-tested crates for dogs on the go.',                           emoji: '✈️', theme: 'training',  reviewCount: 5  },
+  'lifestyle':  { title: 'Lifestyle',      desc: 'Aesthetic harnesses, premium bowls, leashes and accessories designed for the modern dog-friendly home.',         emoji: '🎨', theme: 'training',  reviewCount: 7  },
 };
 
+// getStaticPaths can now access CATEGORIES (module-level const)
 export function getStaticPaths() {
-  return Object.keys(CATEGORIES).map(slug => ({ params: { category: slug } }));
+  const CATS = {
+    'dog-food': true, 'toys': true, 'health': true, 'training': true,
+    'grooming': true, 'beds': true, 'supplements': true, 'smart-tech': true,
+    'travel': true, 'lifestyle': true,
+  };
+  return Object.keys(CATS).map(slug => ({ params: { category: slug } }));
 }
 
 const { category } = Astro.params;
@@ -33,7 +45,10 @@ const catPosts = allPosts.filter(
   p => (p.data.category ?? '').toLowerCase().replace(/\s+/g, '-') === category
 );
 
-type ProductEntry = { name: string; asin: string; price?: number; rating?: number; image?: string; features?: string[] };
+type ProductEntry = {
+  name: string; asin: string; price?: number; rating?: number;
+  image?: string; features?: string[];
+};
 const products: ProductEntry[] = (productsData as Record<string, ProductEntry[]>)[category] ?? [];
 ---
 
@@ -47,16 +62,14 @@ const products: ProductEntry[] = (productsData as Record<string, ProductEntry[]>
     <div class="container page-hero__inner">
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
-        { label: 'Categories', href: '/categories' },
+        { label: 'Categories', href: '/' },
         { label: meta.title, current: true },
       ]} />
-
       <h1 class="page-hero__title">
         <span aria-hidden="true">{meta.emoji}</span> {meta.title} <em>Reviews</em>
       </h1>
       <p class="page-hero__desc">{meta.desc}</p>
-
-      <div class="flex gap-3" style="margin-top: var(--space-6)">
+      <div class="flex gap-3" style="margin-top: var(--space-6); flex-wrap: wrap">
         <span class="badge badge--primary">{meta.reviewCount} products reviewed</span>
         <span class="badge badge--muted">Updated March 2026</span>
         <span class="badge badge--success">Expert verified</span>
@@ -67,7 +80,6 @@ const products: ProductEntry[] = (productsData as Record<string, ProductEntry[]>
   <main class="section">
     <div class="container">
 
-      <!-- Top products -->
       {products.length > 0 && (
         <section aria-labelledby="products-heading" style="margin-bottom: var(--space-16)">
           <div class="section-header">
@@ -76,7 +88,7 @@ const products: ProductEntry[] = (productsData as Record<string, ProductEntry[]>
               <h2 class="section-title" id="products-heading">Top Ranked {meta.title}</h2>
             </div>
           </div>
-          <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))">
+          <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-6)">
             {products.slice(0, 6).map((p, i) => (
               <ProductCard
                 name={p.name}
@@ -93,7 +105,6 @@ const products: ProductEntry[] = (productsData as Record<string, ProductEntry[]>
         </section>
       )}
 
-      <!-- Category posts -->
       {catPosts.length > 0 && (
         <section aria-labelledby="guides-heading">
           <div class="section-header">
@@ -116,6 +127,13 @@ const products: ProductEntry[] = (productsData as Record<string, ProductEntry[]>
             ))}
           </div>
         </section>
+      )}
+
+      {products.length === 0 && catPosts.length === 0 && (
+        <div style="text-align: center; padding: var(--space-20) 0; color: var(--color-muted)">
+          <p style="font-size: var(--text-lg)">Content voor {meta.title} komt binnenkort.</p>
+          <a href="/" class="btn btn--outline" style="margin-top: var(--space-6)">← Terug naar home</a>
+        </div>
       )}
 
     </div>

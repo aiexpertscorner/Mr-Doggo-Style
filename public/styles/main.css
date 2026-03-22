@@ -1,27 +1,25 @@
 /* =============================================================
-   MAIN — Entry point. Imports all stylesheets in order.
-   Import this single file in BaseLayout.astro.
-
-   Load order:
-     1. tokens      — CSS custom properties
-     2. base        — reset + typography defaults
-     3. layouts     — grid + containers
-     4. components  — all UI components
+   main.css — Entry point. Imports all stylesheets in order.
    ============================================================= */
 
 @import './tokens.css';
 @import './base.css';
 @import './layouts/grid.css';
+
+/* Component styles */
 @import './components/nav.css';
 @import './components/buttons.css';
 @import './components/hero.css';
 @import './components/cards.css';
 @import './components/misc.css';
 
-/* ── Prose / rich text (article bodies) ────────────────────── */
-.prose {
-  max-width: 72ch;
-}
+/* Feature styles */
+@import './components/breed.css';
+@import './components/products.css';
+@import './components/blog.css';
+
+/* ── Prose / rich text ────────────────────────────────────────── */
+.prose { max-width: 72ch; }
 
 .prose h2 {
   font-size: var(--text-2xl);
@@ -44,22 +42,16 @@
   color: var(--color-heading);
 }
 
-.prose p {
-  margin-bottom: var(--space-5);
-}
+.prose p { margin-bottom: var(--space-5); }
 
-.prose ul,
-.prose ol {
+.prose ul, .prose ol {
   margin-bottom: var(--space-5);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
 
-.prose li {
-  font-size: var(--text-base);
-  color: var(--color-body);
-}
+.prose li { font-size: var(--text-base); color: var(--color-body); }
 
 .prose a {
   color: var(--color-primary);
@@ -70,14 +62,24 @@
   transition: text-decoration-color var(--transition-base), color var(--transition-base);
 }
 
-.prose a:hover {
-  text-decoration-color: var(--color-primary);
-}
+.prose a:hover { text-decoration-color: var(--color-primary); }
 
 .prose strong {
   font-weight: var(--weight-bold);
   color: var(--color-heading);
 }
+
+.prose blockquote {
+  border-left: 3px solid var(--color-primary);
+  background: rgba(13,148,136,0.04);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-6) 0;
+  font-style: italic;
+  color: var(--color-body);
+}
+
+.prose blockquote p { margin-bottom: 0; }
 
 .prose table {
   width: 100%;
@@ -89,9 +91,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-.prose table thead tr {
-  background: var(--color-bg-muted);
-}
+.prose table thead tr { background: var(--color-bg-muted); }
 
 .prose table th {
   font-size: var(--text-xs);
@@ -110,38 +110,19 @@
   color: var(--color-body);
 }
 
-.prose table tr:last-child td {
-  border-bottom: none;
-}
+.prose table tr:last-child td { border-bottom: none; }
+.prose table tr:nth-child(even) { background: var(--color-bg-soft); }
 
-.prose table tr:nth-child(even) {
-  background: var(--color-bg-soft);
-}
-
-/* ── Utility classes ─────────────────────────────────────────── */
+/* ── Utility classes ──────────────────────────────────────────── */
 .text-primary   { color: var(--color-primary); }
 .text-heading   { color: var(--color-heading); }
 .text-body      { color: var(--color-body);    }
 .text-muted     { color: var(--color-muted);   }
 .text-accent    { color: var(--color-accent);  }
-
-.text-center { text-align: center; }
-.text-right  { text-align: right;  }
-.text-left   { text-align: left;   }
-
-.font-bold   { font-weight: var(--weight-bold); }
-.font-black  { font-weight: var(--weight-black); }
-.font-serif  { font-family: var(--font-serif); }
-
-.mt-auto     { margin-top: auto; }
-.mb-0        { margin-bottom: 0; }
-
-.hidden      { display: none; }
-.invisible   { visibility: hidden; }
-
-/* Rounded image */
-.avatar {
-  border-radius: var(--radius-full);
-  object-fit: cover;
-  display: block;
-}
+.text-center    { text-align: center; }
+.text-right     { text-align: right;  }
+.font-bold      { font-weight: var(--weight-bold); }
+.font-black     { font-weight: var(--weight-black); }
+.font-serif     { font-family: var(--font-serif); }
+.mt-auto        { margin-top: auto; }
+.hidden         { display: none; }

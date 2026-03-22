@@ -49,9 +49,10 @@ const schema = {
 >
 
   <!-- ── HERO ──────────────────────────────────────────────────── -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero__inner">
-
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<section class="hero hero--split" aria-labelledby="hero-title">
+  <div class="hero__inner hero__inner--split">
+    <div class="hero__content">
       <span class="hero__eyebrow">
         <span class="hero__eyebrow-dot"></span>
         Verified Dog Product Research · Est. 2023
@@ -59,21 +60,22 @@ const schema = {
       </span>
 
       <h1 class="hero__title" id="hero-title">
-        Your Trusted Guide to the<br>
-        <em>Best Dog Products</em>
+        Your Trusted Guide to
+        <br />
+        <em>Better Dog Products</em>
       </h1>
 
       <p class="hero__subtitle">
-        "Expert reviews, data-driven comparisons, and safety-verified insights
-        to make the best decisions for your canine family member."
+        Expert reviews, data-driven comparisons, and safety-first insights to
+        help you choose smarter for your dog.
       </p>
 
       <div class="hero__actions">
         <a href="/blog" class="btn btn--primary btn--lg">
-          Explore Trending Now
+          Explore Trending Products
         </a>
         <a href="/about" class="btn btn--outline btn--lg">
-          How We Test Products
+          How We Review Products
         </a>
       </div>
 
@@ -91,9 +93,27 @@ const schema = {
           <span class="hero__trust-icon">✓</span> Updated March 2026
         </span>
       </div>
-
     </div>
-  </section>
+
+    <div class="hero__media" aria-hidden="true">
+      <div class="hero__media-shape">
+        <img
+          src="/hero/dog-owner-hero.jpg"
+          alt=""
+          class="hero__image"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+
+      <div class="hero__card hero__card--top">
+        <span class="hero__card-label">Trusted Picks</span>
+        <strong>Breed-smart reviews</strong>
+        <p>Independent advice for modern dog owners.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- ── CATEGORIES ────────────────────────────────────────────── -->
   <section class="section" aria-labelledby="categories-heading">

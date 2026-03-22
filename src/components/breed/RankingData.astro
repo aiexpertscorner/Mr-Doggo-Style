@@ -1,0 +1,75 @@
+---
+export interface Props {
+  ranking_data: {
+    intelligence_rank?:  number;
+    intelligence_label?: string;
+    intelligence_pct?:   string;
+    lifetime_cost_usd?:  number;
+    annual_food_cost?:   number;
+    purchase_price_usd?: number;
+    longevity_years?:    number;
+    genetic_ailments?:   number;
+    genetic_ailment_names?: string;
+    children_score?:     number;
+    overall_score?:      number;
+  };
+  breed_name: string;
+}
+
+const { ranking_data: r, breed_name } = Astro.props;
+
+if (!r || Object.keys(r).length === 0) return;
+
+const items = [
+  r.intelligence_rank && {
+    icon: '🧠',
+    value: `#${r.intelligence_rank}`,
+    label: `Intelligence (${r.intelligence_label || 'Above average'})`,
+  },
+  r.longevity_years && {
+    icon: '🎂',
+    value: `${r.longevity_years}yr`,
+    label: 'Average lifespan',
+  },
+  r.lifetime_cost_usd && {
+    icon: '💰',
+    value: `$${r.lifetime_cost_usd.toLocaleString()}`,
+    label: 'Est. lifetime cost',
+  },
+  r.annual_food_cost && {
+    icon: '🍖',
+    value: `$${r.annual_food_cost}/yr`,
+    label: 'Annual food cost',
+  },
+  r.children_score !== undefined && {
+    icon: '👨‍👩‍👧',
+    value: r.children_score >= 0.8 ? 'Excellent' : r.children_score >= 0.5 ? 'Good' : 'Careful',
+    label: 'Kids compatibility',
+  },
+  r.genetic_ailments !== undefined && {
+    icon: '🩺',
+    value: `${r.genetic_ailments}`,
+    label: 'Known genetic conditions',
+  },
+].filter(Boolean);
+---
+
+{items.length > 0 && (
+  <div class="ranking-panel">
+    <p class="ranking-panel__title">Breed at a Glance — {breed_name}</p>
+    <div class="ranking-grid">
+      {items.map((item: any) => (
+        <div class="ranking-item">
+          <span class="ranking-item__icon">{item.icon}</span>
+          <span class="ranking-item__value">{item.value}</span>
+          <span class="ranking-item__label">{item.label}</span>
+        </div>
+      ))}
+    </div>
+    {r.genetic_ailment_names && r.genetic_ailment_names !== 'none' && (
+      <p style="font-size: var(--text-xs); color: var(--color-muted); margin-top: var(--space-3)">
+        Known health concerns: <strong>{r.genetic_ailment_names}</strong>
+      </p>
+    )}
+  </div>
+)}

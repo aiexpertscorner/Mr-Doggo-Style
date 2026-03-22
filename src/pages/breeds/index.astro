@@ -1,199 +1,174 @@
 ---
-import Header from '../../components/ui/Header.astro';
-import Footer from '../../components/ui/Footer.astro';
-import BreedCard from '../../components/BreedCard.astro';
-import breedsData from '../../data/breeds.json';
+/**
+ * breeds/index.astro — Breed directory
+ * Filter by size, energy, coat. Search by name.
+ */
+import BaseLayout  from '../../layouts/BaseLayout.astro';
+import Breadcrumb  from '../../components/ui/Breadcrumb.astro';
+import masterBreeds from '../../data/master-breeds.json';
 
-const groups = [...new Set(breedsData.map(b => b.group).filter(Boolean))].sort();
-const energyCats = ["Needs Lots of Activity","Energetic","Regular Exercise","Calm","Couch Potato"];
-const sizeCats = ["small","medium","large"];
-
-const jsonLd = JSON.stringify({
-  "@context":"https://schema.org",
-  "@type":"CollectionPage",
-  "name":"Dog Breed Product Guides — Mr. Doggo Style",
-  "description":`Complete product guides for ${breedsData.length} dog breeds. Best food, toys, beds, and grooming tools for every breed.`,
-  "url":"https://mrdoggostyle.com/breeds",
-  "numberOfItems": breedsData.length,
-});
+const breeds = masterBreeds as any[];
+const COAT_ICONS: Record<string,string> = {
+  double:'🌀', long:'💫', short:'✨', wiry:'🔧', curly:'🔄',
+  silky:'🌟', corded:'🪢', hairless:'⭕', wavy:'〰️', medium:'🐾',
+};
+const SIZE_EMOJI: Record<string,string> = { small:'🐕', medium:'🐕‍🦺', large:'🐕‍🦺', giant:'🦮' };
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Dog Breed Guides (All {breedsData.length} Breeds) | MR. DOGGO STYLE</title>
-  <meta name="description" content={`Complete product guides for all ${breedsData.length} AKC-recognized dog breeds. Best food, toys, beds, and grooming tools matched to every breed's needs.`}/>
-  <link rel="canonical" href="https://mrdoggostyle.com/breeds"/>
-  <script type="application/ld+json" set:html={jsonLd}/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@400;600;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <style>
-    :root{--midnight:#0A0A0A;--concrete:#222;--cl:#2E2E2E;--lime:#CCFF00;--ash:#888;--smoke:#AAA;--white:#F0F0F0}
-    *{box-sizing:border-box} html{background:var(--midnight)} body{font-family:'Barlow Condensed',sans-serif;background:var(--midnight);color:var(--white);margin:0;overflow-x:hidden}
-    body::before{content:'';position:fixed;inset:0;opacity:.4;pointer-events:none;z-index:998;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")}
-    .btn-lime{display:inline-block;background:var(--lime);color:var(--midnight);font-family:'Archivo Black',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;padding:.55rem 1.25rem;border:2px solid var(--midnight);box-shadow:3px 3px 0 var(--midnight);text-decoration:none;transition:all .1s}
-    .btn-lime:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--midnight)}
-    .filter-btn{font-family:'Archivo Black',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;padding:.35rem .8rem;border:2px solid rgba(255,255,255,.12);background:transparent;color:var(--smoke);cursor:pointer;transition:all .12s}
-    .filter-btn:hover,.filter-btn.active{background:var(--lime);color:var(--midnight);border-color:var(--midnight)}
-    input[type=text]{font-family:'Barlow Condensed',sans-serif;border:2px solid rgba(255,255,255,.15);background:var(--concrete);color:var(--white);padding:.65rem 1rem;font-size:.95rem;outline:none;width:100%}
-    input[type=text]:focus{border-color:var(--lime)}
-    ::selection{background:var(--lime);color:var(--midnight)}
-    ::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:var(--midnight)} ::-webkit-scrollbar-thumb{background:var(--cl)} ::-webkit-scrollbar-thumb:hover{background:var(--lime)}
-    .hidden-card{display:none!important}
-  </style>
-</head>
-<body>
-<Header/>
 
-<!-- Hero -->
-<div style="background:var(--concrete);border-bottom:2px solid rgba(255,255,255,.07)">
-  <div style="max-width:1400px;margin:0 auto;padding:4rem 1.5rem">
-    <span style="font-family:'Space Mono',monospace;font-size:.58rem;text-transform:uppercase;letter-spacing:.12em;color:var(--lime)">{breedsData.length} BREED GUIDES</span>
-    <h1 style="font-family:'Anton',sans-serif;font-size:clamp(3rem,8vw,6rem);text-transform:uppercase;color:var(--white);margin:.2rem 0 1rem;letter-spacing:-.02em;line-height:.9">
-      EVERY BREED.<br/><span style="color:var(--lime)">EVERY GUIDE.</span>
-    </h1>
-    <p style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:var(--smoke);max-width:540px;margin:0 0 1.5rem;line-height:1.5">
-      Expert food, toy, bed, and grooming picks matched to every breed's exact size, energy, coat, and health profile. Powered by AKC breed registry data.
-    </p>
-    <!-- Search -->
-    <div style="max-width:520px;position:relative">
-      <input type="text" id="breed-search" placeholder="Search by breed (e.g. Labrador, Poodle, Husky...)" style="padding-left:2.5rem"/>
-      <span style="position:absolute;left:.75rem;top:50%;transform:translateY(-50%);font-size:1rem;pointer-events:none">🔍</span>
-    </div>
-  </div>
-</div>
+<BaseLayout
+  title="Dog Breed Directory 2026 — 277 Breeds with Expert Care Guides"
+  description="Browse all 277 dog breeds. Filter by size, energy and coat type. Each breed has expert product picks, care guides and health info."
+  canonicalUrl="https://mrdoggostyle.com/breeds"
+>
 
-<!-- Stats strip -->
-<div style="background:#0d0d0d;border-bottom:1px solid rgba(255,255,255,.05)">
-  <div style="max-width:1400px;margin:0 auto;padding:.65rem 1.5rem;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center">
-    {[
-      [`${breedsData.length}`,"BREEDS COVERED"],
-      [`${breedsData.filter(b=>b.size_category==='large').length}`,"LARGE BREEDS"],
-      [`${breedsData.filter(b=>b.energy?.category==='Needs Lots of Activity').length}`,"HIGH ENERGY BREEDS"],
-      [`${breedsData.filter(b=>b.popularity&&b.popularity<=50).length}`,"TOP-50 POPULAR"],
-    ].map(([n,l])=>(
-      <div style="text-align:center">
-        <div style="font-family:'Anton',sans-serif;font-size:1.5rem;color:var(--lime);line-height:1">{n}</div>
-        <div style="font-family:'Space Mono',monospace;font-size:.52rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ash)">{l}</div>
+  <div class="page-hero">
+    <div class="container page-hero__inner">
+      <Breadcrumb items={[{ label:'Home', href:'/' }, { label:'All Breeds', current:true }]} />
+      <h1 class="page-hero__title">Dog Breed Directory</h1>
+      <p class="page-hero__desc">{breeds.length} breeds — each with expert product picks, care guides and health info.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-4)">
+        <span class="badge badge--primary">{breeds.length} breeds</span>
+        <span class="badge badge--muted">Expert picks per breed</span>
+        <span class="badge badge--muted">Updated 2026</span>
       </div>
-    ))}
-  </div>
-</div>
-
-<!-- Filters + Grid -->
-<div style="max-width:1400px;margin:0 auto;padding:2rem 1.5rem">
-
-  <!-- Filter rows -->
-  <div style="margin-bottom:1.5rem;display:flex;flex-direction:column;gap:.6rem">
-    <div style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
-      <span style="font-family:'Space Mono',monospace;font-size:.52rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ash);width:50px;flex-shrink:0">GROUP</span>
-      <button class="filter-btn active" data-filter="group" data-value="">ALL</button>
-      {groups.filter(g=>!g.includes('Foundation')&&!g.includes('Misc')).map(g=>(
-        <button class="filter-btn" data-filter="group" data-value={g}>{g.replace(' Group','').replace(' Service','').toUpperCase()}</button>
-      ))}
-    </div>
-    <div style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
-      <span style="font-family:'Space Mono',monospace;font-size:.52rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ash);width:50px;flex-shrink:0">SIZE</span>
-      <button class="filter-btn active" data-filter="size" data-value="">ALL</button>
-      {sizeCats.map(s=><button class="filter-btn" data-filter="size" data-value={s}>{s.toUpperCase()}</button>)}
-    </div>
-    <div style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center">
-      <span style="font-family:'Space Mono',monospace;font-size:.52rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ash);width:50px;flex-shrink:0">ENERGY</span>
-      <button class="filter-btn active" data-filter="energy" data-value="">ALL</button>
-      {energyCats.map(e=><button class="filter-btn" data-filter="energy" data-value={e}>{e.toUpperCase()}</button>)}
     </div>
   </div>
 
-  <!-- Count -->
-  <p style="font-family:'Space Mono',monospace;font-size:.58rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ash);margin:0 0 1.25rem">
-    SHOWING <strong id="shown-count" style="color:var(--lime)">{breedsData.length}</strong> OF {breedsData.length} BREEDS
-  </p>
+  <main class="section">
+    <div class="container">
 
-  <!-- Breed grid with real photos -->
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem" id="breed-grid">
-    {breedsData.map(b => (
-      <div class="breed-item"
-           data-name={b.name.toLowerCase()}
-           data-group={b.group}
-           data-size={b.size_category}
-           data-energy={b.energy?.category}>
-        <BreedCard
-          slug={b.slug}
-          name={b.name}
-          group={b.group}
-          temperament={b.temperament}
-          popularity={b.popularity}
-          size_category={b.size_category}
-          energy={b.energy}
-          shedding={b.shedding}
-          dogCeoBreed={b.dogCeoBreed}
-        />
+      <!-- Filters -->
+      <div style="margin-bottom:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3)">
+
+        <div>
+          <p style="font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--color-muted);margin-bottom:var(--space-2)">Size</p>
+          <div class="breed-filters">
+            <button class="breed-filter-btn active" data-filter="size" data-value="all">All</button>
+            <button class="breed-filter-btn" data-filter="size" data-value="small">🐕 Small</button>
+            <button class="breed-filter-btn" data-filter="size" data-value="medium">🐕‍🦺 Medium</button>
+            <button class="breed-filter-btn" data-filter="size" data-value="large">🐕‍🦺 Large</button>
+            <button class="breed-filter-btn" data-filter="size" data-value="giant">🦮 Giant</button>
+          </div>
+        </div>
+
+        <div>
+          <p style="font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--color-muted);margin-bottom:var(--space-2)">Energy</p>
+          <div class="breed-filters">
+            <button class="breed-filter-btn active" data-filter="energy" data-value="all">All</button>
+            <button class="breed-filter-btn" data-filter="energy" data-value="active">⚡ Active</button>
+            <button class="breed-filter-btn" data-filter="energy" data-value="regular">🚶 Regular</button>
+            <button class="breed-filter-btn" data-filter="energy" data-value="calm">😴 Calm</button>
+          </div>
+        </div>
+
+        <div>
+          <p style="font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--color-muted);margin-bottom:var(--space-2)">Trainability</p>
+          <div class="breed-filters">
+            <button class="breed-filter-btn active" data-filter="training" data-value="all">All</button>
+            <button class="breed-filter-btn" data-filter="training" data-value="easy">🟢 Easy</button>
+            <button class="breed-filter-btn" data-filter="training" data-value="moderate">🟡 Moderate</button>
+            <button class="breed-filter-btn" data-filter="training" data-value="difficult">🔴 Independent</button>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:var(--space-4)">
+          <input
+            type="search"
+            id="breed-search"
+            placeholder="Search breeds…"
+            style="flex:1;max-width:320px;padding:var(--space-2) var(--space-4);border:1px solid var(--color-border);border-radius:var(--radius-lg);font-size:var(--text-sm);background:var(--color-bg);color:var(--color-body);outline:none"
+            aria-label="Search breeds"
+          />
+          <span id="breed-count" style="font-size:var(--text-sm);color:var(--color-muted)">{breeds.length} breeds</span>
+          <button id="clear-btn" style="font-size:var(--text-xs);color:var(--color-primary);background:none;border:none;cursor:pointer;text-decoration:underline;display:none">Clear filters</button>
+        </div>
       </div>
-    ))}
-  </div>
 
-  <!-- No results -->
-  <div id="no-results" style="display:none;text-align:center;padding:4rem 1rem">
-    <div style="font-size:4rem;margin-bottom:1rem">🐕</div>
-    <p style="font-family:'Archivo Black',sans-serif;font-size:1rem;text-transform:uppercase;color:var(--smoke)">NO BREEDS MATCH YOUR FILTERS.</p>
-    <button onclick="resetFilters()" class="btn-lime" style="margin-top:1rem">RESET FILTERS →</button>
-  </div>
-</div>
+      <!-- Grid -->
+      <div id="breed-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:var(--space-4)">
+        {breeds.map(b => (
+          <a
+            href={`/breeds/${b.slug}`}
+            class="breed-card"
+            data-size={b.size_category}
+            data-energy={b.energy_level}
+            data-training={b.training_level}
+            data-name={b.name.toLowerCase()}
+          >
+            <div class="breed-card__image-placeholder" style="height:130px;font-size:2.5rem">
+              {SIZE_EMOJI[b.size_category]||'🐕'}
+            </div>
+            <div class="breed-card__body">
+              <h3 class="breed-card__name">{b.name}</h3>
+              {b.akc_group && <p class="breed-card__group">{b.akc_group.replace(' Group','')}</p>}
+              <div class="breed-card__badges">
+                <span style="font-size:10px;padding:2px 7px;background:var(--color-bg-muted);border-radius:99px;color:var(--color-muted)">{b.size_category}</span>
+                <span style="font-size:10px;padding:2px 7px;background:var(--color-bg-muted);border-radius:99px;color:var(--color-muted)">{b.energy_level}</span>
+                <span style="font-size:10px;padding:2px 7px;background:var(--color-bg-muted);border-radius:99px;color:var(--color-muted)" title={b.coat_type}>{COAT_ICONS[b.coat_type]||'🐾'}</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
 
-<Footer/>
+      <div id="no-results" style="display:none;text-align:center;padding:var(--space-16) 0;color:var(--color-muted)">
+        <p style="font-size:var(--text-lg);margin-bottom:var(--space-4)">No breeds match your filters.</p>
+        <button id="clear-btn-2" style="color:var(--color-primary);background:none;border:none;cursor:pointer;font-size:var(--text-base);text-decoration:underline">Clear all filters</button>
+      </div>
+
+    </div>
+  </main>
+
+</BaseLayout>
 
 <script>
-  const items = document.querySelectorAll('.breed-item');
-  const btns  = document.querySelectorAll('.filter-btn');
-  const shownCount = document.getElementById('shown-count');
-  const noRes = document.getElementById('no-results');
-  const searchInput = document.getElementById('breed-search');
-
-  let activeFilters = {group:'', size:'', energy:''};
-  let searchTerm = '';
+  let activeFilters: Record<string,string> = { size:'all', energy:'all', training:'all' };
+  let searchQ = '';
 
   function applyFilters() {
-    let count = 0;
-    items.forEach(item => {
-      const name   = item.dataset.name;
-      const group  = item.dataset.group;
-      const size   = item.dataset.size;
-      const energy = item.dataset.energy;
-      const show   =
-        (!searchTerm || name.includes(searchTerm)) &&
-        (!activeFilters.group  || group  === activeFilters.group) &&
-        (!activeFilters.size   || size   === activeFilters.size) &&
-        (!activeFilters.energy || energy === activeFilters.energy);
-      item.style.display = show ? '' : 'none';
-      if (show) count++;
+    const cards = document.querySelectorAll<HTMLElement>('#breed-grid .breed-card');
+    let n = 0;
+    cards.forEach(card => {
+      const show =
+        (activeFilters.size     === 'all' || card.dataset.size     === activeFilters.size) &&
+        (activeFilters.energy   === 'all' || card.dataset.energy   === activeFilters.energy) &&
+        (activeFilters.training === 'all' || card.dataset.training === activeFilters.training) &&
+        (!searchQ || (card.dataset.name||'').includes(searchQ));
+      card.style.display = show ? '' : 'none';
+      if (show) n++;
     });
-    if (shownCount) shownCount.textContent = count;
-    if (noRes) noRes.style.display = count === 0 ? 'block' : 'none';
+    (document.getElementById('breed-count') as any).textContent = `${n} breeds`;
+    (document.getElementById('no-results') as any).style.display = n === 0 ? '' : 'none';
+    const hasFilter = Object.values(activeFilters).some(v => v !== 'all') || !!searchQ;
+    (document.getElementById('clear-btn') as any).style.display = hasFilter ? '' : 'none';
   }
 
-  searchInput?.addEventListener('input', e => {
-    searchTerm = e.target.value.toLowerCase().trim();
-    applyFilters();
-  });
-
-  btns.forEach(btn => {
+  document.querySelectorAll('[data-filter]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const f = btn.dataset.filter, v = btn.dataset.value;
-      activeFilters[f] = v;
-      document.querySelectorAll(`.filter-btn[data-filter="${f}"]`).forEach(b => b.classList.remove('active'));
+      const filter = (btn as HTMLElement).dataset.filter!;
+      const value  = (btn as HTMLElement).dataset.value!;
+      document.querySelectorAll(`[data-filter="${filter}"]`).forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      activeFilters[filter] = value;
       applyFilters();
     });
   });
 
-  window.resetFilters = () => {
-    activeFilters = {group:'', size:'', energy:''};
-    searchTerm = '';
-    if(searchInput) searchInput.value = '';
-    btns.forEach(b => { b.classList.remove('active'); if(b.dataset.value==='') b.classList.add('active'); });
+  (document.getElementById('breed-search') as HTMLInputElement)?.addEventListener('input', e => {
+    searchQ = (e.target as HTMLInputElement).value.toLowerCase().trim();
     applyFilters();
-  };
+  });
+
+  function clearAll() {
+    activeFilters = { size:'all', energy:'all', training:'all' };
+    searchQ = '';
+    (document.getElementById('breed-search') as HTMLInputElement).value = '';
+    document.querySelectorAll('.breed-filter-btn').forEach(b => {
+      b.classList.toggle('active', (b as HTMLElement).dataset.value === 'all');
+    });
+    applyFilters();
+  }
+
+  document.getElementById('clear-btn')?.addEventListener('click', clearAll);
+  document.getElementById('clear-btn-2')?.addEventListener('click', clearAll);
 </script>
-</body>
-</html>
