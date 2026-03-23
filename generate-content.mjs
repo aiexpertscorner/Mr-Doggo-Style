@@ -1314,7 +1314,7 @@ The biggest payoff comes from early detection — most of the conditions ${n}s a
 
 // ── SUPPLEMENTS TEMPLATE (1300w+) ──────────────────────────────
 function tmpl_supplements(breed, products) {
-  const n = breed.name, sz = breed.size_category, en = breed.energy_level, coat = breed.coat_type || 'short';
+  const n = breed.name, sz = breed.size_category, en = breed.energy_level, coat = breed.coat_type||'short';
   const shed = breed.shedding_level, life = breed.life_expectancy||{}, le = life.max||12;
   const links = linkMap[breed.slug]||{}, rank = breed.ranking_data||{};
   const group = breed.akc_group||'';
@@ -1767,27 +1767,34 @@ ${(b.cons||['Check suitability']).map(c=>`- ${c}`).join('\n')}
 `;
 }
 
-// ── Main ───────────────────────────────────────────────────────
+// ── TRAINING TEMPLATE (1400w+) — NEW in v2.1 ──────────────────
 function tmpl_training(breed, products) {
-  const n = breed.name, sz = breed.size_category, en = breed.energy_level;
+  const n  = breed.name, sz = breed.size_category, en = breed.energy_level;
   const tr = breed.training_level, coat = breed.coat_type || 'short';
-  const links = linkMap[breed.slug]||{}, rank = breed.ranking_data||{};
+  const links = linkMap[breed.slug] || {}, rank = breed.ranking_data || {};
+
   const top     = products[0];
-  const harness = products.find(p=>p.subcategory==='harnesses') || products[0];
-  const leash   = products.find(p=>p.subcategory==='leashes')   || products[1]||products[0];
-  const collar  = products.find(p=>(p.tags||[]).includes('gps')) || products[2]||products[0];
+  const harness = products.find(p => p.subcategory === 'harnesses') || products[0];
+  const leash   = products.find(p => p.subcategory === 'leashes')   || products[1] || products[0];
+  const collar  = products.find(p => (p.tags||[]).includes('gps'))  || products[2] || products[0];
+
   const intel = rank.intelligence_rank
-    ? `${n}s rank **#${rank.intelligence_rank}** in canine intelligence (${rank.intelligence_label||'above average'}).`
+    ? `${n}s rank **#${rank.intelligence_rank}** in canine intelligence (${rank.intelligence_label||'above average'}) — ${tr === 'easy' ? 'highly trainable' : tr === 'difficult' ? 'independent-minded, patience required' : 'trainable with consistent positive reinforcement'}.`
     : `${n}s are ${tr}-to-train dogs that respond best to positive reinforcement.`;
+
   const approach = {
-    easy:     `${n}s pick up commands quickly. Short 10–15 min sessions 2–3× daily produce rapid results. Vary exercises to prevent boredom.`,
-    moderate: `${n}s are capable learners but need consistency. Keep sessions short, always end on a success, and use positive reinforcement throughout.`,
-    difficult:`${n}s are independent thinkers. Focus on relationship-building first — high-value treats and patience beat repetition every time.`,
+    easy:     `${n}s pick up commands quickly. Short 10-15 min sessions 2-3x daily. Vary exercises to prevent boredom — intelligent breeds need mental challenge.`,
+    moderate: `${n}s are capable learners but require consistency. Keep sessions short, always end on a success.`,
+    difficult:`${n}s are independent thinkers. Focus on relationship-building first — high-value treats and patience beat repetition.`,
   }[tr] || `${n}s respond best to consistent positive reinforcement.`;
-  const table_rows = products.slice(0,5).map((p,i)=>`| ${p.name} | ${fmt(p.price)} | ${(p.subcategory||'gear').replace(/-/g,' ')} | ${i===0?'🥇':''} |`).join('\n');
+
+  const table_rows = products.slice(0,5).map((p,i) =>
+    `| ${p.name} | ${fmt(p.price)} | ${(p.subcategory||'gear').replace(/-/g,' ')} | ${i===0?'🥇':''} |`
+  ).join('\n');
+
   return `---
-title: ${ys('How to Train a '+n+' 2026 — Complete Guide for '+tr.charAt(0).toUpperCase()+tr.slice(1)+'-to-Train Breeds')}
-description: ${ys('Step-by-step training guide for '+n+'s with the best harnesses, leashes and tools for '+sz+' '+en+'-energy dogs. Updated March 2026.')}
+title: ${ys(`How to Train a ${n} 2026 — Guide for ${tr.charAt(0).toUpperCase()+tr.slice(1)}-to-Train Breeds`)}
+description: ${ys(`Step-by-step training guide for ${n}s with the best harnesses, leashes and tools for ${sz} ${en}-energy dogs. Updated March 2026.`)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 category: "Training"
@@ -1796,7 +1803,7 @@ breedSlug: ${ys(breed.slug)}
 breedName: ${ys(n)}
 breedSize: ${ys(sz)}
 breedEnergy: ${ys(en)}
-tags: ["training", ${ys(breed.slug)}, "harness", "leash", "2026"]
+tags: ["training", ${ys(breed.slug)}, "harness", "leash", "obedience", "2026"]
 readTime: 7
 topProduct:
   name: ${ys(top.name)}
@@ -1807,11 +1814,11 @@ topProduct:
 schemaType: "HowTo"
 ---
 
-${intel}
+Training a ${n} starts with understanding how they learn. ${intel}
 
 ${approach}
 
-> **Disclosure:** We earn a small commission on qualifying purchases. This doesn't affect our rankings.
+> **Disclosure:** We earn a small commission on qualifying purchases. This does not affect our rankings.
 
 ---
 
@@ -1828,13 +1835,13 @@ ${table_rows}
 | Attribute | Rating |
 |---|---|
 | Trainability | ${tr.charAt(0).toUpperCase()+tr.slice(1)} |
-| Energy | ${en.charAt(0).toUpperCase()+en.slice(1)} |
+| Energy level | ${en.charAt(0).toUpperCase()+en.slice(1)} |
 | Size | ${sz.charAt(0).toUpperCase()+sz.slice(1)} |
 | Intelligence | ${rank.intelligence_label||'Above average'} |
 
 ---
 
-## Best Training Gear for ${n}s
+## Best Training Equipment for ${n}s
 
 ### 1. ${harness.name} — Best Harness
 
@@ -1842,12 +1849,12 @@ ${table_rows}
 
 ${alink(harness.asin, 'Check current price on Amazon →')}
 
-${harness.verdict||'The best harness for '+n+'s based on fit, control and durability.'}
+${harness.verdict || `The best harness for ${n}s based on fit, control, and durability.`}
 
-**Why harness over collar:** Collars put pressure on the trachea when a ${sz} dog pulls. A front-clip harness redirects pulling without the pressure, making training faster.
+**Why harness over collar:** Front-clip harnesses redirect pulling without throat pressure — training results come faster.
 
 **Pros:**
-${(harness.pros||['Front-clip for no-pull control','Adjustable fit','Durable']).map(p=>`- ${p}`).join('\n')}
+${(harness.pros||['Front-clip no-pull control','Adjustable fit','Durable']).map(p=>`- ${p}`).join('\n')}
 
 ---
 
@@ -1857,9 +1864,9 @@ ${(harness.pros||['Front-clip for no-pull control','Adjustable fit','Durable']).
 
 ${alink(leash.asin, 'Check current price on Amazon →')}
 
-${leash.verdict||'The best training leash for '+n+'s.'}
+${leash.verdict || `The best training leash for ${n}s.`}
 
-**Training leash rules:** Use a 4–6 foot standard leash for training — never a retractable lead, which gives inconsistent feedback and teaches dogs that pulling works.
+Use a 4-6 foot standard leash for training — never a retractable lead which teaches dogs that pulling works.
 
 ---
 
@@ -1869,59 +1876,58 @@ ${leash.verdict||'The best training leash for '+n+'s.'}
 
 ${alink(collar.asin, 'Check current price on Amazon →')}
 
-${collar.verdict||'The best collar option for '+n+'s.'}
+${collar.verdict || `The best collar option for ${n}s.`}
 
 ---
 
 ## ${n} Training Timeline
 
-### Week 1–2: Foundation
+### Week 1-2: Foundation
 - **Sit, down, stay** — the three non-negotiable commands
 - **Name recognition** — pair name with treat every time they look at you
 - **Loose-leash walking** — start indoors, 5 minutes at a time
 
-### Week 3–4: Building blocks
+### Week 3-4: Building blocks
 - **Come (recall)** — most important safety command; use a long line in the garden
-- **Leave it** — critical for ${en === 'active' ? 'active '+n+'s on walks' : n+'s encountering food or objects'}
+- **Leave it** — critical for ${en === 'active' ? `active ${n}s on walks` : `${n}s encountering food or objects`}
 - **Polite greetings** — 4-on-floor rule: attention only when all paws are down
 
-### Month 2–3: Generalisation
-- Practice all commands in new locations with distractions
-- Puppy or group classes — socialisation is as important as obedience
-- Begin breed-specific enrichment: ${en==='active' ? 'agility, nosework, or tracking for '+n+'s' : 'enrichment activities matching the '+n+"'s natural instincts"}
+### Month 2-3: Generalisation
+- Practice commands in new locations with distractions
+- Group classes — socialisation is as important as obedience
+- Begin breed-specific enrichment: ${en === 'active' ? `agility, nosework or tracking for ${n}s` : `enrichment activities matching the ${n}'s natural instincts`}
 
 ---
 
 ## Common ${n} Training Mistakes
 
-1. **Inconsistency** — if "off the sofa" means sometimes, it means never. All family members must follow the same rules.
-2. **Sessions too long** — ${tr==='easy' ? '10–15 minutes max for '+n+'s before quality drops' : '5–10 minute sessions beat 30-minute attempts every time'}.
-3. **Using punishment** — creates anxiety and suppresses behaviour without teaching an alternative.
-4. **Skipping socialisation** — ${n}s not exposed to varied people, dogs and environments during puppyhood develop fear-based reactivity.
+1. **Inconsistency** — all family members must follow the same rules.
+2. **Sessions too long** — ${tr === 'easy' ? `10-15 minutes max for ${n}s.` : '5-10 minute sessions beat marathon attempts.'}
+3. **Using punishment** — creates anxiety without teaching an alternative.
+4. **Skipping socialisation** — expose ${n}s to varied people and environments during puppyhood.
+5. **Wrong equipment** — a retractable leash actively reinforces pulling. A front-clip harness changes the physics immediately.
 
 ---
 
 ## Frequently Asked Questions
 
 **Q: At what age should I start training my ${n}?**
-A: The moment you bring them home — typically 8 weeks. Short positive sessions from week 8 produce dogs that are fundamentally easier to live with.
+A: The moment you bring them home — typically 8 weeks. Short positive sessions from week 8 produce fundamentally easier dogs.
 
-**Q: How long should training sessions be?**
-A: ${tr==='easy' ? '10–15 minutes, 2–3 times daily for '+n+'s.' : '5–10 minutes maximum. Short and successful beats long and frustrating.'} Always end before your dog loses interest.
+**Q: How long should sessions be?**
+A: ${tr === 'easy' ? `10-15 minutes, 2-3 times daily for ${n}s.` : '5-10 minutes maximum. Short and successful beats long and frustrating.'}
 
 **Q: My ${n} pulls badly on lead. What works?**
-A: The ${harness.name} with front-clip is the most immediate solution — it redirects pulling instead of punishing it. Pair with the "be a tree" method: stop completely when tension appears, move forward only on a loose lead.
+A: The ${harness.name} with front-clip redirects pulling instead of punishing it. Pair with the "be a tree" method: stop when tension appears, move only on a loose lead.
 
 **Q: Should I attend puppy classes?**
-A: Yes — the socialisation value alone justifies the cost, especially for ${sz} breeds. Group classes also teach training in the presence of distractions, which is where most home training falls apart.
+A: Yes — the socialisation value alone justifies the cost, especially for ${sz} breeds.
 
 ---
 
 ## Our Verdict
 
-Training a ${n} well comes down to the right equipment (start with **${harness.name}**), consistent positive reinforcement, and enough mental enrichment to prevent boredom-based problems.
-
-${en==='active' ? n+'s that get adequate training and stimulation are genuinely easy, joyful companions. Undertrained '+n+'s are a handful — the difference is entirely in the approach.' : n+'s are naturally '+tr+'-to-train. Build the habit of short daily sessions and results come faster than most owners expect.'}
+Training a ${n}: right equipment (**${harness.name}**), consistent positive reinforcement, and sufficient mental enrichment.
 
 **More ${n} guides:**
 - [Best food for ${n}s →](${links.food_post||'/blog'})
@@ -1930,6 +1936,8 @@ ${en==='active' ? n+'s that get adequate training and stimulation are genuinely 
 - [${n} care hub →](${links.hub||'/breeds'})
 `;
 }
+
+// ── Main ───────────────────────────────────────────────────────
 const CAT_MAP = {
   food:        { cat: 'dog-food',   tmpl: tmpl_food,        key: 'food_post',       prefix: 'best-food-for-',      n: 6 },
   toys:        { cat: 'toys',       tmpl: tmpl_toys,        key: 'toy_post',        prefix: 'best-toys-for-',      n: 5 },
@@ -1937,7 +1945,7 @@ const CAT_MAP = {
   grooming:    { cat: 'grooming',   tmpl: tmpl_grooming,    key: 'grooming_post',   prefix: 'best-grooming-for-',  n: 5 },
   health:      { cat: 'health',     tmpl: tmpl_health,      key: 'health_post',     prefix: '',                    n: 6, use_slug: true },
   supplements: { cat: 'supplements',tmpl: tmpl_supplements, key: 'supplement_post', prefix: 'best-supplements-for-',n: 5 },
-  training:    { cat: 'training',   tmpl: tmpl_training,        key: 'training_post',   prefix: 'training-a-',         n: 5 },
+  training:    { cat: 'training',   tmpl: tmpl_training,        key: 'training_post', prefix: 'training-a-',       n: 5 },
   names:       { cat: null,         tmpl: (b,_)=>tmpl_names(b), key: 'names_page',  prefix: 'names-for-',          n: 0 },
 };
 
@@ -1965,7 +1973,7 @@ if (TYPE === 'comparison') {
   }
 } else {
   const cfg = CAT_MAP[TYPE];
-  if (!cfg) { console.error(R(`✗ Unknown type "${TYPE}". Valid: food toys beds grooming health supplements names comparison`)); process.exit(1); }
+  if (!cfg) { console.error(R(`✗ Unknown type "${TYPE}". Valid: food toys beds grooming health supplements training names comparison`)); process.exit(1); }
 
   let queue = SLUG ? breeds.filter(b=>b.slug===SLUG) : [...breeds];
   if (!SLUG) queue.sort((a,b)=>((a.akc_popularity||999)-(b.akc_popularity||999)));
