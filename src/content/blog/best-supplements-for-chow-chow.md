@@ -1,8 +1,8 @@
 ---
 title: "Best Supplements for Chow Chows 2026 — Joint, Gut, Coat & Calming Picks"
 description: "Vet-guided supplement picks for Chow Chows matched to their large breed health profile. Joint support, probiotics, omega-3 and calming options — updated March 2026."
-pubDate: 2026-03-22
-updatedDate: 2026-03-22
+pubDate: 2026-03-23
+updatedDate: 2026-03-23
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "chow-chow"
