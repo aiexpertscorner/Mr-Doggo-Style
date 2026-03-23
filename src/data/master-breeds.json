@@ -190,7 +190,7 @@
       "has_fci_data": false,
       "has_ranking_data": true,
       "has_country_data": false,
-      "image_verified": false
+      "image_verified": true
     },
     "ranking_data": {
       "intelligence_rank": 3,
@@ -205,7 +205,9 @@
       "children_score": 2,
       "overall_score": 2.06,
       "breed_type": "herding"
-    }
+    },
+    "image_url": "https://images.dog.ceo/breeds/germanshepherd/n02106662_10472.jpg",
+    "image_source": "manual-patch"
   },
   {
     "slug": "golden-retriever",
@@ -5004,7 +5006,7 @@
       "has_fci_data": true,
       "has_ranking_data": true,
       "has_country_data": true,
-      "image_verified": false
+      "image_verified": true
     },
     "ranking_data": {
       "intelligence_rank": 65,
@@ -5020,7 +5022,9 @@
       "overall_score": 1.42,
       "breed_type": "working"
     },
-    "origin_country": "Switzerland"
+    "origin_country": "Switzerland",
+    "image_url": "https://images.dog.ceo/breeds/bernard-saint/n02109525_3.jpg",
+    "image_source": "manual-patch"
   },
   {
     "slug": "bloodhound",
@@ -5105,7 +5109,7 @@
       "has_fci_data": true,
       "has_ranking_data": true,
       "has_country_data": true,
-      "image_verified": false
+      "image_verified": true
     },
     "ranking_data": {
       "intelligence_rank": 75,
@@ -5121,7 +5125,9 @@
       "overall_score": 1.66,
       "breed_type": "hound"
     },
-    "origin_country": "France"
+    "origin_country": "France",
+    "image_url": "https://images.dog.ceo/breeds/bloodhound/n02088466_1.jpg",
+    "image_source": "manual-patch"
   },
   {
     "slug": "portuguese-water-dog",
@@ -9848,7 +9854,7 @@
       "has_fci_data": true,
       "has_ranking_data": true,
       "has_country_data": false,
-      "image_verified": false
+      "image_verified": true
     },
     "ranking_data": {
       "intelligence_rank": 59,
@@ -9863,7 +9869,9 @@
       "children_score": 3,
       "overall_score": 2.8,
       "breed_type": "toy"
-    }
+    },
+    "image_url": "https://images.dog.ceo/breeds/griffon-brussels/n02112706_1.jpg",
+    "image_source": "manual-patch"
   },
   {
     "slug": "lagotto-romagnolo",

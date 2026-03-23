@@ -10,7 +10,7 @@ const navLinks = [
   { href: '/categories/health',      label: 'Health'     },
   { href: '/breeds',                 label: 'Breeds'     },
   { href: '/blog',                   label: 'Expert Blog'},
-  { href: '/dog-names',              label: 'Dog Names'  },
+  { href: '/dog-names',              label: 'Dog Name Generator'  },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -46,7 +46,7 @@ const currentPath = Astro.url.pathname;
     <div class="nav-actions">
       <button class="nav-search-btn" aria-label="Search" id="search-trigger">
         <span>Search products…</span>
-        <kbd class="nav-search-btn__shortcut">⌘K</kbd>
+        <kbd class="nav-search-btn__shortcut"></kbd>
       </button>
       <a href="/blog/top-picks-2026" class="nav-cta">Top Picks 2026</a>
     </div>
