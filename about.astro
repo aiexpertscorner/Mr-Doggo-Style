@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About Mr. Doggo Style — Expert Dog Product Reviews"
+  description="Mr. Doggo Style is a data-driven dog product review site covering 277 breeds. Learn about our methodology, team, and commitment to honest, unbiased reviews."
+  canonicalURL="https://mrdoggostyle.com/about"
+>
+
+  <!-- Hero -->
+  <div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
+    <div class="max-w-4xl mx-auto px-4 py-14 sm:py-20 text-center">
+      <span class="inline-block font-sans text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style="background:#a0621c;color:white">
+        Est. 2024
+      </span>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4 leading-tight" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+        About Mr. Doggo Style
+      </h1>
+      <p class="font-sans text-lg max-w-2xl mx-auto leading-relaxed" style="color:#64748b">
+        We built the dog product resource we always wished existed — honest, breed-specific, and backed by real data rather than brand deals.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-14 space-y-16">
+
+    <!-- Origin story -->
+    <section class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:#a0621c">Our story</p>
+        <h2 class="font-display text-3xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+          Built out of frustration
+        </h2>
+        <div class="space-y-4 font-sans text-base leading-relaxed" style="color:#475569">
+          <p>As dog owners, we kept running into the same problem: product review sites that were either paid by brands, riddled with fake five-star reviews, or so generic they were useless for our specific breeds.</p>
+          <p>A recommendation for a "large breed dog food" that works for a Labrador isn't necessarily right for a Great Dane. Grooming advice for a double-coated breed is completely different from a short-coat breed. The internet treated all dogs the same.</p>
+          <p>So we built something different. Mr. Doggo Style covers <strong style="color:#1e293b">277 dog breeds</strong> with product picks, care guides, and health information matched specifically to each breed's size, energy level, coat type, and known health risks.</p>
+        </div>
+      </div>
+      <div class="rounded-3xl overflow-hidden" style="background:linear-gradient(135deg,#f5e8d0,#fef3c7);padding:2.5rem;text-align:center">
+        <div style="font-size:5rem;margin-bottom:1rem">🐾</div>
+        <div class="grid grid-cols-2 gap-4">
+          {[
+            ['277', 'Breeds covered'],
+            ['2,900+', 'Expert guides'],
+            ['125+', 'Products reviewed'],
+            ['7,000+', 'Names curated'],
+          ].map(([num, label]) => (
+            <div class="rounded-2xl p-3" style="background:white">
+              <div class="font-display text-2xl font-black" style="font-family:'Playfair Display',Georgia,serif;color:#a0621c">{num}</div>
+              <div class="font-sans text-xs mt-0.5" style="color:#64748b">{label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- What makes us different -->
+    <section>
+      <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:#a0621c">Our approach</p>
+      <h2 class="font-display text-3xl font-bold mb-8" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+        What makes us different
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {[
+          {
+            icon: '🧬',
+            title: 'Breed-specific recommendations',
+            body: 'Every product pick is matched to a breed\'s actual characteristics: size, energy level, coat type, shedding level, and known health vulnerabilities. We don\'t give generic advice.',
+          },
+          {
+            icon: '📊',
+            title: 'Data-driven scoring',
+            body: 'Our product scores combine verified buyer reviews, ingredient analysis, brand reputation data, and veterinary guidance — not brand sponsorships or commission rates.',
+          },
+          {
+            icon: '🩺',
+            title: 'Health-first editorial policy',
+            body: 'For food, supplements, and health products, we reference peer-reviewed veterinary research. We flag known risks, ongoing FDA investigations, and ingredient concerns.',
+          },
+          {
+            icon: '💬',
+            title: 'Real pros and cons',
+            body: 'Every review includes genuine cons, not just pros. If a product has a recurring issue in 15% of verified reviews, we tell you — even if it\'s our top pick overall.',
+          },
+          {
+            icon: '🔄',
+            title: 'Regularly updated',
+            body: 'Products change. Formulas get updated. New options enter the market. We review and update our recommendations regularly rather than publishing once and forgetting.',
+          },
+          {
+            icon: '🚫',
+            title: 'No paid placements',
+            body: 'Brands cannot pay to appear in our recommendations. Our top picks are determined by our scoring methodology. Full stop.',
+          },
+        ].map(item => (
+          <div class="rounded-2xl p-5" style="background:white;border:1px solid #e8ccaa">
+            <div style="font-size:1.75rem;margin-bottom:0.75rem">{item.icon}</div>
+            <h3 class="font-sans font-bold text-base mb-2" style="color:#1e293b">{item.title}</h3>
+            <p class="font-sans text-sm leading-relaxed" style="color:#64748b">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- What we cover -->
+    <section class="rounded-3xl p-8" style="background:white;border:1px solid #e8ccaa">
+      <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:#a0621c">Coverage</p>
+      <h2 class="font-display text-3xl font-bold mb-6" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+        What we cover
+      </h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {[
+          ['🍖', 'Dog Food', 'Dry, wet, raw, fresh, and breed-specific formulas'],
+          ['🎾', 'Toys & Enrichment', 'Chew toys, puzzles, fetch, enrichment feeders'],
+          ['🛏️', 'Beds & Sleep', 'Orthopedic, calming, elevated, travel beds'],
+          ['✂️', 'Grooming', 'Brushes, shampoos, nail care, deshedding tools'],
+          ['🩺', 'Health & Prevention', 'DNA tests, flea & tick, dental, wound care'],
+          ['💊', 'Supplements', 'Joint, probiotic, omega-3, calming, multivitamins'],
+          ['🦮', 'Training & Gear', 'Harnesses, leashes, GPS trackers, collars'],
+          ['✍️', 'Dog Names', '7,000+ curated names matched to breed personality'],
+          ['📊', 'Breed Guides', 'Complete care hubs for every recognised breed'],
+        ].map(([icon, title, desc]) => (
+          <div class="flex gap-3 items-start">
+            <span style="font-size:1.25rem;flex-shrink:0;margin-top:2px">{icon}</span>
+            <div>
+              <p class="font-sans font-bold text-sm" style="color:#1e293b">{title}</p>
+              <p class="font-sans text-xs mt-0.5" style="color:#64748b">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Affiliate transparency -->
+    <section class="rounded-3xl p-8" style="background:linear-gradient(135deg,#fef3c7,#fdf8f0);border:2px solid #fbbf24">
+      <div class="flex gap-4 items-start">
+        <span style="font-size:2rem;flex-shrink:0">⚖️</span>
+        <div>
+          <h2 class="font-display text-2xl font-bold mb-3" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+            How we make money — transparently
+          </h2>
+          <div class="space-y-3 font-sans text-sm leading-relaxed" style="color:#475569">
+            <p>Mr. Doggo Style participates in affiliate programs including Amazon Associates and Chewy. When you click a link to a product and make a purchase, we may earn a commission — at no additional cost to you.</p>
+            <p>This is how we keep the site free and updated. It does not influence which products we recommend. Our top picks are determined by our scoring methodology, not commission rates. In fact, some of our highest-rated products carry lower affiliate commissions than lower-ranked alternatives.</p>
+            <p>We also never accept payment from brands in exchange for favorable coverage. If a brand wants to appear in our recommendations, the only way is to make a genuinely excellent product.</p>
+          </div>
+          <a href="/disclosure" class="inline-block mt-4 font-sans text-sm font-bold hover:underline" style="color:#a0621c">
+            Read our full affiliate disclosure →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="text-center">
+      <h2 class="font-display text-2xl font-bold mb-3" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+        Questions or feedback?
+      </h2>
+      <p class="font-sans text-base mb-6" style="color:#64748b">
+        We read every message. If you've spotted an error, have a product suggestion, or want to tell us about your dog, we'd love to hear from you.
+      </p>
+      <a href="/contact" class="inline-block font-sans font-bold text-sm px-8 py-3 rounded-xl text-white btn-bark" style="background:linear-gradient(135deg,#a0621c,#7d4a10)">
+        Get in touch →
+      </a>
+    </section>
+
+  </div>
+</BaseLayout>

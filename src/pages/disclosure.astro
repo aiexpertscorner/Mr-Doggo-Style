@@ -1,47 +1,89 @@
 ---
-import Header from '../components/ui/Header.astro';
-import Footer from '../components/ui/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const UPDATED = 'March 24, 2026';
 ---
-<!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>AFFILIATE DISCLOSURE | MR. DOGGO STYLE</title>
-  <meta name="description" content="Full affiliate disclosure and editorial policy for Mr. Doggo Style."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@400;600;700&family=Source+Serif+4:wght@400&family=Space+Mono:wght@400&display=swap" rel="stylesheet"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <style>
-    :root{--midnight:#0A0A0A;--concrete:#222222;--lime:#CCFF00;--ash:#888;--smoke:#AAA;--offwhite:#F0F0F0}
-    *{box-sizing:border-box} html{background:var(--midnight)} body{font-family:'Barlow Condensed',sans-serif;background:var(--midnight);color:var(--offwhite);margin:0}
-    .prose{font-family:'Source Serif 4',Georgia,serif;color:var(--smoke);font-size:1.05rem;line-height:1.8;max-width:680px}
-    .prose h2{font-family:'Archivo Black',sans-serif;text-transform:uppercase;color:var(--offwhite);font-size:1.25rem;border-bottom:2px solid var(--concrete);padding-bottom:.4rem;margin-top:2rem}
-    .prose a{color:var(--lime)} .prose strong{color:var(--offwhite)} ::selection{background:var(--lime);color:var(--midnight)}
-    .notice{border:2px solid rgba(204,255,0,.3);background:rgba(204,255,0,.05);padding:1rem;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--lime);text-transform:uppercase;letter-spacing:.04em;margin-bottom:2rem}
-  </style>
-</head>
-<body>
-<Header/>
-<div style="background:var(--concrete);border-bottom:2px solid rgba(255,255,255,.08);padding:4rem 1.5rem">
-  <div style="max-width:900px;margin:0 auto">
-    <h1 style="font-family:'Anton',sans-serif;font-size:clamp(2.5rem,7vw,5rem);text-transform:uppercase;color:var(--offwhite);margin:0;letter-spacing:-.02em;line-height:.9">
-      AFFILIATE<br/><span style="color:var(--lime)">DISCLOSURE.</span>
-    </h1>
+
+<BaseLayout
+  title="Affiliate Disclosure — Mr. Doggo Style"
+  description="Full affiliate disclosure for Mr. Doggo Style. We earn commissions from Amazon Associates, Chewy, and other affiliate programs. Read how this works."
+  canonicalURL="https://mrdoggostyle.com/disclosure"
+>
+
+  <!-- Hero -->
+  <div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
+    <div class="max-w-3xl mx-auto px-4 py-14 sm:py-18">
+      <nav class="font-sans text-sm mb-6 flex items-center gap-1.5" style="color:#94a3b8">
+        <a href="/" class="hover:underline" style="color:#a0621c">Home</a>
+        <span>›</span>
+        <span style="color:#475569">Affiliate Disclosure</span>
+      </nav>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+        Affiliate Disclosure
+      </h1>
+      <p class="font-sans text-sm" style="color:#94a3b8">Last updated: {UPDATED}</p>
+    </div>
   </div>
-</div>
-<div style="max-width:900px;margin:0 auto;padding:3rem 1.5rem">
-  <div class="notice">LAST UPDATED: JANUARY 2026 — FTC COMPLIANT</div>
-  <div class="prose">
-    <h2>Amazon Associates Program</h2>
-    <p>Mr. Doggo Style (mrdoggostyle.com) is a participant in the Amazon Services LLC Associates Program. When you click our product links and purchase on Amazon, we earn a small commission at no additional cost to you.</p>
-    <h2>How This Affects Our Reviews</h2>
-    <p>It doesn't. We include real pros AND cons. We sometimes recommend against popular products. We never accept payment from brands for placement. Our Amazon Associate tag is <strong>aiexpertscorn-20</strong>.</p>
-    <h2>Price Accuracy</h2>
-    <p>Amazon prices change frequently. Prices shown on this site are approximate. Always verify on Amazon before purchasing.</p>
-    <h2>FTC Compliance</h2>
-    <p>In accordance with 16 CFR Part 255, we disclose all material connections between us and the products we discuss. The <code style="background:var(--concrete);padding:.1rem .3rem;color:var(--lime)">rel="nofollow sponsored"</code> attribute is applied to all affiliate links on this site.</p>
-    <h2>Contact</h2>
-    <p>Questions about our affiliate policy: <strong>hello@mrdoggostyle.com</strong></p>
+
+  <div class="max-w-3xl mx-auto px-4 py-14">
+
+    <!-- FTC notice banner -->
+    <div class="rounded-2xl p-5 mb-10 flex gap-4" style="background:linear-gradient(135deg,#fef3c7,#fdf8f0);border:2px solid #fbbf24">
+      <span style="font-size:1.5rem;flex-shrink:0">⚠️</span>
+      <div class="font-sans text-sm leading-relaxed" style="color:#92400e">
+        <strong>Required disclosure:</strong> Mr. Doggo Style participates in affiliate advertising programs. This page explains exactly how those relationships work and how they affect (and don't affect) our editorial decisions. This disclosure complies with FTC guidelines on endorsements and testimonials.
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none" style="font-family:'Source Serif 4',Georgia,serif;color:#475569">
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Amazon Associates Program</h2>
+      <p>Mr. Doggo Style (mrdoggostyle.com) is a participant in the <strong>Amazon Services LLC Associates Program</strong>, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
+      <p>When you click a product link on our site that leads to Amazon and complete a qualifying purchase, we earn a small commission — typically between 1% and 4% of the purchase price for pet supply categories. <strong>The price you pay is exactly the same whether you use our link or navigate directly to Amazon.</strong> Amazon pays our commission from their own margin, not from yours.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Chewy Affiliate Program</h2>
+      <p>We participate in the <strong>Chewy affiliate program</strong> via the Impact affiliate network. When you click a Chewy link and make a qualifying purchase, we may earn a commission. Chewy commissions are typically a flat referral fee per new customer.</p>
+      <p>As with Amazon, the price you pay is not affected by using our affiliate links.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Other Affiliate Programs</h2>
+      <p>We may participate in additional affiliate programs from time to time, including but not limited to programs offered by pet brands, DNA testing companies, GPS tracker manufacturers, and pet food subscription services. Any such relationship will be covered by this disclosure.</p>
+      <p>All affiliate links on this site are functional links — they direct you to a product page where you can read full product details and purchase if you choose. We do not use affiliate link disguising or deceptive redirect practices.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">How Affiliate Relationships Affect Our Reviews</h2>
+      <p>The short answer: they don't — and here is why we can say that with confidence:</p>
+
+      <div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:0.75rem">
+        {[
+          'Our product scoring is based on a defined methodology applied before we know or consider affiliate commission rates.',
+          'We include genuine cons in every review, including cons that may reduce conversion on that product.',
+          'We sometimes recommend against buying a popular product — including products with above-average affiliate commissions.',
+          'Our best-overall picks are chosen by score, not by commission rate. Some of our highest-ranked products have lower commissions than lower-ranked alternatives.',
+          'We do not accept payment from brands to improve their ranking in our recommendations.',
+          'We link to products on Chewy when Chewy offers a better price, even when Amazon would pay us a higher commission.',
+        ].map(item => (
+          <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:0.75rem 1rem;background:#f0fdf4;border-radius:0.75rem;border:1px solid #bbf7d0">
+            <span style="color:#16a34a;font-weight:bold;flex-shrink:0">✓</span>
+            <p style="margin:0;font-size:0.875rem;line-height:1.6;color:#166534">{item}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Identifying Affiliate Links</h2>
+      <p>Affiliate links on Mr. Doggo Style are typically displayed as buttons or inline text links labelled "Check price on Amazon," "View on Chewy," or similar. You may also identify affiliate links by the tracking parameters in the URL (e.g. <code style="font-size:0.8rem;background:#f5f5f5;padding:2px 6px;border-radius:4px">?tag=aiexpertscorn-20</code> for Amazon links).</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Price Accuracy</h2>
+      <p>Product prices displayed on this site are approximate and sourced from affiliate data feeds. Prices change frequently on Amazon and Chewy. <strong>Always verify the current price directly on the retailer's site before purchasing.</strong></p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Sponsored Content</h2>
+      <p>Mr. Doggo Style does not currently publish sponsored reviews or paid brand partnerships. If this changes in the future, any sponsored content will be clearly labelled "Sponsored" at the top of the relevant page, in compliance with FTC guidelines.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Questions</h2>
+      <p>If you have any questions about our affiliate relationships or editorial policies, please <a href="/contact" style="color:#a0621c;font-weight:600">contact us</a>. We are committed to full transparency about how this site operates.</p>
+    </div>
+
+    <div class="mt-10 pt-8 flex flex-wrap gap-4" style="border-top:1px solid #e8ccaa">
+      <a href="/about" class="font-sans text-sm font-semibold hover:underline" style="color:#a0621c">About us →</a>
+      <a href="/how-we-test" class="font-sans text-sm font-semibold hover:underline" style="color:#a0621c">How we test →</a>
+      <a href="/privacy" class="font-sans text-sm font-semibold hover:underline" style="color:#a0621c">Privacy policy →</a>
+    </div>
   </div>
-</div>
-<Footer/>
-</body></html>
+</BaseLayout>

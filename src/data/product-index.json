@@ -110,7 +110,8 @@
     ],
     "search_volume": 1800,
     "active": true,
-    "category_key": "dog-food"
+    "category_key": "dog-food",
+    "local_image": "/images/products/blue-buffalo-life-protection.jpg"
   },
   "hills-science-diet-large-breed": {
     "id": "hills-science-diet-large-breed",

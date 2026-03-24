@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const UPDATED = 'March 24, 2026';
+---
+
+<BaseLayout
+  title="Privacy Policy — Mr. Doggo Style"
+  description="Privacy policy for mrdoggostyle.com. How we collect, use, and protect your data. GDPR and CCPA compliant."
+  canonicalURL="https://mrdoggostyle.com/privacy"
+>
+
+  <div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
+    <div class="max-w-3xl mx-auto px-4 py-14 sm:py-18">
+      <nav class="font-sans text-sm mb-6 flex items-center gap-1.5" style="color:#94a3b8">
+        <a href="/" class="hover:underline" style="color:#a0621c">Home</a>
+        <span>›</span>
+        <span style="color:#475569">Privacy Policy</span>
+      </nav>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+        Privacy Policy
+      </h1>
+      <p class="font-sans text-sm" style="color:#94a3b8">Last updated: {UPDATED}</p>
+    </div>
+  </div>
+
+  <div class="max-w-3xl mx-auto px-4 py-14">
+    <div class="prose prose-lg max-w-none" style="font-family:'Source Serif 4',Georgia,serif;color:#475569">
+
+      <p>This Privacy Policy describes how Mr. Doggo Style ("we," "us," or "our"), operated at mrdoggostyle.com, collects, uses, and shares information when you visit our website.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Information we collect</h2>
+
+      <h3 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.15rem;font-weight:600;margin-top:1.5rem;margin-bottom:0.5rem">Automatically collected</h3>
+      <p>When you visit mrdoggostyle.com, our hosting provider (Cloudflare) may automatically collect standard log data including your IP address, browser type, operating system, referring URLs, and pages visited. This data is used for security and performance purposes and is governed by Cloudflare's privacy policy.</p>
+      <p>We use <strong>Google Analytics 4</strong> to understand how visitors use our site. This service collects anonymised usage data including pages viewed, session duration, and general geographic region. Google Analytics uses cookies. You can opt out via the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:#a0621c">Google Analytics opt-out browser add-on</a>.</p>
+
+      <h3 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.15rem;font-weight:600;margin-top:1.5rem;margin-bottom:0.5rem">Information you provide</h3>
+      <p>If you contact us via our contact form or by email, we collect the information you provide (name, email address, message). We use this only to respond to your enquiry and do not add you to marketing lists without your explicit consent.</p>
+      <p>If you subscribe to our email newsletter, we collect your email address. This is used to send you the content you subscribed to. We use <strong>EmailOctopus</strong> to manage our email list. You can unsubscribe at any time via the link in any email we send.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Cookies</h2>
+      <p>We use the following types of cookies:</p>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;margin:1rem 0">
+        {[
+          ['Essential cookies', 'Required for the site to function. Cannot be disabled.'],
+          ['Analytics cookies', 'Google Analytics — used to understand traffic patterns. Can be disabled via the GA opt-out add-on.'],
+          ['Affiliate tracking', 'Amazon and Chewy use cookies to track referrals from our links. These are activated only when you click one of our product links.'],
+        ].map(([type, desc]) => (
+          <div style="display:grid;grid-template-columns:160px 1fr;gap:1rem;padding:0.75rem 1rem;background:#fdf8f0;border-radius:0.75rem;border:1px solid #e8ccaa;font-size:0.875rem">
+            <strong style="color:#1e293b">{type}</strong>
+            <span style="color:#64748b">{desc}</span>
+          </div>
+        ))}
+      </div>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Affiliate third parties</h2>
+      <p>When you click affiliate links on our site, you are directed to third-party websites (Amazon, Chewy, etc.). These sites have their own privacy policies which govern the data collected when you visit and make purchases. We have no control over and assume no responsibility for the privacy practices of these third parties.</p>
+      <p>Amazon's privacy policy is available at <a href="https://www.amazon.com/privacy" target="_blank" rel="noopener" style="color:#a0621c">amazon.com/privacy</a>. Chewy's privacy policy is available at <a href="https://www.chewy.com/app/content/privacy" target="_blank" rel="noopener" style="color:#a0621c">chewy.com/app/content/privacy</a>.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">How we use your information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Operate and improve the website</li>
+        <li>Understand which content is most useful to our readers</li>
+        <li>Respond to enquiries submitted via our contact form</li>
+        <li>Send newsletter emails to subscribers who have opted in</li>
+        <li>Detect and prevent security issues</li>
+      </ul>
+      <p>We do not sell your personal data. We do not share your personal data with third parties for their marketing purposes.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Your rights (GDPR)</h2>
+      <p>If you are located in the European Economic Area, you have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Right of access</strong> — you can request a copy of the data we hold about you</li>
+        <li><strong>Right to rectification</strong> — you can ask us to correct inaccurate data</li>
+        <li><strong>Right to erasure</strong> — you can ask us to delete your data</li>
+        <li><strong>Right to object</strong> — you can object to our processing of your data</li>
+        <li><strong>Right to portability</strong> — you can request your data in a portable format</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us via our <a href="/contact" style="color:#a0621c">contact page</a>. We will respond within 30 days.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">California residents (CCPA)</h2>
+      <p>If you are a California resident, you have the right to know what personal information we collect, to request deletion of your personal information, and to opt out of the sale of personal information. We do not sell personal information. To exercise your rights, contact us via our <a href="/contact" style="color:#a0621c">contact page</a>.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Data retention</h2>
+      <p>Analytics data is retained for 26 months, after which it is automatically deleted by Google Analytics. Contact form submissions are retained for up to 12 months. Email subscriber data is retained until you unsubscribe.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Children's privacy</h2>
+      <p>This website is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us and we will delete it promptly.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time. The date of the most recent update is shown at the top of this page. Material changes will be noted on this page.</p>
+
+      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Contact</h2>
+      <p>If you have questions about this Privacy Policy or our data practices, please <a href="/contact" style="color:#a0621c;font-weight:600">contact us</a>.</p>
+      <p style="font-size:0.875rem;color:#94a3b8">Mr. Doggo Style · mrdoggostyle.com</p>
+    </div>
+
+    <div class="mt-10 pt-8 flex flex-wrap gap-4" style="border-top:1px solid #e8ccaa">
+      <a href="/disclosure" class="font-sans text-sm font-semibold hover:underline" style="color:#a0621c">Affiliate disclosure →</a>
+      <a href="/about" class="font-sans text-sm font-semibold hover:underline" style="color:#a0621c">About us →</a>
+      <a href="/contact" class="font-sans text-sm font-semibold hover:underline" style="color:#a0621c">Contact →</a>
+    </div>
+  </div>
+</BaseLayout>

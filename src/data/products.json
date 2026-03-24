@@ -54,7 +54,10 @@
         "vet-recommended"
       ],
       "search_volume": 2400,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/purina-pro-plan.png",
+      "brand_slug": "purina-pro-plan",
+      "brand_name": "Purina Pro Plan"
     },
     {
       "id": "blue-buffalo-life-protection",
@@ -109,7 +112,10 @@
         "no-byproducts"
       ],
       "search_volume": 1800,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/blue-buffalo.png",
+      "brand_slug": "blue-buffalo",
+      "brand_name": "Blue Buffalo"
     },
     {
       "id": "hills-science-diet-large-breed",
@@ -164,7 +170,10 @@
         "weight-management"
       ],
       "search_volume": 1600,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/hills-science-diet.png",
+      "brand_slug": "hills-science-diet",
+      "brand_name": "Hill's Science Diet"
     },
     {
       "id": "royal-canin-large-breed",
@@ -220,7 +229,10 @@
         "cardiac-support"
       ],
       "search_volume": 900,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/royal-canin.png",
+      "brand_slug": "royal-canin",
+      "brand_name": "Royal Canin"
     },
     {
       "id": "taste-of-the-wild",
@@ -500,7 +512,10 @@
         "brain-development"
       ],
       "search_volume": 1900,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/purina-pro-plan.png",
+      "brand_slug": "purina-pro-plan",
+      "brand_name": "Purina Pro Plan"
     },
     {
       "id": "royal-canin-sensitive-digestion",
@@ -556,7 +571,10 @@
         "all-breeds"
       ],
       "search_volume": 1800,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/royal-canin.png",
+      "brand_slug": "royal-canin",
+      "brand_name": "Royal Canin"
     },
     {
       "id": "hills-metabolic-weight",
@@ -613,7 +631,10 @@
         "metabolic"
       ],
       "search_volume": 890,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/hills-science-diet.png",
+      "brand_slug": "hills-science-diet",
+      "brand_name": "Hill's Science Diet"
     },
     {
       "id": "blue-buffalo-wilderness-large",
@@ -667,7 +688,10 @@
         "wilderness"
       ],
       "search_volume": 700,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/blue-buffalo.png",
+      "brand_slug": "blue-buffalo",
+      "brand_name": "Blue Buffalo"
     },
     {
       "id": "the-farmers-dog",
@@ -1148,7 +1172,10 @@
         "human-allergy"
       ],
       "search_volume": 4100,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/purina-pro-plan.png",
+      "brand_slug": "purina-pro-plan",
+      "brand_name": "Purina Pro Plan"
     },
     {
       "id": "orijen-small-breed",
@@ -1206,7 +1233,10 @@
         "whole-prey"
       ],
       "search_volume": 3600,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/orijen.png",
+      "brand_slug": "orijen",
+      "brand_name": "Orijen"
     },
     {
       "id": "native-pet-probiotic-powder",
@@ -3601,7 +3631,10 @@
         "breath-freshening"
       ],
       "search_volume": 6700,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/greenies.png",
+      "brand_slug": "greenies",
+      "brand_name": "Greenies"
     },
     {
       "id": "adaptil-dap-diffuser",
@@ -5387,7 +5420,10 @@
         "fast-acting"
       ],
       "search_volume": 2600,
-      "active": true
+      "active": true,
+      "brand_logo": "/images/brands/purina-pro-plan.png",
+      "brand_slug": "purina-pro-plan",
+      "brand_name": "Purina Pro Plan"
     },
     {
       "id": "vetri-science-calming",
