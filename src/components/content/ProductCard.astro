@@ -58,24 +58,32 @@ const showAmazonBetter = !!(price && chewy_price && price < chewy_price);
 const isSubscription   = asin === 'SUBSCRIPTION';
 
 // ── Image waterfall ───────────────────────────────────────────
-// Priority: local product image > brand logo > Clearbit > emoji
-// We pass all candidates and let client-side onerror handle fallback
-const productImgSrc  = local_image || null;
-const brandImgSrc    = brand_logo  || (brand_domain ? `https://logo.clearbit.com/${brand_domain}?size=200` : null);
+// 1. local_image  2. brand_logo/Clearbit  3. category stock image  4. emoji
+const catKey        = category.toLowerCase().replace(/ /g, '-');
+const productImgSrc = local_image || null;
+const brandImgSrc   = brand_logo || (brand_domain ? `https://logo.clearbit.com/${brand_domain}?size=200` : null);
 
-// Category emoji fallback (always renders if all images fail)
-const CAT_EMOJI: Record<string,string> = {
-  'dog-food': '🍖', 'food': '🍖', 'treats': '🦴',
-  'toys': '🎾', 'chew-toys': '🦴', 'enrichment': '🧩',
-  'beds': '🛏️', 'travel': '✈️',
-  'health': '🩺', 'supplements': '💊', 'dental': '🦷',
-  'grooming': '✂️', 'training': '🦮', 'gear': '🦮',
-  'smart-tech': '📡', 'gps': '📍', 'dna': '🧬',
-  'bowls-feeders': '🥣',
+// Category stock image (always present if public/images/categories/ is populated)
+const CAT_IMG: Record<string,string> = {
+  'dog-food':    'Dog-food.png',  'food':        'Dog-food.png',
+  'treats':      'Dog-Treats.png','toys':        'Dog-Toys.png',
+  'chew-toys':   'Dog-Toys.png',  'enrichment':  'Dog-Toys.png',
+  'beds':        'Dog-Beds.png',  'grooming':    'Dog-Grooming.png',
+  'health':      'Dog-Health.png','supplements': 'Dog-Supplements.png',
+  'training':    'Dog-Training.png','gear':       'Dog-Training.png',
+  'smart-tech':  'Dog-Smart_Tech.png','gps':      'Dog-Smart_Tech.png',
+  'travel':      'Dog-Travel.png','trending':    'Dog-Trending.png',
 };
-const emoji = CAT_EMOJI[category.toLowerCase().replace(/ /g,'-')] || '🐾';
+const catImgSrc = `/images/categories/${CAT_IMG[catKey] || 'Dog-All.png'}`;
 
-// Unique IDs for JS targeting
+// Emoji last resort
+const CAT_EMOJI: Record<string,string> = {
+  'dog-food':'🍖','food':'🍖','treats':'🦴','toys':'🎾',
+  'beds':'🛏️','health':'🩺','supplements':'💊','grooming':'✂️',
+  'training':'🦮','gear':'🦮','smart-tech':'📡','travel':'✈️',
+};
+const emoji = CAT_EMOJI[catKey] || '🐾';
+
 const cardId = `pc-${asin}-${Math.random().toString(36).slice(2,7)}`;
 ---
 
@@ -104,13 +112,15 @@ const cardId = `pc-${asin}-${Math.random().toString(36).slice(2,7)}`;
             loading="lazy"
             class="w-full h-full object-contain"
             data-fallback={brandImgSrc || ''}
+            data-catimg={catImgSrc}
             data-emoji={emoji}
             onerror="
-              var fb = this.getAttribute('data-fallback');
-              if (fb) { this.src = fb; this.removeAttribute('data-fallback'); return; }
+              var fb=this.getAttribute('data-fallback');
+              var ci=this.getAttribute('data-catimg');
+              if(fb&&this.src!==fb){this.src=fb;this.setAttribute('data-fallback','');return;}
+              if(ci&&this.src!==ci){this.src=ci;this.removeAttribute('onerror');return;}
               this.style.display='none';
-              var p = this.parentElement;
-              p.innerHTML = '<span style=font-size:2rem>' + this.getAttribute('data-emoji') + '</span>';
+              this.parentElement.innerHTML='<span style=font-size:2rem>'+this.getAttribute('data-emoji')+'</span>';
             "
           />
         ) : brandImgSrc ? (
@@ -121,11 +131,13 @@ const cardId = `pc-${asin}-${Math.random().toString(36).slice(2,7)}`;
             width="64" height="64"
             loading="lazy"
             class="object-contain max-h-14 p-1"
+            data-catimg={catImgSrc}
             data-emoji={emoji}
             onerror="
+              var ci=this.getAttribute('data-catimg');
+              if(ci&&this.src!==ci){this.src=ci;this.removeAttribute('onerror');return;}
               this.style.display='none';
-              var p = this.parentElement;
-              p.innerHTML = '<span style=font-size:2rem>' + this.getAttribute('data-emoji') + '</span>';
+              this.parentElement.innerHTML='<span style=font-size:2rem>'+this.getAttribute('data-emoji')+'</span>';
             "
           />
         ) : (

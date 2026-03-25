@@ -1,68 +1,141 @@
 ---
+/**
+ * ProductGrid.astro — upgraded
+ *
+ * Image waterfall per product:
+ *   1. local_image  (/images/products/{id}.jpg)
+ *   2. brand_logo   (/images/brands/{slug}.png)
+ *   3. Clearbit     (https://logo.clearbit.com/{domain})
+ *   4. Category stock image (/images/categories/Dog-{Cat}.png)
+ *   Never broken — category image is always available.
+ */
+
 const AFFILIATE_TAG = 'aiexpertscorn-20';
 
 export interface Props {
-  products:    any[];
-  heading?:    string;
-  eyebrow?:    string;
-  compact?:    boolean;
-  maxItems?:   number;
+  products:   any[];
+  heading?:   string;
+  eyebrow?:   string;
+  compact?:   boolean;
+  maxItems?:  number;
 }
 
 const {
-  products,
-  heading,
-  eyebrow,
-  compact  = false,
-  maxItems = 6,
+  products, heading, eyebrow,
+  compact = false, maxItems = 6,
 } = Astro.props;
 
 const shown = products.slice(0, maxItems);
+
+// ── Category image mapping ───────────────────────────────────
+const CAT_IMG: Record<string, string> = {
+  'dog-food':    'Dog-food.png',
+  'food':        'Dog-food.png',
+  'treats':      'Dog-Treats.png',
+  'toys':        'Dog-Toys.png',
+  'chew-toys':   'Dog-Toys.png',
+  'enrichment':  'Dog-Toys.png',
+  'beds':        'Dog-Beds.png',
+  'grooming':    'Dog-Grooming.png',
+  'health':      'Dog-Health.png',
+  'supplements': 'Dog-Supplements.png',
+  'training':    'Dog-Training.png',
+  'gear':        'Dog-Training.png',
+  'smart-tech':  'Dog-Smart_Tech.png',
+  'gps':         'Dog-Smart_Tech.png',
+  'travel':      'Dog-Travel.png',
+  'trending':    'Dog-Trending.png',
+};
+
+function getCatImg(catKey: string): string {
+  const k = (catKey || '').toLowerCase().replace(/ /g, '-');
+  return `/images/categories/${CAT_IMG[k] || 'Dog-All.png'}`;
+}
 
 function amazonUrl(asin: string) {
   if (!asin || asin === 'SUBSCRIPTION') return null;
   return `https://www.amazon.com/dp/${asin}/?tag=${AFFILIATE_TAG}`;
 }
 
-function starsHtml(r: number) {
-  const full = Math.round(r || 4.5);
-  return '★'.repeat(full) + '☆'.repeat(5 - full);
+function stars(r: number) {
+  const n = Math.round(r || 4.5);
+  return '★'.repeat(n) + '☆'.repeat(5 - n);
 }
 ---
 
 {shown.length > 0 && (
   <section class="section-block">
     {(eyebrow || heading) && (
-      <div class="section-header" style="margin-bottom: var(--space-5)">
-        <div>
-          {eyebrow && <span class="section-eyebrow">{eyebrow}</span>}
-          {heading && <h2 class="section-title">{heading}</h2>}
-        </div>
+      <div class="section-header" style="margin-bottom:var(--space-5)">
+        {eyebrow && <span class="section-eyebrow">{eyebrow}</span>}
+        {heading && <h2 class="section-title">{heading}</h2>}
       </div>
     )}
 
     <div class={compact ? 'product-grid product-grid--compact' : 'product-grid'}>
       {shown.map((p: any, i: number) => {
-        const url = amazonUrl(p.asin);
-        const hasImage = p.image?.includes('media-amazon.com');
+        const url          = amazonUrl(p.asin);
+        const chewyUrl     = p.chewy_id ? `https://www.chewy.com/dp/${p.chewy_id}?ref=impact` : null;
         const isSubscription = p.asin === 'SUBSCRIPTION';
+        const catKey       = (p.category_key || p.category || '').toLowerCase().replace(/ /g,'-');
+
+        // Image waterfall sources
+        const localImg  = p.local_image || null;
+        const brandImg  = p.brand_logo  || (p.brand_domain ? `https://logo.clearbit.com/${p.brand_domain}?size=200` : null);
+        const catImg    = getCatImg(catKey);
+
+        // Primary img to render: local > brand > cat (all with onerror chain)
+        const primarySrc  = localImg || brandImg || catImg;
+        const fallback1   = localImg ? (brandImg || catImg) : (brandImg ? catImg : null);
+        const fallback2   = localImg && brandImg ? catImg : null;
 
         return (
           <div class="product-card">
-            {/* Image */}
+
+            {/* ── Image ── */}
             <div class="product-card__image-wrap">
-              {url ? (
-                <a href={url} rel="nofollow sponsored" target="_blank" tabindex="-1" aria-hidden="true">
-                  {hasImage
-                    ? <img src={p.image} alt={p.name} class="product-card__image" loading="lazy" width="160" height="160" />
-                    : <span class="product-card__image-placeholder">🐾</span>
-                  }
+              {(url || chewyUrl) ? (
+                <a href={chewyUrl || url} rel="nofollow sponsored" target="_blank"
+                  tabindex="-1" aria-hidden="true">
+                  <img
+                    src={primarySrc}
+                    alt={p.name}
+                    class="product-card__image"
+                    loading="lazy"
+                    width="160"
+                    height="160"
+                    data-fb1={fallback1 || ''}
+                    data-fb2={fallback2 || ''}
+                    data-cat={catImg}
+                    onerror={`
+                      var fb1=this.getAttribute('data-fb1');
+                      var fb2=this.getAttribute('data-fb2');
+                      var cat=this.getAttribute('data-cat');
+                      if(fb1&&this.src!==fb1){this.src=fb1;this.setAttribute('data-fb1','');return;}
+                      if(fb2&&this.src!==fb2){this.src=fb2;this.setAttribute('data-fb2','');return;}
+                      if(cat&&this.src!==cat){this.src=cat;this.removeAttribute('onerror');}
+                    `}
+                  />
                 </a>
               ) : (
-                hasImage
-                  ? <img src={p.image} alt={p.name} class="product-card__image" loading="lazy" width="160" height="160" />
-                  : <span class="product-card__image-placeholder">🐾</span>
+                <img
+                  src={primarySrc}
+                  alt={p.name}
+                  class="product-card__image"
+                  loading="lazy"
+                  width="160"
+                  height="160"
+                  data-fb1={fallback1 || ''}
+                  data-cat={catImg}
+                  onerror={`
+                    var fb=this.getAttribute('data-fb1');
+                    var cat=this.getAttribute('data-cat');
+                    if(fb&&this.src!==fb){this.src=fb;this.setAttribute('data-fb1','');return;}
+                    if(cat&&this.src!==cat){this.src=cat;this.removeAttribute('onerror');}
+                  `}
+                />
               )}
+
               {i === 0 && (
                 <div class="product-card__badge">
                   <span class="badge badge--accent">Editor's Pick</span>
@@ -75,24 +148,33 @@ function starsHtml(r: number) {
               )}
             </div>
 
-            {/* Body */}
+            {/* ── Body ── */}
             <div class="product-card__body">
-              {p.category_key && (
+              {catKey && (
                 <span class="product-card__category">
-                  {(p.category_key || p.category || '').replace(/-/g,' ')}
+                  {catKey.replace(/-/g,' ')}
                 </span>
               )}
               <h3 class="product-card__name">
-                {url
-                  ? <a href={url} rel="nofollow sponsored" target="_blank">{p.name}</a>
+                {(url || chewyUrl)
+                  ? <a href={chewyUrl || url} rel="nofollow sponsored" target="_blank">{p.name}</a>
                   : p.name
                 }
               </h3>
+              {p.brand_name && p.brand_slug && (
+                <a href={`/brands/${p.brand_slug}`}
+                  class="product-card__brand"
+                  style="font-size:0.7rem;color:#a0621c;display:block;margin-bottom:0.2rem">
+                  by {p.brand_name} →
+                </a>
+              )}
               <div class="product-card__rating">
                 <span class="product-card__stars" aria-label={`${p.rating} out of 5 stars`}>
-                  {starsHtml(p.rating)}
+                  {stars(p.rating)}
                 </span>
-                <span class="product-card__rating-text">{parseFloat(p.rating || 4.5).toFixed(1)}</span>
+                <span class="product-card__rating-text">
+                  {parseFloat(p.rating || 4.5).toFixed(1)}
+                </span>
                 {p.reviewCount && (
                   <span class="product-card__rating-text">
                     ({p.reviewCount >= 1000 ? `${(p.reviewCount/1000).toFixed(0)}K` : p.reviewCount})
@@ -114,23 +196,29 @@ function starsHtml(r: number) {
               )}
             </div>
 
-            {/* Footer */}
+            {/* ── Footer ── */}
             <div class="product-card__footer">
               {!isSubscription && p.price
                 ? <span class="product-card__price">${parseFloat(p.price).toFixed(2)}</span>
                 : <span class="product-card__price">{isSubscription ? 'Subscription' : '—'}</span>
               }
-              {url && (
-                <a
-                  href={url}
-                  rel="nofollow sponsored"
-                  target="_blank"
-                  class="product-card__cta"
-                  aria-label={`Check price for ${p.name} on Amazon`}
-                >
-                  {isSubscription ? 'View plan' : 'Check price'} →
-                </a>
-              )}
+              <div style="display:flex;gap:6px">
+                {chewyUrl && (
+                  <a href={chewyUrl} rel="nofollow sponsored" target="_blank"
+                    class="product-card__cta"
+                    style="background:#0052cc;padding:4px 8px;border-radius:6px;font-size:0.7rem"
+                    aria-label={`View ${p.name} on Chewy`}>
+                    Chewy →
+                  </a>
+                )}
+                {url && (
+                  <a href={url} rel="nofollow sponsored" target="_blank"
+                    class="product-card__cta"
+                    aria-label={`Check price for ${p.name} on Amazon`}>
+                    {isSubscription ? 'View plan' : 'Amazon'} →
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         );
