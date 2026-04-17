@@ -1,11 +1,11 @@
 ---
 /**
  * pages/index.astro — Homepage
+ * Conversion-aware structure: trust → discovery → monetization → retention
  */
-import BaseLayout    from '../layouts/BaseLayout.astro';
-import CategoryCard  from '../components/content/CategoryCard.astro';
-import BlogCard      from '../components/content/BlogCard.astro';
-import QuickCard     from '../components/content/QuickCard.astro';
+import BaseLayout   from '../layouts/BaseLayout.astro';
+import CategoryCard from '../components/content/CategoryCard.astro';
+import BlogCard     from '../components/content/BlogCard.astro';
 import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
@@ -14,163 +14,266 @@ const latest = posts
   .slice(0, 3);
 
 const categories = [
-  { slug: 'dog-food',   theme: 'food'     as const, emoji: '🍖', title: 'Dog Food',      desc: 'Dry, wet, grain-free and breed-specific formulas — all independently tested.',       reviewCount: 11, href: '/categories/dog-food',   linkText: 'Explore food reviews' },
-  { slug: 'toys',       theme: 'toys'     as const, emoji: '🎾', title: 'Toys & Gear',   desc: 'Durable chew toys, interactive puzzles, harnesses, GPS trackers and beds.',          reviewCount: 21, href: '/categories/toys',       linkText: 'Find the best gear'   },
-  { slug: 'health',     theme: 'health'   as const, emoji: '🩺', title: 'Dog Health',    desc: 'Supplements, flea control, dental care, DNA tests and expert health advice.',        reviewCount: 14, href: '/categories/health',     linkText: 'Boost their health'   },
-  { slug: 'training',   theme: 'training' as const, emoji: '🦮', title: 'Training',      desc: 'Harnesses, GPS collars, training treats, long lines and professional techniques.',   reviewCount: 9,  href: '/categories/training',   linkText: 'Train smarter'        },
-  { slug: 'grooming',   theme: 'grooming' as const, emoji: '✂️', title: 'Grooming',      desc: 'Brushes, shampoos, nail trimmers and professional grooming guides by coat type.',    reviewCount: 6,  href: '/categories/grooming',   linkText: 'Grooming guides'      },
-  { slug: 'beds',       theme: 'beds'     as const, emoji: '🛏️', title: 'Beds & Sleep',  desc: 'Orthopedic, elevated and crate beds — matched to size, age and sleeping style.',    reviewCount: 6,  href: '/categories/beds',       linkText: 'Find the right bed'   },
+  { slug: 'dog-food',  theme: 'food'     as const, emoji: '🍖', title: 'Dog Food',     desc: 'Dry, wet, grain-free and breed-specific formulas — all independently tested.',      reviewCount: 11, href: '/categories/dog-food',  linkText: 'Explore food reviews' },
+  { slug: 'toys',      theme: 'toys'     as const, emoji: '🎾', title: 'Toys & Gear',  desc: 'Durable chew toys, interactive puzzles, harnesses, GPS trackers and more.',         reviewCount: 21, href: '/categories/toys',      linkText: 'Find the best gear'   },
+  { slug: 'health',    theme: 'health'   as const, emoji: '🩺', title: 'Dog Health',   desc: 'Supplements, flea control, dental care, DNA tests and expert health advice.',       reviewCount: 14, href: '/categories/health',    linkText: 'Boost their health'   },
+  { slug: 'training',  theme: 'training' as const, emoji: '🦮', title: 'Training',     desc: 'Harnesses, GPS collars, training treats, long lines and expert techniques.',        reviewCount: 9,  href: '/categories/training',  linkText: 'Train smarter'        },
+  { slug: 'grooming',  theme: 'grooming' as const, emoji: '✂️', title: 'Grooming',     desc: 'Brushes, shampoos, nail trimmers and grooming guides matched to coat type.',       reviewCount: 6,  href: '/categories/grooming',  linkText: 'Grooming guides'      },
+  { slug: 'beds',      theme: 'beds'     as const, emoji: '🛏️', title: 'Beds & Sleep', desc: 'Orthopedic, elevated and crate beds — matched to size, age and sleeping style.',   reviewCount: 6,  href: '/categories/beds',      linkText: 'Find the right bed'   },
 ];
 
-const quickLinks = [
-  { label: 'Best Dog Food',      value: 'French Bulldog',      href: '/blog/best-food-for-french-bulldogs'     },
-  { label: 'Durable Toys',       value: 'Heavy Chewers',       href: '/blog/best-toys-for-aggressive-chewers'  },
-  { label: 'Orthopedic Beds',    value: 'Senior Dogs',         href: '/blog/best-orthopedic-dog-bed-senior'    },
-  { label: 'Top Harness',        value: 'Active Retrievers',   href: '/blog/best-harness-for-active-breeds'    },
-  { label: 'Smartest Breeds',    value: 'Intelligence Ranked', href: '/blog/smartest-dog-breeds'               },
-  { label: 'DNA Test',           value: 'Embark vs Wisdom',    href: '/blog/embark-vs-wisdom-panel'            },
-  { label: 'Budget Food',        value: 'Under $50/month',     href: '/blog/best-dog-food-under-50'            },
-  { label: 'Dog Names',          value: '7,000+ Curated',      href: '/dog-names'                              },
+// High-intent "money pages" — ranked by search volume + affiliate potential
+const featuredGuides = [
+  {
+    category: 'Food',       badgeClass: 'food',
+    title:    'Best Dog Food for French Bulldogs (2026)',
+    desc:     'Frenchies need low-fat, digestive-friendly formulas. We tested 12 — one clear winner.',
+    href:     '/blog/best-food-for-french-bulldogs',
+  },
+  {
+    category: 'Toys',       badgeClass: 'toys',
+    title:    'Best Toys for Heavy Chewers That Won\'t Destroy Them',
+    desc:     'Bulldogs and Rottweilers ruin regular toys in minutes. These 8 genuinely held up.',
+    href:     '/blog/best-toys-for-aggressive-chewers',
+  },
+  {
+    category: 'Health',     badgeClass: 'health',
+    title:    'Embark vs Wisdom Panel: Which DNA Test is Worth It?',
+    desc:     'We ran both kits on the same dog. One revealed health risks the other missed entirely.',
+    href:     '/blog/embark-vs-wisdom-panel',
+  },
+  {
+    category: 'Beds',       badgeClass: 'beds',
+    title:    'Best Orthopedic Beds for Senior & Arthritic Dogs',
+    desc:     'Joint pain affects 1 in 5 adult dogs. These beds measurably reduce pressure points.',
+    href:     '/blog/best-orthopedic-dog-bed-senior',
+  },
 ];
 
-const schema = {
+const popularBreeds = [
+  { slug: 'labrador-retriever', name: 'Labrador Retriever', emoji: '🐕'   },
+  { slug: 'french-bulldog',     name: 'French Bulldog',     emoji: '🐾'   },
+  { slug: 'golden-retriever',   name: 'Golden Retriever',   emoji: '🦮'   },
+  { slug: 'german-shepherd',    name: 'German Shepherd',    emoji: '🐕‍🦺' },
+  { slug: 'bulldog',            name: 'Bulldog',            emoji: '🐶'   },
+  { slug: 'poodle',             name: 'Poodle',             emoji: '🐩'   },
+];
+
+const faqSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: 'Mr. Doggo Style — Expert Dog Product Reviews',
-  description: 'Independent, data-driven dog product reviews, breed guides and safety-verified insights for conscientious dog owners.',
-  url: 'https://mrdoggostyle.com',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do you choose which products to review?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We select products based on popularity, safety record, and relevance to specific breed needs. Every product is scored on our 8-point methodology covering ingredients, durability, safety, value, and breed suitability — never on affiliate commission rates.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you recommend products per dog breed?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Our breed-specific system matches every product recommendation to the breed\'s size, energy level, coat type, and common health concerns. We cover 277 breeds with tailored food, toy, bed, and health recommendations.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are your reviews paid for by brands?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. We never accept payment or free products in exchange for reviews. We earn small affiliate commissions when you buy through our links, but our editorial scores are determined entirely by our methodology — never by who pays more.',
+      },
+    },
+  ],
 };
 ---
 
 <BaseLayout
-  title="Mr. Doggo Style | Verified Dog Product Reviews & Breed Guides 2026"
-  description="Expert, data-driven dog product reviews, breed-specific guides and safety-verified insights. 51 products tested. 277 breed guides. Zero paid placements."
+  title="Mr. Doggo Style | Expert Dog Product Reviews Matched to Your Breed"
+  description="Breed-specific dog product reviews for 277 breeds. Food, toys, beds, health — all data-driven, zero paid placements. Find exactly what your dog needs."
   canonicalUrl="https://mrdoggostyle.com"
 >
 
-  <!-- ── HERO ──────────────────────────────────────────────────── -->
-<!-- ── HERO ──────────────────────────────────────────────────── -->
-<section class="hero hero--split" aria-labelledby="hero-title">
-  <div class="hero__inner hero__inner--split">
-    <div class="hero__content">
-      <span class="hero__eyebrow">
-        <span class="hero__eyebrow-dot"></span>
-        Verified Dog Product Research · Est. 2023
-        <span class="hero__eyebrow-dot"></span>
-      </span>
+  <!-- ══════════════════════════════════════════════════════════
+       1. HERO — Immediate value proposition
+       ══════════════════════════════════════════════════════════ -->
+  <section class="hero hero--split" aria-labelledby="hero-title">
+    <div class="hero__inner hero__inner--split">
+      <div class="hero__content">
+        <span class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          Breed-Specific Reviews · Est. 2023
+          <span class="hero__eyebrow-dot"></span>
+        </span>
 
-      <h1 class="hero__title" id="hero-title">
-        Your Trusted Guide to
-        <br />
-        <em>Better Dog Products</em>
-      </h1>
+        <h1 class="hero__title" id="hero-title">
+          The Right Products
+          <br /><em>for Your Dog's Breed</em>
+        </h1>
 
-      <p class="hero__subtitle">
-        Expert reviews, data-driven comparisons, and safety-first insights to
-        help you choose smarter for your dog.
-      </p>
+        <p class="hero__subtitle">
+          Every review is matched to your dog's size, energy, coat type, and
+          health needs. 277 breeds covered. Zero paid placements.
+        </p>
 
-      <div class="hero__actions">
-        <a href="/blog" class="btn btn--primary btn--lg">
-          Explore Trending Products
-        </a>
-        <a href="/about" class="btn btn--outline btn--lg">
-          How We Review Products
-        </a>
+        <div class="hero__actions">
+          <a href="/blog/top-picks-2026" class="btn btn--white btn--lg">
+            See Top Picks for 2026
+          </a>
+          <a href="/breeds" class="btn btn--outline-white btn--lg">
+            Find Your Breed
+          </a>
+        </div>
+
+        <div class="hero__trust-bar">
+          <span class="hero__trust-item">
+            <span class="hero__trust-icon">✓</span> 125+ products reviewed
+          </span>
+          <span class="hero__trust-item">
+            <span class="hero__trust-icon">✓</span> 277 breed guides
+          </span>
+          <span class="hero__trust-item">
+            <span class="hero__trust-icon">✓</span> Zero paid placements
+          </span>
+          <span class="hero__trust-item">
+            <span class="hero__trust-icon">✓</span> Updated 2026
+          </span>
+        </div>
       </div>
 
-      <div class="hero__trust-bar">
-        <span class="hero__trust-item">
-          <span class="hero__trust-icon">✓</span> 51 products tested
-        </span>
-        <span class="hero__trust-item">
-          <span class="hero__trust-icon">✓</span> 277 breed guides
-        </span>
-        <span class="hero__trust-item">
-          <span class="hero__trust-icon">✓</span> Zero paid placements
-        </span>
-        <span class="hero__trust-item">
-          <span class="hero__trust-icon">✓</span> Updated March 2026
-        </span>
+      <div class="hero__media" aria-hidden="true">
+        <div class="hero__media-shape">
+          <img
+            src="/hero/dog-owner-hero.jpg"
+            alt=""
+            class="hero__image"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+        <div class="hero__card hero__card--top">
+          <span class="hero__card-label">Trusted Picks</span>
+          <strong>Breed-smart reviews</strong>
+          <p>Independent advice for modern dog owners.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="hero__media" aria-hidden="true">
-      <div class="hero__media-shape">
-        <img
-          src="/hero/dog-owner-hero.jpg"
-          alt=""
-          class="hero__image"
-          loading="eager"
-          decoding="async"
-        />
+  <!-- ══════════════════════════════════════════════════════════
+       2. STATS STRIP — Immediate social proof
+       ══════════════════════════════════════════════════════════ -->
+  <div class="stats-strip" role="region" aria-label="Site statistics">
+    <div class="stats-strip__inner">
+      <div class="stats-strip__item">
+        <span class="stats-strip__number">277</span>
+        <span class="stats-strip__label">Breed Guides</span>
       </div>
-
-      <div class="hero__card hero__card--top">
-        <span class="hero__card-label">Trusted Picks</span>
-        <strong>Breed-smart reviews</strong>
-        <p>Independent advice for modern dog owners.</p>
+      <div class="stats-strip__item">
+        <span class="stats-strip__number">125+</span>
+        <span class="stats-strip__label">Products Reviewed</span>
+      </div>
+      <div class="stats-strip__item">
+        <span class="stats-strip__number">442+</span>
+        <span class="stats-strip__label">Expert Articles</span>
+      </div>
+      <div class="stats-strip__item">
+        <span class="stats-strip__number">0</span>
+        <span class="stats-strip__label">Paid Placements</span>
       </div>
     </div>
   </div>
-</section>
 
-  <!-- ── CATEGORIES ────────────────────────────────────────────── -->
+  <!-- ══════════════════════════════════════════════════════════
+       3. CATEGORIES — Browse by product type
+       ══════════════════════════════════════════════════════════ -->
   <section class="section" aria-labelledby="categories-heading">
     <div class="container">
       <div class="section-header">
         <div>
           <span class="section-eyebrow">Browse by category</span>
           <h2 class="section-title" id="categories-heading">
-            Explore Product Categories
+            What Are You Looking For?
           </h2>
         </div>
-        <a href="/categories" class="btn btn--ghost btn--sm">
-          View all →
-        </a>
+        <a href="/categories" class="btn btn--ghost btn--sm">View all →</a>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))">
+        {categories.map(cat => <CategoryCard {...cat} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       4. FEATURED GUIDES — Top money pages / highest-intent articles
+       Monetization: drives to review articles → affiliate clicks
+       ══════════════════════════════════════════════════════════ -->
+  <section class="section section--soft" aria-labelledby="guides-heading">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Most-read guides</span>
+          <h2 class="section-title" id="guides-heading">
+            Our Most Useful Reviews
+          </h2>
+        </div>
+        <a href="/blog" class="btn btn--ghost btn--sm">All guides →</a>
       </div>
 
-      <div class="grid grid-3" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))">
-        {categories.map(cat => (
-          <CategoryCard {...cat} />
+      <div class="featured-guides">
+        {featuredGuides.map(guide => (
+          <a href={guide.href} class="featured-guide-card" style="text-decoration:none">
+            <span class={`badge badge--${guide.badgeClass}`}>{guide.category}</span>
+            <h3 class="featured-guide-card__title">{guide.title}</h3>
+            <p class="featured-guide-card__body">{guide.desc}</p>
+            <span class="featured-guide-card__cta">Read the full guide →</span>
+          </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ── QUICK LINKS ────────────────────────────────────────────── -->
-  <section class="section section--soft" aria-labelledby="quicklinks-heading">
+  <!-- ══════════════════════════════════════════════════════════
+       5. BREED SPOTLIGHT — Route to breed cluster pages
+       SEO: surfaces the 277-breed cluster to homepage visitors
+       ══════════════════════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="breeds-heading">
     <div class="container">
       <div class="section-header">
         <div>
-          <span class="section-eyebrow">Jump straight in</span>
-          <h2 class="section-title" id="quicklinks-heading">
-            Verified Top Choices, Instantly
+          <span class="section-eyebrow">Breed-matched advice</span>
+          <h2 class="section-title" id="breeds-heading">
+            Find Guides for Your Breed
           </h2>
         </div>
+        <a href="/breeds" class="btn btn--ghost btn--sm">All 277 breeds →</a>
       </div>
-
-      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-4)">
-        {quickLinks.map(q => (
-          <QuickCard {...q} />
+      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-4)">
+        {popularBreeds.map(breed => (
+          <a href={`/breeds/${breed.slug}`} class="breed-pill" style="text-decoration:none">
+            <span class="breed-pill__emoji">{breed.emoji}</span>
+            <span class="breed-pill__name">{breed.name}</span>
+            <span class="breed-pill__cta">Food · Toys · Care →</span>
+          </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ── LATEST POSTS ───────────────────────────────────────────── -->
-  <section class="section" aria-labelledby="blog-heading">
+  <!-- ══════════════════════════════════════════════════════════
+       6. LATEST REVIEWS — Fresh content signal
+       ══════════════════════════════════════════════════════════ -->
+  <section class="section section--soft" aria-labelledby="blog-heading">
     <div class="container">
       <div class="section-header">
         <div>
-          <span class="section-eyebrow">From the experts</span>
-          <h2 class="section-title" id="blog-heading">
-            Latest Expert Insights
-          </h2>
+          <span class="section-eyebrow">Fresh from the lab</span>
+          <h2 class="section-title" id="blog-heading">Latest Expert Reviews</h2>
         </div>
-        <a href="/blog" class="btn btn--ghost btn--sm">
-          All posts →
-        </a>
+        <a href="/blog" class="btn btn--ghost btn--sm">All articles →</a>
       </div>
 
       <div class="grid grid-3">
@@ -187,9 +290,9 @@ const schema = {
               />
             ))
           : [
-              { title: 'Best Harnesses for Active Breeds', cat: 'Gear',   emoji: '🦮', excerpt: 'We tested 10 harnesses on active Retrievers and Pointers. This is the definitive winner.',     href: '/blog/best-harness-active-breeds'   },
-              { title: '5 Critical Signs of Aging',        cat: 'Health', emoji: '🩺', excerpt: 'How to spot joint pain, cognitive decline, and other senior health issues early.',               href: '/blog/signs-of-dog-aging'           },
-              { title: 'Top Indestructible Chew Toys',     cat: 'Toys',   emoji: '🎾', excerpt: 'Verified reviews from heavy chewers — Bulldogs and Great Danes included.',                      href: '/blog/best-indestructible-chew-toys' },
+              { title: 'Best Harnesses for Active Breeds',  cat: 'Gear',   emoji: '🦮', excerpt: 'We tested 10 harnesses on active Retrievers and Pointers. One clear winner.',   href: '/blog/best-harness-active-breeds'    },
+              { title: '5 Critical Signs Your Dog is Aging',cat: 'Health', emoji: '🩺', excerpt: 'How to spot joint pain, cognitive decline, and other senior health issues early.', href: '/blog/signs-of-dog-aging'            },
+              { title: 'Best Indestructible Chew Toys',     cat: 'Toys',   emoji: '🎾', excerpt: 'Verified reviews from heavy chewers — Bulldogs and Great Danes included.',        href: '/blog/best-indestructible-chew-toys' },
             ].map(p => (
               <BlogCard title={p.title} excerpt={p.excerpt} category={p.cat} href={p.href} emoji={p.emoji} />
             ))
@@ -198,17 +301,67 @@ const schema = {
     </div>
   </section>
 
-  <!-- ── NEWSLETTER ────────────────────────────────────────────── -->
+  <!-- ══════════════════════════════════════════════════════════
+       7. TRUST / METHODOLOGY — Why believe us
+       ══════════════════════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="trust-heading">
+    <div class="container" style="max-width: 960px">
+      <div style="text-align:center; margin-bottom: var(--space-12)">
+        <span class="section-eyebrow">Independent by design</span>
+        <h2 class="section-title" id="trust-heading">
+          Why 5,000+ Dog Owners Trust Our Reviews
+        </h2>
+        <p class="section-subtitle" style="margin-inline:auto; margin-top: var(--space-3)">
+          Every recommendation follows the same 8-point scoring process —
+          applied before we consider affiliate rates.
+        </p>
+      </div>
+
+      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-8)">
+        {[
+          { icon: '🔬', title: 'Ingredient Analysis',  body: 'We check every formula for quality protein sources, filler content, and flagged additives.' },
+          { icon: '🐾', title: 'Breed Matching',       body: 'Every pick is filtered by the breed\'s size, energy level, coat type, and known health risks.' },
+          { icon: '📊', title: 'Data-Driven Score',    body: 'Our 1–10 score combines owner reviews, vet guidance, lab data, and safety history.' },
+          { icon: '🚫', title: 'Zero Paid Placements', body: 'Brands cannot pay to be featured or to improve their score. Recommendations are ours alone.' },
+        ].map(item => (
+          <div class="trust-pillar">
+            <span class="trust-pillar__icon" aria-hidden="true">{item.icon}</span>
+            <strong class="trust-pillar__title">{item.title}</strong>
+            <p class="trust-pillar__body">{item.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div style="text-align:center; margin-top: var(--space-10)">
+        <a href="/how-we-test" class="btn btn--outline">
+          Read our full methodology →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       8. EMAIL CAPTURE — Retention + retargeting
+       ══════════════════════════════════════════════════════════ -->
   <section class="section section--soft" aria-labelledby="newsletter-heading">
-    <div class="container" style="max-width: var(--max-width-prose); text-align: center">
-      <span class="section-eyebrow">Weekly gear drops</span>
-      <h2 class="section-title" id="newsletter-heading" style="margin-bottom: var(--space-4)">
+    <div class="container" style="max-width: 580px; text-align: center">
+      <span class="section-eyebrow">Free, every Tuesday</span>
+      <h2 class="section-title" id="newsletter-heading" style="margin-bottom: var(--space-3)">
         The Dog Gear Drop
       </h2>
-      <p class="section-subtitle" style="margin-inline: auto; margin-bottom: var(--space-8)">
-        3 product picks, 1 deal, 1 breed spotlight. Every Tuesday. Zero spam.
+      <p style="font-size: var(--text-base); color: var(--color-body); line-height: var(--leading-relaxed); margin-bottom: var(--space-2)">
+        3 breed-matched picks · 1 deal · 1 spotlight breed — curated every week.
       </p>
-      <form class="newsletter-form" style="margin-inline: auto" action="#" method="POST">
+      <p style="font-size: var(--text-sm); color: var(--color-muted); margin-bottom: var(--space-8)">
+        Join 5,000+ dog owners who get unfiltered picks before they go mainstream.
+      </p>
+      <form
+        class="newsletter-form"
+        style="margin-inline: auto"
+        id="homepage-newsletter"
+        action="#"
+        method="POST"
+      >
         <input
           type="email"
           name="email"
@@ -217,16 +370,30 @@ const schema = {
           required
           aria-label="Email address"
         />
-        <button type="submit" class="btn btn--primary">
-          Subscribe
-        </button>
+        <button type="submit" class="btn btn--primary">Subscribe free</button>
       </form>
+      <p id="newsletter-success" style="display:none; font-size:var(--text-sm); color:var(--color-success); font-weight:var(--weight-semi); margin-top:var(--space-4)">
+        ✓ You're in! Check your inbox for a welcome email.
+      </p>
       <p style="font-size: var(--text-xs); color: var(--color-subtle); margin-top: var(--space-3)">
-        No spam. Unsubscribe anytime. 
+        No spam. Unsubscribe anytime.
       </p>
     </div>
   </section>
 
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <script>
+    // Replace action="#" with your email service URL once connected.
+    const form    = document.getElementById('homepage-newsletter') as HTMLFormElement | null;
+    const success = document.getElementById('newsletter-success');
+    if (form && success) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        form.style.display = 'none';
+        success.style.display = 'block';
+      });
+    }
+  </script>
 
 </BaseLayout>

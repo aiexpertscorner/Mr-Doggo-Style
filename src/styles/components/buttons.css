@@ -102,6 +102,19 @@
   color: var(--color-heading);
 }
 
+/* Outline white — on dark/coloured backgrounds */
+.btn--outline-white {
+  background: transparent;
+  color: rgba(255,255,255,0.92);
+  border-color: rgba(255,255,255,0.55);
+}
+
+.btn--outline-white:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.90);
+  color: #ffffff;
+}
+
 /* White — on dark backgrounds */
 .btn--white {
   background: #ffffff;
