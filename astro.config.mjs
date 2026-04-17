@@ -1,12 +1,11 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://mrdoggostyle.com',
   integrations: [
     tailwind(),
-    sitemap(),
+    // sitemap() disabled — using public/sitemap-index.xml via generate-sitemap.mjs
   ],
   markdown: {
     shikiConfig: {

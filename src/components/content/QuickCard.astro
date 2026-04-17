@@ -1,0 +1,87 @@
+---
+/**
+ * QuickCard.astro — upgraded
+ * Used in homepage "jump straight in" section.
+ * Shows a small label + value with optional icon.
+ */
+
+export interface Props {
+  label:  string;
+  value:  string;
+  href:   string;
+  icon?:  string;  // optional emoji icon
+}
+
+const { label, value, href, icon } = Astro.props;
+---
+
+<a href={href} class="quick-card group" style="text-decoration:none">
+  <div class="quick-card__inner">
+    {icon && (
+      <span class="quick-card__icon" aria-hidden="true">{icon}</span>
+    )}
+    <div>
+      <span class="quick-card__label">{label}</span>
+      <span class="quick-card__value">{value}</span>
+    </div>
+  </div>
+  <span class="quick-card__arrow" aria-hidden="true">→</span>
+</a>
+
+<style>
+  .quick-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e8ccaa;
+    background: white;
+    transition: all 0.15s ease;
+    gap: 0.5rem;
+  }
+  .quick-card:hover {
+    border-color: #a0621c;
+    background: #fdf8f0;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(160,98,28,0.12);
+  }
+  .quick-card__inner {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-width: 0;
+  }
+  .quick-card__icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .quick-card__label {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #94a3b8;
+    line-height: 1;
+    margin-bottom: 0.15rem;
+  }
+  .quick-card__value {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+  }
+  .quick-card__arrow {
+    font-size: 0.85rem;
+    color: #a0621c;
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+  }
+  .quick-card:hover .quick-card__arrow {
+    transform: translateX(3px);
+  }
+</style>

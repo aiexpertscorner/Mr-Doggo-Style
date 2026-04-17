@@ -1,0 +1,91 @@
+---
+export interface Props {
+  traits: {
+    energy_value:       number;
+    shedding_value:     number;
+    grooming_value:     number;
+    trainability_value: number;
+    demeanor_value:     number;
+  };
+  energy_level:   string;
+  shedding_level: string;
+  training_level: string;
+  coat_type:      string;
+  grooming_freq:  string;
+}
+
+const { traits, energy_level, shedding_level, training_level, coat_type, grooming_freq } = Astro.props;
+
+const stats = [
+  {
+    label:  'Energy',
+    value:  traits.energy_value,
+    text:   energy_level.charAt(0).toUpperCase() + energy_level.slice(1),
+    type:   'energy',
+    pct:    Math.round(traits.energy_value * 100),
+  },
+  {
+    label:  'Shedding',
+    value:  traits.shedding_value,
+    text:   shedding_level.charAt(0).toUpperCase() + shedding_level.slice(1),
+    type:   'shedding',
+    pct:    Math.round(traits.shedding_value * 100),
+  },
+  {
+    label:  'Trainability',
+    value:  traits.trainability_value,
+    text:   training_level.charAt(0).toUpperCase() + training_level.slice(1),
+    type:   'training',
+    pct:    Math.round(traits.trainability_value * 100),
+  },
+  {
+    label:  'Grooming',
+    value:  traits.grooming_value,
+    text:   grooming_freq.replace(' Brushing','').replace(' Bath/Brush',''),
+    type:   'grooming',
+    pct:    Math.round(traits.grooming_value * 100),
+  },
+  {
+    label:  'Friendliness',
+    value:  traits.demeanor_value,
+    text:   traits.demeanor_value >= 0.8 ? 'Very social' : traits.demeanor_value >= 0.5 ? 'Friendly' : 'Reserved',
+    type:   'demeanor',
+    pct:    Math.round(traits.demeanor_value * 100),
+  },
+];
+
+const COAT_LABELS: Record<string, string> = {
+  double:  '🐾 Double coat',
+  long:    '🐾 Long coat',
+  short:   '🐾 Short coat',
+  wiry:    '🐾 Wire coat',
+  curly:   '🐾 Curly coat',
+  silky:   '🐾 Silky coat',
+  corded:  '🐾 Corded coat',
+  hairless:'🐾 Hairless',
+  wavy:    '🐾 Wavy coat',
+};
+---
+
+<div class="breed-stats">
+  {stats.map(s => (
+    <div class="breed-stat">
+      <span class="breed-stat__label">{s.label}</span>
+      <div class="breed-stat__bar-track">
+        <div
+          class={`breed-stat__bar-fill breed-stat__bar-fill--${s.type}`}
+          style={`width: ${s.pct}%`}
+          role="progressbar"
+          aria-valuenow={s.pct}
+          aria-valuemin={0}
+          aria-valuemax={100}
+        />
+      </div>
+      <span class="breed-stat__value">{s.text}</span>
+    </div>
+  ))}
+  <div class="breed-stat">
+    <span class="breed-stat__label">Coat type</span>
+    <span class="breed-stat__value">{COAT_LABELS[coat_type] || `🐾 ${coat_type}`}</span>
+  </div>
+</div>

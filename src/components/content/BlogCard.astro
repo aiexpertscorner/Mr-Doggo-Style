@@ -1,0 +1,160 @@
+---
+/**
+ * BlogCard.astro — upgraded
+ *
+ * Image priority:
+ *   1. image prop (explicit, e.g. breed photo)
+ *   2. breed_image (e.g. /images/breeds/{slug}.jpg passed from parent)
+ *   3. Category stock image (/images/categories/Dog-{Cat}.png) — AUTO
+ *   4. Never shows empty/broken — category image always exists
+ */
+
+export interface Props {
+  title:        string;
+  excerpt:      string;
+  category:     string;
+  href:         string;
+  pubDate?:     string;
+  readTime?:    number;
+  image?:       string;   // explicit image URL (breed photo etc)
+  imageAlt?:    string;
+  featured?:    boolean;
+  slug?:        string;   // used to auto-detect breed image
+}
+
+const {
+  title, excerpt, category, href,
+  pubDate, readTime, image,
+  imageAlt = title, featured = false, slug = '',
+} = Astro.props;
+
+// ── Category → stock image ───────────────────────────────────
+const CAT_IMG: Record<string, string> = {
+  'dog food':    'Dog-food.png',
+  'food':        'Dog-food.png',
+  'treats':      'Dog-Treats.png',
+  'toys':        'Dog-Toys.png',
+  'beds':        'Dog-Beds.png',
+  'sleep':       'Dog-Beds.png',
+  'grooming':    'Dog-Grooming.png',
+  'health':      'Dog-Health.png',
+  'supplements': 'Dog-Supplements.png',
+  'training':    'Dog-Training.png',
+  'gear':        'Dog-Training.png',
+  'smart tech':  'Dog-Smart_Tech.png',
+  'smart-tech':  'Dog-Smart_Tech.png',
+  'travel':      'Dog-Travel.png',
+  'trending':    'Dog-Trending.png',
+};
+
+const catKey = category.toLowerCase();
+const catImgFile = CAT_IMG[catKey] || 'Dog-All.png';
+const catImgSrc  = `/images/categories/${catImgFile}`;
+
+// ── Auto-detect breed image from slug ────────────────────────
+const BREEDS = [
+  'labrador-retriever','golden-retriever','german-shepherd-dog',
+  'french-bulldog','bulldog','poodle','beagle','rottweiler',
+  'dachshund','pembroke-welsh-corgi','australian-shepherd',
+  'yorkshire-terrier','boxer','doberman-pinscher','great-dane',
+  'siberian-husky','bernese-mountain-dog','shih-tzu','boston-terrier',
+  'shetland-sheepdog','pomeranian','chihuahua','maltese','vizsla',
+  'weimaraner','bichon-frise','border-collie','havanese',
+  'cavalier-king-charles-spaniel','dalmatian','samoyed','pug',
+  'chow-chow','newfoundland','akita','mastiff','saint-bernard',
+  'irish-setter','collie','whippet','greyhound','bloodhound',
+  'basset-hound','alaskan-malamute','rhodesian-ridgeback',
+  'great-pyrenees','portuguese-water-dog','shiba-inu',
+  'australian-cattle-dog','staffordshire-bull-terrier','airedale-terrier',
+  'west-highland-white-terrier','border-terrier','soft-coated-wheaten-terrier',
+];
+
+function getBreedImage(s: string): string | null {
+  const lower = s.toLowerCase();
+  for (const b of BREEDS) {
+    if (lower.includes(b)) return `/images/breeds/${b}.jpg`;
+  }
+  return null;
+}
+
+// Final image: explicit > breed auto-detect > category stock
+const breedImg  = getBreedImage(slug || title);
+const finalImg  = image || breedImg || catImgSrc;
+
+// ── Badge colours ────────────────────────────────────────────
+const CAT_COLOR: Record<string, { bg: string; text: string }> = {
+  'food':       { bg: '#fef3c7', text: '#92400e' },
+  'dog food':   { bg: '#fef3c7', text: '#92400e' },
+  'treats':     { bg: '#fef9ee', text: '#713f12' },
+  'toys':       { bg: '#d1fae5', text: '#065f46' },
+  'beds':       { bg: '#ede9fe', text: '#4c1d95' },
+  'grooming':   { bg: '#fce7f3', text: '#831843' },
+  'health':     { bg: '#dbeafe', text: '#1e40af' },
+  'supplements':{ bg: '#dcfce7', text: '#14532d' },
+  'training':   { bg: '#e0f2fe', text: '#0369a1' },
+  'gear':       { bg: '#e0f2fe', text: '#0369a1' },
+  'smart tech': { bg: '#e0e7ff', text: '#3730a3' },
+  'smart-tech': { bg: '#e0e7ff', text: '#3730a3' },
+  'travel':     { bg: '#fef3c7', text: '#78350f' },
+};
+const badge = CAT_COLOR[catKey] || { bg: '#f1f5f9', text: '#475569' };
+
+const displayDate = pubDate
+  ? new Date(pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+  : null;
+---
+
+<a
+  href={href}
+  class={`group rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-0.5 hover:shadow-lg ${featured ? 'md:flex-row md:col-span-2' : ''}`}
+  style="border:1px solid #e8ccaa;background:white;text-decoration:none"
+  aria-label={title}
+>
+  <!-- Thumbnail -->
+  <div
+    class={`relative overflow-hidden flex-shrink-0 ${featured ? 'md:w-1/2' : ''}`}
+    style={`height:${featured ? '100%' : '200px'};min-height:${featured ? '240px' : '200px'};background:#fdf8f0`}
+  >
+    <img
+      src={finalImg}
+      alt={imageAlt}
+      width={featured ? 600 : 400}
+      height={featured ? 360 : 200}
+      loading="lazy"
+      decoding="async"
+      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+      data-fallback={catImgSrc}
+      onerror="var fb=this.getAttribute('data-fallback');if(fb&&this.src!==fb){this.src=fb;this.removeAttribute('data-fallback');}"
+    />
+    <!-- Category badge overlay -->
+    <div class="absolute top-3 left-3">
+      <span
+        class="font-sans text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
+        style={`background:${badge.bg};color:${badge.text}`}
+      >
+        {category}
+      </span>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class={`p-5 flex flex-col flex-1 ${featured ? 'justify-center' : ''}`}>
+    <h3
+      class="font-display font-semibold leading-snug mb-2 group-hover:opacity-80 transition-opacity"
+      style={`font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:${featured ? '1.2rem' : '0.95rem'}`}
+    >
+      {title}
+    </h3>
+    <p class="font-sans text-sm leading-relaxed flex-1 mb-3" style="color:#64748b;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">
+      {excerpt}
+    </p>
+    <div class="flex items-center justify-between mt-auto pt-3" style="border-top:1px solid #f5e8d0">
+      <div class="flex items-center gap-2 font-sans text-xs" style="color:#94a3b8">
+        {displayDate && <time datetime={pubDate}>{displayDate}</time>}
+        {displayDate && readTime && <span>·</span>}
+        {readTime && <span>{readTime} min read</span>}
+      </div>
+      <span class="font-sans text-xs font-bold" style="color:#a0621c">Read →</span>
+    </div>
+  </div>
+</a>

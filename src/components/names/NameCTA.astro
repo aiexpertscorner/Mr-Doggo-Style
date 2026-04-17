@@ -1,0 +1,28 @@
+---
+/**
+ * NameCTA.astro
+ * Reusable CTA block used on name pages to link to:
+ * - Breed guide
+ * - Product recommendations
+ * - Other name categories
+ */
+
+export interface Props {
+  eyebrow: string;
+  title:   string;
+  href:    string;
+  btnText: string;
+}
+
+const { eyebrow, title, href, btnText } = Astro.props;
+---
+
+<div class="ng-cta">
+  <div class="ng-cta__text">
+    <span class="ng-cta__eyebrow">{eyebrow}</span>
+    <span class="ng-cta__title">{title}</span>
+  </div>
+  <a href={href} class="ng-cta__btn">
+    {btnText}
+  </a>
+</div>

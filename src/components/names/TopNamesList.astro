@@ -1,0 +1,83 @@
+---
+/**
+ * TopNamesList.astro
+ * Renders a static ranked list of top names for a breed or filter.
+ * Used on breed-name pages for SEO-visible content above the fold.
+ * The dynamic generator is loaded below this.
+ */
+
+export interface Props {
+  heading:   string;
+  subheading?: string;
+  names: Array<{
+    name:        string;
+    gender:      'boy' | 'girl';
+    category:    string;
+    inspiration: string;
+    rank:        number;
+  }>;
+}
+
+const { heading, subheading, names } = Astro.props;
+
+const categoryColor: Record<string, string> = {
+  Classic: 'rgba(204,255,0,0.15)',
+  Trendy:  'rgba(136,204,255,0.12)',
+  Cute:    'rgba(255,170,204,0.12)',
+  Tough:   'rgba(255,100,100,0.12)',
+  General: 'rgba(255,255,255,0.06)',
+};
+
+const categoryText: Record<string, string> = {
+  Classic: 'var(--ng-lime)',
+  Trendy:  '#88CCFF',
+  Cute:    '#FFAACC',
+  Tough:   '#FF8888',
+  General: 'var(--ng-ash)',
+};
+---
+
+<div class="ng-top-list">
+  <h2 class="ng-top-list__heading">
+    TOP NAMEN VOOR<br/>
+    <span>{heading}</span>
+  </h2>
+  {subheading && (
+    <p class="ng-top-list__sub">{subheading}</p>
+  )}
+
+  <ol class="ng-top-list__grid" role="list">
+    {names.map((n, i) => (
+      <li
+        class="ng-card"
+        style={`--cat-bg:${categoryColor[n.category] ?? 'rgba(255,255,255,0.05)'};--cat-text:${categoryText[n.category] ?? 'var(--ng-ash)'}`}
+        data-ng-card
+        data-name={n.name}
+        role="listitem button"
+        tabindex="0"
+        aria-label={`${n.name} — ${n.category} stijl, ${n.gender === 'boy' ? 'jongen' : 'meisje'}`}
+      >
+        <span
+          class="ng-card__gender-dot"
+          class:list={[`ng-card__gender-dot--${n.gender}`]}
+          title={n.gender === 'boy' ? 'Jongen' : 'Meisje'}
+        ></span>
+        <div class="ng-card__name">
+          <small style="font-family:var(--ng-font-mono);font-size:0.52rem;color:var(--ng-ash);display:block;margin-bottom:2px">
+            #{i + 1}
+          </small>
+          {n.name}
+        </div>
+        <div class="ng-card__meta">
+          {n.category !== 'General' && (
+            <span class="ng-card__badge ng-card__badge--category">{n.category}</span>
+          )}
+          {n.inspiration !== 'Human' && n.inspiration !== 'General' && (
+            <span class="ng-card__badge ng-card__badge--inspiration">{n.inspiration}</span>
+          )}
+        </div>
+        <span class="ng-card__check" aria-hidden="true">✓</span>
+      </li>
+    ))}
+  </ol>
+</div>

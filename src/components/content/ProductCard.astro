@@ -1,0 +1,292 @@
+---
+/**
+ * ProductCard.astro — v4 FINAL
+ *
+ * Image priority (waterfall):
+ *   1. local_image  (/images/products/{id}.jpg  — downloaded locally)
+ *   2. brand_logo   (/images/brands/{slug}.png  — always available after import)
+ *   3. Clearbit URL (auto-fetched from brand domain, no API key needed)
+ *   4. Category emoji (guaranteed fallback, never broken)
+ *
+ * Dual CTA: Chewy (primary when available) + Amazon
+ */
+
+export interface Props {
+  name:          string;
+  asin:          string;
+  price?:        number;
+  chewy_id?:     string;
+  chewy_price?:  number;
+  rating?:       number;
+  reviewCount?:  number;
+  ourScore?:     number;
+  verdict?:      string;
+  pros?:         string[];
+  cons?:         string[];
+  badge?:        string;
+  features?:     string[];
+  // Image sources — pass whichever you have
+  local_image?:  string;   // /images/products/{id}.jpg
+  image?:        string;   // Amazon CDN (may be blocked — only used as last resort)
+  brand_logo?:   string;   // /images/brands/{slug}.png
+  brand_domain?: string;   // e.g. "kongcompany.com" for Clearbit fallback
+  brand_slug?:   string;
+  brand_name?:   string;
+  category?:     string;   // for emoji fallback
+  tag?:          string;
+}
+
+const {
+  name, asin, price, chewy_id, chewy_price,
+  rating = 4.5, reviewCount, ourScore,
+  verdict, pros = [], cons = [], badge, features = [],
+  local_image, image, brand_logo, brand_domain,
+  brand_slug, brand_name, category = '',
+  tag = 'aiexpertscorn-20',
+} = Astro.props;
+
+const amazonUrl = `https://www.amazon.com/dp/${asin}/?tag=${tag}`;
+const chewyUrl  = chewy_id ? `https://www.chewy.com/dp/${chewy_id}?ref=impact` : null;
+const stars      = Math.round(Math.max(1, Math.min(5, rating)));
+const scoreColor = ourScore
+  ? (ourScore >= 9 ? '#16a34a' : ourScore >= 7 ? '#d97706' : '#dc2626')
+  : '#6b7280';
+
+// Price logic
+const showChewyBetter  = !!(chewyUrl && chewy_price && price && chewy_price < price);
+const showAmazonBetter = !!(price && chewy_price && price < chewy_price);
+const isSubscription   = asin === 'SUBSCRIPTION';
+
+// ── Image waterfall ───────────────────────────────────────────
+// 1. local_image  2. brand_logo/Clearbit  3. category stock image  4. emoji
+const catKey        = category.toLowerCase().replace(/ /g, '-');
+const productImgSrc = local_image || null;
+const brandImgSrc   = brand_logo || (brand_domain ? `https://logo.clearbit.com/${brand_domain}?size=200` : null);
+
+// Category stock image (always present if public/images/categories/ is populated)
+const CAT_IMG: Record<string,string> = {
+  'dog-food':    'Dog-food.png',  'food':        'Dog-food.png',
+  'treats':      'Dog-Treats.png','toys':        'Dog-Toys.png',
+  'chew-toys':   'Dog-Toys.png',  'enrichment':  'Dog-Toys.png',
+  'beds':        'Dog-Beds.png',  'grooming':    'Dog-Grooming.png',
+  'health':      'Dog-Health.png','supplements': 'Dog-Supplements.png',
+  'training':    'Dog-Training.png','gear':       'Dog-Training.png',
+  'smart-tech':  'Dog-Smart_Tech.png','gps':      'Dog-Smart_Tech.png',
+  'travel':      'Dog-Travel.png','trending':    'Dog-Trending.png',
+};
+const catImgSrc = `/images/categories/${CAT_IMG[catKey] || 'Dog-All.png'}`;
+
+// Emoji last resort
+const CAT_EMOJI: Record<string,string> = {
+  'dog-food':'🍖','food':'🍖','treats':'🦴','toys':'🎾',
+  'beds':'🛏️','health':'🩺','supplements':'💊','grooming':'✂️',
+  'training':'🦮','gear':'🦮','smart-tech':'📡','travel':'✈️',
+};
+const emoji = CAT_EMOJI[catKey] || '🐾';
+
+const cardId = `pc-${asin}-${Math.random().toString(36).slice(2,7)}`;
+---
+
+<div class="not-prose bg-white rounded-2xl border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+  style="border-color:#f5e8d0">
+
+  {badge && (
+    <div class="font-sans text-xs font-bold uppercase tracking-wider text-center py-1.5 text-white"
+      style="background:#f59e0b">{badge}</div>
+  )}
+
+  <div class="p-5">
+    <div class="flex items-start gap-4 mb-4">
+
+      <!-- ── Image slot ────────────────────────────────────── -->
+      <div id={`${cardId}-img`}
+        class="flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden flex items-center justify-center"
+        style="background:linear-gradient(135deg,#fdf8f0,#fef3c7)">
+
+        {productImgSrc ? (
+          <!-- Slot 1: local product image -->
+          <img
+            src={productImgSrc}
+            alt={name}
+            width="80" height="80"
+            loading="lazy"
+            class="w-full h-full object-contain"
+            data-fallback={brandImgSrc || ''}
+            data-catimg={catImgSrc}
+            data-emoji={emoji}
+            onerror="
+              var fb=this.getAttribute('data-fallback');
+              var ci=this.getAttribute('data-catimg');
+              if(fb&&this.src!==fb){this.src=fb;this.setAttribute('data-fallback','');return;}
+              if(ci&&this.src!==ci){this.src=ci;this.removeAttribute('onerror');return;}
+              this.style.display='none';
+              this.parentElement.innerHTML='<span style=font-size:2rem>'+this.getAttribute('data-emoji')+'</span>';
+            "
+          />
+        ) : brandImgSrc ? (
+          <!-- Slot 2: brand logo / clearbit -->
+          <img
+            src={brandImgSrc}
+            alt={brand_name || name}
+            width="64" height="64"
+            loading="lazy"
+            class="object-contain max-h-14 p-1"
+            data-catimg={catImgSrc}
+            data-emoji={emoji}
+            onerror="
+              var ci=this.getAttribute('data-catimg');
+              if(ci&&this.src!==ci){this.src=ci;this.removeAttribute('onerror');return;}
+              this.style.display='none';
+              this.parentElement.innerHTML='<span style=font-size:2rem>'+this.getAttribute('data-emoji')+'</span>';
+            "
+          />
+        ) : (
+          <!-- Slot 3: guaranteed emoji -->
+          <span style="font-size:2rem">{emoji}</span>
+        )}
+      </div>
+
+      <!-- ── Product meta ──────────────────────────────────── -->
+      <div class="flex-1 min-w-0">
+        <h3 class="font-display font-semibold leading-snug mb-1"
+          style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:0.95rem">
+          {name}
+        </h3>
+        {brand_slug && brand_name && (
+          <a href={`/brands/${brand_slug}`}
+            class="font-sans text-xs hover:underline mb-1 block"
+            style="color:#a0621c">
+            by {brand_name} →
+          </a>
+        )}
+        <div class="flex flex-wrap items-center gap-1.5 font-sans text-sm">
+          <span style="color:#f59e0b">
+            {'★'.repeat(stars)}{'☆'.repeat(5 - stars)}
+          </span>
+          <span style="color:#6b7280">
+            {rating.toFixed(1)}{reviewCount ? ` (${reviewCount.toLocaleString()})` : ''}
+          </span>
+        </div>
+      </div>
+
+      <!-- ── Score badge ───────────────────────────────────── -->
+      {ourScore && (
+        <div class="text-center flex-shrink-0">
+          <div class="font-sans font-black text-2xl leading-none"
+            style={`color:${scoreColor}`}>
+            {ourScore}
+            <span class="text-xs font-normal" style="color:#9ca3af">/10</span>
+          </div>
+          <div class="font-sans text-xs mt-0.5" style="color:#9ca3af">Score</div>
+        </div>
+      )}
+    </div>
+
+    <!-- Verdict -->
+    {verdict && (
+      <p class="font-sans text-sm italic mb-3 pl-3"
+        style="color:#374151;border-left:3px solid #fbbf24">
+        {verdict}
+      </p>
+    )}
+
+    <!-- Features -->
+    {features.length > 0 && (
+      <ul class="mb-3 space-y-1">
+        {features.slice(0, 3).map(f => (
+          <li class="font-sans text-sm flex items-start gap-2" style="color:#374151">
+            <span style="color:#f59e0b;flex-shrink:0">✓</span>{f}
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <!-- Pros / Cons -->
+    {(pros.length > 0 || cons.length > 0) && (
+      <div class="grid grid-cols-2 gap-2 mb-3 font-sans text-xs">
+        {pros.length > 0 && (
+          <div class="rounded-xl p-3" style="background:#f0fdf4">
+            <p class="font-bold mb-1" style="color:#15803d">✅ Pros</p>
+            {pros.slice(0, 3).map(p => (
+              <p style="color:#166534" class="mb-0.5">{p}</p>
+            ))}
+          </div>
+        )}
+        {cons.length > 0 && (
+          <div class="rounded-xl p-3" style="background:#fef2f2">
+            <p class="font-bold mb-1" style="color:#b91c1c">❌ Cons</p>
+            {cons.slice(0, 3).map(c => (
+              <p style="color:#991b1b" class="mb-0.5">{c}</p>
+            ))}
+          </div>
+        )}
+      </div>
+    )}
+
+    <!-- Price comparison -->
+    {(price || chewy_price) && (
+      <div class="flex items-center justify-around mb-3 p-2.5 rounded-xl"
+        style="background:#fdf8f0;border:1px solid #f5e8d0">
+        {price && (
+          <div class="text-center">
+            <p class="font-sans text-xs" style="color:#94a3b8">Amazon</p>
+            <p class="font-sans font-black text-lg leading-tight"
+              style={`color:${showAmazonBetter ? '#16a34a' : '#1e293b'}`}>
+              ${price.toFixed(2)}
+              {showAmazonBetter && (
+                <span class="font-sans text-xs ml-1" style="color:#16a34a">✓</span>
+              )}
+            </p>
+          </div>
+        )}
+        {price && chewy_price && (
+          <span class="font-sans text-xs" style="color:#d1d5db">vs</span>
+        )}
+        {chewy_price && (
+          <div class="text-center">
+            <p class="font-sans text-xs" style="color:#94a3b8">Chewy</p>
+            <p class="font-sans font-black text-lg leading-tight"
+              style={`color:${showChewyBetter ? '#16a34a' : '#1e293b'}`}>
+              ${chewy_price.toFixed(2)}
+              {showChewyBetter && (
+                <span class="font-sans text-xs ml-1" style="color:#16a34a">✓</span>
+              )}
+            </p>
+          </div>
+        )}
+        {!chewy_price && price && !chewyUrl && (
+          <p class="font-sans font-black text-xl" style="color:#1e293b">
+            ${price.toFixed(2)}
+          </p>
+        )}
+      </div>
+    )}
+
+    <!-- ── CTAs ──────────────────────────────────────────────── -->
+    {isSubscription ? (
+      <a href={chewyUrl || amazonUrl}
+        rel="nofollow sponsored" target="_blank"
+        class="block text-center font-sans font-bold text-sm py-3 rounded-xl text-white"
+        style="background:linear-gradient(135deg,#a0621c,#7d4a10)">
+        View subscription →
+      </a>
+    ) : (
+      <div class={chewyUrl ? 'grid grid-cols-2 gap-2' : ''}>
+        {chewyUrl && (
+          <a href={chewyUrl}
+            rel="nofollow sponsored" target="_blank"
+            class="block text-center font-sans font-bold text-sm py-2.5 rounded-xl text-white transition-opacity hover:opacity-90"
+            style={`background:linear-gradient(135deg,#0052cc,#003d99);${showChewyBetter ? 'ring:2px solid #16a34a' : ''}`}>
+            🔵 Chewy{showChewyBetter ? ' ✓' : ''}
+          </a>
+        )}
+        <a href={amazonUrl}
+          rel="nofollow sponsored" target="_blank"
+          class="block text-center font-sans font-bold text-sm py-2.5 rounded-xl text-white transition-opacity hover:opacity-90 btn-amazon"
+          style={`background:linear-gradient(135deg,#FF9900,#e88700);${!chewyUrl ? 'grid-column:span 2' : ''}`}>
+          🟡 Amazon{showAmazonBetter ? ' ✓' : ''}
+        </a>
+      </div>
+    )}
+  </div>
+</div>

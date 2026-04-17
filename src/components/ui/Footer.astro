@@ -1,0 +1,66 @@
+---
+/**
+ * Footer.astro — Site footer, light theme.
+ */
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__grid">
+
+    <!-- Brand column -->
+    <div>
+      <a href="/" class="site-footer__brand-name">Mr. Doggo Style</a>
+      <p class="site-footer__tagline">
+        Independent, data-driven research for conscientious dog owners.
+        We receive commissions from qualifying purchases, but this never affects our editorial independence.
+      </p>
+      <p class="site-footer__meta">Established 2023 &nbsp;·&nbsp; Expert Verified</p>
+    </div>
+
+    <!-- Resources -->
+    <div>
+      <h3 class="site-footer__heading">Resources</h3>
+      <ul class="site-footer__links">
+        <li><a href="/blog/top-picks-2026"  class="site-footer__link">Top Picks 2026</a></li>
+        <li><a href="/dog-names"            class="site-footer__link">Dog Name Generator</a></li>
+        <li><a href="/breeds"               class="site-footer__link">Breed Guides</a></li>
+        <li><a href="/blog"                 class="site-footer__link">Expert Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Categories -->
+    <div>
+      <h3 class="site-footer__heading">Categories</h3>
+      <ul class="site-footer__links">
+        <li><a href="/categories/dog-food"  class="site-footer__link">Dog Food</a></li>
+        <li><a href="/categories/toys"      class="site-footer__link">Toys & Gear</a></li>
+        <li><a href="/categories/health"    class="site-footer__link">Dog Health</a></li>
+        <li><a href="/categories/training"  class="site-footer__link">Training</a></li>
+        <li><a href="/categories/grooming"  class="site-footer__link">Grooming</a></li>
+        <li><a href="/categories/beds"      class="site-footer__link">Beds & Sleep</a></li>
+      </ul>
+    </div>
+
+    <!-- About -->
+    <div>
+      <h3 class="site-footer__heading">About</h3>
+      <ul class="site-footer__links">
+        <li><a href="/about"       class="site-footer__link">About Us</a></li>
+        <li><a href="/disclosure"  class="site-footer__link">Affiliate Policy</a></li>
+        <li><a href="/privacy"     class="site-footer__link">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="site-footer__bottom">
+    <p class="site-footer__disclaimer">
+      Disclaimer: If you purchase a product through our links, we may earn a small commission.
+      This costs you nothing extra and helps keep Mr. Doggo Style free.
+      We never accept free products in exchange for positive reviews.
+    </p>
+    <p class="site-footer__copy">© {year} Mr. Doggo Style</p>
+  </div>
+</footer>

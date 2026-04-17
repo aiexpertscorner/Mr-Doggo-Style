@@ -1,0 +1,79 @@
+---
+/**
+ * Header.astro — Light theme site header.
+ * Sticky, glassmorphism blur, responsive mobile menu.
+ */
+
+const navLinks = [
+  { href: '/categories/dog-food',    label: 'Dog Food'   },
+  { href: '/categories/toys',        label: 'Toys & Gear'},
+  { href: '/categories/health',      label: 'Health'     },
+  { href: '/breeds',                 label: 'Breeds'     },
+  { href: '/blog',                   label: 'Expert Blog'},
+  { href: '/dog-names',              label: 'Dog Name Generator'  },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header" role="banner">
+  <div class="container site-header__inner">
+
+    <!-- Logotype -->
+    <a href="/" class="site-logo" aria-label="Mr. Doggo Style — Home">
+      <span class="site-logo__mark" aria-hidden="true">M</span>
+      <span class="site-logo__text">Mr. Doggo Style</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav aria-label="Main navigation">
+      <ul class="nav-primary" role="list">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class={`nav-primary__link ${currentPath.startsWith(link.href) ? 'is-active' : ''}`}
+              aria-current={currentPath.startsWith(link.href) ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Actions -->
+    <div class="nav-actions">
+      <button class="nav-search-btn" aria-label="Search" id="search-trigger">
+        <span>Search products…</span>
+        <kbd class="nav-search-btn__shortcut"></kbd>
+      </button>
+      <a href="/blog/top-picks-2026" class="nav-cta">Top Picks 2026</a>
+    </div>
+
+    <!-- Mobile toggle -->
+    <button
+      class="nav-toggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      id="nav-toggle"
+    >
+      <span class="nav-toggle__line"></span>
+      <span class="nav-toggle__line"></span>
+      <span class="nav-toggle__line"></span>
+    </button>
+  </div>
+</header>
+
+<script type="module">
+  const toggle  = document.getElementById('nav-toggle');
+  const nav     = document.querySelector('.nav-primary');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open.toString());
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+  }
+</script>

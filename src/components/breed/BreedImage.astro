@@ -1,0 +1,120 @@
+---
+/**
+ * BreedImage.astro — Smart breed image component
+ *
+ * Priority:
+ * 1. breed.image_url (Dog CEO API CDN — fast, free, same dataset as local)
+ * 2. Emoji placeholder (never shows broken images)
+ *
+ * Features:
+ * - Native lazy loading
+ * - Correct width/height to prevent layout shift (CLS)
+ * - Fade-in on load
+ * - Zero JS by default (CSS-only fade)
+ */
+
+export interface Props {
+  breed: {
+    slug:        string;
+    name:        string;
+    size_category: string;
+    image_url?:  string;
+  };
+  width?:    number;
+  height?:   number;
+  class?:    string;
+  priority?: boolean;  // true = eager load (above fold)
+  style?:    string;
+}
+
+const {
+  breed,
+  width    = 400,
+  height   = 400,
+  class:   className = '',
+  priority = false,
+  style    = '',
+} = Astro.props;
+
+const SIZE_EMOJI: Record<string,string> = {
+  small:  '🐕',
+  medium: '🐕‍🦺',
+  large:  '🐕‍🦺',
+  giant:  '🦮',
+};
+
+const emoji    = SIZE_EMOJI[breed.size_category] || '🐾';
+const hasImage = !!breed.image_url;
+const loading  = priority ? 'eager' : 'lazy';
+const fetchpriority = priority ? 'high' : 'auto';
+---
+
+{hasImage ? (
+  <div class={`breed-img-wrap ${className}`} style={style}>
+    <img
+      src={breed.image_url}
+      alt={`${breed.name} dog`}
+      width={width}
+      height={height}
+      loading={loading}
+      fetchpriority={fetchpriority}
+      decoding="async"
+      class="breed-img"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+    />
+    <div class="breed-img-fallback" style="display:none" aria-hidden="true">
+      {emoji}
+    </div>
+  </div>
+) : (
+  <div class={`breed-img-placeholder ${className}`} style={style} aria-hidden="true">
+    {emoji}
+  </div>
+)}
+
+<style>
+  .breed-img-wrap {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-bg-soft);
+    border-radius: inherit;
+  }
+
+  .breed-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Fade in once loaded */
+  .breed-img.loaded,
+  .breed-img:not([src=""]) {
+    opacity: 1;
+  }
+
+  .breed-img-fallback,
+  .breed-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    background: var(--color-bg-soft);
+    border-radius: inherit;
+  }
+</style>
+
+<script>
+  // Native fade-in on image load
+  document.querySelectorAll('.breed-img').forEach(img => {
+    if ((img as HTMLImageElement).complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', () => img.classList.add('loaded'));
+    }
+  });
+</script>

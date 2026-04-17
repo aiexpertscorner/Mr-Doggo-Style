@@ -1,0 +1,21 @@
+---
+/**
+ * Breadcrumb.astro
+ */
+export interface Props {
+  items: Array<{ label: string; href?: string; current?: boolean }>;
+}
+const { items } = Astro.props;
+---
+<nav aria-label="Breadcrumb" class="page-hero__eyebrow">
+  <ol class="breadcrumb">
+    {items.map((item, i) => (
+      <li class="breadcrumb__item">
+        {item.current
+          ? <span class="breadcrumb__current">{item.label}</span>
+          : <a href={item.href} class="breadcrumb__link">{item.label}</a>
+        }
+      </li>
+    ))}
+  </ol>
+</nav>

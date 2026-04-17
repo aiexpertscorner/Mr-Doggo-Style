@@ -1,0 +1,220 @@
+{
+  "labrador-retriever": {
+    "styles": [
+      "Classic",
+      "Trendy"
+    ],
+    "insps": [
+      "Classic Pet",
+      "Nature"
+    ],
+    "desc": "friendly family dog"
+  },
+  "german-shepherd": {
+    "styles": [
+      "Tough",
+      "Classic"
+    ],
+    "insps": [
+      "Mythology",
+      "Classic Pet"
+    ],
+    "desc": "loyal working dog"
+  },
+  "golden-retriever": {
+    "styles": [
+      "Classic",
+      "Trendy"
+    ],
+    "insps": [
+      "Classic Pet",
+      "Nature"
+    ],
+    "desc": "gentle golden breed"
+  },
+  "french-bulldog": {
+    "styles": [
+      "Cute",
+      "Trendy"
+    ],
+    "insps": [
+      "Food",
+      "Meme/Internet"
+    ],
+    "desc": "compact city dog"
+  },
+  "bulldog": {
+    "styles": [
+      "Tough",
+      "Classic"
+    ],
+    "insps": [
+      "Classic Pet",
+      "Sports"
+    ],
+    "desc": "sturdy and calm breed"
+  },
+  "beagle": {
+    "styles": [
+      "Classic",
+      "Cute"
+    ],
+    "insps": [
+      "Classic Pet",
+      "Nature"
+    ],
+    "desc": "playful scent hound"
+  },
+  "poodle": {
+    "styles": [
+      "Cute",
+      "Trendy"
+    ],
+    "insps": [
+      "Music",
+      "Classic Pet"
+    ],
+    "desc": "elegant and intelligent"
+  },
+  "rottweiler": {
+    "styles": [
+      "Tough"
+    ],
+    "insps": [
+      "Mythology",
+      "Classic Pet"
+    ],
+    "desc": "powerful guard dog"
+  },
+  "siberian-husky": {
+    "styles": [
+      "Tough",
+      "Trendy"
+    ],
+    "insps": [
+      "Mythology",
+      "Nature"
+    ],
+    "desc": "Nordic sled dog"
+  },
+  "doberman-pinscher": {
+    "styles": [
+      "Tough"
+    ],
+    "insps": [
+      "Mythology",
+      "Classic Pet"
+    ],
+    "desc": "alert and fearless breed"
+  },
+  "border-collie": {
+    "styles": [
+      "Tough",
+      "Trendy"
+    ],
+    "insps": [
+      "Nature",
+      "Classic Pet"
+    ],
+    "desc": "world's most intelligent dog"
+  },
+  "shih-tzu": {
+    "styles": [
+      "Cute",
+      "Trendy"
+    ],
+    "insps": [
+      "Classic Pet",
+      "Food"
+    ],
+    "desc": "lion dog with royal roots"
+  },
+  "yorkshire-terrier": {
+    "styles": [
+      "Cute",
+      "Trendy"
+    ],
+    "insps": [
+      "Classic Pet",
+      "Music"
+    ],
+    "desc": "tiny but bold terrier"
+  },
+  "dachshund": {
+    "styles": [
+      "Cute",
+      "Classic"
+    ],
+    "insps": [
+      "Food",
+      "Classic Pet"
+    ],
+    "desc": "sausage dog with big personality"
+  },
+  "australian-shepherd": {
+    "styles": [
+      "Tough",
+      "Trendy"
+    ],
+    "insps": [
+      "Nature",
+      "Classic Pet"
+    ],
+    "desc": "agile herding breed"
+  },
+  "chihuahua": {
+    "styles": [
+      "Cute",
+      "Trendy"
+    ],
+    "insps": [
+      "Food",
+      "Meme/Internet"
+    ],
+    "desc": "smallest breed, biggest attitude"
+  },
+  "boxer": {
+    "styles": [
+      "Tough",
+      "Classic"
+    ],
+    "insps": [
+      "Sports",
+      "Classic Pet"
+    ],
+    "desc": "energetic and playful"
+  },
+  "great-dane": {
+    "styles": [
+      "Tough",
+      "Classic"
+    ],
+    "insps": [
+      "Mythology",
+      "Classic Pet"
+    ],
+    "desc": "gentle giant"
+  },
+  "pembroke-welsh-corgi": {
+    "styles": [
+      "Cute",
+      "Trendy"
+    ],
+    "insps": [
+      "Classic Pet",
+      "Gaming"
+    ],
+    "desc": "royal herding dog"
+  },
+  "miniature-schnauzer": {
+    "styles": [
+      "Classic",
+      "Cute"
+    ],
+    "insps": [
+      "Classic Pet",
+      "Nature"
+    ],
+    "desc": "spirited German terrier"
+  }
+}
