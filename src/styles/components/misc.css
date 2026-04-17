@@ -436,6 +436,106 @@
 }
 
 /* =============================================================
+   FEATURED GUIDE CARDS — High-intent article teasers
+   ============================================================= */
+
+.featured-guides {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+.featured-guide-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-7) var(--space-6);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-2xl);
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-left-color 200ms ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.featured-guide-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-left-color: var(--color-accent);
+}
+
+.featured-guide-card__title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-heading);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.02em;
+  transition: color var(--transition-base);
+}
+
+.featured-guide-card:hover .featured-guide-card__title {
+  color: var(--color-primary);
+}
+
+.featured-guide-card__body {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  line-height: var(--leading-relaxed);
+  flex: 1;
+}
+
+.featured-guide-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin-top: var(--space-1);
+  transition: gap var(--transition-base);
+}
+
+.featured-guide-card:hover .featured-guide-card__cta {
+  gap: var(--space-2);
+}
+
+@media (max-width: 680px) {
+  .featured-guides {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================================================
+   TRUST PILLARS — Methodology section on homepage
+   ============================================================= */
+
+.trust-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.trust-pillar__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.trust-pillar__title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-heading);
+  letter-spacing: -0.01em;
+}
+
+.trust-pillar__body {
+  font-size: var(--text-sm);
+  color: var(--color-body);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* =============================================================
    STATS STRIP — Social proof numbers below hero
    ============================================================= */
 
