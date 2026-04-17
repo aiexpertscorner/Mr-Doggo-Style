@@ -108,6 +108,29 @@ const displayDate   = new Date(updatedDate ?? pubDate).toLocaleDateString('en-US
       <!-- Article content -->
       <article class="prose" id="article-content">
         <slot />
+
+        <!-- Mid-article email capture -->
+        <div class="email-capture-strip not-prose" id="article-email-capture">
+          <div class="email-capture-strip__icon" aria-hidden="true">🐾</div>
+          <div class="email-capture-strip__content">
+            <strong>Get our weekly breed + product picks</strong>
+            <p>3 products · 1 deal · 1 breed spotlight — every Tuesday, free</p>
+          </div>
+          <form class="email-capture-strip__form" id="article-newsletter" action="#" method="POST">
+            <input
+              type="email"
+              name="email"
+              class="form-input"
+              placeholder="your@email.com"
+              required
+              aria-label="Email address"
+            />
+            <button type="submit" class="btn btn--primary">Subscribe</button>
+          </form>
+          <p class="email-capture-strip__success" id="article-newsletter-success">
+            ✓ You're in!
+          </p>
+        </div>
       </article>
 
       <!-- Sidebar (sticky) -->
@@ -116,4 +139,16 @@ const displayDate   = new Date(updatedDate ?? pubDate).toLocaleDateString('en-US
       </aside>
     </div>
   </main>
+
+  <script>
+    const form = document.getElementById('article-newsletter') as HTMLFormElement | null;
+    const wrap = document.getElementById('article-email-capture');
+    if (form && wrap) {
+      form.addEventListener('submit', (e) => {
+        // Remove preventDefault once real action URL is set
+        e.preventDefault();
+        wrap.classList.add('is-subscribed');
+      });
+    }
+  </script>
 </BaseLayout>
