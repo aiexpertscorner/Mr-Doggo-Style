@@ -208,12 +208,24 @@
   font-weight: var(--weight-semi);
 }
 
+/* ── Mobile-only CTA inside nav dropdown ─────────────────────── */
+.nav-primary__mobile-cta {
+  display: none;
+}
+
 /* ── Responsive nav ───────────────────────────────────────────── */
 @media (max-width: 900px) {
   .nav-toggle { display: flex; }
   .nav-primary,
   .nav-search-btn,
   .nav-cta { display: none; }
+
+  .nav-primary__mobile-cta {
+    display: block;
+    padding-top: var(--space-4);
+    margin-top: var(--space-2);
+    border-top: 1px solid var(--color-border);
+  }
 
   .nav-primary.is-open {
     display: flex;
