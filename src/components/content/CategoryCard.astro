@@ -1,9 +1,7 @@
 ---
 /**
- * CategoryCard.astro — upgraded with stock category images
- *
- * Shows /images/categories/Dog-{Slug}.png as a background photo
- * with a gradient overlay and text on top.
+ * CategoryCard.astro — uses the .cat-card design system from cards.css
+ * No background images: themed gradient, large emoji, clean typography.
  */
 
 export interface Props {
@@ -22,110 +20,29 @@ const {
   reviewCount, href, linkText = 'Explore reviews',
 } = Astro.props;
 
-// ── Category image mapping ───────────────────────────────────
-const CAT_IMG: Record<string, string> = {
-  'dog-food':    'Dog-food.png',
-  'food':        'Dog-food.png',
-  'treats':      'Dog-Treats.png',
-  'toys':        'Dog-Toys.png',
-  'beds':        'Dog-Beds.png',
-  'grooming':    'Dog-Grooming.png',
-  'health':      'Dog-Health.png',
-  'supplements': 'Dog-Supplements.png',
-  'training':    'Dog-Training.png',
-  'gear':        'Dog-Training.png',
-  'smart-tech':  'Dog-Smart_Tech.png',
-  'travel':      'Dog-Travel.png',
-  'trending':    'Dog-Trending.png',
-};
-
-const imgFile = CAT_IMG[slug] || CAT_IMG[theme || ''] || 'Dog-All.png';
-const imgSrc  = `/images/categories/${imgFile}`;
-
-// ── Accent colours per category ──────────────────────────────
-const CAT_COLOR: Record<string, string> = {
-  'dog-food':    '#92400e',
-  'food':        '#92400e',
-  'treats':      '#78350f',
-  'toys':        '#065f46',
-  'beds':        '#4c1d95',
-  'grooming':    '#831843',
-  'health':      '#1e40af',
-  'supplements': '#14532d',
-  'training':    '#0369a1',
-  'gear':        '#0369a1',
-  'smart-tech':  '#3730a3',
-  'travel':      '#78350f',
-};
-const accent = CAT_COLOR[slug] || CAT_COLOR[theme || ''] || '#a0621c';
+const cardTheme = theme ?? slug;
 ---
 
 <a
   href={href}
-  class="group relative rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl"
-  style="text-decoration:none;min-height:260px"
-  aria-label={`${title} — ${desc}`}
+  class={`cat-card cat-card--${cardTheme}`}
+  data-emoji={emoji}
+  style="text-decoration:none"
 >
-  <!-- Background image -->
-  <img
-    src={imgSrc}
-    alt={title}
-    width="400"
-    height="280"
-    loading="lazy"
-    decoding="async"
-    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-    data-fallback="/images/categories/Dog-All.png"
-    onerror="var fb=this.getAttribute('data-fallback');if(fb&&this.src!==fb){this.src=fb;this.removeAttribute('data-fallback');}"
-  />
+  <div class="cat-card__icon-wrap" aria-hidden="true">{emoji}</div>
 
-  <!-- Gradient overlay -->
-  <div
-    class="absolute inset-0"
-    style="background:linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.08) 100%)"
-  ></div>
+  <div class="cat-card__body">
+    {reviewCount && (
+      <span class="cat-card__count">{reviewCount}+ reviews</span>
+    )}
+    <h3 class="cat-card__title">{title}</h3>
+    <p class="cat-card__desc">{desc}</p>
+  </div>
 
-  <!-- Content (sits on top of overlay) -->
-  <div class="relative flex flex-col flex-1 p-5 justify-end text-white">
-
-    <!-- Emoji + review count -->
-    <div class="flex items-center justify-between mb-2">
-      <span
-        class="flex items-center justify-center w-10 h-10 rounded-xl text-xl"
-        style="background:rgba(255,255,255,0.2);backdrop-filter:blur(4px)"
-        aria-hidden="true"
-      >
-        {emoji}
-      </span>
-      {reviewCount && (
-        <span
-          class="font-sans text-xs font-bold px-2.5 py-1 rounded-full"
-          style="background:rgba(255,255,255,0.2);backdrop-filter:blur(4px)"
-        >
-          {reviewCount}+ reviews
-        </span>
-      )}
-    </div>
-
-    <!-- Title + desc -->
-    <h3 class="font-display font-bold text-xl leading-tight mb-1"
-      style="font-family:'Playfair Display',Georgia,serif;text-shadow:0 1px 3px rgba(0,0,0,0.4)">
-      {title}
-    </h3>
-    <p class="font-sans text-sm leading-relaxed mb-3 opacity-80 line-clamp-2"
-      style="text-shadow:0 1px 2px rgba(0,0,0,0.3)">
-      {desc}
-    </p>
-
-    <!-- CTA pill -->
-    <div class="self-start">
-      <span
-        class="inline-flex items-center gap-1.5 font-sans text-xs font-bold px-3 py-1.5 rounded-full transition-all group-hover:gap-2.5"
-        style={`background:${accent};color:white`}
-      >
-        {linkText}
-        <span aria-hidden="true">→</span>
-      </span>
-    </div>
+  <div class="cat-card__footer">
+    <span class="cat-card__link">
+      {linkText}
+      <span class="cat-card__link-arrow" aria-hidden="true">→</span>
+    </span>
   </div>
 </a>

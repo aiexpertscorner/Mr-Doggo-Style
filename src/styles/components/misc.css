@@ -2,6 +2,25 @@
    FOOTER
    ============================================================= */
 
+/* Trust row inside footer brand column */
+.site-footer__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+}
+
+.site-footer__trust-item {
+  color: #64748b;
+  font-weight: var(--weight-medium);
+}
+
+.site-footer__trust-sep {
+  color: #334155;
+}
+
 .site-footer {
   background: var(--color-heading);
   color: #94a3b8;
