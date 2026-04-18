@@ -11,6 +11,7 @@ import masterBreeds  from '../../data/master-breeds.json';
 import productIndex  from '../../data/product-index.json';
 import breedLinkMap  from '../../data/breed-link-map.json';
 import contentStatus from '../../data/content-status.json';
+import { deriveProfile } from '../../../scripts/lib/breed-profile.mjs';
 
 const AFFILIATE_TAG = 'aiexpertscorn-20';
 const SITE          = 'https://mrdoggostyle.com';
@@ -22,6 +23,8 @@ export function getStaticPaths() {
 const { breed: slug } = Astro.params;
 const b = (masterBreeds as any[]).find(x => x.slug === slug);
 if (!b) return Astro.redirect('/breeds');
+
+const profile = deriveProfile(b);
 
 const links  = (breedLinkMap as any)[slug]     || {};
 const status = (contentStatus as any)[slug]    || {};
@@ -62,6 +65,38 @@ const CLUSTER_LINKS = [
 ];
 
 const COST_CALC_HREF = `/cost-calculator/${slug}`;
+
+// ── "Who this breed suits" — 2–4 data-driven bullets ────────────
+const suitabilityBullets: string[] = [];
+{
+  const d = profile.owner_difficulty as number;
+  const traits: string[] = (profile.dominant_traits as string[]) || [];
+  const firstTrait = traits[0] || 'adaptable';
+  const energyLabel: Record<string,string> = { active:'very active', regular:'moderately active', calm:'relaxed' };
+
+  if (d <= 3) {
+    suitabilityBullets.push(`Suitable for first-time owners — rates ${d}/10 on the owner difficulty scale.`);
+  } else if (d <= 6) {
+    suitabilityBullets.push(`Best suited to owners with some dog experience — difficulty rated ${d}/10.`);
+  } else {
+    suitabilityBullets.push(`Recommended for experienced owners — high owner difficulty rating of ${d}/10.`);
+  }
+
+  if (profile.is_urban_friendly) {
+    suitabilityBullets.push(`Urban-friendly: adapts well to flat or townhouse living provided daily exercise is consistent.`);
+  } else {
+    suitabilityBullets.push(`Better suited to homes with outdoor space — this ${b.size_category} breed needs room to move.`);
+  }
+
+  const traitSentence = traits.length >= 2
+    ? `Naturally ${traits.slice(0, 2).join(' and ')}, it integrates well into family life when socialised early.`
+    : `A ${firstTrait} temperament makes it a reliable companion for the right household.`;
+  suitabilityBullets.push(traitSentence);
+
+  if (profile.is_working_heritage) {
+    suitabilityBullets.push(`Working heritage means it needs a job or structured activity — under-stimulation leads to problem behaviours.`);
+  }
+}
 
 const TRAITS = [
   { label:'Energy',       val: b.traits?.energy_value       || 0, color:'#16a34a' },
@@ -189,7 +224,7 @@ const breadcrumbLd = JSON.stringify({
             {wt.min_lbs && wt.max_lbs && <span>⚖️ {wt.min_lbs}–{wt.max_lbs} lbs ({wt.min_kg}–{wt.max_kg} kg)</span>}
             {ht.min_in  && ht.max_in  && <span>📏 {ht.min_in}–{ht.max_in}"</span>}
             {life.min   && life.max   && <span>🎂 {life.min}–{life.max} yr lifespan</span>}
-            {rank.intelligence_rank   && <span>🧠 Intelligence #{rank.intelligence_rank} ({rank.intelligence_label})</span>}
+            {rank.intelligence_rank   && <span>🧠 Intelligence #{rank.intelligence_rank}{profile.intelligence_tier ? ` — ${profile.intelligence_tier}` : ''}</span>}
           </div>
         </div>
       </div>
@@ -365,6 +400,26 @@ const breadcrumbLd = JSON.stringify({
           </section>
         )}
 
+        <!-- Who this breed suits -->
+        <section class="rounded-2xl p-6" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1px solid #86efac">
+          <h2 class="font-display text-2xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+            Who the {b.name} Suits
+          </h2>
+          <ul class="space-y-3">
+            {suitabilityBullets.map((bullet: string) => (
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white" style="background:#16a34a">✓</span>
+                <p class="font-sans text-sm leading-relaxed" style="color:#1e293b">{bullet}</p>
+              </li>
+            ))}
+          </ul>
+          {(profile.coat_care_label as string) && (
+            <div class="mt-4 pt-4 font-sans text-sm" style="border-top:1px solid #bbf7d0;color:#64748b">
+              <strong style="color:#1e293b">Grooming commitment:</strong> {profile.coat_care_label as string}
+            </div>
+          )}
+        </section>
+
         <!-- Content cluster links -->
         <section>
           <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
@@ -463,6 +518,8 @@ const breadcrumbLd = JSON.stringify({
                 life.min   ? ['Lifespan',`${life.min}–${life.max} years`]     : null,
                 b.akc_group     ? ['AKC Group', b.akc_group.replace(' Group','')] : null,
                 b.origin_country? ['Origin',    b.origin_country]              : null,
+                profile.intelligence_tier ? ['Intelligence', (profile.intelligence_tier as string).charAt(0).toUpperCase()+(profile.intelligence_tier as string).slice(1)] : null,
+                ['Owner difficulty', `${profile.owner_difficulty}/10`],
               ].filter(Boolean).map((row: any) => (
                 <div class="flex justify-between gap-2 pb-2" style="border-bottom:1px solid #f5e8d0">
                   <span style="color:#64748b">{row[0]}</span>
