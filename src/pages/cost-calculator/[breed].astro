@@ -69,6 +69,17 @@ const COST_ITEMS = [
 // Top products for sidebar
 const foodProd = b.product_picks?.['dog-food'] ? (productIndex as any)[b.product_picks['dog-food']] : null;
 
+const breadcrumbLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",             "item": `${SITE}/` },
+    { "@type": "ListItem", "position": 2, "name": "Breeds",           "item": `${SITE}/breeds` },
+    { "@type": "ListItem", "position": 3, "name": n,                  "item": `${SITE}/breeds/${slug}` },
+    { "@type": "ListItem", "position": 4, "name": "Cost Calculator",  "item": `${SITE}/cost-calculator/${slug}` },
+  ]
+});
+
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -97,6 +108,7 @@ const jsonLd = JSON.stringify({
   description={`Full ${n} cost of ownership: puppy price $${puppy_price_low.toLocaleString()}–$${puppy_price_high.toLocaleString()}, annual costs $${annual_total.toLocaleString()}/yr, lifetime estimate $${lifetime_est.toLocaleString()}. Includes food, vet, grooming and toys.`}
   canonicalURL={`${SITE}/cost-calculator/${slug}`}
 >
+<script type="application/ld+json" set:html={breadcrumbLd} />
 <script type="application/ld+json" set:html={jsonLd} />
 
 <!-- Hero -->
