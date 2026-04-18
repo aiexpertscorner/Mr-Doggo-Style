@@ -39,6 +39,10 @@ CATS.forEach(c => add(`/categories/${c}`, 0.85, 'weekly'));
 // Breed hub pages (277)
 breeds.forEach(b => add(`/breeds/${b.slug}`, 0.9, 'weekly'));
 
+// Cost calculator hub + all breed pages
+add('/cost-calculator', 0.9, 'weekly');
+breeds.forEach(b => add(`/cost-calculator/${b.slug}`, 0.85, 'weekly'));
+
 // Breed cluster blog posts
 breeds.forEach(b => {
   const s = status[b.slug] || {};
