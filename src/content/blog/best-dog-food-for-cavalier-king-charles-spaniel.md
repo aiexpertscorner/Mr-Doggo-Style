@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Cavalier King Charles Spaniel'
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["cavalier-king-charles-spaniel", "dog-food", "small-breed", "calm"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "cavalier-king-charles-spaniel"
 ---
 

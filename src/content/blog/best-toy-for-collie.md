@@ -4,7 +4,7 @@ description: "We matched the best toy to the Collie's specific large size, regul
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["collie", "toys", "large-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "collie"
 ---
 

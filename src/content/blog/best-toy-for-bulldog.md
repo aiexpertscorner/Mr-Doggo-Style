@@ -4,7 +4,7 @@ description: "We matched the best toy to the Bulldog's specific regular exercise
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["bulldog", "toys", "medium-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "bulldog"
 ---
 

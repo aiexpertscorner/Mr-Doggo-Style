@@ -4,7 +4,7 @@ description: "We analyzed the clinical evidence behind the top dog joint supplem
 pubDate: 2026-02-03
 category: "Supplements"
 tags: ["supplements", "joint-health", "senior", "glucosamine", "arthritis"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 Canine osteoarthritis affects an estimated 20% of dogs over the age of one, and up to 80% of dogs over the age of eight. If your dog is slowing down, hesitating on stairs, or showing stiffness after lying down, a joint supplement may help — but only if you choose the right one.

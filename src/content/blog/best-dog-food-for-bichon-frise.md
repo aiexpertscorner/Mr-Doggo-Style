@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Bichon Frise's specific regula
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["bichon-frise", "dog-food", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "bichon-frise"
 ---
 

@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Saint Bernard's specific large
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["saint-bernard", "dog-food", "large-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "saint-bernard"
 ---
 

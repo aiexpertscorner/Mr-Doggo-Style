@@ -4,7 +4,7 @@ description: "We matched the best toy to the Bernese Mountain Dog's specific lar
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["bernese-mountain-dog", "toys", "large-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "bernese-mountain-dog"
 ---
 

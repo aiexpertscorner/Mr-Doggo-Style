@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Cane Corso's specific energeti
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["cane-corso", "dog-food", "medium-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "cane-corso"
 ---
 

@@ -4,7 +4,7 @@ description: "We matched the best dog food to the German Shorthaired Pointer's s
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["german-shorthaired-pointer", "dog-food", "large-breed", "needs-lots-of-activity"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "german-shorthaired-pointer"
 ---
 

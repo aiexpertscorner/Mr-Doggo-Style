@@ -4,7 +4,7 @@ description: "We matched the best toy to the English Springer Spaniel's specific
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["english-springer-spaniel", "toys", "medium-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "english-springer-spaniel"
 ---
 

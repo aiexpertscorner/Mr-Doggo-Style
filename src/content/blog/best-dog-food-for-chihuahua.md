@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Chihuahua's specific regular e
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["chihuahua", "dog-food", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "chihuahua"
 ---
 

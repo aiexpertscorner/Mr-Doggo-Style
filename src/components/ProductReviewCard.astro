@@ -15,7 +15,7 @@ const schema = JSON.stringify({
   "@context":"https://schema.org","@type":"Review",
   "itemReviewed":{"@type":"Product","name":name,"offers":price?{"@type":"Offer","price":price,"priceCurrency":"USD","url":url}:undefined},
   "reviewRating":{"@type":"Rating","ratingValue":ourScore||rating,"bestRating":10,"worstRating":1},
-  "author":{"@type":"Organization","name":"Mr. Doggo Style"},"reviewBody":verdict
+  "author":{"@type":"Organization","name":"PupWiki"},"reviewBody":verdict
 });
 ---
 <div style="background:#222;border:2px solid rgba(255,255,255,.1);overflow:hidden;transition:border-color .15s"

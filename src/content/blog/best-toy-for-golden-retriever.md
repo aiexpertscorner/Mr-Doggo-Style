@@ -4,7 +4,7 @@ description: "We matched the best toy to the Golden Retriever's specific large s
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["golden-retriever", "toys", "large-breed", "needs-lots-of-activity"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "golden-retriever"
 ---
 

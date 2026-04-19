@@ -10,7 +10,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const ROOT    = path.dirname(fileURLToPath(import.meta.url));
-const SITE    = 'https://mrdoggostyle.com';
+const SITE    = 'https://pupwiki.com';
 const TODAY   = new Date().toISOString().split('T')[0];
 const OUT     = path.join(ROOT, 'public', 'sitemap.xml');
 
@@ -98,4 +98,4 @@ console.log(`  Name pages: ${urls.filter(u=>u.loc.includes('/dog-names/')).lengt
 console.log(`\nNext steps:`);
 console.log(`  1. npm run build  (no more sitemap error)`);
 console.log(`  2. git add public/sitemap.xml && git commit -m "sitemap: ${urls.length} URLs"`);
-console.log(`  3. Submit https://mrdoggostyle.com/sitemap.xml to Google Search Console\n`);
+console.log(`  3. Submit https://pupwiki.com/sitemap.xml to Google Search Console\n`);

@@ -4,7 +4,7 @@ description: "We matched the best toy to the Maltese's specific regular exercise
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["maltese", "toys", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "maltese"
 ---
 

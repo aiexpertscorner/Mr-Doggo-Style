@@ -4,7 +4,7 @@ description: "We matched the best toy to the Chesapeake Bay Retriever's specific
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["chesapeake-bay-retriever", "toys", "large-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "chesapeake-bay-retriever"
 ---
 

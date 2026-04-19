@@ -4,7 +4,7 @@ description: "We matched the best toy to the Weimaraner's specific large size, n
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["weimaraner", "toys", "large-breed", "needs-lots-of-activity"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "weimaraner"
 ---
 

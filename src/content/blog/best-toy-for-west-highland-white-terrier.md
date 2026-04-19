@@ -4,7 +4,7 @@ description: "We matched the best toy to the West Highland White Terrier's speci
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["west-highland-white-terrier", "toys", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "west-highland-white-terrier"
 ---
 

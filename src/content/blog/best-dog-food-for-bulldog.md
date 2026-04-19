@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Bulldog's specific regular exe
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["bulldog", "dog-food", "medium-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "bulldog"
 ---
 

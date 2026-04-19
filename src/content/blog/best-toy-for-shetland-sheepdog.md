@@ -4,7 +4,7 @@ description: "We matched the best toy to the Shetland Sheepdog's specific regula
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["shetland-sheepdog", "toys", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "shetland-sheepdog"
 ---
 

@@ -4,7 +4,7 @@ description: "We matched the best toy to the Miniature American Shepherd's speci
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["miniature-american-shepherd", "toys", "medium-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "miniature-american-shepherd"
 ---
 

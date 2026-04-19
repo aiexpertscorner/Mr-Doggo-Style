@@ -4,7 +4,7 @@ description: "We matched the best toy to the Great Dane's specific large size, e
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["great-dane", "toys", "large-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "great-dane"
 ---
 

@@ -5,7 +5,7 @@ pubDate: 2026-01-22
 updatedDate: 2026-02-05
 category: "Beds"
 tags: ["beds", "orthopedic", "large-breed", "joint-pain", "senior"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 The word "orthopedic" is used on dog bed packaging more than almost any other marketing term — and it means almost nothing without qualification. Any manufacturer can print "orthopedic foam" on a box. The question is whether the foam is dense enough, thick enough, and durable enough to actually support a 70-100+ lb dog's joints over years of use.

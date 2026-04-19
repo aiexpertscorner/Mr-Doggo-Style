@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Akita's specific large size, e
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["akita", "dog-food", "large-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "akita"
 ---
 

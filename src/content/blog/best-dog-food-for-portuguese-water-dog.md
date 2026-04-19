@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Portuguese Water Dog's specifi
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["portuguese-water-dog", "dog-food", "medium-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "portuguese-water-dog"
 ---
 

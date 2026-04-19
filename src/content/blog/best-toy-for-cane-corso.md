@@ -4,7 +4,7 @@ description: "We matched the best toy to the Cane Corso's specific energetic ene
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["cane-corso", "toys", "medium-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "cane-corso"
 ---
 

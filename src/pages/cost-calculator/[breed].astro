@@ -10,7 +10,7 @@ import productIndex from '../../data/product-index.json';
 import breedLinkMap from '../../data/breed-link-map.json';
 
 const AMAZON_TAG = 'aiexpertscorn-20';
-const SITE       = 'https://mrdoggostyle.com';
+const SITE       = 'https://pupwiki.com';
 
 export function getStaticPaths() {
   return (masterBreeds as any[]).map(b => ({ params: { breed: b.slug } }));

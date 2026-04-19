@@ -10,7 +10,7 @@ const blog = defineCollection({
     image: z.string().optional(),
     category: z.string().default('Reviews'),
     tags: z.array(z.string()).default([]),
-    author: z.string().default('The Mr. Doggo Style Team'),
+    author: z.string().default('The PupWiki Team'),
   }),
 });
 

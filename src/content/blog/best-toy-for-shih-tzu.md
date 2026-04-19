@@ -4,7 +4,7 @@ description: "We matched the best toy to the Shih Tzu's specific regular exercis
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["shih-tzu", "toys", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "shih-tzu"
 ---
 

@@ -4,7 +4,7 @@ description: "Both claim to be indestructible. We put them through 6 weeks of te
 pubDate: 2026-02-16
 category: "Toys"
 tags: ["toys", "chew-toys", "comparison", "indestructible", "kong", "goughnuts"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 The KONG Extreme and the Goughnuts MAXX Ring are the two most-recommended tough dog toys on the internet. Both are made from natural rubber. Both are designed for the most aggressive chewers. Both cost significantly more than cheap chew toys.
