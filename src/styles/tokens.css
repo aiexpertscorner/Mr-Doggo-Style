@@ -1,5 +1,5 @@
 /* =============================================================
-   DESIGN TOKENS — PupWiki (Light Theme)
+   DESIGN TOKENS — PupWiki (Light Theme - Editorial Rebrand)
    All visual values live here. Import this first.
    ============================================================= */
 
@@ -7,75 +7,75 @@
 
   /* ── Colour palette ───────────────────────────────────────── */
 
-  /* Primary — Teal. Trustworthy, fresh, distinctive */
-  --color-primary:         #0D9488;   /* teal-600 */
-  --color-primary-hover:   #0F766E;   /* teal-700 */
-  --color-primary-light:   #CCFBF1;   /* teal-100 */
+  /* Primary — Heritage Teal. Trustworthy, authoritative, deep */
+  --color-primary:         #134E4A;   /* teal-900 — Dieper en serieuzer */
+  --color-primary-hover:   #0F3F3C;   /* donkerder voor hover states */
+  --color-primary-light:   #CCFBF1;   /* teal-100 — Blijft fris voor subtiele acties */
   --color-primary-subtle:  #F0FDFA;   /* teal-50  */
 
-  /* Accent — Amber. Trust badges, ratings, highlights */
-  --color-accent:          #F59E0B;   /* amber-500 */
-  --color-accent-hover:    #D97706;   /* amber-600 */
+  /* Accent — Sunny Ochre/Terracotta. Warm, natural, dog-friendly */
+  --color-accent:          #D97706;   /* amber-600 — Warmer, minder 'waarschuwing' */
+  --color-accent-hover:    #B45309;   /* amber-700 */
   --color-accent-light:    #FEF3C7;   /* amber-100 */
 
-  /* Neutral text scale */
-  --color-heading:         #0F172A;   /* slate-900 */
-  --color-body:            #374151;   /* gray-700  — slightly warmer than slate */
-  --color-muted:           #6B7280;   /* gray-500  */
-  --color-subtle:          #9CA3AF;   /* gray-400  */
-  --color-placeholder:     #D1D5DB;   /* gray-300  */
+  /* Neutral text scale — Stone (Warmer, 'paper-feel' in plaats van klinisch blauwgrijs) */
+  --color-heading:         #1C1917;   /* stone-900 — Bijna zwart, maar zachter */
+  --color-body:            #44403C;   /* stone-700 — Warme donkergrijs voor uitstekende leesbaarheid */
+  --color-muted:           #78716C;   /* stone-500 */
+  --color-subtle:          #A8A29E;   /* stone-400 */
+  --color-placeholder:     #D6D3D1;   /* stone-300 */
 
-  /* Surface scale */
-  --color-bg:              #FFFFFF;
-  --color-bg-soft:         #F8FAFC;   /* slate-50  */
-  --color-bg-muted:        #F1F5F9;   /* slate-100 */
-  --color-border:          #E2E8F0;   /* slate-200 */
-  --color-border-strong:   #CBD5E1;   /* slate-300 */
+  /* Surface scale — Editorial off-whites */
+  --color-bg:              #FFFFFF;   /* Puur wit (gebruik dit specifiek voor content kaarten) */
+  --color-bg-soft:         #FAF9F6;   /* Zacht crème/parchment voor de main body background */
+  --color-bg-muted:        #F5F5F4;   /* stone-100 */
+  --color-border:          #E7E5E4;   /* stone-200 */
+  --color-border-strong:   #D6D3D1;   /* stone-300 */
 
   /* Semantic / status */
   --color-success:         #059669;   /* emerald-600 */
   --color-success-light:   #D1FAE5;
-  --color-warning:         #D97706;
+  --color-warning:         #D97706;   /* Gelijk aan accent */
   --color-warning-light:   #FEF3C7;
   --color-danger:          #DC2626;
   --color-danger-light:    #FEE2E2;
 
-  /* Category palette — pastel washes */
-  --cat-food-bg:           #EFF6FF;   /* blue-50   */
-  --cat-food-border:       #BFDBFE;   /* blue-200  */
-  --cat-food-icon-bg:      #DBEAFE;   /* blue-100  */
-  --cat-food-text:         #1D4ED8;   /* blue-700  */
-  --cat-food-glow:         rgba(59, 130, 246, 0.12);
+  /* Category palette — Desaturated Pastel Washes (Minder fel, meer high-end) */
+  --cat-food-bg:           #F1F5F9;   /* Zacht slate/staalblauw */
+  --cat-food-border:       #E2E8F0;   
+  --cat-food-icon-bg:      #DBEAFE;   
+  --cat-food-text:         #1E3A8A;   /* Dieper blue-900 voor sterker contrast */
+  --cat-food-glow:         rgba(30, 58, 138, 0.08);
 
-  --cat-toys-bg:           #ECFDF5;   /* emerald-50  */
-  --cat-toys-border:       #A7F3D0;   /* emerald-200 */
-  --cat-toys-icon-bg:      #D1FAE5;   /* emerald-100 */
-  --cat-toys-text:         #065F46;   /* emerald-800 */
-  --cat-toys-glow:         rgba(16, 185, 129, 0.12);
+  --cat-toys-bg:           #F0FDF4;   /* Zacht groen */
+  --cat-toys-border:       #DCFCE7;   
+  --cat-toys-icon-bg:      #D1FAE5;   
+  --cat-toys-text:         #064E3B;   /* Dieper emerald-900 */
+  --cat-toys-glow:         rgba(6, 78, 59, 0.08);
 
-  --cat-health-bg:         #F5F3FF;   /* violet-50  */
-  --cat-health-border:     #DDD6FE;   /* violet-200 */
-  --cat-health-icon-bg:    #EDE9FE;   /* violet-100 */
-  --cat-health-text:       #5B21B6;   /* violet-800 */
-  --cat-health-glow:       rgba(139, 92, 246, 0.12);
+  --cat-health-bg:         #F8FAFC;   /* Zeer zacht medisch grijs-blauw */
+  --cat-health-border:     #E2E8F0;   
+  --cat-health-icon-bg:    #E0E7FF;   
+  --cat-health-text:       #312E81;   /* Indigo-900 voor autoriteit */
+  --cat-health-glow:       rgba(49, 46, 129, 0.08);
 
-  --cat-training-bg:       #FFF7ED;   /* orange-50  */
-  --cat-training-border:   #FED7AA;   /* orange-200 */
-  --cat-training-icon-bg:  #FFEDD5;   /* orange-100 */
-  --cat-training-text:     #9A3412;   /* orange-800 */
-  --cat-training-glow:     rgba(249, 115, 22, 0.12);
+  --cat-training-bg:       #FFF7ED;   /* Zacht terracotta/zand */
+  --cat-training-border:   #FFEDD5;   
+  --cat-training-icon-bg:  #FEEBD8;   
+  --cat-training-text:     #7C2D12;   /* Orange-900 (Aards) */
+  --cat-training-glow:     rgba(124, 45, 18, 0.08);
 
-  --cat-grooming-bg:       #FDF2F8;   /* pink-50   */
-  --cat-grooming-border:   #FBCFE8;   /* pink-200  */
-  --cat-grooming-icon-bg:  #FCE7F3;   /* pink-100  */
-  --cat-grooming-text:     #9D174D;   /* pink-800  */
-  --cat-grooming-glow:     rgba(236, 72, 153, 0.12);
+  --cat-grooming-bg:       #FFF1F2;   /* Gedempt rose/creme */
+  --cat-grooming-border:   #FFE4E6;   
+  --cat-grooming-icon-bg:  #FECDD3;   
+  --cat-grooming-text:     #881337;   /* Rose-900 */
+  --cat-grooming-glow:     rgba(136, 19, 55, 0.08);
 
-  --cat-beds-bg:           #F0FDF4;   /* green-50  */
-  --cat-beds-border:       #BBF7D0;   /* green-200 */
-  --cat-beds-icon-bg:      #DCFCE7;   /* green-100 */
-  --cat-beds-text:         #166534;   /* green-800 */
-  --cat-beds-glow:         rgba(34, 197, 94, 0.12);
+  --cat-beds-bg:           #F4F5F0;   /* Natural Sage */
+  --cat-beds-border:       #E5E7EB;   
+  --cat-beds-icon-bg:      #D1D5DB;   
+  --cat-beds-text:         #3F6212;   /* Olive/Lime-900 */
+  --cat-beds-glow:         rgba(63, 98, 18, 0.08);
 
   /* ── Typography ──────────────────────────────────────────── */
   --font-sans:    'Inter', system-ui, -apple-system, sans-serif;
@@ -98,8 +98,8 @@
   /* Line heights */
   --leading-tight:  1.2;
   --leading-snug:   1.35;
-  --leading-normal: 1.55;
-  --leading-relaxed:1.75;
+  --leading-normal: 1.6;        /* Verhoogd van 1.55 naar 1.6 voor die luxere redactionele witruimte */
+  --leading-relaxed:1.8;
 
   /* Font weights */
   --weight-normal:  400;
@@ -139,8 +139,10 @@
   --shadow-xl:   0 20px 25px -5px rgba(0,0,0,0.08), 0 10px 10px -5px rgba(0,0,0,0.03);
   --shadow-card: var(--shadow-sm);
   --shadow-card-hover: var(--shadow-lg);
-  --shadow-primary: 0 4px 14px 0 rgba(13, 148, 136, 0.25);
-  --shadow-primary-lg: 0 8px 24px 0 rgba(13, 148, 136, 0.3);
+  
+  /* Primary shadows aangepast naar de nieuwe, diepere Teal rgb(19, 78, 74) */
+  --shadow-primary: 0 4px 14px 0 rgba(19, 78, 74, 0.25);
+  --shadow-primary-lg: 0 8px 24px 0 rgba(19, 78, 74, 0.3);
 
   /* ── Z-index scale ─────────────────────────────────────────── */
   --z-base:      1;
@@ -156,7 +158,7 @@
   --transition-hover:  all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /* ── Layout ───────────────────────────────────────────────── */
-  --max-width:      1280px;
+  --max-width:        1280px;
   --max-width-prose:  720px;
   --max-width-narrow: 480px;
   --content-padding: 1.5rem;
