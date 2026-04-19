@@ -31,7 +31,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to Cloudflare Pages with Wrangler
+      - name: Deploy to Cloudflare Pages
         run: npx wrangler pages deploy dist --project-name=pupwiki
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
