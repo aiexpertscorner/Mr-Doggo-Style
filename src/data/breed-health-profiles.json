@@ -1,0 +1,211 @@
+{
+  "_meta": {
+    "dataset_name": "Pupwiki Breed Health Risk Profiles",
+    "last_updated": "2026-04-23",
+    "editorial_oversight": "Pupwiki Health Advisory Board",
+    "schema_version": "1.1",
+    "notes": "severity: Low | Medium | Medium-High | High | Critical. prevalence: Rare | Low | Medium | Medium-High | High | Universal"
+  },
+  "profiles": [
+    {
+      "breed_slug": "golden-retriever",
+      "common_issues": [
+        { "name": "Hip Dysplasia",              "severity": "Medium-High", "prevalence": "High",        "early_warning": "Stiffness when rising, bunny hopping gait" },
+        { "name": "Cancer (Hemangiosarcoma)",   "severity": "Critical",    "prevalence": "Medium-High", "early_warning": "Sudden lethargy, pale gums, abdominal swelling" },
+        { "name": "Elbow Dysplasia",            "severity": "Medium",      "prevalence": "Medium",      "early_warning": "Front leg lameness, reluctance to exercise" },
+        { "name": "Progressive Retinal Atrophy","severity": "Medium",      "prevalence": "Low",         "early_warning": "Night blindness, hesitancy in dim light" }
+      ],
+      "care_tips": "Annual screenings for cancer are highly recommended after age 5. OFA hip and elbow certifications are key when purchasing a puppy."
+    },
+    {
+      "breed_slug": "french-bulldog",
+      "common_issues": [
+        { "name": "Brachycephalic Syndrome",           "severity": "Medium",  "prevalence": "Universal", "early_warning": "Excessive panting, noisy breathing, exercise intolerance" },
+        { "name": "Intervertebral Disc Disease (IVDD)","severity": "High",    "prevalence": "Medium",    "early_warning": "Reluctance to jump, back pain, hind limb weakness" },
+        { "name": "Skin Fold Dermatitis",              "severity": "Low",     "prevalence": "High",      "early_warning": "Redness or odor in facial or tail folds" },
+        { "name": "Hip Dysplasia",                     "severity": "Medium",  "prevalence": "Medium",    "early_warning": "Difficulty rising, reduced activity" }
+      ],
+      "care_tips": "Avoid heat and strenuous exercise. Maintain a healthy weight to protect the spine. Clean skin folds weekly to prevent infections."
+    },
+    {
+      "breed_slug": "labrador-retriever",
+      "common_issues": [
+        { "name": "Hip Dysplasia",           "severity": "Medium-High", "prevalence": "High",   "early_warning": "Stiffness, limping after exercise" },
+        { "name": "Obesity",                 "severity": "Medium",      "prevalence": "High",   "early_warning": "Weight gain, reduced activity, difficulty breathing" },
+        { "name": "Exercise-Induced Collapse","severity": "Medium",     "prevalence": "Medium", "early_warning": "Weakness or collapse after intense exercise" },
+        { "name": "Elbow Dysplasia",         "severity": "Medium",      "prevalence": "Medium", "early_warning": "Front leg lameness, joint swelling" }
+      ],
+      "care_tips": "Monitor diet carefully — Labs are highly food motivated and prone to obesity. Regular low-impact exercise helps protect joints."
+    },
+    {
+      "breed_slug": "german-shepherd",
+      "common_issues": [
+        { "name": "Degenerative Myelopathy", "severity": "High",        "prevalence": "Medium-High", "early_warning": "Hind limb weakness or dragging, loss of coordination" },
+        { "name": "Hip Dysplasia",           "severity": "High",        "prevalence": "High",        "early_warning": "Difficulty rising, lameness" },
+        { "name": "Exocrine Pancreatic Insufficiency","severity": "Medium","prevalence": "Medium",   "early_warning": "Weight loss despite good appetite, loose stools" },
+        { "name": "Bloat (GDV)",             "severity": "Critical",    "prevalence": "Medium",      "early_warning": "Distended abdomen, unproductive retching, restlessness" }
+      ],
+      "care_tips": "OFA hip testing is essential. Feed multiple small meals to reduce bloat risk. Watch for rear-end weakness in dogs over 7."
+    },
+    {
+      "breed_slug": "bulldog",
+      "common_issues": [
+        { "name": "Brachycephalic Syndrome",    "severity": "High",   "prevalence": "Universal", "early_warning": "Loud snoring, labored breathing, blue-tinged gums" },
+        { "name": "Hip Dysplasia",              "severity": "High",   "prevalence": "High",      "early_warning": "Waddling gait, reluctance to exercise" },
+        { "name": "Cherry Eye",                 "severity": "Low",    "prevalence": "High",      "early_warning": "Red bulge in corner of eye" },
+        { "name": "Skin Fold Infections",       "severity": "Low",    "prevalence": "Universal", "early_warning": "Redness, odor, or discharge in skin folds" }
+      ],
+      "care_tips": "Keep cool at all times — bulldogs cannot pant efficiently. Clean all skin folds daily in hot weather. Limit exercise in heat."
+    },
+    {
+      "breed_slug": "poodle-standard",
+      "common_issues": [
+        { "name": "Bloat (GDV)",                    "severity": "Critical", "prevalence": "Medium",      "early_warning": "Distended abdomen, unproductive retching" },
+        { "name": "Addison's Disease",               "severity": "High",    "prevalence": "Medium",      "early_warning": "Lethargy, vomiting, weakness" },
+        { "name": "Progressive Retinal Atrophy",     "severity": "Medium",  "prevalence": "Low-Medium",  "early_warning": "Night blindness, dilated pupils" },
+        { "name": "Hip Dysplasia",                   "severity": "Medium",  "prevalence": "Low-Medium",  "early_warning": "Stiffness, reluctance to exercise" }
+      ],
+      "care_tips": "Feed from an elevated bowl and split meals to reduce bloat risk. Annual thyroid and Addison's screening recommended for adults."
+    },
+    {
+      "breed_slug": "chihuahua",
+      "common_issues": [
+        { "name": "Patellar Luxation",      "severity": "Medium", "prevalence": "High",   "early_warning": "Skipping or hopping gait, occasional leg-lifting" },
+        { "name": "Tracheal Collapse",      "severity": "Medium", "prevalence": "Medium", "early_warning": "Honking cough, exercise intolerance" },
+        { "name": "Dental Disease",         "severity": "Medium", "prevalence": "High",   "early_warning": "Bad breath, reluctance to eat hard food" },
+        { "name": "Hydrocephalus",          "severity": "High",   "prevalence": "Low",    "early_warning": "Dome-shaped skull, seizures, behavioral changes in puppies" }
+      ],
+      "care_tips": "Use a harness instead of a collar to protect the trachea. Daily tooth brushing is essential — small mouths mean dense teeth."
+    },
+    {
+      "breed_slug": "siberian-husky",
+      "common_issues": [
+        { "name": "Hip Dysplasia",           "severity": "Medium", "prevalence": "Medium",      "early_warning": "Rear limb stiffness, difficulty rising" },
+        { "name": "Progressive Retinal Atrophy","severity": "High","prevalence": "Medium-High", "early_warning": "Night blindness, bumping into objects" },
+        { "name": "Hypothyroidism",          "severity": "Medium", "prevalence": "Medium",      "early_warning": "Weight gain, lethargy, hair thinning" },
+        { "name": "Zinc-Responsive Dermatosis","severity": "Medium","prevalence": "Medium",     "early_warning": "Crusty or scaly skin around face or paws" }
+      ],
+      "care_tips": "Annual eye exams (CAER) are strongly recommended. High-exercise needs — under-exercised Huskies develop destructive behaviors."
+    },
+    {
+      "breed_slug": "great-dane",
+      "common_issues": [
+        { "name": "Bloat (GDV)",         "severity": "Critical",    "prevalence": "Very High", "early_warning": "Distended abdomen, drooling, unproductive retching" },
+        { "name": "Dilated Cardiomyopathy","severity": "Critical",  "prevalence": "High",      "early_warning": "Exercise intolerance, coughing, fainting" },
+        { "name": "Hip Dysplasia",        "severity": "High",        "prevalence": "High",      "early_warning": "Limping, difficulty rising" },
+        { "name": "Wobbler Syndrome",     "severity": "High",        "prevalence": "Medium",    "early_warning": "Wobbling gait, neck pain" }
+      ],
+      "care_tips": "Prophylactic gastropexy is strongly recommended to prevent fatal bloat. Annual cardiac screening after age 3. Lifespan 7–10 years — plan for high medical costs."
+    },
+    {
+      "breed_slug": "beagle",
+      "common_issues": [
+        { "name": "Epilepsy",               "severity": "High",   "prevalence": "Medium",      "early_warning": "Seizures, temporary disorientation, loss of consciousness" },
+        { "name": "Hip Dysplasia",          "severity": "Medium", "prevalence": "Low-Medium",  "early_warning": "Stiffness, lameness" },
+        { "name": "Hypothyroidism",         "severity": "Medium", "prevalence": "Medium",      "early_warning": "Weight gain, lethargy, skin issues" },
+        { "name": "Cherry Eye",             "severity": "Low",    "prevalence": "Low",         "early_warning": "Red bulge in inner corner of eye" }
+      ],
+      "care_tips": "Beagles are prone to obesity due to food motivation — measure meals carefully. Ear infections are common; clean weekly."
+    },
+    {
+      "breed_slug": "yorkshire-terrier",
+      "common_issues": [
+        { "name": "Patellar Luxation",      "severity": "Medium", "prevalence": "High",   "early_warning": "Hopping or skipping gait" },
+        { "name": "Tracheal Collapse",      "severity": "Medium", "prevalence": "Medium", "early_warning": "Honking cough, especially on excitement" },
+        { "name": "Dental Disease",         "severity": "Medium", "prevalence": "High",   "early_warning": "Bad breath, difficulty chewing" },
+        { "name": "Hypoglycemia",           "severity": "High",   "prevalence": "Medium", "early_warning": "Weakness, trembling, disorientation (especially in puppies)" }
+      ],
+      "care_tips": "Harness only — no collars. Daily dental care is critical. Small Yorkshire Terrier puppies need frequent small meals to prevent blood sugar drops."
+    },
+    {
+      "breed_slug": "border-collie",
+      "common_issues": [
+        { "name": "Collie Eye Anomaly",     "severity": "Medium", "prevalence": "High",   "early_warning": "Abnormal eye development, vision impairment" },
+        { "name": "Hip Dysplasia",          "severity": "Medium", "prevalence": "Medium", "early_warning": "Rear limb stiffness, reduced agility" },
+        { "name": "Epilepsy",               "severity": "High",   "prevalence": "Medium", "early_warning": "Seizures, post-ictal confusion" },
+        { "name": "MDR1 Gene Mutation",     "severity": "High",   "prevalence": "Medium", "early_warning": "Adverse drug reactions; test before medications" }
+      ],
+      "care_tips": "MDR1 (ABCB1) gene test before any medication. CEA eye test for puppies. Border Collies need 2+ hours exercise daily — mental stimulation equally critical."
+    },
+    {
+      "breed_slug": "cavalier-king-charles-spaniel",
+      "common_issues": [
+        { "name": "Mitral Valve Disease",         "severity": "Critical", "prevalence": "Very High", "early_warning": "Heart murmur (detected by vet), coughing, exercise intolerance" },
+        { "name": "Syringomyelia (SM)",            "severity": "High",    "prevalence": "High",      "early_warning": "Scratching at neck/shoulders without contact, vocalizing in pain" },
+        { "name": "Hip Dysplasia",                 "severity": "Medium",  "prevalence": "Medium",    "early_warning": "Stiffness, rear limb weakness" },
+        { "name": "Episodic Falling Syndrome",     "severity": "Medium",  "prevalence": "Low",       "early_warning": "Sudden freezing or falling during exercise or excitement" }
+      ],
+      "care_tips": "Annual cardiac screening by a cardiologist is essential from age 1. CKCS should not be bred before 5 years old and a clear cardiac exam (MVD protocol). Budget for significant cardiac care in later life."
+    },
+    {
+      "breed_slug": "rottweiler",
+      "common_issues": [
+        { "name": "Hip & Elbow Dysplasia",   "severity": "High",    "prevalence": "High",   "early_warning": "Limping, difficulty rising, reluctance to exercise" },
+        { "name": "Osteosarcoma",            "severity": "Critical", "prevalence": "High",   "early_warning": "Sudden lameness, swelling at limb joint" },
+        { "name": "Dilated Cardiomyopathy",  "severity": "High",    "prevalence": "Medium", "early_warning": "Coughing, exercise intolerance, fainting" },
+        { "name": "Bloat (GDV)",             "severity": "Critical", "prevalence": "Medium", "early_warning": "Distended abdomen, unproductive retching" }
+      ],
+      "care_tips": "OFA certifications for hips and elbows are essential when purchasing. Prophylactic gastropexy is recommended. Annual cardiac screening. High insurance costs are justified for this breed."
+    },
+    {
+      "breed_slug": "boxer",
+      "common_issues": [
+        { "name": "Dilated Cardiomyopathy", "severity": "Critical", "prevalence": "High",        "early_warning": "Fainting, irregular heartbeat, exercise intolerance" },
+        { "name": "Boxer Cardiomyopathy (ARVC)","severity": "Critical","prevalence": "High",     "early_warning": "Sudden collapse, arrhythmia detected by Holter monitor" },
+        { "name": "Cancer (Mast Cell Tumor)","severity": "High",    "prevalence": "Medium-High", "early_warning": "Skin lumps that change size" },
+        { "name": "Brachycephalic Syndrome", "severity": "Medium",  "prevalence": "Medium",      "early_warning": "Snoring, panting, heat intolerance" }
+      ],
+      "care_tips": "Annual cardiac evaluations and Holter monitoring are strongly recommended after age 3. Avoid heat — Boxers have reduced heat tolerance. Budget high for cardiac care."
+    },
+    {
+      "breed_slug": "australian-shepherd",
+      "common_issues": [
+        { "name": "Hip Dysplasia",           "severity": "Medium",  "prevalence": "Medium",      "early_warning": "Rear limb stiffness, decreased agility" },
+        { "name": "MDR1 Gene Mutation",      "severity": "High",    "prevalence": "High",        "early_warning": "Drug sensitivity — test before any medications" },
+        { "name": "Collie Eye Anomaly",      "severity": "Medium",  "prevalence": "Medium",      "early_warning": "Vision impairment, abnormal eye appearance" },
+        { "name": "Epilepsy",               "severity": "High",    "prevalence": "Medium",      "early_warning": "Seizures, post-ictal confusion" }
+      ],
+      "care_tips": "MDR1 gene test is essential before any medication. CEA screening for puppies. Aussies need significant daily exercise and mental stimulation to prevent behavioral issues."
+    },
+    {
+      "breed_slug": "dachshund",
+      "common_issues": [
+        { "name": "Intervertebral Disc Disease (IVDD)","severity": "High",   "prevalence": "Very High", "early_warning": "Back pain, reluctance to jump, hind limb weakness or paralysis" },
+        { "name": "Patellar Luxation",                 "severity": "Medium", "prevalence": "Medium",    "early_warning": "Skipping gait, occasional limping" },
+        { "name": "Progressive Retinal Atrophy",       "severity": "High",   "prevalence": "Medium",    "early_warning": "Night blindness, bumping into objects" },
+        { "name": "Dental Disease",                    "severity": "Medium", "prevalence": "High",      "early_warning": "Bad breath, difficulty eating" }
+      ],
+      "care_tips": "Prevent jumping on/off furniture — use ramps and steps. IVDD surgery can cost $5,000–$10,000; pet insurance is strongly recommended. Keep weight healthy to protect the spine."
+    },
+    {
+      "breed_slug": "pug",
+      "common_issues": [
+        { "name": "Brachycephalic Syndrome",  "severity": "High",   "prevalence": "Universal", "early_warning": "Loud snoring, labored breathing, cyanotic gums during exercise" },
+        { "name": "Pug Dog Encephalitis",     "severity": "Critical","prevalence": "Low-Medium","early_warning": "Seizures, behavioral changes, circling" },
+        { "name": "Hip Dysplasia",            "severity": "Medium",  "prevalence": "Medium",    "early_warning": "Rear limb stiffness, difficulty rising" },
+        { "name": "Eye Proptosis",            "severity": "High",    "prevalence": "Medium",    "early_warning": "Eye bulging forward after trauma — emergency" }
+      ],
+      "care_tips": "Keep pugs cool and calm — they can overheat rapidly. Airway surgery is common and often life-changing. Never leave in a hot car or bright sun."
+    },
+    {
+      "breed_slug": "goldendoodle",
+      "common_issues": [
+        { "name": "Hip Dysplasia",           "severity": "Medium", "prevalence": "Medium",     "early_warning": "Stiffness when rising, rear limb weakness" },
+        { "name": "Progressive Retinal Atrophy","severity": "Medium","prevalence": "Low-Medium","early_warning": "Night blindness, hesitancy in dim light" },
+        { "name": "Von Willebrand Disease",  "severity": "Medium", "prevalence": "Low",        "early_warning": "Prolonged bleeding from cuts, bloody nose" },
+        { "name": "Ear Infections",          "severity": "Low",    "prevalence": "High",       "early_warning": "Head shaking, scratching at ears, odor" }
+      ],
+      "care_tips": "Floppy ears trap moisture — clean and dry weekly to prevent chronic ear infections. OFA hip testing on parent dogs is important when purchasing a puppy."
+    },
+    {
+      "breed_slug": "labradoodle",
+      "common_issues": [
+        { "name": "Hip & Elbow Dysplasia",   "severity": "Medium", "prevalence": "Medium",     "early_warning": "Stiffness, lameness after exercise" },
+        { "name": "Progressive Retinal Atrophy","severity": "Medium","prevalence": "Low-Medium","early_warning": "Night blindness" },
+        { "name": "Addison's Disease",       "severity": "High",   "prevalence": "Medium",     "early_warning": "Lethargy, vomiting, weakness" },
+        { "name": "Ear Infections",          "severity": "Low",    "prevalence": "High",       "early_warning": "Odor, head shaking, redness" }
+      ],
+      "care_tips": "Regular ear cleaning is essential with drop ears. Annual wellness checks should include adrenal function assessment in middle age. OFA certified parents are preferred."
+    }
+  ]
+}

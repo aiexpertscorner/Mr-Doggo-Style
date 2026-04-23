@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "dataset_name": "Base Monthly Pet Insurance Premiums by Breed",
+    "coverage_limit": "5000",
+    "anchor_market": "USA National Average",
+    "last_updated": "2026-04-21",
+    "source": "Pupwiki actuarial research",
+    "notes": "Base premium before age and state multipliers. Use formula: localized_premium = base_premium * age_factor * state_multiplier",
+    "fallback_for_unlisted_breeds": "Use size-based defaults: small=$35, medium=$50, large=$70, xlarge=$95"
+  },
+  "breed_rates": [
+    { "breed_slug": "golden-retriever",                  "base_premium": 54.50, "risk_category": "Standard" },
+    { "breed_slug": "labrador-retriever",                "base_premium": 52.00, "risk_category": "Standard" },
+    { "breed_slug": "french-bulldog",                    "base_premium": 98.00, "risk_category": "High" },
+    { "breed_slug": "chihuahua",                         "base_premium": 28.50, "risk_category": "Low" },
+    { "breed_slug": "german-shepherd",                   "base_premium": 68.00, "risk_category": "Medium-High" },
+    { "breed_slug": "poodle-standard",                   "base_premium": 42.00, "risk_category": "Standard" },
+    { "breed_slug": "beagle",                            "base_premium": 38.00, "risk_category": "Standard" },
+    { "breed_slug": "rottweiler",                        "base_premium": 85.00, "risk_category": "High" },
+    { "breed_slug": "boxer",                             "base_premium": 72.00, "risk_category": "Medium-High" },
+    { "breed_slug": "doberman-pinscher",                 "base_premium": 78.00, "risk_category": "High" },
+    { "breed_slug": "siberian-husky",                    "base_premium": 48.00, "risk_category": "Standard" },
+    { "breed_slug": "yorkshire-terrier",                 "base_premium": 34.00, "risk_category": "Low-Standard" },
+    { "breed_slug": "great-dane",                        "base_premium": 110.00, "risk_category": "Very High" },
+    { "breed_slug": "border-collie",                     "base_premium": 44.00, "risk_category": "Standard" },
+    { "breed_slug": "cavalier-king-charles-spaniel",     "base_premium": 65.00, "risk_category": "Medium-High" },
+    { "breed_slug": "goldendoodle",                      "base_premium": 56.00, "risk_category": "Standard" },
+    { "breed_slug": "labradoodle",                       "base_premium": 54.00, "risk_category": "Standard" },
+    { "breed_slug": "cockapoo",                          "base_premium": 46.00, "risk_category": "Standard" },
+    { "breed_slug": "maltipoo",                          "base_premium": 38.00, "risk_category": "Low-Standard" },
+    { "breed_slug": "bernedoodle",                       "base_premium": 68.00, "risk_category": "Medium-High" },
+    { "breed_slug": "shih-tzu",                          "base_premium": 36.00, "risk_category": "Low-Standard" },
+    { "breed_slug": "pomeranian",                        "base_premium": 34.00, "risk_category": "Low-Standard" },
+    { "breed_slug": "australian-shepherd",               "base_premium": 46.00, "risk_category": "Standard" },
+    { "breed_slug": "dachshund",                         "base_premium": 42.00, "risk_category": "Standard" },
+    { "breed_slug": "bulldog",                           "base_premium": 92.00, "risk_category": "High" },
+    { "breed_slug": "pug",                               "base_premium": 76.00, "risk_category": "High" },
+    { "breed_slug": "miniature-schnauzer",               "base_premium": 38.00, "risk_category": "Standard" },
+    { "breed_slug": "cocker-spaniel",                    "base_premium": 44.00, "risk_category": "Standard" },
+    { "breed_slug": "maltese",                           "base_premium": 32.00, "risk_category": "Low" },
+    { "breed_slug": "havanese",                          "base_premium": 36.00, "risk_category": "Low-Standard" }
+  ]
+}
