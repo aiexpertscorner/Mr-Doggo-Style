@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Rottweiler's specific large si
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["rottweiler", "dog-food", "large-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "rottweiler"
 ---
 

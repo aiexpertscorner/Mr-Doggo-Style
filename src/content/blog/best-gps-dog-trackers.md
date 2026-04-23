@@ -5,7 +5,7 @@ pubDate: 2026-01-25
 updatedDate: 2026-02-08
 category: "Training"
 tags: ["gps", "tracker", "safety", "technology", "collar"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 Every year, millions of dogs go missing. A GPS tracker won't prevent your dog from escaping, but it can mean the difference between finding your dog in 10 minutes and never finding them at all.

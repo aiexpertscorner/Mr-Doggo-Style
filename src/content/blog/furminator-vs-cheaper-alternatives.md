@@ -4,7 +4,7 @@ description: "We compared the FURminator to 5 budget deShedding tools under $15.
 pubDate: 2026-02-05
 category: "Grooming"
 tags: ["grooming", "deshedding", "furminator", "comparison", "brush"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 The FURminator deShedding Tool costs $25-40 depending on size. Half a dozen Amazon alternatives cost $8-15 and look almost identical. Are you paying for the brand — or is there a genuine performance difference?

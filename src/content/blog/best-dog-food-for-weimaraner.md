@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Weimaraner's specific large si
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["weimaraner", "dog-food", "large-breed", "needs-lots-of-activity"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "weimaraner"
 ---
 

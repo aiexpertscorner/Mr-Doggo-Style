@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Boston Terrier's specific regu
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["boston-terrier", "dog-food", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "boston-terrier"
 ---
 

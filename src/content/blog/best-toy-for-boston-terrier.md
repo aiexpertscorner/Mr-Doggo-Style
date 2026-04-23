@@ -4,7 +4,7 @@ description: "We matched the best toy to the Boston Terrier's specific regular e
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["boston-terrier", "toys", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "boston-terrier"
 ---
 

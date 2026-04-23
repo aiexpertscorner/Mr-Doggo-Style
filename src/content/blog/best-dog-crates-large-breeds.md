@@ -4,7 +4,7 @@ description: "We compared 8 large-breed dog crates across security, escape resis
 pubDate: 2026-03-05
 category: "Training"
 tags: ["crate", "training", "large-breed", "home", "safety"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 A dog crate is simultaneously a training tool, a safety device, and — when introduced correctly — a place of genuine comfort and security for your dog. The right crate depends on your dog's size, temperament, chewing habits, and your specific use case (travel vs. home use, puppy vs. adult).

@@ -4,7 +4,7 @@ description: "The wrong leash is a safety risk with large dogs. We break down th
 pubDate: 2026-03-01
 category: "Training"
 tags: ["leash", "training", "walking", "large-breed", "outdoor"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 A leash is a safety device first. With large dogs — 60, 80, 100+ lbs — a leash failure means your dog is loose in traffic, at a dog park, or away from you in any number of dangerous situations. Material, hardware, and handle design matter more than most owners realize.

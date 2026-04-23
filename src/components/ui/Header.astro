@@ -1,40 +1,46 @@
 ---
 const navLinks = [
-  { label: 'Dog Food',   href: '/categories/dog-food' },
-  { label: 'Toys',       href: '/categories/toys' },
-  { label: 'Beds',       href: '/categories/beds' },
-  { label: 'Health',     href: '/categories/health' },
-  { label: 'Grooming',   href: '/categories/grooming' },
+  { label: 'Dog Food', href: '/categories/dog-food' },
+  { label: 'Toys', href: '/categories/toys' },
+  { label: 'Beds', href: '/categories/beds' },
+  { label: 'Health', href: '/categories/health' },
+  { label: 'Grooming', href: '/categories/grooming' },
   { label: 'All Breeds', href: '/breeds' },
-  { label: 'Dog Names',  href: '/dog-names' },
+  { label: 'Dog Names', href: '/dog-names' },
 ];
 ---
 
-<header class="bg-white sticky top-0 z-50 shadow-sm" style="border-bottom:1px solid #f5e8d0">
+<header
+  class="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 shadow-sm"
+  style="border-bottom:1px solid #f5e8d0"
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6">
-    <div class="flex items-center justify-between h-[72px] lg:h-[84px] gap-4">
+    <div class="flex items-center justify-between h-[82px] sm:h-[88px] lg:h-[96px] gap-4 lg:gap-6">
 
       <!-- Logo -->
       <a
         href="/"
-        class="flex items-center flex-shrink-0 min-w-0"
+        class="flex items-center flex-shrink-0"
         aria-label="PupWiki home"
       >
-        <img
-          src="/Logo-pupwiki.png"
-          alt="PupWiki.com"
-          class="block h-10 sm:h-11 lg:h-14 w-auto object-contain max-w-[180px] sm:max-w-[220px] lg:max-w-[320px]"
-          loading="eager"
-          decoding="async"
-        />
+<img
+  src="/Logo-pupwiki.png"
+  alt="PupWiki"
+  class="block h-14 sm:h-14 lg:h-16 w-auto object-contain"
+  loading="eager"
+  decoding="async"
+/>
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center justify-center gap-5 xl:gap-6 flex-1 px-6 font-sans text-sm font-medium">
-        {navLinks.map(link => (
+      <nav
+        class="hidden lg:flex items-center justify-center gap-5 xl:gap-7 flex-1 px-4 xl:px-8 font-sans text-sm font-medium"
+        aria-label="Main navigation"
+      >
+        {navLinks.map((link) => (
           <a
             href={link.href}
-            class="transition-colors hover:text-bark whitespace-nowrap"
+            class="transition-colors duration-200 whitespace-nowrap hover:text-[#0b153d]"
             style="color:#64748b"
           >
             {link.label}
@@ -43,18 +49,19 @@ const navLinks = [
       </nav>
 
       <!-- Desktop CTA -->
-      <div class="hidden lg:flex items-center gap-3 flex-shrink-0">
+      <div class="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
         <a
           href="/how-we-test"
-          class="font-sans text-xs font-medium transition-colors hover:underline whitespace-nowrap"
+          class="font-sans text-xs xl:text-sm font-medium transition-colors hover:text-[#0b153d] whitespace-nowrap"
           style="color:#94a3b8"
         >
           How we test
         </a>
+
         <a
           href="/blog"
-          class="font-sans text-sm font-bold text-white px-4 py-2 rounded-xl btn-bark whitespace-nowrap"
-          style="background:linear-gradient(135deg,#a0621c,#7d4a10)"
+          class="inline-flex items-center justify-center font-sans text-sm font-bold text-white px-5 py-2.5 rounded-xl whitespace-nowrap transition-transform duration-200 hover:-translate-y-[1px]"
+          style="background:linear-gradient(135deg,#0D9488,#0F766E); box-shadow:0 8px 18px rgba(13,148,136,0.22)"
         >
           All Reviews →
         </a>
@@ -63,18 +70,43 @@ const navLinks = [
       <!-- Mobile toggle -->
       <button
         id="menu-toggle"
-        class="lg:hidden p-2 rounded-lg transition-colors flex-shrink-0"
-        style="color:#64748b"
+        class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl transition-colors flex-shrink-0"
+        style="color:#64748b;background:#fff"
         aria-label="Toggle menu"
         aria-expanded="false"
         aria-controls="mobile-nav"
         type="button"
       >
-        <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        <svg
+          id="icon-open"
+          class="w-7 h-7"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
         </svg>
-        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+
+        <svg
+          id="icon-close"
+          class="w-7 h-7 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.2"
+            d="M6 18L18 6M6 6l12 12"
+          />
         </svg>
       </button>
     </div>
@@ -83,34 +115,43 @@ const navLinks = [
   <!-- Mobile nav -->
   <div
     id="mobile-nav"
-    class="hidden lg:hidden bg-white px-4 pb-5"
+    class="hidden lg:hidden bg-white"
     style="border-top:1px solid #f5e8d0"
   >
-    <div class="pt-3 space-y-0.5">
-      {navLinks.map(link => (
+    <div class="px-4 pb-5 pt-3">
+      <nav class="space-y-0.5" aria-label="Mobile navigation">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="block py-3 font-sans text-[15px] font-medium transition-colors hover:text-[#0b153d]"
+            style="color:#475569;border-bottom:1px solid #fdf8f0"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="pt-4 flex flex-col gap-2.5">
         <a
-          href={link.href}
-          class="block py-2.5 font-sans text-sm font-medium transition-colors hover:text-bark"
-          style="color:#475569;border-bottom:1px solid #fdf8f0"
+          href="/blog"
+          class="block text-center font-sans text-sm font-bold text-white py-3.5 rounded-xl transition-transform duration-200"
+          style="background:linear-gradient(135deg,#a0621c,#7d4a10); box-shadow:0 8px 18px rgba(160,98,28,0.16)"
         >
-          {link.label}
+          All Reviews →
         </a>
-      ))}
-    </div>
 
-    <div class="pt-4 flex flex-col gap-2">
-      <a
-        href="/blog"
-        class="block text-center font-sans text-sm font-bold text-white py-3 rounded-xl btn-bark"
-        style="background:linear-gradient(135deg,#a0621c,#7d4a10)"
-      >
-        All Reviews →
-      </a>
+        <a
+          href="/how-we-test"
+          class="block text-center font-sans text-sm font-semibold py-3 rounded-xl"
+          style="color:#0b153d;background:#f8fafc;border:1px solid #e2e8f0"
+        >
+          How we test
+        </a>
 
-      <div class="flex justify-center gap-4 mt-2 flex-wrap">
-        <a href="/about" class="font-sans text-xs" style="color:#94a3b8">About</a>
-        <a href="/how-we-test" class="font-sans text-xs" style="color:#94a3b8">How we test</a>
-        <a href="/disclosure" class="font-sans text-xs" style="color:#94a3b8">Disclosure</a>
+        <div class="flex justify-center gap-4 mt-2 flex-wrap">
+          <a href="/about" class="font-sans text-xs" style="color:#94a3b8">About</a>
+          <a href="/disclosure" class="font-sans text-xs" style="color:#94a3b8">Disclosure</a>
+        </div>
       </div>
     </div>
   </div>
@@ -124,11 +165,21 @@ const navLinks = [
 
   if (toggle && nav && iconOpen && iconClose) {
     toggle.addEventListener('click', () => {
-      const isOpen = !nav.classList.contains('hidden');
+      const willOpen = nav.classList.contains('hidden');
+
       nav.classList.toggle('hidden');
-      iconOpen.classList.toggle('hidden', !isOpen);
-      iconClose.classList.toggle('hidden', isOpen);
-      toggle.setAttribute('aria-expanded', String(!isOpen));
+      iconOpen.classList.toggle('hidden', willOpen);
+      iconClose.classList.toggle('hidden', !willOpen);
+      toggle.setAttribute('aria-expanded', String(willOpen));
+    });
+
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 </script>

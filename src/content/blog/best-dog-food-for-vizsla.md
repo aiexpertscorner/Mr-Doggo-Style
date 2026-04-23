@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Vizsla's specific energetic en
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["vizsla", "dog-food", "medium-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "vizsla"
 ---
 

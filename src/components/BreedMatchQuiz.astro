@@ -1,0 +1,242 @@
+---
+// Importeer je breed data zodat we deze client-side beschikbaar kunnen maken
+import masterBreeds from '../data/master-breeds.json';
+
+// We mappen alleen de benodigde velden om de payload klein te houden
+const quizData = masterBreeds.map(b => ({
+  slug: b.slug,
+  name: b.name,
+  size: b.size_category,
+  energy: b.energy_level,
+  grooming: b.traits?.grooming_value || 0.5,
+  children: b.ranking_data?.children_score || 0.5,
+  trainability: b.traits?.trainability_value || 0.5,
+  image: b.image_url
+}));
+---
+
+<style>
+  .quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+  }
+  .quiz-step { display: none; }
+  .quiz-step.active { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  
+  .quiz-question {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+  }
+  .quiz-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+  }
+  .quiz-btn:hover {
+    background: #fdf8f0;
+    border-color: #a0621c;
+    color: #a0621c;
+  }
+  
+  .match-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+  .match-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+</style>
+
+<div class="quiz-container" id="breed-quiz">
+  
+  <div class="quiz-step active" data-step="1">
+    <span style="color: #a0621c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Question 1 of 4</span>
+    <h3 class="quiz-question">How big is your living space?</h3>
+    <button class="quiz-btn" data-answer="size" data-value="small">Apartment / Small home without yard</button>
+    <button class="quiz-btn" data-answer="size" data-value="medium">House with a small/fenced yard</button>
+    <button class="quiz-btn" data-answer="size" data-value="large">Large house with plenty of land</button>
+  </div>
+
+  <div class="quiz-step" data-step="2">
+    <span style="color: #a0621c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Question 2 of 4</span>
+    <h3 class="quiz-question">How much daily exercise can you provide?</h3>
+    <button class="quiz-btn" data-answer="energy" data-value="calm">Short walks (0-30 mins)</button>
+    <button class="quiz-btn" data-answer="energy" data-value="regular">Regular activity (30-60 mins)</button>
+    <button class="quiz-btn" data-answer="energy" data-value="active">Very active (60+ mins, running/hiking)</button>
+  </div>
+
+  <div class="quiz-step" data-step="3">
+    <span style="color: #a0621c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Question 3 of 4</span>
+    <h3 class="quiz-question">Do you have young children in the home?</h3>
+    <button class="quiz-btn" data-answer="children" data-value="yes">Yes, I need a very kid-friendly dog</button>
+    <button class="quiz-btn" data-answer="children" data-value="no">No, standard temperament is fine</button>
+  </div>
+
+  <div class="quiz-step" data-step="4">
+    <span style="color: #a0621c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Question 4 of 4</span>
+    <h3 class="quiz-question">How much grooming are you willing to do?</h3>
+    <button class="quiz-btn" data-answer="grooming" data-value="low">Low maintenance (occasional brushing)</button>
+    <button class="quiz-btn" data-answer="grooming" data-value="high">I don't mind regular brushing or groomer visits</button>
+  </div>
+
+  <div class="quiz-step" data-step="capture">
+    <div style="text-align: center;">
+      <h3 class="quiz-question">We found your matches!</h3>
+      <p style="color: #64748b; margin-bottom: 1.5rem;">Enter your email to reveal your top 3 dog breeds and get our free Puppy Prep Guide.</p>
+      <input type="email" id="quiz-email" placeholder="your@email.com" style="width: 100%; padding: 1rem; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 1rem;" />
+      <button id="show-results-btn" style="width: 100%; padding: 1rem; border-radius: 8px; background: #a0621c; color: white; font-weight: bold; border: none; cursor: pointer;">Reveal My Matches →</button>
+      <button id="skip-email-btn" style="background: none; border: none; color: #94a3b8; font-size: 0.85rem; margin-top: 1rem; cursor: pointer; text-decoration: underline;">Skip and just show my results</button>
+    </div>
+  </div>
+
+  <div class="quiz-step" data-step="results">
+    <span style="color: #a0621c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Your Matches</span>
+    <h3 class="quiz-question">Meet Your Perfect Companions</h3>
+    <div id="results-container"></div>
+    <div style="margin-top: 2rem; padding: 1rem; background: #fdf8f0; border-radius: 12px; border: 1px solid #e8ccaa;">
+      <p style="font-weight: 600; color: #a0621c; margin-bottom: 0.5rem;">Next Step: Prepare Your Budget</p>
+      <p style="font-size: 0.9rem; color: #5c340a; margin-bottom: 1rem;">Use our calculator to see the exact lifetime costs for these breeds.</p>
+      <a href="/cost-calculator" style="display: block; text-align: center; background: #1e293b; color: white; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: bold;">Go to Cost Calculator</a>
+    </div>
+  </div>
+
+</div>
+
+<script define:vars={{ quizData }}>
+  const state = {
+    size: null,
+    energy: null,
+    children: null,
+    grooming: null
+  };
+
+  const container = document.getElementById('breed-quiz');
+  const steps = Array.from(container.querySelectorAll('.quiz-step'));
+  const buttons = container.querySelectorAll('.quiz-btn');
+  const resultsContainer = document.getElementById('results-container');
+  
+  let currentStep = 0;
+
+  function showStep(index) {
+    steps.forEach((step, i) => {
+      if (i === index) step.classList.add('active');
+      else step.classList.remove('active');
+    });
+  }
+
+  // Handle Answer Clicks
+  buttons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const type = e.target.dataset.answer;
+      const val = e.target.dataset.value;
+      
+      // Save answer
+      state[type] = val;
+      
+      // Go to next step
+      currentStep++;
+      showStep(currentStep);
+    });
+  });
+
+  // Handle Reveal Buttons (with or without email)
+  document.getElementById('show-results-btn').addEventListener('click', () => {
+    const email = document.getElementById('quiz-email').value;
+    if(email) {
+      // Optioneel: Stuur email naar je backend (Mailchimp/Mailerlite API)
+      console.log("Email captured: ", email);
+    }
+    calculateMatches();
+  });
+
+  document.getElementById('skip-email-btn').addEventListener('click', () => {
+    calculateMatches();
+  });
+
+  // The Filtering Algorithm
+  function calculateMatches() {
+    let matches = quizData;
+
+    // Filter Size
+    if (state.size === 'small') {
+      matches = matches.filter(b => b.size === 'small' || b.size === 'medium');
+    } else if (state.size === 'medium') {
+      matches = matches.filter(b => b.size !== 'giant');
+    }
+
+    // Filter Energy
+    if (state.energy === 'calm') {
+      matches = matches.filter(b => b.energy === 'calm');
+    } else if (state.energy === 'regular') {
+      matches = matches.filter(b => b.energy === 'regular' || b.energy === 'calm');
+    } else if (state.energy === 'active') {
+      matches = matches.filter(b => b.energy === 'active' || b.energy === 'regular');
+    }
+
+    // Filter Children (if yes, require high children score)
+    if (state.children === 'yes') {
+      matches = matches.filter(b => b.children >= 0.7); // Pas deze threshold aan op basis van je data
+    }
+
+    // Filter Grooming
+    if (state.grooming === 'low') {
+      matches = matches.filter(b => b.grooming <= 0.5);
+    }
+
+    // Sort by popularity if there are too many, or just take top 3
+    // Assuming your json is already sorted by popularity, we take the first 3 matches
+    const topMatches = matches.slice(0, 3);
+
+    renderResults(topMatches);
+    currentStep++;
+    showStep(currentStep);
+  }
+
+  function renderResults(matches) {
+    if (matches.length === 0) {
+      resultsContainer.innerHTML = '<p>We couldn\'t find a perfect match. You might have unique needs!</p>';
+      return;
+    }
+
+    let html = '';
+    matches.forEach((b, index) => {
+      html += `
+        <div class="match-card">
+          <img src="${b.image || '/fallback-dog.jpg'}" alt="${b.name}">
+          <div style="flex-grow: 1;">
+            <strong style="display: block; font-size: 1.1rem; color: #0f172a;">#${index + 1} Match: ${b.name}</strong>
+            <span style="font-size: 0.8rem; color: #64748b; text-transform: capitalize;">${b.size} Size • ${b.energy} Energy</span>
+          </div>
+          <a href="/breeds/${b.slug}" style="padding: 0.5rem 1rem; background: #f1f5f9; color: #1e293b; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.85rem;">View Profile</a>
+        </div>
+      `;
+    });
+    resultsContainer.innerHTML = html;
+  }
+</script>

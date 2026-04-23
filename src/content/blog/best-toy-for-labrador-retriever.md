@@ -4,7 +4,7 @@ description: "We matched the best toy to the Labrador Retriever's specific large
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["labrador-retriever", "toys", "large-breed", "needs-lots-of-activity"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "labrador-retriever"
 ---
 

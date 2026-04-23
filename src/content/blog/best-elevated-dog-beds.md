@@ -4,7 +4,7 @@ description: "Elevated dog beds allow airflow underneath, keeping dogs dramatica
 pubDate: 2026-02-20
 category: "Beds"
 tags: ["beds", "elevated", "cooling", "summer", "outdoor"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 In summer months, a dog lying on a foam bed is lying on an insulating surface that traps body heat. Elevated beds solve this by lifting the dog off the floor entirely, allowing air to circulate underneath and dramatically reducing heat retention.

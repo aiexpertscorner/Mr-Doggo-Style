@@ -7,6 +7,7 @@
 
 import Header from '../components/ui/Header.astro';
 import Footer from '../components/ui/Footer.astro';
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from '../lib/site-config';
 
 export interface Props {
   title:          string;
@@ -26,7 +27,7 @@ const {
   bodyClass     = '',
 } = Astro.props;
 
-const site    = 'https://mrdoggostyle.com';
+const site    = SITE_URL;
 const fullUrl = canonicalUrl ?? site;
 ---
 
@@ -46,7 +47,7 @@ const fullUrl = canonicalUrl ?? site;
   <meta property="og:description" content={description} />
   <meta property="og:url"         content={fullUrl} />
   <meta property="og:image"       content={`${site}${ogImage}`} />
-  <meta property="og:site_name"   content="Mr. Doggo Style" />
+  <meta property="og:site_name"   content={SITE_NAME} />
 
   <!-- ImpactMeta -->
 <meta name='impact-site-verification' value='7b2aaf8e-72cb-456b-a2a8-9176f838c637'>
@@ -72,7 +73,7 @@ const fullUrl = canonicalUrl ?? site;
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Mr. Doggo Style" />
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml" title={SITE_NAME} />
 
   <!-- GA4 (env var via Astro) -->
   {import.meta.env.PUBLIC_GA_MEASUREMENT_ID && (
@@ -92,9 +93,9 @@ const fullUrl = canonicalUrl ?? site;
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Mr. Doggo Style',
+    name: SITE_NAME,
     url: site,
-    description: 'Expert dog product reviews, breed guides, and safety-verified insights.',
+    description: SITE_DESCRIPTION,
     potentialAction: {
       '@type': 'SearchAction',
       target: { '@type': 'EntryPoint', urlTemplate: `${site}/search?q={search_term_string}` },

@@ -4,7 +4,7 @@ description: "We reviewed 7 automatic feeders for reliability, app quality, port
 pubDate: 2026-03-03
 category: "Training"
 tags: ["automatic-feeder", "technology", "routine", "feeding", "smart-home"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 An automatic dog feeder is one of the highest-return convenience purchases you can make as a dog owner. Whether you work long hours, travel frequently, or simply want to maintain perfect feeding consistency for a dog on a weight-management plan — a reliable automatic feeder earns its cost quickly.

@@ -4,7 +4,7 @@ description: "Most dog dental chews are marketing gimmicks. These 4 have the Vet
 pubDate: 2026-02-18
 category: "Supplements"
 tags: ["dental", "treats", "oral-health", "tartar", "breath"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 Dental disease affects over 80% of dogs over the age of three. Left untreated, periodontal disease causes chronic pain, tooth loss, and bacteria that can enter the bloodstream and damage the heart, kidneys, and liver. Regular brushing is the gold standard — but daily dental chews can provide meaningful supplemental benefit.

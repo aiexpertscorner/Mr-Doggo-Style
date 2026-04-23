@@ -5,7 +5,7 @@ pubDate: 2026-01-15
 updatedDate: 2026-02-01
 category: "Dog Food"
 tags: ["dog-food", "large-breed", "nutrition", "reviews"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 Feeding a large breed dog isn't the same as feeding a medium or small one. Large breeds grow faster, carry more weight on their joints, and have different caloric needs than their smaller cousins. Getting the nutrition right — especially during puppyhood and senior years — can genuinely affect how long and how comfortably your dog lives.

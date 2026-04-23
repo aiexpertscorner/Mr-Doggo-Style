@@ -4,8 +4,8 @@ import { getCollection } from 'astro:content';
 export async function GET(context) {
   const posts = await getCollection('blog');
   return rss({
-    title: 'Mr. Doggo Style — Dog Product Reviews & Breed Guides',
-    description: 'Expert-tested dog product reviews, breed-specific guides, and honest comparisons.',
+    title: 'PupWiki — Dog Breeds, Names, Costs & Expert Reviews',
+    description: 'Expert dog breed guides, 5,000+ dog names, lifetime cost calculators, and honest product reviews.',
     site: context.site,
     items: posts
       .filter(p => !p.data.noIndex)

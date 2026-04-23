@@ -5,7 +5,7 @@ pubDate: 2026-01-20
 updatedDate: 2026-02-10
 category: "Toys"
 tags: ["toys", "chew-toys", "power-chewer", "indestructible"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 No toy is truly indestructible — but some come close. If you've ever found a pile of fluff and squeaker parts where a "durable" toy used to be, or watched your dog demolish a supposedly tough rubber toy in under an hour, this guide is for you.

@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Shetland Sheepdog's specific r
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["shetland-sheepdog", "dog-food", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "shetland-sheepdog"
 ---
 

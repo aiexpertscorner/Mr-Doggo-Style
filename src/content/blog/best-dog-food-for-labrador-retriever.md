@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Labrador Retriever's specific 
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["labrador-retriever", "dog-food", "large-breed", "needs-lots-of-activity"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "labrador-retriever"
 ---
 

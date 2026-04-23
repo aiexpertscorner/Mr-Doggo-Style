@@ -5,7 +5,7 @@ pubDate: 2026-03-01
 updatedDate: 2026-03-10
 category: "Beds"
 tags: ["beds", "cooling", "summer", "health", "heatstroke-prevention"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 Heatstroke kills thousands of dogs every summer. It doesn't require a hot car — on an 85°F day, a dog lying on a hot patio, in direct sun, or in a poorly ventilated room can overheat in as little as 15-20 minutes. Flat-faced breeds (Bulldogs, Frenchies, Pugs), heavy-coated breeds (Huskies, Malamutes, Bernese Mountain Dogs), elderly dogs, and overweight dogs are all at elevated risk.

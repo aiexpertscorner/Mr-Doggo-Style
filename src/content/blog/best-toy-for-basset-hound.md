@@ -4,7 +4,7 @@ description: "We matched the best toy to the Basset Hound's specific couch potat
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["basset-hound", "toys", "medium-breed", "couch-potato"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "basset-hound"
 ---
 

@@ -4,7 +4,7 @@ description: "We researched the top no-pull harnesses for dogs of all sizes. Fro
 pubDate: 2026-01-28
 category: "Training"
 tags: ["harness", "no-pull", "leash-training", "walking"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 If your dog pulls on the leash, you've probably tried more than one solution. Maybe you've tried a flat collar, a prong collar, or a random harness from the pet store that made pulling worse. A true no-pull harness redirects pulling at the front clip — when your dog pulls forward, the leash creates a pivot that turns them to the side, interrupting the pulling motion.

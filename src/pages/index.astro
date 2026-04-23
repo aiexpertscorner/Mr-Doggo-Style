@@ -37,9 +37,9 @@ const popularBreeds = [
   { slug: 'labrador-retriever', name: 'Labrador Retriever', img: 'https://images.unsplash.com/photo-1599839619722-39751411ea63?w=400&q=80&fit=crop' },
   { slug: 'french-bulldog',     name: 'French Bulldog',     img: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400&q=80&fit=crop' },
   { slug: 'golden-retriever',   name: 'Golden Retriever',   img: 'https://images.unsplash.com/photo-1611250282006-4484dd3fba6b?w=400&q=80&fit=crop' },
-  { slug: 'german-shepherd-dog',name: 'German Shepherd',    img: 'https://images.unsplash.com/photo-1589966838848-18e5b02662c5?w=400&q=80&fit=crop' },
+  { slug: 'german-shepherd-dog',name: 'German Shepherd',    img: 'https://images.unsplash.com/photo-1539641388297-277284b9ba67?w=400&q=80&fit=crop' },
   { slug: 'bulldog',            name: 'Bulldog',            img: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=400&q=80&fit=crop' },
-  { slug: 'poodle-standard',    name: 'Poodle',             img: 'https://images.unsplash.com/photo-1605639943265-27a38b2512d2?w=400&q=80&fit=crop' },
+  { slug: 'poodle-standard',    name: 'Poodle',             img: 'https://images.unsplash.com/photo-1605244863941-3a3ed921c60d?w=400&q=80&fit=crop' },
 ];
 
 // Content mix: Gear Compare, Food Compare, Inspiration (Names), and Data (Cost)
@@ -60,8 +60,8 @@ const featuredGuides = [
   <style>
     /* Warm & Uitnodigend, gericht op de volledige doelgroep */
     :root {
-      --pup-brand: #a0621c; 
-      --pup-brand-light: #fdf8f0;
+      --pup-brand: #0D9488;
+      --pup-brand-light: #F0FDFA;
     }
 
     .tool-card {
@@ -190,8 +190,8 @@ const featuredGuides = [
         <div class="hero__card" style="position: absolute; bottom: -20px; left: -20px; background: white; border-radius: 16px; padding: 1.25rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border: 1px solid #f1f5f9; display: flex; align-items: center; gap: 1rem;">
           <div style="background: var(--pup-brand-light); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--pup-brand);" set:html={icons.tag}></div>
           <div>
-            <span style="display: block; color: #64748b; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Discover</span>
-            <strong style="color: #0f172a; font-size: 1.25rem;">5,000+ Dog Names</strong>
+            <span style="display: block; color: #64748b; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">BREED-SPECIFIC GUIDANCE</span>
+            <strong style="color: #0f172a; font-size: 1.25rem;"> Traits, care, health, behavior & more</strong>
           </div>
         </div>
       </div>
@@ -299,7 +299,7 @@ const featuredGuides = [
           required
           style="padding: 1rem 1.25rem; border-radius: 12px; border: none; width: 100%; font-size: 1rem; color: #0f172a; outline: none;"
         />
-        <button type="submit" style="background-color: var(--pup-brand); border: none; padding: 1rem 1.25rem; border-radius: 12px; color: white; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.backgroundColor='#8b5418'" onmouseout="this.style.backgroundColor='#a0621c'">
+        <button type="submit" style="background-color: var(--pup-brand); border: none; padding: 1rem 1.25rem; border-radius: 12px; color: white; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.backgroundColor='#0F766E'" onmouseout="this.style.backgroundColor='#0D9488'">
           Subscribe Free →
         </button>
       </form>
@@ -322,3 +322,5 @@ const featuredGuides = [
   </script>
 
 </BaseLayout>
+
+

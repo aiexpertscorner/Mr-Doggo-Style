@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Mastiff's specific large size,
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["mastiff", "dog-food", "large-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "mastiff"
 ---
 

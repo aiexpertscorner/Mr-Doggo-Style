@@ -8,7 +8,7 @@ const blog = defineCollection({
     description:   z.string(),
     pubDate:       z.coerce.date(),
     updatedDate:   z.coerce.date().optional(),
-    author:        z.string().default('The Mr. Doggo Style Team'),
+    author:        z.string().default('The PupWiki Team'),
 
     // Classification
     category:      z.string().default('Reviews'),

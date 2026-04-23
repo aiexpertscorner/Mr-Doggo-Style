@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Brittany's specific needs lots
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["brittany", "dog-food", "medium-breed", "needs-lots-of-activity"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "brittany"
 ---
 

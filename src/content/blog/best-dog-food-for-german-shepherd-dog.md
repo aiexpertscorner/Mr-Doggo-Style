@@ -4,7 +4,7 @@ description: "We matched the best dog food to the German Shepherd Dog's specific
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["german-shepherd-dog", "dog-food", "large-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "german-shepherd-dog"
 ---
 

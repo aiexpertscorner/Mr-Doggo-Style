@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Pembroke Welsh Corgi's specifi
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["pembroke-welsh-corgi", "dog-food", "medium-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "pembroke-welsh-corgi"
 ---
 

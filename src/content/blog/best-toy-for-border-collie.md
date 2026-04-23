@@ -4,7 +4,7 @@ description: "We matched the best toy to the Border Collie's specific needs lots
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["border-collie", "toys", "medium-breed", "needs-lots-of-activity"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "border-collie"
 ---
 

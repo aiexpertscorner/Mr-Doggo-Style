@@ -4,7 +4,7 @@ description: "We matched the best toy to the French Bulldog's specific calm ener
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["french-bulldog", "toys", "medium-breed", "calm"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "french-bulldog"
 ---
 

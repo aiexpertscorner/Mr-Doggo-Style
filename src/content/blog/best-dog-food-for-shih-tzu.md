@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Shih Tzu's specific regular ex
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["shih-tzu", "dog-food", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "shih-tzu"
 ---
 
