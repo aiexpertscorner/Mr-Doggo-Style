@@ -12,8 +12,9 @@ import masterCrossbreeds   from '../../data/master-crossbreeds.json';
 import productIndex        from '../../data/product-index.json';
 import breedLinkMap        from '../../data/breed-link-map.json';
 import contentStatus       from '../../data/content-status.json';
-import affiliateProducts   from '../../data/affiliate-products.json';
-import AffiliateProductCard from '../../components/ui/AffiliateProductCard.astro';
+import affiliateProducts    from '../../data/affiliate-products.json';
+import AffiliateProductCard  from '../../components/ui/AffiliateProductCard.astro';
+import healthProfiles        from '../../data/breed-health-profiles.json';
 import { deriveProfile } from '../../../scripts/lib/breed-profile.mjs';
 
 const AFFILIATE_TAG = 'aiexpertscorn-20';
@@ -49,6 +50,15 @@ const topProds = Object.entries(picks)
 
 const foodProd = picks['dog-food'] ? (productIndex as any)[picks['dog-food']] : null;
 const toyProd  = picks['toys']     ? (productIndex as any)[picks['toys']]     : null;
+
+const healthProfile = (healthProfiles as any).profiles.find((p: any) => p.breed_slug === slug) ?? null;
+const SEVERITY_STYLES: Record<string, { bg: string; color: string }> = {
+  Low:          { bg: '#f0fdf4', color: '#16a34a' },
+  Medium:       { bg: '#fefce8', color: '#ca8a04' },
+  'Medium-High':{ bg: '#fff7ed', color: '#ea580c' },
+  High:         { bg: '#fef2f2', color: '#dc2626' },
+  Critical:     { bg: '#fdf2f8', color: '#9333ea' },
+};
 
 const SIZE_EMOJI: Record<string,string> = { small:'🐕', medium:'🐕‍🦺', large:'🐕‍🦺', giant:'🦮' };
 const COAT_LABEL: Record<string,string> = {
@@ -352,6 +362,51 @@ const breadcrumbLd = JSON.stringify({
               <p class="font-sans text-xs mt-3" style="color:#64748b">
                 Known genetic concerns: <strong style="color:#92400e">{rank.genetic_ailment_names}</strong>
               </p>
+            )}
+          </section>
+        )}
+
+        <!-- Health profile section -->
+        {healthProfile && (
+          <section>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-sans text-xs font-bold uppercase tracking-widest" style="color:#dc2626">Health Watch</span>
+            </div>
+            <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+              {b.name} Health Conditions
+            </h2>
+            <div class="space-y-3">
+              {(healthProfile.common_issues as any[]).map((issue: any) => {
+                const sty = SEVERITY_STYLES[issue.severity] ?? SEVERITY_STYLES.Medium;
+                return (
+                  <div class="rounded-xl p-4 flex gap-4" style={`background:${sty.bg};border:1px solid ${sty.color}30`}>
+                    <div class="flex-shrink-0 mt-0.5">
+                      <span class="inline-block font-sans text-xs font-bold px-2 py-0.5 rounded-full" style={`background:${sty.color}20;color:${sty.color}`}>
+                        {issue.severity}
+                      </span>
+                    </div>
+                    <div class="min-w-0">
+                      <div class="flex flex-wrap items-center gap-2 mb-1">
+                        <p class="font-sans font-bold text-sm" style="color:#1e293b">{issue.name}</p>
+                        <span class="font-sans text-xs px-2 py-0.5 rounded-full" style="background:#f1f5f9;color:#64748b">
+                          {issue.prevalence} prevalence
+                        </span>
+                      </div>
+                      {issue.early_warning && (
+                        <p class="font-sans text-xs leading-relaxed" style="color:#475569">
+                          <strong style="color:#64748b">Early signs:</strong> {issue.early_warning}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            {healthProfile.care_tips && (
+              <div class="mt-4 rounded-xl p-4 flex gap-3" style="background:#f0f9ff;border:1px solid #bae6fd">
+                <span style="font-size:1.25rem;flex-shrink:0">💡</span>
+                <p class="font-sans text-sm leading-relaxed" style="color:#0c4a6e">{healthProfile.care_tips}</p>
+              </div>
             )}
           </section>
         )}
