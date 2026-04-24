@@ -1,0 +1,60 @@
+---
+/**
+ * AmazonBadge.astro
+ * Official "Available at Amazon" badge — compliant with Amazon brand usage guidelines.
+ * https://advertising.amazon.com/en-ca/resources/ad-policy/brand-usage
+ *
+ * Usage:
+ *   <AmazonBadge href="https://www.amazon.com/s?k=dog+beds&tag=aiexpertscorn-20" />
+ *   <AmazonBadge href={url} theme="light" size="lg" />
+ */
+
+export interface Props {
+  /** Full Amazon URL with affiliate tag (SiteStripe category link or ASIN link) */
+  href: string;
+  /** light = white badge (for dark backgrounds); dark = default squid/dark badge */
+  theme?: 'dark' | 'light';
+  /** Stacked layout for narrow columns; horizontal (default) for standard placement */
+  variant?: 'horizontal' | 'stacked';
+  /** Badge display height in pixels */
+  size?: 'sm' | 'md' | 'lg';
+  /** Additional CSS class on wrapper */
+  class?: string;
+}
+
+const {
+  href,
+  theme = 'dark',
+  variant = 'horizontal',
+  size = 'md',
+  class: extraClass = '',
+} = Astro.props;
+
+const BADGE_SRC =
+  variant === 'stacked'
+    ? '/images/amazon/available-at-amazon-stacked.png'
+    : theme === 'light'
+      ? '/images/amazon/available-at-amazon-white.png'
+      : '/images/amazon/available-at-amazon.png';
+
+// Amazon brand guidelines: badge height minimum ~28px; do not distort
+const HEIGHT = { sm: 28, md: 36, lg: 48 }[size];
+---
+
+<a
+  href={href}
+  rel="nofollow sponsored"
+  target="_blank"
+  aria-label="Available at Amazon"
+  class={`amazon-badge-link ${extraClass}`}
+  style="display:inline-block;line-height:0"
+>
+  <img
+    src={BADGE_SRC}
+    alt="Available at Amazon"
+    height={HEIGHT}
+    loading="lazy"
+    decoding="async"
+    style={`height:${HEIGHT}px;width:auto;display:block`}
+  />
+</a>

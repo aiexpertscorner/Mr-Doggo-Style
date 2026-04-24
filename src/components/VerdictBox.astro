@@ -11,8 +11,10 @@ const { winner, winnerAsin, winnerNote, budgetPick, budgetAsin, budgetNote, tag=
       <span style="font-size:1.5rem;flex-shrink:0">🥇</span>
       <div>
         <p style="font-family:'Archivo Black',sans-serif;font-size:.85rem;text-transform:uppercase;color:var(--offwhite);margin:0 0 .2rem">BEST OVERALL: {winner}</p>
-        <p style="font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:var(--smoke);margin:0 0 .7rem">{winnerNote}</p>
-        <a href={`https://www.amazon.com/dp/${winnerAsin}/?tag=${tag}`} rel="nofollow sponsored" target="_blank" class="btn-lime" style="font-size:.65rem;padding:.5rem 1rem;display:inline-block">CHECK PRICE →</a>
+        <p style="font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:var(--smoke);margin:0 0 .9rem">{winnerNote}</p>
+        <a href={`https://www.amazon.com/dp/${winnerAsin}/?tag=${tag}`} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon" style="display:inline-block;line-height:0">
+          <img src="/images/amazon/available-at-amazon-white.png" alt="Available at Amazon" height="32" loading="lazy" style="height:32px;width:auto;display:block" />
+        </a>
       </div>
     </div>
     {budgetPick && (
@@ -20,8 +22,12 @@ const { winner, winnerAsin, winnerNote, budgetPick, budgetAsin, budgetNote, tag=
         <span style="font-size:1.5rem;flex-shrink:0">💰</span>
         <div>
           <p style="font-family:'Archivo Black',sans-serif;font-size:.85rem;text-transform:uppercase;color:var(--offwhite);margin:0 0 .2rem">BEST VALUE: {budgetPick}</p>
-          <p style="font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:var(--smoke);margin:0 0 .7rem">{budgetNote}</p>
-          {budgetAsin && <a href={`https://www.amazon.com/dp/${budgetAsin}/?tag=${tag}`} rel="nofollow sponsored" target="_blank" class="btn-outline" style="font-size:.65rem;padding:.5rem 1rem;display:inline-block">CHECK PRICE →</a>}
+          <p style="font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:var(--smoke);margin:0 0 .9rem">{budgetNote}</p>
+          {budgetAsin && (
+            <a href={`https://www.amazon.com/dp/${budgetAsin}/?tag=${tag}`} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon" style="display:inline-block;line-height:0">
+              <img src="/images/amazon/available-at-amazon-white.png" alt="Available at Amazon" height="32" loading="lazy" style="height:32px;width:auto;display:block" />
+            </a>
+          )}
         </div>
       </div>
     )}

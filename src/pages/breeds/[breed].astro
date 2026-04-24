@@ -587,6 +587,56 @@ const breadcrumbLd = JSON.stringify({
           </section>
         )}
 
+      <!-- ── Related editorial guides ─────────────────────────────── -->
+      {(() => {
+        const isFood     = ['food','health'].includes(b.energy_level) || b.size_category !== '';
+        const isTraining = ['active'].includes(b.energy_level) || (b.traits?.trainability_value || 0) >= 0.6;
+        const guides = [
+          {
+            href: '/blog/best-dog-food-maker-chefpaw-review-2026',
+            emoji: '🍳',
+            label: 'ChefPaw Dog Food Maker: Honest Review',
+            desc: 'Is the $640 fresh-food appliance worth it for your breed?',
+            tag: 'Food',
+          },
+          {
+            href: '/blog/best-training-tools-stubborn-dogs-2026',
+            emoji: '🦮',
+            label: 'Training Gear for Dogs That Don\'t Listen',
+            desc: 'No-pull harnesses, long lines, and treat strategy that works.',
+            tag: 'Training',
+          },
+          {
+            href: '/blog/best-gifts-for-dog-lovers-2026',
+            emoji: '🎁',
+            label: 'Gifts for Dog Lovers That Actually Land',
+            desc: 'Custom portraits and personalised gifts for the specific dog.',
+            tag: 'Lifestyle',
+          },
+        ];
+        return (
+          <section class="mt-2">
+            <p class="font-sans text-xs font-bold uppercase tracking-widest mb-4" style="color:#64748b">Related guides</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {guides.map(g => (
+                <a href={g.href}
+                  class="flex gap-3 p-4 rounded-2xl transition-all hover:shadow-sm"
+                  style="border:1px solid #e8ccaa;background:white;text-decoration:none"
+                  onmouseover="this.style.borderColor='#a0621c';this.style.background='#fdf8f0'"
+                  onmouseout="this.style.borderColor='#e8ccaa';this.style.background='white'">
+                  <span style="font-size:1.5rem;flex-shrink:0;line-height:1">{g.emoji}</span>
+                  <div>
+                    <span class="font-sans text-xs font-bold px-2 py-0.5 rounded-full mb-1 inline-block" style="background:#fdf8f0;color:#a0621c">{g.tag}</span>
+                    <p class="font-sans font-bold text-sm leading-snug mb-1" style="color:#1e293b">{g.label}</p>
+                    <p class="font-sans text-xs leading-relaxed" style="color:#64748b">{g.desc}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
+
       </div>
 
       <!-- ── Sidebar ── -->
@@ -641,9 +691,8 @@ const breadcrumbLd = JSON.stringify({
                 </div>
                 <p class="font-sans font-black text-lg mb-3" style="color:#1e293b">${parseFloat(foodProd.price||0).toFixed(2)}</p>
                 <a href={amzUrl(foodProd.asin)} rel="nofollow sponsored" target="_blank"
-                  class="block text-center font-sans font-bold text-sm py-2.5 rounded-xl text-white btn-amazon"
-                  style="background:linear-gradient(135deg,#FF9900,#e88700)">
-                  Check price on Amazon →
+                  class="flex justify-center" aria-label="Available at Amazon">
+                  <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto" />
                 </a>
               </div>
             </div>
