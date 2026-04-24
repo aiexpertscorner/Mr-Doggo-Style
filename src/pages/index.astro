@@ -6,8 +6,24 @@
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import masterCrossbreeds from '../data/master-crossbreeds.json';
 
 const posts = await getCollection('blog');
+
+// Top 8 crossbreeds for the featured section (ordered by file priority)
+const topCrossbreeds = (masterCrossbreeds as any[]).slice(0, 8).map(b => ({
+  slug: b.slug,
+  name: b.name,
+  size: b.size_category,
+  energy: b.energy_level,
+  coatType: b.coat_type,
+  blend: b.parent_blend_summary || '',
+  parent1: b.origin_breed_1_name || '',
+  parent2: b.origin_breed_2_name || '',
+  img: b.image_url || '',
+  isPoodleMix: b.is_poodle_mix || false,
+  trainability: b.training_level || 'moderate',
+}));
 const latest = posts
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
   .slice(0, 3);
@@ -151,6 +167,98 @@ const featuredGuides = [
       overflow: hidden;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
     }
+
+    /* ── Mixed breed cards ─────────────────────────────── */
+    .mix-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .mix-card:hover {
+      border-color: #7c3aed;
+      box-shadow: 0 8px 24px -4px rgba(124,58,237,0.15);
+      transform: translateY(-3px);
+    }
+    .mix-card__img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      background: #f1f5f9;
+    }
+    .mix-card__img-placeholder {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      background: linear-gradient(135deg,#ede9fe,#f5f3ff);
+    }
+    .mix-card__body {
+      padding: 0.875rem 1rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .mix-card__name {
+      font-size: 0.975rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.25;
+    }
+    .mix-card__parents {
+      font-size: 0.75rem;
+      color: #7c3aed;
+      font-weight: 600;
+    }
+    .mix-card__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-top: 0.25rem;
+    }
+    .mix-card__chip {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: #475569;
+      text-transform: capitalize;
+    }
+    .mix-card__chip--energy { background: #dcfce7; color: #15803d; }
+    .mix-card__chip--size   { background: #fef3c7; color: #92400e; }
+    .mix-card__cta {
+      margin-top: auto;
+      padding-top: 0.625rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #7c3aed;
+    }
+
+    /* Hide floating card on small screens */
+    @media (max-width: 640px) {
+      [data-hide-mobile] { display: none !important; }
+      .hero__media { padding-bottom: 1rem; }
+    }
+
+    /* Mixed breed grid: 2 cols on mobile, 4 on desktop */
+    .mix-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (min-width: 640px)  { .mix-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .mix-grid { grid-template-columns: repeat(4, 1fr); } }
   </style>
 
   <section class="hero hero--split" style="padding-top: 4rem; padding-bottom: 4rem; background: linear-gradient(to bottom, #ffffff, #f8fafc);">
@@ -160,7 +268,7 @@ const featuredGuides = [
           The Complete Dog Companion
         </span>
 
-        <h1 class="hero__title" style="font-size: 3.5rem; line-height: 1.1; color: #0f172a; margin-bottom: 1.5rem;">
+        <h1 class="hero__title" style="font-size: clamp(2rem, 7vw, 3.5rem); line-height: 1.1; color: #0f172a; margin-bottom: 1.5rem;">
           From Puppy Love<br /><em style="color: var(--pup-brand); font-style: normal;">To Lifelong Care.</em>
         </h1>
 
@@ -187,7 +295,7 @@ const featuredGuides = [
             style="width: 100%; height: 500px; object-fit: cover; display: block;"
           />
         </div>
-        <div class="hero__card" style="position: absolute; bottom: -20px; left: -20px; background: white; border-radius: 16px; padding: 1.25rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border: 1px solid #f1f5f9; display: flex; align-items: center; gap: 1rem;">
+        <div class="hero__card" style="position: absolute; bottom: -20px; left: -20px; background: white; border-radius: 16px; padding: 1.25rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border: 1px solid #f1f5f9; display: flex; align-items: center; gap: 1rem;" data-hide-mobile>
           <div style="background: var(--pup-brand-light); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--pup-brand);" set:html={icons.tag}></div>
           <div>
             <span style="display: block; color: #64748b; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">BREED-SPECIFIC GUIDANCE</span>
@@ -208,7 +316,7 @@ const featuredGuides = [
           </h2>
         </div>
       </div>
-      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(min(280px,100%), 1fr)); gap: 1.5rem;">
         {categories.map(cat => (
           <a href={cat.href} class="tool-card">
             <div class="tool-card__icon-wrapper" style={`background-color: ${cat.color}; color: ${cat.iconColor};`}>
@@ -236,7 +344,7 @@ const featuredGuides = [
         <a href="/blog" style="color: var(--pup-brand); font-weight: 600; text-decoration: none;">Read the blog →</a>
       </div>
 
-      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
+      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(min(300px,100%), 1fr)); gap: 1.5rem;">
         {featuredGuides.map(guide => (
           <a href={guide.href} style="display: flex; flex-direction: column; padding: 1.5rem; background: white; border: 1px solid #e2e8f0; border-radius: 16px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#a0621c'; this.style.boxShadow='0 10px 15px -3px rgba(160,98,28,0.1)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
             <span style="display: inline-block; background: #f1f5f9; color: #475569; padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; align-self: flex-start;">
@@ -265,7 +373,7 @@ const featuredGuides = [
         <a href="/breeds" style="color: var(--pup-brand); font-weight: 600; text-decoration: none;">View all 277 breeds →</a>
       </div>
 
-      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;">
+      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(min(240px,100%), 1fr)); gap: 1rem;">
         {popularBreeds.map(breed => (
           <a href={`/breeds/${breed.slug}`} class="breed-photo-card">
             <img src={breed.img} alt={`Photo of a ${breed.name}`} loading="lazy" />
@@ -273,6 +381,63 @@ const featuredGuides = [
               <span class="breed-photo-card__name">{breed.name}</span>
             </div>
             <div class="breed-photo-card__arrow" set:html={icons.arrow} />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Top Mixed Breeds ──────────────────────────────────────── -->
+  <section class="section" style="padding-top: 4rem; padding-bottom: 4rem; background: #f5f3ff;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <div>
+          <span style="color: #7c3aed; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Designer &amp; Mixed Breeds</span>
+          <h2 class="section-title" style="font-size: clamp(1.5rem, 4vw, 2.25rem); color: #0f172a; margin-top: 0.5rem;">
+            Top Mixed Breed Guides
+          </h2>
+          <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.375rem; max-width: 52ch;">
+            Expert care guides for the most popular designer and hybrid breeds — traits, health risks, and product picks.
+          </p>
+        </div>
+        <a href="/breeds" style="color: #7c3aed; font-weight: 600; text-decoration: none; white-space: nowrap; align-self: flex-start;">
+          All 75 mixed breeds →
+        </a>
+      </div>
+
+      <div class="mix-grid">
+        {topCrossbreeds.map(b => (
+          <a href={`/breeds/${b.slug}`} class="mix-card">
+            {b.img ? (
+              <img
+                src={b.img}
+                alt={`${b.name} dog`}
+                class="mix-card__img"
+                loading="lazy"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              />
+            ) : null}
+            <div class="mix-card__img-placeholder" style={b.img ? 'display:none' : ''}>🐾</div>
+
+            <div class="mix-card__body">
+              <div>
+                {b.isPoodleMix && (
+                  <span style="font-size:0.65rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:999px;background:#ede9fe;color:#7c3aed;margin-bottom:0.375rem;display:inline-block;">
+                    🐩 Poodle mix
+                  </span>
+                )}
+                <p class="mix-card__name">{b.name}</p>
+                {(b.parent1 && b.parent2) && (
+                  <p class="mix-card__parents">{b.parent1} × {b.parent2}</p>
+                )}
+              </div>
+              <div class="mix-card__chips">
+                <span class="mix-card__chip mix-card__chip--size">{b.size}</span>
+                <span class="mix-card__chip mix-card__chip--energy">{b.energy} energy</span>
+                <span class="mix-card__chip">{b.trainability} training</span>
+              </div>
+              <span class="mix-card__cta">Breed guide →</span>
+            </div>
           </a>
         ))}
       </div>
