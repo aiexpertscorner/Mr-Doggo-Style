@@ -10,7 +10,7 @@ export const SITE_ORG = 'PupWiki';
 export const SITE_AUTHOR = 'The PupWiki Team';
 export const SITE_EMAIL = 'hello@pupwiki.com';
 
-export const SITE_LOGO = '/Logo-pupwiki.png';
+export const SITE_LOGO = '/Pupwiki-logo.png';
 export const SITE_DEFAULT_OG_IMAGE = '/og-default.jpg';
 
 export const SITE_LANGUAGE = 'en';
