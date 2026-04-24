@@ -42,7 +42,7 @@ It works from day one on most dogs and requires no training to get the basic ben
 
 [![Available at Amazon](/images/amazon/available-at-amazon.png)](https://www.amazon.com/s?k=front+clip+no+pull+dog+harness&tag=aiexpertscorn-20){rel="nofollow sponsored"}
 
-**JugBow's [training harness](https://www.jugbow.com){rel="nofollow sponsored"}** is worth a look if you want something purpose-built for structured training use rather than just leash manners — dual D-rings, reflective stitching, and an adjustable fit that holds across multiple breed sizes.
+**JugBow's [training harness](https://tidd.ly/3QryFd6){rel="nofollow sponsored"}** is worth a look if you want something purpose-built for structured training use rather than just leash manners — dual D-rings, reflective stitching, and an adjustable fit that holds across multiple breed sizes.
 
 ### Head Halter
 
@@ -76,7 +76,7 @@ Always attach a long line to a harness, not a collar. If the dog hits the end at
 
 For precision work — structured heelwork, competition obedience, working trials — a well-fitted training collar provides clearer tactile feedback than a flat collar.
 
-[JugBow](https://www.jugbow.com){rel="nofollow sponsored"} supplies training collars and leashes built for this use case: their adjustable nylon collar and reflective training leash are solid starting points if you're setting up for structured obedience rather than basic leash manners.
+[JugBow](https://tidd.ly/3QryFd6){rel="nofollow sponsored"} supplies training collars and leashes built for this use case: their adjustable nylon collar and reflective training leash are solid starting points if you're setting up for structured obedience rather than basic leash manners.
 
 [Browse training collars on Amazon →](https://www.amazon.com/s?k=dog+training+collar+nylon&tag=aiexpertscorn-20){rel="nofollow sponsored"}
 

@@ -41,7 +41,7 @@ export const affiliateLinks = {
   awin: {
     jugbow: {
       label: 'JugBow',
-      home: 'https://www.jugbow.com',
+      home: 'https://tidd.ly/3QryFd6',
       cta: 'Shop JugBow',
       badge: 'AWIN Partner',
       // AWIN program stats: EPC $0.23 | Conv 4.74% | 30-day cookie
@@ -50,7 +50,7 @@ export const affiliateLinks = {
     },
     chefpaw: {
       label: 'ChefPaw',
-      home: 'https://www.chefpaw.com',
+      home: 'https://tidd.ly/41TPa44',
       cta: 'See the ChefPaw',
       badge: 'AWIN Partner',
       // AWIN program stats: EPC $2.26 (highest) | Conv 6.96% | 30-day cookie
@@ -59,7 +59,7 @@ export const affiliateLinks = {
     },
     rawwild: {
       label: 'Raw Wild',
-      home: 'https://www.rawwild.com',
+      home: 'https://tidd.ly/4e36ta9',
       cta: 'Shop Raw Wild',
       badge: 'AWIN Partner',
       // AWIN program stats: EPC $1.91 | Conv 6.18% | 120-day cookie (longest!)
@@ -69,7 +69,7 @@ export const affiliateLinks = {
     },
     crownandpaw: {
       label: 'Crown & Paw',
-      home: 'https://www.crownandpaw.com',
+      home: 'https://tidd.ly/496jo7K',
       cta: 'Create your portrait',
       badge: 'AWIN Partner',
       // AWIN program stats: Conv 8.35% (highest!) | EPC $0.92 | 60-day cookie

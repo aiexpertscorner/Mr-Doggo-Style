@@ -27,11 +27,10 @@
     "description": "Biologically appropriate freeze-dried raw dog food made from 100% wild-caught and free-range US proteins. No fillers, no grains, no artificial preservatives.",
     "price": 49.99,
     "currency": "USD",
-    "url": "https://www.rawwild.com",
+    "url": "https://tidd.ly/4e36ta9",
     "image": "",
     "merchant": "Raw Wild LLC",
-    "category": "Raw Food",
-    "note": "Update URL with AWIN deep link once merchant ID is confirmed"
+    "category": "Raw Food"
   },
   {
     "id": "rawwild-elk",
@@ -39,11 +38,10 @@
     "description": "Single-protein elk formula for dogs with food sensitivities. Sourced from wild-harvested US elk. Naturally rich in iron and amino acids.",
     "price": 54.99,
     "currency": "USD",
-    "url": "https://www.rawwild.com",
+    "url": "https://tidd.ly/4e36ta9",
     "image": "",
     "merchant": "Raw Wild LLC",
-    "category": "Raw Food",
-    "note": "Update URL with AWIN deep link once merchant ID is confirmed"
+    "category": "Raw Food"
   },
   {
     "id": "jugbow-training-harness",
@@ -51,11 +49,10 @@
     "description": "Dual-clip training harness with front and back D-rings. Reflective stitching, padded chest plate, and adjustable fit across all breed sizes.",
     "price": 34.99,
     "currency": "USD",
-    "url": "https://www.jugbow.com",
+    "url": "https://tidd.ly/3QryFd6",
     "image": "",
     "merchant": "JugBow",
-    "category": "Training",
-    "note": "Update URL with AWIN deep link once merchant ID is confirmed"
+    "category": "Training"
   },
   {
     "id": "jugbow-training-leash",
@@ -63,11 +60,10 @@
     "description": "5-foot traffic leash with padded handle and 360° swivel clip. High-visibility reflective webbing for early morning and evening walks.",
     "price": 19.99,
     "currency": "USD",
-    "url": "https://www.jugbow.com",
+    "url": "https://tidd.ly/3QryFd6",
     "image": "",
     "merchant": "JugBow",
-    "category": "Training",
-    "note": "Update URL with AWIN deep link once merchant ID is confirmed"
+    "category": "Training"
   },
   {
     "id": "jugbow-training-collar",
@@ -75,11 +71,10 @@
     "description": "Lightweight adjustable collar designed for structured obedience training. Durable nylon with quick-release buckle and engraved ID tag loop.",
     "price": 14.99,
     "currency": "USD",
-    "url": "https://www.jugbow.com",
+    "url": "https://tidd.ly/3QryFd6",
     "image": "",
     "merchant": "JugBow",
-    "category": "Training",
-    "note": "Update URL with AWIN deep link once merchant ID is confirmed"
+    "category": "Training"
   },
   {
     "id": "crown-veteran",
