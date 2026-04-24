@@ -4,20 +4,27 @@
  * Breed-specific lifetime cost of ownership calculator
  * Targets: "how much does a [breed] cost" (high commercial intent)
  */
-import BaseLayout   from '../../layouts/BaseLayout.astro';
-import masterBreeds from '../../data/master-breeds.json';
-import productIndex from '../../data/product-index.json';
-import breedLinkMap from '../../data/breed-link-map.json';
+import BaseLayout        from '../../layouts/BaseLayout.astro';
+import masterBreeds      from '../../data/master-breeds.json';
+import masterCrossbreeds from '../../data/master-crossbreeds.json';
+import productIndex      from '../../data/product-index.json';
+import breedLinkMap      from '../../data/breed-link-map.json';
+import actuarialRates    from '../../data/actuarial-breed-rates.json';
+import actuarialAgeFactors from '../../data/actuarial-age-factors.json';
+import statesIndex       from '../../data/us-states-insurance-index.json';
 
 const AMAZON_TAG = 'aiexpertscorn-20';
 const SITE       = 'https://pupwiki.com';
 
+const ALL_COST_BREEDS = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
+
 export function getStaticPaths() {
-  return (masterBreeds as any[]).map(b => ({ params: { breed: b.slug } }));
+  const all = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
+  return all.map(b => ({ params: { breed: b.slug } }));
 }
 
 const { breed: slug } = Astro.params;
-const b     = (masterBreeds as any[]).find(x => x.slug === slug);
+const b     = ALL_COST_BREEDS.find(x => x.slug === slug);
 if (!b) return Astro.redirect('/breeds');
 
 const links = (breedLinkMap as any)[slug] || {};
@@ -57,7 +64,33 @@ const lifetime_est = rank.lifetime_cost_usd || Math.round(one_time_total + (annu
 const puppy_price_low  = b.size_category === 'small' ? 500 : b.size_category === 'large' || b.size_category === 'giant' ? 1200 : 800;
 const puppy_price_high = puppy_price_low * 2.5;
 
-// Cost breakdown items
+// ── Insurance estimate (age 3, CA defaults) ──────────────────
+const INS_DEFAULT_AGE   = 3;
+const INS_DEFAULT_STATE = 'CA';
+const SIZE_FALLBACK: Record<string, number> = { small: 35, medium: 50, large: 70, giant: 95 };
+
+const breedRate = (actuarialRates as any).breed_rates.find((r: any) => r.breed_slug === slug);
+const insBasePremium  = breedRate?.base_premium ?? SIZE_FALLBACK[b.size_category] ?? 50;
+const insRiskCategory = breedRate?.risk_category ?? 'Standard';
+const insIsEstimated  = !breedRate;
+
+const insAgeFactor = (actuarialAgeFactors as any).age_factors.find(
+  (f: any) => INS_DEFAULT_AGE >= f.min_age_years && INS_DEFAULT_AGE < f.max_age_years
+)?.premium_factor ?? 1.09;
+
+const insStateMultiplier = (statesIndex as any).states.find(
+  (s: any) => s.code === INS_DEFAULT_STATE
+)?.cost_multiplier ?? 1.34;
+
+const insMonthlyEst = Math.round(insBasePremium * insAgeFactor * insStateMultiplier * 100) / 100;
+const insAnnualEst  = Math.round(insMonthlyEst * 12);
+
+const RISK_COLORS: Record<string, string> = {
+  Low: '#16a34a', Standard: '#0891b2', Medium: '#d97706', High: '#dc2626', 'Very High': '#9333ea'
+};
+const insRiskColor = RISK_COLORS[insRiskCategory] ?? RISK_COLORS.Standard;
+
+// ── Cost breakdown items ──────────────────────────────────────
 const COST_ITEMS = [
   { label: 'Dog food',             annual: annual_food,  icon: '🍖', note: `Based on ${b.size_category} breed feeding requirements` },
   { label: 'Veterinary care',      annual: annual_vet,   icon: '🩺', note: `${b.energy_level} energy breeds have ${hmult > 1 ? 'higher' : 'typical'} vet costs` },
@@ -172,6 +205,56 @@ const jsonLd = JSON.stringify({
               ${lifetime_est.toLocaleString()}
             </p>
             <p class="font-sans text-xs mt-1 opacity-60">Over ~{lifespan} years</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pet Insurance Estimate Widget -->
+      <section class="rounded-3xl overflow-hidden" style="border:1px solid #bae6fd;background:linear-gradient(135deg,#f0f9ff,#e0f2fe)">
+        <div class="px-6 py-4 flex items-center gap-3" style="background:linear-gradient(135deg,#0369a1,#0284c7);color:white">
+          <span style="font-size:1.5rem">🛡️</span>
+          <div>
+            <p class="font-sans text-xs font-bold uppercase tracking-wider opacity-80">Pet Insurance Estimate</p>
+            <p class="font-sans text-sm font-semibold">
+              {n} · Age 3 · California
+              {insIsEstimated && <span class="opacity-70 font-normal"> (size-based estimate)</span>}
+            </p>
+          </div>
+          <div class="ml-auto text-right">
+            <p class="font-display text-2xl font-black" style="font-family:'Playfair Display',Georgia,serif">${insMonthlyEst.toFixed(2)}<span class="text-base font-normal opacity-80">/mo</span></p>
+            <p class="font-sans text-xs opacity-70">${insAnnualEst.toLocaleString()}/year</p>
+          </div>
+        </div>
+        <div class="px-6 py-5">
+          <div class="grid sm:grid-cols-3 gap-4 mb-5">
+            <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #bae6fd">
+              <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:#64748b">Base premium</p>
+              <p class="font-sans font-black text-lg" style="color:#0369a1">${insBasePremium.toFixed(2)}/mo</p>
+              <p class="font-sans text-xs" style="color:#94a3b8">{insIsEstimated ? `${b.size_category} size estimate` : 'Breed-specific rate'}</p>
+            </div>
+            <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #bae6fd">
+              <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:#64748b">Age factor</p>
+              <p class="font-sans font-black text-lg" style="color:#0369a1">×{insAgeFactor.toFixed(2)}</p>
+              <p class="font-sans text-xs" style="color:#94a3b8">Age {INS_DEFAULT_AGE} (adult)</p>
+            </div>
+            <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #bae6fd">
+              <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:#64748b">State multiplier</p>
+              <p class="font-sans font-black text-lg" style="color:#0369a1">×{insStateMultiplier.toFixed(2)}</p>
+              <p class="font-sans text-xs" style="color:#94a3b8">California (CA)</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span class="inline-block font-sans text-xs font-bold px-3 py-1 rounded-full" style={`background:${insRiskColor}20;color:${insRiskColor};border:1px solid ${insRiskColor}40`}>
+                {insRiskCategory} Risk
+              </span>
+              <span class="font-sans text-xs" style="color:#64748b">
+                Formula: ${insBasePremium.toFixed(2)} × {insAgeFactor.toFixed(2)} × {insStateMultiplier.toFixed(2)} = ${insMonthlyEst.toFixed(2)}/mo
+              </span>
+            </div>
+            <p class="font-sans text-xs" style="color:#94a3b8">
+              Estimates are indicative. Actual premiums vary by provider, coverage level, and deductible.
+            </p>
           </div>
         </div>
       </section>
@@ -292,7 +375,7 @@ const jsonLd = JSON.stringify({
         </h2>
         <div class="grid sm:grid-cols-2 gap-4">
           {[
-            { icon:'🍖', tip:'Buy food in bulk', save:'$100–300/yr', detail:'Subscribe & Save on Chewy saves 5–35% on food orders' },
+            { icon:'🍖', tip:'Buy food in bulk', save:'$100–300/yr', detail:'Amazon Subscribe & Save cuts 5–15% on auto-ship food orders' },
             { icon:'🩺', tip:'Pet insurance',    save:'$0–5,000/yr', detail:'Monthly premiums of $30–80 can save thousands on unexpected vet bills' },
             { icon:'🎾', tip:'Rotate toys',      save:'$100–200/yr', detail:'Rotating 8–12 toys keeps novelty high without constant buying' },
             { icon:'✂️', tip:'Learn to groom',   save:'$200–600/yr', detail:'Basic grooming at home between professional sessions reduces costs significantly' },
@@ -401,7 +484,7 @@ const jsonLd = JSON.stringify({
             </div>
             <div class="p-4">
               <p class="font-sans text-xs italic mb-2" style="color:#64748b">
-                Subscribe & Save on Chewy saves 5–35% vs buying monthly
+                Amazon Subscribe &amp; Save cuts 5–15% off auto-ship food orders
               </p>
               {foodProd.image?.includes('media-amazon') && (
                 <div class="flex justify-center mb-3">
@@ -413,11 +496,11 @@ const jsonLd = JSON.stringify({
               <p class="font-sans font-black text-lg mb-2" style="color:#a0621c">
                 ${parseFloat(foodProd.price||0).toFixed(2)}
               </p>
-              <a href={`https://www.chewy.com/s?query=${encodeURIComponent(foodProd.name)}&ref=impact`}
+              <a href={`https://www.amazon.com/dp/${foodProd.asin}/?tag=${AMAZON_TAG}&th=1`}
                 rel="nofollow sponsored" target="_blank"
                 class="block text-center font-sans font-bold text-xs py-2.5 rounded-xl text-white mb-2"
-                style="background:linear-gradient(135deg,#0052cc,#003d99)">
-                Subscribe on Chewy (save up to 35%) →
+                style="background:linear-gradient(135deg,#c07835,#a0621c)">
+                Buy on Amazon (Subscribe &amp; Save) →
               </a>
               <a href={`https://www.amazon.com/dp/${foodProd.asin}/?tag=${AMAZON_TAG}`}
                 rel="nofollow sponsored" target="_blank"
