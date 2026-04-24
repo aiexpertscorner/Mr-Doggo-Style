@@ -95,7 +95,7 @@ const jsonLd = JSON.stringify({
 <BaseLayout
   title={`How Much Does a ${n} Cost? 2026 Complete Cost Breakdown`}
   description={`Full ${n} cost of ownership: puppy price $${puppy_price_low.toLocaleString()}–$${puppy_price_high.toLocaleString()}, annual costs $${annual_total.toLocaleString()}/yr, lifetime estimate $${lifetime_est.toLocaleString()}. Includes food, vet, grooming and toys.`}
-  canonicalURL={`${SITE}/cost-calculator/${slug}`}
+  canonicalUrl={`${SITE}/cost-calculator/${slug}`}
 >
 <script type="application/ld+json" set:html={jsonLd} />
 
