@@ -78,7 +78,7 @@
 .layout-sidebar {
   display: grid;
   grid-template-columns: 1fr 320px;
-  gap: var(--space-12);
+  gap: clamp(var(--space-6), 4vw, var(--space-12));
   align-items: start;
 }
 

@@ -5,8 +5,10 @@
  * Wraps BaseLayout, adds article header + sidebar structure.
  */
 
-import BaseLayout  from './BaseLayout.astro';
-import Breadcrumb  from '../components/ui/Breadcrumb.astro';
+import BaseLayout           from './BaseLayout.astro';
+import Breadcrumb           from '../components/ui/Breadcrumb.astro';
+import AffiliateProductCard from '../components/ui/AffiliateProductCard.astro';
+import affiliateProducts    from '../data/affiliate-products.json';
 
 export interface Props {
   title:         string;
@@ -44,6 +46,12 @@ const categoryColors: Record<string, string> = {
 };
 
 const categoryBadge = categoryColors[category.toLowerCase()] ?? 'primary';
+
+// Pick an affiliate product for the sidebar based on article category
+const sidebarProductId = (['food', 'health', 'training'].includes(category.toLowerCase()))
+  ? 'chefpaw-1'
+  : 'crown-noble';
+const sidebarProduct = (affiliateProducts as any[]).find((p: any) => p.id === sidebarProductId);
 const displayDate   = new Date(updatedDate ?? pubDate).toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric',
 });
@@ -135,6 +143,16 @@ const displayDate   = new Date(updatedDate ?? pubDate).toLocaleDateString('en-US
 
       <!-- Sidebar (sticky) -->
       <aside>
+        <!-- Affiliate product card — shown on all blog posts -->
+        {sidebarProduct && (
+          <div style="margin-bottom: var(--space-6);">
+            <AffiliateProductCard
+              product={sidebarProduct}
+              headline={category.toLowerCase() === 'food' ? 'Make fresh food at home' : 'Gift for dog lovers'}
+              variant="card"
+            />
+          </div>
+        )}
         <slot name="sidebar" />
       </aside>
     </div>

@@ -6,23 +6,31 @@
  * - Cluster links to all 10 content types
  * - Tailwind CSS (matching existing site design)
  */
-import BaseLayout    from '../../layouts/BaseLayout.astro';
-import masterBreeds  from '../../data/master-breeds.json';
-import productIndex  from '../../data/product-index.json';
-import breedLinkMap  from '../../data/breed-link-map.json';
-import contentStatus from '../../data/content-status.json';
+import BaseLayout          from '../../layouts/BaseLayout.astro';
+import masterBreeds        from '../../data/master-breeds.json';
+import masterCrossbreeds   from '../../data/master-crossbreeds.json';
+import productIndex        from '../../data/product-index.json';
+import breedLinkMap        from '../../data/breed-link-map.json';
+import contentStatus       from '../../data/content-status.json';
+import affiliateProducts   from '../../data/affiliate-products.json';
+import AffiliateProductCard from '../../components/ui/AffiliateProductCard.astro';
 import { deriveProfile } from '../../../scripts/lib/breed-profile.mjs';
 
 const AFFILIATE_TAG = 'aiexpertscorn-20';
 const SITE          = 'https://pupwiki.com';
 
+const ALL_BREEDS = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
+
 export function getStaticPaths() {
-  return (masterBreeds as any[]).map(b => ({ params: { breed: b.slug } }));
+  const allBreeds = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
+  return allBreeds.map(b => ({ params: { breed: b.slug } }));
 }
 
 const { breed: slug } = Astro.params;
-const b = (masterBreeds as any[]).find(x => x.slug === slug);
+const b = ALL_BREEDS.find(x => x.slug === slug);
 if (!b) return Astro.redirect('/breeds');
+
+const isCrossbreed = !!(b.parent_breeds?.length);
 
 const profile = deriveProfile(b);
 
@@ -179,9 +187,15 @@ const breadcrumbLd = JSON.stringify({
         <div class="flex-1 min-w-0">
           <!-- Badges -->
           <div class="flex flex-wrap gap-2 mb-3">
-            <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#a0621c;color:white">
-              {b.size_category.charAt(0).toUpperCase()+b.size_category.slice(1)} breed
-            </span>
+            {isCrossbreed ? (
+              <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#7c3aed;color:white">
+                Designer / Mixed Breed
+              </span>
+            ) : (
+              <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#a0621c;color:white">
+                {b.size_category.charAt(0).toUpperCase()+b.size_category.slice(1)} breed
+              </span>
+            )}
             <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#fef3c7;color:#92400e">
               {b.energy_level} energy
             </span>
@@ -193,7 +207,7 @@ const breadcrumbLd = JSON.stringify({
                 {b.akc_group}
               </span>
             )}
-            {b.origin_country && (
+            {!isCrossbreed && b.origin_country && (
               <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f0fdf4;color:#15803d">
                 🌍 {b.origin_country}
               </span>
@@ -201,6 +215,11 @@ const breadcrumbLd = JSON.stringify({
             {b.akc_popularity && b.akc_popularity <= 20 && (
               <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#fef9c3;color:#854d0e">
                 🏆 #{b.akc_popularity} most popular
+              </span>
+            )}
+            {isCrossbreed && b.is_poodle_mix && (
+              <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f0fdf4;color:#15803d">
+                🐩 Poodle mix
               </span>
             )}
           </div>
@@ -226,6 +245,24 @@ const breadcrumbLd = JSON.stringify({
             {life.min   && life.max   && <span>🎂 {life.min}–{life.max} yr lifespan</span>}
             {rank.intelligence_rank   && <span>🧠 Intelligence #{rank.intelligence_rank}{profile.intelligence_tier ? ` — ${profile.intelligence_tier}` : ''}</span>}
           </div>
+
+          <!-- Parent breeds (crossbreeds only) -->
+          {isCrossbreed && b.parent_breeds?.length > 0 && (
+            <div class="mt-4 flex flex-wrap gap-2 items-center font-sans text-sm">
+              <span style="color:#64748b;font-weight:600">Mix of:</span>
+              {(b.parent_breeds as any[]).map((p: any) => (
+                <a
+                  href={`/breeds/${p.slug}`}
+                  class="inline-flex items-center gap-1 px-3 py-1 rounded-full font-sans text-xs font-semibold transition-colors"
+                  style="background:#ede9fe;color:#5b21b6;text-decoration:none;border:1px solid #ddd6fe"
+                  onmouseover="this.style.background='#ddd6fe'"
+                  onmouseout="this.style.background='#ede9fe'"
+                >
+                  🐕 {p.name}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -556,6 +593,17 @@ const breadcrumbLd = JSON.stringify({
               </div>
             </div>
           )}
+
+          <!-- Affiliate product card (Crown & Paw) -->
+          {(() => {
+            const crownProduct = (affiliateProducts as any[]).find((p: any) => p.id === 'crown-noble');
+            return crownProduct ? (
+              <AffiliateProductCard
+                product={crownProduct}
+                headline={`Gift idea for ${b.name} owners`}
+              />
+            ) : null;
+          })()}
 
           <!-- Guide links sidebar -->
           <div class="rounded-2xl p-4" style="border:1px solid #e8ccaa;background:white">

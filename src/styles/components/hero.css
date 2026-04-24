@@ -427,7 +427,7 @@
 }
 
 .article-hero__subtitle {
-  font-size: var(--text-xl);
+  font-size: clamp(var(--text-base), 2.5vw, var(--text-xl));
   color: var(--color-muted);
   line-height: var(--leading-relaxed);
   max-width: 64ch;
