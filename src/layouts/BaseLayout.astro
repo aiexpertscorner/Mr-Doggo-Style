@@ -1,113 +1,307 @@
 ---
 /**
- * BaseLayout.astro
- * Root layout. Every page extends this.
- * Imports the single main.css entry point.
+ * src/layouts/BaseLayout.astro
+ * Enhanced global layout for PupWiki.
+ * Handles:
+ * - SEO meta
+ * - canonical URLs
+ * - Open Graph / Twitter
+ * - JSON-LD
+ * - accessibility skip link
+ * - shared header/footer
  */
 
 import Header from '../components/ui/Header.astro';
 import Footer from '../components/ui/Footer.astro';
-import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from '../lib/site-config';
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_ORG,
+  SITE_AUTHOR,
+  SITE_EMAIL,
+  SITE_DESCRIPTION,
+  SITE_LANGUAGE,
+  SITE_LOCALE,
+  SITE_LOGO_ABSOLUTE,
+  SITE_DEFAULT_OG_IMAGE,
+  SITE_TAGLINE,
+  ORGANIZATION_SAME_AS,
+  SEARCH_PATH,
+} from '../lib/site-config';
+
+type StructuredData =
+  | Record<string, unknown>
+  | Array<Record<string, unknown>>;
 
 export interface Props {
-  title:          string;
-  description:    string;
-  canonicalUrl?:  string;
-  ogImage?:       string;
-  noIndex?:       boolean;
-  bodyClass?:     string;
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  noIndex?: boolean;
+  bodyClass?: string;
+  pageType?: 'website' | 'article' | 'collection' | 'tool' | 'profile';
+  publishedTime?: string;
+  modifiedTime?: string;
+  structuredData?: StructuredData;
 }
 
 const {
   title,
-  description,
+  description = SITE_DESCRIPTION,
   canonicalUrl,
-  ogImage       = '/og-default.jpg',
-  noIndex       = false,
-  bodyClass     = '',
+  ogImage = SITE_DEFAULT_OG_IMAGE,
+  ogImageAlt = `${SITE_NAME} social preview image`,
+  noIndex = false,
+  bodyClass = '',
+  pageType = 'website',
+  publishedTime,
+  modifiedTime,
+  structuredData = [],
 } = Astro.props;
 
-const site    = SITE_URL;
-const fullUrl = canonicalUrl ?? site;
+const currentPath = `${Astro.url.pathname}${Astro.url.search}`;
+const resolvedCanonicalUrl =
+  canonicalUrl ?? new URL(currentPath || '/', SITE_URL).toString();
+
+const resolvedOgImage = ogImage.startsWith('http')
+  ? ogImage
+  : new URL(ogImage, SITE_URL).toString();
+
+const pageTitle = title.includes(SITE_NAME)
+  ? title
+  : `${title} | ${SITE_NAME}`;
+
+const robotsContent = noIndex
+  ? 'noindex, nofollow'
+  : 'index, follow, max-image-preview:large';
+
+const isHomePage = Astro.url.pathname === '/';
+
+const ogType = pageType === 'article' ? 'article' : 'website';
+
+const normalizedStructuredData = Array.isArray(structuredData)
+  ? structuredData
+  : [structuredData];
+
+const searchTarget = SEARCH_PATH
+  ? new URL(`${SEARCH_PATH}?q={search_term_string}`, SITE_URL).toString()
+  : null;
+
+const websiteJsonLd: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_ORG,
+    url: SITE_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: SITE_LOGO_ABSOLUTE,
+    },
+  },
+};
+
+if (searchTarget) {
+  websiteJsonLd.potentialAction = {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: searchTarget,
+    },
+    'query-input': 'required name=search_term_string',
+  };
+}
+
+const organizationJsonLd: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_ORG,
+  url: SITE_URL,
+  email: SITE_EMAIL,
+  description: SITE_DESCRIPTION,
+  logo: {
+    '@type': 'ImageObject',
+    url: SITE_LOGO_ABSOLUTE,
+  },
+};
+
+if (ORGANIZATION_SAME_AS?.length) {
+  organizationJsonLd.sameAs = ORGANIZATION_SAME_AS;
+}
+
+const pageSchemaTypeMap = {
+  website: isHomePage ? 'WebPage' : 'WebPage',
+  article: 'Article',
+  collection: 'CollectionPage',
+  tool: 'WebApplication',
+  profile: 'ProfilePage',
+} as const;
+
+const webPageJsonLd: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': pageSchemaTypeMap[pageType],
+  name: pageTitle,
+  headline: title,
+  description,
+  url: resolvedCanonicalUrl,
+  inLanguage: SITE_LANGUAGE,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_ORG,
+    url: SITE_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: SITE_LOGO_ABSOLUTE,
+    },
+  },
+  author: {
+    '@type': 'Organization',
+    name: SITE_AUTHOR,
+  },
+};
+
+if (pageType === 'article' && publishedTime) {
+  webPageJsonLd.datePublished = publishedTime;
+}
+if (pageType === 'article' && modifiedTime) {
+  webPageJsonLd.dateModified = modifiedTime;
+}
+
+const jsonLdScripts = [
+  organizationJsonLd,
+  websiteJsonLd,
+  webPageJsonLd,
+  ...normalizedStructuredData.filter(Boolean),
+];
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-  {noIndex && <meta name="robots" content="noindex, nofollow" />}
+<html lang={SITE_LANGUAGE}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content={SITE_AUTHOR} />
+    <meta name="description" content={description} />
+    <meta name="robots" content={robotsContent} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#0D9488" />
 
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:title"       content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:url"         content={fullUrl} />
-  <meta property="og:image"       content={`${site}${ogImage}`} />
-  <meta property="og:site_name"   content={SITE_NAME} />
+    <title>{pageTitle}</title>
+    <link rel="canonical" href={resolvedCanonicalUrl} />
 
-  <!-- ImpactMeta -->
-<meta name='impact-site-verification' value='7b2aaf8e-72cb-456b-a2a8-9176f838c637'>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title={SITE_NAME} />
+    <link rel="alternate" hrefLang={SITE_LANGUAGE} href={resolvedCanonicalUrl} />
+    <meta property="og:locale" content={SITE_LOCALE} />
 
-  <!-- Twitter -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image"       content={`${site}${ogImage}`} />
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={resolvedCanonicalUrl} />
+    <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:image:alt" content={ogImageAlt} />
 
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {pageType === 'article' && publishedTime && (
+      <meta property="article:published_time" content={publishedTime} />
+    )}
+    {pageType === 'article' && modifiedTime && (
+      <meta property="article:modified_time" content={modifiedTime} />
+    )}
 
-  <!-- Fonts: Inter (UI) + Lora (editorial) -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;1,600;1,700&display=swap"
-    rel="stylesheet"
-  />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={resolvedOgImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
-  <!-- Design system -->
-  <link rel="stylesheet" href="/styles/main.css" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="alternate" type="application/rss+xml" href="/rss.xml" title={SITE_NAME} />
-
-  <!-- GA4 (env var via Astro) -->
-  {import.meta.env.PUBLIC_GA_MEASUREMENT_ID && (
-    <script
-      async
-      src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}
+    <!-- Partner verification -->
+    <meta
+      name="impact-site-verification"
+      content="7b2aaf8e-72cb-456b-a2a8-9176f838c637"
     />
-    <script define:vars={{ gaId: import.meta.env.PUBLIC_GA_MEASUREMENT_ID }}>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', gaId);
-    </script>
-  )}
 
-  <!-- Schema: WebSite -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: SITE_NAME,
-    url: site,
-    description: SITE_DESCRIPTION,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: { '@type': 'EntryPoint', urlTemplate: `${site}/search?q={search_term_string}` },
-      'query-input': 'required name=search_term_string',
-    },
-  })} />
-</head>
-<body class={bodyClass}>
-  <Header />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-  <slot />
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/main.css" />
 
-  <Footer />
-</body>
+    <style is:global>
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        z-index: 9999;
+        padding: 0.75rem 1rem;
+        background: #0f172a;
+        color: #ffffff;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .skip-link:focus {
+        left: 1rem;
+        top: 1rem;
+      }
+    </style>
+
+    {jsonLdScripts.map((schema) => (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(schema)}
+      />
+    ))}
+
+    <slot name="head" />
+
+    <!-- GA4 -->
+    {import.meta.env.PUBLIC_GA_MEASUREMENT_ID && (
+      <>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}
+        />
+        <script define:vars={{ gaId: import.meta.env.PUBLIC_GA_MEASUREMENT_ID }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', gaId);
+        </script>
+      </>
+    )}
+  </head>
+
+  <body class={bodyClass} data-page-type={pageType}>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <Header />
+
+    <main id="main-content" aria-label="Main content">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
 </html>
