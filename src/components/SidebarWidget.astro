@@ -23,12 +23,8 @@ const url = `https://www.amazon.com/dp/${asin}/?tag=${tag}`;
       <span style="color:#CCFF00;font-size:.8rem">{'★'.repeat(Math.round(rating))}</span>
       {price && <span style="font-family:'Archivo Black',sans-serif;color:#CCFF00;font-size:.95rem">${price.toFixed(2)}</span>}
     </div>
-    <a href={url} rel="nofollow sponsored" target="_blank"
-       style="display:block;background:#CCFF00;color:#0A0A0A;font-family:'Archivo Black',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;padding:.7rem;border:2px solid #0A0A0A;box-shadow:3px 3px 0 #0A0A0A;text-decoration:none;text-align:center;transition:all .1s"
-       onmouseover="this.style.transform='translate(-2px,-2px)';this.style.boxShadow='5px 5px 0 #0A0A0A'"
-       onmouseout="this.style.transform='';this.style.boxShadow='3px 3px 0 #0A0A0A'">
-      CHECK PRICE →
+    <a href={url} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon" style="display:flex;justify-content:center;line-height:0;margin-bottom:.45rem">
+      <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto;display:block" />
     </a>
-    <p style="font-family:'Space Mono',monospace;font-size:.52rem;color:#555;text-align:center;margin:.45rem 0 0;text-transform:uppercase">FREE PRIME SHIPPING</p>
   </div>
 </div>

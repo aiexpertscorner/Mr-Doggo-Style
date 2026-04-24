@@ -496,17 +496,10 @@ const jsonLd = JSON.stringify({
               <p class="font-sans font-black text-lg mb-2" style="color:#a0621c">
                 ${parseFloat(foodProd.price||0).toFixed(2)}
               </p>
-              <a href={`https://www.amazon.com/dp/${foodProd.asin}/?tag=${AMAZON_TAG}&th=1`}
-                rel="nofollow sponsored" target="_blank"
-                class="block text-center font-sans font-bold text-xs py-2.5 rounded-xl text-white mb-2"
-                style="background:linear-gradient(135deg,#c07835,#a0621c)">
-                Buy on Amazon (Subscribe &amp; Save) →
-              </a>
               <a href={`https://www.amazon.com/dp/${foodProd.asin}/?tag=${AMAZON_TAG}`}
                 rel="nofollow sponsored" target="_blank"
-                class="block text-center font-sans font-medium text-xs py-2 rounded-xl"
-                style="border:1px solid #e8ccaa;color:#64748b">
-                Check Amazon price →
+                class="flex justify-center" aria-label="Available at Amazon">
+                <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto" />
               </a>
             </div>
           </div>

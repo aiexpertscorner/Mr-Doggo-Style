@@ -44,24 +44,37 @@ export const affiliateLinks = {
       home: 'https://www.jugbow.com',
       cta: 'Shop JugBow',
       badge: 'AWIN Partner',
+      // AWIN program stats: EPC $0.23 | Conv 4.74% | 30-day cookie
+      // Focus: training collars, leashes, no-pull harnesses, recall training
+      productIds: ['jugbow-training-harness', 'jugbow-training-leash', 'jugbow-training-collar'],
     },
     chefpaw: {
       label: 'ChefPaw',
       home: 'https://www.chefpaw.com',
-      cta: 'Shop ChefPaw',
+      cta: 'See the ChefPaw',
       badge: 'AWIN Partner',
+      // AWIN program stats: EPC $2.26 (highest) | Conv 6.96% | 30-day cookie
+      // Focus: homemade dog food, fresh feeding, sensitive stomach, allergy diets
+      productIds: ['chefpaw-1', 'chefpaw-2'],
     },
     rawwild: {
       label: 'Raw Wild',
       home: 'https://www.rawwild.com',
       cta: 'Shop Raw Wild',
       badge: 'AWIN Partner',
+      // AWIN program stats: EPC $1.91 | Conv 6.18% | 120-day cookie (longest!)
+      // Focus: freeze-dried raw food, single-protein, sensitive stomach, allergy-friendly
+      // Note: no product feed — update productIds with AWIN deep links when merchant ID confirmed
+      productIds: ['rawwild-beef-chicken', 'rawwild-elk'],
     },
     crownandpaw: {
       label: 'Crown & Paw',
       home: 'https://www.crownandpaw.com',
-      cta: 'Shop Crown & Paw',
+      cta: 'Create your portrait',
       badge: 'AWIN Partner',
+      // AWIN program stats: Conv 8.35% (highest!) | EPC $0.92 | 60-day cookie
+      // Focus: custom pet portraits, gifts for dog lovers, memorial gifts
+      productIds: ['crown-noble', 'crown-veteran', 'crown-count', 'crown-colonel', 'crown-princess', 'crown-mug', 'crown-socks', 'crown-tshirt'],
     },
   },
 } as const;
