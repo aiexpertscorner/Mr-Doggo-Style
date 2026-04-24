@@ -65,7 +65,7 @@ The appliance also requires batch cooking every few days. The app gives you stor
 
 For dogs that do better on completely unprocessed protein — particularly working dogs, dogs with chronic digestive issues, or dogs that have never settled on a cooked diet — freeze-dried raw food is worth knowing about alongside the ChefPaw.
 
-[Raw Wild](https://www.rawwild.com){rel="nofollow sponsored"} makes freeze-dried raw dog food from wild-harvested US proteins (beef, elk, chicken). No fillers, no grains, nothing preserved with additives. It's a different approach from the ChefPaw — no cooking required, longer shelf life — and some owners use both: ChefPaw for weekday meals, freeze-dried raw as toppers or when travelling.
+[Raw Wild](https://tidd.ly/4e36ta9){rel="nofollow sponsored"} makes freeze-dried raw dog food from wild-harvested US proteins (beef, elk, chicken). No fillers, no grains, nothing preserved with additives. It's a different approach from the ChefPaw — no cooking required, longer shelf life — and some owners use both: ChefPaw for weekday meals, freeze-dried raw as toppers or when travelling.
 
 ---
 
