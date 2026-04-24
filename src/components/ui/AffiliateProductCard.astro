@@ -72,6 +72,9 @@ const formattedPrice = product.price.toFixed(2);
           target="_blank"
           class="font-sans text-xs font-bold px-3 py-2 rounded-xl text-white"
           style="background:linear-gradient(135deg,#a0621c,#7d4a10)"
+          data-affiliate-merchant={product.merchant}
+          data-affiliate-product={product.id}
+          data-affiliate-placement="card"
         >
           Shop now →
         </a>
@@ -109,6 +112,9 @@ const formattedPrice = product.price.toFixed(2);
       target="_blank"
       class="flex-shrink-0 font-sans text-xs font-bold px-2.5 py-1.5 rounded-lg text-white"
       style="background:linear-gradient(135deg,#a0621c,#7d4a10)"
+      data-affiliate-merchant={product.merchant}
+      data-affiliate-product={product.id}
+      data-affiliate-placement="compact"
     >
       Shop →
     </a>
