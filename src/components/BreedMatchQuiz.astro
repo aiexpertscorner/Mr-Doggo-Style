@@ -51,9 +51,9 @@ const quizData = masterBreeds.map(b => ({
     text-align: left;
   }
   .quiz-btn:hover {
-    background: #fdf8f0;
-    border-color: #a0621c;
-    color: #a0621c;
+    background: var(--color-surface-warm);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
   }
   
   .match-card {
@@ -76,7 +76,7 @@ const quizData = masterBreeds.map(b => ({
 <div class="quiz-container" id="breed-quiz">
   
   <div class="quiz-step active" data-step="1">
-    <span style="color: #a0621c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Question 1 of 4</span>
+    <span style="color:var(--color-accent);font-weight:700;font-size:0.85rem;text-transform:uppercase;">Question 1 of 4</span>
     <h3 class="quiz-question">How big is your living space?</h3>
     <button class="quiz-btn" data-answer="size" data-value="small">Apartment / Small home without yard</button>
     <button class="quiz-btn" data-answer="size" data-value="medium">House with a small/fenced yard</button>
@@ -84,7 +84,7 @@ const quizData = masterBreeds.map(b => ({
   </div>
 
   <div class="quiz-step" data-step="2">
-    <span style="color: #a0621c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Question 2 of 4</span>
+    <span style="color:var(--color-accent);font-weight:700;font-size:0.85rem;text-transform:uppercase;">Question 2 of 4</span>
     <h3 class="quiz-question">How much daily exercise can you provide?</h3>
     <button class="quiz-btn" data-answer="energy" data-value="calm">Short walks (0-30 mins)</button>
     <button class="quiz-btn" data-answer="energy" data-value="regular">Regular activity (30-60 mins)</button>
@@ -92,14 +92,14 @@ const quizData = masterBreeds.map(b => ({
   </div>
 
   <div class="quiz-step" data-step="3">
-    <span style="color: #a0621c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Question 3 of 4</span>
+    <span style="color:var(--color-accent);font-weight:700;font-size:0.85rem;text-transform:uppercase;">Question 3 of 4</span>
     <h3 class="quiz-question">Do you have young children in the home?</h3>
     <button class="quiz-btn" data-answer="children" data-value="yes">Yes, I need a very kid-friendly dog</button>
     <button class="quiz-btn" data-answer="children" data-value="no">No, standard temperament is fine</button>
   </div>
 
   <div class="quiz-step" data-step="4">
-    <span style="color: #a0621c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Question 4 of 4</span>
+    <span style="color:var(--color-accent);font-weight:700;font-size:0.85rem;text-transform:uppercase;">Question 4 of 4</span>
     <h3 class="quiz-question">How much grooming are you willing to do?</h3>
     <button class="quiz-btn" data-answer="grooming" data-value="low">Low maintenance (occasional brushing)</button>
     <button class="quiz-btn" data-answer="grooming" data-value="high">I don't mind regular brushing or groomer visits</button>
@@ -110,17 +110,17 @@ const quizData = masterBreeds.map(b => ({
       <h3 class="quiz-question">We found your matches!</h3>
       <p style="color: #64748b; margin-bottom: 1.5rem;">Enter your email to reveal your top 3 dog breeds and get our free Puppy Prep Guide.</p>
       <input type="email" id="quiz-email" placeholder="your@email.com" style="width: 100%; padding: 1rem; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 1rem;" />
-      <button id="show-results-btn" style="width: 100%; padding: 1rem; border-radius: 8px; background: #a0621c; color: white; font-weight: bold; border: none; cursor: pointer;">Reveal My Matches →</button>
+      <button id="show-results-btn" style="width:100%;padding:1rem;border-radius:8px;background:var(--color-accent);color:white;font-weight:bold;border:none;cursor:pointer;">Reveal My Matches →</button>
       <button id="skip-email-btn" style="background: none; border: none; color: #94a3b8; font-size: 0.85rem; margin-top: 1rem; cursor: pointer; text-decoration: underline;">Skip and just show my results</button>
     </div>
   </div>
 
   <div class="quiz-step" data-step="results">
-    <span style="color: #a0621c; font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Your Matches</span>
+    <span style="color:var(--color-accent);font-weight:700;font-size:0.85rem;text-transform:uppercase;">Your Matches</span>
     <h3 class="quiz-question">Meet Your Perfect Companions</h3>
     <div id="results-container"></div>
-    <div style="margin-top: 2rem; padding: 1rem; background: #fdf8f0; border-radius: 12px; border: 1px solid #e8ccaa;">
-      <p style="font-weight: 600; color: #a0621c; margin-bottom: 0.5rem;">Next Step: Prepare Your Budget</p>
+    <div style="margin-top:2rem;padding:1rem;background:var(--color-surface-warm);border-radius:12px;border:1px solid var(--color-border-strong)">
+      <p style="font-weight:600;color:var(--color-accent);margin-bottom:0.5rem">Next Step: Prepare Your Budget</p>
       <p style="font-size: 0.9rem; color: #5c340a; margin-bottom: 1rem;">Use our calculator to see the exact lifetime costs for these breeds.</p>
       <a href="/cost-calculator" style="display: block; text-align: center; background: #1e293b; color: white; padding: 0.75rem; border-radius: 8px; text-decoration: none; font-weight: bold;">Go to Cost Calculator</a>
     </div>

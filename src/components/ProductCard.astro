@@ -25,12 +25,12 @@ const showAmazonBetter = price && chewy_price && price < chewy_price;
 const imgSrc = local_image || (image?.includes('media-amazon') ? image : null);
 ---
 
-<div class="not-prose bg-white rounded-2xl border overflow-hidden shadow-sm hover:shadow-md transition-shadow" style="border-color:#f5e8d0">
+<div class="not-prose bg-white rounded-2xl border overflow-hidden shadow-sm hover:shadow-md transition-shadow" style="border-color:var(--color-surface-warm)">
   {badge && <div class="font-sans text-xs font-bold uppercase tracking-wider text-center py-1.5 text-white" style="background:#f59e0b">{badge}</div>}
   <div class="p-5">
     <div class="flex items-start gap-4 mb-4">
       <!-- Image -->
-      <div class="flex-shrink-0 w-20 h-20 rounded-xl flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#fdf8f0,#fef3c7)">
+      <div class="flex-shrink-0 w-20 h-20 rounded-xl flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,var(--color-surface-warm),#fef3c7)">
         {imgSrc ? (
           <img src={imgSrc} alt={name} width="80" height="80" loading="lazy" class="w-full h-full object-contain"
             onerror="this.style.display='none';this.nextSibling.style.display='block'" />
@@ -47,7 +47,7 @@ const imgSrc = local_image || (image?.includes('media-amazon') ? image : null);
       <div class="flex-1 min-w-0">
         <h3 class="font-display font-semibold leading-snug mb-1" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:0.95rem">{name}</h3>
         {brand_slug && brand_name && (
-          <a href={`/brands/${brand_slug}`} class="font-sans text-xs hover:underline mb-1 block" style="color:#a0621c">by {brand_name} →</a>
+          <a href={`/brands/${brand_slug}`} class="font-sans text-xs hover:underline mb-1 block" style="color:var(--color-accent)">by {brand_name} →</a>
         )}
         <div class="flex flex-wrap items-center gap-2 font-sans text-sm">
           <span style="color:#f59e0b">{'★'.repeat(stars)}{'☆'.repeat(5-stars)}</span>
@@ -79,7 +79,7 @@ const imgSrc = local_image || (image?.includes('media-amazon') ? image : null);
 
     <!-- Price comparison row -->
     {(price || chewy_price) && (
-      <div class="flex items-center justify-around mb-3 p-2.5 rounded-xl" style="background:#fdf8f0;border:1px solid #f5e8d0">
+      <div class="flex items-center justify-around mb-3 p-2.5 rounded-xl" style="background:var(--color-bg-soft);border:1px solid var(--color-surface-warm)">
         {price && (
           <div class="text-center">
             <p class="font-sans text-xs" style="color:#94a3b8">Amazon</p>
@@ -115,7 +115,7 @@ const imgSrc = local_image || (image?.includes('media-amazon') ? image : null);
       {asin === 'SUBSCRIPTION' && (
         <a href={chewyUrl || '#'} rel="nofollow sponsored" target="_blank"
           class="block text-center font-sans font-bold text-sm py-2.5 rounded-xl text-white col-span-2"
-          style="background:linear-gradient(135deg,#a0621c,#7d4a10)">
+          style="background:linear-gradient(135deg,var(--color-accent),var(--color-accent-hover))">
           View subscription →
         </a>
       )}

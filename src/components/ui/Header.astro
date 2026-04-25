@@ -1,18 +1,23 @@
 ---
-const navLinks = [
+const shopLinks = [
   { label: 'Dog Food', href: '/categories/dog-food' },
   { label: 'Toys', href: '/categories/toys' },
   { label: 'Beds', href: '/categories/beds' },
   { label: 'Health', href: '/categories/health' },
   { label: 'Grooming', href: '/categories/grooming' },
+];
+
+const researchLinks = [
   { label: 'All Breeds', href: '/breeds' },
   { label: 'Dog Names', href: '/dog-names' },
+  { label: 'Cost Calculator', href: '/cost-calculator' },
+  { label: 'Breed Quiz', href: '/breed-quiz' },
 ];
 ---
 
 <header
   class="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 shadow-sm"
-  style="border-bottom:1px solid #f5e8d0"
+  style="border-bottom:1px solid var(--color-surface-warm)"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6">
     <div class="flex items-center justify-between h-[82px] sm:h-[88px] lg:h-[96px] gap-4 lg:gap-6">
@@ -23,24 +28,40 @@ const navLinks = [
         class="flex items-center flex-shrink-0"
         aria-label="PupWiki home"
       >
-<img
-  src="/Logo-pupwiki.png"
-  alt="PupWiki"
-  class="block h-14 sm:h-14 lg:h-16 w-auto object-contain"
-  loading="eager"
-  decoding="async"
-/>
+        <img
+          src="/Logo-pupwiki.png"
+          alt="PupWiki"
+          class="block h-14 sm:h-14 lg:h-16 w-auto object-contain"
+          loading="eager"
+          decoding="async"
+        />
       </a>
 
       <!-- Desktop Nav -->
       <nav
-        class="hidden lg:flex items-center justify-center gap-5 xl:gap-7 flex-1 px-4 xl:px-8 font-sans text-sm font-medium"
+        class="hidden lg:flex items-center justify-center gap-1 flex-1 px-4 xl:px-8 font-sans text-sm font-medium"
         aria-label="Main navigation"
       >
-        {navLinks.map((link) => (
+        {shopLinks.map((link) => (
           <a
             href={link.href}
-            class="transition-colors duration-200 whitespace-nowrap hover:text-[#0b153d]"
+            class="transition-colors duration-200 whitespace-nowrap hover:text-[#0b153d] px-2.5 py-1"
+            style="color:#64748b"
+          >
+            {link.label}
+          </a>
+        ))}
+
+        <!-- Separator -->
+        <span class="mx-2 h-4 w-px inline-block flex-shrink-0" style="background:var(--color-border)"></span>
+
+        <!-- Research group label -->
+        <span class="font-sans text-xs font-bold uppercase tracking-widest mr-1 whitespace-nowrap" style="color:var(--color-accent)">Research:</span>
+
+        {researchLinks.map((link) => (
+          <a
+            href={link.href}
+            class="transition-colors duration-200 whitespace-nowrap hover:text-[#0b153d] px-2 py-1"
             style="color:#64748b"
           >
             {link.label}
@@ -48,7 +69,7 @@ const navLinks = [
         ))}
       </nav>
 
-      <!-- Desktop CTA -->
+      <!-- Desktop secondary CTA -->
       <div class="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
         <a
           href="/how-we-test"
@@ -61,7 +82,7 @@ const navLinks = [
         <a
           href="/cost-calculator"
           class="inline-flex items-center justify-center font-sans text-sm font-bold text-white px-5 py-2.5 rounded-xl whitespace-nowrap transition-transform duration-200 hover:-translate-y-[1px]"
-          style="background:linear-gradient(135deg,#0D9488,#0F766E); box-shadow:0 8px 18px rgba(13,148,136,0.22)"
+          style="background:linear-gradient(135deg,#0D9488,#0F766E);box-shadow:0 8px 18px rgba(13,148,136,0.22)"
         >
           Cost Calculator
         </a>
@@ -116,26 +137,43 @@ const navLinks = [
   <div
     id="mobile-nav"
     class="hidden lg:hidden bg-white"
-    style="border-top:1px solid #f5e8d0"
+    style="border-top:1px solid var(--color-surface-warm)"
   >
     <div class="px-4 pb-5 pt-3">
-      <nav class="space-y-0.5" aria-label="Mobile navigation">
-        {navLinks.map((link) => (
+
+      <!-- Shop section -->
+      <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2 mt-1" style="color:var(--color-muted)">Shop</p>
+      <nav class="space-y-0.5 mb-4" aria-label="Shop navigation">
+        {shopLinks.map((link) => (
           <a
             href={link.href}
             class="block py-3 font-sans text-[15px] font-medium transition-colors hover:text-[#0b153d]"
-            style="color:#475569;border-bottom:1px solid #fdf8f0"
+            style="color:#475569;border-bottom:1px solid var(--color-surface-warm)"
           >
             {link.label}
           </a>
         ))}
       </nav>
 
-      <div class="pt-4 flex flex-col gap-2.5">
+      <!-- Research section -->
+      <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:var(--color-accent)">Research</p>
+      <nav class="space-y-0.5 mb-4" aria-label="Research navigation">
+        {researchLinks.map((link) => (
+          <a
+            href={link.href}
+            class="block py-3 font-sans text-[15px] font-medium transition-colors hover:text-[#0b153d]"
+            style="color:#475569;border-bottom:1px solid var(--color-surface-warm)"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="pt-2 flex flex-col gap-2.5">
         <a
           href="/cost-calculator"
           class="block text-center font-sans text-sm font-bold text-white py-3.5 rounded-xl transition-transform duration-200"
-          style="background:linear-gradient(135deg,#0D9488,#0F766E); box-shadow:0 8px 18px rgba(13,148,136,0.22)"
+          style="background:linear-gradient(135deg,#0D9488,#0F766E);box-shadow:0 8px 18px rgba(13,148,136,0.22)"
         >
           Cost Calculator
         </a>
