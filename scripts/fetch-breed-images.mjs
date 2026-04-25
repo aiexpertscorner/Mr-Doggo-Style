@@ -37,7 +37,7 @@ if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
 const DOG_CEO_MAP = {
   'labrador-retriever': 'labrador',
   'golden-retriever': 'retriever/golden',
-  'german-shepherd-dog': 'germanshepherd',
+  'german-shepherd-dog': 'german-shepherd',
   'french-bulldog': 'bulldog/french',
   'bulldog': 'bulldog/english',
   'poodle': 'poodle/standard',
