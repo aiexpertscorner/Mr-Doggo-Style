@@ -88,7 +88,7 @@ const cardId = `pc-${asin}-${Math.random().toString(36).slice(2,7)}`;
 ---
 
 <div class="not-prose bg-white rounded-2xl border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-  style="border-color:#f5e8d0">
+  style="border-color:var(--color-surface-warm)">
 
   {badge && (
     <div class="font-sans text-xs font-bold uppercase tracking-wider text-center py-1.5 text-white"
@@ -101,7 +101,7 @@ const cardId = `pc-${asin}-${Math.random().toString(36).slice(2,7)}`;
       <!-- ── Image slot ────────────────────────────────────── -->
       <div id={`${cardId}-img`}
         class="flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden flex items-center justify-center"
-        style="background:linear-gradient(135deg,#fdf8f0,#fef3c7)">
+        style="background:linear-gradient(135deg,var(--color-surface-warm),#fef3c7)">
 
         {productImgSrc ? (
           <!-- Slot 1: local product image -->
@@ -155,7 +155,7 @@ const cardId = `pc-${asin}-${Math.random().toString(36).slice(2,7)}`;
         {brand_slug && brand_name && (
           <a href={`/brands/${brand_slug}`}
             class="font-sans text-xs hover:underline mb-1 block"
-            style="color:#a0621c">
+            style="color:var(--color-accent)">
             by {brand_name} →
           </a>
         )}
@@ -226,7 +226,7 @@ const cardId = `pc-${asin}-${Math.random().toString(36).slice(2,7)}`;
     <!-- Price comparison -->
     {(price || chewy_price) && (
       <div class="flex items-center justify-around mb-3 p-2.5 rounded-xl"
-        style="background:#fdf8f0;border:1px solid #f5e8d0">
+        style="background:var(--color-bg-soft);border:1px solid var(--color-surface-warm)">
         {price && (
           <div class="text-center">
             <p class="font-sans text-xs" style="color:#94a3b8">Amazon</p>
@@ -267,7 +267,7 @@ const cardId = `pc-${asin}-${Math.random().toString(36).slice(2,7)}`;
       <a href={chewyUrl || amazonUrl}
         rel="nofollow sponsored" target="_blank"
         class="block text-center font-sans font-bold text-sm py-3 rounded-xl text-white"
-        style="background:linear-gradient(135deg,#a0621c,#7d4a10)">
+        style="background:linear-gradient(135deg,var(--color-accent),var(--color-accent-hover))">
         View subscription →
       </a>
     ) : (

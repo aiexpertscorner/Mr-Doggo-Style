@@ -68,6 +68,7 @@
   --color-surface-raised: #ffffff;
   --color-surface-navy: #0b1f36;
   --color-surface-navy-soft: #15365f;
+  --color-surface-warm: #f5e8d0;   /* warm cream — legacy hardcoded value alias */
 
   /* Borders */
   --color-border: #e2e8f0;
