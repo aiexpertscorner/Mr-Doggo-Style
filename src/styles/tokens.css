@@ -1,454 +1,257 @@
 /* =============================================================
    DESIGN TOKENS — PupWiki
-   Light Theme — Navy & Orange Authority Rebrand
-   Based on PupWiki.com logo colours
-   Import this first.
+   Warm editorial light theme.
    ============================================================= */
 
 :root {
-
-  /* ── Brand core colours ───────────────────────────────────── */
-
-  /* Logo-inspired brand colours */
-  --color-logo-orange:      #ff7a00;
+  /* Brand */
+  --color-logo-orange: #ff7a00;
   --color-logo-orange-deep: #d95f00;
-  --color-logo-navy:        #15365f;
-  --color-logo-navy-deep:   #0b1f36;
-  --color-logo-navy-soft:   #234a78;
+  --color-logo-navy: #15365f;
+  --color-logo-navy-deep: #0b1f36;
+  --color-logo-navy-soft: #234a78;
 
-  /* Primary — Deep Trust Navy
-     Use for headers, navigation, authority blocks, links, dark sections */
-  --color-primary:          #15365f;
-  --color-primary-hover:    #0b1f36;
-  --color-primary-active:   #071727;
-  --color-primary-light:    #dbeafe;
-  --color-primary-subtle:   #eff6ff;
-  --color-primary-soft:     #f5f9ff;
+  /* Primary */
+  --color-primary: #15365f;
+  --color-primary-hover: #0f2b4d;
+  --color-primary-active: #081a2e;
+  --color-primary-light: #dbeafe;
+  --color-primary-subtle: #eff6ff;
+  --color-primary-soft: #f5f9ff;
 
-  /* Accent — PupWiki Orange
-     Use for CTA buttons, highlights, badges, important actions */
-  --color-accent:           #ff7a00;
-  --color-accent-hover:     #d95f00;
-  --color-accent-active:    #b84f00;
-  --color-accent-strong:    #c2410c;
-  --color-accent-light:     #ffedd5;
-  --color-accent-subtle:    #fff7ed;
-  --color-accent-soft:      #fff3e4;
+  /* Accent */
+  --color-accent: #ff7a00;
+  --color-accent-hover: #d95f00;
+  --color-accent-active: #b84f00;
+  --color-accent-light: #ffedd5;
+  --color-accent-subtle: #fff7ed;
+  --color-accent-soft: #fff3e4;
 
-  /* CTA aliases — use these for high-conversion buttons */
-  --color-cta:              #ea6a00;
-  --color-cta-hover:        #c95500;
-  --color-cta-active:       #a84300;
-  --color-cta-text:         #ffffff;
-  --color-cta-soft:         #fff3e4;
+  /* CTA */
+  --color-cta: #ea6a00;
+  --color-cta-hover: #c95500;
+  --color-cta-active: #a84300;
+  --color-cta-text: #ffffff;
 
-  /* Secondary — Warm editorial blue */
-  --color-secondary:        #234a78;
-  --color-secondary-hover:  #15365f;
-  --color-secondary-light:  #e8f1fb;
+  /* Secondary */
+  --color-secondary: #234a78;
+  --color-secondary-hover: #15365f;
+  --color-secondary-light: #e8f1fb;
   --color-secondary-subtle: #f4f8fc;
 
-  /* ── Neutral text scale ───────────────────────────────────── */
-
-  /* Text colours — warm slate, optimized for readable dog-care content */
-  --color-heading:          #0b1f36;
-  --color-heading-soft:     #15365f;
-  --color-body:             #334155;
-  --color-body-soft:        #475569;
-  --color-muted:            #64748b;
-  --color-subtle:           #94a3b8;
-  --color-placeholder:      #cbd5e1;
-
-  /* Strong text / inverse text */
-  --color-text-strong:      #071727;
-  --color-text-inverse:     #ffffff;
-  --color-text-on-primary:  #ffffff;
-  --color-text-on-accent:   #ffffff;
+  /* Text */
+  --color-heading: #0b1f36;
+  --color-heading-soft: #15365f;
+  --color-body: #334155;
+  --color-body-soft: #475569;
+  --color-muted: #64748b;
+  --color-subtle: #94a3b8;
+  --color-placeholder: #cbd5e1;
+  --color-text-inverse: #ffffff;
 
   /* Links */
-  --color-link:             #15365f;
-  --color-link-hover:       #ff7a00;
-  --color-link-visited:     #234a78;
+  --color-link: #15365f;
+  --color-link-hover: #ff7a00;
+  --color-link-visited: #234a78;
 
-  /* ── Surface scale ────────────────────────────────────────── */
+  /* Surfaces */
+  --color-bg: #ffffff;
+  --color-bg-soft: #fffaf3;
+  --color-bg-muted: #f8fafc;
+  --color-bg-warm: #fff7ed;
+  --color-bg-cool: #f5f9ff;
+  --color-bg-paper: #fffdf8;
 
-  /* Editorial off-whites */
-  --color-bg:               #ffffff;
-  --color-bg-soft:          #fffaf3;
-  --color-bg-muted:         #f8fafc;
-  --color-bg-warm:          #fff7ed;
-  --color-bg-cool:          #f5f9ff;
-  --color-bg-paper:         #fffdf8;
-
-  /* Cards and elevated surfaces */
-  --color-surface:          #ffffff;
-  --color-surface-soft:     #fffaf3;
-  --color-surface-muted:    #f8fafc;
-  --color-surface-raised:   #ffffff;
-  --color-surface-navy:     #0b1f36;
-  --color-surface-navy-soft:#15365f;
+  --color-surface: #ffffff;
+  --color-surface-soft: #fffaf3;
+  --color-surface-muted: #f8fafc;
+  --color-surface-raised: #ffffff;
+  --color-surface-navy: #0b1f36;
+  --color-surface-navy-soft: #15365f;
 
   /* Borders */
-  --color-border:           #e2e8f0;
-  --color-border-soft:      #edf2f7;
-  --color-border-strong:    #cbd5e1;
-  --color-border-warm:      #fed7aa;
-  --color-border-primary:   rgba(21, 54, 95, 0.18);
-  --color-border-accent:    rgba(255, 122, 0, 0.28);
+  --color-border: #e2e8f0;
+  --color-border-soft: #edf2f7;
+  --color-border-strong: #cbd5e1;
+  --color-border-warm: #fed7aa;
+  --color-border-primary: rgba(21, 54, 95, 0.18);
+  --color-border-accent: rgba(255, 122, 0, 0.22);
 
-  /* Dividers */
-  --color-divider:          #e2e8f0;
-  --color-divider-soft:     #f1f5f9;
+  /* Semantic */
+  --color-success: #047857;
+  --color-success-light: #d1fae5;
+  --color-warning: #d97706;
+  --color-warning-light: #fef3c7;
+  --color-danger: #dc2626;
+  --color-danger-light: #fee2e2;
+  --color-info: #2563eb;
+  --color-info-light: #dbeafe;
 
-  /* ── Semantic / status ────────────────────────────────────── */
+  /* Category accents */
+  --cat-food-bg: #fff7ed;
+  --cat-food-border: #fed7aa;
+  --cat-food-text: #9a3412;
+  --cat-food-accent: #f97316;
 
-  --color-success:          #047857;
-  --color-success-hover:    #065f46;
-  --color-success-light:    #d1fae5;
-  --color-success-subtle:   #ecfdf5;
+  --cat-training-bg: #fff7ed;
+  --cat-training-border: #fed7aa;
+  --cat-training-text: #7c2d12;
+  --cat-training-accent: #ea580c;
 
-  --color-warning:          #d97706;
-  --color-warning-hover:    #b45309;
-  --color-warning-light:    #fef3c7;
-  --color-warning-subtle:   #fffbeb;
+  --cat-health-bg: #f5f9ff;
+  --cat-health-border: #dbeafe;
+  --cat-health-text: #15365f;
+  --cat-health-accent: #2563eb;
 
-  --color-danger:           #dc2626;
-  --color-danger-hover:     #b91c1c;
-  --color-danger-light:     #fee2e2;
-  --color-danger-subtle:    #fef2f2;
+  --cat-products-bg: #fffaf3;
+  --cat-products-border: #fed7aa;
+  --cat-products-text: #9a3412;
+  --cat-products-accent: #ff7a00;
 
-  --color-info:             #2563eb;
-  --color-info-hover:       #1d4ed8;
-  --color-info-light:       #dbeafe;
-  --color-info-subtle:      #eff6ff;
+  --cat-breeds-bg: #eff6ff;
+  --cat-breeds-border: #bfdbfe;
+  --cat-breeds-text: #1e3a8a;
+  --cat-breeds-accent: #15365f;
 
-  /* ── Category palette ───────────────────────────────────────
-     Muted, premium, not too playful. Designed for dog-care taxonomy.
-     Keep orange/navy as brand anchors; categories remain softer.
-  */
-
-  /* Food & Nutrition */
-  --cat-food-bg:            #fff7ed;
-  --cat-food-border:        #fed7aa;
-  --cat-food-icon-bg:       #ffedd5;
-  --cat-food-text:          #9a3412;
-  --cat-food-accent:        #f97316;
-  --cat-food-glow:          rgba(249, 115, 22, 0.10);
-
-  /* Toys & Enrichment */
-  --cat-toys-bg:            #f0fdf4;
-  --cat-toys-border:        #bbf7d0;
-  --cat-toys-icon-bg:       #dcfce7;
-  --cat-toys-text:          #166534;
-  --cat-toys-accent:        #16a34a;
-  --cat-toys-glow:          rgba(22, 163, 74, 0.10);
-
-  /* Health & Vet Guidance */
-  --cat-health-bg:          #f5f9ff;
-  --cat-health-border:      #dbeafe;
-  --cat-health-icon-bg:     #e8f1fb;
-  --cat-health-text:        #15365f;
-  --cat-health-accent:      #2563eb;
-  --cat-health-glow:        rgba(37, 99, 235, 0.10);
-
-  /* Training & Behaviour */
-  --cat-training-bg:        #fff7ed;
-  --cat-training-border:    #fed7aa;
-  --cat-training-icon-bg:   #ffedd5;
-  --cat-training-text:      #7c2d12;
-  --cat-training-accent:    #ea580c;
-  --cat-training-glow:      rgba(234, 88, 12, 0.10);
-
-  /* Grooming */
-  --cat-grooming-bg:        #fdf2f8;
-  --cat-grooming-border:    #fbcfe8;
-  --cat-grooming-icon-bg:   #fce7f3;
-  --cat-grooming-text:      #831843;
-  --cat-grooming-accent:    #db2777;
-  --cat-grooming-glow:      rgba(219, 39, 119, 0.09);
-
-  /* Beds, Home & Lifestyle */
-  --cat-beds-bg:            #f8fafc;
-  --cat-beds-border:        #e2e8f0;
-  --cat-beds-icon-bg:       #f1f5f9;
-  --cat-beds-text:          #334155;
-  --cat-beds-accent:        #64748b;
-  --cat-beds-glow:          rgba(51, 65, 85, 0.08);
-
-  /* Breed Research */
-  --cat-breeds-bg:          #eff6ff;
-  --cat-breeds-border:      #bfdbfe;
-  --cat-breeds-icon-bg:     #dbeafe;
-  --cat-breeds-text:        #1e3a8a;
-  --cat-breeds-accent:      #15365f;
-  --cat-breeds-glow:        rgba(21, 54, 95, 0.10);
-
-  /* Insurance / Protection */
-  --cat-protection-bg:      #f0f9ff;
-  --cat-protection-border:  #bae6fd;
-  --cat-protection-icon-bg: #e0f2fe;
-  --cat-protection-text:    #075985;
-  --cat-protection-accent:  #0284c7;
-  --cat-protection-glow:    rgba(2, 132, 199, 0.10);
-
-  /* Products / Reviews */
-  --cat-products-bg:        #fffaf3;
-  --cat-products-border:    #fed7aa;
-  --cat-products-icon-bg:   #ffedd5;
-  --cat-products-text:      #9a3412;
-  --cat-products-accent:    #ff7a00;
-  --cat-products-glow:      rgba(255, 122, 0, 0.10);
-
-  /* ── Typography ───────────────────────────────────────────── */
-
-  --font-sans:    'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-serif:   'Lora', Georgia, 'Times New Roman', serif;
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
   --font-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono:    'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Type scale — mobile-first, fluid-ready */
-  --text-xs:      0.75rem;      /* 12px */
-  --text-sm:      0.875rem;     /* 14px */
-  --text-base:    1rem;         /* 16px */
-  --text-md:      1.0625rem;    /* 17px */
-  --text-lg:      1.125rem;     /* 18px */
-  --text-xl:      1.25rem;      /* 20px */
-  --text-2xl:     1.5rem;       /* 24px */
-  --text-3xl:     1.875rem;     /* 30px */
-  --text-4xl:     2.25rem;      /* 36px */
-  --text-5xl:     3rem;         /* 48px */
-  --text-6xl:     3.75rem;      /* 60px */
-  --text-7xl:     4.5rem;       /* 72px */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
 
-  /* Fluid display sizes */
-  --text-hero:    clamp(2.7rem, 8vw, 5.75rem);
-  --text-h1:      clamp(2.25rem, 6vw, 4.5rem);
-  --text-h2:      clamp(1.875rem, 4vw, 3rem);
-  --text-h3:      clamp(1.5rem, 3vw, 2.125rem);
+  --text-hero: clamp(2.6rem, 7vw, 5.5rem);
+  --text-h1: clamp(2.25rem, 6vw, 4.25rem);
+  --text-h2: clamp(1.9rem, 4vw, 3rem);
+  --text-h3: clamp(1.5rem, 3vw, 2.15rem);
 
-  /* Line heights */
-  --leading-none:    1;
-  --leading-tight:   1.12;
-  --leading-snug:    1.3;
-  --leading-normal:  1.6;
+  --leading-none: 1;
+  --leading-tight: 1.12;
+  --leading-snug: 1.28;
+  --leading-normal: 1.6;
   --leading-relaxed: 1.8;
 
-  /* Font weights */
-  --weight-normal:  400;
-  --weight-medium:  500;
-  --weight-semi:    600;
-  --weight-bold:    700;
-  --weight-black:   800;
-  --weight-heavy:   900;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semi: 600;
+  --weight-bold: 700;
+  --weight-black: 800;
 
-  /* Letter spacing */
-  --tracking-tight:  -0.04em;
-  --tracking-snug:   -0.02em;
-  --tracking-normal:  0;
-  --tracking-wide:    0.04em;
-  --tracking-label:   0.14em;
+  --tracking-tight: -0.04em;
+  --tracking-snug: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-label: 0.14em;
 
-  /* ── Spacing ──────────────────────────────────────────────── */
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-28: 7rem;
+  --space-32: 8rem;
 
-  --space-0:   0;
-  --space-1:   0.25rem;   /* 4px  */
-  --space-2:   0.5rem;    /* 8px  */
-  --space-3:   0.75rem;   /* 12px */
-  --space-4:   1rem;      /* 16px */
-  --space-5:   1.25rem;   /* 20px */
-  --space-6:   1.5rem;    /* 24px */
-  --space-7:   1.75rem;   /* 28px */
-  --space-8:   2rem;      /* 32px */
-  --space-10:  2.5rem;    /* 40px */
-  --space-12:  3rem;      /* 48px */
-  --space-14:  3.5rem;    /* 56px */
-  --space-16:  4rem;      /* 64px */
-  --space-20:  5rem;      /* 80px */
-  --space-24:  6rem;      /* 96px */
-  --space-28:  7rem;      /* 112px */
-  --space-32:  8rem;      /* 128px */
-
-  /* Section spacing */
   --section-padding-sm: 3rem;
-  --section-padding:    5rem;
+  --section-padding: 5rem;
   --section-padding-lg: 7rem;
 
-  /* ── Border radius ────────────────────────────────────────── */
+  /* Radius */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
 
-  --radius-xs:    0.25rem;    /* 4px  */
-  --radius-sm:    0.375rem;   /* 6px  */
-  --radius-md:    0.5rem;     /* 8px  */
-  --radius-lg:    0.75rem;    /* 12px */
-  --radius-xl:    1rem;       /* 16px */
-  --radius-2xl:   1.5rem;     /* 24px */
-  --radius-3xl:   2rem;       /* 32px */
-  --radius-4xl:   2.5rem;     /* 40px */
-  --radius-full:  9999px;
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(7, 23, 39, 0.04);
+  --shadow-sm: 0 2px 4px rgba(7, 23, 39, 0.06);
+  --shadow-md: 0 8px 18px rgba(7, 23, 39, 0.08);
+  --shadow-lg: 0 18px 38px rgba(7, 23, 39, 0.12);
+  --shadow-xl: 0 24px 54px rgba(7, 23, 39, 0.18);
 
-  /* ── Shadows ──────────────────────────────────────────────── */
+  --shadow-card: 0 2px 10px rgba(7, 23, 39, 0.06);
+  --shadow-card-hover: 0 18px 40px rgba(7, 23, 39, 0.14);
+  --shadow-primary: 0 10px 24px rgba(21, 54, 95, 0.18);
+  --shadow-accent: 0 10px 24px rgba(255, 122, 0, 0.24);
+  --shadow-cta: 0 12px 28px rgba(234, 106, 0, 0.28);
 
-  --shadow-xs:   0 1px 2px 0 rgba(7, 23, 39, 0.04);
+  /* Focus */
+  --ring-primary: 0 0 0 4px rgba(21, 54, 95, 0.16);
+  --ring-accent: 0 0 0 4px rgba(255, 122, 0, 0.18);
+  --ring-danger: 0 0 0 4px rgba(220, 38, 38, 0.16);
 
-  --shadow-sm:   0 2px 4px 0 rgba(7, 23, 39, 0.05),
-                 0 1px 2px 0 rgba(7, 23, 39, 0.04);
-
-  --shadow-md:   0 6px 12px -4px rgba(7, 23, 39, 0.10),
-                 0 3px 6px -3px rgba(7, 23, 39, 0.08);
-
-  --shadow-lg:   0 16px 30px -12px rgba(7, 23, 39, 0.16),
-                 0 8px 14px -10px rgba(7, 23, 39, 0.10);
-
-  --shadow-xl:   0 24px 48px -18px rgba(7, 23, 39, 0.20),
-                 0 12px 20px -14px rgba(7, 23, 39, 0.12);
-
-  --shadow-card:       0 2px 8px rgba(7, 23, 39, 0.06);
-  --shadow-card-hover: 0 18px 40px rgba(7, 23, 39, 0.13);
-
-  /* Brand shadows */
-  --shadow-primary:    0 8px 22px rgba(21, 54, 95, 0.22);
-  --shadow-primary-lg: 0 14px 34px rgba(21, 54, 95, 0.28);
-
-  --shadow-accent:     0 8px 22px rgba(255, 122, 0, 0.28);
-  --shadow-accent-lg:  0 14px 34px rgba(255, 122, 0, 0.34);
-
-  --shadow-cta:        0 10px 24px rgba(234, 106, 0, 0.30);
-
-  /* Focus rings */
-  --ring-primary:      0 0 0 4px rgba(21, 54, 95, 0.16);
-  --ring-accent:       0 0 0 4px rgba(255, 122, 0, 0.20);
-  --ring-danger:       0 0 0 4px rgba(220, 38, 38, 0.16);
-
-  /* ── Component aliases ────────────────────────────────────── */
-
-  /* Header */
-  --header-bg:                  rgba(255, 255, 255, 0.94);
-  --header-border:              rgba(226, 232, 240, 0.9);
-  --header-text:                var(--color-primary);
-  --header-link:                var(--color-body);
-  --header-link-hover:          var(--color-primary);
-  --header-height-mobile:       4.75rem;
-  --header-height-desktop:      5.25rem;
-
-  /* Buttons */
-  --button-primary-bg:          var(--color-cta);
-  --button-primary-bg-hover:    var(--color-cta-hover);
-  --button-primary-bg-active:   var(--color-cta-active);
-  --button-primary-text:        #ffffff;
-  --button-primary-shadow:      var(--shadow-cta);
-
-  --button-secondary-bg:        var(--color-primary);
-  --button-secondary-bg-hover:  var(--color-primary-hover);
-  --button-secondary-text:      #ffffff;
-
-  --button-outline-bg:          #ffffff;
-  --button-outline-border:      var(--color-border-strong);
-  --button-outline-text:        var(--color-primary);
-  --button-outline-bg-hover:    var(--color-primary-subtle);
-  --button-outline-border-hover:var(--color-primary);
-
-  --button-ghost-bg-hover:      var(--color-primary-subtle);
-  --button-ghost-text:          var(--color-primary);
-
-  /* Cards */
-  --card-bg:                    var(--color-surface);
-  --card-bg-soft:               var(--color-surface-soft);
-  --card-border:                var(--color-border);
-  --card-border-hover:          rgba(21, 54, 95, 0.22);
-  --card-radius:                var(--radius-2xl);
-  --card-shadow:                var(--shadow-card);
-  --card-shadow-hover:          var(--shadow-card-hover);
-
-  /* Badges */
-  --badge-primary-bg:           var(--color-primary-subtle);
-  --badge-primary-text:         var(--color-primary);
-  --badge-primary-border:       rgba(21, 54, 95, 0.14);
-
-  --badge-accent-bg:            var(--color-accent-subtle);
-  --badge-accent-text:          #9a3412;
-  --badge-accent-border:        rgba(255, 122, 0, 0.22);
-
-  --badge-neutral-bg:           #f8fafc;
-  --badge-neutral-text:         #475569;
-  --badge-neutral-border:       #e2e8f0;
-
-  /* Hero */
-  --hero-bg:                    linear-gradient(180deg, #fffaf3 0%, #ffffff 72%);
-  --hero-eyebrow-bg:            #e8f1fb;
-  --hero-eyebrow-text:          var(--color-primary);
-  --hero-heading:               var(--color-heading);
-  --hero-heading-accent:        var(--color-accent);
-  --hero-body:                  var(--color-body-soft);
-
-  /* Forms */
-  --input-bg:                   #ffffff;
-  --input-border:               var(--color-border-strong);
-  --input-border-hover:         rgba(21, 54, 95, 0.32);
-  --input-border-focus:         var(--color-primary);
-  --input-text:                 var(--color-body);
-  --input-placeholder:          var(--color-placeholder);
-  --input-shadow-focus:         var(--ring-primary);
-
-  /* Tables */
-  --table-bg:                   #ffffff;
-  --table-header-bg:            #f8fafc;
-  --table-header-text:          var(--color-heading);
-  --table-row-border:           var(--color-border);
-  --table-row-hover:            #f5f9ff;
-
-  /* Disclosure / affiliate / editorial notes */
-  --disclosure-bg:              #fff7ed;
-  --disclosure-border:          #fed7aa;
-  --disclosure-text:            #7c2d12;
-
-  --editorial-note-bg:          #f5f9ff;
-  --editorial-note-border:      #dbeafe;
-  --editorial-note-text:        #15365f;
-
-  --medical-note-bg:            #f8fafc;
-  --medical-note-border:        #cbd5e1;
-  --medical-note-text:          #334155;
-
-  /* ── Z-index scale ────────────────────────────────────────── */
-
-  --z-base:      1;
-  --z-above:     10;
-  --z-dropdown:  40;
-  --z-nav:       50;
-  --z-overlay:   100;
-  --z-modal:     200;
-  --z-toast:     300;
-
-  /* ── Transitions ──────────────────────────────────────────── */
-
-  --transition-fast:    100ms ease;
-  --transition-base:    150ms ease;
-  --transition-slow:    250ms ease;
-  --transition-hover:   all 200ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth:  all 280ms cubic-bezier(0.22, 1, 0.36, 1);
-
-  /* ── Layout ───────────────────────────────────────────────── */
-
-  --max-width:          1280px;
-  --max-width-wide:     1440px;
-  --max-width-prose:    720px;
-  --max-width-narrow:   480px;
-
-  --content-padding:        1.5rem;
+  /* Layout */
+  --max-width: 1280px;
+  --max-width-wide: 1440px;
+  --max-width-prose: 72ch;
   --content-padding-mobile: 1.25rem;
-  --content-padding-wide:   2rem;
+  --content-padding: 1.5rem;
+  --content-padding-wide: 2rem;
 
-  /* ── Logo usage ───────────────────────────────────────────── */
+  /* Component aliases */
+  --card-bg: var(--color-surface);
+  --card-bg-soft: var(--color-surface-soft);
+  --card-border: var(--color-border);
+  --card-border-hover: rgba(21, 54, 95, 0.22);
+  --card-radius: var(--radius-2xl);
+  --card-shadow: var(--shadow-card);
+  --card-shadow-hover: var(--shadow-card-hover);
 
-  --logo-max-width-mobile:  148px;
-  --logo-max-width-desktop: 190px;
-  --logo-header-height:     44px;
-  --logo-colour-primary:    var(--color-logo-navy);
-  --logo-colour-accent:     var(--color-logo-orange);
+  --button-primary-bg: var(--color-cta);
+  --button-primary-bg-hover: var(--color-cta-hover);
+  --button-primary-bg-active: var(--color-cta-active);
+  --button-primary-text: var(--color-cta-text);
+
+  --button-secondary-bg: var(--color-primary);
+  --button-secondary-bg-hover: var(--color-primary-hover);
+  --button-secondary-text: #ffffff;
+
+  --button-outline-bg: #ffffff;
+  --button-outline-border: var(--color-border-strong);
+  --button-outline-text: var(--color-primary);
+  --button-outline-bg-hover: var(--color-primary-subtle);
+
+  --hero-bg: linear-gradient(180deg, #fffaf3 0%, #ffffff 72%);
+  --hero-heading: var(--color-heading);
+  --hero-heading-accent: var(--color-accent);
+  --hero-body: var(--color-body-soft);
+
+  --z-base: 1;
+  --z-nav: 50;
+  --z-overlay: 100;
+  --z-modal: 200;
+
+  --transition-fast: 100ms ease;
+  --transition-base: 160ms ease;
+  --transition-slow: 240ms ease;
+  --transition-hover: all 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-/* ── Optional base mappings ───────────────────────────────────
-   These help if your app uses plain CSS variables directly.
-*/
 
 html {
   color-scheme: light;
@@ -462,34 +265,7 @@ body {
   line-height: var(--leading-normal);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-heading);
-  line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-snug);
-}
-
-a {
-  color: var(--color-link);
-}
-
-a:hover {
-  color: var(--color-link-hover);
-}
-
 ::selection {
   background: var(--color-accent-light);
   color: var(--color-heading);
-}
-
-/* ── Dark colour overrides ────────────────────────────────────
-   Future-proof only. PupWiki remains light-theme first.
-*/
-
-@media (prefers-color-scheme: dark) {
-  /* intentionally empty — light theme only for now */
 }

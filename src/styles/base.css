@@ -1,10 +1,10 @@
 /* =============================================================
-   BASE — Reset, body, and global typographic defaults
-   Requires tokens.css to be loaded first.
+   BASE — reset, body, default typography, forms, focus.
    ============================================================= */
 
-/* ── Modern reset ──────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -18,6 +18,7 @@ html {
 }
 
 body {
+  min-height: 100vh;
   font-family: var(--font-sans);
   font-size: var(--text-base);
   font-weight: var(--weight-normal);
@@ -29,8 +30,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* ── Images ─────────────────────────────────────────────────── */
-img, video, svg {
+img,
+video,
+svg,
+canvas {
   display: block;
   max-width: 100%;
 }
@@ -39,113 +42,124 @@ img {
   height: auto;
 }
 
-/* ── Forms & interactive elements ──────────────────────────── */
-button, input, select, textarea {
+iframe {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
   font: inherit;
 }
 
 button {
-  cursor: pointer;
   border: none;
   background: none;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  color: var(--color-body);
+}
+
+textarea {
+  resize: vertical;
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-link);
   text-decoration: none;
+  transition: color var(--transition-base);
 }
 
 a:hover {
-  color: var(--color-primary-hover);
+  color: var(--color-link-hover);
 }
 
-/* ── Headings ────────────────────────────────────────────────── */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
   font-weight: var(--weight-black);
   color: var(--color-heading);
   line-height: var(--leading-tight);
   letter-spacing: -0.025em;
 }
 
-h1 { font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl)); }
-h2 { font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl)); }
-h3 { font-size: clamp(var(--text-xl),  3vw, var(--text-2xl)); }
+h1 { font-size: var(--text-h1); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
 h4 { font-size: var(--text-xl); }
 h5 { font-size: var(--text-lg); }
 h6 { font-size: var(--text-base); }
 
-/* ── Prose headings use Lora serif ──────────────────────────── */
-.prose h1,
-.prose h2,
-.prose h3 {
-  font-family: var(--font-serif);
-  font-weight: var(--weight-bold);
-  letter-spacing: -0.01em;
-}
-
-/* ── Body text ───────────────────────────────────────────────── */
 p {
-  line-height: var(--leading-relaxed);
   color: var(--color-body);
+  line-height: var(--leading-relaxed);
 }
 
-p + p {
-  margin-top: 1em;
-}
-
-/* ── Lists ───────────────────────────────────────────────────── */
-ul, ol {
-  padding-left: 1.5em;
+ul,
+ol {
+  padding-left: 1.25rem;
 }
 
 li {
   line-height: var(--leading-relaxed);
 }
 
-/* ── Horizontal rule ─────────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 hr {
   border: none;
   border-top: 1px solid var(--color-border);
   margin: var(--space-8) 0;
 }
 
-/* ── Code ────────────────────────────────────────────────────── */
-code {
+code,
+kbd {
   font-family: var(--font-mono);
   font-size: 0.875em;
   background: var(--color-bg-muted);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  padding: 0.1em 0.35em;
+  padding: 0.15em 0.4em;
   color: var(--color-heading);
 }
 
 pre {
   font-family: var(--font-mono);
-  background: var(--color-heading);
+  background: var(--color-surface-navy);
   color: #e2e8f0;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: var(--space-6);
   overflow-x: auto;
   font-size: var(--text-sm);
   line-height: 1.7;
+  box-shadow: var(--shadow-md);
 }
 
 pre code {
-  background: none;
+  background: transparent;
   border: none;
   padding: 0;
   color: inherit;
   font-size: inherit;
 }
 
-/* ── Blockquote ──────────────────────────────────────────────── */
 blockquote {
   border-left: 3px solid var(--color-primary);
   padding: var(--space-4) var(--space-6);
   background: var(--color-primary-subtle);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   font-family: var(--font-serif);
   font-style: italic;
   font-size: var(--text-lg);
@@ -153,38 +167,83 @@ blockquote {
   line-height: var(--leading-snug);
 }
 
-/* ── Selection ────────────────────────────────────────────────── */
-::selection {
-  background: var(--color-primary-light);
-  color: var(--color-heading);
-}
-
-/* ── Focus ────────────────────────────────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
 
-/* ── Scrollbar ───────────────────────────────────────────────── */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--color-bg-soft); }
-::-webkit-scrollbar-thumb { background: var(--color-border-strong); border-radius: var(--radius-full); }
-::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
-
-/* ── Screen reader only ──────────────────────────────────────── */
-.sr-only {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
+[hidden] {
+  display: none !important;
 }
 
-/* ── Print basics ────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 0.875rem 1rem;
+  background: var(--color-heading);
+  color: white;
+  border-radius: var(--radius-xl);
+  font-weight: var(--weight-bold);
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, var(--space-5));
+}
+
+.surface {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.surface--soft {
+  background: var(--color-surface-soft);
+}
+
+.surface--muted {
+  background: var(--color-surface-muted);
+}
+
+.surface--warm {
+  background: var(--color-bg-warm);
+}
+
 @media print {
-  body { background: white; color: black; }
-  nav, footer, .no-print { display: none; }
+  body {
+    background: white;
+    color: black;
+  }
+
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
 }
