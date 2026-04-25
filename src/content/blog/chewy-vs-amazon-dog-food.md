@@ -5,6 +5,9 @@ pubDate: 2026-03-09
 category: "Dog Food"
 tags: ["comparison", "chewy", "amazon", "buying-guide", "save-money"]
 author: "The PupWiki Team"
+postType: "comparison"
+readTime: 6
+schemaType: "Article"
 ---
 
 Every dog owner buying food online eventually asks: should I be buying this on Chewy instead of Amazon? Or vice versa? We tracked prices for 12 popular dog foods across both platforms for six months to answer this definitively.
