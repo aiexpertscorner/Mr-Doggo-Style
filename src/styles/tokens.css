@@ -31,6 +31,7 @@
   --color-bg-muted:        #F5F5F4;   /* stone-100 */
   --color-border:          #E7E5E4;   /* stone-200 */
   --color-border-strong:   #D6D3D1;   /* stone-300 */
+  --color-surface-warm:    #f5e8d0;   /* warm cream — replaces hardcoded #f5e8d0 */
 
   /* Semantic / status */
   --color-success:         #059669;   /* emerald-600 */

@@ -71,3 +71,90 @@ The site uses a light theme only (dark mode intentionally left empty in tokens.c
 **Blog frontmatter:** Posts optionally include `breedSlug` and `breedName` to associate them with a breed cluster, and `topProduct` (with `asin`) to populate the sidebar product widget.
 
 **Environment variable:** `PUBLIC_GA_MEASUREMENT_ID` enables Google Analytics 4 in the base layout when set.
+
+---
+
+## Design System Rules
+
+**CRITICAL: Always use CSS token variables. Never hardcode hex values.**
+
+Token substitution map for legacy values:
+- `#a0621c` → `var(--color-accent)`
+- `#7d4a10` → `var(--color-accent-hover)`
+- `#f5e8d0` → `var(--color-surface-warm)`
+- `bark-500` / `bark-700` / `bark-100` Tailwind classes → replace with token vars inline
+
+When writing new component styles:
+- Colors: only `var(--color-*)` tokens from `tokens.css`
+- Spacing: prefer `var(--space-*)` tokens
+- Typography: prefer `var(--text-*)` and `var(--font-*)` tokens
+- Shadows: `var(--shadow-*)` tokens
+- The "bark" Tailwind colour group has been removed — do not reference `bark-*` classes
+
+---
+
+## AWIN-First CTA Policy
+
+**Priority order for product CTAs:**
+1. **AWIN partners (primary):** JugBow, ChefPaw, Raw Wild, Crown & Paw — always prefer tidd.ly deeplinks
+2. **Amazon (secondary):** use for product roundups where no AWIN match exists
+3. **Chewy:** disabled as primary CTA (`ENABLE_CHEWY = false` in `src/lib/site-config.ts`)
+
+**Active AWIN deeplinks (from `src/data/affiliate-links.ts`):**
+- JugBow: `https://tidd.ly/3QryFd6`
+- ChefPaw: `https://tidd.ly/41TPa44`
+- Raw Wild: `https://tidd.ly/4e36ta9`
+- Crown & Paw: `https://tidd.ly/496jo7K`
+
+**Amazon badge compliance:** Use the badge image for Amazon CTAs:
+```
+[![Available at Amazon](/images/amazon/available-at-amazon.png)](https://www.amazon.com/dp/ASIN/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
+```
+Never use the Amazon badge image for AWIN / non-Amazon links.
+
+**AWIN link format:**
+```
+[Link text](https://tidd.ly/XXXXX){rel="nofollow sponsored"}
+```
+
+**Disclosure:** Every page with affiliate CTAs must include a disclosure line. The `AffiliateDisclosure.astro` component handles this in layouts.
+
+---
+
+## Geo Feature Standards
+
+**Available geo datasets (`src/data/`):**
+- `us-states-insurance-index.json` — 50 states + DC, multipliers 0.84 (MS) → 1.38 (NY)
+- `actuarial-breed-rates.json` — 35+ breed-specific base monthly premiums; size-based fallback
+- `actuarial-age-factors.json` — 16 age buckets, 0.77× (puppy) → 3.53× (geriatric)
+- `dog-breeds-by-country-2025.csv` — breed counts by country of origin
+- `origin_country` field in `master-breeds.json` — exposed via breed page badge + filter
+
+**State selector:** The `StateAgeSelector.astro` component handles 50-state dropdown + age bucket selector. It emits `stateChange` and `ageChange` DOM events. Cost calculator pages embed this and recalculate using vanilla JS.
+
+**Default state:** Always default to `CA` (California) when no state is selected, with a visible "Showing costs for: California" label that updates on selection.
+
+---
+
+## Page Template Standards
+
+Every page template MUST include:
+
+1. **BreadcrumbList** — `Home → Section → Page` on every page (JSON-LD schema + visible UI)
+2. **Related content strip** — min 3 links at the bottom of every content page
+3. **Cross-links** — breed page ↔ cost calc ↔ dog names ↔ relevant blog posts
+4. **Affiliate disclosure** — visible disclosure on any page with affiliate CTAs
+5. **Meta description** — every page must have a unique `description` in frontmatter or passed to BaseLayout
+
+**Cross-link pattern (breed cluster):**
+- Breed page links to: cost calculator, dog names, relevant health/food/training posts
+- Cost calculator links to: breed page, health profile, supplement recommendations
+- Dog names page links to: breed page, cost calculator
+
+**Schema requirements by page type:**
+- Blog post: `Article` with `datePublished`, `dateModified`, `author`
+- Breed page: `ItemList` + `BreadcrumbList`
+- Cost calculator: `FAQPage` + `BreadcrumbList`
+- All pages: `BreadcrumbList`
+
+**Mobile-first:** All new components must be single-column at `< 768px`. Sidebar content stacks below main content at `< 1024px`. Test at 375px viewport.

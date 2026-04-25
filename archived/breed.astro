@@ -1,0 +1,497 @@
+---
+/**
+ * breeds/[breed].astro — Breed hub page v2
+ * - Real Dog CEO images via breed.image_url
+ * - Full master-breeds.json data: ranking, FCI, traits, products
+ * - Cluster links to all 10 content types
+ * - Tailwind CSS (matching existing site design)
+ */
+import BaseLayout    from '../../layouts/BaseLayout.astro';
+import masterBreeds  from '../../data/master-breeds.json';
+import productIndex  from '../../data/product-index.json';
+import breedLinkMap  from '../../data/breed-link-map.json';
+import contentStatus from '../../data/content-status.json';
+
+const AFFILIATE_TAG = 'aiexpertscorn-20';
+const SITE          = 'https://mrdoggostyle.com';
+
+export function getStaticPaths() {
+  return (masterBreeds as any[]).map(b => ({ params: { breed: b.slug } }));
+}
+
+const { breed: slug } = Astro.params;
+const b = (masterBreeds as any[]).find(x => x.slug === slug);
+if (!b) return Astro.redirect('/breeds');
+
+const links  = (breedLinkMap as any)[slug]     || {};
+const status = (contentStatus as any)[slug]    || {};
+const picks  = b.product_picks                 || {};
+const rank   = b.ranking_data                  || {};
+const life   = b.life_expectancy               || {};
+const wt     = b.weight                        || {};
+const ht     = b.height                        || {};
+
+// Get matched products
+const topProds = Object.entries(picks)
+  .map(([cat, id]) => { const p = (productIndex as any)[id as string]; return p ? {...p, _cat: cat} : null; })
+  .filter(Boolean).slice(0, 6);
+
+const foodProd = picks['dog-food'] ? (productIndex as any)[picks['dog-food']] : null;
+const toyProd  = picks['toys']     ? (productIndex as any)[picks['toys']]     : null;
+
+const SIZE_EMOJI: Record<string,string> = { small:'🐕', medium:'🐕‍🦺', large:'🐕‍🦺', giant:'🦮' };
+const COAT_LABEL: Record<string,string> = {
+  double:'Double coat', long:'Long coat', short:'Short coat', wiry:'Wire coat',
+  curly:'Curly coat', silky:'Silky coat', corded:'Corded', hairless:'Hairless', wavy:'Wavy coat',
+};
+const ENERGY_COLOR: Record<string,string> = { active:'#16a34a', regular:'#d97706', calm:'#6366f1' };
+const TRAIN_COLOR:  Record<string,string> = { easy:'#16a34a', moderate:'#d97706', difficult:'#ef4444' };
+
+function amzUrl(asin: string) { return `https://www.amazon.com/dp/${asin}/?tag=${AFFILIATE_TAG}`; }
+function pctBar(val: number) { return Math.round((val || 0) * 100); }
+
+const CLUSTER_LINKS = [
+  { key:'food_post',       href: links.food_post,       emoji:'🍖', label:`Best food for ${b.name}s`       },
+  { key:'toy_post',        href: links.toy_post,        emoji:'🎾', label:`Best toys for ${b.name}s`        },
+  { key:'names_page',      href: links.names_page,      emoji:'✍️', label:`${b.name} names`                 },
+  { key:'bed_post',        href: links.bed_post,        emoji:'🛏️', label:`Best beds for ${b.name}s`        },
+  { key:'grooming_post',   href: links.grooming_post,   emoji:'✂️', label:`Grooming guide`                  },
+  { key:'health_post',     href: links.health_post,     emoji:'🩺', label:`Health problems`                 },
+  { key:'supplement_post', href: links.supplement_post, emoji:'💊', label:`Best supplements`                },
+  { key:'training_post',   href: links.training_post,   emoji:'🦮', label:`Training guide`                  },
+];
+
+const TRAITS = [
+  { label:'Energy',       val: b.traits?.energy_value       || 0, color:'#16a34a' },
+  { label:'Shedding',     val: b.traits?.shedding_value     || 0, color:'#f59e0b' },
+  { label:'Trainability', val: b.traits?.trainability_value || 0, color:'#3b82f6' },
+  { label:'Grooming',     val: b.traits?.grooming_value     || 0, color:'#8b5cf6' },
+  { label:'Friendliness', val: b.traits?.demeanor_value     || 0, color:'#ec4899' },
+];
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": b.seo?.title || `${b.name} Dog Breed Guide`,
+  "description": b.seo?.description,
+  "image": b.image_url || "",
+  "author": { "@type": "Organization", "name": "Mr. Doggo Style" },
+  "publisher": { "@type": "Organization", "name": "Mr. Doggo Style" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE}/breeds/${slug}` },
+});
+---
+
+<BaseLayout
+  title={b.seo?.title || `${b.name} Dog — Expert Care Guide & Products 2026`}
+  description={b.seo?.description || `Complete ${b.name} guide: best food, toys, beds and grooming matched to this breed's size, energy and coat type.`}
+  canonicalURL={`${SITE}/breeds/${slug}`}
+>
+  <script type="application/ld+json" set:html={jsonLd} />
+
+  <!-- ── Breed Hero ── -->
+  <div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
+    <div class="max-w-7xl mx-auto px-4 py-10 sm:py-14">
+
+      <!-- Breadcrumb -->
+      <nav class="font-sans text-sm mb-4 flex flex-wrap items-center gap-1" style="color:#a0621c">
+        <a href="/" class="hover:underline" style="color:#a0621c">Home</a>
+        <span style="color:#d4a574">›</span>
+        <a href="/breeds" class="hover:underline" style="color:#a0621c">Breeds</a>
+        <span style="color:#d4a574">›</span>
+        <span style="color:#5c340a">{b.name}</span>
+      </nav>
+
+      <div class="flex flex-col md:flex-row md:items-start gap-8">
+
+        <!-- Image -->
+        <div class="flex-shrink-0">
+          {b.image_url ? (
+            <img
+              src={b.image_url}
+              alt={`${b.name} dog`}
+              width="240"
+              height="240"
+              loading="eager"
+              decoding="async"
+              class="w-48 h-48 md:w-60 md:h-60 object-cover rounded-2xl shadow-lg border-4"
+              style="border-color:#e8ccaa"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            />
+            <div class="w-48 h-48 md:w-60 md:h-60 rounded-2xl hidden items-center justify-content-center text-7xl" style="background:#f5e8d0;display:none">
+              {SIZE_EMOJI[b.size_category]||'🐕'}
+            </div>
+          ) : (
+            <div class="w-48 h-48 md:w-60 md:h-60 rounded-2xl flex items-center justify-center text-7xl" style="background:#f5e8d0">
+              {SIZE_EMOJI[b.size_category]||'🐕'}
+            </div>
+          )}
+        </div>
+
+        <!-- Info -->
+        <div class="flex-1 min-w-0">
+          <!-- Badges -->
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#a0621c;color:white">
+              {b.size_category.charAt(0).toUpperCase()+b.size_category.slice(1)} breed
+            </span>
+            <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#fef3c7;color:#92400e">
+              {b.energy_level} energy
+            </span>
+            <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f3f4f6;color:#374151">
+              {COAT_LABEL[b.coat_type]||b.coat_type}
+            </span>
+            {b.akc_group && (
+              <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#ede9fe;color:#5b21b6">
+                {b.akc_group}
+              </span>
+            )}
+            {b.origin_country && (
+              <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f0fdf4;color:#15803d">
+                🌍 {b.origin_country}
+              </span>
+            )}
+            {b.akc_popularity && b.akc_popularity <= 20 && (
+              <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#fef9c3;color:#854d0e">
+                🏆 #{b.akc_popularity} most popular
+              </span>
+            )}
+          </div>
+
+          <h1 class="font-display text-4xl md:text-5xl font-bold mb-2" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+            {b.name}
+          </h1>
+
+          {b.temperament && (
+            <p class="font-body text-lg italic mb-3" style="color:#64748b;font-family:'Source Serif 4',Georgia,serif">
+              {b.temperament}
+            </p>
+          )}
+
+          <p class="font-sans text-base leading-relaxed mb-4 max-w-2xl" style="color:#475569">
+            {b.description?.slice(0,280)}{b.description?.length > 280 ? '…' : ''}
+          </p>
+
+          <!-- Quick facts row -->
+          <div class="flex flex-wrap gap-5 font-sans text-sm" style="color:#64748b">
+            {wt.min_lbs && wt.max_lbs && <span>⚖️ {wt.min_lbs}–{wt.max_lbs} lbs ({wt.min_kg}–{wt.max_kg} kg)</span>}
+            {ht.min_in  && ht.max_in  && <span>📏 {ht.min_in}–{ht.max_in}"</span>}
+            {life.min   && life.max   && <span>🎂 {life.min}–{life.max} yr lifespan</span>}
+            {rank.intelligence_rank   && <span>🧠 Intelligence #{rank.intelligence_rank} ({rank.intelligence_label})</span>}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Main Content ── -->
+  <div class="max-w-7xl mx-auto px-4 py-10">
+    <div class="lg:grid lg:grid-cols-[1fr_300px] lg:gap-10">
+
+      <!-- Left column -->
+      <div class="space-y-10 min-w-0">
+
+        <!-- Trait bars -->
+        <section>
+          <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+            {b.name} Characteristics
+          </h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {TRAITS.map(t => (
+              <div class="rounded-xl p-4" style="background:#fdf8f0;border:1px solid #e8ccaa">
+                <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">{t.label}</p>
+                <div class="h-2 rounded-full mb-2" style="background:#e8ccaa;overflow:hidden">
+                  <div class="h-full rounded-full" style={`width:${pctBar(t.val)}%;background:${t.color}`}></div>
+                </div>
+                <p class="font-sans text-sm font-semibold" style="color:#1e293b">{pctBar(t.val)}%</p>
+              </div>
+            ))}
+            <div class="rounded-xl p-4" style="background:#fdf8f0;border:1px solid #e8ccaa">
+              <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Coat Type</p>
+              <p class="font-sans text-sm font-semibold" style="color:#1e293b">{COAT_LABEL[b.coat_type]||b.coat_type}</p>
+              <p class="font-sans text-xs mt-1" style="color:#64748b">{b.grooming_freq}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ranking data panel -->
+        {rank && rank.intelligence_rank && (
+          <section class="rounded-2xl p-6" style="background:linear-gradient(135deg,#fdf8f0,#fef3c7);border:1px solid #fbbf24">
+            <p class="font-sans text-xs font-bold uppercase tracking-wider mb-4" style="color:#92400e">Breed Data</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {rank.intelligence_rank && (
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                  <div class="text-2xl mb-1">🧠</div>
+                  <div class="font-sans font-black text-xl" style="color:#1e293b">#{rank.intelligence_rank}</div>
+                  <div class="font-sans text-xs" style="color:#64748b">Intelligence</div>
+                </div>
+              )}
+              {rank.longevity_years && (
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                  <div class="text-2xl mb-1">🎂</div>
+                  <div class="font-sans font-black text-xl" style="color:#1e293b">{rank.longevity_years}yr</div>
+                  <div class="font-sans text-xs" style="color:#64748b">Avg lifespan</div>
+                </div>
+              )}
+              {rank.lifetime_cost_usd && (
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                  <div class="text-2xl mb-1">💰</div>
+                  <div class="font-sans font-black text-xl" style="color:#1e293b">${(rank.lifetime_cost_usd/1000).toFixed(0)}K</div>
+                  <div class="font-sans text-xs" style="color:#64748b">Lifetime cost</div>
+                </div>
+              )}
+              {rank.annual_food_cost && (
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                  <div class="text-2xl mb-1">🍖</div>
+                  <div class="font-sans font-black text-xl" style="color:#1e293b">${rank.annual_food_cost}/yr</div>
+                  <div class="font-sans text-xs" style="color:#64748b">Annual food</div>
+                </div>
+              )}
+              {rank.children_score !== undefined && (
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                  <div class="text-2xl mb-1">👨‍👩‍👧</div>
+                  <div class="font-sans font-black text-xl" style="color:#1e293b">
+                    {rank.children_score >= 0.8 ? 'Great' : rank.children_score >= 0.5 ? 'Good' : 'Careful'}
+                  </div>
+                  <div class="font-sans text-xs" style="color:#64748b">With kids</div>
+                </div>
+              )}
+              {rank.genetic_ailments !== undefined && (
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                  <div class="text-2xl mb-1">🩺</div>
+                  <div class="font-sans font-black text-xl" style="color:#1e293b">{rank.genetic_ailments}</div>
+                  <div class="font-sans text-xs" style="color:#64748b">Known conditions</div>
+                </div>
+              )}
+            </div>
+            {rank.genetic_ailment_names && rank.genetic_ailment_names !== 'none' && (
+              <p class="font-sans text-xs mt-3" style="color:#64748b">
+                Known genetic concerns: <strong style="color:#92400e">{rank.genetic_ailment_names}</strong>
+              </p>
+            )}
+          </section>
+        )}
+
+        <!-- Top matched products -->
+        {topProds.length > 0 && (
+          <section>
+            <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+              Expert Picks for {b.name}s
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {topProds.map((p: any, i: number) => (
+                <div class="rounded-2xl overflow-hidden flex flex-col" style="border:1px solid #e8ccaa;background:white">
+                  <div class="flex items-center justify-center p-4" style="background:#fdf8f0;height:140px;position:relative">
+                    {i === 0 && (
+                      <span class="absolute top-2 left-2 font-sans text-xs font-bold px-2 py-1 rounded-full" style="background:#a0621c;color:white">
+                        ⭐ Top Pick
+                      </span>
+                    )}
+                    {p.image?.includes('media-amazon') ? (
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        width="120"
+                        height="120"
+                        loading="lazy"
+                        class="object-contain max-h-28"
+                        onerror="this.parentElement.innerHTML='<span style=font-size:2.5rem>🐾</span>'"
+                      />
+                    ) : (
+                      <span style="font-size:2.5rem">🐾</span>
+                    )}
+                  </div>
+                  <div class="p-4 flex flex-col flex-1 gap-2">
+                    <p class="font-sans text-xs font-bold uppercase tracking-wider" style="color:#a0621c">
+                      {(p._cat||p.category_key||'').replace(/-/g,' ')}
+                    </p>
+                    <h3 class="font-sans text-sm font-bold leading-tight" style="color:#1e293b">{p.name}</h3>
+                    <div class="flex items-center gap-1">
+                      <span style="color:#f59e0b;font-size:0.75rem">{'★'.repeat(Math.round(p.rating||4.5))}</span>
+                      <span class="font-sans text-xs" style="color:#64748b">{parseFloat(p.rating||4.5).toFixed(1)}</span>
+                    </div>
+                    {p.verdict && <p class="font-sans text-xs italic" style="color:#64748b">{p.verdict.slice(0,70)}…</p>}
+                    <div class="mt-auto flex items-center justify-between pt-2" style="border-top:1px solid #f5e8d0">
+                      <span class="font-sans font-black text-base" style="color:#1e293b">
+                        {p.price ? `$${parseFloat(p.price).toFixed(2)}` : '—'}
+                      </span>
+                      {p.asin && p.asin !== 'SUBSCRIPTION' ? (
+                        <a
+                          href={amzUrl(p.asin)}
+                          rel="nofollow sponsored"
+                          target="_blank"
+                          class="font-sans text-xs font-bold px-3 py-1.5 rounded-lg btn-amazon text-white"
+                          style="background:linear-gradient(135deg,#FF9900,#e88700)"
+                        >
+                          Check price →
+                        </a>
+                      ) : p.asin === 'SUBSCRIPTION' ? (
+                        <span class="font-sans text-xs" style="color:#64748b">Subscription</span>
+                      ) : null}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Care tips -->
+        {b.care_tips?.length > 0 && (
+          <section>
+            <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+              {b.name} Care Tips
+            </h2>
+            <div class="space-y-3">
+              {b.care_tips.map((tip: string) => (
+                <div class="flex gap-3 items-start rounded-xl p-4" style="background:#f0fdf4;border:1px solid #bbf7d0">
+                  <span style="color:#16a34a;font-weight:bold;flex-shrink:0;margin-top:1px">✓</span>
+                  <p class="font-sans text-sm leading-relaxed" style="color:#1e293b">{tip}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Content cluster links -->
+        <section>
+          <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+            All {b.name} Guides
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {CLUSTER_LINKS.map(c => {
+              const done = status[c.key];
+              return done && c.href ? (
+                <a
+                  href={c.href}
+                  class="flex items-center gap-3 rounded-xl p-4 transition-all"
+                  style="border:1px solid #e8ccaa;background:white;text-decoration:none;color:#1e293b"
+                  onmouseover="this.style.borderColor='#a0621c';this.style.background='#fdf8f0'"
+                  onmouseout="this.style.borderColor='#e8ccaa';this.style.background='white'"
+                >
+                  <span style="font-size:1.25rem">{c.emoji}</span>
+                  <span class="font-sans text-sm font-semibold">{c.label}</span>
+                  <span class="ml-auto font-sans text-xs" style="color:#a0621c">→</span>
+                </a>
+              ) : (
+                <div
+                  class="flex items-center gap-3 rounded-xl p-4"
+                  style="border:1px solid #f0e4d0;background:#fafaf9;opacity:0.5"
+                >
+                  <span style="font-size:1.25rem">{c.emoji}</span>
+                  <span class="font-sans text-sm" style="color:#94a3b8">{c.label}</span>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <!-- FCI classification -->
+        {b.fci_group && (
+          <section class="rounded-2xl p-6" style="background:#fdf8f0;border:1px solid #e8ccaa">
+            <h2 class="font-display text-xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+              FCI Classification
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 font-sans text-sm">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#94a3b8">FCI Group</p>
+                <p class="font-semibold" style="color:#1e293b">Group {b.fci_group} — {b.fci_group_name}</p>
+              </div>
+              {b.fci_section && (
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#94a3b8">Section</p>
+                  <p class="font-semibold" style="color:#1e293b">{b.fci_section}</p>
+                </div>
+              )}
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#94a3b8">Status</p>
+                <p class="font-semibold capitalize" style="color:#1e293b">{b.fci_status?.replace('-',' ')}</p>
+              </div>
+            </div>
+          </section>
+        )}
+
+      </div>
+
+      <!-- ── Sidebar ── -->
+      <aside class="hidden lg:block">
+        <div class="sticky space-y-5" style="top:80px">
+
+          <!-- Quick facts -->
+          <div class="rounded-2xl overflow-hidden" style="border:1px solid #e8ccaa;background:white">
+            <div class="px-4 py-3 font-sans text-xs font-bold uppercase tracking-wider" style="background:#f5e8d0;color:#5c340a;border-bottom:1px solid #e8ccaa">
+              Quick Facts
+            </div>
+            <div class="p-4 space-y-3 font-sans text-sm">
+              {[
+                ['Size',      b.size_category.charAt(0).toUpperCase()+b.size_category.slice(1)],
+                ['Energy',    b.energy_level.charAt(0).toUpperCase()+b.energy_level.slice(1)],
+                ['Shedding',  (b.shedding_level||'').charAt(0).toUpperCase()+(b.shedding_level||'').slice(1)],
+                ['Training',  (b.training_level||'').charAt(0).toUpperCase()+(b.training_level||'').slice(1)],
+                ['Coat',      COAT_LABEL[b.coat_type]||b.coat_type],
+                ['Grooming',  b.grooming_freq],
+                wt.min_lbs ? ['Weight',  `${wt.min_lbs}–${wt.max_lbs} lbs`]  : null,
+                life.min   ? ['Lifespan',`${life.min}–${life.max} years`]     : null,
+                b.akc_group     ? ['AKC Group', b.akc_group.replace(' Group','')] : null,
+                b.origin_country? ['Origin',    b.origin_country]              : null,
+              ].filter(Boolean).map((row: any) => (
+                <div class="flex justify-between gap-2 pb-2" style="border-bottom:1px solid #f5e8d0">
+                  <span style="color:#64748b">{row[0]}</span>
+                  <span class="font-semibold text-right" style="color:#1e293b;max-width:160px">{row[1]}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Top food product -->
+          {foodProd && foodProd.asin && foodProd.asin !== 'SUBSCRIPTION' && (
+            <div class="rounded-2xl overflow-hidden" style="border:2px solid #a0621c;background:white">
+              <div class="px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white" style="background:#a0621c">
+                Top food for {b.name}s
+              </div>
+              <div class="p-4 flex items-center justify-center" style="background:#fdf8f0;height:120px">
+                {foodProd.image?.includes('media-amazon') ? (
+                  <img src={foodProd.image} alt={foodProd.name} width="100" height="100" loading="lazy" class="object-contain max-h-24"
+                    onerror="this.parentElement.innerHTML='<span style=font-size:2rem>🍖</span>'" />
+                ) : <span style="font-size:2rem">🍖</span>}
+              </div>
+              <div class="p-4">
+                <p class="font-sans text-sm font-bold mb-1" style="color:#1e293b">{foodProd.name}</p>
+                <div class="flex items-center gap-1 mb-2">
+                  <span style="color:#f59e0b;font-size:0.7rem">{'★'.repeat(Math.round(foodProd.rating||4.5))}</span>
+                  <span class="font-sans text-xs" style="color:#64748b">{parseFloat(foodProd.rating||4.5).toFixed(1)}/5</span>
+                </div>
+                <p class="font-sans font-black text-lg mb-3" style="color:#1e293b">${parseFloat(foodProd.price||0).toFixed(2)}</p>
+                <a href={amzUrl(foodProd.asin)} rel="nofollow sponsored" target="_blank"
+                  class="block text-center font-sans font-bold text-sm py-2.5 rounded-xl text-white btn-amazon"
+                  style="background:linear-gradient(135deg,#FF9900,#e88700)">
+                  Check price on Amazon →
+                </a>
+              </div>
+            </div>
+          )}
+
+          <!-- Guide links sidebar -->
+          <div class="rounded-2xl p-4" style="border:1px solid #e8ccaa;background:white">
+            <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:#94a3b8">
+              {b.name} Guides
+            </p>
+            <div class="space-y-1">
+              {CLUSTER_LINKS.filter(c => status[c.key] && c.href).map(c => (
+                <a href={c.href} class="flex items-center gap-2 px-2 py-2 rounded-lg font-sans text-sm transition-colors"
+                  style="color:#1e293b;text-decoration:none"
+                  onmouseover="this.style.background='#fdf8f0';this.style.color='#a0621c'"
+                  onmouseout="this.style.background='transparent';this.style.color='#1e293b'">
+                  <span>{c.emoji}</span>
+                  <span>{c.label} →</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+</BaseLayout>

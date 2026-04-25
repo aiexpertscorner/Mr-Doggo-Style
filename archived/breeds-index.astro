@@ -1,0 +1,228 @@
+---
+/**
+ * breeds/index.astro — Breed directory v2
+ * Real Dog CEO images, live JS filters, Tailwind CSS
+ */
+import BaseLayout   from '../../layouts/BaseLayout.astro';
+import masterBreeds from '../../data/master-breeds.json';
+
+const breeds = masterBreeds as any[];
+
+const SIZE_EMOJI: Record<string,string> = { small:'🐕', medium:'🐕‍🦺', large:'🐕‍🦺', giant:'🦮' };
+const COAT_ICON: Record<string,string>  = {
+  double:'🌀', long:'💫', short:'✨', wiry:'🔧', curly:'🔄',
+  silky:'🌟', corded:'🪢', hairless:'⭕', wavy:'〰️', medium:'🐾',
+};
+---
+
+<BaseLayout
+  title="Dog Breed Directory 2026 — 277 Breeds with Expert Care Guides"
+  description="Browse all 277 dog breeds. Filter by size, energy and coat type. Each breed has expert product picks, care guides and health info."
+  canonicalURL="https://mrdoggostyle.com/breeds"
+>
+
+  <!-- Hero -->
+  <div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <nav class="font-sans text-sm mb-4" style="color:#a0621c">
+        <a href="/" style="color:#a0621c" class="hover:underline">Home</a>
+        <span style="color:#d4a574"> › </span>
+        <span style="color:#5c340a">All Breeds</span>
+      </nav>
+      <h1 class="font-display text-4xl md:text-5xl font-bold mb-3" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+        Dog Breed Directory
+      </h1>
+      <p class="font-sans text-lg mb-5" style="color:#64748b">
+        {breeds.length} breeds — each with matched product picks, care guides and health info.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#a0621c;color:white">{breeds.length} breeds</span>
+        <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#fef3c7;color:#92400e">Expert picks per breed</span>
+        <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f0fdf4;color:#15803d">Updated 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 py-8">
+
+    <!-- Filters -->
+    <div class="rounded-2xl p-5 mb-6" style="background:white;border:1px solid #e8ccaa">
+      <div class="space-y-4">
+
+        <div>
+          <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Size</p>
+          <div class="flex flex-wrap gap-2">
+            <button class="filter-btn active font-sans text-sm font-semibold px-4 py-1.5 rounded-full border transition-all" data-filter="size" data-value="all">All</button>
+            <button class="filter-btn font-sans text-sm font-semibold px-4 py-1.5 rounded-full border transition-all" data-filter="size" data-value="small">🐕 Small</button>
+            <button class="filter-btn font-sans text-sm font-semibold px-4 py-1.5 rounded-full border transition-all" data-filter="size" data-value="medium">🐕‍🦺 Medium</button>
+            <button class="filter-btn font-sans text-sm font-semibold px-4 py-1.5 rounded-full border transition-all" data-filter="size" data-value="large">🐕‍🦺 Large</button>
+            <button class="filter-btn font-sans text-sm font-semibold px-4 py-1.5 rounded-full border transition-all" data-filter="size" data-value="giant">🦮 Giant</button>
+          </div>
+        </div>
+
+        <div>
+          <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Energy</p>
+          <div class="flex flex-wrap gap-2">
+            <button class="filter-btn active font-sans text-sm font-semibold px-4 py-1.5 rounded-full border transition-all" data-filter="energy" data-value="all">All</button>
+            <button class="filter-btn font-sans text-sm font-semibold px-4 py-1.5 rounded-full border transition-all" data-filter="energy" data-value="active">⚡ Active</button>
+            <button class="filter-btn font-sans text-sm font-semibold px-4 py-1.5 rounded-full border transition-all" data-filter="energy" data-value="regular">🚶 Regular</button>
+            <button class="filter-btn font-sans text-sm font-semibold px-4 py-1.5 rounded-full border transition-all" data-filter="energy" data-value="calm">😴 Calm</button>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <input
+            type="search"
+            id="breed-search"
+            placeholder="Search breeds…"
+            class="font-sans text-sm px-4 py-2 rounded-xl border focus:outline-none focus:ring-2"
+            style="border-color:#e8ccaa;max-width:300px;width:100%;--tw-ring-color:#fbbf24"
+            aria-label="Search breeds"
+          />
+          <span id="breed-count" class="font-sans text-sm" style="color:#64748b">{breeds.length} breeds</span>
+          <button id="clear-filters" class="font-sans text-sm font-medium hover:underline" style="color:#a0621c;display:none">Clear filters</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div id="breed-grid" class="grid gap-4" style="grid-template-columns:repeat(auto-fill,minmax(185px,1fr))">
+      {breeds.map(b => (
+        <a
+          href={`/breeds/${b.slug}`}
+          class="breed-card rounded-2xl overflow-hidden flex flex-col transition-all"
+          style="border:1px solid #e8ccaa;background:white;text-decoration:none"
+          data-size={b.size_category}
+          data-energy={b.energy_level}
+          data-training={b.training_level}
+          data-name={b.name.toLowerCase()}
+        >
+          <!-- Image -->
+          <div class="flex items-center justify-center" style="height:140px;background:#fdf8f0;overflow:hidden;position:relative">
+            {b.image_url ? (
+              <img
+                src={b.image_url}
+                alt={`${b.name}`}
+                width="140"
+                height="140"
+                loading="lazy"
+                decoding="async"
+                class="object-cover w-full h-full"
+                style="transition:transform 0.3s ease"
+                onerror={`this.style.display='none';this.nextElementSibling.style.display='flex'`}
+              />
+            ) : null}
+            <div style={`${b.image_url ? 'display:none' : 'display:flex'};align-items:center;justify-content:center;width:100%;height:100%;font-size:3rem`}>
+              {SIZE_EMOJI[b.size_category]||'🐕'}
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="p-3 flex flex-col gap-1.5 flex-1">
+            <h3 class="font-sans font-bold text-sm leading-tight" style="color:#1e293b">{b.name}</h3>
+            {b.akc_group && (
+              <p class="font-sans text-xs" style="color:#94a3b8">{b.akc_group.replace(' Group','')}</p>
+            )}
+            <div class="flex flex-wrap gap-1 mt-auto">
+              <span class="font-sans text-xs px-2 py-0.5 rounded-full" style="background:#f5e8d0;color:#7d4a10">{b.size_category}</span>
+              <span class="font-sans text-xs px-2 py-0.5 rounded-full" style="background:#f5e8d0;color:#7d4a10">{b.energy_level}</span>
+              {b.coat_type && (
+                <span class="font-sans text-xs px-2 py-0.5 rounded-full" style="background:#f5e8d0;color:#7d4a10" title={b.coat_type + ' coat'}>
+                  {COAT_ICON[b.coat_type]||'🐾'}
+                </span>
+              )}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- No results -->
+    <div id="no-results" class="hidden text-center py-20">
+      <p class="font-sans text-lg mb-4" style="color:#64748b">No breeds match your filters.</p>
+      <button id="clear-filters-2" class="font-sans text-base font-medium hover:underline" style="color:#a0621c">Clear all filters</button>
+    </div>
+
+  </div>
+
+</BaseLayout>
+
+<style>
+  .filter-btn {
+    border-color: #e8ccaa;
+    background: white;
+    color: #475569;
+    cursor: pointer;
+  }
+  .filter-btn.active {
+    background: #a0621c;
+    border-color: #a0621c;
+    color: white;
+  }
+  .filter-btn:hover:not(.active) {
+    border-color: #a0621c;
+    color: #a0621c;
+  }
+  .breed-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(160,98,28,0.15);
+    border-color: #a0621c;
+  }
+  .breed-card:hover img {
+    transform: scale(1.05);
+  }
+</style>
+
+<script>
+  let activeSize     = 'all';
+  let activeEnergy   = 'all';
+  let searchQ        = '';
+  const searchInput  = document.getElementById('breed-search') as HTMLInputElement;
+  const countEl      = document.getElementById('breed-count')!;
+  const clearBtns    = [document.getElementById('clear-filters'), document.getElementById('clear-filters-2')];
+
+  function applyFilters() {
+    const cards = document.querySelectorAll<HTMLElement>('.breed-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const show =
+        (activeSize   === 'all' || card.dataset.size   === activeSize) &&
+        (activeEnergy === 'all' || card.dataset.energy === activeEnergy) &&
+        (!searchQ || (card.dataset.name||'').includes(searchQ));
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    countEl.textContent = `${visible} breeds`;
+    (document.getElementById('no-results') as HTMLElement).classList.toggle('hidden', visible > 0);
+    const hasFilter = activeSize !== 'all' || activeEnergy !== 'all' || !!searchQ;
+    clearBtns.forEach(b => b && (b.style.display = hasFilter ? '' : 'none'));
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter!;
+      const value  = btn.dataset.value!;
+      document.querySelectorAll<HTMLElement>(`[data-filter="${filter}"]`).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (filter === 'size')   activeSize   = value;
+      if (filter === 'energy') activeEnergy = value;
+      applyFilters();
+    });
+  });
+
+  searchInput?.addEventListener('input', e => {
+    searchQ = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    applyFilters();
+  });
+
+  function clearAll() {
+    activeSize = activeEnergy = 'all';
+    searchQ = '';
+    if (searchInput) searchInput.value = '';
+    document.querySelectorAll<HTMLElement>('.filter-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.value === 'all');
+    });
+    applyFilters();
+  }
+  clearBtns.forEach(b => b?.addEventListener('click', clearAll));
+</script>
