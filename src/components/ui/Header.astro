@@ -1,85 +1,156 @@
 ---
+/**
+ * src/components/ui/Header.astro
+ * Refined global header for PupWiki
+ * - breed-first navigation
+ * - stronger authority / trust alignment
+ * - accessible mobile menu
+ * - active link states
+ */
+
+const currentPath = Astro.url.pathname;
+
 const navLinks = [
-  { label: 'Dog Food', href: '/categories/dog-food' },
-  { label: 'Toys', href: '/categories/toys' },
-  { label: 'Beds', href: '/categories/beds' },
-  { label: 'Health', href: '/categories/health' },
-  { label: 'Grooming', href: '/categories/grooming' },
-  { label: 'All Breeds', href: '/breeds' },
-  { label: 'Dog Names', href: '/dog-names' },
+  {
+    label: 'All Breeds',
+    href: '/breeds',
+    isActive: currentPath === '/breeds' || currentPath.startsWith('/breeds/'),
+  },
+  {
+    label: 'Dog Names',
+    href: '/dog-names',
+    isActive: currentPath === '/dog-names' || currentPath.startsWith('/dog-names/'),
+  },
+  {
+    label: 'Health & Care',
+    href: '/categories/health',
+    isActive:
+      currentPath === '/categories/health' ||
+      currentPath.startsWith('/categories/health/'),
+  },
+  {
+    label: 'Training',
+    href: '/categories/training',
+    isActive:
+      currentPath === '/categories/training' ||
+      currentPath.startsWith('/categories/training/'),
+  },
+  {
+    label: 'Reviews',
+    href: '/blog',
+    isActive: currentPath === '/blog' || currentPath.startsWith('/blog/'),
+  },
 ];
+
+const utilityLinks = [
+  {
+    label: 'Methodology',
+    href: '/methodology',
+    isActive: currentPath === '/methodology',
+  },
+  {
+    label: 'About',
+    href: '/about',
+    isActive: currentPath === '/about',
+  },
+];
+
+const primaryCta = {
+  label: 'Cost & Insurance',
+  href: '/cost-calculator',
+  isActive:
+    currentPath === '/cost-calculator' ||
+    currentPath.startsWith('/cost-calculator/'),
+};
+
+const allMobileLinks = [...navLinks, ...utilityLinks];
 ---
 
-<header
-  class="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 shadow-sm"
-  style="border-bottom:1px solid #f5e8d0"
->
-  <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-6">
-    <div class="flex items-center justify-between h-[82px] sm:h-[88px] lg:h-[96px] gap-4 lg:gap-6">
-
-      <!-- Logo -->
+<header class="sticky top-0 z-50 border-b border-stone-200/80 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+  <div class="mx-auto max-w-7xl px-4 sm:px-5 lg:px-6">
+    <div class="flex h-[76px] items-center justify-between gap-4 sm:h-[84px] lg:h-[90px]">
+      <!-- Brand -->
       <a
         href="/"
-        class="flex items-center flex-shrink-0"
+        class="flex min-w-0 items-center gap-3"
         aria-label="PupWiki home"
       >
-<img
-  src="/Logo-pupwiki.png"
-  alt="PupWiki"
-  class="block h-18 sm:h-18 lg:h-18 w-auto object-contain"
-  loading="eager"
-  decoding="async"
-/>
+        <img
+          src="/Logo-pupwiki.png"
+          alt="PupWiki"
+          class="block h-12 w-auto object-contain sm:h-14 lg:h-16"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="hidden min-w-0 xl:block">
+          <span class="block truncate text-sm font-semibold tracking-wide text-slate-900">
+            PupWiki
+          </span>
+          <span class="block truncate text-xs text-slate-500">
+            Trusted guidance for dog parents
+          </span>
+        </div>
       </a>
 
-      <!-- Desktop Nav -->
+      <!-- Desktop navigation -->
       <nav
-        class="hidden lg:flex items-center justify-center gap-5 xl:gap-7 flex-1 px-4 xl:px-8 font-sans text-sm font-medium"
+        class="hidden flex-1 items-center justify-center gap-1 lg:flex"
         aria-label="Main navigation"
       >
         {navLinks.map((link) => (
           <a
             href={link.href}
-            class="transition-colors duration-200 whitespace-nowrap hover:text-[#0b153d]"
-            style="color:#64748b"
+            aria-current={link.isActive ? 'page' : undefined}
+            class:list={[
+              'rounded-xl px-3 py-2 text-sm font-medium transition-colors duration-200',
+              link.isActive
+                ? 'bg-teal-50 text-teal-800'
+                : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900',
+            ]}
           >
             {link.label}
           </a>
         ))}
       </nav>
 
-      <!-- Desktop CTA -->
-      <div class="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
-        <a
-          href="/how-we-test"
-          class="font-sans text-xs xl:text-sm font-medium transition-colors hover:text-[#0b153d] whitespace-nowrap"
-          style="color:#94a3b8"
-        >
-          How we test
-        </a>
+      <!-- Desktop right side -->
+      <div class="hidden items-center gap-2 lg:flex">
+        {utilityLinks.map((link) => (
+          <a
+            href={link.href}
+            aria-current={link.isActive ? 'page' : undefined}
+            class:list={[
+              'rounded-xl px-3 py-2 text-sm font-medium transition-colors duration-200',
+              link.isActive
+                ? 'text-slate-900'
+                : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
 
         <a
-          href="/cost-calculator"
-          class="inline-flex items-center justify-center font-sans text-sm font-bold text-white px-5 py-2.5 rounded-xl whitespace-nowrap transition-transform duration-200 hover:-translate-y-[1px]"
-          style="background:linear-gradient(135deg,#0D9488,#0F766E); box-shadow:0 8px 18px rgba(13,148,136,0.22)"
+          href={primaryCta.href}
+          aria-current={primaryCta.isActive ? 'page' : undefined}
+          class="inline-flex items-center justify-center rounded-xl bg-teal-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-[1px] hover:bg-teal-700"
         >
-          Cost Calculator
+          {primaryCta.label}
         </a>
       </div>
 
       <!-- Mobile toggle -->
       <button
-        id="menu-toggle"
-        class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl transition-colors flex-shrink-0"
-        style="color:#64748b;background:#fff"
+        type="button"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-stone-200 bg-white text-slate-700 transition hover:bg-slate-50 lg:hidden"
         aria-label="Toggle menu"
         aria-expanded="false"
         aria-controls="mobile-nav"
-        type="button"
+        data-nav-toggle
       >
         <svg
-          id="icon-open"
-          class="w-7 h-7"
+          data-icon-open
+          class="h-6 w-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -94,8 +165,8 @@ const navLinks = [
         </svg>
 
         <svg
-          id="icon-close"
-          class="w-7 h-7 hidden"
+          data-icon-close
+          class="hidden h-6 w-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -112,74 +183,101 @@ const navLinks = [
     </div>
   </div>
 
-  <!-- Mobile nav -->
+  <!-- Mobile navigation -->
   <div
     id="mobile-nav"
-    class="hidden lg:hidden bg-white"
-    style="border-top:1px solid #f5e8d0"
+    class="hidden border-t border-stone-200 bg-white lg:hidden"
+    data-mobile-nav
   >
-    <div class="px-4 pb-5 pt-3">
-      <nav class="space-y-0.5" aria-label="Mobile navigation">
-        {navLinks.map((link) => (
+    <div class="mx-auto max-w-7xl px-4 pb-5 pt-3 sm:px-5">
+      <div class="mb-4 rounded-2xl border border-teal-100 bg-teal-50/70 px-4 py-3">
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+          PupWiki
+        </p>
+        <p class="mt-1 text-sm text-slate-700">
+          Research breeds, compare costs, and care smarter.
+        </p>
+      </div>
+
+      <nav class="space-y-1" aria-label="Mobile navigation">
+        {allMobileLinks.map((link) => (
           <a
             href={link.href}
-            class="block py-3 font-sans text-[15px] font-medium transition-colors hover:text-[#0b153d]"
-            style="color:#475569;border-bottom:1px solid #fdf8f0"
+            aria-current={link.isActive ? 'page' : undefined}
+            class:list={[
+              'block rounded-xl px-3 py-3 text-[15px] font-medium transition-colors',
+              link.isActive
+                ? 'bg-slate-100 text-slate-900'
+                : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900',
+            ]}
           >
             {link.label}
           </a>
         ))}
       </nav>
 
-      <div class="pt-4 flex flex-col gap-2.5">
+      <div class="mt-4 grid gap-2">
         <a
-          href="/cost-calculator"
-          class="block text-center font-sans text-sm font-bold text-white py-3.5 rounded-xl transition-transform duration-200"
-          style="background:linear-gradient(135deg,#0D9488,#0F766E); box-shadow:0 8px 18px rgba(13,148,136,0.22)"
+          href={primaryCta.href}
+          class="block rounded-xl bg-teal-600 px-4 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:bg-teal-700"
         >
-          Cost Calculator
+          {primaryCta.label}
         </a>
 
         <a
-          href="/how-we-test"
-          class="block text-center font-sans text-sm font-semibold py-3 rounded-xl"
-          style="color:#0b153d;background:#f8fafc;border:1px solid #e2e8f0"
+          href="/contact"
+          class="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
         >
-          How we test
+          Contact
         </a>
+      </div>
 
-        <div class="flex justify-center gap-4 mt-2 flex-wrap">
-          <a href="/about" class="font-sans text-xs" style="color:#94a3b8">About</a>
-          <a href="/disclosure" class="font-sans text-xs" style="color:#94a3b8">Disclosure</a>
-        </div>
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-slate-500">
+        <a href="/disclosure" class="hover:text-slate-700">Disclosure</a>
+        <a href="/privacy" class="hover:text-slate-700">Privacy</a>
+        <a href="/methodology" class="hover:text-slate-700">Methodology</a>
       </div>
     </div>
   </div>
 </header>
 
 <script>
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('mobile-nav');
-  const iconOpen = document.getElementById('icon-open');
-  const iconClose = document.getElementById('icon-close');
+  const toggle = document.querySelector('[data-nav-toggle]');
+  const nav = document.querySelector('[data-mobile-nav]');
+  const iconOpen = document.querySelector('[data-icon-open]');
+  const iconClose = document.querySelector('[data-icon-close]');
 
   if (toggle && nav && iconOpen && iconClose) {
-    toggle.addEventListener('click', () => {
-      const willOpen = nav.classList.contains('hidden');
+    const closeMenu = () => {
+      nav.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('overflow-hidden');
+    };
 
-      nav.classList.toggle('hidden');
-      iconOpen.classList.toggle('hidden', willOpen);
-      iconClose.classList.toggle('hidden', !willOpen);
-      toggle.setAttribute('aria-expanded', String(willOpen));
+    const openMenu = () => {
+      nav.classList.remove('hidden');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('overflow-hidden');
+    };
+
+    toggle.addEventListener('click', () => {
+      const isClosed = nav.classList.contains('hidden');
+      if (isClosed) openMenu();
+      else closeMenu();
     });
 
     nav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        nav.classList.add('hidden');
-        iconOpen.classList.remove('hidden');
-        iconClose.classList.add('hidden');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !nav.classList.contains('hidden')) {
+        closeMenu();
+      }
     });
   }
 </script>
