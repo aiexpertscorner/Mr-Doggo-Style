@@ -55,7 +55,7 @@ const toyProd  = picks['toys']     ? (productIndex as any)[picks['toys']]     : 
 
 const healthProfile = (healthProfiles as any).profiles.find((p: any) => p.breed_slug === slug) ?? null;
 const SEVERITY_STYLES: Record<string, { bg: string; color: string }> = {
-  Low:          { bg: '#f0fdf4', color: '#16a34a' },
+  Low:          { bg: 'var(--color-success-light)', color: '#16a34a' },
   Medium:       { bg: '#fefce8', color: '#ca8a04' },
   'Medium-High':{ bg: '#fff7ed', color: '#ea580c' },
   High:         { bg: '#fef2f2', color: '#dc2626' },
@@ -67,8 +67,8 @@ const COAT_LABEL: Record<string,string> = {
   double:'Double coat', long:'Long coat', short:'Short coat', wiry:'Wire coat',
   curly:'Curly coat', silky:'Silky coat', corded:'Corded', hairless:'Hairless', wavy:'Wavy coat',
 };
-const ENERGY_COLOR: Record<string,string> = { active:'#16a34a', regular:'#d97706', calm:'#6366f1' };
-const TRAIN_COLOR:  Record<string,string> = { easy:'#16a34a', moderate:'#d97706', difficult:'#ef4444' };
+const ENERGY_COLOR: Record<string,string> = { active:'#16a34a', regular:'var(--color-warning)', calm:'#6366f1' };
+const TRAIN_COLOR:  Record<string,string> = { easy:'#16a34a', moderate:'var(--color-warning)', difficult:'#ef4444' };
 
 function amzUrl(asin: string) { return `https://www.amazon.com/dp/${asin}/?tag=${AFFILIATE_TAG}`; }
 function pctBar(val: number) { return Math.round((val || 0) * 100); }
@@ -157,16 +157,16 @@ const breadcrumbLd = JSON.stringify({
   <script type="application/ld+json" set:html={breadcrumbLd} />
 
   <!-- ── Breed Hero ── -->
-  <div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
+  <div style="background:linear-gradient(to bottom,var(--color-surface-warm),var(--color-bg-soft));border-bottom:1px solid var(--color-border-warm)">
     <div class="max-w-7xl mx-auto px-4 py-10 sm:py-14">
 
       <!-- Breadcrumb -->
-      <nav class="font-sans text-sm mb-4 flex flex-wrap items-center gap-1" style="color:#a0621c">
-        <a href="/" class="hover:underline" style="color:#a0621c">Home</a>
+      <nav class="font-sans text-sm mb-4 flex flex-wrap items-center gap-1" style="color:var(--color-accent)">
+        <a href="/" class="hover:underline" style="color:var(--color-accent)">Home</a>
         <span style="color:#d4a574">›</span>
-        <a href="/breeds" class="hover:underline" style="color:#a0621c">Breeds</a>
+        <a href="/breeds" class="hover:underline" style="color:var(--color-accent)">Breeds</a>
         <span style="color:#d4a574">›</span>
-        <span style="color:#5c340a">{b.name}</span>
+        <span style="color:var(--color-accent-active)">{b.name}</span>
       </nav>
 
       <div class="flex flex-col md:flex-row md:items-start gap-8">
@@ -182,14 +182,14 @@ const breadcrumbLd = JSON.stringify({
               loading="eager"
               decoding="async"
               class="w-48 h-48 md:w-60 md:h-60 object-cover rounded-2xl shadow-lg border-4"
-              style="border-color:#e8ccaa"
+              style="border-color:var(--color-border-warm)"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
             />
-            <div class="w-48 h-48 md:w-60 md:h-60 rounded-2xl hidden items-center justify-content-center text-7xl" style="background:#f5e8d0;display:none">
+            <div class="w-48 h-48 md:w-60 md:h-60 rounded-2xl hidden items-center justify-content-center text-7xl" style="background:var(--color-surface-warm);display:none">
               {SIZE_EMOJI[b.size_category]||'🐕'}
             </div>
           ) : (
-            <div class="w-48 h-48 md:w-60 md:h-60 rounded-2xl flex items-center justify-center text-7xl" style="background:#f5e8d0">
+            <div class="w-48 h-48 md:w-60 md:h-60 rounded-2xl flex items-center justify-center text-7xl" style="background:var(--color-surface-warm)">
               {SIZE_EMOJI[b.size_category]||'🐕'}
             </div>
           )}
@@ -204,11 +204,11 @@ const breadcrumbLd = JSON.stringify({
                 Designer / Mixed Breed
               </span>
             ) : (
-              <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#a0621c;color:white">
+              <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:var(--color-accent);color:white">
                 {b.size_category.charAt(0).toUpperCase()+b.size_category.slice(1)} breed
               </span>
             )}
-            <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#fef3c7;color:#92400e">
+            <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:var(--color-warning-light);color:var(--color-accent-active)">
               {b.energy_level} energy
             </span>
             <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f3f4f6;color:#374151">
@@ -220,9 +220,13 @@ const breadcrumbLd = JSON.stringify({
               </span>
             )}
             {!isCrossbreed && b.origin_country && (
-              <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f0fdf4;color:#15803d">
-                🌍 {b.origin_country}
-              </span>
+              <a
+                href={`/breeds?origin=${encodeURIComponent(b.origin_country)}`}
+                class="font-sans text-xs font-semibold px-3 py-1 rounded-full hover:opacity-80 transition-opacity"
+                style="background:var(--color-success-light);color:var(--color-success);text-decoration:none"
+              >
+                🌍 {b.origin_country} →
+              </a>
             )}
             {b.akc_popularity && b.akc_popularity <= 20 && (
               <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#fef9c3;color:#854d0e">
@@ -230,28 +234,28 @@ const breadcrumbLd = JSON.stringify({
               </span>
             )}
             {isCrossbreed && b.is_poodle_mix && (
-              <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f0fdf4;color:#15803d">
+              <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:var(--color-success-light);color:var(--color-success)">
                 🐩 Poodle mix
               </span>
             )}
           </div>
 
-          <h1 class="font-display text-4xl md:text-5xl font-bold mb-2" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+          <h1 class="font-display text-4xl md:text-5xl font-bold mb-2" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
             {b.name}
           </h1>
 
           {b.temperament && (
-            <p class="font-body text-lg italic mb-3" style="color:#64748b;font-family:'Source Serif 4',Georgia,serif">
+            <p class="font-body text-lg italic mb-3" style="color:var(--color-muted);font-family:'Source Serif 4',Georgia,serif">
               {b.temperament}
             </p>
           )}
 
-          <p class="font-sans text-base leading-relaxed mb-4 max-w-2xl" style="color:#475569">
+          <p class="font-sans text-base leading-relaxed mb-4 max-w-2xl" style="color:var(--color-body-soft)">
             {b.description?.slice(0,280)}{b.description?.length > 280 ? '…' : ''}
           </p>
 
           <!-- Quick facts row -->
-          <div class="flex flex-wrap gap-5 font-sans text-sm" style="color:#64748b">
+          <div class="flex flex-wrap gap-5 font-sans text-sm" style="color:var(--color-muted)">
             {wt.min_lbs && wt.max_lbs && <span>⚖️ {wt.min_lbs}–{wt.max_lbs} lbs ({wt.min_kg}–{wt.max_kg} kg)</span>}
             {ht.min_in  && ht.max_in  && <span>📏 {ht.min_in}–{ht.max_in}"</span>}
             {life.min   && life.max   && <span>🎂 {life.min}–{life.max} yr lifespan</span>}
@@ -261,7 +265,7 @@ const breadcrumbLd = JSON.stringify({
           <!-- Parent breeds (crossbreeds only) -->
           {isCrossbreed && b.parent_breeds?.length > 0 && (
             <div class="mt-4 flex flex-wrap gap-2 items-center font-sans text-sm">
-              <span style="color:#64748b;font-weight:600">Mix of:</span>
+              <span style="color:var(--color-muted);font-weight:600">Mix of:</span>
               {(b.parent_breeds as any[]).map((p: any) => (
                 <a
                   href={`/breeds/${p.slug}`}
@@ -289,80 +293,80 @@ const breadcrumbLd = JSON.stringify({
 
         <!-- Trait bars -->
         <section>
-          <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+          <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
             {b.name} Characteristics
           </h2>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {TRAITS.map(t => (
-              <div class="rounded-xl p-4" style="background:#fdf8f0;border:1px solid #e8ccaa">
-                <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">{t.label}</p>
-                <div class="h-2 rounded-full mb-2" style="background:#e8ccaa;overflow:hidden">
+              <div class="rounded-xl p-4" style="background:var(--color-bg-soft);border:1px solid var(--color-border-warm)">
+                <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">{t.label}</p>
+                <div class="h-2 rounded-full mb-2" style="background:var(--color-border-warm);overflow:hidden">
                   <div class="h-full rounded-full" style={`width:${pctBar(t.val)}%;background:${t.color}`}></div>
                 </div>
-                <p class="font-sans text-sm font-semibold" style="color:#1e293b">{pctBar(t.val)}%</p>
+                <p class="font-sans text-sm font-semibold" style="color:var(--color-heading)">{pctBar(t.val)}%</p>
               </div>
             ))}
-            <div class="rounded-xl p-4" style="background:#fdf8f0;border:1px solid #e8ccaa">
-              <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Coat Type</p>
-              <p class="font-sans text-sm font-semibold" style="color:#1e293b">{COAT_LABEL[b.coat_type]||b.coat_type}</p>
-              <p class="font-sans text-xs mt-1" style="color:#64748b">{b.grooming_freq}</p>
+            <div class="rounded-xl p-4" style="background:var(--color-bg-soft);border:1px solid var(--color-border-warm)">
+              <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Coat Type</p>
+              <p class="font-sans text-sm font-semibold" style="color:var(--color-heading)">{COAT_LABEL[b.coat_type]||b.coat_type}</p>
+              <p class="font-sans text-xs mt-1" style="color:var(--color-muted)">{b.grooming_freq}</p>
             </div>
           </div>
         </section>
 
         <!-- Ranking data panel -->
         {rank && rank.intelligence_rank && (
-          <section class="rounded-2xl p-6" style="background:linear-gradient(135deg,#fdf8f0,#fef3c7);border:1px solid #fbbf24">
-            <p class="font-sans text-xs font-bold uppercase tracking-wider mb-4" style="color:#92400e">Breed Data</p>
+          <section class="rounded-2xl p-6" style="background:linear-gradient(135deg,var(--color-bg-soft),var(--color-warning-light));border:1px solid #fbbf24">
+            <p class="font-sans text-xs font-bold uppercase tracking-wider mb-4" style="color:var(--color-accent-active)">Breed Data</p>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {rank.intelligence_rank && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid var(--color-warning-light)">
                   <div class="text-2xl mb-1">🧠</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">#{rank.intelligence_rank}</div>
-                  <div class="font-sans text-xs" style="color:#64748b">Intelligence</div>
+                  <div class="font-sans font-black text-xl" style="color:var(--color-heading)">#{rank.intelligence_rank}</div>
+                  <div class="font-sans text-xs" style="color:var(--color-muted)">Intelligence</div>
                 </div>
               )}
               {rank.longevity_years && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid var(--color-warning-light)">
                   <div class="text-2xl mb-1">🎂</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">{rank.longevity_years}yr</div>
-                  <div class="font-sans text-xs" style="color:#64748b">Avg lifespan</div>
+                  <div class="font-sans font-black text-xl" style="color:var(--color-heading)">{rank.longevity_years}yr</div>
+                  <div class="font-sans text-xs" style="color:var(--color-muted)">Avg lifespan</div>
                 </div>
               )}
               {rank.lifetime_cost_usd && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid var(--color-warning-light)">
                   <div class="text-2xl mb-1">💰</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">${(rank.lifetime_cost_usd/1000).toFixed(0)}K</div>
-                  <div class="font-sans text-xs" style="color:#64748b">Lifetime cost</div>
+                  <div class="font-sans font-black text-xl" style="color:var(--color-heading)">${(rank.lifetime_cost_usd/1000).toFixed(0)}K</div>
+                  <div class="font-sans text-xs" style="color:var(--color-muted)">Lifetime cost</div>
                 </div>
               )}
               {rank.annual_food_cost && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid var(--color-warning-light)">
                   <div class="text-2xl mb-1">🍖</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">${rank.annual_food_cost}/yr</div>
-                  <div class="font-sans text-xs" style="color:#64748b">Annual food</div>
+                  <div class="font-sans font-black text-xl" style="color:var(--color-heading)">${rank.annual_food_cost}/yr</div>
+                  <div class="font-sans text-xs" style="color:var(--color-muted)">Annual food</div>
                 </div>
               )}
               {rank.children_score !== undefined && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid var(--color-warning-light)">
                   <div class="text-2xl mb-1">👨‍👩‍👧</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">
+                  <div class="font-sans font-black text-xl" style="color:var(--color-heading)">
                     {rank.children_score >= 0.8 ? 'Great' : rank.children_score >= 0.5 ? 'Good' : 'Careful'}
                   </div>
-                  <div class="font-sans text-xs" style="color:#64748b">With kids</div>
+                  <div class="font-sans text-xs" style="color:var(--color-muted)">With kids</div>
                 </div>
               )}
               {rank.genetic_ailments !== undefined && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
+                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid var(--color-warning-light)">
                   <div class="text-2xl mb-1">🩺</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">{rank.genetic_ailments}</div>
-                  <div class="font-sans text-xs" style="color:#64748b">Known conditions</div>
+                  <div class="font-sans font-black text-xl" style="color:var(--color-heading)">{rank.genetic_ailments}</div>
+                  <div class="font-sans text-xs" style="color:var(--color-muted)">Known conditions</div>
                 </div>
               )}
             </div>
             {rank.genetic_ailment_names && rank.genetic_ailment_names !== 'none' && (
-              <p class="font-sans text-xs mt-3" style="color:#64748b">
-                Known genetic concerns: <strong style="color:#92400e">{rank.genetic_ailment_names}</strong>
+              <p class="font-sans text-xs mt-3" style="color:var(--color-muted)">
+                Known genetic concerns: <strong style="color:var(--color-accent-active)">{rank.genetic_ailment_names}</strong>
               </p>
             )}
           </section>
@@ -372,9 +376,9 @@ const breadcrumbLd = JSON.stringify({
         {healthProfile && (
           <section>
             <div class="flex items-center gap-2 mb-1">
-              <span class="font-sans text-xs font-bold uppercase tracking-widest" style="color:#dc2626">Health Watch</span>
+              <span class="font-sans text-xs font-bold uppercase tracking-widest" style="color:var(--color-danger)">Health Watch</span>
             </div>
-            <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+            <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
               {b.name} Health Conditions
             </h2>
             <div class="space-y-3">
@@ -389,14 +393,14 @@ const breadcrumbLd = JSON.stringify({
                     </div>
                     <div class="min-w-0">
                       <div class="flex flex-wrap items-center gap-2 mb-1">
-                        <p class="font-sans font-bold text-sm" style="color:#1e293b">{issue.name}</p>
-                        <span class="font-sans text-xs px-2 py-0.5 rounded-full" style="background:#f1f5f9;color:#64748b">
+                        <p class="font-sans font-bold text-sm" style="color:var(--color-heading)">{issue.name}</p>
+                        <span class="font-sans text-xs px-2 py-0.5 rounded-full" style="background:#f1f5f9;color:var(--color-muted)">
                           {issue.prevalence} prevalence
                         </span>
                       </div>
                       {issue.early_warning && (
-                        <p class="font-sans text-xs leading-relaxed" style="color:#475569">
-                          <strong style="color:#64748b">Early signs:</strong> {issue.early_warning}
+                        <p class="font-sans text-xs leading-relaxed" style="color:var(--color-body-soft)">
+                          <strong style="color:var(--color-muted)">Early signs:</strong> {issue.early_warning}
                         </p>
                       )}
                     </div>
@@ -416,15 +420,15 @@ const breadcrumbLd = JSON.stringify({
         <!-- Top matched products -->
         {topProds.length > 0 && (
           <section>
-            <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+            <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
               Expert Picks for {b.name}s
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {topProds.map((p: any, i: number) => (
-                <div class="rounded-2xl overflow-hidden flex flex-col" style="border:1px solid #e8ccaa;background:white">
-                  <div class="flex items-center justify-center p-4" style="background:#fdf8f0;height:140px;position:relative">
+                <div class="rounded-2xl overflow-hidden flex flex-col" style="border:1px solid var(--color-border-warm);background:white">
+                  <div class="flex items-center justify-center p-4" style="background:var(--color-bg-soft);height:140px;position:relative">
                     {i === 0 && (
-                      <span class="absolute top-2 left-2 font-sans text-xs font-bold px-2 py-1 rounded-full" style="background:#a0621c;color:white">
+                      <span class="absolute top-2 left-2 font-sans text-xs font-bold px-2 py-1 rounded-full" style="background:var(--color-accent);color:white">
                         ⭐ Top Pick
                       </span>
                     )}
@@ -443,17 +447,17 @@ const breadcrumbLd = JSON.stringify({
                     )}
                   </div>
                   <div class="p-4 flex flex-col flex-1 gap-2">
-                    <p class="font-sans text-xs font-bold uppercase tracking-wider" style="color:#a0621c">
+                    <p class="font-sans text-xs font-bold uppercase tracking-wider" style="color:var(--color-accent)">
                       {(p._cat||p.category_key||'').replace(/-/g,' ')}
                     </p>
-                    <h3 class="font-sans text-sm font-bold leading-tight" style="color:#1e293b">{p.name}</h3>
+                    <h3 class="font-sans text-sm font-bold leading-tight" style="color:var(--color-heading)">{p.name}</h3>
                     <div class="flex items-center gap-1">
-                      <span style="color:#f59e0b;font-size:0.75rem">{'★'.repeat(Math.round(p.rating||4.5))}</span>
-                      <span class="font-sans text-xs" style="color:#64748b">{parseFloat(p.rating||4.5).toFixed(1)}</span>
+                      <span style="color:var(--color-warning);font-size:0.75rem">{'★'.repeat(Math.round(p.rating||4.5))}</span>
+                      <span class="font-sans text-xs" style="color:var(--color-muted)">{parseFloat(p.rating||4.5).toFixed(1)}</span>
                     </div>
-                    {p.verdict && <p class="font-sans text-xs italic" style="color:#64748b">{p.verdict.slice(0,70)}…</p>}
-                    <div class="mt-auto flex items-center justify-between pt-2" style="border-top:1px solid #f5e8d0">
-                      <span class="font-sans font-black text-base" style="color:#1e293b">
+                    {p.verdict && <p class="font-sans text-xs italic" style="color:var(--color-muted)">{p.verdict.slice(0,70)}…</p>}
+                    <div class="mt-auto flex items-center justify-between pt-2" style="border-top:1px solid var(--color-surface-warm)">
+                      <span class="font-sans font-black text-base" style="color:var(--color-heading)">
                         {p.price ? `$${parseFloat(p.price).toFixed(2)}` : '—'}
                       </span>
                       {p.asin && p.asin !== 'SUBSCRIPTION' ? (
@@ -467,7 +471,7 @@ const breadcrumbLd = JSON.stringify({
                           Check price →
                         </a>
                       ) : p.asin === 'SUBSCRIPTION' ? (
-                        <span class="font-sans text-xs" style="color:#64748b">Subscription</span>
+                        <span class="font-sans text-xs" style="color:var(--color-muted)">Subscription</span>
                       ) : null}
                     </div>
                   </div>
@@ -480,14 +484,14 @@ const breadcrumbLd = JSON.stringify({
         <!-- Care tips -->
         {b.care_tips?.length > 0 && (
           <section>
-            <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+            <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
               {b.name} Care Tips
             </h2>
             <div class="space-y-3">
               {b.care_tips.map((tip: string) => (
-                <div class="flex gap-3 items-start rounded-xl p-4" style="background:#f0fdf4;border:1px solid #bbf7d0">
+                <div class="flex gap-3 items-start rounded-xl p-4" style="background:var(--color-success-light);border:1px solid var(--color-success-light)">
                   <span style="color:#16a34a;font-weight:bold;flex-shrink:0;margin-top:1px">✓</span>
-                  <p class="font-sans text-sm leading-relaxed" style="color:#1e293b">{tip}</p>
+                  <p class="font-sans text-sm leading-relaxed" style="color:var(--color-heading)">{tip}</p>
                 </div>
               ))}
             </div>
@@ -495,28 +499,28 @@ const breadcrumbLd = JSON.stringify({
         )}
 
         <!-- Who this breed suits -->
-        <section class="rounded-2xl p-6" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1px solid #86efac">
-          <h2 class="font-display text-2xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+        <section class="rounded-2xl p-6" style="background:linear-gradient(135deg,var(--color-success-light),#dcfce7);border:1px solid #86efac">
+          <h2 class="font-display text-2xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
             Who the {b.name} Suits
           </h2>
           <ul class="space-y-3">
             {suitabilityBullets.map((bullet: string) => (
               <li class="flex items-start gap-3">
                 <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white" style="background:#16a34a">✓</span>
-                <p class="font-sans text-sm leading-relaxed" style="color:#1e293b">{bullet}</p>
+                <p class="font-sans text-sm leading-relaxed" style="color:var(--color-heading)">{bullet}</p>
               </li>
             ))}
           </ul>
           {(profile.coat_care_label as string) && (
-            <div class="mt-4 pt-4 font-sans text-sm" style="border-top:1px solid #bbf7d0;color:#64748b">
-              <strong style="color:#1e293b">Grooming commitment:</strong> {profile.coat_care_label as string}
+            <div class="mt-4 pt-4 font-sans text-sm" style="border-top:1px solid var(--color-success-light);color:var(--color-muted)">
+              <strong style="color:var(--color-heading)">Grooming commitment:</strong> {profile.coat_care_label as string}
             </div>
           )}
         </section>
 
         <!-- Content cluster links -->
         <section>
-          <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+          <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
             All {b.name} Guides
           </h2>
 
@@ -524,16 +528,16 @@ const breadcrumbLd = JSON.stringify({
           <a
             href={COST_CALC_HREF}
             class="flex items-center gap-4 rounded-xl p-4 mb-4 transition-all"
-            style="border:2px solid #f59e0b;background:linear-gradient(135deg,#fffbeb,#fef3c7);text-decoration:none"
-            onmouseover="this.style.borderColor='#d97706';this.style.background='linear-gradient(135deg,#fef3c7,#fde68a)'"
-            onmouseout="this.style.borderColor='#f59e0b';this.style.background='linear-gradient(135deg,#fffbeb,#fef3c7)'"
+            style="border:2px solid var(--color-warning);background:linear-gradient(135deg,var(--color-accent-subtle),var(--color-warning-light));text-decoration:none"
+            onmouseover="this.style.borderColor='var(--color-warning)';this.style.background='linear-gradient(135deg,var(--color-warning-light),var(--color-warning-light))'"
+            onmouseout="this.style.borderColor='var(--color-warning)';this.style.background='linear-gradient(135deg,var(--color-accent-subtle),var(--color-warning-light))'"
           >
             <span style="font-size:1.5rem">💰</span>
             <div>
-              <p class="font-sans font-bold text-sm" style="color:#1e293b">{b.name} Cost Calculator</p>
+              <p class="font-sans font-bold text-sm" style="color:var(--color-heading)">{b.name} Cost Calculator</p>
               <p class="font-sans text-xs" style="color:#78350f">Puppy price, annual costs &amp; lifetime estimate →</p>
             </div>
-            <span class="ml-auto font-sans text-sm font-bold" style="color:#d97706">→</span>
+            <span class="ml-auto font-sans text-sm font-bold" style="color:var(--color-warning)">→</span>
           </a>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -543,13 +547,13 @@ const breadcrumbLd = JSON.stringify({
                 <a
                   href={c.href}
                   class="flex items-center gap-3 rounded-xl p-4 transition-all"
-                  style="border:1px solid #e8ccaa;background:white;text-decoration:none;color:#1e293b"
-                  onmouseover="this.style.borderColor='#a0621c';this.style.background='#fdf8f0'"
-                  onmouseout="this.style.borderColor='#e8ccaa';this.style.background='white'"
+                  style="border:1px solid var(--color-border-warm);background:white;text-decoration:none;color:var(--color-heading)"
+                  onmouseover="this.style.borderColor='var(--color-accent)';this.style.background='var(--color-bg-soft)'"
+                  onmouseout="this.style.borderColor='var(--color-border-warm)';this.style.background='white'"
                 >
                   <span style="font-size:1.25rem">{c.emoji}</span>
                   <span class="font-sans text-sm font-semibold">{c.label}</span>
-                  <span class="ml-auto font-sans text-xs" style="color:#a0621c">→</span>
+                  <span class="ml-auto font-sans text-xs" style="color:var(--color-accent)">→</span>
                 </a>
               ) : (
                 <div
@@ -557,7 +561,7 @@ const breadcrumbLd = JSON.stringify({
                   style="border:1px solid #f0e4d0;background:#fafaf9;opacity:0.5"
                 >
                   <span style="font-size:1.25rem">{c.emoji}</span>
-                  <span class="font-sans text-sm" style="color:#94a3b8">{c.label}</span>
+                  <span class="font-sans text-sm" style="color:var(--color-subtle)">{c.label}</span>
                 </div>
               );
             })}
@@ -566,24 +570,24 @@ const breadcrumbLd = JSON.stringify({
 
         <!-- FCI classification -->
         {b.fci_group && (
-          <section class="rounded-2xl p-6" style="background:#fdf8f0;border:1px solid #e8ccaa">
-            <h2 class="font-display text-xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+          <section class="rounded-2xl p-6" style="background:var(--color-bg-soft);border:1px solid var(--color-border-warm)">
+            <h2 class="font-display text-xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
               FCI Classification
             </h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 font-sans text-sm">
               <div>
-                <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#94a3b8">FCI Group</p>
-                <p class="font-semibold" style="color:#1e293b">Group {b.fci_group} — {b.fci_group_name}</p>
+                <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--color-subtle)">FCI Group</p>
+                <p class="font-semibold" style="color:var(--color-heading)">Group {b.fci_group} — {b.fci_group_name}</p>
               </div>
               {b.fci_section && (
                 <div>
-                  <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#94a3b8">Section</p>
-                  <p class="font-semibold" style="color:#1e293b">{b.fci_section}</p>
+                  <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--color-subtle)">Section</p>
+                  <p class="font-semibold" style="color:var(--color-heading)">{b.fci_section}</p>
                 </div>
               )}
               <div>
-                <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#94a3b8">Status</p>
-                <p class="font-semibold capitalize" style="color:#1e293b">{b.fci_status?.replace('-',' ')}</p>
+                <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:var(--color-subtle)">Status</p>
+                <p class="font-semibold capitalize" style="color:var(--color-heading)">{b.fci_status?.replace('-',' ')}</p>
               </div>
             </div>
           </section>
@@ -618,19 +622,19 @@ const breadcrumbLd = JSON.stringify({
         ];
         return (
           <section class="mt-2">
-            <p class="font-sans text-xs font-bold uppercase tracking-widest mb-4" style="color:#64748b">Related guides</p>
+            <p class="font-sans text-xs font-bold uppercase tracking-widest mb-4" style="color:var(--color-muted)">Related guides</p>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {guides.map(g => (
                 <a href={g.href}
                   class="flex gap-3 p-4 rounded-2xl transition-all hover:shadow-sm"
-                  style="border:1px solid #e8ccaa;background:white;text-decoration:none"
-                  onmouseover="this.style.borderColor='#a0621c';this.style.background='#fdf8f0'"
-                  onmouseout="this.style.borderColor='#e8ccaa';this.style.background='white'">
+                  style="border:1px solid var(--color-border-warm);background:white;text-decoration:none"
+                  onmouseover="this.style.borderColor='var(--color-accent)';this.style.background='var(--color-bg-soft)'"
+                  onmouseout="this.style.borderColor='var(--color-border-warm)';this.style.background='white'">
                   <span style="font-size:1.5rem;flex-shrink:0;line-height:1">{g.emoji}</span>
                   <div>
-                    <span class="font-sans text-xs font-bold px-2 py-0.5 rounded-full mb-1 inline-block" style="background:#fdf8f0;color:#a0621c">{g.tag}</span>
-                    <p class="font-sans font-bold text-sm leading-snug mb-1" style="color:#1e293b">{g.label}</p>
-                    <p class="font-sans text-xs leading-relaxed" style="color:#64748b">{g.desc}</p>
+                    <span class="font-sans text-xs font-bold px-2 py-0.5 rounded-full mb-1 inline-block" style="background:var(--color-bg-soft);color:var(--color-accent)">{g.tag}</span>
+                    <p class="font-sans font-bold text-sm leading-snug mb-1" style="color:var(--color-heading)">{g.label}</p>
+                    <p class="font-sans text-xs leading-relaxed" style="color:var(--color-muted)">{g.desc}</p>
                   </div>
                 </a>
               ))}
@@ -646,8 +650,8 @@ const breadcrumbLd = JSON.stringify({
         <div class="sticky space-y-5" style="top:80px">
 
           <!-- Quick facts -->
-          <div class="rounded-2xl overflow-hidden" style="border:1px solid #e8ccaa;background:white">
-            <div class="px-4 py-3 font-sans text-xs font-bold uppercase tracking-wider" style="background:#f5e8d0;color:#5c340a;border-bottom:1px solid #e8ccaa">
+          <div class="rounded-2xl overflow-hidden" style="border:1px solid var(--color-border-warm);background:white">
+            <div class="px-4 py-3 font-sans text-xs font-bold uppercase tracking-wider" style="background:var(--color-surface-warm);color:var(--color-accent-active);border-bottom:1px solid var(--color-border-warm)">
               Quick Facts
             </div>
             <div class="p-4 space-y-3 font-sans text-sm">
@@ -665,9 +669,9 @@ const breadcrumbLd = JSON.stringify({
                 profile.intelligence_tier ? ['Intelligence', (profile.intelligence_tier as string).charAt(0).toUpperCase()+(profile.intelligence_tier as string).slice(1)] : null,
                 ['Owner difficulty', `${profile.owner_difficulty}/10`],
               ].filter(Boolean).map((row: any) => (
-                <div class="flex justify-between gap-2 pb-2" style="border-bottom:1px solid #f5e8d0">
-                  <span style="color:#64748b">{row[0]}</span>
-                  <span class="font-semibold text-right" style="color:#1e293b;max-width:160px">{row[1]}</span>
+                <div class="flex justify-between gap-2 pb-2" style="border-bottom:1px solid var(--color-surface-warm)">
+                  <span style="color:var(--color-muted)">{row[0]}</span>
+                  <span class="font-semibold text-right" style="color:var(--color-heading);max-width:160px">{row[1]}</span>
                 </div>
               ))}
             </div>
@@ -675,23 +679,23 @@ const breadcrumbLd = JSON.stringify({
 
           <!-- Top food product -->
           {foodProd && foodProd.asin && foodProd.asin !== 'SUBSCRIPTION' && (
-            <div class="rounded-2xl overflow-hidden" style="border:2px solid #a0621c;background:white">
-              <div class="px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white" style="background:#a0621c">
+            <div class="rounded-2xl overflow-hidden" style="border:2px solid var(--color-accent);background:white">
+              <div class="px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white" style="background:var(--color-accent)">
                 Top food for {b.name}s
               </div>
-              <div class="p-4 flex items-center justify-center" style="background:#fdf8f0;height:120px">
+              <div class="p-4 flex items-center justify-center" style="background:var(--color-bg-soft);height:120px">
                 {foodProd.image?.includes('media-amazon') ? (
                   <img src={foodProd.image} alt={foodProd.name} width="100" height="100" loading="lazy" class="object-contain max-h-24"
                     onerror="this.parentElement.innerHTML='<span style=font-size:2rem>🍖</span>'" />
                 ) : <span style="font-size:2rem">🍖</span>}
               </div>
               <div class="p-4">
-                <p class="font-sans text-sm font-bold mb-1" style="color:#1e293b">{foodProd.name}</p>
+                <p class="font-sans text-sm font-bold mb-1" style="color:var(--color-heading)">{foodProd.name}</p>
                 <div class="flex items-center gap-1 mb-2">
-                  <span style="color:#f59e0b;font-size:0.7rem">{'★'.repeat(Math.round(foodProd.rating||4.5))}</span>
-                  <span class="font-sans text-xs" style="color:#64748b">{parseFloat(foodProd.rating||4.5).toFixed(1)}/5</span>
+                  <span style="color:var(--color-warning);font-size:0.7rem">{'★'.repeat(Math.round(foodProd.rating||4.5))}</span>
+                  <span class="font-sans text-xs" style="color:var(--color-muted)">{parseFloat(foodProd.rating||4.5).toFixed(1)}/5</span>
                 </div>
-                <p class="font-sans font-black text-lg mb-3" style="color:#1e293b">${parseFloat(foodProd.price||0).toFixed(2)}</p>
+                <p class="font-sans font-black text-lg mb-3" style="color:var(--color-heading)">${parseFloat(foodProd.price||0).toFixed(2)}</p>
                 <a href={amzUrl(foodProd.asin)} rel="nofollow sponsored" target="_blank"
                   class="flex justify-center" aria-label="Available at Amazon">
                   <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto" />
@@ -720,24 +724,24 @@ const breadcrumbLd = JSON.stringify({
           />
 
           <!-- Guide links sidebar -->
-          <div class="rounded-2xl p-4" style="border:1px solid #e8ccaa;background:white">
-            <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:#94a3b8">
+          <div class="rounded-2xl p-4" style="border:1px solid var(--color-border-warm);background:white">
+            <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:var(--color-subtle)">
               {b.name} Guides
             </p>
             <div class="space-y-1">
               <!-- Cost calculator always shown -->
               <a href={COST_CALC_HREF} class="flex items-center gap-2 px-2 py-2 rounded-lg font-sans text-sm font-semibold transition-colors"
-                style="color:#92400e;text-decoration:none;background:#fffbeb"
-                onmouseover="this.style.background='#fef3c7'"
-                onmouseout="this.style.background='#fffbeb'">
+                style="color:var(--color-accent-active);text-decoration:none;background:var(--color-accent-subtle)"
+                onmouseover="this.style.background='var(--color-warning-light)'"
+                onmouseout="this.style.background='var(--color-accent-subtle)'">
                 <span>💰</span>
                 <span>Cost calculator →</span>
               </a>
               {CLUSTER_LINKS.filter(c => status[c.key] && c.href).map(c => (
                 <a href={c.href} class="flex items-center gap-2 px-2 py-2 rounded-lg font-sans text-sm transition-colors"
-                  style="color:#1e293b;text-decoration:none"
-                  onmouseover="this.style.background='#fdf8f0';this.style.color='#a0621c'"
-                  onmouseout="this.style.background='transparent';this.style.color='#1e293b'">
+                  style="color:var(--color-heading);text-decoration:none"
+                  onmouseover="this.style.background='var(--color-bg-soft)';this.style.color='var(--color-accent)'"
+                  onmouseout="this.style.background='transparent';this.style.color='var(--color-heading)'">
                   <span>{c.emoji}</span>
                   <span>{c.label} →</span>
                 </a>
