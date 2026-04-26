@@ -416,6 +416,18 @@ const breadcrumbLd = JSON.stringify({
             )}
           </section>
         )}
+        <!-- Health → cost cross-link -->
+        {healthProfile && (
+          <a href={COST_CALC_HREF}
+            class="flex items-center justify-between gap-3 rounded-xl px-4 py-3 hover:opacity-90 transition-opacity"
+            style="background:var(--color-warning-light);border:1px solid var(--color-border-warm);text-decoration:none">
+            <p class="font-sans text-sm" style="color:var(--color-heading)">
+              <strong>{healthProfile.common_issues?.[0]?.name ?? 'Health conditions'}</strong> can significantly affect lifetime vet costs —
+              <span style="color:var(--color-accent)"> see the {b.name} cost calculator →</span>
+            </p>
+            <span style="font-size:1.25rem;flex-shrink:0">💰</span>
+          </a>
+        )}
 
         <!-- Top matched products -->
         {topProds.length > 0 && (
@@ -516,6 +528,31 @@ const breadcrumbLd = JSON.stringify({
               <strong style="color:var(--color-heading)">Grooming commitment:</strong> {profile.coat_care_label as string}
             </div>
           )}
+        </section>
+
+        <!-- Pre-dog decision CTA -->
+        <section style="background:var(--color-bg-cool);border:1px solid var(--color-primary-light);border-radius:var(--radius-2xl);padding:var(--space-6)">
+          <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-primary)">Thinking about getting a {b.name}?</p>
+          <h2 class="font-display text-xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
+            Make an informed decision
+          </h2>
+          <div class="grid gap-3 sm:grid-cols-3">
+            <a href="/breed-quiz" style="background:white;border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-4);text-decoration:none;display:block" class="hover:shadow-md transition-shadow">
+              <span style="font-size:1.5rem;display:block;margin-bottom:var(--space-2)">🐾</span>
+              <p class="font-sans font-bold text-sm mb-1" style="color:var(--color-heading)">Is this breed right for me?</p>
+              <p class="font-sans text-xs" style="color:var(--color-muted)">Take the breed match quiz to compare your lifestyle</p>
+            </a>
+            <a href={COST_CALC_HREF} style="background:white;border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-4);text-decoration:none;display:block" class="hover:shadow-md transition-shadow">
+              <span style="font-size:1.5rem;display:block;margin-bottom:var(--space-2)">💰</span>
+              <p class="font-sans font-bold text-sm mb-1" style="color:var(--color-heading)">What does a {b.name} cost?</p>
+              <p class="font-sans text-xs" style="color:var(--color-muted)">Full cost breakdown — puppy, annual, and lifetime</p>
+            </a>
+            <a href="/guides/first-dog" style="background:white;border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-4);text-decoration:none;display:block" class="hover:shadow-md transition-shadow">
+              <span style="font-size:1.5rem;display:block;margin-bottom:var(--space-2)">📋</span>
+              <p class="font-sans font-bold text-sm mb-1" style="color:var(--color-heading)">New to dog ownership?</p>
+              <p class="font-sans text-xs" style="color:var(--color-muted)">First dog guide — what to prepare before you bring one home</p>
+            </a>
+          </div>
         </section>
 
         <!-- Content cluster links -->

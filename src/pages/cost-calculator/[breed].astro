@@ -13,6 +13,7 @@ import actuarialRates    from '../../data/actuarial-breed-rates.json';
 import actuarialAgeFactors from '../../data/actuarial-age-factors.json';
 import statesIndex       from '../../data/us-states-insurance-index.json';
 import StateAgeSelector  from '../../components/StateAgeSelector.astro';
+import healthProfiles    from '../../data/breed-health-profiles.json';
 
 const AMAZON_TAG = 'aiexpertscorn-20';
 const SITE       = 'https://pupwiki.com';
@@ -99,6 +100,17 @@ const COST_ITEMS = [
   { label: 'Toys & enrichment',    annual: annual_toys,  icon: '🎾', note: `${b.energy_level === 'active' ? 'Active breeds need more mental stimulation' : 'Standard toy rotation'}` },
   { label: 'Other (misc/insurance)',annual: annual_other, icon: '💰', note: 'Training, boarding, pet insurance contributions' },
 ];
+
+// ── Health profile (for health cost panel) ───────────────────
+const healthProfile = (healthProfiles as any).profiles.find((p: any) => p.breed_slug === slug) ?? null;
+const SEVERITY_STYLES: Record<string, { bg: string; color: string }> = {
+  Low:          { bg: 'var(--color-success-light)', color: '#16a34a' },
+  Medium:       { bg: '#fefce8',                    color: '#ca8a04' },
+  'Medium-High':{ bg: '#fff7ed',                    color: '#ea580c' },
+  High:         { bg: '#fef2f2',                    color: '#dc2626' },
+  Critical:     { bg: '#fdf2f8',                    color: '#9333ea' },
+};
+const topHealthIssues = healthProfile?.common_issues?.slice(0, 3) ?? [];
 
 // Top products for sidebar
 const foodProd = b.product_picks?.['dog-food'] ? (productIndex as any)[b.product_picks['dog-food']] : null;
@@ -299,6 +311,54 @@ const jsonLd = JSON.stringify({
           * Estimates based on {n} breed profile ({b.size_category} size, {b.energy_level} energy, {b.coat_type} coat). Actual costs vary by location, lifestyle, and individual dog health.
         </p>
       </section>
+
+      <!-- Health considerations panel (only for breeds with health profile data) -->
+      {healthProfile && topHealthIssues.length > 0 && (
+        <section>
+          <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:var(--color-accent)">Health considerations</p>
+          <h2 class="font-display text-2xl font-bold mb-2" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
+            Common Health Costs for {n}s
+          </h2>
+          <p class="font-sans text-sm mb-5" style="color:var(--color-muted)">
+            These breed-specific health conditions can affect your actual vet costs. Budget extra if your vet recommends specialist care.
+          </p>
+          <div class="rounded-2xl overflow-hidden mb-4" style="border:1px solid var(--color-border-warm)">
+            {topHealthIssues.map((issue: any, i: number) => {
+              const sty = SEVERITY_STYLES[issue.severity] ?? SEVERITY_STYLES.Medium;
+              return (
+                <div class="p-4" style={`background:${i%2===0?'white':'var(--color-bg-soft)'};border-bottom:1px solid var(--color-border-soft)`}>
+                  <div class="flex items-start justify-between gap-3 mb-1">
+                    <p class="font-sans font-bold text-sm" style="color:var(--color-heading)">{issue.name}</p>
+                    <span class="font-sans text-xs font-semibold px-2 py-0.5 rounded-full flex-shrink-0"
+                      style={`background:${sty.bg};color:${sty.color}`}>
+                      {issue.severity}
+                    </span>
+                  </div>
+                  {issue.early_warning && (
+                    <p class="font-sans text-xs" style="color:var(--color-muted)">
+                      <strong style="color:var(--color-body-soft)">Watch for:</strong> {issue.early_warning}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+            {links.health_post && (
+              <div class="p-4" style="background:var(--color-bg-cool)">
+                <a href={links.health_post}
+                  class="font-sans text-sm font-semibold hover:underline"
+                  style="color:var(--color-primary)">
+                  Read: {n} health problems &amp; vet costs →
+                </a>
+              </div>
+            )}
+          </div>
+          {healthProfile.care_tips && (
+            <p class="font-sans text-xs rounded-xl p-3" style="background:var(--color-success-light);color:var(--color-success)">
+              <strong>Prevention tip:</strong> {healthProfile.care_tips}
+            </p>
+          )}
+        </section>
+      )}
 
       <!-- First year costs -->
       <section>
