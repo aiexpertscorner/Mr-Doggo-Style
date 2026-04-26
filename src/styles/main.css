@@ -20,6 +20,9 @@
 @import './components/misc.css';
 @import './components/home.css';
 
+/* Affiliate / partner banners */
+@import './components/affiliate.css';
+
 /* Domain modules */
 @import './components/breed.css';
 @import './components/products.css';

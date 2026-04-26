@@ -14,6 +14,8 @@ import breedLinkMap        from '../../data/breed-link-map.json';
 import contentStatus       from '../../data/content-status.json';
 import affiliateProducts    from '../../data/affiliate-products.json';
 import AffiliateProductCard  from '../../components/ui/AffiliateProductCard.astro';
+import PageBannerSlot        from '../../components/affiliate/PageBannerSlot.astro';
+import AwinProductSlot       from '../../components/affiliate/AwinProductSlot.astro';
 import healthProfiles        from '../../data/breed-health-profiles.json';
 import { deriveProfile } from '../../../scripts/lib/breed-profile.mjs';
 
@@ -698,16 +700,24 @@ const breadcrumbLd = JSON.stringify({
             </div>
           )}
 
-          <!-- Affiliate product card (Crown & Paw) -->
-          {(() => {
-            const crownProduct = (affiliateProducts as any[]).find((p: any) => p.id === 'crown-noble');
-            return crownProduct ? (
-              <AffiliateProductCard
-                product={crownProduct}
-                headline={`Gift idea for ${b.name} owners`}
-              />
-            ) : null;
-          })()}
+          <!-- Smart AWIN product slot — matched to breed context -->
+          <AwinProductSlot
+            topicTags={[b.energy_level, b.training_level, b.size_category, 'gift', 'lifestyle'].filter(Boolean)}
+            pageType="breed"
+            breedSize={b.size_category}
+            breedEnergy={b.energy_level}
+            breedTraining={b.training_level}
+            headline={`For ${b.name} owners`}
+          />
+
+          <!-- AWIN partner banner — breed context -->
+          <PageBannerSlot
+            pageType="breed"
+            placement="after-summary"
+            topic="care"
+            topicTags={[b.energy_level, b.training_level, 'care'].filter(Boolean)}
+            compact={true}
+          />
 
           <!-- Guide links sidebar -->
           <div class="rounded-2xl p-4" style="border:1px solid #e8ccaa;background:white">

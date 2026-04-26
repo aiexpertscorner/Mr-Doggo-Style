@@ -1,0 +1,95 @@
+/* =============================================================
+   AFFILIATE / PARTNER BANNERS
+   Mobile-first, responsive, safe for content columns and full-width bands.
+   ============================================================= */
+
+.affiliate-banner {
+  width: 100%;
+  margin-block: 1.25rem;
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: var(--shadow-card, 0 2px 10px rgba(7, 23, 39, 0.06));
+}
+
+.affiliate-banner__link,
+.affiliate-banner__snippet,
+.affiliate-banner__snippet a {
+  display: block;
+  width: 100%;
+}
+
+.affiliate-banner__image,
+.affiliate-banner__snippet img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.affiliate-banner__image--desktop {
+  display: none;
+}
+
+.affiliate-banner__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.65rem 0.9rem 0.8rem;
+  border-top: 1px solid var(--color-border-soft, #edf2f7);
+  background: var(--color-bg-soft, #fffaf3);
+}
+
+.affiliate-banner__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted, #64748b);
+}
+
+.affiliate-banner__note {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--color-muted, #64748b);
+}
+
+.affiliate-banner--compact .affiliate-banner__meta {
+  padding: 0.5rem 0.75rem 0.6rem;
+}
+
+.affiliate-banner--compact .affiliate-banner__note {
+  font-size: 0.72rem;
+}
+
+.affiliate-banner-slot--rail,
+.affiliate-banner--rail {
+  max-width: 22rem;
+}
+
+.affiliate-banner-slot--wide,
+.affiliate-banner--wide {
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .affiliate-banner {
+    margin-block: 1.5rem;
+    border-radius: 1.15rem;
+  }
+
+  .affiliate-banner__meta {
+    padding: 0.75rem 1rem 0.9rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .affiliate-banner__image--desktop {
+    display: block;
+  }
+
+  .affiliate-banner__image--mobile {
+    display: none;
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "schema": "awin-program-config",
+    "version": "1.0.0",
+    "publisherId": "2861861",
+    "notes": [
+      "This is our static editorial config per AWIN program.",
+      "Run scripts/sync-awin.mjs to refresh awin-products.json from live API.",
+      "topicTags drive product matching in AwinProductSlot.astro.",
+      "Programs without product feeds use customDeeplink for all CTAs."
+    ]
+  },
+  "programs": [
+    {
+      "id": "chefpaw",
+      "merchantId": "63546",
+      "feedId": "93508",
+      "label": "ChefPaw",
+      "description": "Homemade dog food maker — fresh feeding, sensitive stomach, allergy diets",
+      "hasFeed": true,
+      "deeplink": "https://tidd.ly/41TPa44",
+      "cta": "See the ChefPaw",
+      "badge": "AWIN Partner",
+      "priority": 85,
+      "epc": 2.26,
+      "conversionRate": 6.96,
+      "cookieDays": 30,
+      "topicTags": ["food", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "allergies", "care", "appliances"],
+      "pageTypes": ["blog", "breed", "category", "homepage"],
+      "excludeTopicTags": ["training", "toys", "gear", "beds", "emergency-vet"]
+    },
+    {
+      "id": "rawwild",
+      "merchantId": null,
+      "feedId": null,
+      "label": "Raw Wild",
+      "description": "Freeze-dried raw dog food — single-protein, wild-caught, no fillers",
+      "hasFeed": false,
+      "deeplink": "https://tidd.ly/4e36ta9",
+      "cta": "Shop Raw Wild",
+      "badge": "AWIN Partner",
+      "priority": 80,
+      "epc": 1.91,
+      "conversionRate": 6.18,
+      "cookieDays": 120,
+      "topicTags": ["food", "nutrition", "raw-food", "freeze-dried", "sensitive-stomach", "allergies", "feeding", "single-protein"],
+      "pageTypes": ["blog", "breed", "category"],
+      "excludeTopicTags": ["training", "toys", "gear", "beds", "emergency-vet"]
+    },
+    {
+      "id": "jugbow",
+      "merchantId": "79708",
+      "feedId": null,
+      "label": "JugBow",
+      "description": "Training collars, leashes, no-pull harnesses, recall training",
+      "hasFeed": false,
+      "deeplink": "https://tidd.ly/3QryFd6",
+      "cta": "Shop JugBow",
+      "badge": "AWIN Partner",
+      "priority": 90,
+      "epc": 0.23,
+      "conversionRate": 4.74,
+      "cookieDays": 30,
+      "topicTags": ["training", "behavior", "obedience", "recall", "leash", "harness", "working", "active", "gear"],
+      "pageTypes": ["blog", "breed", "category"],
+      "excludeTopicTags": ["food", "health", "emergency-vet", "medical-warning"]
+    },
+    {
+      "id": "crownandpaw",
+      "merchantId": "57823",
+      "feedId": null,
+      "label": "Crown & Paw",
+      "description": "Custom pet portraits, gifts for dog lovers, memorial gifts",
+      "hasFeed": true,
+      "deeplink": "https://tidd.ly/496jo7K",
+      "cta": "Create your portrait",
+      "badge": "AWIN Partner",
+      "priority": 75,
+      "epc": 0.92,
+      "conversionRate": 8.35,
+      "cookieDays": 60,
+      "topicTags": ["gift", "lifestyle", "portrait", "memorial", "dog-names", "apparel", "accessories"],
+      "pageTypes": ["blog", "breed", "homepage"],
+      "excludeTopicTags": ["food", "training", "health", "emergency-vet"]
+    }
+  ]
+}

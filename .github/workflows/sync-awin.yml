@@ -1,0 +1,73 @@
+name: Sync AWIN Affiliate Data
+
+on:
+  # Run daily at 03:00 UTC — keep product data fresh
+  schedule:
+    - cron: '0 3 * * *'
+
+  # Allow manual trigger from GitHub Actions UI
+  workflow_dispatch:
+    inputs:
+      commit_changes:
+        description: 'Commit updated data files to Pupwiki branch'
+        required: false
+        default: 'true'
+        type: boolean
+
+jobs:
+  sync:
+    name: Sync AWIN product & programme data
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Pupwiki branch
+        uses: actions/checkout@v4
+        with:
+          ref: Pupwiki
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run AWIN sync
+        env:
+          AWIN_OAUTH2_TOKEN: ${{ secrets.AWIN_OAUTH2_TOKEN }}
+        run: node scripts/sync-awin.mjs
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet src/data/awin-products.json src/data/awin-programs.json \
+            && echo "changed=false" >> $GITHUB_OUTPUT \
+            || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit updated data
+        if: steps.changes.outputs.changed == 'true' && (github.event_name == 'schedule' || inputs.commit_changes == 'true')
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/awin-products.json src/data/awin-programs.json
+          git commit -m "chore(awin): sync product & programme data [skip ci]"
+          git push origin Pupwiki
+
+      - name: Summary
+        run: |
+          echo "### AWIN sync complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f src/data/awin-products.json ]; then
+            COUNT=$(node -e "const d=require('./src/data/awin-products.json');console.log(d.length)")
+            echo "- Products synced: **${COUNT}**" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -f src/data/awin-programs.json ]; then
+            PROGS=$(node -e "const d=require('./src/data/awin-programs.json');console.log(d.summary?.length ?? 0)")
+            echo "- Programmes mapped: **${PROGS}**" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "- Timestamp: $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY

@@ -1,6 +1,10 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import masterBreeds from '../../data/master-breeds.json';
+import BaseLayout       from '../../layouts/BaseLayout.astro';
+import masterBreeds     from '../../data/master-breeds.json';
+import actuarialRates   from '../../data/actuarial-breed-rates.json';
+import actuarialAgeFactors from '../../data/actuarial-age-factors.json';
+import statesIndex      from '../../data/us-states-insurance-index.json';
+import StateAgeSelector from '../../components/StateAgeSelector.astro';
 
 const SITE = 'https://pupwiki.com';
 
@@ -12,6 +16,14 @@ const SIZE_COSTS: Record<string, { food_annual: number; vet_annual: number; groo
 };
 const COAT_MULT: Record<string, number> = { double:1.4, long:1.6, silky:1.5, wiry:1.5, curly:1.7, corded:2.0, short:0.8, wavy:1.2, medium:1.0 };
 const ENERGY_MULT: Record<string, number> = { active:1.3, regular:1.0, calm:0.9 };
+const INS_SIZE_FALLBACK: Record<string, number> = { small: 35, medium: 50, large: 70, giant: 95 };
+
+const INS_DEFAULT_STATE = 'CA';
+const INS_DEFAULT_AGE   = 3;
+const defaultStateMult  = (statesIndex as any).states.find((s: any) => s.code === INS_DEFAULT_STATE)?.cost_multiplier ?? 1.34;
+const defaultAgeFact    = (actuarialAgeFactors as any).age_factors.find(
+  (f: any) => INS_DEFAULT_AGE >= f.min_age_years && INS_DEFAULT_AGE < f.max_age_years
+)?.premium_factor ?? 1.09;
 
 const breedsWithCosts = (masterBreeds as any[]).map(b => {
   const base    = SIZE_COSTS[b.size_category] || SIZE_COSTS.medium;
@@ -33,7 +45,11 @@ const breedsWithCosts = (masterBreeds as any[]).map(b => {
   const one_time   = base.supplies_one_time + base.spay_neuter + 200;
   const lifetime_est = rank.lifetime_cost_usd || Math.round(one_time + (annual_total * lifespan));
 
-  return { ...b, annual_total, lifetime_est, lifespan, puppy_low, puppy_high };
+  const breedRate = (actuarialRates as any).breed_rates.find((r: any) => r.breed_slug === b.slug);
+  const insBase   = breedRate?.base_premium ?? INS_SIZE_FALLBACK[b.size_category] ?? 50;
+  const insMonthly = Math.round(insBase * defaultAgeFact * defaultStateMult * 100) / 100;
+
+  return { ...b, annual_total, lifetime_est, lifespan, puppy_low, puppy_high, insBase, insMonthly };
 });
 
 // Serialise compact version for client-side compare feature
@@ -48,7 +64,11 @@ const compareData = JSON.stringify(breedsWithCosts.map(b => ({
   puppy_low:   b.puppy_low,
   puppy_high:  b.puppy_high,
   image:       b.image_url || null,
+  insBase:     b.insBase,
+  insMonthly:  b.insMonthly,
 })));
+
+const insDefaults = JSON.stringify({ stateMult: defaultStateMult, ageFact: defaultAgeFact });
 
 const SIZE_EMOJI: Record<string,string> = { small:'🐕', medium:'🐕‍🦺', large:'🐕‍🦺', giant:'🦮' };
 
@@ -141,6 +161,11 @@ const jsonLd = JSON.stringify({
         <button id="clear-filters" class="font-sans text-sm font-medium hover:underline" style="color:#a0621c;display:none">Clear filters</button>
       </div>
 
+      <div>
+        <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Insurance estimate location</p>
+        <StateAgeSelector defaultState="CA" defaultAge="3" compact={true} />
+      </div>
+
     </div>
   </div>
 
@@ -163,6 +188,7 @@ const jsonLd = JSON.stringify({
         data-lifetime={b.lifetime_est}
         data-slug={b.slug}
         data-popularity={i}
+        data-ins-base={b.insBase}
       >
         <!-- Compare checkbox -->
         <label class="compare-label" style="position:absolute;top:8px;right:8px;z-index:10;cursor:pointer;display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.92);border-radius:8px;padding:3px 7px;border:1px solid #e8ccaa;font-family:sans-serif;font-size:11px;font-weight:600;color:#5c340a;user-select:none">
@@ -206,9 +232,13 @@ const jsonLd = JSON.stringify({
               <span class="font-sans text-xs" style="color:#64748b">Annual cost</span>
               <span class="font-sans font-black text-base" style="color:#a0621c">${b.annual_total.toLocaleString()}</span>
             </div>
-            <div class="flex justify-between items-baseline">
+            <div class="flex justify-between items-baseline mb-1">
               <span class="font-sans text-xs" style="color:#64748b">Lifetime est.</span>
               <span class="font-sans font-semibold text-sm" style="color:#475569">~${b.lifetime_est.toLocaleString()}</span>
+            </div>
+            <div class="flex justify-between items-baseline pt-1" style="border-top:1px solid #e8ccaa">
+              <span class="font-sans text-xs" style="color:#64748b">🛡️ Insurance</span>
+              <span class="font-sans font-semibold text-xs ins-card-monthly" style="color:#0369a1">~${b.insMonthly.toFixed(2)}/mo</span>
             </div>
           </div>
 
@@ -260,9 +290,35 @@ const jsonLd = JSON.stringify({
 <!-- Spacer so content isn't hidden behind tray -->
 <div id="tray-spacer" style="height:0"></div>
 
-<script define:vars={{ compareData }}>
+<script define:vars={{ compareData, insDefaults }}>
   const ALL_BREEDS = JSON.parse(compareData);
   const breedMap = Object.fromEntries(ALL_BREEDS.map(b => [b.slug, b]));
+
+  const _ins = JSON.parse(insDefaults);
+  let currentStateMult = _ins.stateMult;
+  let currentAgeFact   = _ins.ageFact;
+
+  function updateInsEstimates() {
+    document.querySelectorAll('.ins-card-monthly').forEach(el => {
+      const card = el.closest('[data-ins-base]');
+      const base = parseFloat(card?.dataset?.insBase || '0');
+      if (!isNaN(base) && base > 0) {
+        const monthly = Math.round(base * currentAgeFact * currentStateMult * 100) / 100;
+        el.textContent = '~$' + monthly.toFixed(2) + '/mo';
+      }
+    });
+    renderTray();
+  }
+
+  document.addEventListener('stateChange', e => {
+    currentStateMult = e.detail.multiplier;
+    updateInsEstimates();
+  });
+
+  document.addEventListener('ageChange', e => {
+    currentAgeFact = e.detail.factor;
+    updateInsEstimates();
+  });
 
   // ── Filters & search ──
   let activeSize   = 'all';
@@ -360,6 +416,7 @@ const jsonLd = JSON.stringify({
     ['Annual cost',            b => `$${b.annual.toLocaleString()}`],
     ['Monthly cost',           b => `$${Math.round(b.annual / 12).toLocaleString()}`],
     ['Lifetime estimate',      b => `~$${b.lifetime.toLocaleString()}`],
+    ['🛡️ Insurance/mo',       b => `~$${(Math.round(b.insBase * currentAgeFact * currentStateMult * 100) / 100).toFixed(2)}`],
     ['Avg lifespan',           b => `${b.lifespan} yrs`],
     ['Size',                   b => b.size.charAt(0).toUpperCase() + b.size.slice(1)],
     ['Energy',                 b => b.energy.charAt(0).toUpperCase() + b.energy.slice(1)],

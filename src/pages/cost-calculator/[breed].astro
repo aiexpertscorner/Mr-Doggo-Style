@@ -12,6 +12,7 @@ import breedLinkMap      from '../../data/breed-link-map.json';
 import actuarialRates    from '../../data/actuarial-breed-rates.json';
 import actuarialAgeFactors from '../../data/actuarial-age-factors.json';
 import statesIndex       from '../../data/us-states-insurance-index.json';
+import StateAgeSelector  from '../../components/StateAgeSelector.astro';
 
 const AMAZON_TAG = 'aiexpertscorn-20';
 const SITE       = 'https://pupwiki.com';
@@ -216,16 +217,19 @@ const jsonLd = JSON.stringify({
           <div>
             <p class="font-sans text-xs font-bold uppercase tracking-wider opacity-80">Pet Insurance Estimate</p>
             <p class="font-sans text-sm font-semibold">
-              {n} · Age 3 · California
+              {n} · <span id="ins-header-age">Age 3</span> · <span id="ins-header-state">California</span>
               {insIsEstimated && <span class="opacity-70 font-normal"> (size-based estimate)</span>}
             </p>
           </div>
           <div class="ml-auto text-right">
-            <p class="font-display text-2xl font-black" style="font-family:'Playfair Display',Georgia,serif">${insMonthlyEst.toFixed(2)}<span class="text-base font-normal opacity-80">/mo</span></p>
-            <p class="font-sans text-xs opacity-70">${insAnnualEst.toLocaleString()}/year</p>
+            <p class="font-display text-2xl font-black" style="font-family:'Playfair Display',Georgia,serif"><span id="ins-monthly">${insMonthlyEst.toFixed(2)}</span><span class="text-base font-normal opacity-80">/mo</span></p>
+            <p class="font-sans text-xs opacity-70"><span id="ins-annual">${insAnnualEst.toLocaleString()}</span>/year</p>
           </div>
         </div>
         <div class="px-6 py-5">
+          <div class="mb-5">
+            <StateAgeSelector defaultState="CA" defaultAge="3" compact={true} />
+          </div>
           <div class="grid sm:grid-cols-3 gap-4 mb-5">
             <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #bae6fd">
               <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:#64748b">Base premium</p>
@@ -234,13 +238,13 @@ const jsonLd = JSON.stringify({
             </div>
             <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #bae6fd">
               <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:#64748b">Age factor</p>
-              <p class="font-sans font-black text-lg" style="color:#0369a1">×{insAgeFactor.toFixed(2)}</p>
-              <p class="font-sans text-xs" style="color:#94a3b8">Age {INS_DEFAULT_AGE} (adult)</p>
+              <p class="font-sans font-black text-lg" style="color:#0369a1"><span id="ins-age-factor">×{insAgeFactor.toFixed(2)}</span></p>
+              <p class="font-sans text-xs" style="color:#94a3b8"><span id="ins-age-display">Age {INS_DEFAULT_AGE}</span></p>
             </div>
             <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #bae6fd">
               <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:#64748b">State multiplier</p>
-              <p class="font-sans font-black text-lg" style="color:#0369a1">×{insStateMultiplier.toFixed(2)}</p>
-              <p class="font-sans text-xs" style="color:#94a3b8">California (CA)</p>
+              <p class="font-sans font-black text-lg" style="color:#0369a1"><span id="ins-state-mult">×{insStateMultiplier.toFixed(2)}</span></p>
+              <p class="font-sans text-xs" style="color:#94a3b8"><span id="ins-state-name">California (CA)</span></p>
             </div>
           </div>
           <div class="flex flex-wrap items-center justify-between gap-3">
@@ -248,7 +252,7 @@ const jsonLd = JSON.stringify({
               <span class="inline-block font-sans text-xs font-bold px-3 py-1 rounded-full" style={`background:${insRiskColor}20;color:${insRiskColor};border:1px solid ${insRiskColor}40`}>
                 {insRiskCategory} Risk
               </span>
-              <span class="font-sans text-xs" style="color:#64748b">
+              <span id="ins-formula" class="font-sans text-xs" style="color:#64748b">
                 Formula: ${insBasePremium.toFixed(2)} × {insAgeFactor.toFixed(2)} × {insStateMultiplier.toFixed(2)} = ${insMonthlyEst.toFixed(2)}/mo
               </span>
             </div>
@@ -529,12 +533,50 @@ const jsonLd = JSON.stringify({
   </div>
 </div>
 
-<script>
+<script define:vars={{ insBasePremium, insAgeFactor, insStateMultiplier }}>
+  // FAQ toggles
   document.querySelectorAll('details').forEach(el => {
     el.addEventListener('toggle', () => {
-      const icon = el.querySelector('.faq-icon') as HTMLElement;
+      const icon = el.querySelector('.faq-icon');
       if (icon) icon.textContent = el.open ? '−' : '+';
     });
+  });
+
+  // Insurance geo recalculation
+  let stateMult = insStateMultiplier;
+  let ageFact   = insAgeFactor;
+
+  function recalcIns() {
+    const monthly = Math.round(insBasePremium * ageFact * stateMult * 100) / 100;
+    const annual  = Math.round(monthly * 12);
+    const mEl  = document.getElementById('ins-monthly');
+    const aEl  = document.getElementById('ins-annual');
+    const smEl = document.getElementById('ins-state-mult');
+    const afEl = document.getElementById('ins-age-factor');
+    const fEl  = document.getElementById('ins-formula');
+    if (mEl)  mEl.textContent  = '$' + monthly.toFixed(2);
+    if (aEl)  aEl.textContent  = '$' + annual.toLocaleString();
+    if (smEl) smEl.textContent = '×' + stateMult.toFixed(2);
+    if (afEl) afEl.textContent = '×' + ageFact.toFixed(2);
+    if (fEl)  fEl.textContent  = `Formula: $${insBasePremium.toFixed(2)} × ${ageFact.toFixed(2)} × ${stateMult.toFixed(2)} = $${monthly.toFixed(2)}/mo`;
+  }
+
+  document.addEventListener('stateChange', e => {
+    stateMult = e.detail.multiplier;
+    const nameEl   = document.getElementById('ins-state-name');
+    const headerEl = document.getElementById('ins-header-state');
+    if (nameEl)   nameEl.textContent   = `${e.detail.name} (${e.detail.code})`;
+    if (headerEl) headerEl.textContent = e.detail.name;
+    recalcIns();
+  });
+
+  document.addEventListener('ageChange', e => {
+    ageFact = e.detail.factor;
+    const dispEl   = document.getElementById('ins-age-display');
+    const headerEl = document.getElementById('ins-header-age');
+    if (dispEl)   dispEl.textContent   = e.detail.displayAge;
+    if (headerEl) headerEl.textContent = e.detail.displayAge;
+    recalcIns();
   });
 </script>
 
