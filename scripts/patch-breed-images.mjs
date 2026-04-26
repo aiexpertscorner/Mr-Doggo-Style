@@ -21,8 +21,8 @@ const D = s => `\x1b[2m${s}\x1b[0m`;
 // These are real CDN URLs using the Stanford Dogs Dataset filenames
 const IMAGE_PATCHES = {
   // The 4 breeds with local images visible in the repo
-  'german-shepherd-dog':  'https://images.dog.ceo/breeds/germanshepherd/n02106662_10472.jpg',
-  'saint-bernard':        'https://images.dog.ceo/breeds/bernard-saint/n02109525_3.jpg',
+  'german-shepherd-dog':  'https://images.dog.ceo/breeds/germanshepherd/n02106662_10858.jpg',
+  'saint-bernard':        'https://unsplash.com/photos/a-large-brown-and-white-dog-laying-on-a-tile-floor-84Xee3ZVrvc',
   'bloodhound':           'https://images.dog.ceo/breeds/bloodhound/n02088466_1.jpg',
   'brussels-griffon':     'https://images.dog.ceo/breeds/griffon-brussels/n02112706_1.jpg',
 
