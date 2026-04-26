@@ -1,30 +1,55 @@
 ---
-export interface Props { name:string; asin:string; price?:number; rating?:number; badge?:string; image?:string; tag?:string; }
-const { name, asin, price, rating=4.7, badge="EDITOR'S PICK", image, tag="aiexpertscorn-20" } = Astro.props;
+import { ENABLE_AMAZON_BUTTONS } from '../lib/site-config';
+
+export interface Props {
+  name: string;
+  asin: string;
+  price?: number;
+  rating?: number;
+  badge?: string;
+  image?: string;
+  tag?: string;
+}
+
+const { name, asin, price, rating = 4.7, badge = "Editor's Pick", image, tag = 'aiexpertscorn-20' } = Astro.props;
 const url = `https://www.amazon.com/dp/${asin}/?tag=${tag}`;
 ---
-<div style="border:2px solid #CCFF00;box-shadow:4px 4px 0 #CCFF00;background:#222;overflow:hidden">
-  <div style="background:#CCFF00;padding:.35rem .9rem;font-family:'Archivo Black',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:#0A0A0A">{badge}</div>
-  <a href={url} rel="nofollow sponsored" target="_blank"
-     style="display:block;background:#fff;overflow:hidden;aspect-ratio:1">
+
+<style>
+  .sidebar-img { transition: transform 0.25s ease; }
+  .sidebar-img-link:hover .sidebar-img { transform: scale(1.05); }
+  .sidebar-cta-btn:hover { opacity: 0.88; }
+</style>
+
+<div style="border:1px solid var(--color-border);border-radius:var(--radius-2xl);background:var(--color-bg);overflow:hidden;box-shadow:var(--shadow-sm)">
+  <div style="background:var(--color-accent);padding:.35rem .9rem;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff">{badge}</div>
+  <a href={url} rel="nofollow sponsored" target="_blank" class="sidebar-img-link"
+     style="display:block;background:var(--color-bg-soft);overflow:hidden;aspect-ratio:1">
     {image ? (
-      <img src={image} alt={name} loading="lazy" width="300" height="300"
-           style="width:100%;height:100%;object-fit:contain;padding:.75rem;transition:transform .25s;display:block"
-           onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform=''"/>
+      <img src={image} alt={name} loading="lazy" width="300" height="300" class="sidebar-img"
+           style="width:100%;height:100%;object-fit:contain;padding:.75rem;display:block" />
     ) : (
-      <div style="width:100%;height:100%;background:#111;display:flex;align-items:center;justify-content:center">
+      <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center">
         <span style="font-size:2.5rem">🐾</span>
       </div>
     )}
   </a>
   <div style="padding:1.1rem">
-    <h4 style="font-family:'Archivo Black',sans-serif;font-size:.8rem;text-transform:uppercase;color:#F0F0F0;margin:0 0 .4rem;line-height:1.2">{name}</h4>
+    <h4 style="font-size:.85rem;font-weight:700;color:var(--color-heading);margin:0 0 .4rem;line-height:1.3">{name}</h4>
     <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem">
-      <span style="color:#CCFF00;font-size:.8rem">{'★'.repeat(Math.round(rating))}</span>
-      {price && <span style="font-family:'Archivo Black',sans-serif;color:#CCFF00;font-size:.95rem">${price.toFixed(2)}</span>}
+      <span style="color:var(--color-accent);font-size:.8rem">{'★'.repeat(Math.round(rating))}</span>
+      {price && <span style="font-weight:700;color:var(--color-heading);font-size:.95rem">${price.toFixed(2)}</span>}
     </div>
-    <a href={url} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon" style="display:flex;justify-content:center;line-height:0;margin-bottom:.45rem">
-      <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto;display:block" />
-    </a>
+    {ENABLE_AMAZON_BUTTONS ? (
+      <a href={url} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon"
+        style="display:flex;justify-content:center;line-height:0;margin-bottom:.45rem">
+        <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto;display:block" />
+      </a>
+    ) : (
+      <a href={url} rel="nofollow sponsored" target="_blank" class="sidebar-cta-btn"
+        style="display:block;text-align:center;font-size:.8rem;font-weight:700;padding:.6rem;border-radius:var(--radius-xl);background:var(--color-accent);color:#fff;text-decoration:none;transition:opacity .2s">
+        Check price →
+      </a>
+    )}
   </div>
 </div>
