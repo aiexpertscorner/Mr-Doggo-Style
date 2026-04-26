@@ -1,0 +1,148 @@
+---
+/**
+ * StateAgeSelector.astro
+ * 50-state dropdown + age bucket selector for the cost calculator.
+ * Dispatches custom DOM events so the parent page can recalculate insurance estimates.
+ *
+ * Events emitted on `document`:
+ *   stateChange → { code, name, multiplier }
+ *   ageChange   → { key, displayAge, factor }
+ *
+ * Usage:
+ *   <StateAgeSelector defaultState="CA" defaultAge="3" />
+ *   <StateAgeSelector defaultState="NY" showAgeSelector={false} />
+ */
+
+import statesIndex  from '../data/us-states-insurance-index.json';
+import ageFactors   from '../data/actuarial-age-factors.json';
+
+export interface Props {
+  defaultState?:    string;   // 2-letter state code, default "CA"
+  defaultAge?:      string;   // age_key from actuarial-age-factors.json, default "3"
+  showAgeSelector?: boolean;
+  compact?:         boolean;
+}
+
+const {
+  defaultState    = 'CA',
+  defaultAge      = '3',
+  showAgeSelector = true,
+  compact         = false,
+} = Astro.props;
+
+const states   = (statesIndex as any).states as { code: string; name: string; cost_multiplier: number }[];
+const ages     = (ageFactors as any).age_factors as { age_key: string; display_age: string; premium_factor: number; life_stage: string }[];
+
+const initState = states.find(s => s.code === defaultState) ?? states.find(s => s.code === 'CA')!;
+const initAge   = ages.find(a => a.age_key === defaultAge)   ?? ages.find(a => a.age_key === '3')!;
+
+const statesJson = JSON.stringify(states);
+const agesJson   = JSON.stringify(ages);
+---
+
+<div class:list={['state-age-selector', compact && 'state-age-selector--compact']} data-component="state-age-selector">
+
+  <div class="flex flex-wrap items-center gap-3">
+
+    <!-- State selector -->
+    <div class="flex items-center gap-2">
+      <label for="ins-state-select"
+        class="font-sans text-xs font-bold uppercase tracking-wider flex-shrink-0"
+        style="color:var(--color-muted)">
+        State
+      </label>
+      <select
+        id="ins-state-select"
+        class="font-sans text-sm font-semibold rounded-xl px-3 py-2 border focus:outline-none cursor-pointer"
+        style="border-color:var(--color-border-strong);color:var(--color-heading);background:white;min-width:160px"
+        aria-label="Select your state"
+      >
+        {states.map(s => (
+          <option value={s.code} selected={s.code === initState.code}>
+            {s.name} ({s.code}) — ×{s.cost_multiplier.toFixed(2)}
+          </option>
+        ))}
+      </select>
+    </div>
+
+    <!-- Age selector -->
+    {showAgeSelector && (
+      <div class="flex items-center gap-2">
+        <label for="ins-age-select"
+          class="font-sans text-xs font-bold uppercase tracking-wider flex-shrink-0"
+          style="color:var(--color-muted)">
+          Dog age
+        </label>
+        <select
+          id="ins-age-select"
+          class="font-sans text-sm font-semibold rounded-xl px-3 py-2 border focus:outline-none cursor-pointer"
+          style="border-color:var(--color-border-strong);color:var(--color-heading);background:white;min-width:140px"
+          aria-label="Select your dog's age"
+        >
+          {ages.map(a => (
+            <option value={a.age_key} selected={a.age_key === initAge.age_key}>
+              {a.display_age} ({a.life_stage.replace(/_/g, ' ')})
+            </option>
+          ))}
+        </select>
+      </div>
+    )}
+
+  </div>
+
+  <!-- Status label -->
+  <p class="font-sans text-xs mt-2" style="color:var(--color-muted)">
+    Showing estimates for:&nbsp;
+    <strong id="ins-status-state" style="color:var(--color-heading)">{initState.name}</strong>
+    {showAgeSelector && (
+      <> · Dog age: <strong id="ins-status-age" style="color:var(--color-heading)">{initAge.display_age}</strong></>
+    )}
+  </p>
+
+</div>
+
+<script define:vars={{ statesJson, agesJson, defaultState, defaultAge }}>
+  const STATES = JSON.parse(statesJson);
+  const AGES   = JSON.parse(agesJson);
+
+  const stateSelect  = document.getElementById('ins-state-select');
+  const ageSelect    = document.getElementById('ins-age-select');
+  const statusState  = document.getElementById('ins-status-state');
+  const statusAge    = document.getElementById('ins-status-age');
+
+  function dispatchState(code) {
+    const s = STATES.find(x => x.code === code);
+    if (!s) return;
+    if (statusState) statusState.textContent = s.name;
+    document.dispatchEvent(new CustomEvent('stateChange', {
+      detail: { code: s.code, name: s.name, multiplier: s.cost_multiplier },
+    }));
+  }
+
+  function dispatchAge(key) {
+    const a = AGES.find(x => x.age_key === key);
+    if (!a) return;
+    if (statusAge) statusAge.textContent = a.display_age;
+    document.dispatchEvent(new CustomEvent('ageChange', {
+      detail: { key: a.age_key, displayAge: a.display_age, factor: a.premium_factor },
+    }));
+  }
+
+  stateSelect?.addEventListener('change', () => dispatchState(stateSelect.value));
+  ageSelect?.addEventListener('change',   () => dispatchAge(ageSelect.value));
+</script>
+
+<style>
+  .state-age-selector {
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-xl, 1rem);
+    background: var(--color-bg-muted, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+  }
+  .state-age-selector--compact {
+    padding: 0.75rem 1rem;
+  }
+  select {
+    appearance: auto;
+  }
+</style>
