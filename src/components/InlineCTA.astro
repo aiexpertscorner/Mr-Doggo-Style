@@ -1,29 +1,55 @@
 ---
-export interface Props { name:string; asin:string; price?:number; rating?:number; label?:string; note?:string; image?:string; tag?:string; }
-const { name, asin, price, rating=4.7, label="TOP PICK", note, image, tag="aiexpertscorn-20" } = Astro.props;
+import { ENABLE_AMAZON_BUTTONS } from '../lib/site-config';
+
+export interface Props {
+  name: string;
+  asin: string;
+  price?: number;
+  rating?: number;
+  label?: string;
+  note?: string;
+  image?: string;
+  tag?: string;
+}
+
+const { name, asin, price, rating = 4.7, label = 'Top Pick', note, image, tag = 'aiexpertscorn-20' } = Astro.props;
 const url = `https://www.amazon.com/dp/${asin}/?tag=${tag}`;
 ---
-<div style="border:2px solid #CCFF00;background:rgba(204,255,0,.06);box-shadow:4px 4px 0 #CCFF00;padding:1rem 1.25rem;margin:2.5rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:1rem">
-  <a href={url} rel="nofollow sponsored" target="_blank"
-     style="display:block;background:#fff;flex-shrink:0;width:72px;height:72px;overflow:hidden;border:1px solid rgba(255,255,255,.1)">
+
+<style>
+  .inline-cta-img { transition: transform 0.2s ease; }
+  .inline-cta-img-link:hover .inline-cta-img { transform: scale(1.08); }
+  .inline-cta-btn:hover { opacity: 0.88; }
+</style>
+
+<div style="border:1px solid var(--color-border-warm);background:var(--color-accent-soft);border-radius:var(--radius-xl);padding:1rem 1.25rem;margin:2.5rem 0;display:flex;flex-wrap:wrap;align-items:center;gap:1rem">
+  <a href={url} rel="nofollow sponsored" target="_blank" class="inline-cta-img-link"
+     style="display:block;background:#fff;flex-shrink:0;width:72px;height:72px;overflow:hidden;border-radius:var(--radius-lg);border:1px solid var(--color-border)">
     {image ? (
-      <img src={image} alt={name} loading="lazy" width="72" height="72"
-           style="width:100%;height:100%;object-fit:contain;padding:.15rem;transition:transform .2s;display:block"
-           onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform=''"/>
+      <img src={image} alt={name} loading="lazy" width="72" height="72" class="inline-cta-img"
+           style="width:100%;height:100%;object-fit:contain;padding:.15rem;display:block" />
     ) : (
       <span style="font-size:2rem;display:flex;align-items:center;justify-content:center;height:100%">🐾</span>
     )}
   </a>
   <div style="flex:1;min-width:160px">
-    <span style="font-family:'Archivo Black',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:#CCFF00">👑 {label}</span>
-    <p style="font-family:'Archivo Black',sans-serif;font-size:.9rem;text-transform:uppercase;color:#F0F0F0;margin:.15rem 0 .15rem;line-height:1.2">{name}</p>
+    <span style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-accent)">👑 {label}</span>
+    <p style="font-size:.9rem;font-weight:700;color:var(--color-heading);margin:.15rem 0;line-height:1.2">{name}</p>
     <div style="display:flex;gap:.5rem;align-items:center">
-      <span style="color:#CCFF00;font-size:.75rem">{'★'.repeat(Math.round(rating))}</span>
-      {price && <span style="color:#CCFF00;font-family:'Archivo Black',sans-serif;font-size:.85rem">${price.toFixed(2)}</span>}
+      <span style="color:var(--color-accent);font-size:.75rem">{'★'.repeat(Math.round(rating))}</span>
+      {price && <span style="color:var(--color-heading);font-weight:700;font-size:.85rem">${price.toFixed(2)}</span>}
     </div>
-    {note && <p style="font-family:'Barlow Condensed',sans-serif;font-size:.78rem;color:#888;margin:.2rem 0 0">{note}</p>}
+    {note && <p style="font-size:.78rem;color:var(--color-muted);margin:.2rem 0 0">{note}</p>}
   </div>
-  <a href={url} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon" style="flex-shrink:0;display:inline-block;line-height:0">
-    <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto;display:block" />
-  </a>
+  {ENABLE_AMAZON_BUTTONS ? (
+    <a href={url} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon"
+      style="flex-shrink:0;display:inline-block;line-height:0">
+      <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto;display:block" />
+    </a>
+  ) : (
+    <a href={url} rel="nofollow sponsored" target="_blank" class="inline-cta-btn"
+      style="flex-shrink:0;display:inline-flex;align-items:center;font-size:.8rem;font-weight:700;padding:.5rem 1rem;border-radius:var(--radius-xl);background:var(--color-accent);color:#fff;text-decoration:none;transition:opacity .2s">
+      Check price →
+    </a>
+  )}
 </div>

@@ -1,35 +1,65 @@
 ---
-export interface Props { winner:string; winnerAsin:string; winnerNote:string; budgetPick?:string; budgetAsin?:string; budgetNote?:string; tag?:string; }
-const { winner, winnerAsin, winnerNote, budgetPick, budgetAsin, budgetNote, tag="aiexpertscorn-20" } = Astro.props;
+import { ENABLE_AMAZON_BUTTONS } from '../lib/site-config';
+
+export interface Props {
+  winner: string;
+  winnerAsin: string;
+  winnerNote: string;
+  budgetPick?: string;
+  budgetAsin?: string;
+  budgetNote?: string;
+  tag?: string;
+}
+
+const { winner, winnerAsin, winnerNote, budgetPick, budgetAsin, budgetNote, tag = 'aiexpertscorn-20' } = Astro.props;
+const winnerUrl = `https://www.amazon.com/dp/${winnerAsin}/?tag=${tag}`;
+const budgetUrl = budgetAsin ? `https://www.amazon.com/dp/${budgetAsin}/?tag=${tag}` : null;
 ---
-<div style="border:2px solid var(--lime);box-shadow:6px 6px 0 var(--lime);margin:2.5rem 0;overflow:hidden">
-  <div style="background:var(--lime);padding:.6rem 1.25rem;font-family:'Archivo Black',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--midnight)">
-    🏆 OUR VERDICT
+
+<div style="border:2px solid var(--color-accent);border-radius:var(--radius-2xl);margin:2.5rem 0;overflow:hidden">
+  <div style="background:var(--color-accent);padding:.6rem 1.25rem;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff">
+    🏆 Our Verdict
   </div>
-  <div style="background:var(--concrete);padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+  <div style="background:var(--color-bg-soft);padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+
     <div style="display:flex;align-items:flex-start;gap:.9rem">
       <span style="font-size:1.5rem;flex-shrink:0">🥇</span>
       <div>
-        <p style="font-family:'Archivo Black',sans-serif;font-size:.85rem;text-transform:uppercase;color:var(--offwhite);margin:0 0 .2rem">BEST OVERALL: {winner}</p>
-        <p style="font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:var(--smoke);margin:0 0 .9rem">{winnerNote}</p>
-        <a href={`https://www.amazon.com/dp/${winnerAsin}/?tag=${tag}`} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon" style="display:inline-block;line-height:0">
-          <img src="/images/amazon/available-at-amazon-white.png" alt="Available at Amazon" height="32" loading="lazy" style="height:32px;width:auto;display:block" />
-        </a>
+        <p style="font-size:.85rem;font-weight:700;text-transform:uppercase;color:var(--color-heading);margin:0 0 .2rem">Best Overall: {winner}</p>
+        <p style="font-size:.95rem;color:var(--color-body-soft);margin:0 0 .9rem">{winnerNote}</p>
+        {ENABLE_AMAZON_BUTTONS ? (
+          <a href={winnerUrl} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon" style="display:inline-block;line-height:0">
+            <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="32" loading="lazy" style="height:32px;width:auto;display:block" />
+          </a>
+        ) : (
+          <a href={winnerUrl} rel="nofollow sponsored" target="_blank"
+            style="display:inline-flex;align-items:center;font-size:.8rem;font-weight:700;color:var(--color-accent);text-decoration:underline">
+            Check price →
+          </a>
+        )}
       </div>
     </div>
+
     {budgetPick && (
-      <div style="display:flex;align-items:flex-start;gap:.9rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.08)">
+      <div style="display:flex;align-items:flex-start;gap:.9rem;padding-top:1rem;border-top:1px solid var(--color-border)">
         <span style="font-size:1.5rem;flex-shrink:0">💰</span>
         <div>
-          <p style="font-family:'Archivo Black',sans-serif;font-size:.85rem;text-transform:uppercase;color:var(--offwhite);margin:0 0 .2rem">BEST VALUE: {budgetPick}</p>
-          <p style="font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:var(--smoke);margin:0 0 .9rem">{budgetNote}</p>
-          {budgetAsin && (
-            <a href={`https://www.amazon.com/dp/${budgetAsin}/?tag=${tag}`} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon" style="display:inline-block;line-height:0">
-              <img src="/images/amazon/available-at-amazon-white.png" alt="Available at Amazon" height="32" loading="lazy" style="height:32px;width:auto;display:block" />
+          <p style="font-size:.85rem;font-weight:700;text-transform:uppercase;color:var(--color-heading);margin:0 0 .2rem">Best Value: {budgetPick}</p>
+          <p style="font-size:.95rem;color:var(--color-body-soft);margin:0 0 .9rem">{budgetNote}</p>
+          {budgetUrl && ENABLE_AMAZON_BUTTONS && (
+            <a href={budgetUrl} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon" style="display:inline-block;line-height:0">
+              <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="32" loading="lazy" style="height:32px;width:auto;display:block" />
+            </a>
+          )}
+          {budgetUrl && !ENABLE_AMAZON_BUTTONS && (
+            <a href={budgetUrl} rel="nofollow sponsored" target="_blank"
+              style="display:inline-flex;align-items:center;font-size:.8rem;font-weight:700;color:var(--color-accent);text-decoration:underline">
+              Check price →
             </a>
           )}
         </div>
       </div>
     )}
+
   </div>
 </div>

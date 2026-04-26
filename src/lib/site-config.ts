@@ -37,6 +37,9 @@ export const SITE_POSITIONING =
 
 export const AFFILIATE_TAG = 'aiexpertscorn-20';
 
+export const ENABLE_CHEWY = false;
+export const ENABLE_AMAZON_BUTTONS = false;
+
 export const AFFILIATE_DISCLOSURE_SHORT =
   'PupWiki may earn commissions from qualifying purchases or partner referrals. These relationships do not determine our editorial recommendations.';
 
