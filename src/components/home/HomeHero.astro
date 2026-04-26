@@ -2,7 +2,12 @@
 /**
  * PupWiki homepage hero
  * Token-driven, mobile-first, warm editorial design.
- * Uses global CSS variables from tokens.css.
+ * Enhanced with a resilient Dog CEO rotating image component.
+ *
+ * Notes:
+ * - Dog CEO /random returns a single JSON image.
+ * - Dog CEO /random/8 returns multiple JSON images.
+ * - imageSrc remains the SSR fallback for LCP, no-JS, API failures, and crawlers.
  */
 
 export interface Cta {
@@ -29,8 +34,23 @@ export interface Props {
   subtitle?: string;
   primaryCta?: Cta;
   secondaryCta?: Cta;
+
+  /**
+   * SSR fallback image.
+   * This is visible before the Dog CEO API hydrates.
+   */
   imageSrc?: string;
   imageAlt?: string;
+
+  /**
+   * Dog CEO rotating image settings.
+   */
+  dogApiEndpoint?: string;
+  rotateImages?: boolean;
+  imageRotationIntervalMs?: number;
+  showImageControls?: boolean;
+  showImageStatus?: boolean;
+
   heroCardEyebrow?: string;
   heroCardText?: string;
   trustItems?: string[];
@@ -46,26 +66,34 @@ const {
   subtitle = 'PupWiki helps dog parents compare breeds and mixed breeds, understand care and health considerations, explore training guidance, and make smarter ownership decisions.',
   primaryCta = { label: 'Explore Dog Breeds', href: '/breeds' },
   secondaryCta = { label: 'Compare Breeds', href: '/breed-comparison' },
+
   imageSrc = 'https://images.unsplash.com/photo-1544568100-847a948585b9?w=1400&q=82&fit=crop',
-  imageAlt = 'Happy golden retriever puppy outdoors',
+  imageAlt = 'Happy dog outdoors',
+
+  dogApiEndpoint = 'https://dog.ceo/api/breeds/image/random/8',
+  rotateImages = true,
+  imageRotationIntervalMs = 6500,
+  showImageControls = true,
+  showImageStatus = true,
+
   heroCardEyebrow = 'Data-backed dog guidance',
   heroCardText = 'Breed profiles, mixed breeds, cost tools, care guidance, and practical next steps for real dog owners.',
-  trustItems = ['277 breed guides', '75 mixed breeds', '5,000+ dog names', 'Cost and care tools'],
+  trustItems = ['277 breed guides', '75 mixed breeds', 'Breed comparison tools', 'Cost and care guidance'],
   features = [
     {
       icon: '📖',
-      title: 'Expert Advice',
-      text: 'Practical dog guidance you can trust.',
+      title: 'Breed Guidance',
+      text: 'Practical breed research for real homes.',
     },
     {
       icon: '🐾',
-      title: 'Breed Profiles',
-      text: 'Research traits, care needs, and fit.',
+      title: 'Care Fit',
+      text: 'Compare traits, needs, and lifestyle match.',
     },
     {
       icon: '🧡',
-      title: 'Happy Living',
-      text: 'Training, care, lifestyle, and health basics.',
+      title: 'Health Basics',
+      text: 'Understand common care considerations.',
     },
     {
       icon: '🔎',
@@ -79,6 +107,8 @@ const {
 const hasStats = Array.isArray(stats) && stats.length > 0;
 const hasTrustItems = Array.isArray(trustItems) && trustItems.length > 0;
 const hasFeatures = Array.isArray(features) && features.length > 0;
+
+const fallbackImages = imageSrc ? [imageSrc] : [];
 ---
 
 <section id={id} class="pw-hero" aria-labelledby={`${id}-title`}>
@@ -130,21 +160,56 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
       </div>
 
       <div class="pw-hero__media-wrap">
-        <div class="pw-hero__media">
+        <div
+          class="pw-hero__media"
+          data-pw-dog-rotator
+          data-dog-api={dogApiEndpoint}
+          data-rotate-images={String(rotateImages)}
+          data-rotation-ms={String(imageRotationIntervalMs)}
+          data-fallback-images={JSON.stringify(fallbackImages)}
+          data-image-alt={imageAlt}
+        >
           <img
             src={imageSrc}
             alt={imageAlt}
             loading="eager"
             decoding="async"
             fetchpriority="high"
+            data-pw-dog-image
           />
 
           <div class="pw-hero__media-shade" aria-hidden="true"></div>
+
+          {showImageStatus && (
+            <div class="pw-hero__media-topbar" aria-hidden="true">
+              <span class="pw-hero__live-badge">
+                <span></span>
+                Fresh dog photos
+              </span>
+              <span class="pw-hero__image-count" data-pw-dog-status>
+                Loading
+              </span>
+            </div>
+          )}
 
           <div class="pw-hero__floating-card">
             <p>{heroCardEyebrow}</p>
             <span>{heroCardText}</span>
           </div>
+
+          {showImageControls && (
+            <div class="pw-hero__media-controls" aria-label="Dog image controls">
+              <button type="button" data-pw-dog-prev aria-label="Show previous dog photo">
+                ←
+              </button>
+
+              <div class="pw-hero__dots" data-pw-dog-dots aria-hidden="true"></div>
+
+              <button type="button" data-pw-dog-next aria-label="Show next dog photo">
+                →
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -154,7 +219,7 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
         {features.map((feature) => (
           <article class="pw-hero__feature">
             <div class="pw-hero__feature-icon" aria-hidden="true">
-              {feature.icon}
+              {feature.icon ?? '•'}
             </div>
             <div>
               <h2>{feature.title}</h2>
@@ -167,29 +232,283 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
   </div>
 </section>
 
+<script is:inline>
+  (() => {
+    const rotators = document.querySelectorAll('[data-pw-dog-rotator]');
+    if (!rotators.length) return;
+
+    const prefersReducedMotion =
+      window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
+
+    const preloadImage = (src) =>
+      new Promise((resolve, reject) => {
+        if (!src) {
+          reject(new Error('Missing image source'));
+          return;
+        }
+
+        const image = new Image();
+        image.decoding = 'async';
+        image.onload = () => resolve(src);
+        image.onerror = reject;
+        image.src = src;
+      });
+
+    const uniqueImages = (images) => {
+      const seen = new Set();
+
+      return images.filter((src) => {
+        if (!src || typeof src !== 'string') return false;
+        if (seen.has(src)) return false;
+
+        seen.add(src);
+        return true;
+      });
+    };
+
+    const normalizeDogApiResponse = (payload) => {
+      const message = payload?.message;
+
+      if (Array.isArray(message)) {
+        return message.filter((src) => typeof src === 'string');
+      }
+
+      if (typeof message === 'string') {
+        return [message];
+      }
+
+      return [];
+    };
+
+    rotators.forEach((root) => {
+      if (root.dataset.initialized === 'true') return;
+      root.dataset.initialized = 'true';
+
+      const img = root.querySelector('[data-pw-dog-image]');
+      const status = root.querySelector('[data-pw-dog-status]');
+      const dots = root.querySelector('[data-pw-dog-dots]');
+      const prevButton = root.querySelector('[data-pw-dog-prev]');
+      const nextButton = root.querySelector('[data-pw-dog-next]');
+
+      if (!img) return;
+
+      const endpoint = root.dataset.dogApi || 'https://dog.ceo/api/breeds/image/random/8';
+      const shouldRotate = root.dataset.rotateImages !== 'false';
+      const intervalMs = Number(root.dataset.rotationMs || 6500);
+      const imageAlt = root.dataset.imageAlt || 'Dog photo';
+
+      let images = [];
+
+      try {
+        images = JSON.parse(root.dataset.fallbackImages || '[]');
+      } catch {
+        images = [];
+      }
+
+      images = uniqueImages(images);
+
+      let activeIndex = 0;
+      let timer = null;
+      let paused = false;
+
+      const updateStatus = () => {
+        if (!status) return;
+
+        if (images.length <= 1) {
+          status.textContent = 'Photo';
+          return;
+        }
+
+        status.textContent = `${activeIndex + 1}/${images.length}`;
+      };
+
+      const renderDots = () => {
+        if (!dots) return;
+
+        dots.innerHTML = '';
+
+        images.slice(0, 8).forEach((_, index) => {
+          const dot = document.createElement('span');
+          if (index === activeIndex) dot.className = 'is-active';
+          dots.appendChild(dot);
+        });
+      };
+
+      const setImage = async (nextIndex) => {
+        if (!images.length) return;
+
+        const normalizedIndex = (nextIndex + images.length) % images.length;
+        const nextSrc = images[normalizedIndex];
+
+        if (!nextSrc) return;
+
+        if (img.getAttribute('src') === nextSrc) {
+          activeIndex = normalizedIndex;
+          updateStatus();
+          renderDots();
+          return;
+        }
+
+        try {
+          await preloadImage(nextSrc);
+          img.classList.add('is-changing');
+
+          window.setTimeout(() => {
+            img.setAttribute('src', nextSrc);
+            img.setAttribute('alt', imageAlt);
+            activeIndex = normalizedIndex;
+            updateStatus();
+            renderDots();
+
+            window.setTimeout(() => {
+              img.classList.remove('is-changing');
+            }, 120);
+          }, 140);
+        } catch {
+          activeIndex = normalizedIndex;
+          updateStatus();
+          renderDots();
+        }
+      };
+
+      const next = () => setImage(activeIndex + 1);
+      const prev = () => setImage(activeIndex - 1);
+
+      const stopTimer = () => {
+        if (!timer) return;
+
+        window.clearInterval(timer);
+        timer = null;
+      };
+
+      const startTimer = () => {
+        stopTimer();
+
+        if (!shouldRotate || prefersReducedMotion || images.length <= 1) return;
+
+        timer = window.setInterval(() => {
+          if (!paused && !document.hidden) next();
+        }, Math.max(intervalMs, 3500));
+      };
+
+      const setImages = async (nextImages) => {
+        const merged = uniqueImages([...nextImages, ...images]).slice(0, 8);
+
+        if (!merged.length) {
+          updateStatus();
+          renderDots();
+          return;
+        }
+
+        images = merged;
+        activeIndex = 0;
+
+        await setImage(0);
+
+        updateStatus();
+        renderDots();
+        startTimer();
+      };
+
+      const loadDogImages = async () => {
+        updateStatus();
+        renderDots();
+
+        try {
+          const response = await fetch(endpoint, {
+            headers: { accept: 'application/json' },
+            cache: 'no-store',
+          });
+
+          if (!response.ok) {
+            throw new Error(`Dog image API failed: ${response.status}`);
+          }
+
+          const payload = await response.json();
+          const apiImages = normalizeDogApiResponse(payload);
+
+          if (!apiImages.length) {
+            throw new Error('Dog image API returned no usable images');
+          }
+
+          await setImages(apiImages);
+        } catch {
+          root.classList.add('has-fallback-image');
+          updateStatus();
+          renderDots();
+          startTimer();
+        }
+      };
+
+      prevButton?.addEventListener('click', () => {
+        paused = true;
+        prev();
+        window.setTimeout(() => {
+          paused = false;
+        }, 2500);
+      });
+
+      nextButton?.addEventListener('click', () => {
+        paused = true;
+        next();
+        window.setTimeout(() => {
+          paused = false;
+        }, 2500);
+      });
+
+      root.addEventListener('mouseenter', () => {
+        paused = true;
+      });
+
+      root.addEventListener('mouseleave', () => {
+        paused = false;
+      });
+
+      root.addEventListener('focusin', () => {
+        paused = true;
+      });
+
+      root.addEventListener('focusout', () => {
+        paused = false;
+      });
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          stopTimer();
+        } else {
+          startTimer();
+        }
+      });
+
+      loadDogImages();
+    });
+  })();
+</script>
+
 <style>
   .pw-hero {
     position: relative;
     overflow: hidden;
     background:
-      radial-gradient(circle at 88% 16%, rgba(255, 122, 0, 0.13), transparent 28rem),
-      radial-gradient(circle at 8% 8%, rgba(21, 54, 95, 0.08), transparent 24rem),
-      var(--hero-bg, linear-gradient(180deg, #fffaf3 0%, #ffffff 72%));
+      radial-gradient(circle at 88% 10%, rgba(255, 122, 0, 0.12), transparent 24rem),
+      radial-gradient(circle at 5% 2%, rgba(21, 54, 95, 0.08), transparent 22rem),
+      linear-gradient(180deg, rgba(255, 250, 243, 0.98) 0%, rgba(255, 255, 255, 1) 76%);
     color: var(--color-body);
   }
 
   .pw-hero::before {
     content: '';
     position: absolute;
-    inset: auto -15% -34% -15%;
-    height: 22rem;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 122, 0, 0.08),
-      rgba(21, 54, 95, 0.06),
-      rgba(255, 122, 0, 0.08)
-    );
-    filter: blur(48px);
+    inset: auto -18% -22rem -18%;
+    height: 28rem;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255, 122, 0, 0.08),
+        rgba(21, 54, 95, 0.06),
+        rgba(255, 122, 0, 0.08)
+      );
+    filter: blur(52px);
     pointer-events: none;
   }
 
@@ -199,19 +518,19 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
     width: min(100%, var(--max-width, 1280px));
     margin-inline: auto;
     padding:
-      clamp(var(--space-10, 2.5rem), 8vw, var(--space-24, 6rem))
+      clamp(2.4rem, 8vw, 6rem)
       var(--content-padding-mobile, 1.25rem)
-      clamp(var(--space-8, 2rem), 7vw, var(--space-18, 4.5rem));
+      clamp(2.25rem, 7vw, 4.75rem);
   }
 
   .pw-hero__grid {
     display: grid;
-    gap: clamp(var(--space-8, 2rem), 6vw, var(--space-14, 3.5rem));
+    gap: clamp(2rem, 6vw, 4.25rem);
     align-items: center;
   }
 
   .pw-hero__content {
-    max-width: 46rem;
+    max-width: 45rem;
   }
 
   .pw-hero__eyebrow {
@@ -221,26 +540,27 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
     margin: 0;
     border: 1px solid var(--color-border-accent);
     border-radius: var(--radius-full);
-    background: var(--color-accent-subtle);
-    padding: 0.55rem 0.9rem;
+    background: rgba(255, 247, 237, 0.9);
+    padding: 0.55rem 0.85rem;
     color: var(--color-accent-hover);
     font-family: var(--font-sans);
-    font-size: var(--text-xs);
+    font-size: 0.7rem;
     font-weight: var(--weight-black);
     letter-spacing: var(--tracking-label);
     line-height: var(--leading-none);
     text-transform: uppercase;
+    box-shadow: var(--shadow-xs);
   }
 
   .pw-hero__title {
-    max-width: 13ch;
+    max-width: 12.5ch;
     margin: var(--space-5, 1.25rem) 0 0;
     color: var(--hero-heading, var(--color-heading));
     font-family: var(--font-serif);
-    font-size: clamp(2.65rem, 13vw, 5.4rem);
+    font-size: clamp(2.55rem, 12.3vw, 5.45rem);
     font-weight: var(--weight-bold);
-    letter-spacing: var(--tracking-tight);
-    line-height: 0.98;
+    letter-spacing: -0.055em;
+    line-height: 0.96;
     text-wrap: balance;
   }
 
@@ -250,12 +570,13 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
   }
 
   .pw-hero__subtitle {
-    max-width: var(--max-width-prose, 72ch);
+    max-width: 42rem;
     margin: var(--space-5, 1.25rem) 0 0;
     color: var(--hero-body, var(--color-body-soft));
     font-family: var(--font-sans);
-    font-size: clamp(var(--text-base), 2.4vw, var(--text-lg));
-    line-height: var(--leading-relaxed);
+    font-size: clamp(1rem, 2.35vw, 1.14rem);
+    line-height: 1.78;
+    text-wrap: pretty;
   }
 
   .pw-hero__actions {
@@ -267,18 +588,20 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
 
   .pw-hero__button {
     display: inline-flex;
-    min-height: 3.25rem;
+    width: 100%;
+    min-height: 3.35rem;
     align-items: center;
     justify-content: center;
     gap: 0.65rem;
     border-radius: var(--radius-xl);
-    padding: 0.95rem 1.2rem;
+    padding: 0.98rem 1.2rem;
     font-family: var(--font-sans);
     font-size: var(--text-sm);
     font-weight: var(--weight-bold);
     line-height: var(--leading-none);
     text-decoration: none;
     transition: var(--transition-smooth);
+    -webkit-tap-highlight-color: transparent;
   }
 
   .pw-hero__button:focus-visible {
@@ -299,7 +622,7 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
 
   .pw-hero__button--secondary {
     border: 1px solid var(--button-outline-border);
-    background: var(--button-outline-bg);
+    background: rgba(255, 255, 255, 0.86);
     color: var(--button-outline-text);
     box-shadow: var(--shadow-xs);
   }
@@ -332,14 +655,15 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
   }
 
   .pw-hero__trust li {
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(226, 232, 240, 0.9);
     border-radius: var(--radius-full);
-    background: rgba(255, 255, 255, 0.74);
-    padding: 0.55rem 0.75rem;
+    background: rgba(255, 255, 255, 0.76);
+    padding: 0.55rem 0.72rem;
     color: var(--color-body);
     font-family: var(--font-sans);
-    font-size: var(--text-xs);
+    font-size: 0.76rem;
     font-weight: var(--weight-semi);
+    line-height: 1;
     box-shadow: var(--shadow-xs);
     backdrop-filter: blur(12px);
   }
@@ -354,9 +678,10 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
   .pw-hero__stat {
     border: 1px solid var(--card-border);
     border-radius: var(--card-radius);
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.86);
     padding: var(--space-4, 1rem);
     box-shadow: var(--card-shadow);
+    backdrop-filter: blur(14px);
   }
 
   .pw-hero__stat strong {
@@ -382,21 +707,31 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
   .pw-hero__media {
     position: relative;
     overflow: hidden;
-    min-height: 23rem;
+    min-height: clamp(24rem, 112vw, 31rem);
     border: 1px solid var(--color-border-warm);
-    border-radius: var(--radius-3xl);
-    background: var(--color-bg-paper);
-    box-shadow: var(--shadow-xl);
+    border-radius: clamp(1.45rem, 5vw, var(--radius-3xl));
+    background:
+      linear-gradient(135deg, var(--color-bg-paper), var(--color-bg-muted));
+    box-shadow: 0 22px 52px rgba(7, 23, 39, 0.16);
     isolation: isolate;
   }
 
   .pw-hero__media img {
     display: block;
     width: 100%;
-    height: 23rem;
+    height: clamp(24rem, 112vw, 31rem);
     object-fit: cover;
     object-position: center;
-    transform: scale(1.01);
+    transform: scale(1.015);
+    opacity: 1;
+    transition:
+      opacity 220ms ease,
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .pw-hero__media img.is-changing {
+    opacity: 0.2;
+    transform: scale(1.035);
   }
 
   .pw-hero__media-shade {
@@ -404,30 +739,80 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
     inset: 0;
     z-index: 1;
     background:
-      linear-gradient(180deg, transparent 48%, rgba(11, 31, 54, 0.58) 100%),
-      radial-gradient(circle at 12% 12%, rgba(255, 122, 0, 0.14), transparent 17rem);
+      linear-gradient(180deg, rgba(11, 31, 54, 0.02) 0%, rgba(11, 31, 54, 0.14) 46%, rgba(11, 31, 54, 0.72) 100%),
+      radial-gradient(circle at 12% 12%, rgba(255, 122, 0, 0.16), transparent 18rem);
     pointer-events: none;
+  }
+
+  .pw-hero__media-topbar {
+    position: absolute;
+    top: var(--space-3, 0.75rem);
+    right: var(--space-3, 0.75rem);
+    left: var(--space-3, 0.75rem);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3, 0.75rem);
+    pointer-events: none;
+  }
+
+  .pw-hero__live-badge,
+  .pw-hero__image-count {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: var(--radius-full);
+    background: rgba(11, 31, 54, 0.42);
+    color: rgba(255, 255, 255, 0.94);
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: var(--weight-black);
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(16px);
+  }
+
+  .pw-hero__live-badge {
+    gap: 0.45rem;
+    padding: 0.52rem 0.68rem;
+  }
+
+  .pw-hero__live-badge span {
+    width: 0.44rem;
+    height: 0.44rem;
+    border-radius: var(--radius-full);
+    background: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(255, 122, 0, 0.18);
+  }
+
+  .pw-hero__image-count {
+    min-width: 3.2rem;
+    justify-content: center;
+    padding: 0.52rem 0.62rem;
   }
 
   .pw-hero__floating-card {
     position: absolute;
-    right: var(--space-4, 1rem);
-    bottom: var(--space-4, 1rem);
-    left: var(--space-4, 1rem);
+    right: var(--space-3, 0.75rem);
+    bottom: 4.35rem;
+    left: var(--space-3, 0.75rem);
     z-index: 2;
-    border: 1px solid rgba(255, 255, 255, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.46);
     border-radius: var(--radius-2xl);
-    background: rgba(255, 253, 248, 0.92);
+    background: rgba(255, 253, 248, 0.93);
     padding: var(--space-4, 1rem);
     box-shadow: var(--shadow-lg);
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(16px);
   }
 
   .pw-hero__floating-card p {
     margin: 0;
     color: var(--color-accent-hover);
     font-family: var(--font-sans);
-    font-size: 0.68rem;
+    font-size: 0.67rem;
     font-weight: var(--weight-black);
     letter-spacing: var(--tracking-label);
     line-height: var(--leading-none);
@@ -443,10 +828,69 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
     line-height: var(--leading-normal);
   }
 
+  .pw-hero__media-controls {
+    position: absolute;
+    right: var(--space-3, 0.75rem);
+    bottom: var(--space-3, 0.75rem);
+    left: var(--space-3, 0.75rem);
+    z-index: 4;
+    display: grid;
+    grid-template-columns: 2.5rem 1fr 2.5rem;
+    align-items: center;
+    gap: var(--space-3, 0.75rem);
+  }
+
+  .pw-hero__media-controls button {
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.44);
+    border-radius: var(--radius-full);
+    background: rgba(11, 31, 54, 0.45);
+    color: white;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: var(--weight-black);
+    line-height: 1;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(14px);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+  }
+
+  .pw-hero__media-controls button:hover,
+  .pw-hero__media-controls button:focus-visible {
+    background: rgba(255, 122, 0, 0.9);
+    transform: translateY(-1px);
+    outline: none;
+  }
+
+  .pw-hero__dots {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  .pw-hero__dots span {
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.52);
+    transition: var(--transition-smooth);
+  }
+
+  .pw-hero__dots span.is-active {
+    width: 1.15rem;
+    background: var(--color-accent);
+  }
+
   .pw-hero__features {
     display: grid;
     gap: var(--space-3, 0.75rem);
-    margin-top: clamp(var(--space-8, 2rem), 6vw, var(--space-14, 3.5rem));
+    margin-top: clamp(var(--space-7, 1.75rem), 5vw, var(--space-14, 3.5rem));
   }
 
   .pw-hero__feature {
@@ -454,9 +898,9 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
     grid-template-columns: auto 1fr;
     gap: var(--space-3, 0.75rem);
     align-items: center;
-    border: 1px solid var(--card-border);
+    border: 1px solid rgba(226, 232, 240, 0.9);
     border-radius: var(--radius-2xl);
-    background: rgba(255, 255, 255, 0.76);
+    background: rgba(255, 255, 255, 0.78);
     padding: var(--space-4, 1rem);
     box-shadow: var(--shadow-card);
     backdrop-filter: blur(14px);
@@ -470,7 +914,7 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
     border: 1px solid var(--color-border-warm);
     border-radius: var(--radius-full);
     background: var(--color-accent-subtle);
-    font-size: 1.35rem;
+    font-size: 1.28rem;
     box-shadow: var(--shadow-xs);
   }
 
@@ -489,6 +933,21 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
     color: var(--color-body-soft);
     font-size: var(--text-sm);
     line-height: var(--leading-snug);
+  }
+
+  @media (max-width: 374px) {
+    .pw-hero__title {
+      font-size: clamp(2.28rem, 11.8vw, 2.7rem);
+    }
+
+    .pw-hero__floating-card {
+      bottom: 4.15rem;
+      padding: 0.9rem;
+    }
+
+    .pw-hero__floating-card span {
+      font-size: 0.82rem;
+    }
   }
 
   @media (min-width: 520px) {
@@ -514,15 +973,33 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
 
     .pw-hero__media,
     .pw-hero__media img {
-      height: 30rem;
-    }
-
-    .pw-hero__media {
-      min-height: 30rem;
+      height: 31rem;
+      min-height: 31rem;
     }
 
     .pw-hero__stats {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pw-hero__floating-card {
+      right: var(--space-4, 1rem);
+      left: var(--space-4, 1rem);
+      bottom: 4.6rem;
+      padding: var(--space-5, 1.25rem);
+    }
+
+    .pw-hero__media-controls,
+    .pw-hero__media-topbar {
+      right: var(--space-4, 1rem);
+      left: var(--space-4, 1rem);
+    }
+
+    .pw-hero__media-topbar {
+      top: var(--space-4, 1rem);
+    }
+
+    .pw-hero__media-controls {
+      bottom: var(--space-4, 1rem);
     }
   }
 
@@ -533,6 +1010,7 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
 
     .pw-hero__grid {
       grid-template-columns: minmax(0, 1.02fr) minmax(24rem, 0.98fr);
+      gap: clamp(3rem, 5vw, 4.75rem);
     }
 
     .pw-hero__content {
@@ -546,9 +1024,6 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
     .pw-hero__media,
     .pw-hero__media img {
       height: 34rem;
-    }
-
-    .pw-hero__media {
       min-height: 34rem;
     }
 
@@ -581,16 +1056,16 @@ const hasFeatures = Array.isArray(features) && features.length > 0;
     .pw-hero__media,
     .pw-hero__media img {
       height: 38rem;
-    }
-
-    .pw-hero__media {
       min-height: 38rem;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .pw-hero__button,
-    .pw-hero__button:hover {
+    .pw-hero__button:hover,
+    .pw-hero__media img,
+    .pw-hero__media-controls button,
+    .pw-hero__dots span {
       transform: none;
       transition: none;
     }
