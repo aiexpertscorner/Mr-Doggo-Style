@@ -8,7 +8,10 @@ import BlogCard     from '../../components/content/BlogCard.astro';
 import ProductGrid  from '../../components/content/ProductGrid.astro';
 import Breadcrumb   from '../../components/ui/Breadcrumb.astro';
 import { getCollection } from 'astro:content';
-import productsData from '../../data/products.json';
+import productsData   from '../../data/products.json';
+import masterBreeds   from '../../data/master-breeds.json';
+import breedLinkMap   from '../../data/breed-link-map.json';
+import contentStatus  from '../../data/content-status.json';
 
 const CATEGORIES: Record<string,{title:string;desc:string;emoji:string;theme:string;reviewCount:number}> = {
   'dog-food':    { title:'Dog Food',        desc:'Dry, wet, grain-free and breed-specific formulas independently tested for nutrition, quality and value.',           emoji:'🍖', theme:'food',      reviewCount:24 },
@@ -41,6 +44,28 @@ const catPosts = allPosts.filter(
 
 type Prod = { name:string; asin:string; price?:number; rating?:number; image?:string; features?:string[]; verdict?:string; score?:number };
 const products: Prod[] = (productsData as Record<string,Prod[]>)[category] ?? [];
+
+// ── Contextual breed strip ────────────────────────────────────
+const CAT_TO_LINK_KEY: Record<string, string> = {
+  'dog-food':    'food_post',
+  'toys':        'toy_post',
+  'health':      'health_post',
+  'training':    'training_post',
+  'grooming':    'grooming_post',
+  'beds':        'bed_post',
+  'supplements': 'supplement_post',
+};
+const linkKey = CAT_TO_LINK_KEY[category];
+const breedStrip = linkKey
+  ? (masterBreeds as any[])
+      .filter(b => (contentStatus as any)[b.slug]?.[linkKey] === true)
+      .slice(0, 8)
+      .map(b => ({
+        name: b.name,
+        slug: b.slug,
+        href: (breedLinkMap as any)[b.slug]?.[linkKey] ?? `/breeds/${b.slug}`,
+      }))
+  : [];
 ---
 
 <BaseLayout
@@ -66,6 +91,32 @@ const products: Prod[] = (productsData as Record<string,Prod[]>)[category] ?? []
       </div>
     </div>
   </div>
+
+  {breedStrip.length >= 3 && (
+    <div style="background:var(--color-bg-muted);border-bottom:1px solid var(--color-border)">
+      <div class="container py-4">
+        <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:var(--color-muted)">
+          {meta.title} guides by breed
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {breedStrip.map(b => (
+            <a
+              href={b.href}
+              class="font-sans text-sm font-semibold px-3 py-1.5 rounded-full transition-colors hover:opacity-80"
+              style="background:white;border:1px solid var(--color-border-warm);color:var(--color-primary);text-decoration:none"
+            >
+              {b.name}
+            </a>
+          ))}
+          <a href="/breeds"
+            class="font-sans text-sm px-3 py-1.5 rounded-full transition-colors"
+            style="color:var(--color-accent);text-decoration:none">
+            All breeds →
+          </a>
+        </div>
+      </div>
+    </div>
+  )}
 
   <main class="section">
     <div class="container" style="display:flex;flex-direction:column;gap:var(--space-14)">
