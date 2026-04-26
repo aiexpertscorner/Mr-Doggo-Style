@@ -19,15 +19,26 @@ import healthProfiles from '../../data/breed-health-profiles.json';
 const AMAZON_TAG = 'aiexpertscorn-20';
 const SITE = 'https://pupwiki.com';
 
-const ALL_COST_BREEDS = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
+const getAllCostBreeds = () => [
+  ...(masterBreeds as any[]),
+  ...(masterCrossbreeds as any[]),
+];
 
 export function getStaticPaths() {
-  return ALL_COST_BREEDS.map((breed) => ({
-    params: { breed: breed.slug },
-  }));
+  const allCostBreeds = [
+    ...(masterBreeds as any[]),
+    ...(masterCrossbreeds as any[]),
+  ];
+
+  return allCostBreeds
+    .filter((breed) => breed?.slug)
+    .map((breed) => ({
+      params: { breed: breed.slug },
+    }));
 }
 
 const { breed: slug } = Astro.params;
+const ALL_COST_BREEDS = getAllCostBreeds();
 const b = ALL_COST_BREEDS.find((item) => item.slug === slug);
 
 if (!b) return Astro.redirect('/breeds');
