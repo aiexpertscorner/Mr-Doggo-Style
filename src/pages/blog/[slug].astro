@@ -12,6 +12,7 @@ import masterBreeds        from '../../data/master-breeds.json';
 import productIndex        from '../../data/product-index.json';
 import breedLinkMap        from '../../data/breed-link-map.json';
 import contentStatus       from '../../data/content-status.json';
+import PageBannerSlot      from '../../components/affiliate/PageBannerSlot.astro';
 
 const AFFILIATE_TAG = 'aiexpertscorn-20';
 
@@ -112,6 +113,15 @@ const featuredProduct = topProd ? {
 
   <!-- Main content -->
   <Content />
+
+  <!-- AWIN partner banner — mid-content, topic-matched -->
+  <PageBannerSlot
+    pageType="blog"
+    placement="mid-content"
+    topic={fm.category?.toLowerCase() || ''}
+    topicTags={fm.tags || []}
+    isMedical={(fm.tags || []).some((t: string) => ['emergency-vet','medical-warning','vet-critical'].includes(t))}
+  />
 
   <!-- Breed cluster links (end of article) -->
   {clusterLinks.length > 0 && (

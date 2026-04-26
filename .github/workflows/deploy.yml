@@ -28,6 +28,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Sync AWIN affiliate data
+        env:
+          AWIN_OAUTH2_TOKEN: ${{ secrets.AWIN_OAUTH2_TOKEN }}
+        run: node scripts/sync-awin.mjs
+
       - name: Build
         run: npm run build
 
