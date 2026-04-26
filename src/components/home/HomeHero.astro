@@ -1,7 +1,8 @@
 ---
 /**
  * PupWiki homepage hero
- * Prop-driven and safe to wire up later through homepage-config/getHomepageData.
+ * Token-driven, mobile-first, warm editorial design.
+ * Uses global CSS variables from tokens.css.
  */
 
 export interface Cta {
@@ -12,6 +13,12 @@ export interface Cta {
 export interface HeroStat {
   value: string;
   label: string;
+}
+
+export interface HeroFeature {
+  icon?: string;
+  title: string;
+  text: string;
 }
 
 export interface Props {
@@ -27,133 +34,565 @@ export interface Props {
   heroCardEyebrow?: string;
   heroCardText?: string;
   trustItems?: string[];
+  features?: HeroFeature[];
   stats?: HeroStat[];
 }
 
 const {
   id = 'home-hero',
   eyebrow = 'Trusted guidance for dog parents',
-  title = 'Research breeds, plan costs, and care smarter.',
-  accent = 'All in one place.',
-  subtitle = 'PupWiki helps dog parents compare breeds and mixed breeds, understand health and care needs, explore training and lifestyle guidance, and make more confident ownership decisions.',
-  primaryCta = { label: 'Explore Breeds', href: '/breeds' },
-  secondaryCta = { label: 'Dog Names', href: '/dog-names' },
-  imageSrc = 'https://images.unsplash.com/photo-1544568100-847a948585b9?w=1200&q=80&fit=crop',
-  imageAlt = 'Happy dog owner with a golden retriever',
+  title = 'Research breeds, plan care, and raise a happier dog.',
+  accent = 'All in one trusted place.',
+  subtitle = 'PupWiki helps dog parents compare breeds and mixed breeds, understand care and health considerations, explore training guidance, and make smarter ownership decisions.',
+  primaryCta = { label: 'Explore Dog Breeds', href: '/breeds' },
+  secondaryCta = { label: 'Compare Breeds', href: '/breed-comparison' },
+  imageSrc = 'https://images.unsplash.com/photo-1544568100-847a948585b9?w=1400&q=82&fit=crop',
+  imageAlt = 'Happy golden retriever puppy outdoors',
   heroCardEyebrow = 'Data-backed dog guidance',
-  heroCardText = 'Breed profiles, mixed breeds, cost tools, care guidance, and practical next steps.',
+  heroCardText = 'Breed profiles, mixed breeds, cost tools, care guidance, and practical next steps for real dog owners.',
   trustItems = ['277 breed guides', '75 mixed breeds', '5,000+ dog names', 'Cost and care tools'],
+  features = [
+    {
+      icon: '📖',
+      title: 'Expert Advice',
+      text: 'Practical dog guidance you can trust.',
+    },
+    {
+      icon: '🐾',
+      title: 'Breed Profiles',
+      text: 'Research traits, care needs, and fit.',
+    },
+    {
+      icon: '🧡',
+      title: 'Happy Living',
+      text: 'Training, care, lifestyle, and health basics.',
+    },
+    {
+      icon: '🔎',
+      title: 'Smart Tools',
+      text: 'Compare, plan, and decide with confidence.',
+    },
+  ],
   stats = [],
 } = Astro.props;
 
 const hasStats = Array.isArray(stats) && stats.length > 0;
+const hasTrustItems = Array.isArray(trustItems) && trustItems.length > 0;
+const hasFeatures = Array.isArray(features) && features.length > 0;
 ---
 
-<section 
-  id={id} 
-  class="relative w-full overflow-hidden"
-  style="background: var(--hero-bg);"
->
-  <div class="mx-auto px-[var(--content-padding-mobile)] py-12 sm:px-[var(--content-padding)] sm:py-16 lg:px-[var(--content-padding-wide)] lg:py-[var(--section-padding)]" style="max-width: var(--max-width-wide);">
-    <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-      
-      {/* Content Kolom */}
-      <div class="flex flex-col justify-center">
-        {/* Eyebrow */}
-        <div class="mb-6 flex">
-          <span class="inline-flex items-center rounded-[var(--radius-full)] border border-[var(--color-border-accent)] bg-[var(--color-accent-subtle)] px-4 py-1.5 text-[var(--text-xs)] font-[var(--weight-bold)] uppercase tracking-[var(--tracking-label)] text-[var(--color-accent-active)]">
-            {eyebrow}
-          </span>
-        </div>
+<section id={id} class="pw-hero" aria-labelledby={`${id}-title`}>
+  <div class="pw-hero__inner">
+    <div class="pw-hero__grid">
+      <div class="pw-hero__content">
+        <p class="pw-hero__eyebrow">
+          {eyebrow}
+        </p>
 
-        {/* Heading */}
-        <h1 class="max-w-3xl text-[var(--text-h1)] font-[var(--weight-black)] leading-[var(--leading-tight)] tracking-[var(--tracking-tight)] text-[var(--hero-heading)]">
+        <h1 id={`${id}-title`} class="pw-hero__title">
           {title}
-          <span class="mt-1 block text-[var(--hero-heading-accent)]">{accent}</span>
+          <span>{accent}</span>
         </h1>
 
-        {/* Subtitle */}
-        <p class="mt-6 max-w-[var(--max-width-prose)] text-[var(--text-lg)] font-[var(--weight-normal)] leading-[var(--leading-relaxed)] text-[var(--hero-body)]">
+        <p class="pw-hero__subtitle">
           {subtitle}
         </p>
 
-        {/* CTAs */}
-        <div class="mt-8 flex flex-wrap items-center gap-4">
-          <a
-            href={primaryCta.href}
-            class="inline-flex items-center justify-center rounded-[var(--radius-xl)] bg-[var(--button-primary-bg)] px-6 py-3.5 text-[var(--text-md)] font-[var(--weight-semi)] text-[var(--button-primary-text)] shadow-[var(--shadow-cta)] transition-all hover:-translate-y-[2px] hover:bg-[var(--button-primary-bg-hover)] active:bg-[var(--button-primary-bg-active)]"
-          >
-            {primaryCta.label}
+        <div class="pw-hero__actions" aria-label="Primary homepage actions">
+          <a href={primaryCta.href} class="pw-hero__button pw-hero__button--primary">
+            <span>{primaryCta.label}</span>
+            <span class="pw-hero__button-icon" aria-hidden="true">→</span>
           </a>
 
-          <a
-            href={secondaryCta.href}
-            class="inline-flex items-center justify-center rounded-[var(--radius-xl)] border border-[var(--button-outline-border)] bg-[var(--button-outline-bg)] px-6 py-3.5 text-[var(--text-md)] font-[var(--weight-semi)] text-[var(--button-outline-text)] transition-all hover:bg-[var(--button-outline-bg-hover)]"
-          >
+          <a href={secondaryCta.href} class="pw-hero__button pw-hero__button--secondary">
             {secondaryCta.label}
           </a>
         </div>
 
-        {/* Trust Items */}
-        {trustItems.length > 0 && (
-          <div class="mt-10 flex flex-wrap gap-2.5">
+        {hasTrustItems && (
+          <ul class="pw-hero__trust" aria-label="PupWiki highlights">
             {trustItems.map((item) => (
-              <span class="inline-flex items-center rounded-[var(--radius-full)] border border-[var(--color-border)] bg-[var(--color-surface)] px-3.5 py-1.5 text-[var(--text-sm)] font-[var(--weight-medium)] text-[var(--color-body-soft)]">
-                <svg class="mr-1.5 h-4 w-4 text-[var(--color-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                {item}
-              </span>
+              <li>{item}</li>
             ))}
-          </div>
+          </ul>
         )}
 
-        {/* Stats */}
         {hasStats && (
-          <div class="mt-10 grid gap-4 sm:grid-cols-3">
+          <div class="pw-hero__stats" aria-label="PupWiki statistics">
             {stats.map((stat) => (
-              <div class="rounded-[var(--card-radius)] border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-[var(--card-shadow)] transition-shadow hover:shadow-[var(--card-shadow-hover)]">
-                <p class="text-[var(--text-3xl)] font-[var(--weight-bold)] tracking-[var(--tracking-tight)] text-[var(--color-heading)]">{stat.value}</p>
-                <p class="mt-1 text-[var(--text-sm)] font-[var(--weight-medium)] text-[var(--color-body-soft)]">{stat.label}</p>
-              </div>
+              <article class="pw-hero__stat">
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </article>
             ))}
           </div>
         )}
       </div>
 
-      {/* Image Kolom */}
-      <div class="relative w-full lg:ml-auto">
-        {/* Main Image */}
-        <div class="relative overflow-hidden rounded-[var(--radius-3xl)] border border-[var(--color-border-primary)] shadow-[var(--shadow-xl)]">
+      <div class="pw-hero__media-wrap">
+        <div class="pw-hero__media">
           <img
             src={imageSrc}
             alt={imageAlt}
-            class="block h-[400px] w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-[500px] lg:h-[600px]"
             loading="eager"
             decoding="async"
+            fetchpriority="high"
           />
-          {/* Subtiele inner-shadow voor betere blending */}
-          <div class="pointer-events-none absolute inset-0 rounded-[var(--radius-3xl)] ring-1 ring-inset ring-black/5"></div>
-        </div>
 
-        {/* Floating Hero Card */}
-        <div class="relative mt-6 z-10 rounded-[var(--card-radius)] border border-[var(--color-border-warm)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-primary)] transition-transform hover:-translate-y-1 sm:absolute sm:-bottom-8 sm:-left-8 sm:mt-0 sm:max-w-[320px]">
-          <div class="mb-3 flex items-center gap-2">
-            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent-active)]">
-              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            </div>
-            <p class="text-[var(--text-xs)] font-[var(--weight-bold)] uppercase tracking-[var(--tracking-label)] text-[var(--color-heading-soft)]">
-              {heroCardEyebrow}
-            </p>
+          <div class="pw-hero__media-shade" aria-hidden="true"></div>
+
+          <div class="pw-hero__floating-card">
+            <p>{heroCardEyebrow}</p>
+            <span>{heroCardText}</span>
           </div>
-          <p class="text-[var(--text-sm)] font-[var(--weight-medium)] leading-[var(--leading-normal)] text-[var(--color-body)]">
-            {heroCardText}
-          </p>
         </div>
       </div>
-      
     </div>
+
+    {hasFeatures && (
+      <div class="pw-hero__features" aria-label="PupWiki sections">
+        {features.map((feature) => (
+          <article class="pw-hero__feature">
+            <div class="pw-hero__feature-icon" aria-hidden="true">
+              {feature.icon}
+            </div>
+            <div>
+              <h2>{feature.title}</h2>
+              <p>{feature.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
   </div>
 </section>
+
+<style>
+  .pw-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 88% 16%, rgba(255, 122, 0, 0.13), transparent 28rem),
+      radial-gradient(circle at 8% 8%, rgba(21, 54, 95, 0.08), transparent 24rem),
+      var(--hero-bg, linear-gradient(180deg, #fffaf3 0%, #ffffff 72%));
+    color: var(--color-body);
+  }
+
+  .pw-hero::before {
+    content: '';
+    position: absolute;
+    inset: auto -15% -34% -15%;
+    height: 22rem;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 122, 0, 0.08),
+      rgba(21, 54, 95, 0.06),
+      rgba(255, 122, 0, 0.08)
+    );
+    filter: blur(48px);
+    pointer-events: none;
+  }
+
+  .pw-hero__inner {
+    position: relative;
+    z-index: var(--z-base, 1);
+    width: min(100%, var(--max-width, 1280px));
+    margin-inline: auto;
+    padding:
+      clamp(var(--space-10, 2.5rem), 8vw, var(--space-24, 6rem))
+      var(--content-padding-mobile, 1.25rem)
+      clamp(var(--space-8, 2rem), 7vw, var(--space-18, 4.5rem));
+  }
+
+  .pw-hero__grid {
+    display: grid;
+    gap: clamp(var(--space-8, 2rem), 6vw, var(--space-14, 3.5rem));
+    align-items: center;
+  }
+
+  .pw-hero__content {
+    max-width: 46rem;
+  }
+
+  .pw-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    padding: 0.55rem 0.9rem;
+    color: var(--color-accent-hover);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .pw-hero__title {
+    max-width: 13ch;
+    margin: var(--space-5, 1.25rem) 0 0;
+    color: var(--hero-heading, var(--color-heading));
+    font-family: var(--font-serif);
+    font-size: clamp(2.65rem, 13vw, 5.4rem);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-tight);
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  .pw-hero__title span {
+    display: block;
+    color: var(--hero-heading-accent, var(--color-accent));
+  }
+
+  .pw-hero__subtitle {
+    max-width: var(--max-width-prose, 72ch);
+    margin: var(--space-5, 1.25rem) 0 0;
+    color: var(--hero-body, var(--color-body-soft));
+    font-family: var(--font-sans);
+    font-size: clamp(var(--text-base), 2.4vw, var(--text-lg));
+    line-height: var(--leading-relaxed);
+  }
+
+  .pw-hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3, 0.75rem);
+    margin-top: var(--space-7, 1.75rem);
+  }
+
+  .pw-hero__button {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    border-radius: var(--radius-xl);
+    padding: 0.95rem 1.2rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-none);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .pw-hero__button:focus-visible {
+    outline: none;
+    box-shadow: var(--ring-accent);
+  }
+
+  .pw-hero__button--primary {
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    box-shadow: var(--shadow-cta);
+  }
+
+  .pw-hero__button--primary:hover {
+    transform: translateY(-2px);
+    background: var(--button-primary-bg-hover);
+  }
+
+  .pw-hero__button--secondary {
+    border: 1px solid var(--button-outline-border);
+    background: var(--button-outline-bg);
+    color: var(--button-outline-text);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .pw-hero__button--secondary:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-border-primary);
+    background: var(--button-outline-bg-hover);
+    color: var(--color-primary-hover);
+  }
+
+  .pw-hero__button-icon {
+    display: grid;
+    width: 1.65rem;
+    height: 1.65rem;
+    place-items: center;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .pw-hero__trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2, 0.5rem);
+    margin: var(--space-6, 1.5rem) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pw-hero__trust li {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.74);
+    padding: 0.55rem 0.75rem;
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semi);
+    box-shadow: var(--shadow-xs);
+    backdrop-filter: blur(12px);
+  }
+
+  .pw-hero__stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3, 0.75rem);
+    margin-top: var(--space-6, 1.5rem);
+  }
+
+  .pw-hero__stat {
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    background: var(--card-bg);
+    padding: var(--space-4, 1rem);
+    box-shadow: var(--card-shadow);
+  }
+
+  .pw-hero__stat strong {
+    display: block;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    line-height: var(--leading-none);
+  }
+
+  .pw-hero__stat span {
+    display: block;
+    margin-top: var(--space-1, 0.25rem);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+  }
+
+  .pw-hero__media-wrap {
+    position: relative;
+  }
+
+  .pw-hero__media {
+    position: relative;
+    overflow: hidden;
+    min-height: 23rem;
+    border: 1px solid var(--color-border-warm);
+    border-radius: var(--radius-3xl);
+    background: var(--color-bg-paper);
+    box-shadow: var(--shadow-xl);
+    isolation: isolate;
+  }
+
+  .pw-hero__media img {
+    display: block;
+    width: 100%;
+    height: 23rem;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.01);
+  }
+
+  .pw-hero__media-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(180deg, transparent 48%, rgba(11, 31, 54, 0.58) 100%),
+      radial-gradient(circle at 12% 12%, rgba(255, 122, 0, 0.14), transparent 17rem);
+    pointer-events: none;
+  }
+
+  .pw-hero__floating-card {
+    position: absolute;
+    right: var(--space-4, 1rem);
+    bottom: var(--space-4, 1rem);
+    left: var(--space-4, 1rem);
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: var(--radius-2xl);
+    background: rgba(255, 253, 248, 0.92);
+    padding: var(--space-4, 1rem);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(14px);
+  }
+
+  .pw-hero__floating-card p {
+    margin: 0;
+    color: var(--color-accent-hover);
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .pw-hero__floating-card span {
+    display: block;
+    margin-top: var(--space-2, 0.5rem);
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-normal);
+  }
+
+  .pw-hero__features {
+    display: grid;
+    gap: var(--space-3, 0.75rem);
+    margin-top: clamp(var(--space-8, 2rem), 6vw, var(--space-14, 3.5rem));
+  }
+
+  .pw-hero__feature {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-3, 0.75rem);
+    align-items: center;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-2xl);
+    background: rgba(255, 255, 255, 0.76);
+    padding: var(--space-4, 1rem);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(14px);
+  }
+
+  .pw-hero__feature-icon {
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    place-items: center;
+    border: 1px solid var(--color-border-warm);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    font-size: 1.35rem;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .pw-hero__feature h2 {
+    margin: 0;
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-snug);
+    line-height: var(--leading-tight);
+  }
+
+  .pw-hero__feature p {
+    margin: var(--space-1, 0.25rem) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+  }
+
+  @media (min-width: 520px) {
+    .pw-hero__actions {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .pw-hero__button {
+      width: auto;
+      padding-inline: 1.35rem;
+    }
+
+    .pw-hero__features {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 768px) {
+    .pw-hero__inner {
+      padding-inline: var(--content-padding, 1.5rem);
+    }
+
+    .pw-hero__media,
+    .pw-hero__media img {
+      height: 30rem;
+    }
+
+    .pw-hero__media {
+      min-height: 30rem;
+    }
+
+    .pw-hero__stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pw-hero__inner {
+      padding-inline: var(--content-padding-wide, 2rem);
+    }
+
+    .pw-hero__grid {
+      grid-template-columns: minmax(0, 1.02fr) minmax(24rem, 0.98fr);
+    }
+
+    .pw-hero__content {
+      padding-block: var(--space-6, 1.5rem);
+    }
+
+    .pw-hero__title {
+      max-width: 12ch;
+    }
+
+    .pw-hero__media,
+    .pw-hero__media img {
+      height: 34rem;
+    }
+
+    .pw-hero__media {
+      min-height: 34rem;
+    }
+
+    .pw-hero__media-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 7% auto auto -8%;
+      width: 8.5rem;
+      height: 8.5rem;
+      border-radius: var(--radius-full);
+      background: var(--color-accent-light);
+      filter: blur(8px);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .pw-hero__features {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .pw-hero__feature {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+      padding: var(--space-5, 1.25rem);
+    }
+  }
+
+  @media (min-width: 1180px) {
+    .pw-hero__media,
+    .pw-hero__media img {
+      height: 38rem;
+    }
+
+    .pw-hero__media {
+      min-height: 38rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pw-hero__button,
+    .pw-hero__button:hover {
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
