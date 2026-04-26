@@ -1,154 +1,740 @@
 ---
-import BaseLayout   from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import masterBreeds from '../../data/master-breeds.json';
 
 const breeds = masterBreeds as any[];
-const byLetter: Record<string,any[]> = {};
+
+const byLetter: Record<string, any[]> = {};
+
 for (const b of breeds) {
-  const l = b.name[0].toUpperCase();
-  if (!byLetter[l]) byLetter[l] = [];
-  byLetter[l].push(b);
+  const letter = b.name[0].toUpperCase();
+  if (!byLetter[letter]) byLetter[letter] = [];
+  byLetter[letter].push(b);
 }
+
 const letters = Object.keys(byLetter).sort();
 
 const featured = breeds
-  .filter(b => b.akc_popularity && b.akc_popularity <= 30 && b.image_url)
-  .sort((a,b) => (a.akc_popularity||999)-(b.akc_popularity||999))
-  .slice(0,12);
+  .filter((b) => b.akc_popularity && b.akc_popularity <= 30 && b.image_url)
+  .sort((a, b) => (a.akc_popularity || 999) - (b.akc_popularity || 999))
+  .slice(0, 12);
+
+const breedList = breeds.map((b: any) => ({
+  name: b.name,
+  slug: b.slug,
+  img: b.image_url || '',
+}));
 ---
 
 <BaseLayout
   title="Dog Names by Breed 2026 — 277 Breeds, 7,000+ Names"
   description="Find the perfect name for your dog matched to their breed personality. Boy and girl names curated for every breed."
   canonicalUrl="https://pupwiki.com/dog-names"
+  bodyClass="dog-names-page bg-white text-slate-900"
 >
+  <main class="dog-names">
+    <section class="dog-names-hero" aria-labelledby="dog-names-title">
+      <div class="dog-names-container">
+        <div class="dog-names-hero__content">
+          <p class="dog-names-eyebrow">Name finder</p>
 
-<!-- Hero -->
-<div style="background:linear-gradient(135deg,#3d2206 0%,#7d4a10 50%,#a0621c 100%);position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(255,255,255,0.05),transparent 60%)"></div>
-  <div class="max-w-7xl mx-auto px-4 py-16 sm:py-24 relative">
-    <div class="max-w-3xl">
-      <span class="inline-block font-sans text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9)">Name finder</span>
-      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-none mb-5" style="font-family:'Playfair Display',Georgia,serif;color:white">
-        Find the<br/><span style="color:#fbbf24">perfect name</span><br/>for your dog.
-      </h1>
-      <p class="font-sans text-lg sm:text-xl mb-8 max-w-xl" style="color:rgba(255,255,255,0.8)">
-        {breeds.length} breed-matched lists. Boy and girl names curated for personality, temperament, and style.
-      </p>
-      <div class="relative max-w-md">
-        <input type="search" id="hero-search" placeholder="Search your breed (e.g. Golden Retriever)…"
-          class="w-full font-sans text-base px-5 py-4 rounded-2xl pr-12 focus:outline-none focus:ring-2"
-          style="background:white;color:#1e293b;--tw-ring-color:#fbbf24;box-shadow:0 4px 24px rgba(0,0,0,0.2)"
-          autocomplete="off" />
-        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xl pointer-events-none">🔍</span>
-        <div id="search-dropdown" class="hidden absolute left-0 right-0 top-full mt-2 rounded-2xl overflow-hidden z-50"
-          style="background:white;box-shadow:0 12px 40px rgba(0,0,0,0.2);max-height:300px;overflow-y:auto"></div>
-      </div>
-    </div>
-  </div>
-</div>
+          <h1 id="dog-names-title" class="dog-names-hero__title">
+            Find the
+            <span>perfect name</span>
+            for your dog.
+          </h1>
 
-<!-- Stats -->
-<div style="background:#fdf8f0;border-bottom:1px solid #e8ccaa">
-  <div class="max-w-7xl mx-auto px-4 py-4">
-    <div class="flex flex-wrap gap-6 font-sans text-sm" style="color:#64748b">
-      <span>🐕 <strong style="color:#1e293b">{breeds.length}</strong> breeds</span>
-      <span>✍️ <strong style="color:#1e293b">7,000+</strong> curated names</span>
-      <span>🎯 <strong style="color:#1e293b">Personality-matched</strong></span>
-      <span>📅 <strong style="color:#1e293b">Updated 2026</strong></span>
-    </div>
-  </div>
-</div>
+          <p class="dog-names-hero__subtitle">
+            {breeds.length} breed-matched lists. Boy and girl names curated for personality, temperament, and style.
+          </p>
 
-<div class="max-w-7xl mx-auto px-4 py-12 space-y-14">
-
-  <!-- Featured breeds -->
-  <section>
-    <div class="flex items-end justify-between mb-6">
-      <div>
-        <p class="font-sans text-xs font-bold uppercase tracking-widest mb-1" style="color:#a0621c">Popular breeds</p>
-        <h2 class="font-display text-3xl font-bold" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">Top Breed Name Guides</h2>
-      </div>
-      <a href="/breeds" class="font-sans text-sm font-semibold hover:underline" style="color:#a0621c">All breeds →</a>
-    </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-      {featured.map((b:any) => (
-        <a href={`/dog-names/${b.slug}`} class="group rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:shadow-md" style="border:1px solid #e8ccaa;background:white;text-decoration:none">
-          <div style="height:110px;background:#fdf8f0;overflow:hidden">
-            {b.image_url
-              ? <img src={b.image_url} alt={b.name} width="160" height="110" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;font-size:2.5rem>🐕</div>'" />
-              : <div class="flex items-center justify-center h-full text-4xl">🐕</div>
-            }
-          </div>
-          <div class="p-3">
-            <p class="font-sans text-xs font-bold leading-tight" style="color:#1e293b">{b.name}</p>
-            {b.akc_popularity && <p class="font-sans text-xs mt-0.5" style="color:#94a3b8">#{b.akc_popularity} popular</p>}
-          </div>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <!-- A–Z Directory -->
-  <section>
-    <div class="mb-6">
-      <p class="font-sans text-xs font-bold uppercase tracking-widest mb-1" style="color:#a0621c">All {breeds.length} breeds</p>
-      <h2 class="font-display text-3xl font-bold" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">Browse All Breed Name Guides</h2>
-    </div>
-    <div class="flex flex-wrap gap-1 mb-8">
-      {letters.map(l => (
-        <a href={`#letter-${l}`} class="font-sans text-xs font-bold w-8 h-8 flex items-center justify-center rounded-lg transition-all hover:text-white hover:bg-bark-600"
-          style="border:1px solid #e8ccaa;color:#64748b;text-decoration:none"
-          onmouseover="this.style.background='#a0621c';this.style.color='white'"
-          onmouseout="this.style.background='';this.style.color='#64748b'">{l}</a>
-      ))}
-    </div>
-    <div class="space-y-8">
-      {letters.map(l => (
-        <div id={`letter-${l}`}>
-          <div class="flex items-center gap-3 mb-4">
-            <span class="font-display text-3xl font-black" style="color:#a0621c;font-family:'Playfair Display',Georgia,serif">{l}</span>
-            <div class="flex-1 h-px" style="background:#e8ccaa"></div>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
-            {byLetter[l].sort((a:any,b:any)=>a.name.localeCompare(b.name)).map((b:any) => (
-              <a href={`/dog-names/${b.slug}`} class="flex items-center gap-2 px-3 py-2 rounded-xl font-sans text-sm font-medium transition-all"
-                style="border:1px solid transparent;color:#1e293b;text-decoration:none"
-                onmouseover="this.style.borderColor='#e8ccaa';this.style.background='#fdf8f0';this.style.color='#a0621c'"
-                onmouseout="this.style.borderColor='transparent';this.style.background='';this.style.color='#1e293b'">
-                {b.image_url && (
-                  <img src={b.image_url} alt={b.name} width="24" height="24" loading="lazy"
-                    class="rounded-full object-cover flex-shrink-0" style="width:24px;height:24px;border:1px solid #e8ccaa"
-                    onerror="this.style.display='none'" />
-                )}
-                <span class="truncate">{b.name}</span>
-              </a>
-            ))}
+          <div class="dog-names-search" role="search">
+            <label class="sr-only" for="hero-search">Search your breed</label>
+            <input
+              type="search"
+              id="hero-search"
+              placeholder="Search your breed (e.g. Golden Retriever)…"
+              autocomplete="off"
+            />
+            <span class="dog-names-search__icon" aria-hidden="true">🔍</span>
+            <div id="search-dropdown" class="dog-names-search__dropdown" hidden></div>
           </div>
         </div>
-      ))}
+      </div>
+    </section>
+
+    <section class="dog-names-stats" aria-label="Dog name finder statistics">
+      <div class="dog-names-container">
+        <div class="dog-names-stats__grid">
+          <span>🐕 <strong>{breeds.length}</strong> breeds</span>
+          <span>✍️ <strong>7,000+</strong> curated names</span>
+          <span>🎯 <strong>Personality-matched</strong></span>
+          <span>📅 <strong>Updated 2026</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="dog-names-container dog-names-main">
+      <section class="dog-names-section" aria-labelledby="featured-breeds-title">
+        <div class="dog-names-section__header">
+          <div>
+            <p class="dog-names-eyebrow">Popular breeds</p>
+            <h2 id="featured-breeds-title">Top Breed Name Guides</h2>
+          </div>
+
+          <a href="/breeds" class="dog-names-section__link">
+            All breeds →
+          </a>
+        </div>
+
+        <div class="dog-names-featured-grid">
+          {featured.map((b: any) => (
+            <a href={`/dog-names/${b.slug}`} class="dog-name-breed-card">
+              <div class="dog-name-breed-card__media">
+                {b.image_url ? (
+                  <>
+                    <img
+                      src={b.image_url}
+                      alt={b.name}
+                      width="220"
+                      height="150"
+                      loading="lazy"
+                      decoding="async"
+                      data-dog-name-image
+                    />
+                    <div class="dog-name-breed-card__fallback" hidden>🐕</div>
+                  </>
+                ) : (
+                  <div class="dog-name-breed-card__fallback dog-name-breed-card__fallback--visible">🐕</div>
+                )}
+              </div>
+
+              <div class="dog-name-breed-card__body">
+                <h3>{b.name}</h3>
+                {b.akc_popularity && <p>#{b.akc_popularity} popular</p>}
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="dog-names-section" aria-labelledby="all-breeds-title">
+        <div class="dog-names-section__header dog-names-section__header--stack">
+          <p class="dog-names-eyebrow">All {breeds.length} breeds</p>
+          <h2 id="all-breeds-title">Browse All Breed Name Guides</h2>
+        </div>
+
+        <nav class="dog-names-letter-nav" aria-label="Browse breeds by letter">
+          {letters.map((letter) => (
+            <a href={`#letter-${letter}`}>{letter}</a>
+          ))}
+        </nav>
+
+        <div class="dog-names-letter-groups">
+          {letters.map((letter) => (
+            <section id={`letter-${letter}`} class="dog-names-letter-group" aria-labelledby={`letter-${letter}-title`}>
+              <div class="dog-names-letter-group__header">
+                <h3 id={`letter-${letter}-title`}>{letter}</h3>
+                <span aria-hidden="true"></span>
+              </div>
+
+              <div class="dog-names-directory-grid">
+                {byLetter[letter].sort((a: any, b: any) => a.name.localeCompare(b.name)).map((b: any) => (
+                  <a href={`/dog-names/${b.slug}`} class="dog-names-directory-link">
+                    {b.image_url && (
+                      <img
+                        src={b.image_url}
+                        alt=""
+                        width="28"
+                        height="28"
+                        loading="lazy"
+                        decoding="async"
+                        data-dog-name-avatar
+                      />
+                    )}
+                    <span>{b.name}</span>
+                  </a>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      </section>
     </div>
-  </section>
+  </main>
 
-</div>
+  <script define:vars={{ breedList }}>
+    const input = document.getElementById('hero-search');
+    const dropdown = document.getElementById('search-dropdown');
 
-<script define:vars={{ breedList: masterBreeds.map((b:any) => ({ name:b.name, slug:b.slug, img:(b as any).image_url||'' })) }}>
-  const input    = document.getElementById('hero-search');
-  const dropdown = document.getElementById('search-dropdown');
-  input?.addEventListener('input', () => {
-    const q = input.value.toLowerCase().trim();
-    if (!q || q.length < 2) { dropdown.classList.add('hidden'); return; }
-    const hits = breedList.filter((b:any) => b.name.toLowerCase().includes(q)).slice(0, 8);
-    if (!hits.length) { dropdown.classList.add('hidden'); return; }
-    dropdown.innerHTML = hits.map((b:any) => `
-      <a href="/dog-names/${b.slug}" style="display:flex;align-items:center;gap:12px;padding:10px 16px;text-decoration:none;color:#1e293b;border-bottom:1px solid #f5e8d0" onmouseover="this.style.background='#fdf8f0'" onmouseout="this.style.background=''">
-        ${b.img ? `<img src="${b.img}" alt="${b.name}" style="width:36px;height:36px;object-fit:cover;border-radius:50%;border:1px solid #e8ccaa" onerror="this.style.display='none'" />` : '<span style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">🐕</span>'}
-        <span style="font-family:DM Sans,sans-serif;font-weight:600;font-size:0.875rem">${b.name} names →</span>
-      </a>`).join('');
-    dropdown.classList.remove('hidden');
-  });
-  document.addEventListener('click', e => {
-    if (!input?.contains(e.target) && !dropdown?.contains(e.target)) dropdown?.classList.add('hidden');
-  });
-</script>
+    const escapeHtml = (value) =>
+      String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+
+    function hideDropdown() {
+      if (!dropdown) return;
+      dropdown.hidden = true;
+      dropdown.innerHTML = '';
+    }
+
+    function showDropdown(hits) {
+      if (!dropdown) return;
+
+      dropdown.innerHTML = hits
+        .map((breed) => {
+          const image = breed.img
+            ? `<img src="${escapeHtml(breed.img)}" alt="" loading="lazy" decoding="async" />`
+            : `<span class="dog-names-search__fallback">🐕</span>`;
+
+          return `
+            <a href="/dog-names/${encodeURIComponent(breed.slug)}" class="dog-names-search__result">
+              ${image}
+              <span>${escapeHtml(breed.name)} names →</span>
+            </a>
+          `;
+        })
+        .join('');
+
+      dropdown.hidden = false;
+    }
+
+    input?.addEventListener('input', () => {
+      const q = input.value.toLowerCase().trim();
+
+      if (!q || q.length < 2) {
+        hideDropdown();
+        return;
+      }
+
+      const hits = breedList
+        .filter((breed) => breed.name.toLowerCase().includes(q))
+        .slice(0, 8);
+
+      if (!hits.length) {
+        hideDropdown();
+        return;
+      }
+
+      showDropdown(hits);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!input?.contains(event.target) && !dropdown?.contains(event.target)) {
+        hideDropdown();
+      }
+    });
+
+    document.querySelectorAll('[data-dog-name-image]').forEach((image) => {
+      image.addEventListener('error', () => {
+        const fallback = image.nextElementSibling;
+        image.hidden = true;
+        if (fallback) fallback.hidden = false;
+      });
+    });
+
+    document.querySelectorAll('[data-dog-name-avatar]').forEach((image) => {
+      image.addEventListener('error', () => {
+        image.hidden = true;
+      });
+    });
+  </script>
 </BaseLayout>
+
+<style>
+  .dog-names {
+    background:
+      radial-gradient(circle at 88% 4%, rgba(255, 122, 0, 0.1), transparent 24rem),
+      radial-gradient(circle at 8% 2%, rgba(21, 54, 95, 0.08), transparent 22rem),
+      var(--color-bg);
+    color: var(--color-body);
+  }
+
+  .dog-names-container {
+    width: min(100%, var(--max-width));
+    margin-inline: auto;
+    padding-inline: var(--content-padding-mobile);
+  }
+
+  .dog-names-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 18% 42%, rgba(255, 255, 255, 0.08), transparent 30rem),
+      linear-gradient(135deg, var(--color-surface-navy) 0%, var(--color-primary) 58%, var(--color-accent-hover) 100%);
+    color: #ffffff;
+  }
+
+  .dog-names-hero::after {
+    content: '';
+    position: absolute;
+    inset: auto -12% -16rem -12%;
+    height: 24rem;
+    background: rgba(255, 122, 0, 0.16);
+    filter: blur(54px);
+    pointer-events: none;
+  }
+
+  .dog-names-hero .dog-names-container {
+    position: relative;
+    z-index: 1;
+    padding-block: clamp(3.6rem, 10vw, 7.25rem);
+  }
+
+  .dog-names-hero__content {
+    max-width: 48rem;
+  }
+
+  .dog-names-eyebrow {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    margin: 0;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    padding: 0.54rem 0.85rem;
+    color: var(--color-accent-hover);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .dog-names-hero .dog-names-eyebrow {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+  }
+
+  .dog-names-hero__title {
+    max-width: 11ch;
+    margin: var(--space-5) 0 0;
+    color: #ffffff;
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 14vw, 6.5rem);
+    font-weight: var(--weight-bold);
+    letter-spacing: -0.06em;
+    line-height: 0.92;
+    text-wrap: balance;
+  }
+
+  .dog-names-hero__title span {
+    display: block;
+    color: var(--color-accent-light);
+  }
+
+  .dog-names-hero__subtitle {
+    max-width: 42rem;
+    margin: var(--space-5) 0 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-family: var(--font-sans);
+    font-size: clamp(var(--text-base), 2.5vw, var(--text-xl));
+    line-height: var(--leading-relaxed);
+    text-wrap: pretty;
+  }
+
+  .dog-names-search {
+    position: relative;
+    max-width: 32rem;
+    margin-top: var(--space-8);
+  }
+
+  .dog-names-search input {
+    width: 100%;
+    min-height: 3.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-radius: var(--radius-2xl);
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--color-heading);
+    padding: 1rem 3.25rem 1rem 1.1rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--weight-semi);
+    box-shadow: 0 18px 44px rgba(7, 23, 39, 0.22);
+  }
+
+  .dog-names-search input::placeholder {
+    color: var(--color-muted);
+  }
+
+  .dog-names-search input:focus {
+    outline: none;
+    box-shadow:
+      var(--ring-accent),
+      0 18px 44px rgba(7, 23, 39, 0.22);
+  }
+
+  .dog-names-search__icon {
+    position: absolute;
+    top: 1.07rem;
+    right: 1rem;
+    font-size: 1.35rem;
+    pointer-events: none;
+  }
+
+  .dog-names-search__dropdown {
+    position: absolute;
+    top: calc(100% + var(--space-2));
+    right: 0;
+    left: 0;
+    z-index: var(--z-overlay);
+    overflow: hidden;
+    max-height: 21rem;
+    overflow-y: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: #ffffff;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .dog-names-search__result {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.78rem 1rem;
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .dog-names-search__result:last-child {
+    border-bottom: 0;
+  }
+
+  .dog-names-search__result:hover {
+    background: var(--color-bg-soft);
+    color: var(--color-accent-hover);
+  }
+
+  .dog-names-search__result img,
+  .dog-names-search__fallback {
+    width: 2.35rem;
+    height: 2.35rem;
+    flex: 0 0 auto;
+    border: 1px solid var(--color-border-warm);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    object-fit: cover;
+  }
+
+  .dog-names-search__fallback {
+    display: grid;
+    place-items: center;
+  }
+
+  .dog-names-stats {
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(255, 250, 243, 0.88);
+  }
+
+  .dog-names-stats__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-6);
+    padding-block: var(--space-4);
+    color: var(--color-body-soft);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+  }
+
+  .dog-names-stats__grid strong {
+    color: var(--color-heading);
+    font-weight: var(--weight-black);
+  }
+
+  .dog-names-main {
+    display: grid;
+    gap: clamp(var(--space-10), 7vw, var(--space-16));
+    padding-block: clamp(var(--space-10), 7vw, var(--space-16));
+  }
+
+  .dog-names-section {
+    min-width: 0;
+  }
+
+  .dog-names-section__header {
+    display: flex;
+    gap: var(--space-4);
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: var(--space-6);
+  }
+
+  .dog-names-section__header--stack {
+    display: block;
+  }
+
+  .dog-names-section h2 {
+    margin: var(--space-3) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+  }
+
+  .dog-names-section__link {
+    color: var(--color-primary);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .dog-names-section__link:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .dog-names-featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .dog-name-breed-card {
+    display: flex;
+    overflow: hidden;
+    min-width: 0;
+    flex-direction: column;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-2xl);
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .dog-name-breed-card:hover {
+    border-color: var(--color-border-accent);
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-3px);
+  }
+
+  .dog-name-breed-card__media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background:
+      radial-gradient(circle at 30% 20%, var(--color-accent-light), transparent 55%),
+      var(--color-bg-muted);
+  }
+
+  .dog-name-breed-card__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-smooth);
+  }
+
+  .dog-name-breed-card:hover img {
+    transform: scale(1.045);
+  }
+
+  .dog-name-breed-card__fallback {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    font-size: 2.75rem;
+  }
+
+  .dog-name-breed-card__fallback--visible {
+    display: grid;
+  }
+
+  .dog-name-breed-card__body {
+    padding: var(--space-3);
+  }
+
+  .dog-name-breed-card h3 {
+    margin: 0;
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-snug);
+    line-height: var(--leading-tight);
+  }
+
+  .dog-name-breed-card p {
+    margin: var(--space-1) 0 0;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semi);
+  }
+
+  .dog-names-letter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-block: var(--space-6) var(--space-8);
+  }
+
+  .dog-names-letter-nav a {
+    display: grid;
+    width: 2.2rem;
+    height: 2.2rem;
+    place-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: #ffffff;
+    color: var(--color-body-soft);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    text-decoration: none;
+    box-shadow: var(--shadow-xs);
+    transition: var(--transition-smooth);
+  }
+
+  .dog-names-letter-nav a:hover {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  .dog-names-letter-groups {
+    display: grid;
+    gap: var(--space-8);
+  }
+
+  .dog-names-letter-group {
+    scroll-margin-top: 7rem;
+  }
+
+  .dog-names-letter-group__header {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    margin-bottom: var(--space-4);
+  }
+
+  .dog-names-letter-group__header h3 {
+    margin: 0;
+    color: var(--color-accent);
+    font-family: var(--font-serif);
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-black);
+    line-height: var(--leading-none);
+  }
+
+  .dog-names-letter-group__header span {
+    height: 1px;
+    flex: 1;
+    background: var(--color-border-warm);
+  }
+
+  .dog-names-directory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2);
+  }
+
+  .dog-names-directory-link {
+    display: flex;
+    min-width: 0;
+    gap: var(--space-2);
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: var(--radius-xl);
+    padding: 0.55rem 0.7rem;
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semi);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .dog-names-directory-link:hover {
+    border-color: var(--color-border-accent);
+    background: var(--color-bg-soft);
+    color: var(--color-accent-hover);
+    transform: translateY(-1px);
+  }
+
+  .dog-names-directory-link img {
+    width: 1.75rem;
+    height: 1.75rem;
+    flex: 0 0 auto;
+    border: 1px solid var(--color-border-warm);
+    border-radius: var(--radius-full);
+    object-fit: cover;
+  }
+
+  .dog-names-directory-link span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 640px) {
+    .dog-names-featured-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .dog-names-directory-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 768px) {
+    .dog-names-container {
+      padding-inline: var(--content-padding);
+    }
+
+    .dog-names-featured-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .dog-names-directory-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .dog-names-container {
+      padding-inline: var(--content-padding-wide);
+    }
+
+    .dog-names-featured-grid {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .dog-names-directory-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1180px) {
+    .dog-names-directory-grid {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dog-name-breed-card,
+    .dog-name-breed-card__media img,
+    .dog-names-letter-nav a,
+    .dog-names-directory-link {
+      transition: none;
+      transform: none !important;
+    }
+  }
+</style>
