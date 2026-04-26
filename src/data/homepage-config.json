@@ -43,7 +43,8 @@
     "showCareDecisionLayer": true,
     "showEditorialHighlights": true,
     "showMethodologyTeaser": true,
-    "showLeadCapture": true
+    "showLeadCapture": true,
+    "showAwinSpotlight": true
   },
   "selection": {
     "breedDiscoveryMode": "dynamic_with_fallback",
@@ -95,37 +96,37 @@
     ]
   },
   "primaryJourneys": {
-    "eyebrow": "Start with the right path",
-    "title": "The main ways dog parents use PupWiki",
-    "subtitle": "Pick the journey that matches where you are right now.",
+    "eyebrow": "Planning to get a dog?",
+    "title": "Everything you need before you decide",
+    "subtitle": "Start with the right questions — breed fit, real costs, and what first-time ownership actually looks like.",
     "items": [
       {
         "title": "Find the right breed",
-        "description": "Explore breed profiles, compare temperament, size, and care needs, and narrow down the best fit for your lifestyle.",
+        "description": "Explore 277 breed profiles, compare temperament, size, and care needs, and narrow down the best fit for your lifestyle.",
         "href": "/breeds",
-        "eyebrow": "Start here",
+        "eyebrow": "Step 1",
         "icon": "🐕"
       },
       {
         "title": "Plan the real cost",
-        "description": "Estimate ownership costs, care expectations, and practical planning needs before you commit.",
+        "description": "Estimate first-year and lifetime ownership costs, vet budgets, insurance, and practical planning needs before you commit.",
         "href": "/cost-calculator",
-        "eyebrow": "Decision support",
+        "eyebrow": "Step 2",
         "icon": "💰"
       },
       {
-        "title": "Explore mixed breeds",
-        "description": "Discover popular mixed-breed dogs, likely traits, and practical care guidance based on parent-breed patterns.",
-        "href": "/breeds",
-        "eyebrow": "Mixed breeds",
-        "icon": "🐾"
+        "title": "First dog guide",
+        "description": "Everything first-time dog owners need to know — from puppy prep to training fundamentals and what to budget for.",
+        "href": "/guides/first-dog",
+        "eyebrow": "Step 3",
+        "icon": "📋"
       },
       {
-        "title": "Choose a great name",
-        "description": "Browse dog names by breed, style, personality, and popularity to find the right fit.",
-        "href": "/dog-names",
-        "eyebrow": "Fun + useful",
-        "icon": "✍️"
+        "title": "Take the breed quiz",
+        "description": "Answer 4 questions about your lifestyle and living situation and get matched to your top 3 breed fits.",
+        "href": "/breed-quiz",
+        "eyebrow": "Quick tool",
+        "icon": "✅"
       }
     ]
   },

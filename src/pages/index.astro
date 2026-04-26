@@ -22,6 +22,7 @@ import HomeCareDecisionLayer from '../components/home/HomeCareDecisionLayer.astr
 import HomeEditorialHighlights from '../components/home/HomeEditorialHighlights.astro';
 import HomeMethodologyTeaser from '../components/home/HomeMethodologyTeaser.astro';
 import HomeLeadCapture from '../components/home/HomeLeadCapture.astro';
+import HomeAwinSpotlight from '../components/home/HomeAwinSpotlight.astro';
 
 import getHomepageData from '../lib/homepage/getHomepageData';
 
@@ -136,6 +137,8 @@ const structuredData = [
     )}
 
     {featureFlags.showCareDecisionLayer && <HomeCareDecisionLayer {...careDecisionLayer} />}
+
+    {(featureFlags as any).showAwinSpotlight && <HomeAwinSpotlight />}
 
     {featureFlags.showEditorialHighlights && (
       <HomeEditorialHighlights
