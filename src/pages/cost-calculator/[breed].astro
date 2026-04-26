@@ -1,643 +1,1883 @@
 ---
 /**
  * cost-calculator/[breed].astro
- * Breed-specific lifetime cost of ownership calculator
- * Targets: "how much does a [breed] cost" (high commercial intent)
+ * Breed-specific lifetime cost of ownership calculator.
+ * Cleaned for PupWiki token-driven design system.
  */
-import BaseLayout        from '../../layouts/BaseLayout.astro';
-import masterBreeds      from '../../data/master-breeds.json';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import masterBreeds from '../../data/master-breeds.json';
 import masterCrossbreeds from '../../data/master-crossbreeds.json';
-import productIndex      from '../../data/product-index.json';
-import breedLinkMap      from '../../data/breed-link-map.json';
-import actuarialRates    from '../../data/actuarial-breed-rates.json';
+import productIndex from '../../data/product-index.json';
+import breedLinkMap from '../../data/breed-link-map.json';
+import actuarialRates from '../../data/actuarial-breed-rates.json';
 import actuarialAgeFactors from '../../data/actuarial-age-factors.json';
-import statesIndex       from '../../data/us-states-insurance-index.json';
-import StateAgeSelector  from '../../components/StateAgeSelector.astro';
-import healthProfiles    from '../../data/breed-health-profiles.json';
+import statesIndex from '../../data/us-states-insurance-index.json';
+import StateAgeSelector from '../../components/StateAgeSelector.astro';
+import healthProfiles from '../../data/breed-health-profiles.json';
 
 const AMAZON_TAG = 'aiexpertscorn-20';
-const SITE       = 'https://pupwiki.com';
+const SITE = 'https://pupwiki.com';
 
 const ALL_COST_BREEDS = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
 
 export function getStaticPaths() {
-  const all = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
-  return all.map(b => ({ params: { breed: b.slug } }));
+  return ALL_COST_BREEDS.map((breed) => ({
+    params: { breed: breed.slug },
+  }));
 }
 
 const { breed: slug } = Astro.params;
-const b     = ALL_COST_BREEDS.find(x => x.slug === slug);
+const b = ALL_COST_BREEDS.find((item) => item.slug === slug);
+
 if (!b) return Astro.redirect('/breeds');
 
 const links = (breedLinkMap as any)[slug] || {};
-const rank  = b.ranking_data || {};
-const life  = b.life_expectancy || {};
-const wt    = b.weight || {};
-const n     = b.name;
+const rank = b.ranking_data || {};
+const life = b.life_expectancy || {};
+const wt = b.weight || {};
+const n = b.name;
 
-// ── Cost estimates per size/energy tier ──────────────────────
-const SIZE_COSTS = {
-  small:  { food_annual: 600,  vet_annual: 600,  grooming_annual: 400, supplies_one_time: 400, spay_neuter: 300 },
-  medium: { food_annual: 900,  vet_annual: 800,  grooming_annual: 500, supplies_one_time: 500, spay_neuter: 400 },
-  large:  { food_annual: 1400, vet_annual: 1000, grooming_annual: 700, supplies_one_time: 700, spay_neuter: 500 },
-  giant:  { food_annual: 2000, vet_annual: 1400, grooming_annual: 900, supplies_one_time: 900, spay_neuter: 700 },
+const SIZE_COSTS: Record<
+  string,
+  {
+    food_annual: number;
+    vet_annual: number;
+    grooming_annual: number;
+    supplies_one_time: number;
+    spay_neuter: number;
+  }
+> = {
+  small: { food_annual: 600, vet_annual: 600, grooming_annual: 400, supplies_one_time: 400, spay_neuter: 300 },
+  medium: { food_annual: 900, vet_annual: 800, grooming_annual: 500, supplies_one_time: 500, spay_neuter: 400 },
+  large: { food_annual: 1400, vet_annual: 1000, grooming_annual: 700, supplies_one_time: 700, spay_neuter: 500 },
+  giant: { food_annual: 2000, vet_annual: 1400, grooming_annual: 900, supplies_one_time: 900, spay_neuter: 700 },
 };
-const COAT_GROOMING_MULT = { double: 1.4, long: 1.6, silky: 1.5, wiry: 1.5, curly: 1.7, corded: 2.0, short: 0.8, wavy: 1.2, medium: 1.0 };
-const ENERGY_HEALTH_MULT = { active: 1.3, regular: 1.0, calm: 0.9 };
 
-const base  = SIZE_COSTS[b.size_category] || SIZE_COSTS.medium;
+const COAT_GROOMING_MULT: Record<string, number> = {
+  double: 1.4,
+  long: 1.6,
+  silky: 1.5,
+  wiry: 1.5,
+  curly: 1.7,
+  corded: 2.0,
+  short: 0.8,
+  wavy: 1.2,
+  medium: 1.0,
+};
+
+const ENERGY_HEALTH_MULT: Record<string, number> = {
+  active: 1.3,
+  regular: 1.0,
+  calm: 0.9,
+};
+
+const base = SIZE_COSTS[b.size_category] || SIZE_COSTS.medium;
 const gmult = COAT_GROOMING_MULT[b.coat_type] || 1.0;
 const hmult = ENERGY_HEALTH_MULT[b.energy_level] || 1.0;
-const lifespan = rank.longevity_years || ((life.min||10) + (life.max||14)) / 2;
+const lifespan = rank.longevity_years || ((life.min || 10) + (life.max || 14)) / 2;
 
-// Use ranking data if available, else estimate
-const annual_food  = rank.annual_food_cost || base.food_annual;
-const annual_vet   = Math.round(base.vet_annual * hmult);
+const annual_food = rank.annual_food_cost || base.food_annual;
+const annual_vet = Math.round(base.vet_annual * hmult);
 const annual_groom = Math.round(base.grooming_annual * gmult);
-const annual_toys  = b.energy_level === 'active' ? 400 : b.energy_level === 'calm' ? 150 : 250;
-const annual_other = 200; // insurance contribution, misc
+const annual_toys = b.energy_level === 'active' ? 400 : b.energy_level === 'calm' ? 150 : 250;
+const annual_other = 200;
 const annual_total = annual_food + annual_vet + annual_groom + annual_toys + annual_other;
 
-const one_time_puppy  = base.supplies_one_time;
-const one_time_spay   = base.spay_neuter;
-const one_time_total  = one_time_puppy + one_time_spay + 200; // 200 for initial vet visit
+const one_time_puppy = base.supplies_one_time;
+const one_time_spay = base.spay_neuter;
+const one_time_total = one_time_puppy + one_time_spay + 200;
 
-const lifetime_est = rank.lifetime_cost_usd || Math.round(one_time_total + (annual_total * lifespan));
-const puppy_price_low  = b.size_category === 'small' ? 500 : b.size_category === 'large' || b.size_category === 'giant' ? 1200 : 800;
+const lifetime_est = rank.lifetime_cost_usd || Math.round(one_time_total + annual_total * lifespan);
+
+const puppy_price_low =
+  b.size_category === 'small'
+    ? 500
+    : b.size_category === 'large' || b.size_category === 'giant'
+      ? 1200
+      : 800;
+
 const puppy_price_high = puppy_price_low * 2.5;
 
-// ── Insurance estimate (age 3, CA defaults) ──────────────────
-const INS_DEFAULT_AGE   = 3;
+const INS_DEFAULT_AGE = 3;
 const INS_DEFAULT_STATE = 'CA';
-const SIZE_FALLBACK: Record<string, number> = { small: 35, medium: 50, large: 70, giant: 95 };
 
-const breedRate = (actuarialRates as any).breed_rates.find((r: any) => r.breed_slug === slug);
-const insBasePremium  = breedRate?.base_premium ?? SIZE_FALLBACK[b.size_category] ?? 50;
+const SIZE_FALLBACK: Record<string, number> = {
+  small: 35,
+  medium: 50,
+  large: 70,
+  giant: 95,
+};
+
+const breedRate = (actuarialRates as any).breed_rates.find((rate: any) => rate.breed_slug === slug);
+const insBasePremium = breedRate?.base_premium ?? SIZE_FALLBACK[b.size_category] ?? 50;
 const insRiskCategory = breedRate?.risk_category ?? 'Standard';
-const insIsEstimated  = !breedRate;
+const insIsEstimated = !breedRate;
 
-const insAgeFactor = (actuarialAgeFactors as any).age_factors.find(
-  (f: any) => INS_DEFAULT_AGE >= f.min_age_years && INS_DEFAULT_AGE < f.max_age_years
-)?.premium_factor ?? 1.09;
+const insAgeFactor =
+  (actuarialAgeFactors as any).age_factors.find(
+    (factor: any) => INS_DEFAULT_AGE >= factor.min_age_years && INS_DEFAULT_AGE < factor.max_age_years
+  )?.premium_factor ?? 1.09;
 
-const insStateMultiplier = (statesIndex as any).states.find(
-  (s: any) => s.code === INS_DEFAULT_STATE
-)?.cost_multiplier ?? 1.34;
+const insState = (statesIndex as any).states.find((state: any) => state.code === INS_DEFAULT_STATE);
+const insStateMultiplier = insState?.cost_multiplier ?? 1.34;
+const insStateName = insState?.name ?? 'California';
 
 const insMonthlyEst = Math.round(insBasePremium * insAgeFactor * insStateMultiplier * 100) / 100;
-const insAnnualEst  = Math.round(insMonthlyEst * 12);
+const insAnnualEst = Math.round(insMonthlyEst * 12);
 
-const RISK_COLORS: Record<string, string> = {
-  Low: '#16a34a', Standard: '#0891b2', Medium: '#d97706', High: '#dc2626', 'Very High': '#9333ea'
-};
-const insRiskColor = RISK_COLORS[insRiskCategory] ?? RISK_COLORS.Standard;
+const riskClass = `is-risk-${String(insRiskCategory).toLowerCase().replace(/\s+/g, '-')}`;
 
-// ── Cost breakdown items ──────────────────────────────────────
 const COST_ITEMS = [
-  { label: 'Dog food',             annual: annual_food,  icon: '🍖', note: `Based on ${b.size_category} breed feeding requirements` },
-  { label: 'Veterinary care',      annual: annual_vet,   icon: '🩺', note: `${b.energy_level} energy breeds have ${hmult > 1 ? 'higher' : 'typical'} vet costs` },
-  { label: 'Grooming',             annual: annual_groom, icon: '✂️', note: `${b.coat_type} coat requires ${gmult > 1.3 ? 'frequent' : 'regular'} grooming` },
-  { label: 'Toys & enrichment',    annual: annual_toys,  icon: '🎾', note: `${b.energy_level === 'active' ? 'Active breeds need more mental stimulation' : 'Standard toy rotation'}` },
-  { label: 'Other (misc/insurance)',annual: annual_other, icon: '💰', note: 'Training, boarding, pet insurance contributions' },
+  {
+    label: 'Dog food',
+    annual: annual_food,
+    icon: '🍖',
+    note: `Based on ${b.size_category} breed feeding requirements`,
+  },
+  {
+    label: 'Veterinary care',
+    annual: annual_vet,
+    icon: '🩺',
+    note: `${b.energy_level} energy breeds have ${hmult > 1 ? 'higher' : 'typical'} baseline vet costs`,
+  },
+  {
+    label: 'Grooming',
+    annual: annual_groom,
+    icon: '✂️',
+    note: `${b.coat_type || 'standard'} coat requires ${gmult > 1.3 ? 'frequent' : 'regular'} grooming`,
+  },
+  {
+    label: 'Toys & enrichment',
+    annual: annual_toys,
+    icon: '🎾',
+    note: b.energy_level === 'active' ? 'Active breeds need more mental stimulation' : 'Standard toy rotation',
+  },
+  {
+    label: 'Other costs',
+    annual: annual_other,
+    icon: '💰',
+    note: 'Training, boarding, supplies, insurance contributions, and miscellaneous care',
+  },
 ];
 
-// ── Health profile (for health cost panel) ───────────────────
-const healthProfile = (healthProfiles as any).profiles.find((p: any) => p.breed_slug === slug) ?? null;
-const SEVERITY_STYLES: Record<string, { bg: string; color: string }> = {
-  Low:          { bg: 'var(--color-success-light)', color: '#16a34a' },
-  Medium:       { bg: '#fefce8',                    color: '#ca8a04' },
-  'Medium-High':{ bg: '#fff7ed',                    color: '#ea580c' },
-  High:         { bg: '#fef2f2',                    color: '#dc2626' },
-  Critical:     { bg: '#fdf2f8',                    color: '#9333ea' },
-};
+const firstYearRows = [
+  {
+    label: 'Puppy / adoption fee',
+    low: puppy_price_low,
+    high: puppy_price_high,
+    note: 'Reputable breeder or rescue',
+  },
+  {
+    label: 'Initial vet visit',
+    low: 150,
+    high: 300,
+    note: 'Health check, vaccines, and microchip',
+  },
+  {
+    label: 'Spay / neuter',
+    low: Math.max(base.spay_neuter - 100, 150),
+    high: base.spay_neuter + 200,
+    note: 'Often recommended around 6–12 months',
+  },
+  {
+    label: 'Supplies',
+    low: base.supplies_one_time,
+    high: Math.round(base.supplies_one_time * 1.5),
+    note: 'Crate, bed, bowls, leash, collar, and toys',
+  },
+  {
+    label: 'Food',
+    low: annual_food,
+    high: Math.round(annual_food * 1.2),
+    note: 'Puppy food and growth-stage nutrition',
+  },
+  {
+    label: 'Training classes',
+    low: 150,
+    high: 400,
+    note: 'Puppy classes and basic obedience',
+  },
+];
+
+const firstYearLow =
+  puppy_price_low + 150 + Math.max(base.spay_neuter - 100, 150) + base.supplies_one_time + annual_food + 150;
+
+const firstYearHigh =
+  puppy_price_high +
+  300 +
+  (base.spay_neuter + 200) +
+  Math.round(base.supplies_one_time * 1.5) +
+  Math.round(annual_food * 1.2) +
+  400;
+
+const savingTips = [
+  {
+    icon: '🍖',
+    tip: 'Buy food strategically',
+    save: '$100–300/yr',
+    detail: 'Bulk buying and auto-ship discounts can reduce repeat food costs.',
+  },
+  {
+    icon: '🩺',
+    tip: 'Budget for preventive care',
+    save: '$200–800/yr',
+    detail: 'Dental care, healthy weight, exercise, and routine checkups can reduce avoidable vet bills.',
+  },
+  {
+    icon: '🛡️',
+    tip: 'Compare insurance early',
+    save: 'Potentially thousands',
+    detail: 'Premiums are often lower when a dog is young and healthy.',
+  },
+  {
+    icon: '✂️',
+    tip: 'Learn basic grooming',
+    save: '$200–600/yr',
+    detail: 'Brushing, nail trims, and coat maintenance between appointments can cut grooming costs.',
+  },
+  {
+    icon: '🎾',
+    tip: 'Rotate toys',
+    save: '$100–200/yr',
+    detail: 'A small rotating set keeps novelty high without constant buying.',
+  },
+  {
+    icon: '🐾',
+    tip: 'Consider adoption',
+    save: '$1,000+ upfront',
+    detail: 'Rescue and rehoming fees are often far lower than breeder purchase prices.',
+  },
+];
+
+const healthProfile = (healthProfiles as any).profiles.find((profile: any) => profile.breed_slug === slug) ?? null;
 const topHealthIssues = healthProfile?.common_issues?.slice(0, 3) ?? [];
 
-// Top products for sidebar
+const severityClass = (severity: string) =>
+  `is-severity-${String(severity || 'medium').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
 const foodProd = b.product_picks?.['dog-food'] ? (productIndex as any)[b.product_picks['dog-food']] : null;
 
+const amazonUrl =
+  foodProd?.asin && foodProd.asin !== 'SUBSCRIPTION'
+    ? `https://www.amazon.com/dp/${foodProd.asin}?tag=${AMAZON_TAG}`
+    : null;
+
+const breedWeight =
+  wt.min && wt.max
+    ? `${wt.min}–${wt.max} lb`
+    : wt.min
+      ? `${wt.min}+ lb`
+      : wt.max
+        ? `up to ${wt.max} lb`
+        : null;
+
+const usd = (value: number) => `$${Math.round(value).toLocaleString()}`;
+const money = (value: number) => `$${Number(value).toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
+const monthly = (value: number) => `$${Number(value).toFixed(2)}`;
+
 const breadcrumbLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home",             "item": `${SITE}/` },
-    { "@type": "ListItem", "position": 2, "name": "Breeds",           "item": `${SITE}/breeds` },
-    { "@type": "ListItem", "position": 3, "name": n,                  "item": `${SITE}/breeds/${slug}` },
-    { "@type": "ListItem", "position": 4, "name": "Cost Calculator",  "item": `${SITE}/cost-calculator/${slug}` },
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Breeds', item: `${SITE}/breeds` },
+    { '@type': 'ListItem', position: 3, name: n, item: `${SITE}/breeds/${slug}` },
+    { '@type': 'ListItem', position: 4, name: 'Cost Calculator', item: `${SITE}/cost-calculator/${slug}` },
+  ],
 });
 
 const jsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": `How much does a ${n} cost per year?`,
-      "acceptedAnswer": { "@type": "Answer", "text": `A ${n} costs approximately $${annual_total.toLocaleString()} per year in ongoing expenses, including food ($${annual_food.toLocaleString()}), veterinary care ($${annual_vet.toLocaleString()}), grooming ($${annual_groom.toLocaleString()}), and toys ($${annual_toys.toLocaleString()}).` }
+      '@type': 'Question',
+      name: `How much does a ${n} cost per year?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `A ${n} costs approximately ${usd(annual_total)} per year in ongoing expenses, including food (${usd(
+          annual_food
+        )}), veterinary care (${usd(annual_vet)}), grooming (${usd(annual_groom)}), and toys (${usd(annual_toys)}).`,
+      },
     },
     {
-      "@type": "Question",
-      "name": `What is the lifetime cost of a ${n}?`,
-      "acceptedAnswer": { "@type": "Answer", "text": `The estimated lifetime cost of owning a ${n} is $${lifetime_est.toLocaleString()}, based on an average lifespan of ${lifespan} years and annual expenses of $${annual_total.toLocaleString()}.` }
+      '@type': 'Question',
+      name: `What is the lifetime cost of a ${n}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `The estimated lifetime cost of owning a ${n} is ${usd(
+          lifetime_est
+        )}, based on an average lifespan of ${lifespan} years and annual expenses of ${usd(annual_total)}.`,
+      },
     },
     {
-      "@type": "Question",
-      "name": `How much does a ${n} puppy cost?`,
-      "acceptedAnswer": { "@type": "Answer", "text": `${n} puppies from reputable breeders typically cost $${puppy_price_low.toLocaleString()}–$${puppy_price_high.toLocaleString()}. Rescue or rehoming fees are usually $50–$500.` }
-    }
-  ]
+      '@type': 'Question',
+      name: `How much does a ${n} puppy cost?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `${n} puppies from reputable breeders typically cost ${usd(puppy_price_low)}–${usd(
+          puppy_price_high
+        )}. Rescue or rehoming fees are usually lower, depending on the organization.`,
+      },
+    },
+  ],
 });
 ---
 
 <BaseLayout
   title={`How Much Does a ${n} Cost? 2026 Complete Cost Breakdown`}
-  description={`Full ${n} cost of ownership: puppy price $${puppy_price_low.toLocaleString()}–$${puppy_price_high.toLocaleString()}, annual costs $${annual_total.toLocaleString()}/yr, lifetime estimate $${lifetime_est.toLocaleString()}. Includes food, vet, grooming and toys.`}
+  description={`Full ${n} cost of ownership: puppy price ${usd(puppy_price_low)}–${usd(
+    puppy_price_high
+  )}, annual costs ${usd(annual_total)}/yr, lifetime estimate ${usd(
+    lifetime_est
+  )}. Includes food, vet, grooming, insurance, and first-year costs.`}
   canonicalUrl={`${SITE}/cost-calculator/${slug}`}
+  bodyClass="cost-detail-page bg-white text-slate-900"
 >
-<script type="application/ld+json" set:html={breadcrumbLd} />
-<script type="application/ld+json" set:html={jsonLd} />
+  <script type="application/ld+json" set:html={breadcrumbLd} />
+  <script type="application/ld+json" set:html={jsonLd} />
 
-<!-- Hero -->
-<div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
-  <div class="max-w-7xl mx-auto px-4 py-10 sm:py-14">
-    <nav class="font-sans text-sm mb-5 flex flex-wrap gap-1.5" style="color:#94a3b8">
-      <a href="/" style="color:#a0621c" class="hover:underline">Home</a><span>›</span>
-      <a href="/breeds" style="color:#a0621c" class="hover:underline">Breeds</a><span>›</span>
-      <a href={`/breeds/${slug}`} style="color:#a0621c" class="hover:underline">{n}</a><span>›</span>
-      <span style="color:#475569">Cost Calculator</span>
-    </nav>
+  <main class="cost-detail">
+    <section class="cost-detail-hero" aria-labelledby="cost-detail-title">
+      <div class="cost-detail-container">
+        <nav class="cost-detail-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="/breeds">Breeds</a>
+          <span aria-hidden="true">›</span>
+          <a href={`/breeds/${slug}`}>{n}</a>
+          <span aria-hidden="true">›</span>
+          <span>Cost Calculator</span>
+        </nav>
 
-    <div class="flex flex-col sm:flex-row sm:items-start gap-6">
-      {b.image_url && (
-        <img src={b.image_url} alt={n} width="120" height="120" loading="eager"
-          class="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-2xl flex-shrink-0"
-          style="border:2px solid #e8ccaa"
-          onerror="this.style.display='none'" />
-      )}
-      <div>
-        <span class="inline-block font-sans text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style="background:#a0621c;color:white">
-          Cost calculator
-        </span>
-        <h1 class="font-display text-4xl sm:text-5xl font-bold mb-2 leading-tight" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-          How Much Does a <span style="color:#a0621c">{n}</span> Cost?
-        </h1>
-        <p class="font-sans text-lg leading-relaxed max-w-2xl" style="color:#64748b">
-          Complete 2026 cost breakdown — puppy price, annual expenses, and lifetime estimate based on breed size, coat type, and energy level.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="cost-detail-hero__grid">
+          <div class="cost-detail-hero__content">
+            <p class="cost-detail-eyebrow">Breed cost calculator</p>
 
-<!-- Main -->
-<div class="max-w-7xl mx-auto px-4 py-10">
-  <div class="lg:grid lg:grid-cols-[1fr_300px] lg:gap-10">
+            <h1 id="cost-detail-title" class="cost-detail-hero__title">
+              How much does a
+              <span>{n}</span>
+              cost?
+            </h1>
 
-    <div class="space-y-10 min-w-0">
-
-      <!-- Summary cards -->
-      <section>
-        <div class="grid sm:grid-cols-3 gap-4">
-          <div class="rounded-2xl p-5 text-center" style="background:linear-gradient(135deg,#3d2206,#7d4a10);color:white">
-            <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2 opacity-80">Puppy price</p>
-            <p class="font-display text-3xl font-black" style="font-family:'Playfair Display',Georgia,serif">
-              ${puppy_price_low.toLocaleString()}–${puppy_price_high.toLocaleString()}
+            <p class="cost-detail-hero__subtitle">
+              Complete 2026 cost breakdown for {n} ownership, including puppy price, annual expenses,
+              lifetime estimate, first-year setup costs, and state-adjusted insurance estimates.
             </p>
-            <p class="font-sans text-xs mt-1 opacity-70">From reputable breeder</p>
-          </div>
-          <div class="rounded-2xl p-5 text-center" style="background:linear-gradient(135deg,#a0621c,#c07835);color:white">
-            <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2 opacity-80">Annual cost</p>
-            <p class="font-display text-3xl font-black" style="font-family:'Playfair Display',Georgia,serif">
-              ${annual_total.toLocaleString()}
-            </p>
-            <p class="font-sans text-xs mt-1 opacity-70">Per year ongoing</p>
-          </div>
-          <div class="rounded-2xl p-5 text-center" style="background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#1e293b">
-            <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2 opacity-70">Lifetime total</p>
-            <p class="font-display text-3xl font-black" style="font-family:'Playfair Display',Georgia,serif">
-              ${lifetime_est.toLocaleString()}
-            </p>
-            <p class="font-sans text-xs mt-1 opacity-60">Over ~{lifespan} years</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Pet Insurance Estimate Widget -->
-      <section class="rounded-3xl overflow-hidden" style="border:1px solid #bae6fd;background:linear-gradient(135deg,#f0f9ff,#e0f2fe)">
-        <div class="px-6 py-4 flex items-center gap-3" style="background:linear-gradient(135deg,#0369a1,#0284c7);color:white">
-          <span style="font-size:1.5rem">🛡️</span>
-          <div>
-            <p class="font-sans text-xs font-bold uppercase tracking-wider opacity-80">Pet Insurance Estimate</p>
-            <p class="font-sans text-sm font-semibold">
-              {n} · <span id="ins-header-age">Age 3</span> · <span id="ins-header-state">California</span>
-              {insIsEstimated && <span class="opacity-70 font-normal"> (size-based estimate)</span>}
-            </p>
-          </div>
-          <div class="ml-auto text-right">
-            <p class="font-display text-2xl font-black" style="font-family:'Playfair Display',Georgia,serif"><span id="ins-monthly">${insMonthlyEst.toFixed(2)}</span><span class="text-base font-normal opacity-80">/mo</span></p>
-            <p class="font-sans text-xs opacity-70"><span id="ins-annual">${insAnnualEst.toLocaleString()}</span>/year</p>
-          </div>
-        </div>
-        <div class="px-6 py-5">
-          <div class="mb-5">
-            <StateAgeSelector defaultState="CA" defaultAge="3" compact={true} />
-          </div>
-          <div class="grid sm:grid-cols-3 gap-4 mb-5">
-            <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #bae6fd">
-              <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:#64748b">Base premium</p>
-              <p class="font-sans font-black text-lg" style="color:#0369a1">${insBasePremium.toFixed(2)}/mo</p>
-              <p class="font-sans text-xs" style="color:#94a3b8">{insIsEstimated ? `${b.size_category} size estimate` : 'Breed-specific rate'}</p>
-            </div>
-            <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #bae6fd">
-              <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:#64748b">Age factor</p>
-              <p class="font-sans font-black text-lg" style="color:#0369a1"><span id="ins-age-factor">×{insAgeFactor.toFixed(2)}</span></p>
-              <p class="font-sans text-xs" style="color:#94a3b8"><span id="ins-age-display">Age {INS_DEFAULT_AGE}</span></p>
-            </div>
-            <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #bae6fd">
-              <p class="font-sans text-xs font-bold uppercase tracking-wider mb-1" style="color:#64748b">State multiplier</p>
-              <p class="font-sans font-black text-lg" style="color:#0369a1"><span id="ins-state-mult">×{insStateMultiplier.toFixed(2)}</span></p>
-              <p class="font-sans text-xs" style="color:#94a3b8"><span id="ins-state-name">California (CA)</span></p>
-            </div>
-          </div>
-          <div class="flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center gap-2">
-              <span class="inline-block font-sans text-xs font-bold px-3 py-1 rounded-full" style={`background:${insRiskColor}20;color:${insRiskColor};border:1px solid ${insRiskColor}40`}>
-                {insRiskCategory} Risk
-              </span>
-              <span id="ins-formula" class="font-sans text-xs" style="color:#64748b">
-                Formula: ${insBasePremium.toFixed(2)} × {insAgeFactor.toFixed(2)} × {insStateMultiplier.toFixed(2)} = ${insMonthlyEst.toFixed(2)}/mo
-              </span>
-            </div>
-            <p class="font-sans text-xs" style="color:#94a3b8">
-              Estimates are indicative. Actual premiums vary by provider, coverage level, and deductible.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Annual cost breakdown -->
-      <section>
-        <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:#a0621c">Annual breakdown</p>
-        <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-          {n} Annual Cost Breakdown
-        </h2>
-        <div class="rounded-2xl overflow-hidden" style="border:1px solid #e8ccaa">
-          {COST_ITEMS.map((item, i) => {
-            const pct = Math.round((item.annual / annual_total) * 100);
-            return (
-              <div class="p-4 flex items-center gap-4" style={`background:${i%2===0?'white':'#fdf8f0'};border-bottom:1px solid #f5e8d0`}>
-                <span style="font-size:1.5rem;flex-shrink:0">{item.icon}</span>
-                <div class="flex-1 min-w-0">
-                  <div class="flex justify-between items-center mb-1">
-                    <p class="font-sans font-bold text-sm" style="color:#1e293b">{item.label}</p>
-                    <p class="font-sans font-black text-base flex-shrink-0 ml-2" style="color:#a0621c">${item.annual.toLocaleString()}/yr</p>
-                  </div>
-                  <div class="h-1.5 rounded-full overflow-hidden mb-1" style="background:#e8ccaa">
-                    <div class="h-full rounded-full" style={`width:${pct}%;background:#a0621c`}></div>
-                  </div>
-                  <p class="font-sans text-xs" style="color:#94a3b8">{item.note}</p>
-                </div>
-              </div>
-            );
-          })}
-          <div class="p-4 flex items-center justify-between" style="background:#f5e8d0">
-            <p class="font-sans font-black text-base" style="color:#5c340a">Total annual cost</p>
-            <p class="font-display font-black text-2xl" style="font-family:'Playfair Display',Georgia,serif;color:#3d2206">
-              ${annual_total.toLocaleString()}
-            </p>
-          </div>
-        </div>
-        <p class="font-sans text-xs mt-3" style="color:#94a3b8">
-          * Estimates based on {n} breed profile ({b.size_category} size, {b.energy_level} energy, {b.coat_type} coat). Actual costs vary by location, lifestyle, and individual dog health.
-        </p>
-      </section>
-
-      <!-- Health considerations panel (only for breeds with health profile data) -->
-      {healthProfile && topHealthIssues.length > 0 && (
-        <section>
-          <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:var(--color-accent)">Health considerations</p>
-          <h2 class="font-display text-2xl font-bold mb-2" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
-            Common Health Costs for {n}s
-          </h2>
-          <p class="font-sans text-sm mb-5" style="color:var(--color-muted)">
-            These breed-specific health conditions can affect your actual vet costs. Budget extra if your vet recommends specialist care.
-          </p>
-          <div class="rounded-2xl overflow-hidden mb-4" style="border:1px solid var(--color-border-warm)">
-            {topHealthIssues.map((issue: any, i: number) => {
-              const sty = SEVERITY_STYLES[issue.severity] ?? SEVERITY_STYLES.Medium;
-              return (
-                <div class="p-4" style={`background:${i%2===0?'white':'var(--color-bg-soft)'};border-bottom:1px solid var(--color-border-soft)`}>
-                  <div class="flex items-start justify-between gap-3 mb-1">
-                    <p class="font-sans font-bold text-sm" style="color:var(--color-heading)">{issue.name}</p>
-                    <span class="font-sans text-xs font-semibold px-2 py-0.5 rounded-full flex-shrink-0"
-                      style={`background:${sty.bg};color:${sty.color}`}>
-                      {issue.severity}
-                    </span>
-                  </div>
-                  {issue.early_warning && (
-                    <p class="font-sans text-xs" style="color:var(--color-muted)">
-                      <strong style="color:var(--color-body-soft)">Watch for:</strong> {issue.early_warning}
-                    </p>
-                  )}
-                </div>
-              );
-            })}
-            {links.health_post && (
-              <div class="p-4" style="background:var(--color-bg-cool)">
-                <a href={links.health_post}
-                  class="font-sans text-sm font-semibold hover:underline"
-                  style="color:var(--color-primary)">
-                  Read: {n} health problems &amp; vet costs →
-                </a>
-              </div>
-            )}
-          </div>
-          {healthProfile.care_tips && (
-            <p class="font-sans text-xs rounded-xl p-3" style="background:var(--color-success-light);color:var(--color-success)">
-              <strong>Prevention tip:</strong> {healthProfile.care_tips}
-            </p>
-          )}
-        </section>
-      )}
-
-      <!-- First year costs -->
-      <section>
-        <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:#a0621c">First year</p>
-        <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-          First Year Cost for a {n}
-        </h2>
-        <div class="rounded-2xl overflow-hidden" style="border:1px solid #e8ccaa;background:white">
-          {[
-            { label: 'Puppy / adoption fee',   low: puppy_price_low,     high: puppy_price_high,    note: 'Reputable breeder or rescue' },
-            { label: 'Initial vet visit',      low: 150,                 high: 300,                 note: 'Health check, vaccines, microchip' },
-            { label: 'Spay / neuter',          low: base.spay_neuter-100,high: base.spay_neuter+200,note: 'Recommended around 6–12 months' },
-            { label: 'Supplies (one-time)',     low: base.supplies_one_time, high: base.supplies_one_time * 1.5, note: 'Crate, bed, bowls, leash, collar, toys' },
-            { label: 'Food (year 1)',           low: annual_food,         high: annual_food * 1.2,   note: 'Puppy food typically costs more' },
-            { label: 'Training classes',       low: 150,                 high: 400,                 note: 'Puppy classes + basic obedience' },
-          ].map((row, i) => (
-            <div class="flex items-center justify-between px-5 py-3 font-sans text-sm" style={`border-bottom:1px solid #f5e8d0;background:${i%2===0?'white':'#fdf8f0'}`}>
-              <div>
-                <p class="font-semibold" style="color:#1e293b">{row.label}</p>
-                <p class="text-xs" style="color:#94a3b8">{row.note}</p>
-              </div>
-              <p class="font-bold flex-shrink-0 ml-4" style="color:#a0621c">
-                ${row.low.toLocaleString()}–${row.high.toLocaleString()}
-              </p>
-            </div>
-          ))}
-          <div class="px-5 py-4 flex justify-between" style="background:#f5e8d0">
-            <p class="font-sans font-black" style="color:#5c340a">First year total estimate</p>
-            <p class="font-display font-black text-xl" style="font-family:'Playfair Display',Georgia,serif;color:#3d2206">
-              ${(puppy_price_low + 150 + base.spay_neuter + base.supplies_one_time + annual_food + 200).toLocaleString()}–
-              ${(puppy_price_high + 400 + base.spay_neuter + 400 + base.supplies_one_time * 1.5 + annual_food * 1.2 + 400).toLocaleString()}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Lifetime cost table -->
-      <section>
-        <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:#a0621c">Long-term view</p>
-        <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-          {n} Lifetime Cost Projection
-        </h2>
-        <div class="rounded-2xl overflow-hidden" style="border:1px solid #e8ccaa">
-          <table class="w-full font-sans text-sm">
-            <thead><tr style="background:#f5e8d0">
-              <th class="text-left px-5 py-3 font-bold" style="color:#5c340a">Year</th>
-              <th class="text-right px-5 py-3 font-bold" style="color:#5c340a">Annual cost</th>
-              <th class="text-right px-5 py-3 font-bold" style="color:#5c340a">Cumulative</th>
-            </tr></thead>
-            <tbody>
-              {Array.from({length: Math.min(Math.ceil(lifespan), 15)}, (_, i) => {
-                const yr = i + 1;
-                const cost = yr === 1 ? annual_total + one_time_total + puppy_price_low : annual_total;
-                const cumul = yr === 1 ? cost : (annual_total * yr) + one_time_total + puppy_price_low;
-                return (
-                  <tr style={`background:${i%2===0?'white':'#fdf8f0'};border-top:1px solid #f5e8d0`}>
-                    <td class="px-5 py-3" style="color:#1e293b">
-                      Year {yr}{yr === 1 ? ' (puppy)' : yr >= Math.ceil(lifespan - 2) ? ' (senior)' : ''}
-                    </td>
-                    <td class="px-5 py-3 text-right font-semibold" style="color:#475569">
-                      ${cost.toLocaleString()}
-                    </td>
-                    <td class="px-5 py-3 text-right font-bold" style="color:#a0621c">
-                      ${cumul.toLocaleString()}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- Ways to save -->
-      <section class="rounded-3xl p-7" style="background:white;border:1px solid #e8ccaa">
-        <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-          How to Reduce {n} Ownership Costs
-        </h2>
-        <div class="grid sm:grid-cols-2 gap-4">
-          {[
-            { icon:'🍖', tip:'Buy food in bulk', save:'$100–300/yr', detail:'Amazon Subscribe & Save cuts 5–15% on auto-ship food orders' },
-            { icon:'🩺', tip:'Pet insurance',    save:'$0–5,000/yr', detail:'Monthly premiums of $30–80 can save thousands on unexpected vet bills' },
-            { icon:'🎾', tip:'Rotate toys',      save:'$100–200/yr', detail:'Rotating 8–12 toys keeps novelty high without constant buying' },
-            { icon:'✂️', tip:'Learn to groom',   save:'$200–600/yr', detail:'Basic grooming at home between professional sessions reduces costs significantly' },
-            { icon:'💊', tip:'Preventive health', save:'$200–800/yr', detail:'Quality food, dental care, and exercise reduce vet costs over a lifetime' },
-            { icon:'🐾', tip:'Adopt vs buy',     save:'$1,000–3,000', detail:'Rescue or rehoming fees are $50–500 vs $800–4,000+ from breeders' },
-          ].map(item => (
-            <div class="flex gap-3 items-start p-3 rounded-xl" style="background:#f0fdf4;border:1px solid #bbf7d0">
-              <span style="font-size:1.25rem;flex-shrink:0">{item.icon}</span>
-              <div>
-                <p class="font-sans font-bold text-sm" style="color:#1e293b">{item.tip}</p>
-                <p class="font-sans text-xs font-bold mb-1" style="color:#16a34a">Save {item.save}</p>
-                <p class="font-sans text-xs leading-relaxed" style="color:#166534">{item.detail}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section>
-        <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-          Frequently Asked Questions
-        </h2>
-        <div class="space-y-2">
-          {[
-            [`How much does a ${n} puppy cost?`,
-             `${n} puppies from reputable breeders typically cost $${puppy_price_low.toLocaleString()}–$${puppy_price_high.toLocaleString()}. Show-line dogs from championship bloodlines can cost more. Rescue and rehoming fees are typically $50–500.`],
-            [`How much does a ${n} cost per month?`,
-             `Ongoing monthly costs for a ${n} are approximately $${Math.round(annual_total/12).toLocaleString()}, covering food ($${Math.round(annual_food/12).toLocaleString()}), vet contributions ($${Math.round(annual_vet/12).toLocaleString()}), and other regular expenses.`],
-            [`Is the ${n} an expensive breed to own?`,
-             `${b.size_category === 'large' || b.size_category === 'giant' ? `As a ${b.size_category} breed, ${n}s have above-average ongoing costs — primarily due to food volume and potential orthopaedic health costs.` : `${n}s have ${b.size_category === 'small' ? 'relatively manageable' : 'moderate'} ongoing costs compared to larger breeds, though ${b.coat_type === 'long' || b.coat_type === 'curly' || b.coat_type === 'wiry' ? `grooming costs are higher due to their ${b.coat_type} coat.` : 'costs are fairly typical for the breed size.'}`}`],
-            [`What is the biggest cost of owning a ${n}?`,
-             `For ${n}s, the biggest ongoing cost is typically ${annual_food > annual_vet ? `food ($${annual_food.toLocaleString()}/yr)` : `veterinary care ($${annual_vet.toLocaleString()}/yr)`}. The largest single expense is usually the initial puppy purchase price of $${puppy_price_low.toLocaleString()}–$${puppy_price_high.toLocaleString()}.`],
-          ].map(([q, a]) => (
-            <details class="rounded-xl overflow-hidden" style="border:1px solid #e8ccaa;background:white">
-              <summary class="p-4 font-sans font-semibold text-sm cursor-pointer flex justify-between items-center" style="color:#1e293b;list-style:none">
-                <span>{q}</span>
-                <span class="faq-icon ml-3 flex-shrink-0 text-lg font-light" style="color:#a0621c">+</span>
-              </summary>
-              <div class="px-4 pb-4 pt-3 font-sans text-sm leading-relaxed" style="color:#475569;border-top:1px solid #f5e8d0">{a}</div>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      <!-- Related guides -->
-      <section>
-        <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-          {n} Guides to Reduce Your Costs
-        </h2>
-        <div class="grid sm:grid-cols-2 gap-3">
-          {[
-            links.food_post     && { href: links.food_post,     emoji:'🍖', label:`Best food for ${n}s — save on nutrition without compromising quality` },
-            links.grooming_post && { href: links.grooming_post, emoji:'✂️', label:`${n} grooming guide — DIY tips to reduce professional costs` },
-            links.supplement_post && { href: links.supplement_post, emoji:'💊', label:`Best supplements for ${n}s — prevention beats expensive treatment` },
-            links.training_post && { href: links.training_post, emoji:'🦮', label:`Training a ${n} — avoid costly behavioural problems early` },
-            links.health_post   && { href: links.health_post,   emoji:'🩺', label:`${n} health guide — know the risks before they become bills` },
-            links.hub           && { href: links.hub,           emoji:'🐾', label:`Complete ${n} care guide` },
-          ].filter(Boolean).map((c: any) => (
-            <a href={c.href}
-              class="flex items-center gap-3 p-3 rounded-xl transition-all hover:shadow-sm"
-              style="border:1px solid #e8ccaa;background:white;text-decoration:none"
-              onmouseover="this.style.borderColor='#a0621c';this.style.background='#fdf8f0'"
-              onmouseout="this.style.borderColor='#e8ccaa';this.style.background='white'">
-              <span>{c.emoji}</span>
-              <span class="font-sans text-sm" style="color:#1e293b">{c.label} →</span>
-            </a>
-          ))}
-        </div>
-      </section>
-
-    </div>
-
-    <!-- Sidebar -->
-    <aside class="hidden lg:block">
-      <div class="sticky space-y-5" style="top:80px">
-
-        <!-- Quick summary -->
-        <div class="rounded-2xl overflow-hidden" style="border:2px solid #a0621c;background:white">
-          <div class="px-4 py-3" style="background:#a0621c">
-            <p class="font-sans text-xs font-bold uppercase tracking-wider text-white">{n} Cost Summary</p>
-          </div>
-          <div class="p-4 space-y-3 font-sans text-sm">
-            {[
-              ['Puppy price',     `$${puppy_price_low.toLocaleString()}–$${puppy_price_high.toLocaleString()}`],
-              ['Annual food',     `$${annual_food.toLocaleString()}`],
-              ['Annual vet',      `$${annual_vet.toLocaleString()}`],
-              ['Annual grooming', `$${annual_groom.toLocaleString()}`],
-              ['Annual toys',     `$${annual_toys.toLocaleString()}`],
-              ['Total per year',  `$${annual_total.toLocaleString()}`],
-              ['Lifetime est.',   `$${lifetime_est.toLocaleString()}`],
-            ].map(([label, value], i) => (
-              <div class="flex justify-between gap-2 pb-2" style={`border-bottom:${i < 6 ? '1px solid #f5e8d0' : 'none'}`}>
-                <span style="color:#64748b">{label}</span>
-                <strong style={`color:${i === 5 ? '#a0621c' : '#1e293b'};font-size:${i === 5 ? '1.05rem' : '0.875rem'}`}>{value}</strong>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- Top food recommendation -->
-        {foodProd && foodProd.asin && foodProd.asin !== 'SUBSCRIPTION' && (
-          <div class="rounded-2xl overflow-hidden" style="border:1px solid #e8ccaa;background:white">
-            <div class="px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider" style="background:#f5e8d0;color:#5c340a">
-              Reduce food costs
-            </div>
-            <div class="p-4">
-              <p class="font-sans text-xs italic mb-2" style="color:#64748b">
-                Amazon Subscribe &amp; Save cuts 5–15% off auto-ship food orders
-              </p>
-              {foodProd.image?.includes('media-amazon') && (
-                <div class="flex justify-center mb-3">
-                  <img src={foodProd.image} alt={foodProd.name} width="80" height="80" loading="lazy"
-                    class="object-contain max-h-20" onerror="this.style.display='none'" />
-                </div>
-              )}
-              <p class="font-sans font-bold text-sm mb-1" style="color:#1e293b">{foodProd.name}</p>
-              <p class="font-sans font-black text-lg mb-2" style="color:#a0621c">
-                ${parseFloat(foodProd.price||0).toFixed(2)}
-              </p>
-              <a href={`https://www.amazon.com/dp/${foodProd.asin}/?tag=${AMAZON_TAG}`}
-                rel="nofollow sponsored" target="_blank"
-                class="flex justify-center" aria-label="Available at Amazon">
-                <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto" />
+            <div class="cost-detail-hero__actions">
+              <a href="#annual-breakdown" class="cost-detail-button cost-detail-button--primary">
+                View breakdown
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="/cost-calculator" class="cost-detail-button cost-detail-button--secondary">
+                Compare all breeds
               </a>
             </div>
-          </div>
-        )}
 
-        <!-- Breed quick facts -->
-        <div class="rounded-2xl p-4" style="border:1px solid #e8ccaa;background:#fdf8f0">
-          <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:#94a3b8">{n} profile</p>
-          <div class="space-y-2 font-sans text-sm">
-            {[
-              ['Size',      b.size_category],
-              ['Energy',    b.energy_level],
-              ['Coat',      b.coat_type],
-              ['Lifespan',  `${life.min||'?'}–${life.max||'?'} years`],
-              rank.longevity_years ? ['Avg lifespan', `${rank.longevity_years} years`] : null,
-            ].filter(Boolean).map((row: any) => (
-              <div class="flex justify-between gap-2 pb-1.5" style="border-bottom:1px solid #e8ccaa">
-                <span style="color:#64748b">{row[0]}</span>
-                <span class="font-semibold capitalize" style="color:#1e293b">{row[1]}</span>
-              </div>
-            ))}
+            <ul class="cost-detail-hero__badges" aria-label={`${n} profile summary`}>
+              <li>{b.size_category || 'Breed'} size</li>
+              <li>{b.energy_level || 'Regular'} energy</li>
+              {b.coat_type && <li>{b.coat_type} coat</li>}
+              {breedWeight && <li>{breedWeight}</li>}
+            </ul>
           </div>
+
+          <aside class="cost-detail-hero__media" aria-label={`${n} cost summary`}>
+            {b.image_url ? (
+              <img
+                src={b.image_url}
+                alt={`${n} dog`}
+                width="520"
+                height="420"
+                loading="eager"
+                decoding="async"
+                data-cost-detail-image
+              />
+            ) : (
+              <div class="cost-detail-hero__fallback" aria-hidden="true">🐕</div>
+            )}
+
+            <div class="cost-detail-hero__summary">
+              <p>Estimated lifetime cost</p>
+              <strong>{usd(lifetime_est)}</strong>
+              <span>Based on ~{lifespan} years and {usd(annual_total)}/yr ongoing costs.</span>
+            </div>
+          </aside>
         </div>
-
       </div>
-    </aside>
-  </div>
-</div>
+    </section>
 
-<script define:vars={{ insBasePremium, insAgeFactor, insStateMultiplier }}>
-  // FAQ toggles
-  document.querySelectorAll('details').forEach(el => {
-    el.addEventListener('toggle', () => {
-      const icon = el.querySelector('.faq-icon');
-      if (icon) icon.textContent = el.open ? '−' : '+';
+    <section class="cost-detail-main">
+      <div class="cost-detail-container">
+        <div class="cost-detail-layout">
+          <div class="cost-detail-content">
+            <section class="cost-summary-grid" aria-label={`${n} cost summary cards`}>
+              <article class="cost-summary-card cost-summary-card--dark">
+                <p>Puppy price</p>
+                <strong>{usd(puppy_price_low)}–{usd(puppy_price_high)}</strong>
+                <span>From reputable breeder</span>
+              </article>
+
+              <article class="cost-summary-card cost-summary-card--accent">
+                <p>Annual cost</p>
+                <strong>{usd(annual_total)}</strong>
+                <span>Per year ongoing</span>
+              </article>
+
+              <article class="cost-summary-card cost-summary-card--warm">
+                <p>Lifetime total</p>
+                <strong>{usd(lifetime_est)}</strong>
+                <span>Over ~{lifespan} years</span>
+              </article>
+            </section>
+
+            <section class="cost-insurance-panel" aria-labelledby="insurance-estimate-title">
+              <div class="cost-insurance-panel__header">
+                <div class="cost-insurance-panel__icon" aria-hidden="true">🛡️</div>
+
+                <div>
+                  <p class="cost-detail-eyebrow">Pet insurance estimate</p>
+                  <h2 id="insurance-estimate-title">
+                    {n} insurance estimate
+                  </h2>
+                  <span>
+                    <span id="ins-header-age">Age {INS_DEFAULT_AGE}</span>
+                    ·
+                    <span id="ins-header-state">{insStateName}</span>
+                    {insIsEstimated && ' · size-based estimate'}
+                  </span>
+                </div>
+
+                <div class="cost-insurance-panel__price">
+                  <strong><span id="ins-monthly">{monthly(insMonthlyEst)}</span>/mo</strong>
+                  <span><span id="ins-annual">{usd(insAnnualEst)}</span>/year</span>
+                </div>
+              </div>
+
+              <div class="cost-insurance-panel__body">
+                <StateAgeSelector defaultState="CA" defaultAge="3" compact={true} id={`insurance-${slug}`} />
+
+                <div class="cost-insurance-metrics">
+                  <article>
+                    <p>Base premium</p>
+                    <strong>{monthly(insBasePremium)}/mo</strong>
+                    <span>{insIsEstimated ? `${b.size_category} size estimate` : 'Breed-specific rate'}</span>
+                  </article>
+
+                  <article>
+                    <p>Age factor</p>
+                    <strong id="ins-age-factor">×{insAgeFactor.toFixed(2)}</strong>
+                    <span id="ins-age-display">Age {INS_DEFAULT_AGE}</span>
+                  </article>
+
+                  <article>
+                    <p>State multiplier</p>
+                    <strong id="ins-state-mult">×{insStateMultiplier.toFixed(2)}</strong>
+                    <span id="ins-state-name">{insStateName} ({INS_DEFAULT_STATE})</span>
+                  </article>
+                </div>
+
+                <div class="cost-insurance-panel__note">
+                  <span class:list={['cost-risk-pill', riskClass]}>
+                    {insRiskCategory} risk
+                  </span>
+                  <p id="ins-formula">
+                    Formula: {monthly(insBasePremium)} × {insAgeFactor.toFixed(2)} × {insStateMultiplier.toFixed(2)}
+                    = {monthly(insMonthlyEst)}/mo
+                  </p>
+                </div>
+
+                <p class="cost-detail-disclaimer">
+                  Insurance estimates are indicative. Actual premiums vary by provider, coverage level, deductible,
+                  reimbursement rate, age, location, and individual health history.
+                </p>
+              </div>
+            </section>
+
+            <section id="annual-breakdown" class="cost-detail-section" aria-labelledby="annual-breakdown-title">
+              <p class="cost-detail-eyebrow">Annual breakdown</p>
+              <h2 id="annual-breakdown-title">{n} annual cost breakdown</h2>
+
+              <div class="cost-breakdown-list">
+                {COST_ITEMS.map((item) => {
+                  const pct = Math.round((item.annual / annual_total) * 100);
+
+                  return (
+                    <article class="cost-breakdown-item">
+                      <div class="cost-breakdown-item__icon" aria-hidden="true">
+                        {item.icon}
+                      </div>
+
+                      <div class="cost-breakdown-item__body">
+                        <div class="cost-breakdown-item__top">
+                          <h3>{item.label}</h3>
+                          <strong>{usd(item.annual)}/yr</strong>
+                        </div>
+
+                        <div class="cost-progress" aria-label={`${item.label} is ${pct}% of annual cost`}>
+                          <span style={`width:${pct}%`}></span>
+                        </div>
+
+                        <p>{item.note}</p>
+                      </div>
+                    </article>
+                  );
+                })}
+
+                <div class="cost-breakdown-total">
+                  <span>Total annual cost</span>
+                  <strong>{usd(annual_total)}</strong>
+                </div>
+              </div>
+
+              <p class="cost-detail-footnote">
+                Estimates are based on the {n} profile: {b.size_category} size, {b.energy_level} energy,
+                and {b.coat_type || 'standard'} coat. Actual costs vary by location, lifestyle, product choices,
+                and individual health.
+              </p>
+            </section>
+
+            {healthProfile && topHealthIssues.length > 0 && (
+              <section class="cost-detail-section" aria-labelledby="health-cost-title">
+                <p class="cost-detail-eyebrow">Health considerations</p>
+                <h2 id="health-cost-title">Common health costs for {n}s</h2>
+
+                <p class="cost-detail-section__intro">
+                  These breed-specific health considerations can affect real-world vet costs. Use this as a budgeting
+                  prompt, not medical advice.
+                </p>
+
+                <div class="health-issue-list">
+                  {topHealthIssues.map((issue: any) => (
+                    <article class="health-issue-card">
+                      <div>
+                        <h3>{issue.name}</h3>
+                        {issue.early_warning && (
+                          <p>
+                            <strong>Watch for:</strong> {issue.early_warning}
+                          </p>
+                        )}
+                      </div>
+
+                      <span class:list={['health-severity-pill', severityClass(issue.severity)]}>
+                        {issue.severity}
+                      </span>
+                    </article>
+                  ))}
+
+                  {links.health_post && (
+                    <a class="health-issue-link" href={links.health_post}>
+                      Read: {n} health problems & vet costs →
+                    </a>
+                  )}
+                </div>
+
+                {healthProfile.care_tips && (
+                  <p class="health-tip">
+                    <strong>Prevention tip:</strong> {healthProfile.care_tips}
+                  </p>
+                )}
+              </section>
+            )}
+
+            <section class="cost-detail-section" aria-labelledby="first-year-title">
+              <p class="cost-detail-eyebrow">First year</p>
+              <h2 id="first-year-title">First year cost for a {n}</h2>
+
+              <div class="cost-table-card">
+                <div class="cost-row-list">
+                  {firstYearRows.map((row) => (
+                    <div class="cost-row">
+                      <div>
+                        <strong>{row.label}</strong>
+                        <span>{row.note}</span>
+                      </div>
+                      <p>{usd(row.low)}–{usd(row.high)}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div class="cost-total-row">
+                  <span>First year total estimate</span>
+                  <strong>{usd(firstYearLow)}–{usd(firstYearHigh)}</strong>
+                </div>
+              </div>
+            </section>
+
+            <section class="cost-detail-section" aria-labelledby="lifetime-title">
+              <p class="cost-detail-eyebrow">Long-term view</p>
+              <h2 id="lifetime-title">{n} lifetime cost projection</h2>
+
+              <div class="cost-table-wrap">
+                <table class="cost-detail-table">
+                  <thead>
+                    <tr>
+                      <th>Year</th>
+                      <th>Annual cost</th>
+                      <th>Cumulative</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Array.from({ length: Math.min(Math.ceil(lifespan), 15) }, (_, i) => {
+                      const yr = i + 1;
+                      const cost = yr === 1 ? annual_total + one_time_total + puppy_price_low : annual_total;
+                      const cumul = yr === 1 ? cost : annual_total * yr + one_time_total + puppy_price_low;
+
+                      return (
+                        <tr>
+                          <td>
+                            Year {yr}
+                            {yr === 1 ? ' (puppy)' : yr >= Math.ceil(lifespan - 2) ? ' (senior)' : ''}
+                          </td>
+                          <td>{usd(cost)}</td>
+                          <td>{usd(cumul)}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="cost-detail-section cost-saving-section" aria-labelledby="saving-title">
+              <p class="cost-detail-eyebrow">Budget smarter</p>
+              <h2 id="saving-title">How to reduce {n} ownership costs</h2>
+
+              <div class="saving-tip-grid">
+                {savingTips.map((item) => (
+                  <article class="saving-tip-card">
+                    <div class="saving-tip-card__icon" aria-hidden="true">{item.icon}</div>
+                    <div>
+                      <h3>{item.tip}</h3>
+                      <strong>{item.save}</strong>
+                      <p>{item.detail}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section class="cost-detail-faq" aria-labelledby="faq-title">
+              <p class="cost-detail-eyebrow">Quick answers</p>
+              <h2 id="faq-title">FAQs about {n} costs</h2>
+
+              <details>
+                <summary>How much does a {n} cost per year?</summary>
+                <p>
+                  A {n} costs approximately <strong>{usd(annual_total)} per year</strong> in ongoing expenses,
+                  including food, vet care, grooming, toys, enrichment, and miscellaneous care.
+                </p>
+              </details>
+
+              <details>
+                <summary>What is the estimated lifetime cost of a {n}?</summary>
+                <p>
+                  The estimated lifetime cost is <strong>{usd(lifetime_est)}</strong>, based on an average lifespan
+                  of about {lifespan} years and ongoing annual costs of {usd(annual_total)}.
+                </p>
+              </details>
+
+              <details>
+                <summary>How much does a {n} puppy cost?</summary>
+                <p>
+                  A {n} puppy from a reputable breeder typically costs <strong>{usd(puppy_price_low)}–{usd(puppy_price_high)}</strong>.
+                  Adoption or rehoming may cost less upfront.
+                </p>
+              </details>
+            </section>
+          </div>
+
+          <aside class="cost-detail-sidebar" aria-label={`${n} cost resources`}>
+            <div class="cost-sidebar-card">
+              <p class="cost-detail-eyebrow">Breed profile</p>
+              <h2>{n}</h2>
+
+              <dl>
+                <div>
+                  <dt>Size</dt>
+                  <dd>{b.size_category || 'Unknown'}</dd>
+                </div>
+                <div>
+                  <dt>Energy</dt>
+                  <dd>{b.energy_level || 'Unknown'}</dd>
+                </div>
+                <div>
+                  <dt>Coat</dt>
+                  <dd>{b.coat_type || 'Unknown'}</dd>
+                </div>
+                {breedWeight && (
+                  <div>
+                    <dt>Weight</dt>
+                    <dd>{breedWeight}</dd>
+                  </div>
+                )}
+                <div>
+                  <dt>Lifespan</dt>
+                  <dd>~{lifespan} years</dd>
+                </div>
+              </dl>
+
+              <a href={`/breeds/${slug}`} class="cost-sidebar-link">
+                View full breed guide →
+              </a>
+            </div>
+
+            {foodProd && (
+              <div class="cost-sidebar-card cost-product-card">
+                <p class="cost-detail-eyebrow">Food pick</p>
+                <h2>{foodProd.name}</h2>
+
+                {foodProd.image && (
+                  <img
+                    src={foodProd.image}
+                    alt={foodProd.name}
+                    width="240"
+                    height="180"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
+
+                {foodProd.verdict && <p>{foodProd.verdict}</p>}
+
+                <dl>
+                  {foodProd.brand && (
+                    <div>
+                      <dt>Brand</dt>
+                      <dd>{foodProd.brand}</dd>
+                    </div>
+                  )}
+                  {foodProd.rating && (
+                    <div>
+                      <dt>Rating</dt>
+                      <dd>{foodProd.rating}/5</dd>
+                    </div>
+                  )}
+                  {foodProd.price && (
+                    <div>
+                      <dt>Price</dt>
+                      <dd>{money(foodProd.price)}</dd>
+                    </div>
+                  )}
+                </dl>
+
+                {amazonUrl ? (
+                  <a href={amazonUrl} class="cost-sidebar-cta" rel="nofollow sponsored noopener" target="_blank">
+                    Check price
+                    <span aria-hidden="true">→</span>
+                  </a>
+                ) : (
+                  <a href="/categories/dog-food" class="cost-sidebar-cta">
+                    Explore dog food
+                    <span aria-hidden="true">→</span>
+                  </a>
+                )}
+              </div>
+            )}
+
+            <div class="cost-sidebar-card">
+              <p class="cost-detail-eyebrow">Next steps</p>
+              <div class="cost-sidebar-nav">
+                <a href="/cost-calculator">Compare breed costs</a>
+                <a href="/breeds">Browse all breeds</a>
+                {links.health_post && <a href={links.health_post}>Health cost guide</a>}
+                <a href="/categories/dog-food">Dog food guides</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script define:vars={{ insBasePremium, insAgeFactor, insStateMultiplier, insMonthlyEst, insAnnualEst }}>
+    let currentAgeFactor = insAgeFactor;
+    let currentStateMultiplier = insStateMultiplier;
+
+    const formatMonthly = (value) => `$${Number(value).toFixed(2)}`;
+    const formatAnnual = (value) => `$${Math.round(value).toLocaleString()}`;
+
+    function updateInsuranceDisplay() {
+      const monthly = Math.round(insBasePremium * currentAgeFactor * currentStateMultiplier * 100) / 100;
+      const annual = Math.round(monthly * 12);
+
+      const monthlyEl = document.getElementById('ins-monthly');
+      const annualEl = document.getElementById('ins-annual');
+      const ageFactorEl = document.getElementById('ins-age-factor');
+      const stateMultEl = document.getElementById('ins-state-mult');
+      const formulaEl = document.getElementById('ins-formula');
+
+      if (monthlyEl) monthlyEl.textContent = formatMonthly(monthly);
+      if (annualEl) annualEl.textContent = formatAnnual(annual);
+      if (ageFactorEl) ageFactorEl.textContent = `×${currentAgeFactor.toFixed(2)}`;
+      if (stateMultEl) stateMultEl.textContent = `×${currentStateMultiplier.toFixed(2)}`;
+
+      if (formulaEl) {
+        formulaEl.textContent = `Formula: ${formatMonthly(insBasePremium)} × ${currentAgeFactor.toFixed(
+          2
+        )} × ${currentStateMultiplier.toFixed(2)} = ${formatMonthly(monthly)}/mo`;
+      }
+    }
+
+    document.addEventListener('stateChange', (event) => {
+      currentStateMultiplier = event.detail.multiplier;
+
+      const headerState = document.getElementById('ins-header-state');
+      const stateName = document.getElementById('ins-state-name');
+
+      if (headerState) headerState.textContent = event.detail.name;
+      if (stateName) stateName.textContent = `${event.detail.name} (${event.detail.code})`;
+
+      updateInsuranceDisplay();
     });
-  });
 
-  // Insurance geo recalculation
-  let stateMult = insStateMultiplier;
-  let ageFact   = insAgeFactor;
+    document.addEventListener('ageChange', (event) => {
+      currentAgeFactor = event.detail.factor;
 
-  function recalcIns() {
-    const monthly = Math.round(insBasePremium * ageFact * stateMult * 100) / 100;
-    const annual  = Math.round(monthly * 12);
-    const mEl  = document.getElementById('ins-monthly');
-    const aEl  = document.getElementById('ins-annual');
-    const smEl = document.getElementById('ins-state-mult');
-    const afEl = document.getElementById('ins-age-factor');
-    const fEl  = document.getElementById('ins-formula');
-    if (mEl)  mEl.textContent  = '$' + monthly.toFixed(2);
-    if (aEl)  aEl.textContent  = '$' + annual.toLocaleString();
-    if (smEl) smEl.textContent = '×' + stateMult.toFixed(2);
-    if (afEl) afEl.textContent = '×' + ageFact.toFixed(2);
-    if (fEl)  fEl.textContent  = `Formula: $${insBasePremium.toFixed(2)} × ${ageFact.toFixed(2)} × ${stateMult.toFixed(2)} = $${monthly.toFixed(2)}/mo`;
+      const headerAge = document.getElementById('ins-header-age');
+      const ageDisplay = document.getElementById('ins-age-display');
+
+      if (headerAge) headerAge.textContent = event.detail.displayAge;
+      if (ageDisplay) ageDisplay.textContent = event.detail.displayAge;
+
+      updateInsuranceDisplay();
+    });
+
+    document.querySelectorAll('[data-cost-detail-image]').forEach((image) => {
+      image.addEventListener('error', () => {
+        image.hidden = true;
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .cost-detail {
+    background:
+      radial-gradient(circle at 86% 4%, rgba(255, 122, 0, 0.1), transparent 24rem),
+      radial-gradient(circle at 6% 2%, rgba(21, 54, 95, 0.08), transparent 22rem),
+      var(--color-bg);
+    color: var(--color-body);
   }
 
-  document.addEventListener('stateChange', e => {
-    stateMult = e.detail.multiplier;
-    const nameEl   = document.getElementById('ins-state-name');
-    const headerEl = document.getElementById('ins-header-state');
-    if (nameEl)   nameEl.textContent   = `${e.detail.name} (${e.detail.code})`;
-    if (headerEl) headerEl.textContent = e.detail.name;
-    recalcIns();
-  });
+  .cost-detail-container {
+    width: min(100%, var(--max-width));
+    margin-inline: auto;
+    padding-inline: var(--content-padding-mobile);
+  }
 
-  document.addEventListener('ageChange', e => {
-    ageFact = e.detail.factor;
-    const dispEl   = document.getElementById('ins-age-display');
-    const headerEl = document.getElementById('ins-header-age');
-    if (dispEl)   dispEl.textContent   = e.detail.displayAge;
-    if (headerEl) headerEl.textContent = e.detail.displayAge;
-    recalcIns();
-  });
-</script>
+  .cost-detail-hero {
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-border);
+    background: linear-gradient(180deg, rgba(255, 250, 243, 0.98) 0%, #ffffff 78%);
+  }
 
-</BaseLayout>
+  .cost-detail-hero .cost-detail-container {
+    padding-block: clamp(2.35rem, 7vw, 5.75rem);
+  }
+
+  .cost-detail-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+    margin-bottom: var(--space-5);
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+  }
+
+  .cost-detail-breadcrumb a {
+    color: var(--color-primary);
+    font-weight: var(--weight-semi);
+    text-decoration: none;
+  }
+
+  .cost-detail-breadcrumb a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .cost-detail-hero__grid {
+    display: grid;
+    gap: clamp(var(--space-7), 6vw, var(--space-14));
+    align-items: center;
+  }
+
+  .cost-detail-hero__content {
+    max-width: 48rem;
+  }
+
+  .cost-detail-eyebrow {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    margin: 0;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    padding: 0.54rem 0.85rem;
+    color: var(--color-accent-hover);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .cost-detail-hero__title {
+    max-width: 13ch;
+    margin: var(--space-5) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 11vw, 5.1rem);
+    font-weight: var(--weight-bold);
+    letter-spacing: -0.055em;
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+
+  .cost-detail-hero__title span {
+    display: block;
+    color: var(--color-accent);
+  }
+
+  .cost-detail-hero__subtitle {
+    max-width: 44rem;
+    margin: var(--space-5) 0 0;
+    color: var(--color-body-soft);
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2.2vw, var(--text-lg));
+    line-height: var(--leading-relaxed);
+    text-wrap: pretty;
+  }
+
+  .cost-detail-hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-7);
+  }
+
+  .cost-detail-button {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: var(--radius-xl);
+    padding: 0.95rem 1.15rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-none);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .cost-detail-button:focus-visible {
+    outline: none;
+    box-shadow: var(--ring-accent);
+  }
+
+  .cost-detail-button--primary,
+  .cost-sidebar-cta {
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    box-shadow: var(--shadow-cta);
+  }
+
+  .cost-detail-button--primary:hover,
+  .cost-sidebar-cta:hover {
+    background: var(--button-primary-bg-hover);
+    transform: translateY(-2px);
+  }
+
+  .cost-detail-button--secondary {
+    border: 1px solid var(--button-outline-border);
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--button-outline-text);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .cost-detail-button--secondary:hover {
+    border-color: var(--color-border-primary);
+    background: var(--button-outline-bg-hover);
+    color: var(--color-primary-hover);
+    transform: translateY(-2px);
+  }
+
+  .cost-detail-hero__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-6) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cost-detail-hero__badges li {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.78);
+    padding: 0.55rem 0.72rem;
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: var(--weight-semi);
+    line-height: 1;
+    box-shadow: var(--shadow-xs);
+    text-transform: capitalize;
+    backdrop-filter: blur(12px);
+  }
+
+  .cost-detail-hero__media {
+    position: relative;
+    overflow: hidden;
+    min-height: 24rem;
+    border: 1px solid var(--color-border-warm);
+    border-radius: var(--radius-3xl);
+    background: var(--color-bg-muted);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .cost-detail-hero__media img {
+    display: block;
+    width: 100%;
+    height: 28rem;
+    object-fit: cover;
+  }
+
+  .cost-detail-hero__fallback {
+    display: grid;
+    width: 100%;
+    min-height: 28rem;
+    place-items: center;
+    font-size: 5rem;
+    background: var(--color-accent-subtle);
+  }
+
+  .cost-detail-hero__summary {
+    position: absolute;
+    right: var(--space-4);
+    bottom: var(--space-4);
+    left: var(--space-4);
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    border-radius: var(--radius-2xl);
+    background: rgba(255, 253, 248, 0.94);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(16px);
+  }
+
+  .cost-detail-hero__summary p {
+    margin: 0;
+    color: var(--color-accent-hover);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .cost-detail-hero__summary strong {
+    display: block;
+    margin-top: var(--space-2);
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    line-height: var(--leading-none);
+  }
+
+  .cost-detail-hero__summary span {
+    display: block;
+    margin-top: var(--space-2);
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+  }
+
+  .cost-detail-main {
+    padding-block: clamp(var(--space-8), 6vw, var(--space-14));
+  }
+
+  .cost-detail-layout {
+    display: grid;
+    gap: var(--space-8);
+  }
+
+  .cost-detail-content {
+    display: grid;
+    gap: var(--space-8);
+    min-width: 0;
+  }
+
+  .cost-summary-grid {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .cost-summary-card {
+    border-radius: var(--radius-2xl);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+  }
+
+  .cost-summary-card p,
+  .cost-summary-card span {
+    margin: 0;
+    font-family: var(--font-sans);
+  }
+
+  .cost-summary-card p {
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+    opacity: 0.78;
+  }
+
+  .cost-summary-card strong {
+    display: block;
+    margin-top: var(--space-3);
+    font-family: var(--font-serif);
+    font-size: clamp(var(--text-2xl), 5vw, var(--text-4xl));
+    line-height: var(--leading-none);
+  }
+
+  .cost-summary-card span {
+    display: block;
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    opacity: 0.76;
+  }
+
+  .cost-summary-card--dark {
+    background: linear-gradient(135deg, var(--color-surface-navy), var(--color-primary));
+    color: #ffffff;
+  }
+
+  .cost-summary-card--accent {
+    background: linear-gradient(135deg, var(--color-cta), var(--color-accent-hover));
+    color: #ffffff;
+  }
+
+  .cost-summary-card--warm {
+    background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent-subtle));
+    color: var(--color-heading);
+    border: 1px solid var(--color-border-accent);
+  }
+
+  .cost-insurance-panel,
+  .cost-detail-section,
+  .cost-detail-faq,
+  .cost-sidebar-card {
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-3xl);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-card);
+  }
+
+  .cost-insurance-panel {
+    overflow: hidden;
+  }
+
+  .cost-insurance-panel__header {
+    display: grid;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    background: linear-gradient(135deg, var(--color-surface-navy), var(--color-primary));
+    color: #ffffff;
+  }
+
+  .cost-insurance-panel__header .cost-detail-eyebrow {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.86);
+  }
+
+  .cost-insurance-panel__icon {
+    display: grid;
+    width: 3.25rem;
+    height: 3.25rem;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-2xl);
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 1.45rem;
+  }
+
+  .cost-insurance-panel__header h2 {
+    margin: var(--space-2) 0 0;
+    color: #ffffff;
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    line-height: var(--leading-tight);
+  }
+
+  .cost-insurance-panel__header span {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: var(--text-sm);
+  }
+
+  .cost-insurance-panel__price strong {
+    display: block;
+    color: #ffffff;
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    line-height: var(--leading-none);
+  }
+
+  .cost-insurance-panel__price span {
+    display: block;
+    margin-top: var(--space-1);
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .cost-insurance-panel__body {
+    display: grid;
+    gap: var(--space-5);
+    padding: var(--space-5);
+    background: var(--color-bg-cool);
+  }
+
+  .cost-insurance-metrics {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .cost-insurance-metrics article {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: #ffffff;
+    padding: var(--space-4);
+    text-align: center;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .cost-insurance-metrics p,
+  .cost-insurance-metrics span {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    line-height: var(--leading-snug);
+  }
+
+  .cost-insurance-metrics p {
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .cost-insurance-metrics strong {
+    display: block;
+    margin-block: var(--space-2);
+    color: var(--color-primary);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-black);
+  }
+
+  .cost-insurance-panel__note {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    align-items: center;
+  }
+
+  .cost-risk-pill,
+  .health-severity-pill {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    border-radius: var(--radius-full);
+    padding: 0.4rem 0.68rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .cost-risk-pill {
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-primary-subtle);
+    color: var(--color-primary);
+  }
+
+  .cost-risk-pill.is-risk-low {
+    border-color: rgba(4, 120, 87, 0.2);
+    background: var(--color-success-light);
+    color: var(--color-success);
+  }
+
+  .cost-risk-pill.is-risk-medium,
+  .cost-risk-pill.is-risk-high,
+  .cost-risk-pill.is-risk-very-high {
+    border-color: var(--color-border-accent);
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-hover);
+  }
+
+  .cost-insurance-panel__note p {
+    margin: 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-xs);
+    line-height: var(--leading-relaxed);
+  }
+
+  .cost-detail-disclaimer,
+  .cost-detail-footnote {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    line-height: var(--leading-relaxed);
+  }
+
+  .cost-detail-section,
+  .cost-detail-faq {
+    padding: var(--space-5);
+  }
+
+  .cost-detail-section h2,
+  .cost-detail-faq h2 {
+    margin: var(--space-3) 0 var(--space-5);
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+  }
+
+  .cost-detail-section__intro {
+    margin: calc(var(--space-3) * -1) 0 var(--space-5);
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .cost-breakdown-list {
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: #ffffff;
+  }
+
+  .cost-breakdown-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cost-breakdown-item:nth-child(even) {
+    background: var(--color-bg-soft);
+  }
+
+  .cost-breakdown-item__icon {
+    display: grid;
+    width: 2.65rem;
+    height: 2.65rem;
+    place-items: center;
+    border: 1px solid var(--color-border-warm);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    font-size: 1.25rem;
+  }
+
+  .cost-breakdown-item__top {
+    display: flex;
+    gap: var(--space-3);
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .cost-breakdown-item h3 {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+    line-height: var(--leading-tight);
+  }
+
+  .cost-breakdown-item strong {
+    color: var(--color-accent-hover);
+    font-size: var(--text-sm);
+    white-space: nowrap;
+  }
+
+  .cost-breakdown-item p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    line-height: var(--leading-relaxed);
+  }
+
+  .cost-progress {
+    overflow: hidden;
+    height: 0.42rem;
+    margin-top: var(--space-2);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-light);
+  }
+
+  .cost-progress span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--color-accent);
+  }
+
+  .cost-breakdown-total,
+  .cost-total-row {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-accent-subtle);
+    padding: var(--space-4);
+    color: var(--color-heading);
+    font-weight: var(--weight-black);
+  }
+
+  .cost-breakdown-total strong,
+  .cost-total-row strong {
+    color: var(--color-accent-hover);
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    line-height: var(--leading-none);
+    text-align: right;
+  }
+
+  .health-issue-list,
+  .cost-row-list {
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: #ffffff;
+  }
+
+  .health-issue-card {
+    display: grid;
+    gap: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4);
+  }
+
+  .health-issue-card:nth-child(even),
+  .cost-row:nth-child(even) {
+    background: var(--color-bg-soft);
+  }
+
+  .health-issue-card h3 {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: var(--text-base);
+    font-weight: var(--weight-black);
+  }
+
+  .health-issue-card p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .health-issue-card p strong {
+    color: var(--color-heading);
+  }
+
+  .health-severity-pill {
+    justify-self: start;
+  }
+
+  .health-severity-pill.is-severity-low {
+    background: var(--color-success-light);
+    color: var(--color-success);
+  }
+
+  .health-severity-pill.is-severity-medium {
+    background: var(--color-warning-light);
+    color: var(--color-warning);
+  }
+
+  .health-severity-pill.is-severity-medium-high,
+  .health-severity-pill.is-severity-high,
+  .health-severity-pill.is-severity-critical {
+    background: var(--color-danger-light);
+    color: var(--color-danger);
+  }
+
+  .health-issue-link {
+    display: block;
+    padding: var(--space-4);
+    background: var(--color-bg-cool);
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+  }
+
+  .health-issue-link:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .health-tip {
+    margin: var(--space-4) 0 0;
+    border: 1px solid rgba(4, 120, 87, 0.2);
+    border-radius: var(--radius-2xl);
+    background: var(--color-success-light);
+    padding: var(--space-4);
+    color: var(--color-success);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .cost-table-card {
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: #ffffff;
+  }
+
+  .cost-row {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4);
+  }
+
+  .cost-row strong {
+    display: block;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+  }
+
+  .cost-row span {
+    display: block;
+    margin-top: var(--space-1);
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    line-height: var(--leading-snug);
+  }
+
+  .cost-row p {
+    margin: 0;
+    color: var(--color-accent-hover);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .cost-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: #ffffff;
+  }
+
+  .cost-detail-table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+  }
+
+  .cost-detail-table th,
+  .cost-detail-table td {
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.9rem 1rem;
+  }
+
+  .cost-detail-table th {
+    background: var(--color-bg-soft);
+    color: var(--color-heading);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .cost-detail-table th:not(:first-child),
+  .cost-detail-table td:not(:first-child) {
+    text-align: right;
+  }
+
+  .cost-detail-table tbody tr:nth-child(even) {
+    background: var(--color-bg-soft);
+  }
+
+  .cost-detail-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .cost-detail-table td:first-child {
+    color: var(--color-heading);
+    font-weight: var(--weight-semi);
+  }
+
+  .cost-detail-table td:last-child {
+    color: var(--color-accent-hover);
+    font-weight: var(--weight-black);
+  }
+
+  .cost-saving-section {
+    background:
+      radial-gradient(circle at 90% 10%, rgba(255, 122, 0, 0.09), transparent 18rem),
+      rgba(255, 255, 255, 0.92);
+  }
+
+  .saving-tip-grid {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .saving-tip-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-3);
+    border: 1px solid rgba(4, 120, 87, 0.18);
+    border-radius: var(--radius-2xl);
+    background: var(--color-success-light);
+    padding: var(--space-4);
+  }
+
+  .saving-tip-card__icon {
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+
+  .saving-tip-card h3 {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: var(--text-base);
+    font-weight: var(--weight-black);
+  }
+
+  .saving-tip-card strong {
+    display: block;
+    margin-top: var(--space-1);
+    color: var(--color-success);
+    font-size: var(--text-sm);
+  }
+
+  .saving-tip-card p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .cost-detail-faq {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .cost-detail-faq details {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: #ffffff;
+    padding: var(--space-4);
+  }
+
+  .cost-detail-faq summary {
+    color: var(--color-heading);
+    font-weight: var(--weight-black);
+    cursor: pointer;
+  }
+
+  .cost-detail-faq p {
+    margin: var(--space-3) 0 0;
+    color: var(--color-body-soft);
+    line-height: var(--leading-relaxed);
+  }
+
+  .cost-detail-sidebar {
+    display: grid;
+    gap: var(--space-5);
+    align-content: start;
+  }
+
+  .cost-sidebar-card {
+    padding: var(--space-5);
+  }
+
+  .cost-sidebar-card h2 {
+    margin: var(--space-3) 0 var(--space-4);
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    line-height: var(--leading-tight);
+  }
+
+  .cost-sidebar-card dl {
+    display: grid;
+    gap: var(--space-3);
+    margin: 0;
+  }
+
+  .cost-sidebar-card dl div {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-3);
+  }
+
+  .cost-sidebar-card dt {
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .cost-sidebar-card dd {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-align: right;
+    text-transform: capitalize;
+  }
+
+  .cost-sidebar-link,
+  .cost-sidebar-nav a {
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+  }
+
+  .cost-sidebar-link {
+    display: inline-flex;
+    margin-top: var(--space-4);
+  }
+
+  .cost-sidebar-link:hover,
+  .cost-sidebar-nav a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .cost-product-card img {
+    width: 100%;
+    max-height: 13rem;
+    object-fit: contain;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: var(--color-bg-muted);
+    padding: var(--space-3);
+  }
+
+  .cost-product-card p:not(.cost-detail-eyebrow) {
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .cost-sidebar-cta {
+    display: inline-flex;
+    width: 100%;
+    min-height: 2.85rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: var(--space-4);
+    border-radius: var(--radius-xl);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .cost-sidebar-nav {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  @media (min-width: 520px) {
+    .cost-detail-hero__actions {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .cost-detail-button {
+      width: auto;
+      padding-inline: 1.35rem;
+    }
+
+    .cost-summary-grid,
+    .cost-insurance-metrics {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .saving-tip-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .health-issue-card {
+      grid-template-columns: 1fr auto;
+      align-items: start;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cost-detail-container {
+      padding-inline: var(--content-padding);
+    }
+
+    .cost-detail-section,
+    .cost-detail-faq,
+    .cost-insurance-panel__body {
+      padding: var(--space-6);
+    }
+
+    .cost-insurance-panel__header {
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      padding: var(--space-6);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cost-detail-container {
+      padding-inline: var(--content-padding-wide);
+    }
+
+    .cost-detail-hero__grid {
+      grid-template-columns: minmax(0, 1.05fr) minmax(24rem, 0.78fr);
+    }
+
+    .cost-detail-layout {
+      grid-template-columns: minmax(0, 1fr) 20rem;
+      align-items: start;
+    }
+
+    .cost-detail-sidebar {
+      position: sticky;
+      top: 6rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cost-detail-button,
+    .cost-sidebar-cta {
+      transition: none;
+      transform: none !important;
+    }
+  }
+</style>
