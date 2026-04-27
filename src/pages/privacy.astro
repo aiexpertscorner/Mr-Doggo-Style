@@ -1,105 +1,869 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const UPDATED = 'March 24, 2026';
+
+const UPDATED = 'April 27, 2026';
+
+const cookieRows = [
+  {
+    type: 'Essential site data',
+    description:
+      'Required for basic site security, performance, routing, and normal website functionality.',
+  },
+  {
+    type: 'Analytics cookies',
+    description:
+      'Google Analytics 4 may be used to understand traffic patterns, popular pages, and general site performance.',
+  },
+  {
+    type: 'Advertising cookies',
+    description:
+      'Google AdSense and related Google advertising services may use cookies to serve, measure, and personalize ads where permitted.',
+  },
+  {
+    type: 'Affiliate tracking',
+    description:
+      'Affiliate partners may use cookies or tracking parameters after you click a product or partner link.',
+  },
+  {
+    type: 'Local browser storage',
+    description:
+      'Some PupWiki tools, such as dog name favorites or local preferences, may store data locally on your device.',
+  },
+];
+
+const dataUseRows = [
+  'Operate, secure, and improve PupWiki.',
+  'Understand which content and tools are useful to readers.',
+  'Display and measure advertising where enabled.',
+  'Track qualifying affiliate referrals after users click partner links.',
+  'Respond to contact messages and correction requests.',
+  'Prevent fraud, abuse, spam, and technical problems.',
+];
+
+const rightsRows = [
+  {
+    title: 'Access',
+    text: 'You can request a copy of personal information we may hold about you.',
+  },
+  {
+    title: 'Correction',
+    text: 'You can ask us to correct inaccurate information.',
+  },
+  {
+    title: 'Deletion',
+    text: 'You can ask us to delete personal information where applicable.',
+  },
+  {
+    title: 'Objection / restriction',
+    text: 'You can object to or restrict some processing where the law gives you that right.',
+  },
+  {
+    title: 'Portability',
+    text: 'You can request certain data in a portable format where applicable.',
+  },
+  {
+    title: 'Consent withdrawal',
+    text: 'Where processing is based on consent, you can withdraw that consent.',
+  },
+];
 ---
 
 <BaseLayout
   title="Privacy Policy — PupWiki"
-  description="Privacy policy for pupwiki.com. How we collect, use, and protect your data. GDPR and CCPA compliant."
+  description="Privacy policy for PupWiki. Learn how pupwiki.com uses analytics, advertising, affiliate tracking, local browser storage, and contact information."
   canonicalUrl="https://pupwiki.com/privacy"
+  pageType="website"
 >
+  <main class="privacy-page">
+    <section class="privacy-hero" aria-labelledby="privacy-title">
+      <div class="privacy-container">
+        <nav class="privacy-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span>Privacy Policy</span>
+        </nav>
 
-  <div style="background:linear-gradient(to bottom,var(--color-surface-warm),var(--color-bg-soft));border-bottom:1px solid var(--color-border-strong)">
-    <div class="max-w-3xl mx-auto px-4 py-14 sm:py-18">
-      <nav class="font-sans text-sm mb-6 flex items-center gap-1.5" style="color:#94a3b8">
-        <a href="/" class="hover:underline" style="color:var(--color-accent)">Home</a>
-        <span>›</span>
-        <span style="color:#475569">Privacy Policy</span>
-      </nav>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-        Privacy Policy
-      </h1>
-      <p class="font-sans text-sm" style="color:#94a3b8">Last updated: {UPDATED}</p>
-    </div>
-  </div>
+        <p class="privacy-eyebrow">Privacy & data use</p>
 
-  <div class="max-w-3xl mx-auto px-4 py-14">
-    <div class="prose prose-lg max-w-none" style="font-family:'Source Serif 4',Georgia,serif;color:#475569">
+        <h1 id="privacy-title" class="privacy-hero__title">
+          Privacy Policy
+        </h1>
 
-      <p>This Privacy Policy describes how PupWiki ("we," "us," or "our"), operated at pupwiki.com, collects, uses, and shares information when you visit our website.</p>
+        <p class="privacy-hero__subtitle">
+          This policy explains how PupWiki collects, uses, stores, and shares information when you visit
+          pupwiki.com, use our tools, click affiliate links, or interact with ads.
+        </p>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Information we collect</h2>
-
-      <h3 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.15rem;font-weight:600;margin-top:1.5rem;margin-bottom:0.5rem">Automatically collected</h3>
-      <p>When you visit pupwiki.com, our hosting provider (Cloudflare) may automatically collect standard log data including your IP address, browser type, operating system, referring URLs, and pages visited. This data is used for security and performance purposes and is governed by Cloudflare's privacy policy.</p>
-      <p>We use <strong>Google Analytics 4</strong> to understand how visitors use our site. This service collects anonymised usage data including pages viewed, session duration, and general geographic region. Google Analytics uses cookies. You can opt out via the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--color-accent)">Google Analytics opt-out browser add-on</a>.</p>
-
-      <h3 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.15rem;font-weight:600;margin-top:1.5rem;margin-bottom:0.5rem">Information you provide</h3>
-      <p>If you contact us via our contact form or by email, we collect the information you provide (name, email address, message). We use this only to respond to your enquiry and do not add you to marketing lists without your explicit consent.</p>
-      <p>If you subscribe to our email newsletter, we collect your email address. This is used to send you the content you subscribed to. We use <strong>EmailOctopus</strong> to manage our email list. You can unsubscribe at any time via the link in any email we send.</p>
-
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Cookies</h2>
-      <p>We use the following types of cookies:</p>
-      <div style="display:flex;flex-direction:column;gap:0.75rem;margin:1rem 0">
-        {[
-          ['Essential cookies', 'Required for the site to function. Cannot be disabled.'],
-          ['Analytics cookies', 'Google Analytics — used to understand traffic patterns. Can be disabled via the GA opt-out add-on.'],
-          ['Affiliate tracking', 'Amazon and our AWIN affiliate partners use cookies to track referrals from our links. These are activated only when you click one of our product links.'],
-        ].map(([type, desc]) => (
-          <div style="display:grid;grid-template-columns:160px 1fr;gap:1rem;padding:0.75rem 1rem;background:var(--color-surface-warm);border-radius:0.75rem;border:1px solid var(--color-border-strong);font-size:0.875rem">
-            <strong style="color:#1e293b">{type}</strong>
-            <span style="color:#64748b">{desc}</span>
-          </div>
-        ))}
+        <div class="privacy-hero__meta">
+          <span>Last updated: {UPDATED}</span>
+          <span>Applies to: pupwiki.com</span>
+        </div>
       </div>
+    </section>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Affiliate third parties</h2>
-      <p>When you click affiliate links on our site, you are directed to third-party websites (Amazon, JugBow, ChefPaw, Raw Wild, Crown & Paw, etc.). These sites have their own privacy policies which govern the data collected when you visit and make purchases. We have no control over and assume no responsibility for the privacy practices of these third parties.</p>
-      <p>Amazon's privacy policy is available at <a href="https://www.amazon.com/privacy" target="_blank" rel="noopener" style="color:var(--color-accent)">amazon.com/privacy</a>.</p>
+    <section class="privacy-main">
+      <div class="privacy-container">
+        <article class="privacy-card privacy-card--intro">
+          <p>
+            PupWiki (“we,” “us,” or “our”) operates the website at
+            <strong>pupwiki.com</strong>. We provide dog breed information, care guides,
+            cost tools, name tools, product guidance, and related editorial resources.
+          </p>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">How we use your information</h2>
-      <p>We use the information we collect to:</p>
-      <ul>
-        <li>Operate and improve the website</li>
-        <li>Understand which content is most useful to our readers</li>
-        <li>Respond to enquiries submitted via our contact form</li>
-        <li>Send newsletter emails to subscribers who have opted in</li>
-        <li>Detect and prevent security issues</li>
-      </ul>
-      <p>We do not sell your personal data. We do not share your personal data with third parties for their marketing purposes.</p>
+          <p>
+            We do not sell personal information for money. We use common website technologies
+            such as hosting logs, analytics, advertising cookies, affiliate tracking, and local
+            browser storage to operate and improve the site.
+          </p>
+        </article>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Your rights (GDPR)</h2>
-      <p>If you are located in the European Economic Area, you have the following rights regarding your personal data:</p>
-      <ul>
-        <li><strong>Right of access</strong> — you can request a copy of the data we hold about you</li>
-        <li><strong>Right to rectification</strong> — you can ask us to correct inaccurate data</li>
-        <li><strong>Right to erasure</strong> — you can ask us to delete your data</li>
-        <li><strong>Right to object</strong> — you can object to our processing of your data</li>
-        <li><strong>Right to portability</strong> — you can request your data in a portable format</li>
-      </ul>
-      <p>To exercise any of these rights, please contact us via our <a href="/contact" style="color:var(--color-accent)">contact page</a>. We will respond within 30 days.</p>
+        <div class="privacy-layout">
+          <aside class="privacy-toc" aria-label="Privacy policy sections">
+            <h2>On this page</h2>
+            <nav>
+              <a href="#information-we-collect">Information we collect</a>
+              <a href="#cookies">Cookies and local storage</a>
+              <a href="#adsense">Google AdSense</a>
+              <a href="#affiliate">Affiliate partners</a>
+              <a href="#how-we-use">How we use information</a>
+              <a href="#consent">Consent and choices</a>
+              <a href="#rights">Your rights</a>
+              <a href="#retention">Data retention</a>
+              <a href="#children">Children’s privacy</a>
+              <a href="#contact">Contact</a>
+            </nav>
+          </aside>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">California residents (CCPA)</h2>
-      <p>If you are a California resident, you have the right to know what personal information we collect, to request deletion of your personal information, and to opt out of the sale of personal information. We do not sell personal information. To exercise your rights, contact us via our <a href="/contact" style="color:var(--color-accent)">contact page</a>.</p>
+          <div class="privacy-content">
+            <section id="information-we-collect" class="privacy-section">
+              <p class="privacy-eyebrow">Data collection</p>
+              <h2>Information we collect</h2>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Data retention</h2>
-      <p>Analytics data is retained for 26 months, after which it is automatically deleted by Google Analytics. Contact form submissions are retained for up to 12 months. Email subscriber data is retained until you unsubscribe.</p>
+              <h3>Automatically collected information</h3>
+              <p>
+                When you visit PupWiki, our hosting and security providers, including Cloudflare,
+                may automatically process standard technical data such as your IP address, browser
+                type, device type, operating system, referring URLs, pages visited, approximate
+                location, timestamps, and log data. This helps us keep the site secure, reliable,
+                and fast.
+              </p>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Children's privacy</h2>
-      <p>This website is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us and we will delete it promptly.</p>
+              <h3>Analytics information</h3>
+              <p>
+                We may use <strong>Google Analytics 4</strong> to understand how visitors use the
+                site. Analytics data can include pages viewed, device type, session duration,
+                referral source, and general geographic region. We use this information in
+                aggregate to improve content, navigation, and site performance.
+              </p>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Changes to this policy</h2>
-      <p>We may update this Privacy Policy from time to time. The date of the most recent update is shown at the top of this page. Material changes will be noted on this page.</p>
+              <h3>Information you provide</h3>
+              <p>
+                If you contact us by email or through a contact form, we may collect your name,
+                email address, subject, message, and any information you choose to include. We use
+                this information only to respond to your message, handle corrections, or manage
+                legitimate site-related communication.
+              </p>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Contact</h2>
-      <p>If you have questions about this Privacy Policy or our data practices, please <a href="/contact" style="color:#a0621c;font-weight:600">contact us</a>.</p>
-      <p style="font-size:0.875rem;color:#94a3b8">PupWiki · pupwiki.com</p>
-    </div>
+              <h3>Local tool data</h3>
+              <p>
+                Some PupWiki features may store preferences locally on your device. For example,
+                the dog name generator may save favorite names or recent options in your browser’s
+                <code>localStorage</code>. This data stays on your device unless you choose to copy,
+                export, or share it.
+              </p>
+            </section>
 
-    <div class="mt-10 pt-8 flex flex-wrap gap-4" style="border-top:1px solid #e8ccaa">
-      <a href="/disclosure" class="font-sans text-sm font-semibold hover:underline" style="color:var(--color-accent)">Affiliate disclosure →</a>
-      <a href="/about" class="font-sans text-sm font-semibold hover:underline" style="color:var(--color-accent)">About us →</a>
-      <a href="/contact" class="font-sans text-sm font-semibold hover:underline" style="color:var(--color-accent)">Contact →</a>
-    </div>
-  </div>
+            <section id="cookies" class="privacy-section">
+              <p class="privacy-eyebrow">Cookies</p>
+              <h2>Cookies and local storage</h2>
+
+              <p>
+                PupWiki and third-party services may use cookies, pixels, local storage, or similar
+                technologies for site functionality, analytics, advertising, affiliate tracking,
+                fraud prevention, and performance measurement.
+              </p>
+
+              <div class="privacy-table-list">
+                {cookieRows.map((row) => (
+                  <div class="privacy-table-row">
+                    <strong>{row.type}</strong>
+                    <span>{row.description}</span>
+                  </div>
+                ))}
+              </div>
+
+              <p>
+                You can usually control cookies through your browser settings. Blocking cookies may
+                affect some features, analytics, advertising, or affiliate tracking.
+              </p>
+            </section>
+
+            <section id="adsense" class="privacy-section privacy-section--highlight">
+              <p class="privacy-eyebrow">Advertising</p>
+              <h2>Google AdSense and advertising cookies</h2>
+
+              <p>
+                PupWiki may use <strong>Google AdSense</strong> to display advertisements.
+                Third-party vendors, including Google, may use cookies to serve ads based on a
+                user’s prior visits to PupWiki or other websites.
+              </p>
+
+              <p>
+                Google’s use of advertising cookies enables Google and its partners to serve ads
+                to users based on their visit to PupWiki and/or other sites on the Internet.
+                These ads may be personalized or non-personalized depending on your location,
+                consent choices, browser settings, and Google account settings.
+              </p>
+
+              <div class="privacy-callout">
+                <strong>Your advertising choices</strong>
+                <p>
+                  You can opt out of personalized advertising by visiting
+                  <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">
+                    Google Ads Settings
+                  </a>.
+                  You can also learn more about how Google uses data from partner sites at
+                  <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">
+                    Google’s partner sites policy page
+                  </a>.
+                </p>
+              </div>
+
+              <p>
+                Google and other advertising providers may process data such as cookie identifiers,
+                device information, approximate location, ad interactions, and page context to
+                deliver, limit, measure, and improve advertising.
+              </p>
+            </section>
+
+            <section id="affiliate" class="privacy-section">
+              <p class="privacy-eyebrow">Affiliate links</p>
+              <h2>Affiliate partners and third-party websites</h2>
+
+              <p>
+                PupWiki may earn commissions from qualifying purchases or partner referrals. When
+                you click an affiliate link, you may be redirected to a third-party website such as
+                Amazon, AWIN partners, pet retailers, or other relevant providers.
+              </p>
+
+              <p>
+                These third-party sites may collect information through their own cookies, pixels,
+                checkout systems, analytics, and privacy policies. We do not control how those
+                third-party sites collect or use your information after you leave PupWiki.
+              </p>
+
+              <p>
+                Learn more about our commercial relationships in our
+                <a href="/disclosure">Affiliate Disclosure</a>.
+              </p>
+            </section>
+
+            <section id="how-we-use" class="privacy-section">
+              <p class="privacy-eyebrow">Purpose</p>
+              <h2>How we use information</h2>
+
+              <p>We use collected information for the following purposes:</p>
+
+              <ul class="privacy-check-list">
+                {dataUseRows.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+
+              <p>
+                We do not use contact messages to add you to marketing lists unless you explicitly
+                opt in. We do not knowingly collect sensitive personal information through PupWiki.
+              </p>
+            </section>
+
+            <section id="consent" class="privacy-section">
+              <p class="privacy-eyebrow">Choices</p>
+              <h2>Consent and privacy choices</h2>
+
+              <h3>EEA, UK, and Switzerland users</h3>
+              <p>
+                If you are located in the European Economic Area, the United Kingdom, or Switzerland,
+                we may ask for consent before using certain analytics or advertising technologies
+                where required by law or platform policy. Your choices may affect whether ads are
+                personalized or non-personalized.
+              </p>
+
+              <h3>Browser controls</h3>
+              <p>
+                Most browsers allow you to block, delete, or limit cookies. You can also clear local
+                browser storage from your browser settings. If you clear local storage, locally saved
+                PupWiki tool preferences and favorites may be removed.
+              </p>
+
+              <h3>Google controls</h3>
+              <p>
+                You can manage personalized ads in
+                <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">
+                  Google Ads Settings
+                </a>
+                and can opt out of Google Analytics with the
+                <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">
+                  Google Analytics opt-out browser add-on
+                </a>.
+              </p>
+            </section>
+
+            <section id="sharing" class="privacy-section">
+              <p class="privacy-eyebrow">Sharing</p>
+              <h2>When information may be shared</h2>
+
+              <p>
+                We may share or allow processing of information with service providers that help us
+                operate PupWiki, including hosting, security, analytics, advertising, affiliate
+                tracking, email/contact handling, and performance tools.
+              </p>
+
+              <p>
+                We may also disclose information if required by law, to protect our rights, to
+                investigate abuse or security issues, or as part of a business transfer involving
+                PupWiki.
+              </p>
+            </section>
+
+            <section id="rights" class="privacy-section">
+              <p class="privacy-eyebrow">Rights</p>
+              <h2>Your privacy rights</h2>
+
+              <p>
+                Depending on where you live, you may have rights regarding your personal information.
+                These may include:
+              </p>
+
+              <div class="privacy-rights-grid">
+                {rightsRows.map((right) => (
+                  <article>
+                    <h3>{right.title}</h3>
+                    <p>{right.text}</p>
+                  </article>
+                ))}
+              </div>
+
+              <p>
+                To exercise privacy rights, contact us through our
+                <a href="/contact">contact page</a>. We may need to verify your request before
+                taking action.
+              </p>
+
+              <h3>California privacy notice</h3>
+              <p>
+                California residents may have rights to know, delete, correct, and opt out of certain
+                sharing or use of personal information for cross-context behavioral advertising. We
+                do not sell personal information for money. Advertising and analytics services may
+                process identifiers or usage data as described in this policy.
+              </p>
+            </section>
+
+            <section id="retention" class="privacy-section">
+              <p class="privacy-eyebrow">Retention</p>
+              <h2>Data retention</h2>
+
+              <p>
+                We keep information only as long as reasonably necessary for the purposes described
+                in this policy, unless a longer retention period is required or permitted by law.
+              </p>
+
+              <ul>
+                <li>Hosting and security logs are retained according to provider settings.</li>
+                <li>Analytics data is retained according to our Google Analytics configuration.</li>
+                <li>Contact messages may be retained for up to 12 months unless needed longer for legitimate reasons.</li>
+                <li>Local browser storage remains on your device until you clear it or the feature removes it.</li>
+              </ul>
+            </section>
+
+            <section id="children" class="privacy-section">
+              <p class="privacy-eyebrow">Children</p>
+              <h2>Children’s privacy</h2>
+
+              <p>
+                PupWiki is intended for a general audience and is not directed to children under 13.
+                We do not knowingly collect personal information from children under 13. If you
+                believe a child has provided personal information to us, please contact us and we
+                will take appropriate steps to delete it.
+              </p>
+            </section>
+
+            <section id="security" class="privacy-section">
+              <p class="privacy-eyebrow">Security</p>
+              <h2>Security</h2>
+
+              <p>
+                We use reasonable technical and organizational measures to protect PupWiki and the
+                information processed through the site. No website or online service can guarantee
+                absolute security, but we aim to reduce risk through reputable hosting, security,
+                and access-control practices.
+              </p>
+            </section>
+
+            <section id="changes" class="privacy-section">
+              <p class="privacy-eyebrow">Updates</p>
+              <h2>Changes to this policy</h2>
+
+              <p>
+                We may update this Privacy Policy from time to time. When we make material changes,
+                we will update the “Last updated” date at the top of this page.
+              </p>
+            </section>
+
+            <section id="contact" class="privacy-section">
+              <p class="privacy-eyebrow">Contact</p>
+              <h2>Contact us</h2>
+
+              <p>
+                If you have questions about this Privacy Policy, advertising choices, affiliate
+                tracking, or our data practices, please contact us through our
+                <a href="/contact">contact page</a>.
+              </p>
+
+              <p class="privacy-muted">
+                PupWiki · pupwiki.com
+              </p>
+            </section>
+
+            <div class="privacy-footer-links" aria-label="Related policy pages">
+              <a href="/disclosure">Affiliate disclosure →</a>
+              <a href="/about">About PupWiki →</a>
+              <a href="/contact">Contact →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </BaseLayout>
+
+<style>
+  .privacy-page {
+    background:
+      radial-gradient(circle at 88% 4%, rgba(255, 122, 0, 0.1), transparent 24rem),
+      radial-gradient(circle at 8% 2%, rgba(21, 54, 95, 0.08), transparent 22rem),
+      var(--color-bg);
+    color: var(--color-body);
+  }
+
+  .privacy-container {
+    width: min(100%, var(--max-width));
+    margin-inline: auto;
+    padding-inline: var(--content-padding-mobile);
+  }
+
+  .privacy-hero {
+    border-bottom: 1px solid var(--color-border);
+    background: linear-gradient(180deg, rgba(255, 250, 243, 0.98) 0%, #ffffff 78%);
+  }
+
+  .privacy-hero .privacy-container {
+    padding-block: clamp(2.5rem, 7vw, 5.5rem);
+  }
+
+  .privacy-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+    margin-bottom: var(--space-5);
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+  }
+
+  .privacy-breadcrumb a {
+    color: var(--color-primary);
+    font-weight: var(--weight-semi);
+    text-decoration: none;
+  }
+
+  .privacy-breadcrumb a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .privacy-eyebrow {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    margin: 0;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    padding: 0.54rem 0.85rem;
+    color: var(--color-accent-hover);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .privacy-hero__title {
+    max-width: 11ch;
+    margin: var(--space-5) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(2.75rem, 12vw, 5.5rem);
+    font-weight: var(--weight-bold);
+    letter-spacing: -0.055em;
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+
+  .privacy-hero__subtitle {
+    max-width: 48rem;
+    margin: var(--space-5) 0 0;
+    color: var(--color-body-soft);
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2.2vw, var(--text-lg));
+    line-height: var(--leading-relaxed);
+    text-wrap: pretty;
+  }
+
+  .privacy-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-6);
+  }
+
+  .privacy-hero__meta span {
+    display: inline-flex;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.78);
+    padding: 0.5rem 0.72rem;
+    color: var(--color-body-soft);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    line-height: 1;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .privacy-main {
+    padding-block: clamp(var(--space-8), 6vw, var(--space-14));
+  }
+
+  .privacy-card {
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-3xl);
+    background: rgba(255, 255, 255, 0.9);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+  }
+
+  .privacy-card--intro {
+    max-width: 58rem;
+    margin-bottom: var(--space-8);
+  }
+
+  .privacy-card p {
+    margin: 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+  }
+
+  .privacy-card p + p {
+    margin-top: var(--space-4);
+  }
+
+  .privacy-card strong {
+    color: var(--color-heading);
+  }
+
+  .privacy-layout {
+    display: grid;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .privacy-toc {
+    display: none;
+  }
+
+  .privacy-content {
+    display: grid;
+    gap: var(--space-6);
+    min-width: 0;
+  }
+
+  .privacy-section {
+    scroll-margin-top: 7rem;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-3xl);
+    background: rgba(255, 255, 255, 0.92);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+  }
+
+  .privacy-section--highlight {
+    background:
+      radial-gradient(circle at 92% 10%, rgba(255, 122, 0, 0.12), transparent 18rem),
+      rgba(255, 255, 255, 0.94);
+    border-color: var(--color-border-accent);
+  }
+
+  .privacy-section h2 {
+    margin: var(--space-3) 0 var(--space-4);
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+  }
+
+  .privacy-section h3 {
+    margin: var(--space-5) 0 var(--space-2);
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--weight-black);
+    line-height: var(--leading-tight);
+  }
+
+  .privacy-section p,
+  .privacy-section li {
+    color: var(--color-body-soft);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+  }
+
+  .privacy-section p {
+    margin: 0;
+  }
+
+  .privacy-section p + p,
+  .privacy-section ul + p,
+  .privacy-section .privacy-callout + p {
+    margin-top: var(--space-4);
+  }
+
+  .privacy-section a {
+    color: var(--color-primary);
+    font-weight: var(--weight-bold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .privacy-section a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .privacy-section code {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-muted);
+    padding: 0.08rem 0.3rem;
+    color: var(--color-heading);
+    font-size: 0.9em;
+  }
+
+  .privacy-section ul {
+    margin-block: var(--space-4) 0;
+    padding-left: 1.2rem;
+  }
+
+  .privacy-table-list {
+    display: grid;
+    gap: var(--space-3);
+    margin-block: var(--space-5);
+  }
+
+  .privacy-table-row {
+    display: grid;
+    gap: var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: var(--color-bg-soft);
+    padding: var(--space-4);
+  }
+
+  .privacy-table-row strong {
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+    line-height: var(--leading-tight);
+  }
+
+  .privacy-table-row span {
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .privacy-callout {
+    margin-block: var(--space-5);
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-2xl);
+    background: var(--color-accent-subtle);
+    padding: var(--space-4);
+  }
+
+  .privacy-callout strong {
+    display: block;
+    margin-bottom: var(--space-2);
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+  }
+
+  .privacy-callout p {
+    color: var(--color-body);
+    font-size: var(--text-sm);
+  }
+
+  .privacy-check-list {
+    display: grid;
+    gap: var(--space-2);
+    padding-left: 0 !important;
+    list-style: none;
+  }
+
+  .privacy-check-list li {
+    position: relative;
+    border: 1px solid rgba(4, 120, 87, 0.18);
+    border-radius: var(--radius-xl);
+    background: var(--color-success-light);
+    padding: 0.75rem 0.85rem 0.75rem 2.25rem;
+    color: var(--color-body);
+    font-size: var(--text-sm);
+  }
+
+  .privacy-check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0.85rem;
+    top: 0.75rem;
+    color: var(--color-success);
+    font-weight: var(--weight-black);
+  }
+
+  .privacy-rights-grid {
+    display: grid;
+    gap: var(--space-3);
+    margin-block: var(--space-5);
+  }
+
+  .privacy-rights-grid article {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: var(--color-bg-soft);
+    padding: var(--space-4);
+  }
+
+  .privacy-rights-grid h3 {
+    margin: 0 0 var(--space-2);
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+  }
+
+  .privacy-rights-grid p {
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .privacy-muted {
+    color: var(--color-muted) !important;
+    font-size: var(--text-sm) !important;
+  }
+
+  .privacy-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-6);
+  }
+
+  .privacy-footer-links a {
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+  }
+
+  .privacy-footer-links a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media (min-width: 640px) {
+    .privacy-table-row {
+      grid-template-columns: 13rem 1fr;
+      align-items: start;
+    }
+
+    .privacy-rights-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 768px) {
+    .privacy-container {
+      padding-inline: var(--content-padding);
+    }
+
+    .privacy-card,
+    .privacy-section {
+      padding: var(--space-6);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .privacy-container {
+      padding-inline: var(--content-padding-wide);
+    }
+
+    .privacy-layout {
+      grid-template-columns: 18rem minmax(0, 1fr);
+    }
+
+    .privacy-toc {
+      position: sticky;
+      top: 6.5rem;
+      display: block;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-3xl);
+      background: rgba(255, 255, 255, 0.86);
+      padding: var(--space-5);
+      box-shadow: var(--shadow-card);
+    }
+
+    .privacy-toc h2 {
+      margin: 0 0 var(--space-4);
+      color: var(--color-heading);
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-black);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+
+    .privacy-toc nav {
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .privacy-toc a {
+      border-radius: var(--radius-lg);
+      padding: 0.55rem 0.65rem;
+      color: var(--color-body-soft);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semi);
+      text-decoration: none;
+      transition: var(--transition-base);
+    }
+
+    .privacy-toc a:hover {
+      background: var(--color-bg-soft);
+      color: var(--color-accent-hover);
+    }
+  }
+</style>
