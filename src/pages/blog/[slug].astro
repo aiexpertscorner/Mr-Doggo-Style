@@ -1,149 +1,729 @@
 ---
 /**
- * blog/[slug].astro v2
- * - Breed-aware: shows cluster sidebar for breed posts
- * - Real product images in sidebar widget
- * - All postTypes rendered correctly
- * - Compatible with existing BlogLayout
+ * src/pages/blog/[slug].astro — cleaned PupWiki blog article route
+ *
+ * Changes:
+ * - Removes Amazon/productIndex sidebar logic
+ * - Removes legacy inline brown styling
+ * - Uses cleaned BlogLayout props
+ * - Adds safe Article + Breadcrumb schema
+ * - Adds breed-aware context card using BreedImage
+ * - Adds safer support links to breed hub / tools
+ * - Keeps AWIN/PageBanner pipeline available without hardcoded Amazon products
  */
-import { getCollection }  from 'astro:content';
-import BlogLayout          from '../../layouts/BlogLayout.astro';
-import masterBreeds        from '../../data/master-breeds.json';
-import productIndex        from '../../data/product-index.json';
-import breedLinkMap        from '../../data/breed-link-map.json';
-import contentStatus       from '../../data/content-status.json';
-import PageBannerSlot      from '../../components/affiliate/PageBannerSlot.astro';
 
-const AFFILIATE_TAG = 'aiexpertscorn-20';
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+import masterBreeds from '../../data/master-breeds.json';
+import masterCrossbreeds from '../../data/master-crossbreeds.json';
+import breedLinkMap from '../../data/breed-link-map.json';
+import contentStatus from '../../data/content-status.json';
+
+import BreedImage from '../../components/breed/BreedImage.astro';
+import PageBannerSlot from '../../components/affiliate/PageBannerSlot.astro';
+import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
+
+const SITE = 'https://pupwiki.com';
+
+const ALL_BREEDS = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  return posts.map(p => ({ params: { slug: p.slug }, props: { post: p } }));
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
 }
 
 const { post } = Astro.props;
 const { Content } = await post.render();
 const fm = post.data;
 
-// Resolve breed data if this is a breed cluster post
-const breed     = fm.breedSlug ? (masterBreeds as any[]).find(b => b.slug === fm.breedSlug) : null;
-const links     = fm.breedSlug ? (breedLinkMap as any)[fm.breedSlug]    || {} : {};
-const status    = fm.breedSlug ? (contentStatus as any)[fm.breedSlug]   || {} : {};
-const breedN    = fm.breedName || breed?.name || '';
+const category = fm.category || 'Guide';
+const tags = Array.isArray(fm.tags) ? fm.tags : [];
 
-// Resolve top product for sidebar
-const topProd = (() => {
-  if (!fm.topProduct?.asin) return null;
-  // Try to find in product index by asin
-  const found = Object.values(productIndex as any).find((p: any) => p.asin === fm.topProduct!.asin) as any;
-  if (found) return found;
-  // Fallback to frontmatter data
-  return fm.topProduct;
-})();
+function normalize(value: unknown) {
+  return String(value || '').toLowerCase();
+}
 
-// Breed image for header (breed posts only)
-const breedImageUrl = breed?.image_url || null;
+function slugify(value: string) {
+  return String(value || '')
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
 
-// Related cluster links for sidebar
-const CLUSTER_LINKS = breedSlug => [
-  { key:'food_post',       href: links.food_post,       emoji:'🍖', label:'Best food'       },
-  { key:'toy_post',        href: links.toy_post,        emoji:'🎾', label:'Best toys'        },
-  { key:'bed_post',        href: links.bed_post,        emoji:'🛏️', label:'Best beds'        },
-  { key:'grooming_post',   href: links.grooming_post,   emoji:'✂️', label:'Grooming guide'  },
-  { key:'health_post',     href: links.health_post,     emoji:'🩺', label:'Health guide'    },
-  { key:'supplement_post', href: links.supplement_post, emoji:'💊', label:'Supplements'     },
-  { key:'training_post',   href: links.training_post,   emoji:'🦮', label:'Training guide'  },
-  { key:'names_page',      href: links.names_page,      emoji:'✍️', label:'Names'           },
-  { key:'hub',             href: links.hub,             emoji:'🐾', label:`${breedN} hub`  },
-].filter(c => c.href && c.href !== Astro.url.pathname);
+function titleCase(value?: string | null) {
+  if (!value) return '';
+  return String(value)
+    .replace(/[-_]+/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
 
-const clusterLinks = fm.breedSlug ? CLUSTER_LINKS(fm.breedSlug) : [];
+function getWordCount(value?: string) {
+  return String(value || '')
+    .split(/\s+/)
+    .filter(Boolean).length;
+}
 
-// Reading time estimate
-const readTime = fm.readTime || Math.max(5, Math.ceil(post.body?.split(' ').length / 200));
+const bodyWordCount = getWordCount(post.body);
+const readTime = fm.readTime || Math.max(4, Math.ceil(bodyWordCount / 220));
 
-// Build featured product for BlogLayout sidebar
-const featuredProduct = topProd ? {
-  name:   topProd.name,
-  asin:   topProd.asin,
-  price:  topProd.price,
-  rating: topProd.rating,
-  image:  topProd.image,
-} : undefined;
+const breedSlug =
+  fm.breedSlug ||
+  fm.breed_slug ||
+  null;
+
+const breed =
+  breedSlug
+    ? ALL_BREEDS.find((item) => item.slug === breedSlug)
+    : null;
+
+const breedName = fm.breedName || fm.breed_name || breed?.name || '';
+const links = breedSlug ? (breedLinkMap as any)[breedSlug] || {} : {};
+const status = breedSlug ? (contentStatus as any)[breedSlug] || {} : {};
+
+const isBreedSupportPost = Boolean(breedSlug || breedName || breed);
+
+const isHealthSensitive =
+  ['health', 'supplements', 'food', 'dog food'].includes(normalize(category)) ||
+  tags.some((tag: string) =>
+    ['health', 'supplements', 'nutrition', 'medical-warning', 'vet-critical', 'emergency-vet'].includes(normalize(tag))
+  );
+
+const isGeneratedSupport =
+  Boolean(fm.generated) ||
+  Boolean(fm.breedSlug) ||
+  Boolean(fm.breedName) ||
+  ['product-roundup', 'breed-support', 'generated-support'].includes(normalize(fm.postType));
+
+const canonicalUrl = fm.canonicalUrl || `${SITE}/blog/${post.slug}`;
+
+const heroImage =
+  fm.heroImage ||
+  fm.image ||
+  breed?.image_url ||
+  (Array.isArray(breed?.image_urls) ? breed.image_urls[0] : null) ||
+  '';
+
+const heroImageAlt =
+  fm.heroImageAlt ||
+  fm.imageAlt ||
+  (breedName ? `${breedName} dog guide` : fm.title);
+
+const awinTopicTags = [
+  normalize(category),
+  normalize(fm.postType),
+  breedSlug,
+  breedName,
+  breed?.size_category,
+  breed?.energy_level,
+  breed?.training_level,
+  breed?.coat_type,
+  ...tags,
+]
+  .filter(Boolean)
+  .map((item) => String(item).toLowerCase());
+
+const clusterLinks = breedSlug
+  ? [
+      {
+        key: 'hub',
+        href: links.hub || `/breeds/${breedSlug}`,
+        emoji: '🐾',
+        label: `${breedName || 'Breed'} hub`,
+      },
+      {
+        key: 'food_post',
+        href: links.food_post,
+        emoji: '🍖',
+        label: 'Food & nutrition',
+      },
+      {
+        key: 'toy_post',
+        href: links.toy_post,
+        emoji: '🎾',
+        label: 'Toys & enrichment',
+      },
+      {
+        key: 'bed_post',
+        href: links.bed_post,
+        emoji: '🛏️',
+        label: 'Beds & sleep',
+      },
+      {
+        key: 'grooming_post',
+        href: links.grooming_post,
+        emoji: '✂️',
+        label: 'Grooming guide',
+      },
+      {
+        key: 'health_post',
+        href: links.health_post,
+        emoji: '🩺',
+        label: 'Health context',
+      },
+      {
+        key: 'supplement_post',
+        href: links.supplement_post,
+        emoji: '💊',
+        label: 'Supplement considerations',
+      },
+      {
+        key: 'training_post',
+        href: links.training_post,
+        emoji: '🦮',
+        label: 'Training guide',
+      },
+      {
+        key: 'names_page',
+        href: links.names_page,
+        emoji: '✍️',
+        label: 'Name ideas',
+      },
+      {
+        key: 'cost_calculator',
+        href: `/cost-calculator/${breedSlug}`,
+        emoji: '💰',
+        label: 'Cost calculator',
+      },
+    ].filter((item) => item.href && item.href !== Astro.url.pathname)
+  : [];
+
+const showCommercialMidContent =
+  !isHealthSensitive &&
+  !tags.some((tag: string) =>
+    ['medical-warning', 'vet-critical', 'emergency-vet', 'diagnosis', 'treatment'].includes(normalize(tag))
+  );
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: fm.title,
+  description: fm.description,
+  image: heroImage || undefined,
+  datePublished: new Date(fm.pubDate).toISOString(),
+  dateModified: fm.updatedDate
+    ? new Date(fm.updatedDate).toISOString()
+    : new Date(fm.pubDate).toISOString(),
+  author: {
+    '@type': 'Organization',
+    name: 'PupWiki',
+    url: SITE,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'PupWiki',
+    url: SITE,
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: `${SITE}/`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Guides',
+      item: `${SITE}/blog`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: category,
+      item: `${SITE}/categories/${slugify(category)}`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 4,
+      name: fm.title,
+      item: canonicalUrl,
+    },
+  ],
+};
+
+const schema = [articleSchema, breadcrumbSchema];
+
+const relatedToolLinks = [
+  {
+    href: '/breeds',
+    icon: '🐕',
+    title: 'Explore dog breeds',
+    text: 'Compare breed traits, size, grooming, training, and owner fit.',
+  },
+  {
+    href: '/cost-calculator',
+    icon: '💰',
+    title: 'Estimate dog ownership costs',
+    text: 'Plan puppy, annual, and lifetime costs by breed.',
+  },
+  {
+    href: '/dog-names',
+    icon: '✍️',
+    title: 'Find dog name ideas',
+    text: 'Generate, favorite, export, and share name ideas locally.',
+  },
+];
 ---
 
 <BlogLayout
   title={fm.title}
   description={fm.description}
+  canonicalUrl={canonicalUrl}
   pubDate={fm.pubDate}
   updatedDate={fm.updatedDate}
-  category={fm.category || 'Reviews'}
-  tags={fm.tags || []}
-  author={fm.author || 'The PupWiki Team'}
+  category={category}
   readTime={readTime}
-  featuredProduct={featuredProduct}
+  heroImage={heroImage}
+  heroImageAlt={heroImageAlt}
+  schema={schema}
+  tags={tags}
+  postType={fm.postType || 'general'}
+  breedSlug={breedSlug}
+  breedName={breedName}
+  breedSize={breed?.size_category}
+  breedEnergy={breed?.energy_level}
+  breedCoat={breed?.coat_type}
+  noIndex={fm.noIndex || false}
 >
-
-  <!-- Breed header band (only for breed cluster posts) -->
-  {breed && breedImageUrl && (
-    <div class="flex items-center gap-4 p-4 rounded-2xl mb-6 font-sans" style="background:#fdf8f0;border:1px solid #e8ccaa">
-      <img
-        src={breedImageUrl}
-        alt={breedN}
-        width="64"
-        height="64"
-        loading="lazy"
-        class="w-16 h-16 object-cover rounded-xl"
-        style="border:2px solid #e8ccaa"
-        onerror="this.style.display='none'"
-      />
+  {isGeneratedSupport && (
+    <aside class="article-support-note not-prose" aria-label="Support content note">
       <div>
-        <p class="text-xs font-bold uppercase tracking-wider mb-0.5" style="color:#94a3b8">Breed guide</p>
-        <a href={links.hub || `/breeds/${fm.breedSlug}`} class="font-bold text-base hover:underline" style="color:#a0621c">
-          {breedN} — View complete breed guide →
-        </a>
-        <div class="flex gap-2 mt-1">
-          {breed.size_category && <span class="text-xs px-2 py-0.5 rounded-full" style="background:#f5e8d0;color:#7d4a10">{breed.size_category}</span>}
-          {breed.energy_level  && <span class="text-xs px-2 py-0.5 rounded-full" style="background:#f5e8d0;color:#7d4a10">{breed.energy_level} energy</span>}
-          {breed.coat_type     && <span class="text-xs px-2 py-0.5 rounded-full" style="background:#f5e8d0;color:#7d4a10">{breed.coat_type} coat</span>}
-        </div>
+        <strong>Breed-support guide</strong>
+        <p>
+          This article supports PupWiki’s breed research pages. For the complete ownership profile,
+          costs, traits, health context, and related tools, start from the breed hub.
+        </p>
       </div>
+
+      {breedSlug && (
+        <a href={links.hub || `/breeds/${breedSlug}`}>
+          View {breedName || 'breed'} hub →
+        </a>
+      )}
+    </aside>
+  )}
+
+  {breed && (
+    <aside class="article-breed-card not-prose" aria-label={`${breedName} breed context`}>
+      <BreedImage
+        breed={breed}
+        width={220}
+        height={220}
+        variant="card"
+        class="article-breed-card__image"
+      />
+
+      <div class="article-breed-card__body">
+        <p class="article-breed-card__eyebrow">Breed context</p>
+
+        <h2>
+          {breedName}
+        </h2>
+
+        <p>
+          Use the main breed hub for traits, owner fit, costs, health context, grooming, training,
+          and related PupWiki tools.
+        </p>
+
+        <div class="article-breed-card__pills">
+          {breed.size_category && <span>{titleCase(breed.size_category)} size</span>}
+          {breed.energy_level && <span>{titleCase(breed.energy_level)} energy</span>}
+          {breed.coat_type && <span>{titleCase(breed.coat_type)} coat</span>}
+        </div>
+
+        <a href={links.hub || `/breeds/${breedSlug}`} class="article-breed-card__link">
+          Open full {breedName} guide →
+        </a>
+      </div>
+    </aside>
+  )}
+
+  <Content />
+
+  {showCommercialMidContent && (
+    <div class="article-partner-strip not-prose">
+      <AwinProductSlot
+        topicTags={awinTopicTags}
+        pageType="blog"
+        category={normalize(category)}
+        breedSize={breed?.size_category}
+        breedEnergy={breed?.energy_level}
+        breedTraining={breed?.training_level}
+        headline="Relevant partner resources"
+      />
     </div>
   )}
 
-  <!-- Main content -->
-  <Content />
+  {showCommercialMidContent && (
+    <PageBannerSlot
+      pageType="blog"
+      placement="mid-content"
+      topic={normalize(category)}
+      topicTags={awinTopicTags}
+      compact={false}
+    />
+  )}
 
-  <!-- AWIN partner banner — mid-content, topic-matched -->
-  <PageBannerSlot
-    pageType="blog"
-    placement="mid-content"
-    topic={fm.category?.toLowerCase() || ''}
-    topicTags={fm.tags || []}
-    isMedical={(fm.tags || []).some((t: string) => ['emergency-vet','medical-warning','vet-critical'].includes(t))}
-  />
-
-  <!-- Breed cluster links (end of article) -->
   {clusterLinks.length > 0 && (
-    <div class="mt-10 pt-8" style="border-top:2px solid #f5e8d0">
-      <h3 class="font-display font-bold text-xl mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-        More {breedN} guides
-      </h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        {clusterLinks.slice(0, 9).map((c: any) => (
-          <a
-            href={c.href}
-            class="flex items-center gap-2 p-3 rounded-xl font-sans text-sm font-semibold transition-all"
-            style="border:1px solid #e8ccaa;background:white;text-decoration:none;color:#1e293b"
-            onmouseover="this.style.borderColor='#a0621c';this.style.background='#fdf8f0';this.style.color='#a0621c'"
-            onmouseout="this.style.borderColor='#e8ccaa';this.style.background='white';this.style.color='#1e293b'"
-          >
-            <span>{c.emoji}</span>
-            <span class="leading-tight">{c.label} →</span>
+    <section class="article-related-breed not-prose" aria-labelledby="related-breed-guides-title">
+      <div class="article-related-breed__header">
+        <p>More breed guidance</p>
+        <h2 id="related-breed-guides-title">
+          More {breedName} guides
+        </h2>
+      </div>
+
+      <div class="article-related-grid">
+        {clusterLinks.slice(0, 10).map((item) => (
+          <a href={item.href}>
+            <span aria-hidden="true">{item.emoji}</span>
+            <strong>{item.label}</strong>
+            <em aria-hidden="true">→</em>
           </a>
         ))}
       </div>
-    </div>
+    </section>
   )}
 
+  <section class="article-next-tools not-prose" aria-labelledby="article-next-tools-title">
+    <div class="article-next-tools__header">
+      <p>Explore next</p>
+      <h2 id="article-next-tools-title">
+        Continue with PupWiki tools
+      </h2>
+    </div>
+
+    <div class="article-next-tools__grid">
+      {relatedToolLinks.map((item) => (
+        <a href={item.href}>
+          <span aria-hidden="true">{item.icon}</span>
+          <strong>{item.title}</strong>
+          <p>{item.text}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <Fragment slot="sidebar">
+    {clusterLinks.length > 0 && (
+      <section class="article-custom-sidebar-card">
+        <h2>{breedName} links</h2>
+
+        <nav>
+          {clusterLinks.slice(0, 8).map((item) => (
+            <a href={item.href}>
+              <span>{item.emoji}</span>
+              <strong>{item.label}</strong>
+            </a>
+          ))}
+        </nav>
+      </section>
+    )}
+  </Fragment>
 </BlogLayout>
+
+<style>
+  .article-support-note {
+    display: grid;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-2xl);
+    background: var(--color-accent-subtle);
+    padding: var(--space-4);
+  }
+
+  .article-support-note strong {
+    display: block;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+  }
+
+  .article-support-note p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .article-support-note a {
+    align-self: center;
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+  }
+
+  .article-support-note a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .article-breed-card {
+    display: grid;
+    gap: var(--space-4);
+    margin-bottom: var(--space-7);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-3xl);
+    background:
+      radial-gradient(circle at 94% 8%, rgba(255, 122, 0, 0.1), transparent 18rem),
+      rgba(255, 255, 255, 0.94);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-card);
+  }
+
+  .article-breed-card__image {
+    width: min(100%, 12rem);
+  }
+
+  .article-breed-card__body {
+    min-width: 0;
+  }
+
+  .article-breed-card__eyebrow,
+  .article-related-breed__header p,
+  .article-next-tools__header p {
+    display: inline-flex;
+    width: fit-content;
+    margin: 0;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    padding: 0.44rem 0.7rem;
+    color: var(--color-accent-hover);
+    font-size: 0.68rem;
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .article-breed-card h2,
+  .article-related-breed__header h2,
+  .article-next-tools__header h2 {
+    margin: var(--space-3) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+  }
+
+  .article-breed-card p:not(.article-breed-card__eyebrow) {
+    margin: var(--space-3) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .article-breed-card__pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+
+  .article-breed-card__pills span {
+    display: inline-flex;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: #ffffff;
+    padding: 0.42rem 0.6rem;
+    color: var(--color-body-soft);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    line-height: 1;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .article-breed-card__link {
+    display: inline-flex;
+    margin-top: var(--space-4);
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+  }
+
+  .article-breed-card__link:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .article-partner-strip {
+    margin-top: var(--space-8);
+  }
+
+  .article-related-breed,
+  .article-next-tools {
+    margin-top: var(--space-10);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-8);
+  }
+
+  .article-related-breed__header,
+  .article-next-tools__header {
+    margin-bottom: var(--space-5);
+  }
+
+  .article-related-grid,
+  .article-next-tools__grid {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .article-related-grid a,
+  .article-next-tools__grid a {
+    display: grid;
+    gap: var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: #ffffff;
+    padding: var(--space-4);
+    color: var(--color-heading);
+    text-decoration: none;
+    box-shadow: var(--shadow-xs);
+    transition: var(--transition-smooth);
+  }
+
+  .article-related-grid a {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  .article-related-grid a:hover,
+  .article-next-tools__grid a:hover {
+    border-color: var(--color-border-accent);
+    background: var(--color-bg-soft);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .article-related-grid span,
+  .article-next-tools__grid span {
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+
+  .article-related-grid strong,
+  .article-next-tools__grid strong {
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+    line-height: var(--leading-tight);
+  }
+
+  .article-related-grid em {
+    color: var(--color-accent-hover);
+    font-style: normal;
+    font-weight: var(--weight-black);
+  }
+
+  .article-next-tools__grid p {
+    margin: 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .article-custom-sidebar-card {
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-3xl);
+    background: rgba(255, 255, 255, 0.92);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+  }
+
+  .article-custom-sidebar-card h2 {
+    margin: 0;
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .article-custom-sidebar-card nav {
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+
+  .article-custom-sidebar-card a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2);
+    align-items: center;
+    border-radius: var(--radius-lg);
+    padding: 0.65rem 0.7rem;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .article-custom-sidebar-card a:hover {
+    background: var(--color-bg-soft);
+    color: var(--color-accent-hover);
+  }
+
+  .article-custom-sidebar-card strong {
+    font-weight: var(--weight-semi);
+  }
+
+  @media (min-width: 640px) {
+    .article-support-note {
+      grid-template-columns: 1fr auto;
+      align-items: center;
+    }
+
+    .article-breed-card {
+      grid-template-columns: auto 1fr;
+      align-items: center;
+    }
+
+    .article-related-grid,
+    .article-next-tools__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 900px) {
+    .article-related-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .article-next-tools__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .article-related-grid a,
+    .article-next-tools__grid a,
+    .article-custom-sidebar-card a {
+      transition: none;
+      transform: none !important;
+    }
+  }
+</style>
