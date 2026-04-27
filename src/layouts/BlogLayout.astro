@@ -141,6 +141,19 @@ const defaultArticleSchema = {
 };
 
 const resolvedSchema = schema || defaultArticleSchema;
+
+const SITE = 'https://pupwiki.com';
+const slugifiedCat = slugify(category);
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',        item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Blog',        item: `${SITE}/blog` },
+    { '@type': 'ListItem', position: 3, name: categoryMeta.label, item: `${SITE}/categories/${slugifiedCat}` },
+    ...(canonicalUrl ? [{ '@type': 'ListItem', position: 4, name: title, item: canonicalUrl }] : []),
+  ],
+};
 ---
 
 <BaseLayout
@@ -158,6 +171,7 @@ const resolvedSchema = schema || defaultArticleSchema;
     {resolvedSchema && (
       <script type="application/ld+json" set:html={JSON.stringify(resolvedSchema)} />
     )}
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
   </Fragment>
 
   <main class="article-page">
