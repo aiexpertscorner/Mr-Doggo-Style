@@ -9,6 +9,7 @@ import ProductGrid  from '../../components/content/ProductGrid.astro';
 import Breadcrumb   from '../../components/ui/Breadcrumb.astro';
 import { getCollection } from 'astro:content';
 import productsData   from '../../data/products.json';
+import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
 import masterBreeds   from '../../data/master-breeds.json';
 import breedLinkMap   from '../../data/breed-link-map.json';
 import contentStatus  from '../../data/content-status.json';
@@ -55,6 +56,30 @@ const CAT_TO_LINK_KEY: Record<string, string> = {
   'beds':        'bed_post',
   'supplements': 'supplement_post',
 };
+const CAT_AWIN_TAGS: Record<string, string[]> = {
+  'dog-food':    ['food', 'nutrition', 'fresh-food', 'feeding'],
+  'toys':        ['training', 'active', 'gear'],
+  'health':      ['food', 'nutrition', 'supplements'],
+  'training':    ['training', 'behavior', 'leash', 'harness', 'active'],
+  'grooming':    ['food', 'care'],
+  'beds':        ['food', 'nutrition'],
+  'supplements': ['food', 'nutrition', 'supplements'],
+  'smart-tech':  ['training', 'gear'],
+  'travel':      ['training', 'gear', 'active'],
+  'lifestyle':   ['gift', 'lifestyle', 'portrait', 'custom'],
+};
+const awinTags = CAT_AWIN_TAGS[category] ?? ['food'];
+
+const SITE = 'https://pupwiki.com';
+const breadcrumbLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',       item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: meta.title,   item: `${SITE}/categories/${category}` },
+  ],
+});
+
 const linkKey = CAT_TO_LINK_KEY[category];
 const breedStrip = linkKey
   ? (masterBreeds as any[])
@@ -71,8 +96,9 @@ const breedStrip = linkKey
 <BaseLayout
   title={`${meta.title} Reviews 2026 — Expert Picks | PupWiki`}
   description={meta.desc}
-  canonicalUrl={`https://pupwiki.com/categories/${category}`}
+  canonicalUrl={`${SITE}/categories/${category}`}
 >
+  <script type="application/ld+json" set:html={breadcrumbLd} />
 
   <div class="page-hero">
     <div class="container page-hero__inner">
@@ -128,6 +154,8 @@ const breedStrip = linkKey
           heading={`Top Ranked ${meta.title}`}
         />
       )}
+
+      <AwinProductSlot topicTags={awinTags} pageType="category" />
 
       {catPosts.length > 0 && (
         <section>

@@ -3,10 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import masterBreeds from '../../data/master-breeds.json';
 import allNamesData from '../../data/dog-names.json';
 import breedLinkMap from '../../data/breed-link-map.json';
-import productIndex from '../../data/product-index.json';
+import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
 
 const SITE = 'https://pupwiki.com';
-const TAG = 'aiexpertscorn-20';
 
 export function getStaticPaths() {
   return (masterBreeds as any[]).map((b) => ({ params: { breed: b.slug } }));
@@ -22,9 +21,6 @@ const rank = b.ranking_data || {};
 const styles = b.name_styles || ['Classic', 'Trendy'];
 const insps = b.name_inspirations || ['Classic Pet', 'Nature'];
 const n = b.name;
-
-const foodId = b.product_picks?.['dog-food'];
-const foodProd = foodId ? (productIndex as any)[foodId] : null;
 
 type NameEntry = {
   name: string;
@@ -150,6 +146,16 @@ const guideLinks = [
   links.training_post && { href: links.training_post, emoji: '🦮', label: `Training a ${n}` },
 ].filter(Boolean) as any[];
 
+const breadcrumbLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',       item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Dog Names',  item: `${SITE}/dog-names` },
+    { '@type': 'ListItem', position: 3, name: `${n} Names`, item: `${SITE}/dog-names/${slug}` },
+  ],
+});
+
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -180,6 +186,7 @@ const jsonLd = JSON.stringify({
   canonicalUrl={`${SITE}/dog-names/${slug}`}
   bodyClass="dog-name-detail-page bg-white text-slate-900"
 >
+  <script type="application/ld+json" set:html={breadcrumbLd} />
   <script type="application/ld+json" set:html={jsonLd} />
 
   <main class="dog-name-detail">
@@ -539,6 +546,8 @@ const jsonLd = JSON.stringify({
                 </nav>
               </div>
             )}
+
+            <AwinProductSlot topicTags={['gift', 'portrait', 'custom', 'lifestyle']} pageType="dog-names" />
 
             <a href="/dog-names" class="dog-name-sidebar-cta">
               Browse all breed names →

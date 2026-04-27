@@ -8,15 +8,14 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import masterBreeds from '../../data/master-breeds.json';
 import masterCrossbreeds from '../../data/master-crossbreeds.json';
-import productIndex from '../../data/product-index.json';
 import breedLinkMap from '../../data/breed-link-map.json';
+import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
 import actuarialRates from '../../data/actuarial-breed-rates.json';
 import actuarialAgeFactors from '../../data/actuarial-age-factors.json';
 import statesIndex from '../../data/us-states-insurance-index.json';
 import StateAgeSelector from '../../components/StateAgeSelector.astro';
 import healthProfiles from '../../data/breed-health-profiles.json';
 
-const AMAZON_TAG = 'aiexpertscorn-20';
 const SITE = 'https://pupwiki.com';
 
 const getAllCostBreeds = () => [
@@ -266,13 +265,6 @@ const topHealthIssues = healthProfile?.common_issues?.slice(0, 3) ?? [];
 
 const severityClass = (severity: string) =>
   `is-severity-${String(severity || 'medium').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-
-const foodProd = b.product_picks?.['dog-food'] ? (productIndex as any)[b.product_picks['dog-food']] : null;
-
-const amazonUrl =
-  foodProd?.asin && foodProd.asin !== 'SUBSCRIPTION'
-    ? `https://www.amazon.com/dp/${foodProd.asin}?tag=${AMAZON_TAG}`
-    : null;
 
 const breedWeight =
   wt.min && wt.max
@@ -735,58 +727,7 @@ const jsonLd = JSON.stringify({
               </a>
             </div>
 
-            {foodProd && (
-              <div class="cost-sidebar-card cost-product-card">
-                <p class="cost-detail-eyebrow">Food pick</p>
-                <h2>{foodProd.name}</h2>
-
-                {foodProd.image && (
-                  <img
-                    src={foodProd.image}
-                    alt={foodProd.name}
-                    width="240"
-                    height="180"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                )}
-
-                {foodProd.verdict && <p>{foodProd.verdict}</p>}
-
-                <dl>
-                  {foodProd.brand && (
-                    <div>
-                      <dt>Brand</dt>
-                      <dd>{foodProd.brand}</dd>
-                    </div>
-                  )}
-                  {foodProd.rating && (
-                    <div>
-                      <dt>Rating</dt>
-                      <dd>{foodProd.rating}/5</dd>
-                    </div>
-                  )}
-                  {foodProd.price && (
-                    <div>
-                      <dt>Price</dt>
-                      <dd>{money(foodProd.price)}</dd>
-                    </div>
-                  )}
-                </dl>
-
-                {amazonUrl ? (
-                  <a href={amazonUrl} class="cost-sidebar-cta" rel="nofollow sponsored noopener" target="_blank">
-                    Check price
-                    <span aria-hidden="true">→</span>
-                  </a>
-                ) : (
-                  <a href="/categories/dog-food" class="cost-sidebar-cta">
-                    Explore dog food
-                    <span aria-hidden="true">→</span>
-                  </a>
-                )}
-              </div>
-            )}
+            <AwinProductSlot topicTags={['food', 'nutrition', 'fresh-food']} pageType="cost-calculator" />
 
             <div class="cost-sidebar-card">
               <p class="cost-detail-eyebrow">Next steps</p>

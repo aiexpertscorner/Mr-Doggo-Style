@@ -1,7 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const SITE    = 'https://pupwiki.com';
 const UPDATED = 'April 27, 2026';
+
+const breadcrumbLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',        item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'About',       item: `${SITE}/about` },
+    { '@type': 'ListItem', position: 3, name: 'How We Test', item: `${SITE}/how-we-test` },
+  ],
+});
 
 const processSteps = [
   {
@@ -126,9 +137,10 @@ const correctionRows = [
 <BaseLayout
   title="How We Test & Review Dog Products — PupWiki Methodology"
   description="How PupWiki researches, compares, scores, and recommends dog products and care resources. Learn how we handle affiliate links, product claims, health-sensitive topics, and corrections."
-  canonicalUrl="https://pupwiki.com/how-we-test"
+  canonicalUrl={`${SITE}/how-we-test`}
   pageType="website"
 >
+  <script type="application/ld+json" set:html={breadcrumbLd} />
   <main class="methodology-page">
     <section class="methodology-hero" aria-labelledby="methodology-title">
       <div class="methodology-container">
