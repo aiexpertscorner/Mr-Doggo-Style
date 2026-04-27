@@ -9,6 +9,7 @@
  * - JSON-LD
  * - accessibility skip link
  * - shared header/footer
+ * - AdSense verification + optional script
  */
 
 import Header from '../components/ui/Header.astro';
@@ -60,6 +61,17 @@ const {
   modifiedTime,
   structuredData = [],
 } = Astro.props;
+
+/**
+ * Google AdSense
+ * Replace the masked values with your real full AdSense IDs.
+ *
+ * To temporarily disable AdSense script loading later:
+ * set ENABLE_ADSENSE = false.
+ */
+const ENABLE_ADSENSE = true;
+const ADSENSE_ACCOUNT = 'ca-pub-4011000703937954';
+const ADSENSE_CLIENT = 'ca-pub-4011000703937954';
 
 const currentPath = `${Astro.url.pathname}${Astro.url.search}`;
 const resolvedCanonicalUrl =
@@ -234,6 +246,22 @@ const jsonLdScripts = [
       name="impact-site-verification"
       content="7b2aaf8e-72cb-456b-a2a8-9176f838c637"
     />
+
+    <!-- Google AdSense verification -->
+    <meta name="google-adsense-account" content={ADSENSE_ACCOUNT} />
+
+    <!-- Google AdSense script -->
+    {ENABLE_ADSENSE && (
+      <>
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossorigin="anonymous"
+        />
+      </>
+    )}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
