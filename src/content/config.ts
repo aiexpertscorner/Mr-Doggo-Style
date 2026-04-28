@@ -41,6 +41,13 @@ const blog = defineCollection({
 
     // Schema hint for BlogLayout
     schemaType:    z.enum(['Article','FAQPage','HowTo','Review']).default('Article'),
+
+    // Content rework: editorial classification (safe defaults — existing posts unaffected)
+    contentTier:         z.enum(['editorial','generated','support','enrichment']).optional(),
+    indexInBlog:         z.boolean().optional(),
+    generated:           z.boolean().optional(),
+    claimSensitivity:    z.enum(['standard','health-sensitive','high-risk']).optional(),
+    monetizationIntent:  z.enum(['none','affiliate','leadgen','tool']).optional(),
   }),
 });
 

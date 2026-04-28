@@ -10,6 +10,7 @@ import masterBreeds from '../../data/master-breeds.json';
 import masterCrossbreeds from '../../data/master-crossbreeds.json';
 import breedLinkMap from '../../data/breed-link-map.json';
 import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
+import PageBannerSlot from '../../components/affiliate/PageBannerSlot.astro';
 import actuarialRates from '../../data/actuarial-breed-rates.json';
 import actuarialAgeFactors from '../../data/actuarial-age-factors.json';
 import statesIndex from '../../data/us-states-insurance-index.json';
@@ -726,6 +727,8 @@ const jsonLd = JSON.stringify({
                 View full breed guide →
               </a>
             </div>
+
+            <PageBannerSlot placement="cost-calculator-sidebar" topicTags={['food','nutrition','training']} />
 
             <AwinProductSlot topicTags={['food', 'nutrition', 'fresh-food']} pageType="cost-calculator" />
 

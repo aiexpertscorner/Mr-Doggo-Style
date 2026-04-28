@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import masterBreeds from '../../data/master-breeds.json';
 import allNamesData from '../../data/dog-names.json';
+import enrichedNamesRaw from '../../data/dog-names-enriched.json';
 import breedLinkMap from '../../data/breed-link-map.json';
 import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
 
@@ -58,6 +59,23 @@ function getByInspiration(insp: string, count = 12) {
 
 const boys = filterNames('boy', 20);
 const girls = filterNames('girl', 20);
+
+type EnrichedName = { name: string; gender: string; category: string; inspiration: string; rank: number; };
+const enrichedNames = enrichedNamesRaw as EnrichedName[];
+const INSPIRATION_BUCKETS = [
+  { key: 'Nature',      label: 'Nature & Outdoors',  emoji: '🌿' },
+  { key: 'Sports',      label: 'Sports & Adventure',  emoji: '⚽' },
+  { key: 'Human',       label: 'Human Names',          emoji: '👤' },
+  { key: 'Classic Pet', label: 'Classic Pet Names',    emoji: '⭐' },
+];
+const inspirationSections = INSPIRATION_BUCKETS.map(bucket => ({
+  ...bucket,
+  names: enrichedNames
+    .filter(x => x.inspiration === bucket.key)
+    .sort((a, b) => (a.rank || 9999) - (b.rank || 9999))
+    .slice(0, 8)
+    .map(x => x.name),
+})).filter(b => b.names.length >= 4);
 
 const THEMES = [
   styles.includes('Tough') && {
@@ -429,6 +447,30 @@ const jsonLd = JSON.stringify({
                 </table>
               </div>
             </section>
+
+            {inspirationSections.length > 0 && (
+              <section class="dog-name-section">
+                <p class="dog-name-detail-eyebrow">Popular name themes</p>
+                <h2 class="font-sans text-xl font-bold mb-5" style="color:var(--color-heading)">
+                  Dog Names by Inspiration
+                </h2>
+                <div class="grid sm:grid-cols-2 gap-5">
+                  {inspirationSections.map(bucket => (
+                    <div class="rounded-2xl p-5" style="background:white;border:1px solid var(--color-border-warm)">
+                      <p class="font-sans font-bold text-sm mb-3" style="color:var(--color-heading)">
+                        {bucket.emoji} {bucket.label}
+                      </p>
+                      <div class="flex flex-wrap gap-2">
+                        {bucket.names.map(name => (
+                          <span class="font-sans text-xs px-2.5 py-1 rounded-full"
+                            style="background:var(--color-bg-soft);color:var(--color-heading)">{name}</span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             <section class="dog-name-section dog-name-faq" aria-labelledby="faq-title">
               <p class="dog-name-detail-eyebrow">Common questions</p>
