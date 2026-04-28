@@ -5,6 +5,8 @@
  * Mobile refinements:
  * - Uses a stable aspect-ratio instead of fixed square height.
  * - Hero variant is full-width on mobile.
+ * - Thumbnail rail always sits below the main image on mobile.
+ * - Prevents old absolute/negative gallery styles from overlapping the hero image.
  * - Thumbnail rail scrolls horizontally on small screens.
  * - Fallback is visually consistent with image frame.
  * - JS resets loading state when switching images.
@@ -74,10 +76,14 @@ function uniqueUrls(urls: unknown[]) {
 }
 
 const galleryUrls = uniqueUrls([
-  ...(Array.isArray(breed.image_gallery) ? breed.image_gallery.map((item) => item.url || item.image_url) : []),
+  ...(Array.isArray(breed.image_gallery)
+    ? breed.image_gallery.map((item) => item.url || item.image_url)
+    : []),
   ...(Array.isArray(breed.image_urls) ? breed.image_urls : []),
   breed.image_url,
-  ...(Array.isArray(breed.image_url_candidates) ? breed.image_url_candidates.map((item) => item.url || item.image_url) : []),
+  ...(Array.isArray(breed.image_url_candidates)
+    ? breed.image_url_candidates.map((item) => item.url || item.image_url)
+    : []),
   breed.image_url_parent_1,
   breed.image_url_parent_2,
 ]).slice(0, 5);
@@ -174,7 +180,9 @@ const galleryJson = JSON.stringify(galleryUrls);
 
     const setActiveThumb = (src: string) => {
       thumbs.forEach((thumb) => {
-        thumb.classList.toggle('is-active', thumb.dataset.src === src);
+        const isActive = thumb.dataset.src === src;
+        thumb.classList.toggle('is-active', isActive);
+        thumb.setAttribute('aria-pressed', String(isActive));
       });
     };
 
@@ -224,6 +232,8 @@ const galleryJson = JSON.stringify(galleryUrls);
     thumbs.forEach((thumb, index) => {
       const thumbImage = thumb.querySelector('img') as HTMLImageElement | null;
 
+      thumb.setAttribute('aria-pressed', String(index === 0));
+
       thumb.addEventListener('click', () => {
         activeIndex = index;
         setImage(thumb.dataset.src || '');
@@ -239,19 +249,31 @@ const galleryJson = JSON.stringify(galleryUrls);
 <style>
   .breed-image {
     --breed-image-radius: var(--radius-3xl);
-    --breed-image-thumb-size: clamp(3.35rem, 18vw, 4.5rem);
+    --breed-image-thumb-size: clamp(3rem, 17vw, 4.35rem);
+
     position: relative;
     display: grid;
+    grid-template-rows: auto;
+    align-items: start;
     width: 100%;
     max-width: 100%;
-    gap: var(--space-3, 0.75rem);
     min-width: 0;
+    gap: var(--space-3, 0.75rem);
+    overflow: visible;
+    isolation: isolate;
+  }
+
+  .breed-image--with-gallery {
+    grid-template-rows: auto auto;
   }
 
   .breed-image__main {
     position: relative;
+    z-index: 1;
+    grid-row: 1;
     overflow: hidden;
     width: 100%;
+    max-width: 100%;
     aspect-ratio: 4 / 3;
     border-radius: var(--breed-image-radius);
     background:
@@ -288,6 +310,10 @@ const galleryJson = JSON.stringify(galleryUrls);
     transform: scale(1);
   }
 
+  .breed-image__img[hidden] {
+    display: none;
+  }
+
   .breed-image__fallback {
     position: absolute;
     inset: 0;
@@ -296,6 +322,10 @@ const galleryJson = JSON.stringify(galleryUrls);
     background:
       radial-gradient(circle at 30% 20%, var(--color-accent-light), transparent 55%),
       var(--color-bg-muted);
+  }
+
+  .breed-image__fallback[hidden] {
+    display: none;
   }
 
   .breed-image__fallback--visible {
@@ -310,15 +340,31 @@ const galleryJson = JSON.stringify(galleryUrls);
   }
 
   .breed-image__thumbs {
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: 2;
+    grid-row: 2;
     display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     gap: var(--space-2, 0.5rem);
+    margin: 0 !important;
+    padding: 0.1rem 0.15rem 0.55rem;
+    transform: none !important;
     overflow-x: auto;
     overflow-y: hidden;
-    max-width: 100%;
-    padding: 0.1rem 0.1rem 0.45rem;
     scroll-snap-type: x proximity;
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .breed-image__thumbs[hidden] {
+    display: none;
   }
 
   .breed-image__thumb {
@@ -334,6 +380,10 @@ const galleryJson = JSON.stringify(galleryUrls);
     cursor: pointer;
     scroll-snap-align: start;
     transition: var(--transition-smooth);
+  }
+
+  .breed-image__thumb[hidden] {
+    display: none;
   }
 
   .breed-image__thumb::after {
@@ -357,6 +407,11 @@ const galleryJson = JSON.stringify(galleryUrls);
       var(--shadow-xs);
   }
 
+  .breed-image__thumb:focus-visible {
+    outline: 3px solid rgba(255, 122, 0, 0.32);
+    outline-offset: 3px;
+  }
+
   .breed-image__thumb img {
     display: block;
     width: 100%;
@@ -368,9 +423,27 @@ const galleryJson = JSON.stringify(galleryUrls);
     --breed-image-radius: clamp(1.25rem, 5vw, var(--radius-3xl));
   }
 
+  .breed-image--hero.breed-image--with-gallery {
+    display: grid;
+    grid-template-rows: auto auto;
+    align-items: start;
+  }
+
   .breed-image--hero .breed-image__main {
     border: 1px solid var(--color-border-warm);
     box-shadow: var(--shadow-xl);
+  }
+
+  .breed-image--hero.breed-image--with-gallery .breed-image__main {
+    grid-row: 1;
+  }
+
+  .breed-image--hero.breed-image--with-gallery .breed-image__thumbs {
+    grid-row: 2;
+    position: relative !important;
+    inset: auto !important;
+    margin-top: 0 !important;
+    transform: none !important;
   }
 
   .breed-image--card {
@@ -383,9 +456,38 @@ const galleryJson = JSON.stringify(galleryUrls);
     box-shadow: var(--shadow-card);
   }
 
-  @media (max-width: 419px) {
+  @media (max-width: 767px) {
+    .breed-image {
+      --breed-image-thumb-size: clamp(3rem, 18vw, 3.85rem);
+      gap: 0.65rem;
+    }
+
+    .breed-image--hero {
+      width: 100%;
+      max-width: 100%;
+    }
+
     .breed-image--hero .breed-image__main {
       aspect-ratio: 1.12 / 1;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .breed-image--hero .breed-image__thumbs {
+      padding: 0.05rem 0.1rem 0.4rem;
+    }
+
+    .breed-image__thumb {
+      border-radius: var(--radius-lg);
+    }
+  }
+
+  @media (max-width: 419px) {
+    .breed-image {
+      --breed-image-thumb-size: clamp(2.85rem, 19vw, 3.45rem);
+    }
+
+    .breed-image--hero .breed-image__main {
+      aspect-ratio: 1.08 / 1;
     }
   }
 
