@@ -216,6 +216,41 @@ const breadcrumbLd = JSON.stringify({
     { '@type': 'ListItem', position: 3, name: b.name, item: `${SITE}/breeds/${slug}` },
   ],
 });
+
+const faqItems: { q: string; a: string }[] = [
+  {
+    q: `Is the ${b.name} a good family dog?`,
+    a: b.temperament
+      ? `${b.name}s are known for being ${b.temperament.slice(0, 100).toLowerCase()}. They are generally considered ${b.good_with_kids === true ? 'good' : b.good_with_kids === false ? 'better suited to adult households' : 'adaptable'} with children. As with all breeds, supervised interaction with young children is recommended.`
+      : `${b.name}s have a ${(b.energy_level || 'moderate').toLowerCase()} energy level. Individual temperament varies, so early socialisation and consistent training are important for family integration.`,
+  },
+  {
+    q: `How much exercise does a ${b.name} need daily?`,
+    a: b.exercise_needs_text
+      ? b.exercise_needs_text
+      : b.energy_level === 'active'
+        ? `${b.name}s are an active breed and need at least 1–2 hours of vigorous exercise daily, plus mental enrichment to prevent boredom.`
+        : b.energy_level === 'calm'
+          ? `${b.name}s have moderate energy and typically do well with 30–45 minutes of daily exercise, though they enjoy outdoor time.`
+          : `${b.name}s need regular daily exercise — typically 45–60 minutes — to stay healthy and well-behaved.`,
+  },
+  ...(healthProfile?.common_issues?.length > 0
+    ? [{
+        q: `What health issues are common in ${b.name}s?`,
+        a: `${b.name}s may be prone to ${(healthProfile.common_issues as any[]).slice(0, 3).map((i: any) => i.name || i).join(', ')}. Regular veterinary check-ups and breed-specific health screening are recommended. This is general information — consult your vet for guidance specific to your dog.`,
+      }]
+    : []),
+];
+
+const faqLd = faqItems.length > 0 ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(item => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+}) : null;
 ---
 
 <BaseLayout
@@ -228,6 +263,7 @@ const breadcrumbLd = JSON.stringify({
 >
   <script type="application/ld+json" set:html={jsonLd} />
   <script type="application/ld+json" set:html={breadcrumbLd} />
+  {faqLd && <script type="application/ld+json" set:html={faqLd} />}
 
   <main class="breed-page">
     <section class="breed-hero" aria-labelledby="breed-title">

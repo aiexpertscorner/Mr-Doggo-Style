@@ -205,7 +205,13 @@ function formatDate(value: Date | string) {
   }).format(new Date(value));
 }
 
-const editorialPosts = sorted.filter((post) => !isLikelyGeneratedBreedPost(post));
+function shouldShowInBlog(post: any) {
+  if (post.data.indexInBlog === false) return false;
+  if (post.data.indexInBlog === true) return true;
+  return !isLikelyGeneratedBreedPost(post);
+}
+
+const editorialPosts = sorted.filter(shouldShowInBlog);
 const preferredEditorial = editorialPosts.filter(isLikelyEditorial);
 const fallbackEditorial = editorialPosts.filter((post) => !preferredEditorial.includes(post));
 
@@ -281,6 +287,29 @@ const trustLinks = [
   { href: '/privacy', label: 'Privacy policy' },
   { href: '/contact', label: 'Contact PupWiki' },
 ];
+
+const SITE = 'https://pupwiki.com';
+const breadcrumbLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',   item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE}/blog` },
+  ],
+});
+
+const FILTER_CATS = [
+  { key: 'all',          label: 'All guides' },
+  { key: 'is-food',      label: 'Food & Nutrition' },
+  { key: 'is-health',    label: 'Health' },
+  { key: 'is-training',  label: 'Training' },
+  { key: 'is-toys',      label: 'Toys' },
+  { key: 'is-grooming',  label: 'Grooming' },
+  { key: 'is-beds',      label: 'Beds' },
+  { key: 'is-supplements', label: 'Supplements' },
+  { key: 'is-tech',      label: 'Smart Tech' },
+  { key: 'is-lifestyle', label: 'Lifestyle' },
+];
 ---
 
 <BaseLayout
@@ -289,6 +318,7 @@ const trustLinks = [
   canonicalUrl="https://pupwiki.com/blog"
   pageType="collection"
 >
+<script type="application/ld+json" set:html={breadcrumbLd} />
   <main class="blog-page">
     <section class="blog-hero" aria-labelledby="blog-title">
       <div class="blog-container">
@@ -395,13 +425,27 @@ const trustLinks = [
               </p>
             </div>
 
+            <div class="flex flex-wrap gap-2 mb-6" id="blog-cat-chips">
+              {FILTER_CATS.map((c, i) => (
+                <button
+                  class="blog-cat-filter font-sans text-xs font-semibold px-3 py-1.5 rounded-full border transition-all"
+                  data-cat={c.key}
+                  style={i === 0
+                    ? 'background:var(--color-accent);color:white;border-color:var(--color-accent)'
+                    : 'background:white;color:var(--color-body-soft);border-color:var(--color-border-warm)'}
+                >
+                  {c.label}
+                </button>
+              ))}
+            </div>
+
             <div class="blog-card-grid">
               {visiblePosts.map((post) => {
                 const category = getCategory(post);
                 const image = getPostImage(post);
 
                 return (
-                  <a href={`/blog/${post.slug}`} class="blog-card">
+                  <a href={`/blog/${post.slug}`} class="blog-card" data-blog-cat={category.className}>
                     <div class="blog-card__media">
                       {image ? (
                         <img
@@ -479,6 +523,26 @@ const trustLinks = [
     </section>
   </main>
 </BaseLayout>
+
+<script>
+  document.querySelectorAll('.blog-cat-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.blog-cat-filter').forEach((b: any) => {
+        b.style.background = 'white';
+        b.style.color = 'var(--color-body-soft)';
+        b.style.borderColor = 'var(--color-border-warm)';
+      });
+      const el = btn as HTMLButtonElement;
+      el.style.background = 'var(--color-accent)';
+      el.style.color = 'white';
+      el.style.borderColor = 'var(--color-accent)';
+      const cat = el.dataset.cat || 'all';
+      document.querySelectorAll<HTMLElement>('[data-blog-cat]').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.blogCat === cat) ? '' : 'none';
+      });
+    });
+  });
+</script>
 
 <style>
   .blog-page {

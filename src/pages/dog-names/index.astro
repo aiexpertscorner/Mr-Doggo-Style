@@ -24,6 +24,16 @@ const breedList = breeds.map((b: any) => ({
   slug: b.slug,
   img: b.image_url || '',
 }));
+
+const SITE = 'https://pupwiki.com';
+const breadcrumbLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',      item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Dog Names', item: `${SITE}/dog-names` },
+  ],
+});
 ---
 
 <BaseLayout
@@ -32,6 +42,7 @@ const breedList = breeds.map((b: any) => ({
   canonicalUrl="https://pupwiki.com/dog-names"
   bodyClass="dog-names-page bg-white text-slate-900"
 >
+<script type="application/ld+json" set:html={breadcrumbLd} />
   <main class="dog-names">
     <section class="dog-names-hero" aria-labelledby="dog-names-title">
       <div class="dog-names-container">

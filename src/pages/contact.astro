@@ -39,6 +39,16 @@ const relatedLinks = [
   ['/disclosure', 'Affiliate disclosure'],
   ['/privacy', 'Privacy policy'],
 ];
+
+const SITE = 'https://pupwiki.com';
+const breadcrumbLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',    item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: `${SITE}/contact` },
+  ],
+});
 ---
 
 <BaseLayout
@@ -47,6 +57,7 @@ const relatedLinks = [
   canonicalUrl="https://pupwiki.com/contact"
   pageType="website"
 >
+<script type="application/ld+json" set:html={breadcrumbLd} />
   <main class="contact-page">
     <section class="contact-hero" aria-labelledby="contact-title">
       <div class="contact-container">
