@@ -1,0 +1,57 @@
+{
+  "breedSlug": "poodle-standard",
+  "breedName": "Poodle (Standard)",
+  "contentVersion": "enrichment-v1",
+  "updatedAt": "2026-04-29",
+  "careProfile": {
+    "summary": "The Poodle (Standard) is a large-sized breed with regular energy and minimal shedding.",
+    "ownerFit": "great with families and children; highly trainable — ideal for first-time owners; low-shedding coat reduces grooming burden",
+    "exerciseNeeds": "Benefits from 45–60 minutes of daily exercise — walks, play, or structured training.",
+    "trainingNotes": "Highly trainable — responds well to positive reinforcement and consistency.",
+    "groomingNotes": "Requires professional grooming every 6–8 weeks; daily brushing prevents matting.",
+    "feedingContext": "Feed 2 meals daily; adjust portions by activity level. Maintain healthy body condition — avoid overfeeding."
+  },
+  "costDrivers": {
+    "food": "$60–$90/mo (large breed formula)",
+    "insurance": "~$42/mo base (varies by age, state, and plan)",
+    "grooming": "$60–$100 per professional session",
+    "training": "Group puppy classes from $100–$200; optional private sessions $50–$150/hr",
+    "vetCare": "Annual wellness visits $200–$400; breed-specific screening recommended"
+  },
+  "healthContext": {
+    "claimSensitivity": "high",
+    "disclaimerRequired": true,
+    "commonConcerns": [
+      "Bloat (GDV)",
+      "Addison's Disease",
+      "Progressive Retinal Atrophy",
+      "Hip Dysplasia"
+    ],
+    "vetConversationPrompts": [
+      "Ask your vet about Bloat (GDV) screening."
+    ]
+  },
+  "monetizationHooks": {
+    "insurance": "low",
+    "training": "medium",
+    "dna": "medium",
+    "grooming": "high",
+    "food": "medium",
+    "onlineVet": "medium"
+  },
+  "recommendedBlocks": [
+    "care-profile",
+    "cost-drivers",
+    "insurance-cta"
+  ],
+  "internalLinks": [
+    {
+      "label": "Poodle (Standard) cost calculator",
+      "href": "/cost-calculator/poodle-standard"
+    },
+    {
+      "label": "Poodle (Standard) names",
+      "href": "/dog-names/poodle-standard"
+    }
+  ]
+}

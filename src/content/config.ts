@@ -42,12 +42,17 @@ const blog = defineCollection({
     // Schema hint for BlogLayout
     schemaType:    z.enum(['Article','FAQPage','HowTo','Review']).default('Article'),
 
-    // Content rework: editorial classification (safe defaults — existing posts unaffected)
-    contentTier:         z.enum(['editorial','generated','support','enrichment']).optional(),
+    // Content rework: editorial classification (all optional — existing posts unaffected)
+    contentTier:         z.enum(['editorial','money','support','generated-support','enrichment']).optional(),
     indexInBlog:         z.boolean().optional(),
     generated:           z.boolean().optional(),
-    claimSensitivity:    z.enum(['standard','health-sensitive','high-risk']).optional(),
-    monetizationIntent:  z.enum(['none','affiliate','leadgen','tool']).optional(),
+    reviewMethod:        z.enum(['editorial-research','product-data-comparison','hands-on-test','expert-reviewed']).optional(),
+    claimSensitivity:    z.enum(['low','medium','high']).optional(),
+    monetizationIntent:  z.enum(['none','insurance','food','dna','training','grooming','vet-care','gift','cost','service']).optional(),
+    qualityScore:        z.number().optional(),
+    uniqueBlocks:        z.array(z.string()).default([]),
+    medicalDisclaimer:   z.boolean().default(false),
+    affiliateDisclosure: z.boolean().default(true),
   }),
 });
 

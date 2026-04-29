@@ -20,8 +20,11 @@ import healthProfiles from '../../data/breed-health-profiles.json';
 import BreedImage from '../../components/breed/BreedImage.astro';
 import PageBannerSlot from '../../components/affiliate/PageBannerSlot.astro';
 import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
+import BreedCareProfile from '../../components/enrichment/BreedCareProfile.astro';
 
 import { deriveProfile } from '../../../scripts/lib/breed-profile.mjs';
+import { existsSync } from 'fs';
+import { join } from 'path';
 
 const SITE = 'https://pupwiki.com';
 
@@ -114,6 +117,13 @@ const CLUSTER_LINKS = [
 ];
 
 const COST_CALC_HREF = `/cost-calculator/${slug}`;
+
+const enrichmentPath = join(process.cwd(), 'src/data/enrichment/breeds', `${slug}.json`);
+let enrichmentData: any = null;
+if (existsSync(enrichmentPath)) {
+  const { readFileSync } = await import('fs');
+  enrichmentData = JSON.parse(readFileSync(enrichmentPath, 'utf8'));
+}
 
 const suitabilityBullets: string[] = [];
 {
@@ -626,6 +636,15 @@ const faqLd = faqItems.length > 0 ? JSON.stringify({
               </a>
             </div>
           </section>
+
+          {enrichmentData?.careProfile && (
+            <section class="breed-section" aria-label={`${b.name} care profile`}>
+              <BreedCareProfile
+                breedName={b.name}
+                careProfile={enrichmentData.careProfile}
+              />
+            </section>
+          )}
 
           <section class="breed-section" aria-labelledby="all-guides-title">
             <div class="breed-section__header">

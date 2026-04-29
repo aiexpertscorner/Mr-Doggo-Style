@@ -1,0 +1,326 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import OfferSlot from '../../components/monetization/OfferSlot.astro';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+const SITE = 'https://pupwiki.com';
+
+const breadcrumbLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',           item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Pet Insurance',  item: `${SITE}/pet-insurance` },
+  ],
+});
+
+const faqItems = [
+  {
+    q: 'Is pet insurance worth it for dogs?',
+    a: 'Pet insurance is worth considering for breeds with known health risks, puppies (lock in lower premiums early), and owners who want predictable monthly costs rather than large unexpected vet bills. It may be less compelling for healthy low-risk adult dogs whose owners have a dedicated emergency fund.',
+  },
+  {
+    q: 'When is the best time to get pet insurance?',
+    a: 'Most insurers recommend insuring puppies before any conditions develop, since pre-existing conditions are typically excluded. Premiums are also lower for younger dogs. That said, adult and senior dogs can still be insured — compare plans carefully for waiting periods and exclusions.',
+  },
+  {
+    q: 'What does pet insurance typically not cover?',
+    a: 'Most policies exclude pre-existing conditions, routine wellness visits (unless a wellness add-on is purchased), dental cleanings, elective procedures, and breed-specific conditions diagnosed before the policy start date. Always read the exclusions section before purchasing.',
+  },
+];
+
+const faqLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(item => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+});
+
+// Load enrichment data for breed strip
+const enrichDir = join(process.cwd(), 'src/data/enrichment/breeds');
+const enrichBreeds = readdirSync(enrichDir)
+  .filter(f => f.endsWith('.json'))
+  .map(f => JSON.parse(readFileSync(join(enrichDir, f), 'utf8')))
+  .filter(e => e.monetizationHooks?.insurance === 'high' || e.monetizationHooks?.insurance === 'medium')
+  .sort((a, b) => {
+    const rank = { high: 0, medium: 1, low: 2 };
+    return (rank[a.monetizationHooks.insurance] || 2) - (rank[b.monetizationHooks.insurance] || 2);
+  })
+  .slice(0, 6);
+
+const costTable = [
+  { size: 'Small (< 25 lbs)',  range: '$25–$45/mo',  example: 'Chihuahua, Dachshund, Shih Tzu' },
+  { size: 'Medium (25–60 lbs)', range: '$38–$65/mo', example: 'Beagle, Cocker Spaniel, Border Collie' },
+  { size: 'Large (60–90 lbs)',  range: '$50–$85/mo', example: 'Labrador, Golden Retriever, German Shepherd' },
+  { size: 'Giant (90+ lbs)',    range: '$70–$120/mo', example: 'Great Dane, Mastiff, Saint Bernard' },
+];
+
+const whatToCover = [
+  { icon: '🏥', title: 'Accidents & illness', desc: 'Emergency vet visits, surgery, hospitalisation, and diagnostic tests.' },
+  { icon: '💊', title: 'Medications', desc: 'Prescription drugs prescribed by a licensed vet for covered conditions.' },
+  { icon: '🦷', title: 'Dental illness (not cleaning)', desc: 'Some plans cover dental disease treatment — not routine cleanings.' },
+  { icon: '🧬', title: 'Hereditary conditions', desc: 'Many plans cover breed-specific hereditary conditions, if not pre-existing.' },
+];
+
+const whatToLookFor = [
+  { label: 'Reimbursement model', detail: 'Actual cost vs. benefit schedule — actual cost is usually more transparent.' },
+  { label: 'Deductible type', detail: 'Annual deductible resets yearly; per-condition deductible applies separately to each diagnosis.' },
+  { label: 'Reimbursement rate', detail: '70%, 80%, or 90% of covered costs after the deductible is met.' },
+  { label: 'Coverage limit', detail: 'Annual or lifetime limits — unlimited annual coverage is preferable for high-risk breeds.' },
+  { label: 'Waiting periods', detail: 'Most plans have 14-day illness waiting periods and separate orthopaedic waiting periods (often 6 months).' },
+  { label: 'Exclusion list', detail: 'Read the full exclusion list — especially for your breed\'s known conditions.' },
+];
+---
+
+<BaseLayout
+  title="Do You Need Pet Insurance for Your Dog? | PupWiki"
+  description="An honest guide to pet insurance for dogs — what it covers, what it costs, who should get it, and what to look for before buying."
+  noIndex={false}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={breadcrumbLd} />
+    <script type="application/ld+json" set:html={faqLd} />
+  </Fragment>
+
+  <div class="pi-page">
+    <!-- Breadcrumb -->
+    <nav class="pi-breadcrumb font-sans text-sm" aria-label="Breadcrumb" style="color:var(--color-muted)">
+      <a href="/" style="color:var(--color-accent);text-decoration:none">Home</a>
+      <span aria-hidden="true"> / </span>
+      <span style="color:var(--color-heading)">Pet Insurance</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pi-hero">
+      <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:var(--color-accent)">Ownership planning</p>
+      <h1 class="font-sans font-bold mb-4" style="color:var(--color-heading)">Do You Need Pet Insurance for Your Dog?</h1>
+      <p class="font-sans text-lg" style="color:var(--color-muted)">
+        An honest look at what pet insurance does and doesn't cover, how much it costs, and whether it makes sense for your situation — without the sales pressure.
+      </p>
+    </section>
+
+    <!-- Affiliate disclosure -->
+    <aside class="font-sans text-xs px-4 py-3 rounded-xl mb-8" style="background:var(--color-bg-soft);border:1px solid var(--color-border-warm);color:var(--color-subtle)">
+      <strong style="color:var(--color-muted)">Disclosure:</strong> This page contains general information only. PupWiki may earn a commission from affiliate links on linked pages. This does not influence our editorial guidance.
+    </aside>
+
+    <div class="pi-layout">
+      <main class="pi-main">
+
+        <!-- Intro -->
+        <section class="pi-section">
+          <h2 class="font-sans font-bold mb-3" style="color:var(--color-heading)">What pet insurance typically covers</h2>
+          <p class="font-sans text-sm mb-5" style="color:var(--color-muted)">
+            Most comprehensive pet insurance plans cover unexpected illness and accidents. What's included varies significantly between providers.
+          </p>
+          <div class="pi-cover-grid">
+            {whatToCover.map(item => (
+              <div class="pi-cover-card rounded-xl p-4" style="background:var(--color-bg-soft);border:1px solid var(--color-border-warm)">
+                <span class="text-xl block mb-2">{item.icon}</span>
+                <p class="font-sans text-sm font-bold mb-1" style="color:var(--color-heading)">{item.title}</p>
+                <p class="font-sans text-xs" style="color:var(--color-muted)">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p class="font-sans text-sm mt-4" style="color:var(--color-muted)">
+            <strong style="color:var(--color-heading)">What it doesn't cover:</strong> Pre-existing conditions, routine wellness visits (unless add-on purchased), elective procedures, and preventive care like vaccinations and flea treatments. Always read the full policy terms.
+          </p>
+        </section>
+
+        <!-- Who should get it -->
+        <section class="pi-section">
+          <h2 class="font-sans font-bold mb-3" style="color:var(--color-heading)">Who pet insurance is commonly recommended for</h2>
+          <ul class="pi-list font-sans text-sm" style="color:var(--color-muted)">
+            <li><strong style="color:var(--color-heading)">Puppies</strong> — Premiums are lower for younger dogs and you avoid the pre-existing condition trap.</li>
+            <li><strong style="color:var(--color-heading)">Breeds with known health risks</strong> — French Bulldogs, Great Danes, and Golden Retrievers have higher average lifetime vet costs.</li>
+            <li><strong style="color:var(--color-heading)">Owners without an emergency fund</strong> — A $3,000–$8,000 surgery bill can be devastating without insurance or savings.</li>
+            <li><strong style="color:var(--color-heading)">Multi-dog households</strong> — Some insurers offer multi-pet discounts that meaningfully reduce per-dog costs.</li>
+          </ul>
+        </section>
+
+        <!-- Who can skip it -->
+        <section class="pi-section">
+          <h2 class="font-sans font-bold mb-3" style="color:var(--color-heading)">Who might reasonably skip it</h2>
+          <ul class="pi-list font-sans text-sm" style="color:var(--color-muted)">
+            <li><strong style="color:var(--color-heading)">Owners with a dedicated vet emergency fund</strong> — $5,000–$10,000 in a separate savings account achieves a similar result without monthly premiums.</li>
+            <li><strong style="color:var(--color-heading)">Healthy low-risk breeds on a tight budget</strong> — Breeds with minimal hereditary conditions and no known chronic issues may not see return on premiums paid.</li>
+            <li><strong style="color:var(--color-heading)">Senior dogs with existing diagnoses</strong> — New policies won't cover pre-existing conditions; weigh carefully what would and wouldn't be covered.</li>
+          </ul>
+          <p class="font-sans text-sm mt-3" style="color:var(--color-muted)">
+            This is a personal financial decision. Discuss breed-specific health risks with your vet before deciding.
+          </p>
+        </section>
+
+        <!-- OfferSlot mid-content (disabled — renders nothing until offers enabled) -->
+        <OfferSlot placement="mid-content" pageType="health" topicTags={['insurance']} />
+
+        <!-- What to look for -->
+        <section class="pi-section">
+          <h2 class="font-sans font-bold mb-3" style="color:var(--color-heading)">What to look for when comparing plans</h2>
+          <div class="pi-lookfor-list">
+            {whatToLookFor.map(item => (
+              <div class="pi-lookfor-row" style="border-bottom:1px solid var(--color-border-warm);padding:0.75rem 0">
+                <p class="font-sans text-sm font-bold mb-0.5" style="color:var(--color-heading)">{item.label}</p>
+                <p class="font-sans text-sm mb-0" style="color:var(--color-muted)">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+          <p class="font-sans text-sm mt-4" style="color:var(--color-muted)">
+            Learn more about our research approach on the <a href="/how-we-test" style="color:var(--color-accent)">how we test</a> page.
+          </p>
+        </section>
+
+        <!-- Cost table -->
+        <section class="pi-section">
+          <h2 class="font-sans font-bold mb-3" style="color:var(--color-heading)">Average monthly cost by dog size</h2>
+          <p class="font-sans text-sm mb-4" style="color:var(--color-muted)">
+            Estimates based on PupWiki actuarial research. Actual premiums vary by age, breed health history, location, deductible, and reimbursement level.
+          </p>
+          <div class="pi-table-wrap rounded-xl overflow-hidden" style="border:1px solid var(--color-border-warm)">
+            <table class="pi-table font-sans text-sm w-full" style="border-collapse:collapse">
+              <thead style="background:var(--color-surface-warm)">
+                <tr>
+                  <th class="text-left px-4 py-3 font-bold" style="color:var(--color-heading)">Dog size</th>
+                  <th class="text-left px-4 py-3 font-bold" style="color:var(--color-heading)">Monthly range</th>
+                  <th class="text-left px-4 py-3 font-bold hidden sm:table-cell" style="color:var(--color-heading)">Example breeds</th>
+                </tr>
+              </thead>
+              <tbody>
+                {costTable.map((row, i) => (
+                  <tr style={`background:${i % 2 === 0 ? 'white' : 'var(--color-bg-soft)'}`}>
+                    <td class="px-4 py-3" style="color:var(--color-heading)">{row.size}</td>
+                    <td class="px-4 py-3 font-semibold" style="color:var(--color-accent)">{row.range}</td>
+                    <td class="px-4 py-3 hidden sm:table-cell" style="color:var(--color-muted)">{row.example}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="font-sans text-xs mt-2" style="color:var(--color-subtle)">
+            Use our <a href="/cost-calculator" style="color:var(--color-accent)">breed cost calculator</a> for a state-adjusted, age-adjusted estimate for your specific breed.
+          </p>
+        </section>
+
+        <!-- Breed considerations strip -->
+        {enrichBreeds.length > 0 && (
+          <section class="pi-section">
+            <h2 class="font-sans font-bold mb-2" style="color:var(--color-heading)">Breeds where insurance is commonly discussed</h2>
+            <p class="font-sans text-sm mb-4" style="color:var(--color-muted)">
+              Based on known health profiles and typical vet cost patterns — not a guarantee of need.
+            </p>
+            <div class="pi-breed-strip">
+              {enrichBreeds.map(e => (
+                <a
+                  href={`/breeds/${e.breedSlug}`}
+                  class="pi-breed-card rounded-xl p-4"
+                  style="background:var(--color-bg-soft);border:1px solid var(--color-border-warm);text-decoration:none;display:block"
+                >
+                  <p class="font-sans text-sm font-bold mb-1" style="color:var(--color-heading)">{e.breedName}</p>
+                  <p class="font-sans text-xs mb-1" style="color:var(--color-muted)">{e.costDrivers.insurance}</p>
+                  <span
+                    class="font-sans text-xs font-semibold px-2 py-0.5 rounded-full capitalize"
+                    style={`background:${e.monetizationHooks.insurance === 'high' ? 'var(--color-warning-light)' : 'var(--color-bg-soft)'};color:${e.monetizationHooks.insurance === 'high' ? 'var(--color-heading)' : 'var(--color-muted)'};border:1px solid var(--color-border-warm)`}
+                  >
+                    {e.monetizationHooks.insurance === 'high' ? 'Worth considering' : 'Moderate relevance'}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- FAQ -->
+        <section class="pi-section">
+          <h2 class="font-sans font-bold mb-5" style="color:var(--color-heading)">Frequently asked questions</h2>
+          <div class="pi-faq">
+            {faqItems.map(item => (
+              <details class="pi-faq-item" style="border-bottom:1px solid var(--color-border-warm);padding-bottom:1rem;margin-bottom:1rem">
+                <summary class="font-sans text-sm font-bold cursor-pointer" style="color:var(--color-heading)">{item.q}</summary>
+                <p class="font-sans text-sm mt-2 mb-0" style="color:var(--color-muted)">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+      </main>
+
+      <aside class="pi-sidebar">
+        <div class="pi-sidebar-card rounded-2xl p-5 mb-6" style="background:var(--color-surface-warm);border:1px solid var(--color-border-warm)">
+          <p class="font-sans text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--color-accent)">Estimate your costs</p>
+          <p class="font-sans text-sm font-bold mb-2" style="color:var(--color-heading)">Breed cost calculator</p>
+          <p class="font-sans text-sm mb-4" style="color:var(--color-muted)">Get a state-adjusted, age-adjusted insurance estimate alongside food, grooming, vet care, and lifetime totals.</p>
+          <a href="/cost-calculator" class="font-sans text-sm font-semibold block text-center px-4 py-2 rounded-full" style="background:var(--color-accent);color:white;text-decoration:none">
+            Open cost calculator →
+          </a>
+        </div>
+
+        <div class="pi-sidebar-card rounded-2xl p-5" style="background:var(--color-bg-soft);border:1px solid var(--color-border-warm)">
+          <p class="font-sans text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--color-accent)">Research tools</p>
+          <ul class="font-sans text-sm" style="color:var(--color-muted);list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem">
+            <li><a href="/breeds" style="color:var(--color-accent)">Browse breeds by health profile</a></li>
+            <li><a href="/how-we-test" style="color:var(--color-accent)">How we research</a></li>
+            <li><a href="/guides/first-dog" style="color:var(--color-accent)">First dog planning guide</a></li>
+            <li><a href="/contact" style="color:var(--color-accent)">Ask us a question</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.pi-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+.pi-breadcrumb { margin-bottom: 1.5rem; }
+.pi-hero {
+  margin-bottom: 2rem;
+}
+.pi-hero h1 { font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.2; }
+.pi-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .pi-layout { grid-template-columns: 1fr 300px; }
+}
+.pi-section { margin-bottom: 2.5rem; }
+.pi-section h2 { font-size: 1.25rem; }
+.pi-cover-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+@media (min-width: 640px) {
+  .pi-cover-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.pi-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.pi-list li { padding-left: 1.25rem; position: relative; }
+.pi-list li::before { content: '→'; position: absolute; left: 0; color: var(--color-accent); }
+.pi-table { border-collapse: collapse; }
+.pi-table th, .pi-table td { border-bottom: 1px solid var(--color-border-warm); }
+.pi-breed-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+.pi-faq-item { list-style: none; }
+.pi-sidebar { align-self: start; }
+@media (min-width: 1024px) {
+  .pi-sidebar { position: sticky; top: 5rem; }
+}
+</style>

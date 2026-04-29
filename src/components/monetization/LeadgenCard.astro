@@ -1,0 +1,28 @@
+---
+interface Props {
+  headline: string;
+  body: string;
+  cta: string;
+  href: string;
+  rel?: string;
+  disclosure?: string;
+}
+
+const { headline, body, cta, href, rel = 'noopener', disclosure } = Astro.props;
+---
+
+<div class="leadgen-card rounded-2xl p-5" style="background:var(--color-surface-warm);border:1px solid var(--color-border-warm)">
+  <p class="font-sans text-base font-bold mb-2" style="color:var(--color-heading)">{headline}</p>
+  <p class="font-sans text-sm mb-4" style="color:var(--color-muted)">{body}</p>
+  <a
+    href={href}
+    rel={rel}
+    class="inline-block font-sans text-sm font-semibold px-4 py-2 rounded-full transition-opacity hover:opacity-80"
+    style="background:var(--color-accent);color:white;text-decoration:none"
+  >
+    {cta}
+  </a>
+  {disclosure && (
+    <p class="font-sans text-xs mt-3" style="color:var(--color-subtle)">{disclosure}</p>
+  )}
+</div>

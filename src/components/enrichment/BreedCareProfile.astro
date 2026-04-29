@@ -1,0 +1,45 @@
+---
+interface CareProfile {
+  summary: string;
+  ownerFit: string;
+  exerciseNeeds: string;
+  trainingNotes: string;
+  groomingNotes: string;
+  feedingContext: string;
+}
+
+interface Props {
+  breedName: string;
+  careProfile: CareProfile;
+}
+
+const { breedName, careProfile } = Astro.props;
+
+const rows = [
+  { icon: '🏃', label: 'Exercise', value: careProfile.exerciseNeeds },
+  { icon: '🎓', label: 'Training', value: careProfile.trainingNotes },
+  { icon: '✂️', label: 'Grooming', value: careProfile.groomingNotes },
+  { icon: '🍽️', label: 'Feeding', value: careProfile.feedingContext },
+];
+---
+
+<div class="breed-care-profile rounded-2xl overflow-hidden" style="border:1px solid var(--color-border-warm);background:var(--color-bg-soft)">
+  <div class="px-5 py-4" style="background:var(--color-surface-warm);border-bottom:1px solid var(--color-border-warm)">
+    <p class="font-sans text-xs font-bold uppercase tracking-widest mb-0.5" style="color:var(--color-accent)">Care Profile</p>
+    <h3 class="font-sans text-base font-bold m-0" style="color:var(--color-heading)">{breedName} at a Glance</h3>
+  </div>
+  <div class="px-5 py-4">
+    <p class="font-sans text-sm mb-4" style="color:var(--color-muted)">{careProfile.ownerFit}</p>
+    <div class="flex flex-col gap-3">
+      {rows.map(row => (
+        <div class="flex gap-3 items-start">
+          <span class="text-base leading-none mt-0.5 shrink-0">{row.icon}</span>
+          <div>
+            <span class="font-sans text-xs font-bold uppercase tracking-wider" style="color:var(--color-accent)">{row.label}</span>
+            <p class="font-sans text-sm mt-0.5 mb-0" style="color:var(--color-heading)">{row.value}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
