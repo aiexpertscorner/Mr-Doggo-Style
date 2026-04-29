@@ -1,0 +1,50 @@
+{
+  "breedSlug": "german-shepherd-dog",
+  "breedName": "German Shepherd Dog",
+  "contentVersion": "enrichment-v1",
+  "updatedAt": "2026-04-29",
+  "careProfile": {
+    "summary": "The German Shepherd Dog is a large-sized breed with regular energy and heavy shedding.",
+    "ownerFit": "highly trainable — ideal for first-time owners; expect regular grooming and vacuuming",
+    "exerciseNeeds": "Benefits from 45–60 minutes of daily exercise — walks, play, or structured training.",
+    "trainingNotes": "Highly trainable — responds well to positive reinforcement and consistency.",
+    "groomingNotes": "Heavy shedder — brush 3–4× per week; deshedding tools recommended seasonally.",
+    "feedingContext": "Feed 2 meals daily; adjust portions by activity level. Maintain healthy body condition — avoid overfeeding."
+  },
+  "costDrivers": {
+    "food": "$60–$90/mo (large breed formula)",
+    "insurance": "~$70/mo base (varies by age, state, and plan)",
+    "grooming": "$15–$30/mo in grooming tools and occasional baths",
+    "training": "Group puppy classes from $100–$200; optional private sessions $50–$150/hr",
+    "vetCare": "Annual wellness visits $200–$400; routine preventive care"
+  },
+  "healthContext": {
+    "claimSensitivity": "medium",
+    "disclaimerRequired": false,
+    "commonConcerns": [],
+    "vetConversationPrompts": []
+  },
+  "monetizationHooks": {
+    "insurance": "medium",
+    "training": "medium",
+    "dna": "medium",
+    "grooming": "medium",
+    "food": "medium",
+    "onlineVet": "high"
+  },
+  "recommendedBlocks": [
+    "care-profile",
+    "cost-drivers",
+    "insurance-cta"
+  ],
+  "internalLinks": [
+    {
+      "label": "German Shepherd Dog cost calculator",
+      "href": "/cost-calculator/german-shepherd-dog"
+    },
+    {
+      "label": "German Shepherd Dog names",
+      "href": "/dog-names/german-shepherd-dog"
+    }
+  ]
+}

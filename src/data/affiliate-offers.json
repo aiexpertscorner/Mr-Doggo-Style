@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "description": "Intent-aware offer registry. All offers disabled by default — set enabled:true to activate.",
+    "last_updated": "2026-04-29"
+  },
+  "offers": [
+    {
+      "id": "pet-insurance-intro",
+      "enabled": false,
+      "intent": "insurance",
+      "pageTypes": ["breed", "cost-calculator", "health"],
+      "placement": "mid-content",
+      "priority": 10,
+      "topicTags": ["insurance", "cost", "health"],
+      "claimSensitivityBlock": "high",
+      "card": {
+        "headline": "Is pet insurance worth it for your dog?",
+        "body": "Vet bills can reach $1,000–$5,000 unexpectedly. Pet insurance is worth considering for breeds with known health risks.",
+        "cta": "Learn what to look for →",
+        "href": "/pet-insurance",
+        "rel": "noopener",
+        "disclosure": "This is editorial guidance, not a paid placement."
+      }
+    },
+    {
+      "id": "dna-test-discovery",
+      "enabled": false,
+      "intent": "dna",
+      "pageTypes": ["breed", "dog-names"],
+      "placement": "pre-footer",
+      "priority": 8,
+      "topicTags": ["dna", "genetics", "breed-discovery"],
+      "claimSensitivityBlock": null,
+      "card": {
+        "headline": "Curious about your dog's breed mix?",
+        "body": "DNA tests can reveal ancestry, health predispositions, and breed-specific traits from a simple cheek swab.",
+        "cta": "See how DNA testing works →",
+        "href": "/guides/dog-dna-tests",
+        "rel": "noopener",
+        "disclosure": "Affiliate links may appear on linked pages."
+      }
+    },
+    {
+      "id": "online-vet-intro",
+      "enabled": false,
+      "intent": "vet-care",
+      "pageTypes": ["health", "breed"],
+      "placement": "mid-content",
+      "priority": 7,
+      "topicTags": ["vet-care", "online-vet", "health"],
+      "claimSensitivityBlock": null,
+      "card": {
+        "headline": "Get vet advice without the wait",
+        "body": "Online vet consultations let you ask licensed vets questions about symptoms, medications, and preventive care — often same day.",
+        "cta": "Explore online vet options →",
+        "href": "/guides/online-vet-services",
+        "rel": "noopener",
+        "disclosure": "Affiliate links may appear on linked pages."
+      }
+    },
+    {
+      "id": "fresh-food-intro",
+      "enabled": false,
+      "intent": "food",
+      "pageTypes": ["breed", "cost-calculator", "category"],
+      "placement": "pre-footer",
+      "priority": 6,
+      "topicTags": ["food", "nutrition", "fresh-food"],
+      "claimSensitivityBlock": null,
+      "card": {
+        "headline": "Fresh dog food — is it right for your breed?",
+        "body": "Fresh and gently cooked dog food has grown in popularity. It may suit dogs with sensitive digestion or picky eating habits.",
+        "cta": "Compare fresh food options →",
+        "href": "/categories/dog-food",
+        "rel": "noopener",
+        "disclosure": "Affiliate links may appear on linked pages."
+      }
+    }
+  ]
+}

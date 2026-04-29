@@ -207,6 +207,9 @@ function formatDate(value: Date | string) {
 
 function shouldShowInBlog(post: any) {
   if (post.data.indexInBlog === false) return false;
+  if (post.data.generated === true) return false;
+  const tier = post.data.contentTier;
+  if (tier && tier !== 'editorial' && tier !== 'money') return false;
   if (post.data.indexInBlog === true) return true;
   return !isLikelyGeneratedBreedPost(post);
 }

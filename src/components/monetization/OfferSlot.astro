@@ -1,0 +1,30 @@
+---
+import { getActiveOffers } from '../../lib/affiliate/getActiveOffers';
+import LeadgenCard from './LeadgenCard.astro';
+
+interface Props {
+  pageType: string;
+  placement: string;
+  topicTags: string[];
+  monetizationIntent?: string;
+  claimSensitivity?: string;
+}
+
+const { pageType, placement, topicTags, monetizationIntent, claimSensitivity } = Astro.props;
+
+const offers = getActiveOffers({ pageType, placement, topicTags, monetizationIntent, claimSensitivity });
+const offer = offers[0] ?? null;
+---
+
+{offer && (
+  <div class="offer-slot" data-offer-id={offer.id}>
+    <LeadgenCard
+      headline={offer.card.headline}
+      body={offer.card.body}
+      cta={offer.card.cta}
+      href={offer.card.href}
+      rel={`sponsored ${offer.card.rel}`}
+      disclosure={offer.card.disclosure}
+    />
+  </div>
+)}
