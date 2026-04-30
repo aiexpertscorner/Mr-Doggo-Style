@@ -4,7 +4,7 @@ description: "We matched the best toy to the Siberian Husky's specific energetic
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["siberian-husky", "toys", "medium-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "siberian-husky"
 ---
 

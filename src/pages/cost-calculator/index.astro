@@ -1,506 +1,1683 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import masterBreeds from '../../data/master-breeds.json';
+import actuarialRates from '../../data/actuarial-breed-rates.json';
+import actuarialAgeFactors from '../../data/actuarial-age-factors.json';
+import statesIndex from '../../data/us-states-insurance-index.json';
+import StateAgeSelector from '../../components/StateAgeSelector.astro';
 
-const SITE = 'https://mrdoggostyle.com';
+const SITE = 'https://pupwiki.com';
 
-const SIZE_COSTS: Record<string, { food_annual: number; vet_annual: number; grooming_annual: number; supplies_one_time: number; spay_neuter: number }> = {
-  small:  { food_annual: 600,  vet_annual: 600,  grooming_annual: 400, supplies_one_time: 400, spay_neuter: 300 },
-  medium: { food_annual: 900,  vet_annual: 800,  grooming_annual: 500, supplies_one_time: 500, spay_neuter: 400 },
-  large:  { food_annual: 1400, vet_annual: 1000, grooming_annual: 700, supplies_one_time: 700, spay_neuter: 500 },
-  giant:  { food_annual: 2000, vet_annual: 1400, grooming_annual: 900, supplies_one_time: 900, spay_neuter: 700 },
+const SIZE_COSTS: Record<
+  string,
+  {
+    food_annual: number;
+    vet_annual: number;
+    grooming_annual: number;
+    supplies_one_time: number;
+    spay_neuter: number;
+  }
+> = {
+  small: { food_annual: 600, vet_annual: 600, grooming_annual: 400, supplies_one_time: 400, spay_neuter: 300 },
+  medium: { food_annual: 900, vet_annual: 800, grooming_annual: 500, supplies_one_time: 500, spay_neuter: 400 },
+  large: { food_annual: 1400, vet_annual: 1000, grooming_annual: 700, supplies_one_time: 700, spay_neuter: 500 },
+  giant: { food_annual: 2000, vet_annual: 1400, grooming_annual: 900, supplies_one_time: 900, spay_neuter: 700 },
 };
-const COAT_MULT: Record<string, number> = { double:1.4, long:1.6, silky:1.5, wiry:1.5, curly:1.7, corded:2.0, short:0.8, wavy:1.2, medium:1.0 };
-const ENERGY_MULT: Record<string, number> = { active:1.3, regular:1.0, calm:0.9 };
 
-const breedsWithCosts = (masterBreeds as any[]).map(b => {
-  const base    = SIZE_COSTS[b.size_category] || SIZE_COSTS.medium;
-  const gmult   = COAT_MULT[b.coat_type]   || 1.0;
-  const hmult   = ENERGY_MULT[b.energy_level] || 1.0;
-  const rank    = b.ranking_data || {};
-  const life    = b.life_expectancy || {};
+const COAT_MULT: Record<string, number> = {
+  double: 1.4,
+  long: 1.6,
+  silky: 1.5,
+  wiry: 1.5,
+  curly: 1.7,
+  corded: 2.0,
+  short: 0.8,
+  wavy: 1.2,
+  medium: 1.0,
+};
+
+const ENERGY_MULT: Record<string, number> = {
+  active: 1.3,
+  regular: 1.0,
+  calm: 0.9,
+};
+
+const INS_SIZE_FALLBACK: Record<string, number> = {
+  small: 35,
+  medium: 50,
+  large: 70,
+  giant: 95,
+};
+
+const INS_DEFAULT_STATE = 'CA';
+const INS_DEFAULT_AGE = 3;
+
+const defaultStateMult =
+  (statesIndex as any).states.find((s: any) => s.code === INS_DEFAULT_STATE)?.cost_multiplier ?? 1.34;
+
+const defaultAgeFact =
+  (actuarialAgeFactors as any).age_factors.find(
+    (f: any) => INS_DEFAULT_AGE >= f.min_age_years && INS_DEFAULT_AGE < f.max_age_years
+  )?.premium_factor ?? 1.09;
+
+const breedsWithCosts = (masterBreeds as any[]).map((b) => {
+  const base = SIZE_COSTS[b.size_category] || SIZE_COSTS.medium;
+  const groomingMult = COAT_MULT[b.coat_type] || 1.0;
+  const energyMult = ENERGY_MULT[b.energy_level] || 1.0;
+  const rank = b.ranking_data || {};
+  const life = b.life_expectancy || {};
   const lifespan = rank.longevity_years || ((life.min || 10) + (life.max || 14)) / 2;
 
-  const annual_food  = rank.annual_food_cost || base.food_annual;
-  const annual_vet   = Math.round(base.vet_annual * hmult);
-  const annual_groom = Math.round(base.grooming_annual * gmult);
-  const annual_toys  = b.energy_level === 'active' ? 400 : b.energy_level === 'calm' ? 150 : 250;
+  const annual_food = rank.annual_food_cost || base.food_annual;
+  const annual_vet = Math.round(base.vet_annual * energyMult);
+  const annual_groom = Math.round(base.grooming_annual * groomingMult);
+  const annual_toys = b.energy_level === 'active' ? 400 : b.energy_level === 'calm' ? 150 : 250;
   const annual_other = 200;
   const annual_total = annual_food + annual_vet + annual_groom + annual_toys + annual_other;
 
-  const puppy_low  = b.size_category === 'small' ? 500 : (b.size_category === 'large' || b.size_category === 'giant') ? 1200 : 800;
-  const puppy_high = puppy_low * 2.5;
-  const one_time   = base.supplies_one_time + base.spay_neuter + 200;
-  const lifetime_est = rank.lifetime_cost_usd || Math.round(one_time + (annual_total * lifespan));
+  const puppy_low =
+    b.size_category === 'small'
+      ? 500
+      : b.size_category === 'large' || b.size_category === 'giant'
+        ? 1200
+        : 800;
 
-  return { ...b, annual_total, lifetime_est, lifespan, puppy_low, puppy_high };
+  const puppy_high = puppy_low * 2.5;
+  const one_time = base.supplies_one_time + base.spay_neuter + 200;
+  const lifetime_est = rank.lifetime_cost_usd || Math.round(one_time + annual_total * lifespan);
+
+  const breedRate = (actuarialRates as any).breed_rates.find((r: any) => r.breed_slug === b.slug);
+  const insBase = breedRate?.base_premium ?? INS_SIZE_FALLBACK[b.size_category] ?? 50;
+  const insMonthly = Math.round(insBase * defaultAgeFact * defaultStateMult * 100) / 100;
+
+  return {
+    ...b,
+    annual_total,
+    lifetime_est,
+    lifespan,
+    puppy_low,
+    puppy_high,
+    insBase,
+    insMonthly,
+  };
 });
 
-// Serialise compact version for client-side compare feature
-const compareData = JSON.stringify(breedsWithCosts.map(b => ({
-  slug:        b.slug,
-  name:        b.name,
-  size:        b.size_category,
-  energy:      b.energy_level,
-  annual:      b.annual_total,
-  lifetime:    b.lifetime_est,
-  lifespan:    b.lifespan,
-  puppy_low:   b.puppy_low,
-  puppy_high:  b.puppy_high,
-  image:       b.image_url || null,
-})));
+const compareData = JSON.stringify(
+  breedsWithCosts.map((b) => ({
+    slug: b.slug,
+    name: b.name,
+    size: b.size_category,
+    energy: b.energy_level,
+    annual: b.annual_total,
+    lifetime: b.lifetime_est,
+    lifespan: b.lifespan,
+    puppy_low: b.puppy_low,
+    puppy_high: b.puppy_high,
+    image: b.image_url || null,
+    insBase: b.insBase,
+    insMonthly: b.insMonthly,
+  }))
+);
 
-const SIZE_EMOJI: Record<string,string> = { small:'🐕', medium:'🐕‍🦺', large:'🐕‍🦺', giant:'🦮' };
+const insDefaults = JSON.stringify({
+  stateMult: defaultStateMult,
+  ageFact: defaultAgeFact,
+});
+
+const SIZE_EMOJI: Record<string, string> = {
+  small: '🐕',
+  medium: '🐕‍🦺',
+  large: '🐕‍🦺',
+  giant: '🦮',
+};
 
 const jsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home",             "item": `${SITE}/` },
-    { "@type": "ListItem", "position": 2, "name": "Cost Calculator",  "item": `${SITE}/cost-calculator` },
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: `${SITE}/`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Cost Calculator',
+      item: `${SITE}/cost-calculator`,
+    },
+  ],
 });
 ---
 
 <BaseLayout
   title="Dog Cost Calculator 2026 — Compare Ownership Costs for 277 Breeds"
-  description="Compare annual and lifetime ownership costs for 277 dog breeds. Filter by size and energy, search by name, and side-by-side compare up to 3 breeds. Includes food, vet, grooming and more."
-  canonicalURL={`${SITE}/cost-calculator`}
+  description="Compare annual and lifetime ownership costs for 277 dog breeds. Filter by size and energy, search by name, and side-by-side compare up to 3 breeds. Includes food, vet, grooming, insurance estimates, and more."
+  canonicalUrl={`${SITE}/cost-calculator`}
+  bodyClass="cost-calculator-page bg-white text-slate-900"
 >
-<script type="application/ld+json" set:html={jsonLd} />
+  <script type="application/ld+json" set:html={jsonLd} />
 
-<!-- Hero -->
-<div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
-  <div class="max-w-7xl mx-auto px-4 py-10 sm:py-14">
-    <nav class="font-sans text-sm mb-4 flex flex-wrap items-center gap-1" style="color:#a0621c">
-      <a href="/" class="hover:underline" style="color:#a0621c">Home</a>
-      <span style="color:#d4a574"> › </span>
-      <span style="color:#5c340a">Cost Calculator</span>
-    </nav>
-    <h1 class="font-display text-4xl sm:text-5xl font-bold mb-3 leading-tight" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-      Dog Cost Calculator
-    </h1>
-    <p class="font-sans text-lg mb-5 max-w-2xl" style="color:#64748b">
-      Compare annual and lifetime ownership costs for all {breedsWithCosts.length} breeds. Select up to 3 breeds to compare side-by-side.
-    </p>
-    <div class="flex flex-wrap gap-2">
-      <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#a0621c;color:white">{breedsWithCosts.length} breeds</span>
-      <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#fef3c7;color:#92400e">Food · Vet · Grooming · Toys</span>
-      <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f0fdf4;color:#15803d">2026 pricing</span>
-    </div>
-  </div>
-</div>
+  <main class="cost-page">
+    <section class="cost-hero" aria-labelledby="cost-calculator-title">
+      <div class="cost-container">
+        <nav class="cost-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span>Cost Calculator</span>
+        </nav>
 
-<div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="cost-hero__grid">
+          <div class="cost-hero__content">
+            <p class="cost-eyebrow">Dog ownership planning</p>
 
-  <!-- Filters -->
-  <div class="rounded-2xl p-5 mb-6" style="background:white;border:1px solid #e8ccaa">
-    <div class="space-y-4">
+            <h1 id="cost-calculator-title" class="cost-hero__title">
+              Dog Cost Calculator
+              <span>Compare real ownership costs.</span>
+            </h1>
 
-      <div>
-        <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Size</p>
-        <div class="flex flex-wrap gap-2">
-          <button class="filter-btn active" data-filter="size" data-value="all">All sizes</button>
-          <button class="filter-btn" data-filter="size" data-value="small">🐕 Small</button>
-          <button class="filter-btn" data-filter="size" data-value="medium">🐕‍🦺 Medium</button>
-          <button class="filter-btn" data-filter="size" data-value="large">🐕‍🦺 Large</button>
-          <button class="filter-btn" data-filter="size" data-value="giant">🦮 Giant</button>
-        </div>
-      </div>
+            <p class="cost-hero__subtitle">
+              Compare annual, monthly, lifetime, puppy-price, and insurance estimates for all
+              {breedsWithCosts.length} dog breeds. Filter by lifestyle fit and compare up to 3 breeds side-by-side.
+            </p>
 
-      <div>
-        <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Energy level</p>
-        <div class="flex flex-wrap gap-2">
-          <button class="filter-btn active" data-filter="energy" data-value="all">All energy</button>
-          <button class="filter-btn" data-filter="energy" data-value="active">⚡ Active</button>
-          <button class="filter-btn" data-filter="energy" data-value="regular">🚶 Regular</button>
-          <button class="filter-btn" data-filter="energy" data-value="calm">😴 Calm</button>
-        </div>
-      </div>
+            <div class="cost-hero__actions" aria-label="Cost calculator shortcuts">
+              <a href="#cost-tools" class="cost-button cost-button--primary">
+                Start comparing
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="#cost-grid" class="cost-button cost-button--secondary">
+                Browse breeds
+              </a>
+            </div>
 
-      <div>
-        <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Sort by</p>
-        <div class="flex flex-wrap gap-2">
-          <button class="sort-btn active" data-sort="popular">Most popular</button>
-          <button class="sort-btn" data-sort="annual-asc">Lowest annual cost</button>
-          <button class="sort-btn" data-sort="annual-desc">Highest annual cost</button>
-          <button class="sort-btn" data-sort="lifetime-asc">Lowest lifetime cost</button>
-        </div>
-      </div>
-
-      <div class="flex flex-wrap items-center gap-3">
-        <input
-          type="search"
-          id="breed-search"
-          placeholder="Search breeds…"
-          class="font-sans text-sm px-4 py-2 rounded-xl border focus:outline-none"
-          style="border-color:#e8ccaa;max-width:300px;width:100%"
-          aria-label="Search breeds"
-        />
-        <span id="breed-count" class="font-sans text-sm" style="color:#64748b">{breedsWithCosts.length} breeds</span>
-        <button id="clear-filters" class="font-sans text-sm font-medium hover:underline" style="color:#a0621c;display:none">Clear filters</button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Compare hint -->
-  <div id="compare-hint" class="rounded-xl px-4 py-3 mb-5 flex items-center gap-3 font-sans text-sm" style="background:#fef3c7;border:1px solid #fde68a;color:#92400e">
-    <span style="font-size:1.1rem">⚖️</span>
-    <span>Tick up to <strong>3 breeds</strong> to compare costs side-by-side. The comparison tray will appear at the bottom.</span>
-  </div>
-
-  <!-- Grid -->
-  <div id="cost-grid" class="grid gap-4" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
-    {breedsWithCosts.map((b, i) => (
-      <div
-        class="cost-card rounded-2xl overflow-hidden flex flex-col"
-        style="border:1px solid #e8ccaa;background:white;position:relative"
-        data-size={b.size_category}
-        data-energy={b.energy_level}
-        data-name={b.name.toLowerCase()}
-        data-annual={b.annual_total}
-        data-lifetime={b.lifetime_est}
-        data-slug={b.slug}
-        data-popularity={i}
-      >
-        <!-- Compare checkbox -->
-        <label class="compare-label" style="position:absolute;top:8px;right:8px;z-index:10;cursor:pointer;display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.92);border-radius:8px;padding:3px 7px;border:1px solid #e8ccaa;font-family:sans-serif;font-size:11px;font-weight:600;color:#5c340a;user-select:none">
-          <input type="checkbox" class="compare-cb" data-slug={b.slug} style="width:13px;height:13px;accent-color:#a0621c;cursor:pointer" />
-          Compare
-        </label>
-
-        <!-- Image -->
-        <div style="height:130px;background:#fdf8f0;overflow:hidden;position:relative;flex-shrink:0">
-          {b.image_url ? (
-            <img
-              src={b.image_url}
-              alt={b.name}
-              width="220"
-              height="130"
-              loading="lazy"
-              decoding="async"
-              class="cost-card-img"
-              style="width:100%;height:100%;object-fit:cover;transition:transform 0.3s ease"
-              onerror={`this.style.display='none';this.nextElementSibling.style.display='flex'`}
-            />
-          ) : null}
-          <div style={`${b.image_url ? 'display:none' : 'display:flex'};align-items:center;justify-content:center;width:100%;height:100%;font-size:2.8rem`}>
-            {SIZE_EMOJI[b.size_category] || '🐕'}
+            <ul class="cost-hero__badges" aria-label="Calculator highlights">
+              <li>{breedsWithCosts.length} breeds</li>
+              <li>Food · Vet · Grooming · Toys</li>
+              <li>Insurance estimate by state</li>
+              <li>2026 planning data</li>
+            </ul>
           </div>
-        </div>
 
-        <!-- Body -->
-        <div class="p-3 flex flex-col gap-2 flex-1">
-          <div>
-            <h2 class="font-sans font-bold text-sm leading-tight mb-1" style="color:#1e293b">{b.name}</h2>
-            <div class="flex gap-1 flex-wrap">
-              <span class="font-sans text-xs px-2 py-0.5 rounded-full capitalize" style="background:#f5e8d0;color:#7d4a10">{b.size_category}</span>
-              <span class="font-sans text-xs px-2 py-0.5 rounded-full capitalize" style="background:#f5e8d0;color:#7d4a10">{b.energy_level}</span>
+          <aside class="cost-hero__panel" aria-label="What this calculator includes">
+            <div class="cost-hero__panel-header">
+              <span class="cost-hero__panel-icon" aria-hidden="true">💰</span>
+              <div>
+                <p>Planning snapshot</p>
+                <h2>Estimate before you commit</h2>
+              </div>
+            </div>
+
+            <div class="cost-hero__metric-grid">
+              <article>
+                <strong>{breedsWithCosts.length}</strong>
+                <span>breed profiles</span>
+              </article>
+              <article>
+                <strong>3</strong>
+                <span>breed compare</span>
+              </article>
+              <article>
+                <strong>50+</strong>
+                <span>state factors</span>
+              </article>
+            </div>
+
+            <p class="cost-hero__panel-note">
+              Estimates are directional planning ranges, not a quote. Actual costs vary by location, dog age,
+              provider, health, breeder, and lifestyle.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="cost-tools" class="cost-tools" aria-label="Dog cost filters and comparison tools">
+      <div class="cost-container">
+        <div class="cost-filter-card">
+          <div class="cost-filter-card__header">
+            <div>
+              <p class="cost-eyebrow">Refine estimates</p>
+              <h2>Find breeds that fit your budget</h2>
+            </div>
+
+            <div class="cost-filter-card__count">
+              <span id="breed-count">{breedsWithCosts.length} breeds</span>
             </div>
           </div>
 
-          <!-- Cost numbers -->
-          <div class="rounded-xl p-2.5 mt-1" style="background:#fdf8f0;border:1px solid #f5e8d0">
-            <div class="flex justify-between items-baseline mb-1">
-              <span class="font-sans text-xs" style="color:#64748b">Annual cost</span>
-              <span class="font-sans font-black text-base" style="color:#a0621c">${b.annual_total.toLocaleString()}</span>
+          <div class="cost-filter-grid">
+            <fieldset class="cost-fieldset">
+              <legend>Size</legend>
+              <div class="cost-pill-group">
+                <button class="cost-filter-btn is-active" type="button" data-filter="size" data-value="all">
+                  All sizes
+                </button>
+                <button class="cost-filter-btn" type="button" data-filter="size" data-value="small">
+                  🐕 Small
+                </button>
+                <button class="cost-filter-btn" type="button" data-filter="size" data-value="medium">
+                  🐕‍🦺 Medium
+                </button>
+                <button class="cost-filter-btn" type="button" data-filter="size" data-value="large">
+                  🐕‍🦺 Large
+                </button>
+                <button class="cost-filter-btn" type="button" data-filter="size" data-value="giant">
+                  🦮 Giant
+                </button>
+              </div>
+            </fieldset>
+
+            <fieldset class="cost-fieldset">
+              <legend>Energy level</legend>
+              <div class="cost-pill-group">
+                <button class="cost-filter-btn is-active" type="button" data-filter="energy" data-value="all">
+                  All energy
+                </button>
+                <button class="cost-filter-btn" type="button" data-filter="energy" data-value="active">
+                  ⚡ Active
+                </button>
+                <button class="cost-filter-btn" type="button" data-filter="energy" data-value="regular">
+                  🚶 Regular
+                </button>
+                <button class="cost-filter-btn" type="button" data-filter="energy" data-value="calm">
+                  😴 Calm
+                </button>
+              </div>
+            </fieldset>
+
+            <fieldset class="cost-fieldset cost-fieldset--wide">
+              <legend>Sort by</legend>
+              <div class="cost-pill-group">
+                <button class="cost-sort-btn is-active" type="button" data-sort="popular">
+                  Most popular
+                </button>
+                <button class="cost-sort-btn" type="button" data-sort="annual-asc">
+                  Lowest annual cost
+                </button>
+                <button class="cost-sort-btn" type="button" data-sort="annual-desc">
+                  Highest annual cost
+                </button>
+                <button class="cost-sort-btn" type="button" data-sort="lifetime-asc">
+                  Lowest lifetime cost
+                </button>
+              </div>
+            </fieldset>
+
+            <div class="cost-search">
+              <label for="breed-search">Search breeds</label>
+              <div class="cost-search__row">
+                <input
+                  type="search"
+                  id="breed-search"
+                  placeholder="Search breed name…"
+                  aria-label="Search breeds"
+                />
+                <button id="clear-filters" class="cost-reset-btn" type="button" hidden>
+                  Clear filters
+                </button>
+              </div>
             </div>
-            <div class="flex justify-between items-baseline">
-              <span class="font-sans text-xs" style="color:#64748b">Lifetime est.</span>
-              <span class="font-sans font-semibold text-sm" style="color:#475569">~${b.lifetime_est.toLocaleString()}</span>
+
+            <div class="cost-insurance-selector">
+              <div class="cost-insurance-selector__intro">
+                <p>Insurance estimate location</p>
+                <span>Adjust state and dog age to update monthly estimates.</span>
+              </div>
+              <StateAgeSelector defaultState="CA" defaultAge="3" compact={true} />
             </div>
           </div>
+        </div>
 
-          <!-- CTA -->
-          <a
-            href={`/cost-calculator/${b.slug}`}
-            class="mt-auto block text-center font-sans font-bold text-xs py-2 rounded-xl text-white transition-opacity hover:opacity-90"
-            style="background:linear-gradient(135deg,#a0621c,#c07835)"
-          >
-            Full breakdown →
-          </a>
+        <div id="compare-hint" class="cost-compare-hint" role="note">
+          <span aria-hidden="true">⚖️</span>
+          <p>
+            Tick up to <strong>3 breeds</strong> to compare costs side-by-side. The comparison tray appears at
+            the bottom.
+          </p>
+        </div>
+
+        <div id="cost-grid" class="cost-grid">
+          {breedsWithCosts.map((b, i) => (
+            <article
+              class="cost-card"
+              data-size={b.size_category}
+              data-energy={b.energy_level}
+              data-name={b.name.toLowerCase()}
+              data-annual={b.annual_total}
+              data-lifetime={b.lifetime_est}
+              data-slug={b.slug}
+              data-popularity={i}
+              data-ins-base={b.insBase}
+            >
+              <label class="cost-card__compare">
+                <input type="checkbox" class="compare-cb" data-slug={b.slug} />
+                <span>Compare</span>
+              </label>
+
+              <div class="cost-card__media">
+                {b.image_url ? (
+                  <>
+                    <img
+                      src={b.image_url}
+                      alt={`${b.name} dog`}
+                      width="360"
+                      height="220"
+                      loading="lazy"
+                      decoding="async"
+                      data-cost-image
+                    />
+                    <div class="cost-card__fallback" hidden>
+                      {SIZE_EMOJI[b.size_category] || '🐕'}
+                    </div>
+                  </>
+                ) : (
+                  <div class="cost-card__fallback cost-card__fallback--visible">
+                    {SIZE_EMOJI[b.size_category] || '🐕'}
+                  </div>
+                )}
+              </div>
+
+              <div class="cost-card__body">
+                <div>
+                  <h2>{b.name}</h2>
+                  <div class="cost-card__tags" aria-label={`${b.name} attributes`}>
+                    <span>{b.size_category}</span>
+                    <span>{b.energy_level}</span>
+                  </div>
+                </div>
+
+                <dl class="cost-card__costs">
+                  <div>
+                    <dt>Annual cost</dt>
+                    <dd>${b.annual_total.toLocaleString()}</dd>
+                  </div>
+                  <div>
+                    <dt>Lifetime est.</dt>
+                    <dd>~${b.lifetime_est.toLocaleString()}</dd>
+                  </div>
+                  <div>
+                    <dt>Insurance</dt>
+                    <dd class="ins-card-monthly">~${b.insMonthly.toFixed(2)}/mo</dd>
+                  </div>
+                </dl>
+
+                <a href={`/cost-calculator/${b.slug}`} class="cost-card__cta">
+                  Full breakdown
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div id="no-results" class="cost-no-results" hidden>
+          <p>No breeds match your filters.</p>
+          <button id="clear-filters-2" type="button">Clear all filters</button>
         </div>
       </div>
-    ))}
-  </div>
+    </section>
+  </main>
 
-  <!-- No results -->
-  <div id="no-results" class="hidden text-center py-20">
-    <p class="font-sans text-lg mb-4" style="color:#64748b">No breeds match your filters.</p>
-    <button id="clear-filters-2" class="font-sans text-base font-medium hover:underline" style="color:#a0621c">Clear all filters</button>
-  </div>
+  <aside id="compare-tray" class="cost-compare-tray" aria-label="Breed cost comparison" hidden>
+    <div class="cost-container">
+      <div class="cost-compare-tray__header">
+        <div>
+          <p class="cost-eyebrow">Side-by-side estimate</p>
+          <h2>Cost comparison <span>(<span id="tray-count">0</span> breeds)</span></h2>
+        </div>
 
-</div>
+        <button id="clear-compare" class="cost-reset-btn cost-reset-btn--strong" type="button">
+          Clear all
+        </button>
+      </div>
 
-<!-- Compare tray (sticky bottom) -->
-<div id="compare-tray" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:50;background:white;border-top:2px solid #a0621c;box-shadow:0 -8px 24px rgba(160,98,28,0.2);max-height:60vh;overflow-y:auto">
-  <div class="max-w-7xl mx-auto px-4 py-4">
-
-    <div class="flex items-center justify-between mb-4">
-      <h3 class="font-display font-bold text-lg" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-        Cost Comparison (<span id="tray-count">0</span> breeds)
-      </h3>
-      <button id="clear-compare" class="font-sans text-sm font-semibold px-4 py-1.5 rounded-lg" style="background:#f5e8d0;color:#a0621c;border:1px solid #e8ccaa">
-        Clear all
-      </button>
+      <div class="cost-compare-table-wrap">
+        <table id="compare-table" class="cost-compare-table">
+          <thead id="compare-thead"></thead>
+          <tbody id="compare-tbody"></tbody>
+        </table>
+      </div>
     </div>
+  </aside>
 
-    <!-- Comparison table -->
-    <div style="overflow-x:auto">
-      <table id="compare-table" class="w-full font-sans text-sm" style="min-width:500px;border-collapse:collapse">
-        <thead id="compare-thead"></thead>
-        <tbody id="compare-tbody"></tbody>
-      </table>
-    </div>
+  <div id="tray-spacer" class="cost-tray-spacer" aria-hidden="true"></div>
 
-  </div>
-</div>
+  <script define:vars={{ compareData, insDefaults }}>
+    const ALL_BREEDS = JSON.parse(compareData);
+    const breedMap = Object.fromEntries(ALL_BREEDS.map((breed) => [breed.slug, breed]));
 
-<!-- Spacer so content isn't hidden behind tray -->
-<div id="tray-spacer" style="height:0"></div>
+    const insuranceDefaults = JSON.parse(insDefaults);
+    let currentStateMult = insuranceDefaults.stateMult;
+    let currentAgeFact = insuranceDefaults.ageFact;
 
-<script define:vars={{ compareData }}>
-  const ALL_BREEDS = JSON.parse(compareData);
-  const breedMap = Object.fromEntries(ALL_BREEDS.map(b => [b.slug, b]));
+    const MAX_COMPARE = 3;
 
-  // ── Filters & search ──
-  let activeSize   = 'all';
-  let activeEnergy = 'all';
-  let activeSort   = 'popular';
-  let searchQ      = '';
+    let activeSize = 'all';
+    let activeEnergy = 'all';
+    let activeSort = 'popular';
+    let searchQ = '';
+    let selected = [];
 
-  const grid        = document.getElementById('cost-grid');
-  const countEl     = document.getElementById('breed-count');
-  const clearBtn    = document.getElementById('clear-filters');
-  const clearBtn2   = document.getElementById('clear-filters-2');
-  const noResults   = document.getElementById('no-results');
-  const searchInput = document.getElementById('breed-search');
+    const grid = document.getElementById('cost-grid');
+    const countEl = document.getElementById('breed-count');
+    const clearBtn = document.getElementById('clear-filters');
+    const clearBtn2 = document.getElementById('clear-filters-2');
+    const noResults = document.getElementById('no-results');
+    const searchInput = document.getElementById('breed-search');
 
-  function applyFilters() {
-    const cards = Array.from(grid.querySelectorAll('.cost-card'));
-    let visible = 0;
+    const tray = document.getElementById('compare-tray');
+    const trayCount = document.getElementById('tray-count');
+    const trayHead = document.getElementById('compare-thead');
+    const trayBody = document.getElementById('compare-tbody');
+    const spacer = document.getElementById('tray-spacer');
+    const clearCompare = document.getElementById('clear-compare');
 
-    cards.forEach(card => {
-      const show =
-        (activeSize   === 'all' || card.dataset.size   === activeSize) &&
-        (activeEnergy === 'all' || card.dataset.energy === activeEnergy) &&
-        (!searchQ || card.dataset.name.includes(searchQ));
-      card.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
+    const formatUsd = (value) => `$${Number(value || 0).toLocaleString()}`;
+    const formatMonthlyInsurance = (base) => {
+      const monthly = Math.round(base * currentAgeFact * currentStateMult * 100) / 100;
+      return `~$${monthly.toFixed(2)}/mo`;
+    };
 
-    // Sort visible cards
-    const visibleCards = cards.filter(c => c.style.display !== 'none');
-    visibleCards.sort((a, b) => {
-      if (activeSort === 'annual-asc')    return +a.dataset.annual   - +b.dataset.annual;
-      if (activeSort === 'annual-desc')   return +b.dataset.annual   - +a.dataset.annual;
-      if (activeSort === 'lifetime-asc')  return +a.dataset.lifetime - +b.dataset.lifetime;
-      return +a.dataset.popularity - +b.dataset.popularity;
-    });
-    visibleCards.forEach(c => grid.appendChild(c));
+    const escapeHtml = (value) =>
+      String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
 
-    countEl.textContent = `${visible} breeds`;
-    noResults.classList.toggle('hidden', visible > 0);
-    const hasFilter = activeSize !== 'all' || activeEnergy !== 'all' || !!searchQ;
-    if (clearBtn)  clearBtn.style.display  = hasFilter ? '' : 'none';
-  }
+    const titleCase = (value) => {
+      const text = String(value || '');
+      return text ? text.charAt(0).toUpperCase() + text.slice(1) : '';
+    };
 
-  document.querySelectorAll('[data-filter]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const f = btn.dataset.filter;
-      const v = btn.dataset.value;
-      document.querySelectorAll(`[data-filter="${f}"]`).forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      if (f === 'size')   activeSize   = v;
-      if (f === 'energy') activeEnergy = v;
-      applyFilters();
-    });
-  });
+    const ROWS = [
+      ['Puppy price', (b) => `${formatUsd(b.puppy_low)}–${formatUsd(b.puppy_high)}`],
+      ['Annual cost', (b) => formatUsd(b.annual)],
+      ['Monthly cost', (b) => formatUsd(Math.round(b.annual / 12))],
+      ['Lifetime estimate', (b) => `~${formatUsd(b.lifetime)}`],
+      ['Insurance/mo', (b) => formatMonthlyInsurance(b.insBase)],
+      ['Avg lifespan', (b) => `${b.lifespan} yrs`],
+      ['Size', (b) => titleCase(b.size)],
+      ['Energy', (b) => titleCase(b.energy)],
+      [
+        'Detail page',
+        (b) =>
+          `<a class="cost-compare-table__link" href="/cost-calculator/${encodeURIComponent(
+            b.slug
+          )}">Full breakdown →</a>`,
+      ],
+    ];
 
-  document.querySelectorAll('.sort-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeSort = btn.dataset.sort;
-      applyFilters();
-    });
-  });
+    function updateInsEstimates() {
+      document.querySelectorAll('.ins-card-monthly').forEach((el) => {
+        const card = el.closest('[data-ins-base]');
+        const base = parseFloat(card?.dataset?.insBase || '0');
 
-  searchInput?.addEventListener('input', e => {
-    searchQ = e.target.value.toLowerCase().trim();
-    applyFilters();
-  });
+        if (!Number.isNaN(base) && base > 0) {
+          el.textContent = formatMonthlyInsurance(base);
+        }
+      });
 
-  function clearAll() {
-    activeSize = activeEnergy = 'all';
-    activeSort = 'popular';
-    searchQ = '';
-    if (searchInput) searchInput.value = '';
-    document.querySelectorAll('[data-filter]').forEach(b => b.classList.toggle('active', b.dataset.value === 'all'));
-    document.querySelectorAll('.sort-btn').forEach(b => b.classList.toggle('active', b.dataset.sort === 'popular'));
-    applyFilters();
-  }
-  clearBtn?.addEventListener('click', clearAll);
-  clearBtn2?.addEventListener('click', clearAll);
-
-  // ── Compare feature ──
-  const MAX_COMPARE = 3;
-  let selected = [];
-
-  const tray       = document.getElementById('compare-tray');
-  const trayCount  = document.getElementById('tray-count');
-  const trayHead   = document.getElementById('compare-thead');
-  const trayBody   = document.getElementById('compare-tbody');
-  const spacer     = document.getElementById('tray-spacer');
-  const clearComp  = document.getElementById('clear-compare');
-
-  const ROWS = [
-    ['Puppy price (breeder)',  b => `$${b.puppy_low.toLocaleString()}–$${b.puppy_high.toLocaleString()}`],
-    ['Annual cost',            b => `$${b.annual.toLocaleString()}`],
-    ['Monthly cost',           b => `$${Math.round(b.annual / 12).toLocaleString()}`],
-    ['Lifetime estimate',      b => `~$${b.lifetime.toLocaleString()}`],
-    ['Avg lifespan',           b => `${b.lifespan} yrs`],
-    ['Size',                   b => b.size.charAt(0).toUpperCase() + b.size.slice(1)],
-    ['Energy',                 b => b.energy.charAt(0).toUpperCase() + b.energy.slice(1)],
-    ['Detail page',            b => `<a href="/cost-calculator/${b.slug}" style="color:#a0621c;font-weight:600;text-decoration:underline">Full breakdown →</a>`],
-  ];
-
-  function renderTray() {
-    if (selected.length < 1) {
-      tray.style.display = 'none';
-      spacer.style.height = '0';
-      return;
+      renderTray();
     }
 
-    tray.style.display = 'block';
+    function applyFilters() {
+      if (!grid) return;
 
-    const breeds = selected.map(s => breedMap[s]).filter(Boolean);
+      const cards = Array.from(grid.querySelectorAll('.cost-card'));
+      let visible = 0;
 
-    // Header row
-    trayHead.innerHTML = `<tr>
-      <th style="text-align:left;padding:8px 12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#94a3b8;border-bottom:1px solid #f5e8d0;background:#fafaf9;min-width:140px">Metric</th>
-      ${breeds.map(b => `
-        <th style="text-align:center;padding:8px 12px;border-bottom:1px solid #f5e8d0;background:#fafaf9">
-          <div style="font-family:sans-serif;font-size:12px;font-weight:700;color:#1e293b;margin-bottom:4px">${b.name}</div>
-          <button class="remove-breed" data-slug="${b.slug}" style="font-family:sans-serif;font-size:10px;color:#94a3b8;background:none;border:none;cursor:pointer;text-decoration:underline">Remove</button>
-        </th>`).join('')}
-    </tr>`;
+      cards.forEach((card) => {
+        const show =
+          (activeSize === 'all' || card.dataset.size === activeSize) &&
+          (activeEnergy === 'all' || card.dataset.energy === activeEnergy) &&
+          (!searchQ || card.dataset.name.includes(searchQ));
 
-    // Data rows
-    trayBody.innerHTML = ROWS.map(([label, fn], i) => `
-      <tr style="background:${i % 2 === 0 ? 'white' : '#fdf8f0'}">
-        <td style="padding:8px 12px;font-family:sans-serif;font-size:12px;font-weight:600;color:#475569;border-bottom:1px solid #f5e8d0">${label}</td>
-        ${breeds.map(b => `<td style="padding:8px 12px;text-align:center;font-family:sans-serif;font-size:13px;font-weight:700;color:#1e293b;border-bottom:1px solid #f5e8d0">${fn(b)}</td>`).join('')}
-      </tr>`).join('');
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
 
-    // Bind remove buttons
-    trayHead.querySelectorAll('.remove-breed').forEach(btn => {
-      btn.addEventListener('click', () => removBreed(btn.dataset.slug));
-    });
+      const visibleCards = cards.filter((card) => !card.hidden);
 
-    // Update spacer so page content isn't hidden
-    requestAnimationFrame(() => {
-      spacer.style.height = tray.offsetHeight + 'px';
-    });
+      visibleCards.sort((a, b) => {
+        if (activeSort === 'annual-asc') return Number(a.dataset.annual) - Number(b.dataset.annual);
+        if (activeSort === 'annual-desc') return Number(b.dataset.annual) - Number(a.dataset.annual);
+        if (activeSort === 'lifetime-asc') return Number(a.dataset.lifetime) - Number(b.dataset.lifetime);
 
-    trayCount.textContent = selected.length;
-  }
+        return Number(a.dataset.popularity) - Number(b.dataset.popularity);
+      });
 
-  function removBreed(slug) {
-    selected = selected.filter(s => s !== slug);
-    const cb = document.querySelector(`.compare-cb[data-slug="${slug}"]`);
-    if (cb) { cb.checked = false; cb.closest('.cost-card').style.outline = 'none'; }
-    renderTray();
-    if (selected.length === 0) tray.style.display = 'none';
-  }
+      visibleCards.forEach((card) => grid.appendChild(card));
 
-  clearComp?.addEventListener('click', () => {
-    selected.forEach(s => {
-      const cb = document.querySelector(`.compare-cb[data-slug="${s}"]`);
-      if (cb) { cb.checked = false; cb.closest('.cost-card').style.outline = 'none'; }
-    });
-    selected = [];
-    renderTray();
-  });
+      if (countEl) countEl.textContent = `${visible} breeds`;
+      if (noResults) noResults.hidden = visible > 0;
 
-  document.querySelectorAll('.compare-cb').forEach(cb => {
-    cb.addEventListener('change', () => {
-      const slug = cb.dataset.slug;
-      const card = cb.closest('.cost-card');
+      const hasFilter = activeSize !== 'all' || activeEnergy !== 'all' || Boolean(searchQ);
+      if (clearBtn) clearBtn.hidden = !hasFilter;
+    }
 
-      if (cb.checked) {
-        if (selected.length >= MAX_COMPARE) {
-          cb.checked = false;
-          alert(`You can compare up to ${MAX_COMPARE} breeds at a time.`);
-          return;
-        }
-        selected.push(slug);
-        card.style.outline = '2px solid #a0621c';
-        card.style.outlineOffset = '2px';
-      } else {
-        selected = selected.filter(s => s !== slug);
-        card.style.outline = 'none';
+    function clearAllFilters() {
+      activeSize = 'all';
+      activeEnergy = 'all';
+      activeSort = 'popular';
+      searchQ = '';
+
+      if (searchInput) searchInput.value = '';
+
+      document.querySelectorAll('[data-filter]').forEach((button) => {
+        button.classList.toggle('is-active', button.dataset.value === 'all');
+      });
+
+      document.querySelectorAll('.cost-sort-btn').forEach((button) => {
+        button.classList.toggle('is-active', button.dataset.sort === 'popular');
+      });
+
+      applyFilters();
+    }
+
+    function syncCardSelectedState(slug, isSelected) {
+      const checkbox = document.querySelector(`.compare-cb[data-slug="${CSS.escape(slug)}"]`);
+      const card = checkbox?.closest('.cost-card');
+
+      if (checkbox) checkbox.checked = isSelected;
+      if (card) card.classList.toggle('is-selected', isSelected);
+    }
+
+    function removeBreed(slug) {
+      selected = selected.filter((item) => item !== slug);
+      syncCardSelectedState(slug, false);
+      renderTray();
+    }
+
+    function renderTray() {
+      if (!tray || !trayHead || !trayBody || !trayCount || !spacer) return;
+
+      if (selected.length < 1) {
+        tray.hidden = true;
+        spacer.style.height = '0px';
+        return;
       }
+
+      tray.hidden = false;
+
+      const breeds = selected.map((slug) => breedMap[slug]).filter(Boolean);
+
+      trayCount.textContent = String(selected.length);
+
+      trayHead.innerHTML = `
+        <tr>
+          <th class="cost-compare-table__metric">Metric</th>
+          ${breeds
+            .map(
+              (breed) => `
+                <th>
+                  <div class="cost-compare-table__breed">
+                    <strong>${escapeHtml(breed.name)}</strong>
+                    <button class="remove-breed" type="button" data-slug="${escapeHtml(breed.slug)}">
+                      Remove
+                    </button>
+                  </div>
+                </th>
+              `
+            )
+            .join('')}
+        </tr>
+      `;
+
+      trayBody.innerHTML = ROWS.map(
+        ([label, formatValue]) => `
+          <tr>
+            <td class="cost-compare-table__label">${escapeHtml(label)}</td>
+            ${breeds
+              .map(
+                (breed) => `
+                  <td>${formatValue(breed)}</td>
+                `
+              )
+              .join('')}
+          </tr>
+        `
+      ).join('');
+
+      trayHead.querySelectorAll('.remove-breed').forEach((button) => {
+        button.addEventListener('click', () => removeBreed(button.dataset.slug));
+      });
+
+      requestAnimationFrame(() => {
+        spacer.style.height = `${tray.offsetHeight}px`;
+      });
+    }
+
+    document.addEventListener('stateChange', (event) => {
+      currentStateMult = event.detail.multiplier;
+      updateInsEstimates();
+    });
+
+    document.addEventListener('ageChange', (event) => {
+      currentAgeFact = event.detail.factor;
+      updateInsEstimates();
+    });
+
+    document.querySelectorAll('[data-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        const value = button.dataset.value;
+
+        document.querySelectorAll(`[data-filter="${filter}"]`).forEach((item) => {
+          item.classList.remove('is-active');
+        });
+
+        button.classList.add('is-active');
+
+        if (filter === 'size') activeSize = value;
+        if (filter === 'energy') activeEnergy = value;
+
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll('.cost-sort-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.cost-sort-btn').forEach((item) => {
+          item.classList.remove('is-active');
+        });
+
+        button.classList.add('is-active');
+        activeSort = button.dataset.sort;
+        applyFilters();
+      });
+    });
+
+    searchInput?.addEventListener('input', (event) => {
+      searchQ = event.target.value.toLowerCase().trim();
+      applyFilters();
+    });
+
+    clearBtn?.addEventListener('click', clearAllFilters);
+    clearBtn2?.addEventListener('click', clearAllFilters);
+
+    clearCompare?.addEventListener('click', () => {
+      selected.forEach((slug) => syncCardSelectedState(slug, false));
+      selected = [];
       renderTray();
     });
-  });
-</script>
 
+    document.querySelectorAll('.compare-cb').forEach((checkbox) => {
+      checkbox.addEventListener('change', () => {
+        const slug = checkbox.dataset.slug;
+
+        if (checkbox.checked) {
+          if (selected.length >= MAX_COMPARE) {
+            checkbox.checked = false;
+            alert(`You can compare up to ${MAX_COMPARE} breeds at a time.`);
+            return;
+          }
+
+          selected.push(slug);
+          syncCardSelectedState(slug, true);
+        } else {
+          selected = selected.filter((item) => item !== slug);
+          syncCardSelectedState(slug, false);
+        }
+
+        renderTray();
+      });
+    });
+
+    document.querySelectorAll('[data-cost-image]').forEach((image) => {
+      image.addEventListener('error', () => {
+        const fallback = image.nextElementSibling;
+        image.hidden = true;
+        if (fallback) fallback.hidden = false;
+      });
+    });
+
+    applyFilters();
+  </script>
 </BaseLayout>
 
 <style>
-  .filter-btn {
-    font-family: sans-serif;
-    font-size: 0.875rem;
-    font-weight: 600;
-    padding: 6px 16px;
-    border-radius: 9999px;
-    border: 1px solid #e8ccaa;
-    background: white;
-    color: #475569;
+  .cost-page {
+    background:
+      radial-gradient(circle at 88% 4%, rgba(255, 122, 0, 0.1), transparent 24rem),
+      radial-gradient(circle at 8% 2%, rgba(21, 54, 95, 0.08), transparent 22rem),
+      var(--color-bg);
+    color: var(--color-body);
+  }
+
+  .cost-container {
+    width: min(100%, var(--max-width));
+    margin-inline: auto;
+    padding-inline: var(--content-padding-mobile);
+  }
+
+  .cost-hero {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-border);
+    background:
+      linear-gradient(180deg, rgba(255, 250, 243, 0.98) 0%, rgba(255, 255, 255, 1) 78%);
+  }
+
+  .cost-hero .cost-container {
+    padding-block: clamp(2.35rem, 7vw, 5.75rem);
+  }
+
+  .cost-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+    margin-bottom: var(--space-5);
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+  }
+
+  .cost-breadcrumb a {
+    color: var(--color-primary);
+    font-weight: var(--weight-semi);
+    text-decoration: none;
+  }
+
+  .cost-breadcrumb a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .cost-hero__grid {
+    display: grid;
+    gap: clamp(var(--space-7), 6vw, var(--space-14));
+    align-items: center;
+  }
+
+  .cost-hero__content {
+    max-width: 48rem;
+  }
+
+  .cost-eyebrow {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    margin: 0;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    padding: 0.54rem 0.85rem;
+    color: var(--color-accent-hover);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .cost-hero__title {
+    max-width: 13ch;
+    margin: var(--space-5) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(2.55rem, 12vw, 5.25rem);
+    font-weight: var(--weight-bold);
+    letter-spacing: -0.055em;
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+
+  .cost-hero__title span {
+    display: block;
+    color: var(--color-accent);
+  }
+
+  .cost-hero__subtitle {
+    max-width: 44rem;
+    margin: var(--space-5) 0 0;
+    color: var(--color-body-soft);
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2.2vw, var(--text-lg));
+    line-height: var(--leading-relaxed);
+    text-wrap: pretty;
+  }
+
+  .cost-hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-7);
+  }
+
+  .cost-button {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: var(--radius-xl);
+    padding: 0.95rem 1.15rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-none);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .cost-button:focus-visible {
+    outline: none;
+    box-shadow: var(--ring-accent);
+  }
+
+  .cost-button--primary {
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    box-shadow: var(--shadow-cta);
+  }
+
+  .cost-button--primary:hover {
+    background: var(--button-primary-bg-hover);
+    transform: translateY(-2px);
+  }
+
+  .cost-button--secondary {
+    border: 1px solid var(--button-outline-border);
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--button-outline-text);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .cost-button--secondary:hover {
+    border-color: var(--color-border-primary);
+    background: var(--button-outline-bg-hover);
+    color: var(--color-primary-hover);
+    transform: translateY(-2px);
+  }
+
+  .cost-hero__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-6) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cost-hero__badges li {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.78);
+    padding: 0.55rem 0.72rem;
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: var(--weight-semi);
+    line-height: 1;
+    box-shadow: var(--shadow-xs);
+    backdrop-filter: blur(12px);
+  }
+
+  .cost-hero__panel {
+    border: 1px solid rgba(21, 54, 95, 0.12);
+    border-radius: var(--radius-3xl);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 250, 243, 0.92));
+    padding: var(--space-5);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .cost-hero__panel-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  .cost-hero__panel-icon {
+    display: grid;
+    width: 3.35rem;
+    height: 3.35rem;
+    place-items: center;
+    border: 1px solid var(--color-border-warm);
+    border-radius: var(--radius-2xl);
+    background: var(--color-accent-subtle);
+    font-size: 1.45rem;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .cost-hero__panel-header p {
+    margin: 0;
+    color: var(--color-accent-hover);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .cost-hero__panel-header h2 {
+    margin: var(--space-2) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    line-height: var(--leading-tight);
+  }
+
+  .cost-hero__metric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+  }
+
+  .cost-hero__metric-grid article {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: rgba(255, 255, 255, 0.78);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .cost-hero__metric-grid strong {
+    display: block;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    line-height: var(--leading-none);
+  }
+
+  .cost-hero__metric-grid span {
+    display: block;
+    margin-top: var(--space-1);
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-snug);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .cost-hero__panel-note {
+    margin: var(--space-5) 0 0;
+    border-left: 3px solid var(--color-accent);
+    padding-left: var(--space-4);
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .cost-tools {
+    padding-block: clamp(var(--space-8), 6vw, var(--space-14));
+  }
+
+  .cost-filter-card {
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-3xl);
+    background: rgba(255, 255, 255, 0.86);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(16px);
+  }
+
+  .cost-filter-card__header {
+    display: grid;
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
+  }
+
+  .cost-filter-card__header h2 {
+    margin: var(--space-3) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+  }
+
+  .cost-filter-card__count {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    padding: 0.55rem 0.85rem;
+    color: var(--color-accent-hover);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+  }
+
+  .cost-filter-grid {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .cost-fieldset {
+    min-width: 0;
+    margin: 0;
+    border: 0;
+    padding: 0;
+  }
+
+  .cost-fieldset legend,
+  .cost-search label,
+  .cost-insurance-selector__intro p {
+    margin: 0 0 var(--space-2);
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .cost-pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .cost-filter-btn,
+  .cost-sort-btn,
+  .cost-reset-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    font-family: var(--font-sans);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-none);
     cursor: pointer;
-    transition: all 0.15s;
+    transition: var(--transition-smooth);
   }
-  .filter-btn.active {
-    background: #a0621c;
-    border-color: #a0621c;
-    color: white;
+
+  .cost-filter-btn,
+  .cost-sort-btn {
+    border: 1px solid var(--color-border);
+    background: #ffffff;
+    color: var(--color-body-soft);
+    box-shadow: var(--shadow-xs);
   }
-  .filter-btn:hover:not(.active) {
-    border-color: #a0621c;
-    color: #a0621c;
+
+  .cost-filter-btn {
+    min-height: 2.35rem;
+    padding: 0.62rem 0.9rem;
+    font-size: var(--text-sm);
   }
-  .sort-btn {
-    font-family: sans-serif;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    padding: 5px 14px;
-    border-radius: 9999px;
-    border: 1px solid #e8ccaa;
-    background: white;
-    color: #64748b;
-    cursor: pointer;
-    transition: all 0.15s;
+
+  .cost-sort-btn {
+    min-height: 2.25rem;
+    padding: 0.55rem 0.82rem;
+    font-size: 0.82rem;
   }
-  .sort-btn.active {
-    background: #fef3c7;
-    border-color: #f59e0b;
-    color: #92400e;
+
+  .cost-filter-btn:hover,
+  .cost-sort-btn:hover {
+    border-color: var(--color-border-accent);
+    color: var(--color-accent-hover);
+    transform: translateY(-1px);
   }
-  .sort-btn:hover:not(.active) {
-    border-color: #f59e0b;
-    color: #92400e;
+
+  .cost-filter-btn.is-active {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: #ffffff;
+    box-shadow: var(--shadow-accent);
   }
+
+  .cost-sort-btn.is-active {
+    border-color: var(--color-border-accent);
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-hover);
+  }
+
+  .cost-search__row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .cost-search input {
+    width: 100%;
+    min-height: 3rem;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-xl);
+    background: #ffffff;
+    padding: 0.85rem 1rem;
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semi);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .cost-search input::placeholder {
+    color: var(--color-subtle);
+  }
+
+  .cost-search input:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: var(--ring-accent);
+  }
+
+  .cost-reset-btn {
+    min-height: 2.5rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-muted);
+    padding: 0.65rem 0.95rem;
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+  }
+
+  .cost-reset-btn:hover {
+    border-color: var(--color-border-primary);
+    background: var(--color-primary-subtle);
+    color: var(--color-primary-hover);
+    transform: translateY(-1px);
+  }
+
+  .cost-reset-btn--strong {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-hover);
+    border-color: var(--color-border-accent);
+  }
+
+  .cost-insurance-selector {
+    display: grid;
+    gap: var(--space-3);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-5);
+  }
+
+  .cost-insurance-selector__intro span {
+    display: block;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .cost-compare-hint {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-3);
+    align-items: start;
+    margin-block: var(--space-5);
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-2xl);
+    background: var(--color-accent-subtle);
+    padding: var(--space-4);
+    color: var(--color-accent-hover);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .cost-compare-hint span {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .cost-compare-hint p {
+    margin: 0;
+    color: var(--color-body);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .cost-compare-hint strong {
+    color: var(--color-heading);
+  }
+
+  .cost-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(245px, 100%), 1fr));
+    gap: var(--space-4);
+  }
+
   .cost-card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    position: relative;
+    display: flex;
+    min-width: 0;
+    overflow: hidden;
+    flex-direction: column;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-2xl);
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    transition:
+      transform var(--transition-base),
+      box-shadow var(--transition-base),
+      border-color var(--transition-base);
   }
+
   .cost-card:hover {
+    border-color: var(--color-border-accent);
+    box-shadow: var(--card-shadow-hover);
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(160,98,28,0.15);
-    border-color: #a0621c !important;
   }
-  .cost-card:hover .cost-card-img {
-    transform: scale(1.05);
+
+  .cost-card.is-selected {
+    border-color: var(--color-accent);
+    box-shadow:
+      0 0 0 3px rgba(255, 122, 0, 0.16),
+      var(--card-shadow-hover);
+  }
+
+  .cost-card__compare {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.4rem 0.6rem;
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: var(--weight-bold);
+    line-height: 1;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    user-select: none;
+    backdrop-filter: blur(12px);
+  }
+
+  .cost-card__compare input {
+    width: 0.82rem;
+    height: 0.82rem;
+    margin: 0;
+    accent-color: var(--color-accent);
+    cursor: pointer;
+  }
+
+  .cost-card__media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background:
+      radial-gradient(circle at 30% 20%, var(--color-accent-light), transparent 55%),
+      var(--color-bg-muted);
+  }
+
+  .cost-card__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-smooth);
+  }
+
+  .cost-card:hover .cost-card__media img {
+    transform: scale(1.045);
+  }
+
+  .cost-card__fallback {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    font-size: 3rem;
+  }
+
+  .cost-card__fallback--visible {
+    display: grid;
+  }
+
+  .cost-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .cost-card h2 {
+    margin: 0;
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-snug);
+    line-height: var(--leading-tight);
+  }
+
+  .cost-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+  }
+
+  .cost-card__tags span {
+    display: inline-flex;
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    padding: 0.35rem 0.58rem;
+    color: var(--color-accent-hover);
+    font-size: 0.72rem;
+    font-weight: var(--weight-bold);
+    line-height: 1;
+    text-transform: capitalize;
+  }
+
+  .cost-card__costs {
+    display: grid;
+    gap: var(--space-2);
+    margin: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: var(--color-bg-soft);
+    padding: var(--space-3);
+  }
+
+  .cost-card__costs div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .cost-card__costs div + div {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-2);
+  }
+
+  .cost-card__costs dt {
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semi);
+  }
+
+  .cost-card__costs dd {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-align: right;
+  }
+
+  .cost-card__costs div:first-child dd {
+    color: var(--color-accent-hover);
+    font-size: var(--text-base);
+    font-weight: var(--weight-black);
+  }
+
+  .cost-card__costs .ins-card-monthly {
+    color: var(--color-primary);
+  }
+
+  .cost-card__cta {
+    display: inline-flex;
+    min-height: 2.65rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: auto;
+    border-radius: var(--radius-xl);
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-none);
+    text-decoration: none;
+    box-shadow: var(--shadow-cta);
+    transition: var(--transition-smooth);
+  }
+
+  .cost-card__cta:hover {
+    background: var(--button-primary-bg-hover);
+    transform: translateY(-1px);
+  }
+
+  .cost-no-results {
+    padding-block: var(--space-20);
+    text-align: center;
+  }
+
+  .cost-no-results p {
+    margin: 0 0 var(--space-4);
+    color: var(--color-body-soft);
+    font-size: var(--text-lg);
+  }
+
+  .cost-no-results button {
+    border: 0;
+    background: transparent;
+    color: var(--color-accent-hover);
+    font: inherit;
+    font-weight: var(--weight-bold);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .cost-compare-tray {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-nav);
+    max-height: min(68vh, 34rem);
+    overflow-y: auto;
+    border-top: 1px solid var(--color-border-accent);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 -18px 44px rgba(7, 23, 39, 0.16);
+    backdrop-filter: blur(18px);
+  }
+
+  .cost-compare-tray .cost-container {
+    padding-block: var(--space-4);
+  }
+
+  .cost-compare-tray__header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+  }
+
+  .cost-compare-tray__header h2 {
+    margin: var(--space-2) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    line-height: var(--leading-tight);
+  }
+
+  .cost-compare-tray__header h2 span {
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+  }
+
+  .cost-compare-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .cost-compare-table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+  }
+
+  .cost-compare-table th,
+  .cost-compare-table td {
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.78rem 0.9rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .cost-compare-table th {
+    background: var(--color-bg-muted);
+    color: var(--color-heading);
+  }
+
+  .cost-compare-table tbody tr:nth-child(even) {
+    background: var(--color-bg-soft);
+  }
+
+  .cost-compare-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .cost-compare-table__metric,
+  .cost-compare-table__label {
+    width: 10rem;
+    text-align: left !important;
+  }
+
+  .cost-compare-table__metric {
+    color: var(--color-muted) !important;
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .cost-compare-table__label {
+    color: var(--color-body-soft);
+    font-weight: var(--weight-bold);
+  }
+
+  .cost-compare-table__breed {
+    display: grid;
+    gap: var(--space-1);
+    justify-items: center;
+  }
+
+  .cost-compare-table__breed strong {
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    line-height: var(--leading-tight);
+  }
+
+  .cost-compare-table__breed button {
+    border: 0;
+    background: transparent;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .cost-compare-table__breed button:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .cost-compare-table__link {
+    color: var(--color-accent-hover);
+    font-weight: var(--weight-bold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .cost-tray-spacer {
+    height: 0;
+  }
+
+  @media (min-width: 520px) {
+    .cost-hero__actions,
+    .cost-search__row {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .cost-button {
+      width: auto;
+      padding-inline: 1.35rem;
+    }
+
+    .cost-search input {
+      max-width: 24rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cost-container {
+      padding-inline: var(--content-padding);
+    }
+
+    .cost-filter-card {
+      padding: var(--space-6);
+    }
+
+    .cost-filter-card__header {
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+
+    .cost-filter-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cost-fieldset--wide,
+    .cost-search,
+    .cost-insurance-selector {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cost-container {
+      padding-inline: var(--content-padding-wide);
+    }
+
+    .cost-hero__grid {
+      grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.72fr);
+    }
+
+    .cost-filter-grid {
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 0.85fr) minmax(0, 1.3fr);
+      align-items: start;
+    }
+
+    .cost-fieldset--wide {
+      grid-column: auto;
+    }
+
+    .cost-search {
+      grid-column: 1 / 3;
+    }
+
+    .cost-insurance-selector {
+      grid-column: 3 / 4;
+      grid-row: 2 / 4;
+      border-top: 0;
+      border-left: 1px solid var(--color-border);
+      padding-top: 0;
+      padding-left: var(--space-5);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cost-button,
+    .cost-filter-btn,
+    .cost-sort-btn,
+    .cost-reset-btn,
+    .cost-card,
+    .cost-card__media img,
+    .cost-card__cta {
+      transition: none;
+      transform: none !important;
+    }
   }
 </style>

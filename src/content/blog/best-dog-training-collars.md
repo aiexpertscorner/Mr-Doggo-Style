@@ -4,7 +4,7 @@ description: "Training collars are controversial — and often misunderstood. We
 pubDate: 2026-02-26
 category: "Training"
 tags: ["training", "collar", "e-collar", "leash-training", "behavior"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 Training collars are among the most debated tools in dog ownership. E-collars (electronic collars) in particular generate strong opinions from both professional trainers and casual dog owners. Our goal in this guide is to provide clear, evidence-based information about each type — who they're for, when they're appropriate, and when they're not.

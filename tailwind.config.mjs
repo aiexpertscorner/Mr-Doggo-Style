@@ -13,8 +13,6 @@ export default {
         ash: '#888888',
         smoke: '#AAAAAA',
         offwhite: '#F0F0F0',
-        // Legacy bark colors kept for breed pages
-        bark: { 50:'#fdf8f0', 100:'#f5e8d0', 500:'#a0621c', 700:'#7d4a10' },
       },
       fontFamily: {
         display: ['"Anton"', '"Impact"', 'sans-serif'],

@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Great Dane's specific large si
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["great-dane", "dog-food", "large-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "great-dane"
 ---
 

@@ -1,592 +1,1708 @@
 ---
 /**
- * breeds/[breed].astro — Breed hub page v2
- * - Real Dog CEO images via breed.image_url
- * - Full master-breeds.json data: ranking, FCI, traits, products
- * - Cluster links to all 10 content types
- * - Tailwind CSS (matching existing site design)
+ * src/pages/breeds/[breed].astro — Breed hub page v3
+ *
+ * Cleaned layout:
+ * - Uses BreedImage gallery/fallback pipeline
+ * - Removes Amazon/productIndex blocks
+ * - Uses AWIN affiliate pipeline via AwinProductSlot + PageBannerSlot
+ * - Safer wording: no unsupported "Expert Picks"
+ * - Mobile-first, token-driven styling
  */
-import BaseLayout    from '../../layouts/BaseLayout.astro';
-import masterBreeds  from '../../data/master-breeds.json';
-import productIndex  from '../../data/product-index.json';
-import breedLinkMap  from '../../data/breed-link-map.json';
-import contentStatus from '../../data/content-status.json';
-import { deriveProfile } from '../../../scripts/lib/breed-profile.mjs';
 
-const AFFILIATE_TAG = 'aiexpertscorn-20';
-const SITE          = 'https://mrdoggostyle.com';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import masterBreeds from '../../data/master-breeds.json';
+import masterCrossbreeds from '../../data/master-crossbreeds.json';
+import breedLinkMap from '../../data/breed-link-map.json';
+import contentStatus from '../../data/content-status.json';
+import healthProfiles from '../../data/breed-health-profiles.json';
+
+import BreedImage from '../../components/breed/BreedImage.astro';
+import PageBannerSlot from '../../components/affiliate/PageBannerSlot.astro';
+import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
+import BreedCareProfile from '../../components/enrichment/BreedCareProfile.astro';
+
+import { deriveProfile } from '../../../scripts/lib/breed-profile.mjs';
+import { existsSync } from 'fs';
+import { join } from 'path';
+
+const SITE = 'https://pupwiki.com';
+
+const ALL_BREEDS = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
 
 export function getStaticPaths() {
-  return (masterBreeds as any[]).map(b => ({ params: { breed: b.slug } }));
+  const allBreeds = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
+
+  return allBreeds
+    .filter((breed) => breed?.slug)
+    .map((breed) => ({
+      params: { breed: breed.slug },
+    }));
 }
 
 const { breed: slug } = Astro.params;
-const b = (masterBreeds as any[]).find(x => x.slug === slug);
+const b = ALL_BREEDS.find((item) => item.slug === slug);
+
 if (!b) return Astro.redirect('/breeds');
 
+const isCrossbreed = Array.isArray(b.parent_breeds) && b.parent_breeds.length > 0;
 const profile = deriveProfile(b);
 
-const links  = (breedLinkMap as any)[slug]     || {};
-const status = (contentStatus as any)[slug]    || {};
-const picks  = b.product_picks                 || {};
-const rank   = b.ranking_data                  || {};
-const life   = b.life_expectancy               || {};
-const wt     = b.weight                        || {};
-const ht     = b.height                        || {};
+const links = (breedLinkMap as any)[slug] || {};
+const status = (contentStatus as any)[slug] || {};
+const rank = b.ranking_data || {};
+const life = b.life_expectancy || {};
+const wt = b.weight || {};
+const ht = b.height || {};
 
-// Get matched products
-const topProds = Object.entries(picks)
-  .map(([cat, id]) => { const p = (productIndex as any)[id as string]; return p ? {...p, _cat: cat} : null; })
-  .filter(Boolean).slice(0, 6);
+const healthProfileList = Array.isArray((healthProfiles as any).profiles)
+  ? (healthProfiles as any).profiles
+  : [];
 
-const foodProd = picks['dog-food'] ? (productIndex as any)[picks['dog-food']] : null;
-const toyProd  = picks['toys']     ? (productIndex as any)[picks['toys']]     : null;
+const healthProfile = healthProfileList.find((p: any) => p.breed_slug === slug) ?? null;
 
-const SIZE_EMOJI: Record<string,string> = { small:'🐕', medium:'🐕‍🦺', large:'🐕‍🦺', giant:'🦮' };
-const COAT_LABEL: Record<string,string> = {
-  double:'Double coat', long:'Long coat', short:'Short coat', wiry:'Wire coat',
-  curly:'Curly coat', silky:'Silky coat', corded:'Corded', hairless:'Hairless', wavy:'Wavy coat',
+const imageUrls = [
+  ...(Array.isArray(b.image_urls) ? b.image_urls : []),
+  ...(Array.isArray(b.image_gallery) ? b.image_gallery.map((item: any) => item.url || item.image_url) : []),
+  b.image_url,
+].filter(Boolean);
+
+const primaryImage = imageUrls[0] || b.image_url || '';
+
+const COAT_LABEL: Record<string, string> = {
+  double: 'Double coat',
+  long: 'Long coat',
+  short: 'Short coat',
+  wiry: 'Wire coat',
+  curly: 'Curly coat',
+  silky: 'Silky coat',
+  corded: 'Corded',
+  hairless: 'Hairless',
+  wavy: 'Wavy coat',
 };
-const ENERGY_COLOR: Record<string,string> = { active:'#16a34a', regular:'#d97706', calm:'#6366f1' };
-const TRAIN_COLOR:  Record<string,string> = { easy:'#16a34a', moderate:'#d97706', difficult:'#ef4444' };
 
-function amzUrl(asin: string) { return `https://www.amazon.com/dp/${asin}/?tag=${AFFILIATE_TAG}`; }
-function pctBar(val: number) { return Math.round((val || 0) * 100); }
+const SEVERITY_STYLES: Record<string, { className: string; label: string }> = {
+  Low: { className: 'is-low', label: 'Low' },
+  Medium: { className: 'is-medium', label: 'Medium' },
+  'Medium-High': { className: 'is-medium-high', label: 'Medium-High' },
+  High: { className: 'is-high', label: 'High' },
+  Critical: { className: 'is-critical', label: 'Critical' },
+};
+
+function titleCase(value?: string | null) {
+  if (!value) return '';
+  return String(value)
+    .replace(/[-_]+/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+function pctBar(value: number) {
+  return Math.round((value || 0) * 100);
+}
+
+function truncate(value?: string, max = 280) {
+  if (!value) return '';
+  return value.length > max ? `${value.slice(0, max).trim()}…` : value;
+}
 
 const CLUSTER_LINKS = [
-  { key:'food_post',       href: links.food_post,       emoji:'🍖', label:`Best food for ${b.name}s`       },
-  { key:'toy_post',        href: links.toy_post,        emoji:'🎾', label:`Best toys for ${b.name}s`        },
-  { key:'names_page',      href: links.names_page,      emoji:'✍️', label:`${b.name} names`                 },
-  { key:'bed_post',        href: links.bed_post,        emoji:'🛏️', label:`Best beds for ${b.name}s`        },
-  { key:'grooming_post',   href: links.grooming_post,   emoji:'✂️', label:`Grooming guide`                  },
-  { key:'health_post',     href: links.health_post,     emoji:'🩺', label:`Health problems`                 },
-  { key:'supplement_post', href: links.supplement_post, emoji:'💊', label:`Best supplements`                },
-  { key:'training_post',   href: links.training_post,   emoji:'🦮', label:`Training guide`                  },
+  { key: 'food_post', href: links.food_post, emoji: '🍖', label: `${b.name} food & nutrition guide` },
+  { key: 'toy_post', href: links.toy_post, emoji: '🎾', label: `${b.name} toy & enrichment ideas` },
+  { key: 'names_page', href: links.names_page, emoji: '✍️', label: `${b.name} names` },
+  { key: 'bed_post', href: links.bed_post, emoji: '🛏️', label: `${b.name} bed & sleep guide` },
+  { key: 'grooming_post', href: links.grooming_post, emoji: '✂️', label: `${b.name} grooming guide` },
+  { key: 'health_post', href: links.health_post, emoji: '🩺', label: `${b.name} health concerns` },
+  { key: 'supplement_post', href: links.supplement_post, emoji: '💊', label: `${b.name} supplement considerations` },
+  { key: 'training_post', href: links.training_post, emoji: '🦮', label: `${b.name} training guide` },
 ];
 
 const COST_CALC_HREF = `/cost-calculator/${slug}`;
 
-// ── "Who this breed suits" — 2–4 data-driven bullets ────────────
+const enrichmentPath = join(process.cwd(), 'src/data/enrichment/breeds', `${slug}.json`);
+let enrichmentData: any = null;
+if (existsSync(enrichmentPath)) {
+  const { readFileSync } = await import('fs');
+  enrichmentData = JSON.parse(readFileSync(enrichmentPath, 'utf8'));
+}
+
 const suitabilityBullets: string[] = [];
 {
-  const d = profile.owner_difficulty as number;
+  const difficulty = Number(profile.owner_difficulty || 5);
   const traits: string[] = (profile.dominant_traits as string[]) || [];
   const firstTrait = traits[0] || 'adaptable';
-  const energyLabel: Record<string,string> = { active:'very active', regular:'moderately active', calm:'relaxed' };
 
-  if (d <= 3) {
-    suitabilityBullets.push(`Suitable for first-time owners — rates ${d}/10 on the owner difficulty scale.`);
-  } else if (d <= 6) {
-    suitabilityBullets.push(`Best suited to owners with some dog experience — difficulty rated ${d}/10.`);
+  if (difficulty <= 3) {
+    suitabilityBullets.push(`Suitable for first-time owners — rates ${difficulty}/10 on the owner difficulty scale.`);
+  } else if (difficulty <= 6) {
+    suitabilityBullets.push(`Best suited to owners with some dog experience — difficulty rated ${difficulty}/10.`);
   } else {
-    suitabilityBullets.push(`Recommended for experienced owners — high owner difficulty rating of ${d}/10.`);
+    suitabilityBullets.push(`Recommended for experienced owners — higher owner difficulty rating of ${difficulty}/10.`);
   }
 
   if (profile.is_urban_friendly) {
-    suitabilityBullets.push(`Urban-friendly: adapts well to flat or townhouse living provided daily exercise is consistent.`);
+    suitabilityBullets.push('Urban-friendly: adapts well to apartment or townhouse living when daily exercise is consistent.');
   } else {
-    suitabilityBullets.push(`Better suited to homes with outdoor space — this ${b.size_category} breed needs room to move.`);
+    suitabilityBullets.push(`Better suited to homes with outdoor space — this ${b.size_category || 'dog'} needs room to move.`);
   }
 
   const traitSentence = traits.length >= 2
-    ? `Naturally ${traits.slice(0, 2).join(' and ')}, it integrates well into family life when socialised early.`
-    : `A ${firstTrait} temperament makes it a reliable companion for the right household.`;
+    ? `Naturally ${traits.slice(0, 2).join(' and ')}, this breed fits best with early socialization and clear routines.`
+    : `A ${firstTrait} temperament can make this breed a reliable companion for the right household.`;
+
   suitabilityBullets.push(traitSentence);
 
   if (profile.is_working_heritage) {
-    suitabilityBullets.push(`Working heritage means it needs a job or structured activity — under-stimulation leads to problem behaviours.`);
+    suitabilityBullets.push('Working heritage means structured activity matters — under-stimulation can lead to problem behaviors.');
   }
 }
 
 const TRAITS = [
-  { label:'Energy',       val: b.traits?.energy_value       || 0, color:'#16a34a' },
-  { label:'Shedding',     val: b.traits?.shedding_value     || 0, color:'#f59e0b' },
-  { label:'Trainability', val: b.traits?.trainability_value || 0, color:'#3b82f6' },
-  { label:'Grooming',     val: b.traits?.grooming_value     || 0, color:'#8b5cf6' },
-  { label:'Friendliness', val: b.traits?.demeanor_value     || 0, color:'#ec4899' },
+  { label: 'Energy', val: b.traits?.energy_value || 0, className: 'is-energy' },
+  { label: 'Shedding', val: b.traits?.shedding_value || 0, className: 'is-shedding' },
+  { label: 'Trainability', val: b.traits?.trainability_value || 0, className: 'is-training' },
+  { label: 'Grooming', val: b.traits?.grooming_value || 0, className: 'is-grooming' },
+  { label: 'Friendliness', val: b.traits?.demeanor_value || 0, className: 'is-friendly' },
 ];
 
+const awinBaseTags = [
+  b.size_category,
+  b.energy_level,
+  b.training_level,
+  b.coat_type,
+  b.akc_group,
+  isCrossbreed ? 'mixed-breed' : 'purebred',
+  profile.is_working_heritage ? 'working-dog' : null,
+  profile.is_urban_friendly ? 'apartment' : 'outdoor-space',
+  'breed',
+  'dog-owners',
+].filter(Boolean) as string[];
+
+const relatedGuides = [
+  {
+    href: '/blog/best-dog-food-maker-chefpaw-review-2026',
+    emoji: '🍳',
+    label: 'Fresh dog food tools: what to compare',
+    desc: 'A practical look at fresh-food prep, cost, and owner fit.',
+    tag: 'Food',
+  },
+  {
+    href: '/blog/best-training-tools-stubborn-dogs-2026',
+    emoji: '🦮',
+    label: 'Training gear for dogs that need structure',
+    desc: 'Harnesses, long lines, and reward routines for better walks.',
+    tag: 'Training',
+  },
+  {
+    href: '/blog/best-gifts-for-dog-lovers-2026',
+    emoji: '🎁',
+    label: 'Dog lover gifts that feel personal',
+    desc: 'Custom portraits and practical dog-parent gift ideas.',
+    tag: 'Lifestyle',
+  },
+];
+
+const pageTitle = b.seo?.title || `${b.name} Dog Breed Guide — Traits, Care, Costs & Owner Fit`;
+const pageDescription =
+  b.seo?.description ||
+  `Complete ${b.name} guide: temperament, size, grooming, training, health context, ownership costs, and practical next steps.`;
+
 const jsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": b.seo?.title || `${b.name} Dog Breed Guide`,
-  "description": b.seo?.description,
-  "image": b.image_url || "",
-  "author": { "@type": "Organization", "name": "Mr. Doggo Style" },
-  "publisher": { "@type": "Organization", "name": "Mr. Doggo Style" },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE}/breeds/${slug}` },
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: pageTitle,
+  description: pageDescription,
+  image: primaryImage || undefined,
+  author: { '@type': 'Organization', name: 'PupWiki' },
+  publisher: { '@type': 'Organization', name: 'PupWiki' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}/breeds/${slug}` },
 });
 
 const breadcrumbLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home",   "item": `${SITE}/` },
-    { "@type": "ListItem", "position": 2, "name": "Breeds", "item": `${SITE}/breeds` },
-    { "@type": "ListItem", "position": 3, "name": b.name,   "item": `${SITE}/breeds/${slug}` },
-  ]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Breeds', item: `${SITE}/breeds` },
+    { '@type': 'ListItem', position: 3, name: b.name, item: `${SITE}/breeds/${slug}` },
+  ],
 });
+
+const faqItems: { q: string; a: string }[] = [
+  {
+    q: `Is the ${b.name} a good family dog?`,
+    a: b.temperament
+      ? `${b.name}s are known for being ${b.temperament.slice(0, 100).toLowerCase()}. They are generally considered ${b.good_with_kids === true ? 'good' : b.good_with_kids === false ? 'better suited to adult households' : 'adaptable'} with children. As with all breeds, supervised interaction with young children is recommended.`
+      : `${b.name}s have a ${(b.energy_level || 'moderate').toLowerCase()} energy level. Individual temperament varies, so early socialisation and consistent training are important for family integration.`,
+  },
+  {
+    q: `How much exercise does a ${b.name} need daily?`,
+    a: b.exercise_needs_text
+      ? b.exercise_needs_text
+      : b.energy_level === 'active'
+        ? `${b.name}s are an active breed and need at least 1–2 hours of vigorous exercise daily, plus mental enrichment to prevent boredom.`
+        : b.energy_level === 'calm'
+          ? `${b.name}s have moderate energy and typically do well with 30–45 minutes of daily exercise, though they enjoy outdoor time.`
+          : `${b.name}s need regular daily exercise — typically 45–60 minutes — to stay healthy and well-behaved.`,
+  },
+  ...(healthProfile?.common_issues?.length > 0
+    ? [{
+        q: `What health issues are common in ${b.name}s?`,
+        a: `${b.name}s may be prone to ${(healthProfile.common_issues as any[]).slice(0, 3).map((i: any) => i.name || i).join(', ')}. Regular veterinary check-ups and breed-specific health screening are recommended. This is general information — consult your vet for guidance specific to your dog.`,
+      }]
+    : []),
+];
+
+const faqLd = faqItems.length > 0 ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(item => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+}) : null;
 ---
 
 <BaseLayout
-  title={b.seo?.title || `${b.name} Dog — Expert Care Guide & Products 2026`}
-  description={b.seo?.description || `Complete ${b.name} guide: best food, toys, beds and grooming matched to this breed's size, energy and coat type.`}
-  canonicalURL={`${SITE}/breeds/${slug}`}
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={`${SITE}/breeds/${slug}`}
+  pageType="profile"
+  ogImage={primaryImage || undefined}
+  ogImageAlt={`${b.name} dog breed guide`}
 >
   <script type="application/ld+json" set:html={jsonLd} />
   <script type="application/ld+json" set:html={breadcrumbLd} />
+  {faqLd && <script type="application/ld+json" set:html={faqLd} />}
 
-  <!-- ── Breed Hero ── -->
-  <div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
-    <div class="max-w-7xl mx-auto px-4 py-10 sm:py-14">
+  <main class="breed-page">
+    <section class="breed-hero" aria-labelledby="breed-title">
+      <div class="breed-container">
+        <nav class="breed-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="/breeds">Breeds</a>
+          <span aria-hidden="true">›</span>
+          <span>{b.name}</span>
+        </nav>
 
-      <!-- Breadcrumb -->
-      <nav class="font-sans text-sm mb-4 flex flex-wrap items-center gap-1" style="color:#a0621c">
-        <a href="/" class="hover:underline" style="color:#a0621c">Home</a>
-        <span style="color:#d4a574">›</span>
-        <a href="/breeds" class="hover:underline" style="color:#a0621c">Breeds</a>
-        <span style="color:#d4a574">›</span>
-        <span style="color:#5c340a">{b.name}</span>
-      </nav>
+        <div class="breed-hero__grid">
+          <BreedImage
+            breed={b}
+            width={640}
+            height={640}
+            priority={true}
+            showGallery={true}
+            variant="hero"
+            class="breed-hero__image"
+          />
 
-      <div class="flex flex-col md:flex-row md:items-start gap-8">
+          <div class="breed-hero__content">
+            <div class="breed-pills" aria-label={`${b.name} quick labels`}>
+              {isCrossbreed ? (
+                <span class="breed-pill breed-pill--purple">Designer / Mixed Breed</span>
+              ) : (
+                <span class="breed-pill breed-pill--accent">{titleCase(b.size_category)} breed</span>
+              )}
 
-        <!-- Image -->
-        <div class="flex-shrink-0">
-          {b.image_url ? (
-            <img
-              src={b.image_url}
-              alt={`${b.name} dog`}
-              width="240"
-              height="240"
-              loading="eager"
-              decoding="async"
-              class="w-48 h-48 md:w-60 md:h-60 object-cover rounded-2xl shadow-lg border-4"
-              style="border-color:#e8ccaa"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-            />
-            <div class="w-48 h-48 md:w-60 md:h-60 rounded-2xl hidden items-center justify-content-center text-7xl" style="background:#f5e8d0;display:none">
-              {SIZE_EMOJI[b.size_category]||'🐕'}
+              {b.energy_level && <span class="breed-pill breed-pill--warm">{titleCase(b.energy_level)} energy</span>}
+              {b.coat_type && <span class="breed-pill">{COAT_LABEL[b.coat_type] || titleCase(b.coat_type)}</span>}
+              {b.akc_group && <span class="breed-pill breed-pill--purple">{b.akc_group}</span>}
+
+              {!isCrossbreed && b.origin_country && (
+                <a href={`/breeds?origin=${encodeURIComponent(b.origin_country)}`} class="breed-pill breed-pill--success">
+                  🌍 {b.origin_country}
+                </a>
+              )}
+
+              {b.akc_popularity && b.akc_popularity <= 20 && (
+                <span class="breed-pill breed-pill--gold">🏆 #{b.akc_popularity} most popular</span>
+              )}
+
+              {isCrossbreed && b.is_poodle_mix && (
+                <span class="breed-pill breed-pill--success">🐩 Poodle mix</span>
+              )}
             </div>
-          ) : (
-            <div class="w-48 h-48 md:w-60 md:h-60 rounded-2xl flex items-center justify-center text-7xl" style="background:#f5e8d0">
-              {SIZE_EMOJI[b.size_category]||'🐕'}
+
+            <h1 id="breed-title">{b.name}</h1>
+
+            {b.temperament && (
+              <p class="breed-hero__temperament">{b.temperament}</p>
+            )}
+
+            {b.description && (
+              <p class="breed-hero__description">
+                {truncate(b.description)}
+              </p>
+            )}
+
+            <div class="breed-quick-facts" aria-label={`${b.name} key facts`}>
+              {wt.min_lbs && wt.max_lbs && <span>⚖️ {wt.min_lbs}–{wt.max_lbs} lbs</span>}
+              {ht.min_in && ht.max_in && <span>📏 {ht.min_in}–{ht.max_in}"</span>}
+              {life.min && life.max && <span>🎂 {life.min}–{life.max} years</span>}
+              {rank.intelligence_rank && (
+                <span>🧠 Intelligence #{rank.intelligence_rank}{profile.intelligence_tier ? ` — ${profile.intelligence_tier}` : ''}</span>
+              )}
             </div>
-          )}
-        </div>
 
-        <!-- Info -->
-        <div class="flex-1 min-w-0">
-          <!-- Badges -->
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#a0621c;color:white">
-              {b.size_category.charAt(0).toUpperCase()+b.size_category.slice(1)} breed
-            </span>
-            <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#fef3c7;color:#92400e">
-              {b.energy_level} energy
-            </span>
-            <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f3f4f6;color:#374151">
-              {COAT_LABEL[b.coat_type]||b.coat_type}
-            </span>
-            {b.akc_group && (
-              <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#ede9fe;color:#5b21b6">
-                {b.akc_group}
-              </span>
+            {isCrossbreed && b.parent_breeds?.length > 0 && (
+              <div class="breed-parent-row" aria-label={`${b.name} parent breeds`}>
+                <span>Mix of:</span>
+                {(b.parent_breeds as any[]).map((parent) => (
+                  <a href={`/breeds/${parent.slug}`}>🐕 {parent.name}</a>
+                ))}
+              </div>
             )}
-            {b.origin_country && (
-              <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f0fdf4;color:#15803d">
-                🌍 {b.origin_country}
-              </span>
-            )}
-            {b.akc_popularity && b.akc_popularity <= 20 && (
-              <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#fef9c3;color:#854d0e">
-                🏆 #{b.akc_popularity} most popular
-              </span>
-            )}
-          </div>
 
-          <h1 class="font-display text-4xl md:text-5xl font-bold mb-2" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-            {b.name}
-          </h1>
+            <div class="breed-hero__actions">
+              <a href={COST_CALC_HREF} class="breed-button breed-button--primary">
+                Estimate {b.name} costs
+                <span aria-hidden="true">→</span>
+              </a>
 
-          {b.temperament && (
-            <p class="font-body text-lg italic mb-3" style="color:#64748b;font-family:'Source Serif 4',Georgia,serif">
-              {b.temperament}
-            </p>
-          )}
-
-          <p class="font-sans text-base leading-relaxed mb-4 max-w-2xl" style="color:#475569">
-            {b.description?.slice(0,280)}{b.description?.length > 280 ? '…' : ''}
-          </p>
-
-          <!-- Quick facts row -->
-          <div class="flex flex-wrap gap-5 font-sans text-sm" style="color:#64748b">
-            {wt.min_lbs && wt.max_lbs && <span>⚖️ {wt.min_lbs}–{wt.max_lbs} lbs ({wt.min_kg}–{wt.max_kg} kg)</span>}
-            {ht.min_in  && ht.max_in  && <span>📏 {ht.min_in}–{ht.max_in}"</span>}
-            {life.min   && life.max   && <span>🎂 {life.min}–{life.max} yr lifespan</span>}
-            {rank.intelligence_rank   && <span>🧠 Intelligence #{rank.intelligence_rank}{profile.intelligence_tier ? ` — ${profile.intelligence_tier}` : ''}</span>}
+              {links.names_page && (
+                <a href={links.names_page} class="breed-button breed-button--secondary">
+                  Find {b.name} names
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- ── Main Content ── -->
-  <div class="max-w-7xl mx-auto px-4 py-10">
-    <div class="lg:grid lg:grid-cols-[1fr_300px] lg:gap-10">
-
-      <!-- Left column -->
-      <div class="space-y-10 min-w-0">
-
-        <!-- Trait bars -->
-        <section>
-          <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-            {b.name} Characteristics
-          </h2>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            {TRAITS.map(t => (
-              <div class="rounded-xl p-4" style="background:#fdf8f0;border:1px solid #e8ccaa">
-                <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">{t.label}</p>
-                <div class="h-2 rounded-full mb-2" style="background:#e8ccaa;overflow:hidden">
-                  <div class="h-full rounded-full" style={`width:${pctBar(t.val)}%;background:${t.color}`}></div>
-                </div>
-                <p class="font-sans text-sm font-semibold" style="color:#1e293b">{pctBar(t.val)}%</p>
-              </div>
-            ))}
-            <div class="rounded-xl p-4" style="background:#fdf8f0;border:1px solid #e8ccaa">
-              <p class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Coat Type</p>
-              <p class="font-sans text-sm font-semibold" style="color:#1e293b">{COAT_LABEL[b.coat_type]||b.coat_type}</p>
-              <p class="font-sans text-xs mt-1" style="color:#64748b">{b.grooming_freq}</p>
+    <div class="breed-container breed-main">
+      <div class="breed-layout">
+        <div class="breed-content">
+          <section class="breed-section" aria-labelledby="characteristics-title">
+            <div class="breed-section__header">
+              <p class="breed-eyebrow">Traits</p>
+              <h2 id="characteristics-title">{b.name} Characteristics</h2>
             </div>
-          </div>
-        </section>
 
-        <!-- Ranking data panel -->
-        {rank && rank.intelligence_rank && (
-          <section class="rounded-2xl p-6" style="background:linear-gradient(135deg,#fdf8f0,#fef3c7);border:1px solid #fbbf24">
-            <p class="font-sans text-xs font-bold uppercase tracking-wider mb-4" style="color:#92400e">Breed Data</p>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {rank.intelligence_rank && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
-                  <div class="text-2xl mb-1">🧠</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">#{rank.intelligence_rank}</div>
-                  <div class="font-sans text-xs" style="color:#64748b">Intelligence</div>
-                </div>
-              )}
-              {rank.longevity_years && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
-                  <div class="text-2xl mb-1">🎂</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">{rank.longevity_years}yr</div>
-                  <div class="font-sans text-xs" style="color:#64748b">Avg lifespan</div>
-                </div>
-              )}
-              {rank.lifetime_cost_usd && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
-                  <div class="text-2xl mb-1">💰</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">${(rank.lifetime_cost_usd/1000).toFixed(0)}K</div>
-                  <div class="font-sans text-xs" style="color:#64748b">Lifetime cost</div>
-                </div>
-              )}
-              {rank.annual_food_cost && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
-                  <div class="text-2xl mb-1">🍖</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">${rank.annual_food_cost}/yr</div>
-                  <div class="font-sans text-xs" style="color:#64748b">Annual food</div>
-                </div>
-              )}
-              {rank.children_score !== undefined && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
-                  <div class="text-2xl mb-1">👨‍👩‍👧</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">
-                    {rank.children_score >= 0.8 ? 'Great' : rank.children_score >= 0.5 ? 'Good' : 'Careful'}
+            <div class="breed-traits-grid">
+              {TRAITS.map((trait) => (
+                <article class="breed-trait-card">
+                  <p>{trait.label}</p>
+                  <div class="breed-meter" aria-hidden="true">
+                    <span class={trait.className} style={`width:${pctBar(trait.val)}%`}></span>
                   </div>
-                  <div class="font-sans text-xs" style="color:#64748b">With kids</div>
-                </div>
-              )}
-              {rank.genetic_ailments !== undefined && (
-                <div class="rounded-xl p-3 text-center" style="background:white;border:1px solid #fde68a">
-                  <div class="text-2xl mb-1">🩺</div>
-                  <div class="font-sans font-black text-xl" style="color:#1e293b">{rank.genetic_ailments}</div>
-                  <div class="font-sans text-xs" style="color:#64748b">Known conditions</div>
-                </div>
+                  <strong>{pctBar(trait.val)}%</strong>
+                </article>
+              ))}
+
+              {b.coat_type && (
+                <article class="breed-trait-card">
+                  <p>Coat Type</p>
+                  <strong>{COAT_LABEL[b.coat_type] || titleCase(b.coat_type)}</strong>
+                  {b.grooming_freq && <span class="breed-trait-card__muted">{b.grooming_freq}</span>}
+                </article>
               )}
             </div>
-            {rank.genetic_ailment_names && rank.genetic_ailment_names !== 'none' && (
-              <p class="font-sans text-xs mt-3" style="color:#64748b">
-                Known genetic concerns: <strong style="color:#92400e">{rank.genetic_ailment_names}</strong>
+          </section>
+
+          {rank && (rank.intelligence_rank || rank.longevity_years || rank.lifetime_cost_usd || rank.annual_food_cost) && (
+            <section class="breed-section breed-section--warm" aria-labelledby="breed-data-title">
+              <div class="breed-section__header">
+                <p class="breed-eyebrow">Breed data</p>
+                <h2 id="breed-data-title">Data Snapshot</h2>
+              </div>
+
+              <div class="breed-data-grid">
+                {rank.intelligence_rank && (
+                  <article>
+                    <span>🧠</span>
+                    <strong>#{rank.intelligence_rank}</strong>
+                    <p>Intelligence</p>
+                  </article>
+                )}
+
+                {rank.longevity_years && (
+                  <article>
+                    <span>🎂</span>
+                    <strong>{rank.longevity_years}yr</strong>
+                    <p>Average lifespan</p>
+                  </article>
+                )}
+
+                {rank.lifetime_cost_usd && (
+                  <article>
+                    <span>💰</span>
+                    <strong>${(rank.lifetime_cost_usd / 1000).toFixed(0)}K</strong>
+                    <p>Lifetime cost</p>
+                  </article>
+                )}
+
+                {rank.annual_food_cost && (
+                  <article>
+                    <span>🍖</span>
+                    <strong>${rank.annual_food_cost}/yr</strong>
+                    <p>Annual food estimate</p>
+                  </article>
+                )}
+
+                {rank.children_score !== undefined && (
+                  <article>
+                    <span>👨‍👩‍👧</span>
+                    <strong>{rank.children_score >= 0.8 ? 'Great' : rank.children_score >= 0.5 ? 'Good' : 'Careful'}</strong>
+                    <p>With kids</p>
+                  </article>
+                )}
+
+                {rank.genetic_ailments !== undefined && (
+                  <article>
+                    <span>🩺</span>
+                    <strong>{rank.genetic_ailments}</strong>
+                    <p>Known conditions</p>
+                  </article>
+                )}
+              </div>
+
+              {rank.genetic_ailment_names && rank.genetic_ailment_names !== 'none' && (
+                <p class="breed-muted">
+                  Known genetic concerns: <strong>{rank.genetic_ailment_names}</strong>
+                </p>
+              )}
+            </section>
+          )}
+
+          {healthProfile && (
+            <section class="breed-section" aria-labelledby="health-title">
+              <div class="breed-section__header">
+                <p class="breed-eyebrow breed-eyebrow--danger">Health watch</p>
+                <h2 id="health-title">{b.name} Health Context</h2>
+              </div>
+
+              <div class="breed-health-note">
+                <strong>Veterinary note</strong>
+                <p>
+                  This section is general breed information, not veterinary advice. If your dog has symptoms,
+                  pain, breathing issues, sudden behavior changes, or urgent concerns, contact a veterinarian.
+                </p>
+              </div>
+
+              <div class="breed-health-list">
+                {(healthProfile.common_issues as any[]).map((issue) => {
+                  const severity = SEVERITY_STYLES[issue.severity] ?? SEVERITY_STYLES.Medium;
+
+                  return (
+                    <article class:list={['breed-health-card', severity.className]}>
+                      <div>
+                        <span>{severity.label}</span>
+                      </div>
+
+                      <div>
+                        <h3>{issue.name}</h3>
+                        {issue.prevalence && <em>{issue.prevalence} prevalence</em>}
+                        {issue.early_warning && (
+                          <p><strong>Early signs:</strong> {issue.early_warning}</p>
+                        )}
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+
+              {healthProfile.care_tips && (
+                <div class="breed-callout breed-callout--info">
+                  <span aria-hidden="true">💡</span>
+                  <p>{healthProfile.care_tips}</p>
+                </div>
+              )}
+            </section>
+          )}
+
+          {healthProfile && (
+            <a href={COST_CALC_HREF} class="breed-cost-link">
+              <div>
+                <strong>{healthProfile.common_issues?.[0]?.name ?? 'Health considerations'}</strong>
+                <p>Breed health context can affect lifetime costs. Estimate food, care, and planning costs for a {b.name}.</p>
+              </div>
+              <span aria-hidden="true">💰</span>
+            </a>
+          )}
+
+          <section class="breed-section breed-section--awin" aria-labelledby="owner-picks-title">
+            <div class="breed-section__header">
+              <p class="breed-eyebrow">Owner resources</p>
+              <h2 id="owner-picks-title">Matched Resources for {b.name} Owners</h2>
+              <p>
+                Contextual partner picks from the PupWiki affiliate pipeline. These are matched by breed size,
+                energy, training needs, lifestyle, and ownership intent.
+              </p>
+            </div>
+
+            <div class="breed-awin-grid">
+              <AwinProductSlot
+                topicTags={[...awinBaseTags, 'food', 'nutrition', 'fresh-food', 'meal-prep']}
+                pageType="breed"
+                category="food"
+                breedSize={b.size_category}
+                breedEnergy={b.energy_level}
+                breedTraining={b.training_level}
+                headline={`${b.name} food & nutrition tools`}
+              />
+
+              <AwinProductSlot
+                topicTags={[...awinBaseTags, 'training', 'walking', 'harness', 'obedience']}
+                pageType="breed"
+                category="training"
+                breedSize={b.size_category}
+                breedEnergy={b.energy_level}
+                breedTraining={b.training_level}
+                headline={`${b.name} training & walking gear`}
+              />
+
+              <AwinProductSlot
+                topicTags={[...awinBaseTags, 'gift', 'lifestyle', 'custom-pet', 'dog-owner']}
+                pageType="breed"
+                category="gifts"
+                breedSize={b.size_category}
+                breedEnergy={b.energy_level}
+                breedTraining={b.training_level}
+                headline={`For ${b.name} owners`}
+              />
+            </div>
+
+            <p class="breed-affiliate-note">
+              Affiliate disclosure: PupWiki may earn a commission from qualifying partner links,
+              at no extra cost to you. Availability and pricing can change.
+            </p>
+          </section>
+
+          {b.care_tips?.length > 0 && (
+            <section class="breed-section" aria-labelledby="care-title">
+              <div class="breed-section__header">
+                <p class="breed-eyebrow">Care basics</p>
+                <h2 id="care-title">{b.name} Care Tips</h2>
+              </div>
+
+              <div class="breed-tip-list">
+                {b.care_tips.map((tip: string) => (
+                  <article>
+                    <span aria-hidden="true">✓</span>
+                    <p>{tip}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <section class="breed-section breed-section--success" aria-labelledby="fit-title">
+            <div class="breed-section__header">
+              <p class="breed-eyebrow">Owner fit</p>
+              <h2 id="fit-title">Who the {b.name} Suits</h2>
+            </div>
+
+            <ul class="breed-fit-list">
+              {suitabilityBullets.map((bullet) => (
+                <li>
+                  <span aria-hidden="true">✓</span>
+                  <p>{bullet}</p>
+                </li>
+              ))}
+            </ul>
+
+            {profile.coat_care_label && (
+              <p class="breed-section__footer-note">
+                <strong>Grooming commitment:</strong> {profile.coat_care_label as string}
               </p>
             )}
           </section>
-        )}
 
-        <!-- Top matched products -->
-        {topProds.length > 0 && (
-          <section>
-            <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-              Expert Picks for {b.name}s
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {topProds.map((p: any, i: number) => (
-                <div class="rounded-2xl overflow-hidden flex flex-col" style="border:1px solid #e8ccaa;background:white">
-                  <div class="flex items-center justify-center p-4" style="background:#fdf8f0;height:140px;position:relative">
-                    {i === 0 && (
-                      <span class="absolute top-2 left-2 font-sans text-xs font-bold px-2 py-1 rounded-full" style="background:#a0621c;color:white">
-                        ⭐ Top Pick
-                      </span>
-                    )}
-                    {p.image?.includes('media-amazon') ? (
-                      <img
-                        src={p.image}
-                        alt={p.name}
-                        width="120"
-                        height="120"
-                        loading="lazy"
-                        class="object-contain max-h-28"
-                        onerror="this.parentElement.innerHTML='<span style=font-size:2.5rem>🐾</span>'"
-                      />
-                    ) : (
-                      <span style="font-size:2.5rem">🐾</span>
-                    )}
-                  </div>
-                  <div class="p-4 flex flex-col flex-1 gap-2">
-                    <p class="font-sans text-xs font-bold uppercase tracking-wider" style="color:#a0621c">
-                      {(p._cat||p.category_key||'').replace(/-/g,' ')}
-                    </p>
-                    <h3 class="font-sans text-sm font-bold leading-tight" style="color:#1e293b">{p.name}</h3>
-                    <div class="flex items-center gap-1">
-                      <span style="color:#f59e0b;font-size:0.75rem">{'★'.repeat(Math.round(p.rating||4.5))}</span>
-                      <span class="font-sans text-xs" style="color:#64748b">{parseFloat(p.rating||4.5).toFixed(1)}</span>
-                    </div>
-                    {p.verdict && <p class="font-sans text-xs italic" style="color:#64748b">{p.verdict.slice(0,70)}…</p>}
-                    <div class="mt-auto flex items-center justify-between pt-2" style="border-top:1px solid #f5e8d0">
-                      <span class="font-sans font-black text-base" style="color:#1e293b">
-                        {p.price ? `$${parseFloat(p.price).toFixed(2)}` : '—'}
-                      </span>
-                      {p.asin && p.asin !== 'SUBSCRIPTION' ? (
-                        <a
-                          href={amzUrl(p.asin)}
-                          rel="nofollow sponsored"
-                          target="_blank"
-                          class="font-sans text-xs font-bold px-3 py-1.5 rounded-lg btn-amazon text-white"
-                          style="background:linear-gradient(135deg,#FF9900,#e88700)"
-                        >
-                          Check price →
-                        </a>
-                      ) : p.asin === 'SUBSCRIPTION' ? (
-                        <span class="font-sans text-xs" style="color:#64748b">Subscription</span>
-                      ) : null}
-                    </div>
-                  </div>
-                </div>
-              ))}
+          <section class="breed-section breed-section--decision" aria-labelledby="decision-title">
+            <div class="breed-section__header">
+              <p class="breed-eyebrow">Before you choose</p>
+              <h2 id="decision-title">Make an Informed {b.name} Decision</h2>
             </div>
-          </section>
-        )}
 
-        <!-- Care tips -->
-        {b.care_tips?.length > 0 && (
-          <section>
-            <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-              {b.name} Care Tips
-            </h2>
-            <div class="space-y-3">
-              {b.care_tips.map((tip: string) => (
-                <div class="flex gap-3 items-start rounded-xl p-4" style="background:#f0fdf4;border:1px solid #bbf7d0">
-                  <span style="color:#16a34a;font-weight:bold;flex-shrink:0;margin-top:1px">✓</span>
-                  <p class="font-sans text-sm leading-relaxed" style="color:#1e293b">{tip}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        <!-- Who this breed suits -->
-        <section class="rounded-2xl p-6" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1px solid #86efac">
-          <h2 class="font-display text-2xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-            Who the {b.name} Suits
-          </h2>
-          <ul class="space-y-3">
-            {suitabilityBullets.map((bullet: string) => (
-              <li class="flex items-start gap-3">
-                <span class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white" style="background:#16a34a">✓</span>
-                <p class="font-sans text-sm leading-relaxed" style="color:#1e293b">{bullet}</p>
-              </li>
-            ))}
-          </ul>
-          {(profile.coat_care_label as string) && (
-            <div class="mt-4 pt-4 font-sans text-sm" style="border-top:1px solid #bbf7d0;color:#64748b">
-              <strong style="color:#1e293b">Grooming commitment:</strong> {profile.coat_care_label as string}
-            </div>
-          )}
-        </section>
-
-        <!-- Content cluster links -->
-        <section>
-          <h2 class="font-display text-2xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-            All {b.name} Guides
-          </h2>
-
-          <!-- Cost calculator — always available for all breeds -->
-          <a
-            href={COST_CALC_HREF}
-            class="flex items-center gap-4 rounded-xl p-4 mb-4 transition-all"
-            style="border:2px solid #f59e0b;background:linear-gradient(135deg,#fffbeb,#fef3c7);text-decoration:none"
-            onmouseover="this.style.borderColor='#d97706';this.style.background='linear-gradient(135deg,#fef3c7,#fde68a)'"
-            onmouseout="this.style.borderColor='#f59e0b';this.style.background='linear-gradient(135deg,#fffbeb,#fef3c7)'"
-          >
-            <span style="font-size:1.5rem">💰</span>
-            <div>
-              <p class="font-sans font-bold text-sm" style="color:#1e293b">{b.name} Cost Calculator</p>
-              <p class="font-sans text-xs" style="color:#78350f">Puppy price, annual costs &amp; lifetime estimate →</p>
-            </div>
-            <span class="ml-auto font-sans text-sm font-bold" style="color:#d97706">→</span>
-          </a>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {CLUSTER_LINKS.map(c => {
-              const done = status[c.key];
-              return done && c.href ? (
-                <a
-                  href={c.href}
-                  class="flex items-center gap-3 rounded-xl p-4 transition-all"
-                  style="border:1px solid #e8ccaa;background:white;text-decoration:none;color:#1e293b"
-                  onmouseover="this.style.borderColor='#a0621c';this.style.background='#fdf8f0'"
-                  onmouseout="this.style.borderColor='#e8ccaa';this.style.background='white'"
-                >
-                  <span style="font-size:1.25rem">{c.emoji}</span>
-                  <span class="font-sans text-sm font-semibold">{c.label}</span>
-                  <span class="ml-auto font-sans text-xs" style="color:#a0621c">→</span>
-                </a>
-              ) : (
-                <div
-                  class="flex items-center gap-3 rounded-xl p-4"
-                  style="border:1px solid #f0e4d0;background:#fafaf9;opacity:0.5"
-                >
-                  <span style="font-size:1.25rem">{c.emoji}</span>
-                  <span class="font-sans text-sm" style="color:#94a3b8">{c.label}</span>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        <!-- FCI classification -->
-        {b.fci_group && (
-          <section class="rounded-2xl p-6" style="background:#fdf8f0;border:1px solid #e8ccaa">
-            <h2 class="font-display text-xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-              FCI Classification
-            </h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 font-sans text-sm">
-              <div>
-                <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#94a3b8">FCI Group</p>
-                <p class="font-semibold" style="color:#1e293b">Group {b.fci_group} — {b.fci_group_name}</p>
-              </div>
-              {b.fci_section && (
-                <div>
-                  <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#94a3b8">Section</p>
-                  <p class="font-semibold" style="color:#1e293b">{b.fci_section}</p>
-                </div>
-              )}
-              <div>
-                <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#94a3b8">Status</p>
-                <p class="font-semibold capitalize" style="color:#1e293b">{b.fci_status?.replace('-',' ')}</p>
-              </div>
-            </div>
-          </section>
-        )}
-
-      </div>
-
-      <!-- ── Sidebar ── -->
-      <aside class="hidden lg:block">
-        <div class="sticky space-y-5" style="top:80px">
-
-          <!-- Quick facts -->
-          <div class="rounded-2xl overflow-hidden" style="border:1px solid #e8ccaa;background:white">
-            <div class="px-4 py-3 font-sans text-xs font-bold uppercase tracking-wider" style="background:#f5e8d0;color:#5c340a;border-bottom:1px solid #e8ccaa">
-              Quick Facts
-            </div>
-            <div class="p-4 space-y-3 font-sans text-sm">
-              {[
-                ['Size',      b.size_category.charAt(0).toUpperCase()+b.size_category.slice(1)],
-                ['Energy',    b.energy_level.charAt(0).toUpperCase()+b.energy_level.slice(1)],
-                ['Shedding',  (b.shedding_level||'').charAt(0).toUpperCase()+(b.shedding_level||'').slice(1)],
-                ['Training',  (b.training_level||'').charAt(0).toUpperCase()+(b.training_level||'').slice(1)],
-                ['Coat',      COAT_LABEL[b.coat_type]||b.coat_type],
-                ['Grooming',  b.grooming_freq],
-                wt.min_lbs ? ['Weight',  `${wt.min_lbs}–${wt.max_lbs} lbs`]  : null,
-                life.min   ? ['Lifespan',`${life.min}–${life.max} years`]     : null,
-                b.akc_group     ? ['AKC Group', b.akc_group.replace(' Group','')] : null,
-                b.origin_country? ['Origin',    b.origin_country]              : null,
-                profile.intelligence_tier ? ['Intelligence', (profile.intelligence_tier as string).charAt(0).toUpperCase()+(profile.intelligence_tier as string).slice(1)] : null,
-                ['Owner difficulty', `${profile.owner_difficulty}/10`],
-              ].filter(Boolean).map((row: any) => (
-                <div class="flex justify-between gap-2 pb-2" style="border-bottom:1px solid #f5e8d0">
-                  <span style="color:#64748b">{row[0]}</span>
-                  <span class="font-semibold text-right" style="color:#1e293b;max-width:160px">{row[1]}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <!-- Top food product -->
-          {foodProd && foodProd.asin && foodProd.asin !== 'SUBSCRIPTION' && (
-            <div class="rounded-2xl overflow-hidden" style="border:2px solid #a0621c;background:white">
-              <div class="px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-white" style="background:#a0621c">
-                Top food for {b.name}s
-              </div>
-              <div class="p-4 flex items-center justify-center" style="background:#fdf8f0;height:120px">
-                {foodProd.image?.includes('media-amazon') ? (
-                  <img src={foodProd.image} alt={foodProd.name} width="100" height="100" loading="lazy" class="object-contain max-h-24"
-                    onerror="this.parentElement.innerHTML='<span style=font-size:2rem>🍖</span>'" />
-                ) : <span style="font-size:2rem">🍖</span>}
-              </div>
-              <div class="p-4">
-                <p class="font-sans text-sm font-bold mb-1" style="color:#1e293b">{foodProd.name}</p>
-                <div class="flex items-center gap-1 mb-2">
-                  <span style="color:#f59e0b;font-size:0.7rem">{'★'.repeat(Math.round(foodProd.rating||4.5))}</span>
-                  <span class="font-sans text-xs" style="color:#64748b">{parseFloat(foodProd.rating||4.5).toFixed(1)}/5</span>
-                </div>
-                <p class="font-sans font-black text-lg mb-3" style="color:#1e293b">${parseFloat(foodProd.price||0).toFixed(2)}</p>
-                <a href={amzUrl(foodProd.asin)} rel="nofollow sponsored" target="_blank"
-                  class="block text-center font-sans font-bold text-sm py-2.5 rounded-xl text-white btn-amazon"
-                  style="background:linear-gradient(135deg,#FF9900,#e88700)">
-                  Check price on Amazon →
-                </a>
-              </div>
-            </div>
-          )}
-
-          <!-- Guide links sidebar -->
-          <div class="rounded-2xl p-4" style="border:1px solid #e8ccaa;background:white">
-            <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:#94a3b8">
-              {b.name} Guides
-            </p>
-            <div class="space-y-1">
-              <!-- Cost calculator always shown -->
-              <a href={COST_CALC_HREF} class="flex items-center gap-2 px-2 py-2 rounded-lg font-sans text-sm font-semibold transition-colors"
-                style="color:#92400e;text-decoration:none;background:#fffbeb"
-                onmouseover="this.style.background='#fef3c7'"
-                onmouseout="this.style.background='#fffbeb'">
-                <span>💰</span>
-                <span>Cost calculator →</span>
+            <div class="breed-decision-grid">
+              <a href="/breed-quiz">
+                <span>🐾</span>
+                <strong>Is this breed right for me?</strong>
+                <p>Compare your lifestyle, home, experience level, and activity needs.</p>
               </a>
-              {CLUSTER_LINKS.filter(c => status[c.key] && c.href).map(c => (
-                <a href={c.href} class="flex items-center gap-2 px-2 py-2 rounded-lg font-sans text-sm transition-colors"
-                  style="color:#1e293b;text-decoration:none"
-                  onmouseover="this.style.background='#fdf8f0';this.style.color='#a0621c'"
-                  onmouseout="this.style.background='transparent';this.style.color='#1e293b'">
-                  <span>{c.emoji}</span>
-                  <span>{c.label} →</span>
+
+              <a href={COST_CALC_HREF}>
+                <span>💰</span>
+                <strong>What does a {b.name} cost?</strong>
+                <p>Estimate puppy, annual, food, care, and lifetime ownership costs.</p>
+              </a>
+
+              <a href="/guides/first-dog">
+                <span>📋</span>
+                <strong>New to dog ownership?</strong>
+                <p>Prepare your home, budget, routine, and expectations before adoption.</p>
+              </a>
+            </div>
+          </section>
+
+          {enrichmentData?.careProfile && (
+            <section class="breed-section" aria-label={`${b.name} care profile`}>
+              <BreedCareProfile
+                breedName={b.name}
+                careProfile={enrichmentData.careProfile}
+              />
+            </section>
+          )}
+
+          <section class="breed-section" aria-labelledby="all-guides-title">
+            <div class="breed-section__header">
+              <p class="breed-eyebrow">Related guides</p>
+              <h2 id="all-guides-title">All {b.name} Guides</h2>
+            </div>
+
+            <a href={COST_CALC_HREF} class="breed-feature-link">
+              <span aria-hidden="true">💰</span>
+              <div>
+                <strong>{b.name} Cost Calculator</strong>
+                <p>Puppy price, annual costs, food estimate, and lifetime ownership planning.</p>
+              </div>
+              <em aria-hidden="true">→</em>
+            </a>
+
+            <div class="breed-guide-grid">
+              {CLUSTER_LINKS.map((item) => {
+                const done = status[item.key];
+
+                return done && item.href ? (
+                  <a href={item.href} class="breed-guide-link">
+                    <span>{item.emoji}</span>
+                    <strong>{item.label}</strong>
+                    <em aria-hidden="true">→</em>
+                  </a>
+                ) : (
+                  <div class="breed-guide-link is-disabled">
+                    <span>{item.emoji}</span>
+                    <strong>{item.label}</strong>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          {b.fci_group && (
+            <section class="breed-section" aria-labelledby="fci-title">
+              <div class="breed-section__header">
+                <p class="breed-eyebrow">Classification</p>
+                <h2 id="fci-title">FCI Classification</h2>
+              </div>
+
+              <div class="breed-classification-grid">
+                <article>
+                  <span>FCI Group</span>
+                  <strong>Group {b.fci_group} — {b.fci_group_name}</strong>
+                </article>
+
+                {b.fci_section && (
+                  <article>
+                    <span>Section</span>
+                    <strong>{b.fci_section}</strong>
+                  </article>
+                )}
+
+                {b.fci_status && (
+                  <article>
+                    <span>Status</span>
+                    <strong>{titleCase(b.fci_status)}</strong>
+                  </article>
+                )}
+              </div>
+            </section>
+          )}
+
+          <section class="breed-section" aria-labelledby="related-editorial-title">
+            <div class="breed-section__header">
+              <p class="breed-eyebrow">Editorial guides</p>
+              <h2 id="related-editorial-title">Helpful Reads for {b.name} Owners</h2>
+            </div>
+
+            <div class="breed-editorial-grid">
+              {relatedGuides.map((guide) => (
+                <a href={guide.href}>
+                  <span aria-hidden="true">{guide.emoji}</span>
+                  <div>
+                    <em>{guide.tag}</em>
+                    <strong>{guide.label}</strong>
+                    <p>{guide.desc}</p>
+                  </div>
                 </a>
               ))}
             </div>
-          </div>
-
+          </section>
         </div>
-      </aside>
 
+        <aside class="breed-sidebar" aria-label={`${b.name} sidebar`}>
+          <div class="breed-sidebar__inner">
+            <section class="breed-sidebar-card">
+              <h2>Quick Facts</h2>
+
+              <dl>
+                {[
+                  ['Size', titleCase(b.size_category)],
+                  ['Energy', titleCase(b.energy_level)],
+                  ['Shedding', titleCase(b.shedding_level)],
+                  ['Training', titleCase(b.training_level)],
+                  ['Coat', COAT_LABEL[b.coat_type] || titleCase(b.coat_type)],
+                  ['Grooming', b.grooming_freq],
+                  wt.min_lbs ? ['Weight', `${wt.min_lbs}–${wt.max_lbs} lbs`] : null,
+                  life.min ? ['Lifespan', `${life.min}–${life.max} years`] : null,
+                  b.akc_group ? ['AKC Group', b.akc_group.replace(' Group', '')] : null,
+                  b.origin_country ? ['Origin', b.origin_country] : null,
+                  profile.intelligence_tier ? ['Intelligence', titleCase(profile.intelligence_tier as string)] : null,
+                  ['Owner difficulty', `${profile.owner_difficulty}/10`],
+                ].filter(Boolean).map((row: any) => (
+                  <div>
+                    <dt>{row[0]}</dt>
+                    <dd>{row[1]}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+
+            <AwinProductSlot
+              topicTags={[...awinBaseTags, 'dog-owner', 'care', 'lifestyle']}
+              pageType="breed"
+              breedSize={b.size_category}
+              breedEnergy={b.energy_level}
+              breedTraining={b.training_level}
+              headline={`For ${b.name} owners`}
+              variant="compact"
+            />
+
+            <PageBannerSlot
+              pageType="breed"
+              placement="after-summary"
+              topic="care"
+              topicTags={[...awinBaseTags, 'care']}
+              compact={true}
+            />
+
+            <section class="breed-sidebar-card">
+              <h2>{b.name} Guides</h2>
+
+              <nav class="breed-sidebar-nav">
+                <a href={COST_CALC_HREF} class="is-featured">
+                  <span>💰</span>
+                  <strong>Cost calculator</strong>
+                </a>
+
+                {CLUSTER_LINKS.filter((item) => status[item.key] && item.href).map((item) => (
+                  <a href={item.href}>
+                    <span>{item.emoji}</span>
+                    <strong>{item.label}</strong>
+                  </a>
+                ))}
+              </nav>
+            </section>
+          </div>
+        </aside>
+      </div>
     </div>
-  </div>
-
+  </main>
 </BaseLayout>
+
+<style>
+  .breed-page {
+    background:
+      radial-gradient(circle at 88% 4%, rgba(255, 122, 0, 0.1), transparent 24rem),
+      radial-gradient(circle at 8% 2%, rgba(21, 54, 95, 0.08), transparent 22rem),
+      var(--color-bg);
+    color: var(--color-body);
+  }
+
+  .breed-container {
+    width: min(100%, var(--max-width));
+    margin-inline: auto;
+    padding-inline: var(--content-padding-mobile);
+  }
+
+  .breed-hero {
+    border-bottom: 1px solid var(--color-border);
+    background: linear-gradient(180deg, rgba(255, 250, 243, 0.98) 0%, #ffffff 78%);
+  }
+
+  .breed-hero .breed-container {
+    padding-block: clamp(2.5rem, 7vw, 5.75rem);
+  }
+
+  .breed-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+    margin-bottom: var(--space-5);
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+  }
+
+  .breed-breadcrumb a {
+    color: var(--color-primary);
+    font-weight: var(--weight-semi);
+    text-decoration: none;
+  }
+
+  .breed-breadcrumb a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .breed-hero__grid {
+    display: grid;
+    gap: clamp(var(--space-7), 6vw, var(--space-14));
+    align-items: start;
+  }
+
+  .breed-hero__image {
+    width: min(100%, 22rem);
+  }
+
+  .breed-hero__content {
+    min-width: 0;
+  }
+
+  .breed-pills,
+  .breed-quick-facts,
+  .breed-parent-row,
+  .breed-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .breed-pill {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: #ffffff;
+    padding: 0.48rem 0.7rem;
+    color: var(--color-body-soft);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    line-height: 1;
+    text-decoration: none;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .breed-pill--accent {
+    border-color: var(--color-border-accent);
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .breed-pill--warm {
+    border-color: var(--color-border-accent);
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-hover);
+  }
+
+  .breed-pill--success {
+    border-color: rgba(4, 120, 87, 0.18);
+    background: var(--color-success-light);
+    color: var(--color-success);
+  }
+
+  .breed-pill--purple {
+    border-color: rgba(124, 58, 237, 0.16);
+    background: #ede9fe;
+    color: #5b21b6;
+  }
+
+  .breed-pill--gold {
+    border-color: rgba(202, 138, 4, 0.22);
+    background: #fef9c3;
+    color: #854d0e;
+  }
+
+  .breed-hero h1 {
+    max-width: 12ch;
+    margin: var(--space-5) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(2.75rem, 11vw, 5.5rem);
+    font-weight: var(--weight-bold);
+    letter-spacing: -0.055em;
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+
+  .breed-hero__temperament {
+    max-width: 46rem;
+    margin: var(--space-4) 0 0;
+    color: var(--color-muted);
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 2.5vw, var(--text-xl));
+    font-style: italic;
+    line-height: var(--leading-relaxed);
+  }
+
+  .breed-hero__description {
+    max-width: 48rem;
+    margin: var(--space-4) 0 0;
+    color: var(--color-body-soft);
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2.2vw, var(--text-lg));
+    line-height: var(--leading-relaxed);
+    text-wrap: pretty;
+  }
+
+  .breed-quick-facts {
+    margin-top: var(--space-5);
+    color: var(--color-body-soft);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semi);
+  }
+
+  .breed-parent-row {
+    align-items: center;
+    margin-top: var(--space-5);
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+  }
+
+  .breed-parent-row a {
+    border: 1px solid rgba(124, 58, 237, 0.18);
+    border-radius: var(--radius-full);
+    background: #ede9fe;
+    padding: 0.45rem 0.68rem;
+    color: #5b21b6;
+    font-size: var(--text-xs);
+    text-decoration: none;
+  }
+
+  .breed-hero__actions {
+    margin-top: var(--space-7);
+  }
+
+  .breed-button {
+    display: inline-flex;
+    min-height: 3.1rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    border-radius: var(--radius-xl);
+    padding: 0.9rem 1.1rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    line-height: 1;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .breed-button--primary {
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    box-shadow: var(--shadow-cta);
+  }
+
+  .breed-button--secondary {
+    border: 1px solid var(--button-outline-border);
+    background: var(--button-outline-bg);
+    color: var(--button-outline-text);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .breed-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .breed-main {
+    padding-block: clamp(var(--space-8), 6vw, var(--space-14));
+  }
+
+  .breed-layout {
+    display: grid;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .breed-content {
+    display: grid;
+    gap: var(--space-8);
+    min-width: 0;
+  }
+
+  .breed-section,
+  .breed-sidebar-card {
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-3xl);
+    background: rgba(255, 255, 255, 0.92);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+  }
+
+  .breed-section--warm {
+    border-color: var(--color-border-accent);
+    background:
+      radial-gradient(circle at 92% 10%, rgba(255, 122, 0, 0.12), transparent 18rem),
+      rgba(255, 255, 255, 0.94);
+  }
+
+  .breed-section--success {
+    border-color: rgba(4, 120, 87, 0.18);
+    background:
+      radial-gradient(circle at 92% 10%, rgba(4, 120, 87, 0.1), transparent 18rem),
+      rgba(255, 255, 255, 0.94);
+  }
+
+  .breed-section--decision {
+    border-color: rgba(21, 54, 95, 0.18);
+    background: var(--color-bg-cool);
+  }
+
+  .breed-section--awin {
+    border-color: var(--color-border-accent);
+    background:
+      radial-gradient(circle at 100% 0%, rgba(255, 122, 0, 0.1), transparent 18rem),
+      rgba(255, 255, 255, 0.94);
+  }
+
+  .breed-section__header {
+    margin-bottom: var(--space-5);
+  }
+
+  .breed-section__header h2,
+  .breed-sidebar-card h2 {
+    margin: var(--space-3) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+  }
+
+  .breed-section__header p:not(.breed-eyebrow) {
+    max-width: 44rem;
+    margin: var(--space-3) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .breed-sidebar-card h2 {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .breed-eyebrow {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    margin: 0;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    padding: 0.54rem 0.85rem;
+    color: var(--color-accent-hover);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .breed-eyebrow--danger {
+    border-color: rgba(220, 38, 38, 0.2);
+    background: var(--color-danger-light);
+    color: var(--color-danger);
+  }
+
+  .breed-traits-grid,
+  .breed-data-grid,
+  .breed-awin-grid,
+  .breed-guide-grid,
+  .breed-editorial-grid,
+  .breed-classification-grid,
+  .breed-decision-grid {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .breed-traits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .breed-trait-card,
+  .breed-data-grid article,
+  .breed-classification-grid article,
+  .breed-decision-grid a,
+  .breed-editorial-grid a {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: #ffffff;
+    padding: var(--space-4);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .breed-trait-card p,
+  .breed-classification-grid span {
+    margin: 0 0 var(--space-2);
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .breed-trait-card strong,
+  .breed-classification-grid strong {
+    display: block;
+    color: var(--color-heading);
+    font-size: var(--text-base);
+    font-weight: var(--weight-black);
+    line-height: var(--leading-tight);
+  }
+
+  .breed-trait-card__muted {
+    display: block;
+    margin-top: var(--space-1);
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+  }
+
+  .breed-meter {
+    overflow: hidden;
+    height: 0.5rem;
+    margin-bottom: var(--space-2);
+    border-radius: var(--radius-full);
+    background: var(--color-bg-muted);
+  }
+
+  .breed-meter span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+  }
+
+  .breed-meter .is-energy { background: #16a34a; }
+  .breed-meter .is-shedding { background: #f59e0b; }
+  .breed-meter .is-training { background: #3b82f6; }
+  .breed-meter .is-grooming { background: #8b5cf6; }
+  .breed-meter .is-friendly { background: #ec4899; }
+
+  .breed-data-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .breed-data-grid article {
+    text-align: center;
+  }
+
+  .breed-data-grid article > span {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .breed-data-grid strong {
+    display: block;
+    margin-top: var(--space-2);
+    color: var(--color-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-black);
+  }
+
+  .breed-data-grid p,
+  .breed-muted {
+    margin: var(--space-1) 0 0;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    line-height: var(--leading-snug);
+  }
+
+  .breed-muted {
+    margin-top: var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .breed-muted strong {
+    color: var(--color-heading);
+  }
+
+  .breed-health-note,
+  .breed-callout {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-3);
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-2xl);
+    background: var(--color-accent-subtle);
+    padding: var(--space-4);
+    margin-bottom: var(--space-5);
+  }
+
+  .breed-health-note {
+    display: block;
+  }
+
+  .breed-health-note strong {
+    display: block;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+  }
+
+  .breed-health-note p,
+  .breed-callout p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-body);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .breed-callout--info {
+    margin: var(--space-5) 0 0;
+    border-color: #bae6fd;
+    background: #f0f9ff;
+  }
+
+  .breed-health-list {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .breed-health-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: #ffffff;
+    padding: var(--space-4);
+  }
+
+  .breed-health-card > div:first-child span {
+    display: inline-flex;
+    border-radius: var(--radius-full);
+    padding: 0.35rem 0.55rem;
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    line-height: 1;
+  }
+
+  .breed-health-card.is-low > div:first-child span {
+    background: var(--color-success-light);
+    color: var(--color-success);
+  }
+
+  .breed-health-card.is-medium > div:first-child span {
+    background: #fefce8;
+    color: #ca8a04;
+  }
+
+  .breed-health-card.is-medium-high > div:first-child span {
+    background: #fff7ed;
+    color: #ea580c;
+  }
+
+  .breed-health-card.is-high > div:first-child span {
+    background: #fef2f2;
+    color: #dc2626;
+  }
+
+  .breed-health-card.is-critical > div:first-child span {
+    background: #fdf2f8;
+    color: #9333ea;
+  }
+
+  .breed-health-card h3 {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+  }
+
+  .breed-health-card em {
+    display: inline-flex;
+    margin-top: var(--space-1);
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-style: normal;
+  }
+
+  .breed-health-card p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .breed-cost-link,
+  .breed-feature-link {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-4);
+    align-items: center;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-2xl);
+    background: var(--color-accent-subtle);
+    padding: var(--space-4);
+    color: var(--color-heading);
+    text-decoration: none;
+    box-shadow: var(--shadow-xs);
+    transition: var(--transition-smooth);
+  }
+
+  .breed-cost-link:hover,
+  .breed-feature-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .breed-cost-link strong,
+  .breed-feature-link strong {
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+  }
+
+  .breed-cost-link p,
+  .breed-feature-link p {
+    margin: var(--space-1) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .breed-cost-link > span,
+  .breed-feature-link > span,
+  .breed-feature-link em {
+    font-style: normal;
+    font-size: 1.45rem;
+  }
+
+  .breed-awin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .breed-affiliate-note {
+    margin: var(--space-4) 0 0;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    line-height: var(--leading-relaxed);
+  }
+
+  .breed-tip-list,
+  .breed-fit-list {
+    display: grid;
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .breed-tip-list article,
+  .breed-fit-list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-3);
+    align-items: start;
+    border: 1px solid rgba(4, 120, 87, 0.18);
+    border-radius: var(--radius-2xl);
+    background: var(--color-success-light);
+    padding: var(--space-4);
+  }
+
+  .breed-tip-list span,
+  .breed-fit-list span {
+    display: grid;
+    width: 1.35rem;
+    height: 1.35rem;
+    place-items: center;
+    border-radius: var(--radius-full);
+    background: var(--color-success);
+    color: #ffffff;
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+  }
+
+  .breed-tip-list p,
+  .breed-fit-list p {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .breed-section__footer-note {
+    margin: var(--space-5) 0 0;
+    border-top: 1px solid rgba(4, 120, 87, 0.18);
+    padding-top: var(--space-4);
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .breed-section__footer-note strong {
+    color: var(--color-heading);
+  }
+
+  .breed-decision-grid a {
+    display: block;
+    color: var(--color-heading);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .breed-decision-grid a:hover,
+  .breed-editorial-grid a:hover {
+    border-color: var(--color-border-accent);
+    transform: translateY(-2px);
+  }
+
+  .breed-decision-grid span {
+    display: block;
+    margin-bottom: var(--space-3);
+    font-size: 1.7rem;
+    line-height: 1;
+  }
+
+  .breed-decision-grid strong,
+  .breed-editorial-grid strong {
+    display: block;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+    line-height: var(--leading-tight);
+  }
+
+  .breed-decision-grid p,
+  .breed-editorial-grid p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .breed-guide-grid {
+    grid-template-columns: 1fr;
+    margin-top: var(--space-4);
+  }
+
+  .breed-guide-link {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-3);
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: #ffffff;
+    padding: var(--space-4);
+    color: var(--color-heading);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .breed-guide-link:hover {
+    border-color: var(--color-border-accent);
+    background: var(--color-bg-soft);
+    transform: translateY(-1px);
+  }
+
+  .breed-guide-link span {
+    font-size: 1.25rem;
+  }
+
+  .breed-guide-link strong {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+  }
+
+  .breed-guide-link em {
+    color: var(--color-accent);
+    font-style: normal;
+    font-weight: var(--weight-black);
+  }
+
+  .breed-guide-link.is-disabled {
+    opacity: 0.48;
+  }
+
+  .breed-editorial-grid a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-3);
+    color: var(--color-heading);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .breed-editorial-grid a > span {
+    font-size: 1.7rem;
+    line-height: 1;
+  }
+
+  .breed-editorial-grid em {
+    display: inline-flex;
+    margin-bottom: var(--space-2);
+    border-radius: var(--radius-full);
+    background: var(--color-bg-soft);
+    padding: 0.32rem 0.5rem;
+    color: var(--color-accent-hover);
+    font-size: var(--text-xs);
+    font-style: normal;
+    font-weight: var(--weight-black);
+    line-height: 1;
+  }
+
+  .breed-classification-grid article {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .breed-sidebar {
+    display: none;
+  }
+
+  .breed-sidebar__inner {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .breed-sidebar-card {
+    padding: var(--space-5);
+  }
+
+  .breed-sidebar-card dl {
+    display: grid;
+    gap: var(--space-3);
+    margin: var(--space-4) 0 0;
+  }
+
+  .breed-sidebar-card dl div {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-3);
+  }
+
+  .breed-sidebar-card dt {
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .breed-sidebar-card dd {
+    max-width: 9rem;
+    margin: 0;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-align: right;
+  }
+
+  .breed-sidebar-nav {
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+
+  .breed-sidebar-nav a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2);
+    align-items: center;
+    border-radius: var(--radius-lg);
+    padding: 0.65rem 0.7rem;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .breed-sidebar-nav a:hover {
+    background: var(--color-bg-soft);
+    color: var(--color-accent-hover);
+  }
+
+  .breed-sidebar-nav a.is-featured {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-hover);
+  }
+
+  .breed-sidebar-nav strong {
+    font-weight: var(--weight-semi);
+  }
+
+  @media (min-width: 640px) {
+    .breed-traits-grid,
+    .breed-data-grid,
+    .breed-guide-grid,
+    .breed-classification-grid,
+    .breed-decision-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .breed-awin-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .breed-editorial-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 768px) {
+    .breed-container {
+      padding-inline: var(--content-padding);
+    }
+
+    .breed-hero__grid {
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .breed-section,
+    .breed-sidebar-card {
+      padding: var(--space-6);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .breed-container {
+      padding-inline: var(--content-padding-wide);
+    }
+
+    .breed-layout {
+      grid-template-columns: minmax(0, 1fr) 19rem;
+    }
+
+    .breed-sidebar {
+      position: sticky;
+      top: 6rem;
+      display: block;
+    }
+
+    .breed-traits-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .breed-button,
+    .breed-cost-link,
+    .breed-feature-link,
+    .breed-decision-grid a,
+    .breed-guide-link,
+    .breed-editorial-grid a,
+    .breed-sidebar-nav a {
+      transition: none;
+      transform: none !important;
+    }
+  }
+</style>

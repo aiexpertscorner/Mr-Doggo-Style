@@ -1,0 +1,112 @@
+---
+/**
+ * Primary journey cards for the homepage.
+ */
+
+export interface JourneyItem {
+  title: string;
+  description: string;
+  href: string;
+  eyebrow?: string;
+  icon?: string;
+  iconHtml?: string;
+}
+
+export interface Props {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  items?: JourneyItem[];
+}
+
+const defaultItems: JourneyItem[] = [
+  {
+    title: 'Find the right breed',
+    description: 'Explore breed profiles, compare temperament, size, and care needs, and narrow down the best fit for your lifestyle.',
+    href: '/breeds',
+    eyebrow: 'Start here',
+    icon: '🐕',
+  },
+  {
+    title: 'Plan the real cost',
+    description: 'Estimate ownership costs, care expectations, and practical planning needs before you commit.',
+    href: '/cost-calculator',
+    eyebrow: 'Decision support',
+    icon: '💰',
+  },
+  {
+    title: 'Explore mixed breeds',
+    description: 'Discover popular mixed-breed dogs, likely traits, and practical care guidance based on parent-breed patterns.',
+    href: '/breeds',
+    eyebrow: 'Mixed breeds',
+    icon: '🐾',
+  },
+  {
+    title: 'Choose a great name',
+    description: 'Browse dog names by breed, style, personality, and popularity to find the right fit.',
+    href: '/dog-names',
+    eyebrow: 'Fun + useful',
+    icon: '✍️',
+  },
+];
+
+const {
+  id = 'home-primary-journeys',
+  eyebrow = 'Start with the right path',
+  title = 'The main ways dog parents use PupWiki',
+  subtitle = 'Pick the journey that matches where you are right now.',
+  items = defaultItems,
+} = Astro.props;
+---
+
+<section id={id} class="py-12 sm:py-14 lg:py-16">
+  <div class="mx-auto max-w-7xl px-4 sm:px-5 lg:px-6">
+    <div class="max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.16em] text-teal-700">
+        {eyebrow}
+      </p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+        {title}
+      </h2>
+      <p class="mt-3 text-base leading-7 text-slate-600">
+        {subtitle}
+      </p>
+    </div>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      {items.map((item) => (
+        <a
+          href={item.href}
+          class="group flex h-full flex-col rounded-2xl border border-stone-200 bg-white p-5 shadow-sm transition hover:-translate-y-[2px] hover:border-stone-300 hover:shadow-md"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              {item.eyebrow && (
+                <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">
+                  {item.eyebrow}
+                </p>
+              )}
+              <h3 class="mt-2 text-lg font-bold text-slate-950">
+                {item.title}
+              </h3>
+            </div>
+
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-50 text-2xl text-slate-700">
+              {item.iconHtml ? <span set:html={item.iconHtml} /> : <span>{item.icon ?? '→'}</span>}
+            </div>
+          </div>
+
+          <p class="mt-4 flex-1 text-sm leading-6 text-slate-600">
+            {item.description}
+          </p>
+
+          <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 transition group-hover:translate-x-[2px]">
+            Explore
+            <span aria-hidden="true">→</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

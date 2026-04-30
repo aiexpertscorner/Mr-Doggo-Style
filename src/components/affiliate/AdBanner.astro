@@ -1,0 +1,79 @@
+---
+import type { AffiliateBannerConfig } from '../../lib/affiliate/getActiveBanners';
+
+export interface Props {
+  banner: AffiliateBannerConfig;
+  className?: string;
+  compact?: boolean;
+  noteText?: string;
+  hideMeta?: boolean;
+}
+
+const { banner, className = '', compact = false, noteText, hideMeta = false } = Astro.props;
+
+const rel = banner.rel || 'sponsored noopener';
+const target = banner.openInNewTab === false ? undefined : '_blank';
+const note = noteText || banner.noteText || 'Advertisement / affiliate partner';
+
+const hasStructuredImage =
+  banner.type === 'image_link' &&
+  banner.href &&
+  (banner.imageSrc || banner.mobileImageSrc || banner.desktopImageSrc);
+---
+
+<div
+  class:list={[
+    'affiliate-banner',
+    banner.advertiser && `affiliate-banner--${banner.advertiser.toLowerCase().replace(/\s+/g, '-')}`,
+    compact && 'affiliate-banner--compact',
+    className,
+  ]}
+  data-banner-id={banner.id}
+  data-advertiser={banner.advertiser}
+>
+  {hasStructuredImage ? (
+    <a
+      href={banner.href}
+      rel={rel}
+      target={target}
+      aria-label={banner.label || banner.alt || banner.advertiser}
+      class="affiliate-banner__link"
+    >
+      {banner.mobileImageSrc ? (
+        <>
+          <img
+            src={banner.mobileImageSrc}
+            alt={banner.alt || banner.label || banner.advertiser}
+            loading="lazy"
+            decoding="async"
+            class="affiliate-banner__image affiliate-banner__image--mobile"
+          />
+          <img
+            src={banner.desktopImageSrc || banner.imageSrc}
+            alt={banner.alt || banner.label || banner.advertiser}
+            loading="lazy"
+            decoding="async"
+            class="affiliate-banner__image affiliate-banner__image--desktop"
+          />
+        </>
+      ) : (
+        <img
+          src={banner.imageSrc}
+          alt={banner.alt || banner.label || banner.advertiser}
+          loading="lazy"
+          decoding="async"
+          class="affiliate-banner__image"
+        />
+      )}
+    </a>
+  ) : banner.type === 'html_snippet' && banner.htmlSnippet ? (
+    <div class="affiliate-banner__snippet" set:html={banner.htmlSnippet} />
+  ) : null}
+
+  {!hideMeta && (
+    <div class="affiliate-banner__meta">
+      <span class="affiliate-banner__label">Advertisement</span>
+      <p class="affiliate-banner__note">{note}</p>
+    </div>
+  )}
+</div>

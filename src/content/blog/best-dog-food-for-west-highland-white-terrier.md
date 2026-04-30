@@ -4,7 +4,7 @@ description: "We matched the best dog food to the West Highland White Terrier's 
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["west-highland-white-terrier", "dog-food", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "west-highland-white-terrier"
 ---
 

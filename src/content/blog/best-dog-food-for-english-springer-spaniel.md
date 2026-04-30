@@ -4,7 +4,7 @@ description: "We matched the best dog food to the English Springer Spaniel's spe
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["english-springer-spaniel", "dog-food", "medium-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "english-springer-spaniel"
 ---
 

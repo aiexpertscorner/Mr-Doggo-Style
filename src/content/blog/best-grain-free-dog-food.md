@@ -4,7 +4,7 @@ description: "Grain-free dog food gets complicated. We break down the FDA invest
 pubDate: 2026-02-10
 category: "Dog Food"
 tags: ["dog-food", "grain-free", "nutrition", "allergies"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 Grain-free dog food has been one of the biggest trends in pet nutrition over the past decade — and one of the most controversial. The FDA's ongoing investigation into grain-free diets and dilated cardiomyopathy (DCM) in dogs has created real concern among owners and vets alike.

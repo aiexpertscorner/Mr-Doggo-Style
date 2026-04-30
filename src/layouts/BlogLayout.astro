@@ -1,24 +1,42 @@
 ---
 /**
- * BlogLayout.astro
- * Layout for all blog/review posts.
- * Wraps BaseLayout, adds article header + sidebar structure.
+ * BlogLayout.astro — cleaned article layout for PupWiki
+ *
+ * Changes:
+ * - Removes fake newsletter form
+ * - Removes hardcoded sidebar AffiliateProductCard
+ * - Uses AWIN/PageBanner affiliate pipeline instead
+ * - Adds trust/methodology/correction CTA
+ * - Adds health note for health/food/supplement content
+ * - Uses safer language and global design tokens
  */
 
-import BaseLayout  from './BaseLayout.astro';
-import Breadcrumb  from '../components/ui/Breadcrumb.astro';
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/ui/Breadcrumb.astro';
+import PageBannerSlot from '../components/affiliate/PageBannerSlot.astro';
+import AwinProductSlot from '../components/affiliate/AwinProductSlot.astro';
 
 export interface Props {
-  title:         string;
-  description:   string;
+  title: string;
+  description: string;
   canonicalUrl?: string;
-  pubDate:       string;
-  updatedDate?:  string;
-  category:      string;
-  readTime?:     number;
-  heroImage?:    string;
+  pubDate: string;
+  updatedDate?: string;
+  category: string;
+  readTime?: number;
+  heroImage?: string;
   heroImageAlt?: string;
-  schema?:       object;
+  schema?: object;
+  tags?: string[];
+  postType?: string;
+  breedSlug?: string;
+  breedName?: string;
+  breedSize?: string;
+  breedEnergy?: string;
+  breedCoat?: string;
+  noIndex?: boolean;
+  claimSensitivity?: string;
+  medicalDisclaimer?: boolean;
 }
 
 const {
@@ -32,123 +50,796 @@ const {
   heroImage,
   heroImageAlt = title,
   schema,
+  tags = [],
+  postType = 'general',
+  breedSlug,
+  breedName,
+  breedSize,
+  breedEnergy,
+  breedCoat,
+  noIndex = false,
+  claimSensitivity,
+  medicalDisclaimer = false,
 } = Astro.props;
 
-const categoryColors: Record<string, string> = {
-  food:     'food',
-  toys:     'toys',
-  health:   'health',
-  training: 'training',
-  grooming: 'grooming',
-  beds:     'beds',
+const showHealthDisclaimer = medicalDisclaimer ||
+  claimSensitivity === 'high' ||
+  ['Health', 'Supplements', 'Supplement'].includes(category);
+
+function slugify(value: string) {
+  return String(value || '')
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+const categoryConfig: Record<string, { label: string; icon: string; className: string }> = {
+  food: { label: 'Food & Nutrition', icon: '🍖', className: 'is-food' },
+  'dog food': { label: 'Food & Nutrition', icon: '🍖', className: 'is-food' },
+  toys: { label: 'Toys & Enrichment', icon: '🎾', className: 'is-toys' },
+  health: { label: 'Health & Vet Care', icon: '🩺', className: 'is-health' },
+  beds: { label: 'Sleep & Comfort', icon: '🛏️', className: 'is-beds' },
+  grooming: { label: 'Grooming', icon: '✂️', className: 'is-grooming' },
+  supplements: { label: 'Supplements', icon: '💊', className: 'is-supplements' },
+  training: { label: 'Training', icon: '🦮', className: 'is-training' },
+  gear: { label: 'Training & Gear', icon: '🦮', className: 'is-training' },
+  'smart tech': { label: 'Smart Tech', icon: '📡', className: 'is-tech' },
+  lifestyle: { label: 'Lifestyle', icon: '🎁', className: 'is-lifestyle' },
 };
 
-const categoryBadge = categoryColors[category.toLowerCase()] ?? 'primary';
-const displayDate   = new Date(updatedDate ?? pubDate).toLocaleDateString('en-US', {
-  year: 'numeric', month: 'long', day: 'numeric',
+const categoryKey = String(category || 'Guide').toLowerCase();
+const categoryMeta = categoryConfig[categoryKey] || {
+  label: category || 'Guide',
+  icon: '🐾',
+  className: 'is-default',
+};
+
+const categoryPath = `/categories/${slugify(category)}`;
+
+const displayDate = new Date(updatedDate ?? pubDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
 });
+
+const publishedIso = new Date(pubDate).toISOString();
+const updatedIso = updatedDate ? new Date(updatedDate).toISOString() : undefined;
+
+const isHealthSensitive =
+  ['health', 'supplements', 'food', 'dog food'].includes(categoryKey) ||
+  ['health', 'supplements', 'product-roundup'].includes(String(postType || '').toLowerCase());
+
+const awinTopicTags = [
+  categoryKey,
+  postType,
+  breedSlug,
+  breedName,
+  breedSize,
+  breedEnergy,
+  breedCoat,
+  ...tags,
+]
+  .filter(Boolean)
+  .map((item) => String(item).toLowerCase());
+
+const defaultArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: heroImage || undefined,
+  datePublished: publishedIso,
+  dateModified: updatedIso || publishedIso,
+  author: {
+    '@type': 'Organization',
+    name: 'PupWiki',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'PupWiki',
+  },
+  mainEntityOfPage: canonicalUrl
+    ? {
+        '@type': 'WebPage',
+        '@id': canonicalUrl,
+      }
+    : undefined,
+};
+
+const resolvedSchema = schema || defaultArticleSchema;
+
+const SITE = 'https://pupwiki.com';
+const slugifiedCat = slugify(category);
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',        item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Blog',        item: `${SITE}/blog` },
+    { '@type': 'ListItem', position: 3, name: categoryMeta.label, item: `${SITE}/categories/${slugifiedCat}` },
+    ...(canonicalUrl ? [{ '@type': 'ListItem', position: 4, name: title, item: canonicalUrl }] : []),
+  ],
+};
 ---
 
-<BaseLayout {title} {description} {canonicalUrl}>
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  pageType="article"
+  publishedTime={publishedIso}
+  modifiedTime={updatedIso}
+  noIndex={noIndex}
+  ogImage={heroImage}
+  ogImageAlt={heroImageAlt}
+>
   <Fragment slot="head">
-    {schema && (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    {resolvedSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(resolvedSchema)} />
     )}
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
   </Fragment>
 
-  <!-- Article hero -->
-  <header class="article-hero">
-    <div class="article-hero__inner">
-      <Breadcrumb
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Blog', href: '/blog' },
-          { label: category, href: `/categories/${category.toLowerCase()}` },
-          { label: title, current: true },
-        ]}
-      />
+  <main class="article-page">
+    <header class="article-hero">
+      <div class="article-container">
+        <Breadcrumb
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Guides', href: '/blog' },
+            { label: categoryMeta.label, href: categoryPath },
+            { label: title, current: true },
+          ]}
+        />
 
-      <div class="article-hero__meta">
-        <span class={`badge badge--${categoryBadge}`}>{category}</span>
-        <span class="rating__count">{displayDate}</span>
-        <span class="rating__count">·</span>
-        <span class="rating__count">{readTime} min read</span>
-      </div>
+        <div class="article-meta-row">
+          <span class:list={['article-category-pill', categoryMeta.className]}>
+            {categoryMeta.icon} {categoryMeta.label}
+          </span>
 
-      <h1 class="article-hero__title">{title}</h1>
-      <p class="article-hero__subtitle">{description}</p>
-
-      {heroImage && (
-        <div class="article-hero__image-wrap">
-          <img
-            src={heroImage}
-            alt={heroImageAlt}
-            class="article-hero__image"
-            width="1280"
-            height="480"
-            loading="eager"
-            decoding="sync"
-          />
+          <time datetime={updatedIso || publishedIso}>{displayDate}</time>
+          <span aria-hidden="true">·</span>
+          <span>{readTime} min read</span>
         </div>
-      )}
-    </div>
-  </header>
 
-  <!-- Affiliate disclosure -->
-  <div class="container" style="padding-top:2rem">
-    <p class="affiliate-note">
-      <strong>Disclosure:</strong> Mr. Doggo Style may earn a small commission from qualifying purchases via affiliate links at no extra cost to you. We never accept products in exchange for positive reviews.
-      <a href="/disclosure" class="link">Full policy →</a>
-    </p>
-  </div>
+        <h1>{title}</h1>
 
-  <!-- Article body + sidebar -->
-  <main class="container section">
-    <div class="layout-sidebar">
-      <!-- Article content -->
-      <article class="prose" id="article-content">
-        <slot />
+        <p class="article-hero__subtitle">
+          {description}
+        </p>
 
-        <!-- Mid-article email capture -->
-        <div class="email-capture-strip not-prose" id="article-email-capture">
-          <div class="email-capture-strip__icon" aria-hidden="true">🐾</div>
-          <div class="email-capture-strip__content">
-            <strong>Get our weekly breed + product picks</strong>
-            <p>3 products · 1 deal · 1 breed spotlight — every Tuesday, free</p>
-          </div>
-          <form class="email-capture-strip__form" id="article-newsletter" action="#" method="POST">
-            <input
-              type="email"
-              name="email"
-              class="form-input"
-              placeholder="your@email.com"
-              required
-              aria-label="Email address"
+        <div class="article-trust-row" aria-label="Article trust notes">
+          <span>Updated guide</span>
+          <span>Affiliate links disclosed</span>
+          {isHealthSensitive && <span>General information, not veterinary advice</span>}
+        </div>
+
+        {heroImage && (
+          <figure class="article-hero__image-wrap">
+            <img
+              src={heroImage}
+              alt={heroImageAlt}
+              width="1280"
+              height="560"
+              loading="eager"
+              decoding="async"
+              class="article-hero__image"
             />
-            <button type="submit" class="btn btn--primary">Subscribe</button>
-          </form>
-          <p class="email-capture-strip__success" id="article-newsletter-success">
-            ✓ You're in!
-          </p>
+          </figure>
+        )}
+      </div>
+    </header>
+
+    <section class="article-prelude">
+      <div class="article-container">
+        <div class="article-disclosure-card">
+          <div>
+            <strong>Affiliate disclosure</strong>
+            <p>
+              PupWiki may earn a commission from qualifying partner links at no extra cost to you.
+              Recommendations and links should be clearly disclosed and selected for reader relevance.
+            </p>
+          </div>
+
+          <a href="/disclosure">Full policy →</a>
         </div>
-      </article>
 
-      <!-- Sidebar (sticky) -->
-      <aside>
-        <slot name="sidebar" />
-      </aside>
-    </div>
+        {isHealthSensitive && (
+          <div class="article-health-note">
+            <strong>Health note</strong>
+            <p>
+              This guide is for general informational and product-comparison purposes only.
+              It is not veterinary advice. Diet, supplements, allergies, medical conditions,
+              and weight-management decisions should be discussed with your veterinarian.
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <section class="article-main">
+      <div class="article-container">
+        <div class="article-layout">
+          <article class="article-content prose" id="article-content">
+            {showHealthDisclaimer && (
+              <aside class="health-disclaimer not-prose" style="background:var(--color-warning-light);border-left:4px solid var(--color-warning);padding:0.75rem 1rem;border-radius:0.5rem;margin-bottom:1.5rem;font-size:0.875rem;color:var(--color-heading)">
+                <strong>Health note:</strong> This guide is for general informational and product-comparison purposes only. It is not veterinary advice. Diet, health conditions, and supplement use should always be discussed with your veterinarian.
+              </aside>
+            )}
+            <slot />
+
+            <div class="article-tool-cta not-prose">
+              <div class="article-tool-cta__icon" aria-hidden="true">🐾</div>
+
+              <div class="article-tool-cta__content">
+                <strong>Use PupWiki tools next</strong>
+                <p>
+                  Compare breeds, estimate ownership costs, or find breed-specific dog name ideas.
+                </p>
+              </div>
+
+              <div class="article-tool-cta__actions">
+                <a href="/cost-calculator" class="article-button article-button--primary">
+                  Cost calculator
+                </a>
+                <a href="/breeds" class="article-button article-button--secondary">
+                  Explore breeds
+                </a>
+              </div>
+            </div>
+
+            <div class="article-correction-card not-prose">
+              <div>
+                <strong>Spotted outdated information?</strong>
+                <p>
+                  Product availability, prices, formulas, and service details can change.
+                  Send us the page URL and the specific detail we should review.
+                </p>
+              </div>
+
+              <a href="/contact">Suggest a correction →</a>
+            </div>
+          </article>
+
+          <aside class="article-sidebar" aria-label="Article sidebar">
+            <div class="article-sidebar__inner">
+              <section class="article-sidebar-card">
+                <h2>Article guide</h2>
+
+                <dl>
+                  <div>
+                    <dt>Category</dt>
+                    <dd>{categoryMeta.label}</dd>
+                  </div>
+                  <div>
+                    <dt>Updated</dt>
+                    <dd>{displayDate}</dd>
+                  </div>
+                  <div>
+                    <dt>Read time</dt>
+                    <dd>{readTime} min</dd>
+                  </div>
+                  {breedName && (
+                    <div>
+                      <dt>Breed</dt>
+                      <dd>{breedName}</dd>
+                    </div>
+                  )}
+                </dl>
+              </section>
+
+              <AwinProductSlot
+                topicTags={awinTopicTags}
+                pageType="blog"
+                category={categoryKey}
+                breedSize={breedSize}
+                breedEnergy={breedEnergy}
+                headline="Relevant partner resources"
+                variant="compact"
+              />
+
+              {!isHealthSensitive && (
+                <PageBannerSlot
+                  pageType="blog"
+                  placement="sidebar"
+                  topic={categoryKey}
+                  topicTags={awinTopicTags}
+                  compact={true}
+                />
+              )}
+
+              <section class="article-sidebar-card">
+                <h2>Explore next</h2>
+
+                <nav class="article-sidebar-nav">
+                  <a href="/breeds">
+                    <span>🐕</span>
+                    <strong>Breed explorer</strong>
+                  </a>
+
+                  <a href="/cost-calculator">
+                    <span>💰</span>
+                    <strong>Dog cost calculator</strong>
+                  </a>
+
+                  <a href="/dog-names">
+                    <span>✍️</span>
+                    <strong>Dog name generator</strong>
+                  </a>
+
+                  <a href="/how-we-test">
+                    <span>🔍</span>
+                    <strong>How we research guides</strong>
+                  </a>
+                </nav>
+              </section>
+
+              <section class="article-sidebar-card article-sidebar-card--warm">
+                <h2>Transparency</h2>
+
+                <p>
+                  PupWiki uses affiliate links on some guides. Health-sensitive content is general information
+                  and should not replace veterinary advice.
+                </p>
+
+                <div class="article-sidebar-links">
+                  <a href="/disclosure">Affiliate disclosure →</a>
+                  <a href="/privacy">Privacy policy →</a>
+                  <a href="/contact">Contact →</a>
+                </div>
+              </section>
+
+              <slot name="sidebar" />
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
   </main>
-
-  <script>
-    const form = document.getElementById('article-newsletter') as HTMLFormElement | null;
-    const wrap = document.getElementById('article-email-capture');
-    if (form && wrap) {
-      form.addEventListener('submit', (e) => {
-        // Remove preventDefault once real action URL is set
-        e.preventDefault();
-        wrap.classList.add('is-subscribed');
-      });
-    }
-  </script>
 </BaseLayout>
+
+<style>
+  .article-page {
+    background:
+      radial-gradient(circle at 88% 4%, rgba(255, 122, 0, 0.1), transparent 24rem),
+      radial-gradient(circle at 8% 2%, rgba(21, 54, 95, 0.08), transparent 22rem),
+      var(--color-bg);
+    color: var(--color-body);
+  }
+
+  .article-container {
+    width: min(100%, var(--max-width));
+    margin-inline: auto;
+    padding-inline: var(--content-padding-mobile);
+  }
+
+  .article-hero {
+    border-bottom: 1px solid var(--color-border);
+    background: linear-gradient(180deg, rgba(255, 250, 243, 0.98) 0%, #ffffff 78%);
+  }
+
+  .article-hero .article-container {
+    padding-block: clamp(2.5rem, 7vw, 5.75rem);
+  }
+
+  .article-meta-row,
+  .article-trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    align-items: center;
+    margin-top: var(--space-5);
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semi);
+  }
+
+  .article-category-pill {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: var(--color-bg-soft);
+    padding: 0.48rem 0.72rem;
+    color: var(--color-body-soft);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    line-height: 1;
+  }
+
+  .article-category-pill.is-food {
+    border-color: rgba(146, 64, 14, 0.16);
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  .article-category-pill.is-toys {
+    border-color: rgba(6, 95, 70, 0.16);
+    background: #d1fae5;
+    color: #065f46;
+  }
+
+  .article-category-pill.is-health {
+    border-color: rgba(30, 64, 175, 0.16);
+    background: #dbeafe;
+    color: #1e40af;
+  }
+
+  .article-category-pill.is-training,
+  .article-category-pill.is-tech {
+    border-color: rgba(30, 58, 95, 0.16);
+    background: #e0f2fe;
+    color: #1e3a5f;
+  }
+
+  .article-category-pill.is-grooming {
+    border-color: rgba(131, 24, 67, 0.16);
+    background: #fce7f3;
+    color: #831843;
+  }
+
+  .article-category-pill.is-supplements {
+    border-color: rgba(20, 83, 45, 0.16);
+    background: #dcfce7;
+    color: #14532d;
+  }
+
+  .article-category-pill.is-beds,
+  .article-category-pill.is-lifestyle {
+    border-color: rgba(76, 29, 149, 0.16);
+    background: #ede9fe;
+    color: #4c1d95;
+  }
+
+  .article-hero h1 {
+    max-width: 15ch;
+    margin: var(--space-5) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(2.45rem, 9.5vw, 5.25rem);
+    font-weight: var(--weight-bold);
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  .article-hero__subtitle {
+    max-width: 52rem;
+    margin: var(--space-5) 0 0;
+    color: var(--color-body-soft);
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2.2vw, var(--text-lg));
+    line-height: var(--leading-relaxed);
+    text-wrap: pretty;
+  }
+
+  .article-trust-row span {
+    display: inline-flex;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.78);
+    padding: 0.5rem 0.72rem;
+    color: var(--color-body-soft);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    line-height: 1;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .article-hero__image-wrap {
+    overflow: hidden;
+    margin: var(--space-8) 0 0;
+    border: 1px solid var(--color-border-warm);
+    border-radius: var(--radius-3xl);
+    background: var(--color-bg-muted);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .article-hero__image {
+    display: block;
+    width: 100%;
+    max-height: 34rem;
+    object-fit: cover;
+  }
+
+  .article-prelude {
+    padding-top: var(--space-6);
+  }
+
+  .article-disclosure-card,
+  .article-health-note,
+  .article-tool-cta,
+  .article-correction-card {
+    display: grid;
+    gap: var(--space-4);
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-2xl);
+    background: rgba(255, 255, 255, 0.92);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .article-health-note {
+    margin-top: var(--space-4);
+    background: var(--color-accent-subtle);
+  }
+
+  .article-disclosure-card strong,
+  .article-health-note strong,
+  .article-tool-cta strong,
+  .article-correction-card strong {
+    display: block;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+  }
+
+  .article-disclosure-card p,
+  .article-health-note p,
+  .article-tool-cta p,
+  .article-correction-card p {
+    margin: var(--space-2) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .article-disclosure-card a,
+  .article-correction-card a {
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+  }
+
+  .article-disclosure-card a:hover,
+  .article-correction-card a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .article-main {
+    padding-block: clamp(var(--space-8), 6vw, var(--space-14));
+  }
+
+  .article-layout {
+    display: grid;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .article-content {
+    min-width: 0;
+  }
+
+  .article-tool-cta {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    margin-top: var(--space-8);
+    background:
+      radial-gradient(circle at 92% 10%, rgba(255, 122, 0, 0.12), transparent 18rem),
+      #ffffff;
+  }
+
+  .article-tool-cta__icon {
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    place-items: center;
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    font-size: 1.45rem;
+  }
+
+  .article-tool-cta__content {
+    min-width: 0;
+  }
+
+  .article-tool-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column: 1 / -1;
+    gap: var(--space-3);
+  }
+
+  .article-button {
+    display: inline-flex;
+    min-height: 2.8rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-xl);
+    padding: 0.78rem 1rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    line-height: 1;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .article-button--primary {
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    box-shadow: var(--shadow-cta);
+  }
+
+  .article-button--secondary {
+    border: 1px solid var(--button-outline-border);
+    background: var(--button-outline-bg);
+    color: var(--button-outline-text);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .article-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .article-correction-card {
+    margin-top: var(--space-6);
+    background: var(--color-bg-cool);
+    border-color: rgba(21, 54, 95, 0.18);
+  }
+
+  .article-sidebar {
+    display: none;
+  }
+
+  .article-sidebar__inner {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .article-sidebar-card {
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-3xl);
+    background: rgba(255, 255, 255, 0.92);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+  }
+
+  .article-sidebar-card--warm {
+    border-color: var(--color-border-accent);
+    background: var(--color-accent-subtle);
+  }
+
+  .article-sidebar-card h2 {
+    margin: 0;
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .article-sidebar-card dl {
+    display: grid;
+    gap: var(--space-3);
+    margin: var(--space-4) 0 0;
+  }
+
+  .article-sidebar-card dl div {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-3);
+  }
+
+  .article-sidebar-card dt {
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .article-sidebar-card dd {
+    max-width: 10rem;
+    margin: 0;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-align: right;
+  }
+
+  .article-sidebar-card p {
+    margin: var(--space-4) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .article-sidebar-nav,
+  .article-sidebar-links {
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+
+  .article-sidebar-nav a,
+  .article-sidebar-links a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2);
+    align-items: center;
+    border-radius: var(--radius-lg);
+    padding: 0.65rem 0.7rem;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .article-sidebar-links a {
+    display: block;
+    color: var(--color-primary);
+    font-weight: var(--weight-bold);
+  }
+
+  .article-sidebar-nav a:hover,
+  .article-sidebar-links a:hover {
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--color-accent-hover);
+  }
+
+  .article-sidebar-nav strong {
+    font-weight: var(--weight-semi);
+  }
+
+  @media (min-width: 640px) {
+    .article-disclosure-card,
+    .article-correction-card {
+      grid-template-columns: 1fr auto;
+      align-items: center;
+    }
+
+    .article-tool-cta__actions {
+      grid-column: auto;
+      justify-content: flex-end;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .article-container {
+      padding-inline: var(--content-padding);
+    }
+
+    .article-disclosure-card,
+    .article-health-note,
+    .article-tool-cta,
+    .article-correction-card {
+      padding: var(--space-5);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .article-container {
+      padding-inline: var(--content-padding-wide);
+    }
+
+    .article-layout {
+      grid-template-columns: minmax(0, 1fr) 19rem;
+    }
+
+    .article-sidebar {
+      position: sticky;
+      top: 6rem;
+      display: block;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .article-button,
+    .article-sidebar-nav a,
+    .article-sidebar-links a {
+      transition: none;
+      transform: none !important;
+    }
+  }
+</style>

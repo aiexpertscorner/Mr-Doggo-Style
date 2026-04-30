@@ -1,12 +1,25 @@
 {
-  "name": "mrdoggostyle",
+  "name": "pupwiki",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
+
+    "prebuild": "npm run images:enrich:ci",
     "build": "astro build",
+
+    "build:fast": "astro build",
+    "build:with-images": "npm run images:enrich:force && astro build",
+
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+
+    "images:enrich": "node scripts/enrich-breed-image-gallery.mjs",
+    "images:enrich:force": "node scripts/enrich-breed-image-gallery.mjs --force --count 5",
+    "images:enrich:ci": "node scripts/enrich-breed-image-gallery.mjs --force --count 5 || echo \"Image enrichment failed; continuing build with existing image data\"",
+    "images:enrich:breeds": "node scripts/enrich-breed-image-gallery.mjs --target breeds --force --count 5",
+    "images:enrich:crossbreeds": "node scripts/enrich-breed-image-gallery.mjs --target crossbreeds --force --count 5",
+    "images:enrich:german-shepherd": "node scripts/enrich-breed-image-gallery.mjs --slug german-shepherd-dog --force --count 5"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",

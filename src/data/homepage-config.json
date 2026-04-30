@@ -1,0 +1,375 @@
+{
+  "_meta": {
+    "schema": "pupwiki-homepage-config",
+    "version": "2.0.0",
+    "updated_for": "Homepage Restructure & Activation",
+    "notes": [
+      "This config is designed for the new prop-driven homepage section components.",
+      "It assumes the current Pupwiki branch still routes mixed-breed detail pages through /breeds/[slug].",
+      "When a real /mixed-breeds hub goes live, update routes.mixedBreedHub and routes.mixedBreedDetailPrefix."
+    ]
+  },
+  "seo": {
+    "title": "PupWiki | Trusted Guidance for Dog Parents",
+    "description": "Research breeds and mixed breeds, compare dog ownership costs, understand health and care needs, explore training guidance, and make smarter dog-parent decisions with PupWiki.",
+    "canonicalUrl": "https://pupwiki.com",
+    "ogImage": "/og-default.jpg",
+    "ogImageAlt": "PupWiki homepage preview",
+    "pageType": "website"
+  },
+  "routes": {
+    "home": "/",
+    "breedsHub": "/breeds",
+    "breedDetailPrefix": "/breeds",
+    "mixedBreedHub": "/breeds",
+    "mixedBreedDetailPrefix": "/breeds",
+    "dogNamesHub": "/dog-names",
+    "costCalculatorHub": "/cost-calculator",
+    "blogHub": "/blog",
+    "healthHub": "/categories/health",
+    "trainingHub": "/categories/training",
+    "foodHub": "/categories/dog-food",
+    "lifestyleHub": "/categories/lifestyle",
+    "methodology": "/methodology",
+    "about": "/about",
+    "contact": "/contact"
+  },
+  "featureFlags": {
+    "showHero": true,
+    "showPrimaryJourneys": true,
+    "showTrustStrip": true,
+    "showBreedDiscovery": true,
+    "showMixedBreedDiscovery": true,
+    "showCareDecisionLayer": true,
+    "showEditorialHighlights": true,
+    "showMethodologyTeaser": true,
+    "showLeadCapture": true,
+    "showAwinSpotlight": true
+  },
+  "selection": {
+    "breedDiscoveryMode": "dynamic_with_fallback",
+    "breedDiscoveryLimit": 6,
+    "mixedBreedDiscoveryMode": "dynamic_with_fallback",
+    "mixedBreedDiscoveryLimit": 8,
+    "editorialMode": "dynamic_with_curated_fallback",
+    "editorialLimit": 3,
+    "preferPopularBreeds": true,
+    "preferImageReadyBreeds": true,
+    "preferPoodleMixVariety": true
+  },
+  "hero": {
+    "eyebrow": "Trusted guidance for dog parents",
+    "title": "Research breeds, plan costs, and care smarter.",
+    "accent": "All in one place.",
+    "subtitle": "PupWiki helps dog parents compare breeds and mixed breeds, understand health and care needs, explore training and lifestyle guidance, and make more confident ownership decisions.",
+    "primaryCta": {
+      "label": "Explore Breeds",
+      "href": "/breeds"
+    },
+    "secondaryCta": {
+      "label": "Cost & Insurance",
+      "href": "/cost-calculator"
+    },
+    "imageSrc": "https://images.unsplash.com/photo-1544568100-847a948585b9?w=1400&q=80&fit=crop",
+    "imageAlt": "Happy dog owner with a golden retriever",
+    "heroCardEyebrow": "Data-backed dog guidance",
+    "heroCardText": "Breed profiles, mixed breeds, cost tools, care guidance, and practical next steps.",
+    "trustItems": [
+      "277 breed guides",
+      "75 mixed breeds",
+      "5,000+ dog names",
+      "Cost and care tools"
+    ],
+    "stats": [
+      {
+        "value": "277",
+        "label": "breed guides"
+      },
+      {
+        "value": "75",
+        "label": "mixed breeds"
+      },
+      {
+        "value": "5,000+",
+        "label": "dog names"
+      }
+    ]
+  },
+  "primaryJourneys": {
+    "eyebrow": "Planning to get a dog?",
+    "title": "Everything you need before you decide",
+    "subtitle": "Start with the right questions — breed fit, real costs, and what first-time ownership actually looks like.",
+    "items": [
+      {
+        "title": "Find the right breed",
+        "description": "Explore 277 breed profiles, compare temperament, size, and care needs, and narrow down the best fit for your lifestyle.",
+        "href": "/breeds",
+        "eyebrow": "Step 1",
+        "icon": "🐕"
+      },
+      {
+        "title": "Plan the real cost",
+        "description": "Estimate first-year and lifetime ownership costs, vet budgets, insurance, and practical planning needs before you commit.",
+        "href": "/cost-calculator",
+        "eyebrow": "Step 2",
+        "icon": "💰"
+      },
+      {
+        "title": "First dog guide",
+        "description": "Everything first-time dog owners need to know — from puppy prep to training fundamentals and what to budget for.",
+        "href": "/guides/first-dog",
+        "eyebrow": "Step 3",
+        "icon": "📋"
+      },
+      {
+        "title": "Take the breed quiz",
+        "description": "Answer 4 questions about your lifestyle and living situation and get matched to your top 3 breed fits.",
+        "href": "/breed-quiz",
+        "eyebrow": "Quick tool",
+        "icon": "✅"
+      }
+    ]
+  },
+  "trustStrip": {
+    "items": [
+      {
+        "value": "277",
+        "label": "breed guides"
+      },
+      {
+        "value": "75",
+        "label": "mixed breeds"
+      },
+      {
+        "value": "5,000+",
+        "label": "dog names"
+      },
+      {
+        "value": "Daily",
+        "label": "care guidance"
+      }
+    ],
+    "note": "Built to help dog parents compare breeds, plan costs, and care with more confidence."
+  },
+  "breedDiscovery": {
+    "eyebrow": "Breed discovery",
+    "title": "Explore popular dog breeds",
+    "subtitle": "Start with familiar favorites, then branch into breed guides that match your lifestyle, experience, and care expectations.",
+    "viewAllHref": "/breeds",
+    "viewAllLabel": "View all breeds",
+    "routePrefix": "/breeds",
+    "breeds": [],
+    "fallbackBreeds": [
+      {
+        "slug": "labrador-retriever",
+        "name": "Labrador Retriever",
+        "subtitle": "Friendly, versatile, and family-oriented",
+        "tags": [
+          "Family",
+          "Friendly",
+          "Active"
+        ]
+      },
+      {
+        "slug": "golden-retriever",
+        "name": "Golden Retriever",
+        "subtitle": "Reliable, affectionate, and eager to please",
+        "tags": [
+          "Family",
+          "Popular",
+          "Easygoing"
+        ]
+      },
+      {
+        "slug": "french-bulldog",
+        "name": "French Bulldog",
+        "subtitle": "Compact companion with strong urban appeal",
+        "tags": [
+          "Small",
+          "Apartment",
+          "Popular"
+        ]
+      },
+      {
+        "slug": "german-shepherd",
+        "name": "German Shepherd",
+        "subtitle": "Intelligent, loyal, and driven",
+        "tags": [
+          "Working",
+          "Trainable",
+          "Protective"
+        ]
+      },
+      {
+        "slug": "poodle-standard",
+        "name": "Poodle",
+        "subtitle": "Smart, elegant, and highly trainable",
+        "tags": [
+          "Intelligent",
+          "Low-shedding",
+          "Versatile"
+        ]
+      },
+      {
+        "slug": "bulldog",
+        "name": "Bulldog",
+        "subtitle": "Low-key companion with strong personality",
+        "tags": [
+          "Calm",
+          "Popular",
+          "Compact"
+        ]
+      }
+    ]
+  },
+  "mixedBreedDiscovery": {
+    "eyebrow": "Designer & mixed breeds",
+    "title": "Popular mixed breed guides",
+    "subtitle": "Explore mixed-breed profiles, likely trait blends, and practical care guidance based on parent-breed patterns.",
+    "viewAllHref": "/breeds",
+    "viewAllLabel": "Browse mixed breeds",
+    "detailRoutePrefix": "/breeds",
+    "items": [],
+    "fallbackItems": [
+      {
+        "slug": "goldendoodle",
+        "name": "Goldendoodle",
+        "parent1": "Golden Retriever",
+        "parent2": "Poodle",
+        "size": "medium",
+        "energy": "regular",
+        "trainability": "easy",
+        "isPoodleMix": true
+      },
+      {
+        "slug": "labradoodle",
+        "name": "Labradoodle",
+        "parent1": "Labrador Retriever",
+        "parent2": "Poodle",
+        "size": "medium",
+        "energy": "active",
+        "trainability": "easy",
+        "isPoodleMix": true
+      },
+      {
+        "slug": "cockapoo",
+        "name": "Cockapoo",
+        "parent1": "Cocker Spaniel",
+        "parent2": "Poodle",
+        "size": "small",
+        "energy": "regular",
+        "trainability": "easy",
+        "isPoodleMix": true
+      },
+      {
+        "slug": "bernedoodle",
+        "name": "Bernedoodle",
+        "parent1": "Bernese Mountain Dog",
+        "parent2": "Poodle",
+        "size": "large",
+        "energy": "regular",
+        "trainability": "moderate",
+        "isPoodleMix": true
+      }
+    ]
+  },
+  "careDecisionLayer": {
+    "eyebrow": "Care smarter",
+    "title": "The practical side of dog ownership",
+    "subtitle": "Move from curiosity to confident decisions with care, training, health, and lifestyle guidance.",
+    "cards": [
+      {
+        "title": "Health & vet care",
+        "description": "Understand breed-linked health patterns, care watch-outs, and practical guidance for everyday ownership.",
+        "href": "/categories/health",
+        "icon": "🩺",
+        "eyebrow": "Care"
+      },
+      {
+        "title": "Training & behavior",
+        "description": "Explore trainability, routine-building, behavior patterns, and practical next steps for better day-to-day life.",
+        "href": "/categories/training",
+        "icon": "🦮",
+        "eyebrow": "Behavior"
+      },
+      {
+        "title": "Nutrition & feeding",
+        "description": "Compare feeding approaches, food guidance, and practical nutrition considerations by breed and lifestyle.",
+        "href": "/categories/dog-food",
+        "icon": "🍖",
+        "eyebrow": "Food"
+      },
+      {
+        "title": "Lifestyle & gear",
+        "description": "Browse practical product and lifestyle guidance for sleep, travel, safety, and daily routines.",
+        "href": "/categories/lifestyle",
+        "icon": "🎒",
+        "eyebrow": "Lifestyle"
+      }
+    ]
+  },
+  "editorialHighlights": {
+    "eyebrow": "Editorial highlights",
+    "title": "Guides, comparisons, and practical reads",
+    "subtitle": "Use curated editorial picks now, then switch to fully dynamic homepage content later.",
+    "viewAllHref": "/blog",
+    "viewAllLabel": "Read the blog",
+    "items": [],
+    "fallbackItems": [
+      {
+        "category": "Comparison",
+        "title": "Fi vs Tractive: Which dog GPS tracker is better?",
+        "description": "A practical comparison of tracking reliability, battery life, subscriptions, and day-to-day usability.",
+        "href": "/blog/fi-series-4-gps-vs-tractive-gps-dog-4"
+      },
+      {
+        "category": "Food review",
+        "title": "The Farmer's Dog vs Ollie",
+        "description": "A useful look at ingredients, convenience, delivery, and whether premium fresh food is actually worth it.",
+        "href": "/blog/the-farmers-dog-vs-ollie-fresh-food"
+      },
+      {
+        "category": "Cost guide",
+        "title": "The true lifetime cost of a French Bulldog",
+        "description": "Understand ongoing ownership costs, common care expenses, and why planning ahead matters.",
+        "href": "/cost-calculator/french-bulldog"
+      }
+    ]
+  },
+  "methodologyTeaser": {
+    "eyebrow": "Why trust PupWiki",
+    "title": "Clear, practical, and transparent guidance",
+    "description": "PupWiki is built to help dog parents make better decisions with structured breed data, practical care guidance, and transparent editorial standards.",
+    "bullets": [
+      "Breed and mixed-breed research grounded in structured data",
+      "Reader-first recommendations, not paid rankings",
+      "A growing platform for breed, cost, care, and decision support"
+    ],
+    "primaryLink": {
+      "label": "View methodology",
+      "href": "/methodology"
+    },
+    "secondaryLink": {
+      "label": "About PupWiki",
+      "href": "/about"
+    }
+  },
+  "leadCapture": {
+    "title": "Stay in the loop",
+    "description": "Get practical dog guidance, new breed and mixed-breed guides, and carefully selected updates from PupWiki.",
+    "formAction": "",
+    "method": "POST",
+    "emailPlaceholder": "Enter your email address",
+    "buttonLabel": "Subscribe",
+    "hiddenFields": [],
+    "fallbackPrimary": {
+      "label": "Explore Breeds",
+      "href": "/breeds"
+    },
+    "fallbackSecondary": {
+      "label": "Read the Blog",
+      "href": "/blog"
+    },
+    "disclaimer": "No spam. Only practical dog guidance, updates, and occasional curated recommendations."
+  }
+}

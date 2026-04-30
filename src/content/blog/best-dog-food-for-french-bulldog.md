@@ -4,7 +4,7 @@ description: "We matched the best dog food to the French Bulldog's specific calm
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["french-bulldog", "dog-food", "medium-breed", "calm"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "french-bulldog"
 ---
 

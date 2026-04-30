@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Belgian Malinois's specific la
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["belgian-malinois", "dog-food", "large-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "belgian-malinois"
 ---
 

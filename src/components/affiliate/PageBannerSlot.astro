@@ -1,0 +1,43 @@
+---
+import AdBanner from './AdBanner.astro';
+import {
+  getAffiliateBannerById,
+  getFirstAffiliateBanner,
+  type BannerSlotContext,
+} from '../../lib/affiliate/getActiveBanners';
+
+export interface Props extends BannerSlotContext {
+  className?: string;
+  compact?: boolean;
+  noteText?: string;
+  hideMeta?: boolean;
+  preferredBannerId?: string;
+}
+
+const {
+  pageType = '',
+  placement = 'mid-content',
+  topic = '',
+  topicTags = [],
+  isMedical = false,
+  className = '',
+  compact = false,
+  noteText,
+  hideMeta = false,
+  preferredBannerId,
+} = Astro.props;
+
+const banner = preferredBannerId
+  ? getAffiliateBannerById(preferredBannerId)
+  : getFirstAffiliateBanner({ pageType, placement, topic, topicTags, isMedical });
+---
+
+{banner && (!isMedical || preferredBannerId) ? (
+  <AdBanner
+    banner={banner}
+    className={className}
+    compact={compact}
+    noteText={noteText}
+    hideMeta={hideMeta}
+  />
+) : null}

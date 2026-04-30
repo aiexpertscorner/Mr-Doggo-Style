@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Bernese Mountain Dog's specifi
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["bernese-mountain-dog", "dog-food", "large-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "bernese-mountain-dog"
 ---
 

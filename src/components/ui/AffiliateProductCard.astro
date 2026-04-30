@@ -1,0 +1,122 @@
+---
+/**
+ * AffiliateProductCard.astro
+ * Renders a single AWIN affiliate product card.
+ * Data source: src/data/affiliate-products.json
+ */
+
+export interface Props {
+  /** Product object from affiliate-products.json */
+  product: {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    currency: string;
+    url: string;
+    image: string;
+    merchant: string;
+    category: string;
+  };
+  /** Optional override headline above the card */
+  headline?: string;
+  /** compact: slim horizontal layout; card (default): vertical */
+  variant?: 'card' | 'compact';
+}
+
+const { product, headline, variant = 'card' } = Astro.props;
+const formattedPrice = product.price.toFixed(2);
+---
+
+{variant === 'card' ? (
+  <div class="rounded-2xl overflow-hidden" style="border:2px solid var(--color-border-strong);background:white">
+    {headline && (
+      <div class="px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider" style="background:var(--color-surface-warm);color:var(--color-accent-hover);border-bottom:1px solid var(--color-border-strong)">
+        {headline}
+      </div>
+    )}
+
+    <!-- Product image -->
+    <div class="flex items-center justify-center p-4" style="background:var(--color-bg-soft);min-height:130px">
+      {product.image ? (
+        <img
+          src={product.image}
+          alt={product.name}
+          width="120"
+          height="120"
+          loading="lazy"
+          class="object-contain max-h-28"
+          onerror="this.style.display='none';document.getElementById('img-fallback-{product.id}').style.display='block'"
+        />
+      ) : null}
+      <span id={`img-fallback-${product.id}`} style={product.image ? 'display:none;font-size:2.5rem' : 'font-size:2.5rem'}>🐾</span>
+    </div>
+
+    <!-- Product details -->
+    <div class="p-4 flex flex-col gap-2">
+      <span class="font-sans text-xs font-bold uppercase tracking-wider" style="color:var(--color-accent)">
+        {product.merchant} · {product.category}
+      </span>
+      <h3 class="font-sans text-sm font-bold leading-snug" style="color:#1e293b">{product.name}</h3>
+      <p class="font-sans text-xs leading-relaxed" style="color:#64748b">
+        {product.description.slice(0, 100)}{product.description.length > 100 ? '…' : ''}
+      </p>
+
+      <div class="flex items-center justify-between pt-2 mt-auto" style="border-top:1px solid var(--color-surface-warm)">
+        <span class="font-sans font-black text-lg" style="color:#1e293b">
+          ${formattedPrice}
+        </span>
+        <a
+          href={product.url}
+          rel="nofollow sponsored"
+          target="_blank"
+          class="font-sans text-xs font-bold px-3 py-2 rounded-xl text-white"
+          style="background:linear-gradient(135deg,var(--color-accent),var(--color-accent-hover))"
+          data-affiliate-merchant={product.merchant}
+          data-affiliate-product={product.id}
+          data-affiliate-placement="card"
+        >
+          Shop now →
+        </a>
+      </div>
+
+      <p class="font-sans text-xs text-center" style="color:#94a3b8">
+        Affiliate link — no extra cost to you
+      </p>
+    </div>
+  </div>
+) : (
+  <!-- Compact horizontal variant -->
+  <div class="flex items-center gap-3 rounded-xl p-3" style="border:1px solid var(--color-border-strong);background:white">
+    {product.image && (
+      <div class="flex-shrink-0 w-14 h-14 rounded-lg overflow-hidden flex items-center justify-center" style="background:var(--color-bg-soft)">
+        <img
+          src={product.image}
+          alt={product.name}
+          width="56"
+          height="56"
+          loading="lazy"
+          class="object-contain max-h-12"
+          onerror="this.style.display='none'"
+        />
+      </div>
+    )}
+    <div class="flex-1 min-w-0">
+      <p class="font-sans text-xs font-bold leading-snug truncate" style="color:#1e293b">{product.name}</p>
+      <p class="font-sans text-xs" style="color:#64748b">{product.merchant}</p>
+      <p class="font-sans font-black text-sm" style="color:var(--color-accent)">${formattedPrice}</p>
+    </div>
+    <a
+      href={product.url}
+      rel="nofollow sponsored"
+      target="_blank"
+      class="flex-shrink-0 font-sans text-xs font-bold px-2.5 py-1.5 rounded-lg text-white"
+      style="background:linear-gradient(135deg,var(--color-accent),var(--color-accent-hover))"
+      data-affiliate-merchant={product.merchant}
+      data-affiliate-product={product.id}
+      data-affiliate-placement="compact"
+    >
+      Shop →
+    </a>
+  </div>
+)}

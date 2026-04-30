@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Basset Hound's specific couch 
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["basset-hound", "dog-food", "medium-breed", "couch-potato"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "basset-hound"
 ---
 

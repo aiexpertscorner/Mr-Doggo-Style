@@ -1,0 +1,215 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "description": "Central banner registry for PupWiki affiliate/partner banners.",
+    "notes": [
+      "Set enabled=true/false to activate or deactivate a banner instantly.",
+      "Use startAt and endAt for seasonal or temporary campaigns.",
+      "Use either htmlSnippet OR structured image fields (href + imageSrc).",
+      "For mixed mobile/desktop creatives, set both mobileImageSrc and desktopImageSrc."
+    ]
+  },
+  "globalDefaults": {
+    "noteText": "Advertisement / affiliate partner",
+    "openInNewTab": true,
+    "rel": "sponsored noopener",
+    "imageFit": "cover"
+  },
+  "banners": [
+    {
+      "id": "chefpaw-food-maker-primary",
+      "advertiser": "ChefPaw",
+      "network": "awin",
+      "enabled": true,
+      "priority": 80,
+      "label": "ChefPaw Dog Food Maker",
+      "type": "image_link",
+      "href": "https://www.awin1.com/cread.php?s=3467766&v=63546&q=471883&r=2861861",
+      "imageSrc": "https://www.awin1.com/cshow.php?s=3467766&v=63546&q=471883&r=2861861",
+      "alt": "ChefPaw dog food maker banner",
+      "noteText": "Advertisement / affiliate partner",
+      "placements": [
+        "after-intro",
+        "mid-content",
+        "pre-footer",
+        "homepage-lower"
+      ],
+      "pageTypes": [
+        "blog",
+        "breed",
+        "category",
+        "homepage"
+      ],
+      "topicTags": [
+        "food",
+        "nutrition",
+        "feeding",
+        "care",
+        "fresh-food"
+      ],
+      "excludePageTypes": [
+        "about",
+        "privacy",
+        "disclosure",
+        "methodology",
+        "contact"
+      ],
+      "excludeTopicTags": [
+        "emergency-vet",
+        "medical-warning",
+        "vet-critical"
+      ]
+    },
+    {
+      "id": "chefpaw-food-maker-secondary",
+      "advertiser": "ChefPaw",
+      "network": "awin",
+      "enabled": true,
+      "priority": 70,
+      "label": "ChefPaw Pet Food Maker Sale",
+      "type": "image_link",
+      "href": "https://www.awin1.com/cread.php?s=3702082&v=63546&q=496374&r=2861861",
+      "imageSrc": "https://www.awin1.com/cshow.php?s=3702082&v=63546&q=496374&r=2861861",
+      "alt": "ChefPaw pet food maker sale banner",
+      "noteText": "Advertisement / affiliate partner",
+      "placements": [
+        "pre-footer",
+        "rail"
+      ],
+      "pageTypes": [
+        "blog",
+        "breed",
+        "category"
+      ],
+      "topicTags": [
+        "food",
+        "nutrition",
+        "feeding",
+        "care"
+      ]
+    },
+    {
+      "id": "jugbow-training-primary",
+      "advertiser": "JUGBOW",
+      "network": "awin",
+      "enabled": true,
+      "priority": 90,
+      "label": "JUGBOW Training Gear",
+      "type": "image_link",
+      "href": "https://www.awin1.com/cread.php?s=4420105&v=79708&q=573197&r=2861861",
+      "imageSrc": "https://www.awin1.com/cshow.php?s=4420105&v=79708&q=573197&r=2861861",
+      "alt": "JUGBOW dog training gear banner",
+      "noteText": "Advertisement / affiliate partner",
+      "placements": [
+        "after-summary",
+        "mid-content",
+        "training-section",
+        "pre-footer"
+      ],
+      "pageTypes": [
+        "blog",
+        "breed",
+        "category"
+      ],
+      "topicTags": [
+        "training",
+        "behavior",
+        "obedience",
+        "recall",
+        "leash",
+        "working",
+        "active"
+      ],
+      "excludePageTypes": [
+        "about",
+        "privacy",
+        "disclosure",
+        "methodology",
+        "contact"
+      ],
+      "excludeTopicTags": [
+        "health",
+        "emergency-vet",
+        "medical-warning"
+      ]
+    },
+    {
+      "id": "crown-and-paw-mothers-day",
+      "advertiser": "Crown and Paw",
+      "network": "awin",
+      "enabled": false,
+      "priority": 95,
+      "label": "Crown and Paw Mother's Day",
+      "type": "image_link",
+      "href": "https://www.awin1.com/cread.php?s=4750133&v=57823&q=599399&r=2861861",
+      "imageSrc": "https://www.awin1.com/cshow.php?s=4750133&v=57823&q=599399&r=2861861",
+      "alt": "Crown and Paw Mother's Day banner",
+      "noteText": "Advertisement / affiliate partner",
+      "placements": [
+        "homepage-lower",
+        "mid-content",
+        "pre-footer"
+      ],
+      "pageTypes": [
+        "homepage",
+        "blog",
+        "breed",
+        "category"
+      ],
+      "topicTags": [
+        "gift",
+        "lifestyle",
+        "dog-names",
+        "mother-day",
+        "seasonal"
+      ],
+      "startAt": "2026-04-15T00:00:00.000Z",
+      "endAt": "2026-05-15T23:59:59.000Z"
+    },
+    {
+      "id": "custom-local-example",
+      "advertiser": "Your Partner Name",
+      "network": "custom",
+      "enabled": false,
+      "priority": 60,
+      "label": "Local Uploaded Banner Example",
+      "type": "image_link",
+      "href": "https://example.com",
+      "imageSrc": "/ads/custom/example-desktop.webp",
+      "mobileImageSrc": "/ads/custom/example-mobile.webp",
+      "alt": "Uploaded partner banner",
+      "noteText": "Advertisement / affiliate partner",
+      "placements": [
+        "mid-content",
+        "pre-footer"
+      ],
+      "pageTypes": [
+        "blog",
+        "breed"
+      ],
+      "topicTags": [
+        "lifestyle"
+      ]
+    },
+    {
+      "id": "raw-html-snippet-example",
+      "advertiser": "Raw Snippet Example",
+      "network": "awin",
+      "enabled": false,
+      "priority": 50,
+      "label": "Raw HTML Banner Example",
+      "type": "html_snippet",
+      "htmlSnippet": "<a rel=\"sponsored noopener\" target=\"_blank\" href=\"https://example.com\"><img src=\"/ads/raw/example-banner.webp\" alt=\"Example raw banner\" loading=\"lazy\" decoding=\"async\" /></a>",
+      "noteText": "Advertisement / affiliate partner",
+      "placements": [
+        "mid-content"
+      ],
+      "pageTypes": [
+        "blog"
+      ],
+      "topicTags": [
+        "example"
+      ]
+    }
+  ]
+}

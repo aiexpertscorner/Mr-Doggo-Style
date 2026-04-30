@@ -9,7 +9,7 @@ import productIndex from '../../data/product-index.json';
 import masterBreeds from '../../data/master-breeds.json';
 
 const AMAZON_TAG = 'aiexpertscorn-20';
-const SITE       = 'https://mrdoggostyle.com';
+const SITE       = 'https://pupwiki.com';
 
 export function getStaticPaths() {
   return (brandsData as any[]).map(b => ({ params: { brand: b.slug } }));
@@ -52,7 +52,7 @@ const jsonLd = JSON.stringify({
 <BaseLayout
   title={`${brand.name} Dog Products — Reviews, Best Picks & Breed Guides 2026`}
   description={`Expert reviews of all ${brand.name} dog products. Find the best ${brand.name} ${brand.category_label.toLowerCase()} for your breed, with Chewy and Amazon price comparisons.`}
-  canonicalURL={`${SITE}/brands/${slug}`}
+  canonicalUrl={`${SITE}/brands/${slug}`}
 >
 <script type="application/ld+json" set:html={jsonLd} />
 

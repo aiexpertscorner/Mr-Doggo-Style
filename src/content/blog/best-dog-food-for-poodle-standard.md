@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Poodle (Standard)'s specific l
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["poodle-standard", "dog-food", "large-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "poodle-standard"
 ---
 

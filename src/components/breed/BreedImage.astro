@@ -1,120 +1,415 @@
 ---
 /**
- * BreedImage.astro — Smart breed image component
+ * BreedImage.astro — resilient, mobile-first breed image / mini-gallery component
  *
- * Priority:
- * 1. breed.image_url (Dog CEO API CDN — fast, free, same dataset as local)
- * 2. Emoji placeholder (never shows broken images)
- *
- * Features:
- * - Native lazy loading
- * - Correct width/height to prevent layout shift (CLS)
- * - Fade-in on load
- * - Zero JS by default (CSS-only fade)
+ * Mobile refinements:
+ * - Uses a stable aspect-ratio instead of fixed square height.
+ * - Hero variant is full-width on mobile.
+ * - Thumbnail rail scrolls horizontally on small screens.
+ * - Fallback is visually consistent with image frame.
+ * - JS resets loading state when switching images.
  */
+
+export interface BreedImageGalleryItem {
+  url?: string;
+  image_url?: string;
+  source?: string;
+  role?: string;
+  dog_ceo_path?: string;
+  parent_breed_name?: string;
+}
 
 export interface Props {
   breed: {
-    slug:        string;
-    name:        string;
-    size_category: string;
-    image_url?:  string;
+    slug: string;
+    name: string;
+    size_category?: string;
+    image_url?: string;
+    image_urls?: string[];
+    image_gallery?: BreedImageGalleryItem[];
+    image_url_candidates?: BreedImageGalleryItem[];
+    image_url_parent_1?: string;
+    image_url_parent_2?: string;
+    image_alt?: string;
   };
-  width?:    number;
-  height?:   number;
-  class?:    string;
-  priority?: boolean;  // true = eager load (above fold)
-  style?:    string;
+  width?: number;
+  height?: number;
+  class?: string;
+  priority?: boolean;
+  style?: string;
+  showGallery?: boolean;
+  variant?: 'single' | 'hero' | 'card';
+  objectPosition?: string;
 }
 
 const {
   breed,
-  width    = 400,
-  height   = 400,
-  class:   className = '',
+  width = 800,
+  height = 640,
+  class: className = '',
   priority = false,
-  style    = '',
+  style = '',
+  showGallery = false,
+  variant = 'single',
+  objectPosition = 'center 42%',
 } = Astro.props;
 
-const SIZE_EMOJI: Record<string,string> = {
-  small:  '🐕',
+const SIZE_EMOJI: Record<string, string> = {
+  small: '🐕',
   medium: '🐕‍🦺',
-  large:  '🐕‍🦺',
-  giant:  '🦮',
+  large: '🐕‍🦺',
+  giant: '🦮',
 };
 
-const emoji    = SIZE_EMOJI[breed.size_category] || '🐾';
-const hasImage = !!breed.image_url;
-const loading  = priority ? 'eager' : 'lazy';
+function uniqueUrls(urls: unknown[]) {
+  const seen = new Set<string>();
+
+  return urls
+    .filter((url): url is string => typeof url === 'string' && /^https?:\/\//.test(url))
+    .filter((url) => {
+      if (seen.has(url)) return false;
+      seen.add(url);
+      return true;
+    });
+}
+
+const galleryUrls = uniqueUrls([
+  ...(Array.isArray(breed.image_gallery) ? breed.image_gallery.map((item) => item.url || item.image_url) : []),
+  ...(Array.isArray(breed.image_urls) ? breed.image_urls : []),
+  breed.image_url,
+  ...(Array.isArray(breed.image_url_candidates) ? breed.image_url_candidates.map((item) => item.url || item.image_url) : []),
+  breed.image_url_parent_1,
+  breed.image_url_parent_2,
+]).slice(0, 5);
+
+const primaryUrl = galleryUrls[0] || '';
+const emoji = SIZE_EMOJI[breed.size_category || ''] || '🐾';
+const alt = breed.image_alt || `${breed.name} dog`;
+const loading = priority ? 'eager' : 'lazy';
 const fetchpriority = priority ? 'high' : 'auto';
+const hasImages = galleryUrls.length > 0;
+const galleryJson = JSON.stringify(galleryUrls);
 ---
 
-{hasImage ? (
-  <div class={`breed-img-wrap ${className}`} style={style}>
-    <img
-      src={breed.image_url}
-      alt={`${breed.name} dog`}
-      width={width}
-      height={height}
-      loading={loading}
-      fetchpriority={fetchpriority}
-      decoding="async"
-      class="breed-img"
-      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-    />
-    <div class="breed-img-fallback" style="display:none" aria-hidden="true">
-      {emoji}
+<div
+  class:list={[
+    'breed-image',
+    `breed-image--${variant}`,
+    showGallery && galleryUrls.length > 1 && 'breed-image--with-gallery',
+    !hasImages && 'breed-image--fallback-only',
+    className,
+  ]}
+  style={style}
+  data-breed-image
+  data-gallery={galleryJson}
+>
+  {hasImages ? (
+    <>
+      <div class="breed-image__main">
+        <img
+          src={primaryUrl}
+          alt={alt}
+          width={width}
+          height={height}
+          loading={loading}
+          fetchpriority={fetchpriority}
+          decoding="async"
+          class="breed-image__img"
+          style={`object-position:${objectPosition}`}
+          data-breed-image-main
+        />
+
+        <div class="breed-image__fallback" hidden data-breed-image-fallback aria-hidden="true">
+          <span>{emoji}</span>
+        </div>
+      </div>
+
+      {showGallery && galleryUrls.length > 1 && (
+        <div class="breed-image__thumbs" aria-label={`${breed.name} image gallery`}>
+          {galleryUrls.map((url, index) => (
+            <button
+              type="button"
+              class:list={['breed-image__thumb', index === 0 && 'is-active']}
+              data-breed-image-thumb
+              data-src={url}
+              aria-label={`Show ${breed.name} image ${index + 1}`}
+            >
+              <img src={url} alt="" loading="lazy" decoding="async" />
+            </button>
+          ))}
+        </div>
+      )}
+    </>
+  ) : (
+    <div class="breed-image__fallback breed-image__fallback--visible" aria-hidden="true">
+      <span>{emoji}</span>
     </div>
-  </div>
-) : (
-  <div class={`breed-img-placeholder ${className}`} style={style} aria-hidden="true">
-    {emoji}
-  </div>
-)}
+  )}
+</div>
+
+<script>
+  document.querySelectorAll('[data-breed-image]').forEach((root) => {
+    if ((root as HTMLElement).dataset.initialized === 'true') return;
+    (root as HTMLElement).dataset.initialized = 'true';
+
+    const main = root.querySelector('[data-breed-image-main]') as HTMLImageElement | null;
+    const fallback = root.querySelector('[data-breed-image-fallback]') as HTMLElement | null;
+    const thumbs = Array.from(root.querySelectorAll('[data-breed-image-thumb]')) as HTMLButtonElement[];
+
+    let gallery: string[] = [];
+
+    try {
+      gallery = JSON.parse((root as HTMLElement).dataset.gallery || '[]');
+    } catch {
+      gallery = [];
+    }
+
+    let activeIndex = 0;
+
+    const showFallback = () => {
+      if (main) main.hidden = true;
+      if (fallback) fallback.hidden = false;
+      thumbs.forEach((thumb) => (thumb.hidden = true));
+    };
+
+    const setActiveThumb = (src: string) => {
+      thumbs.forEach((thumb) => {
+        thumb.classList.toggle('is-active', thumb.dataset.src === src);
+      });
+    };
+
+    const setImage = (src: string) => {
+      if (!main || !src) return;
+
+      main.hidden = false;
+      main.classList.remove('is-loaded');
+
+      if (fallback) fallback.hidden = true;
+
+      if (main.src !== src) {
+        main.src = src;
+      } else if (main.complete && main.naturalWidth > 0) {
+        main.classList.add('is-loaded');
+      }
+
+      setActiveThumb(src);
+    };
+
+    const tryNextImage = () => {
+      if (!main || !gallery.length) {
+        showFallback();
+        return;
+      }
+
+      activeIndex += 1;
+
+      if (activeIndex >= gallery.length) {
+        showFallback();
+        return;
+      }
+
+      setImage(gallery[activeIndex]);
+    };
+
+    if (main) {
+      if (main.complete && main.naturalWidth > 0) main.classList.add('is-loaded');
+
+      main.addEventListener('load', () => {
+        main.classList.add('is-loaded');
+      });
+
+      main.addEventListener('error', tryNextImage);
+    }
+
+    thumbs.forEach((thumb, index) => {
+      const thumbImage = thumb.querySelector('img') as HTMLImageElement | null;
+
+      thumb.addEventListener('click', () => {
+        activeIndex = index;
+        setImage(thumb.dataset.src || '');
+      });
+
+      thumbImage?.addEventListener('error', () => {
+        thumb.hidden = true;
+      });
+    });
+  });
+</script>
 
 <style>
-  .breed-img-wrap {
+  .breed-image {
+    --breed-image-radius: var(--radius-3xl);
+    --breed-image-thumb-size: clamp(3.35rem, 18vw, 4.5rem);
     position: relative;
-    overflow: hidden;
-    background: var(--color-bg-soft);
-    border-radius: inherit;
+    display: grid;
+    width: 100%;
+    max-width: 100%;
+    gap: var(--space-3, 0.75rem);
+    min-width: 0;
   }
 
-  .breed-img {
+  .breed-image__main {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--breed-image-radius);
+    background:
+      radial-gradient(circle at 30% 20%, var(--color-accent-light), transparent 55%),
+      var(--color-bg-muted);
+    isolation: isolate;
+  }
+
+  .breed-image__main::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(180deg, rgba(15, 23, 42, 0.02), rgba(15, 23, 42, 0.14)),
+      radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.22), transparent 16rem);
+    pointer-events: none;
+  }
+
+  .breed-image__img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: scale(1.015);
+    transition:
+      opacity 220ms ease,
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  /* Fade in once loaded */
-  .breed-img.loaded,
-  .breed-img:not([src=""]) {
+  .breed-image__img.is-loaded {
     opacity: 1;
+    transform: scale(1);
   }
 
-  .breed-img-fallback,
-  .breed-img-placeholder {
+  .breed-image__fallback {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(circle at 30% 20%, var(--color-accent-light), transparent 55%),
+      var(--color-bg-muted);
+  }
+
+  .breed-image__fallback--visible {
+    position: relative;
+    min-height: 14rem;
+    border-radius: var(--breed-image-radius);
+  }
+
+  .breed-image__fallback span {
+    font-size: clamp(3rem, 14vw, 6rem);
+    line-height: 1;
+  }
+
+  .breed-image__thumbs {
+    display: flex;
+    gap: var(--space-2, 0.5rem);
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: 0.1rem 0.1rem 0.45rem;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .breed-image__thumb {
+    position: relative;
+    flex: 0 0 var(--breed-image-thumb-size);
+    overflow: hidden;
+    aspect-ratio: 1;
+    border: 2px solid rgba(255, 255, 255, 0.86);
+    border-radius: var(--radius-xl);
+    background: var(--color-bg-muted);
+    padding: 0;
+    box-shadow: var(--shadow-xs);
+    cursor: pointer;
+    scroll-snap-align: start;
+    transition: var(--transition-smooth);
+  }
+
+  .breed-image__thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+    pointer-events: none;
+  }
+
+  .breed-image__thumb:hover,
+  .breed-image__thumb.is-active {
+    border-color: var(--color-accent);
+    transform: translateY(-1px);
+  }
+
+  .breed-image__thumb.is-active {
+    box-shadow:
+      0 0 0 3px rgba(255, 122, 0, 0.14),
+      var(--shadow-xs);
+  }
+
+  .breed-image__thumb img {
+    display: block;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.5rem;
-    background: var(--color-bg-soft);
-    border-radius: inherit;
+    object-fit: cover;
+  }
+
+  .breed-image--hero {
+    --breed-image-radius: clamp(1.25rem, 5vw, var(--radius-3xl));
+  }
+
+  .breed-image--hero .breed-image__main {
+    border: 1px solid var(--color-border-warm);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .breed-image--card {
+    --breed-image-radius: var(--radius-2xl);
+  }
+
+  .breed-image--card .breed-image__main {
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+  }
+
+  @media (max-width: 419px) {
+    .breed-image--hero .breed-image__main {
+      aspect-ratio: 1.12 / 1;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .breed-image {
+      --breed-image-thumb-size: 4.35rem;
+    }
+
+    .breed-image--hero .breed-image__main {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .breed-image--hero .breed-image__main {
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .breed-image__img,
+    .breed-image__thumb {
+      transition: none;
+      transform: none !important;
+    }
   }
 </style>
-
-<script>
-  // Native fade-in on image load
-  document.querySelectorAll('.breed-img').forEach(img => {
-    if ((img as HTMLImageElement).complete) {
-      img.classList.add('loaded');
-    } else {
-      img.addEventListener('load', () => img.classList.add('loaded'));
-    }
-  });
-</script>

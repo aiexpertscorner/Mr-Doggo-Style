@@ -1,0 +1,55 @@
+{
+  "breedSlug": "french-bulldog",
+  "breedName": "French Bulldog",
+  "contentVersion": "enrichment-v1",
+  "updatedAt": "2026-04-29",
+  "careProfile": {
+    "summary": "The French Bulldog is a medium-sized breed with calm energy and heavy shedding.",
+    "ownerFit": "suits apartment living or less active owners; highly trainable — ideal for first-time owners; expect regular grooming and vacuuming",
+    "exerciseNeeds": "Short daily walks (20–30 min) plus mental enrichment are sufficient.",
+    "trainingNotes": "Highly trainable — responds well to positive reinforcement and consistency.",
+    "groomingNotes": "Heavy shedder — brush 3–4× per week; deshedding tools recommended seasonally.",
+    "feedingContext": "Feed 2 meals daily; adjust portions by activity level. Maintain healthy body condition — avoid overfeeding."
+  },
+  "costDrivers": {
+    "food": "$30–$55/mo",
+    "insurance": "~$98/mo base (varies by age, state, and plan)",
+    "grooming": "$15–$30/mo in grooming tools and occasional baths",
+    "training": "Group puppy classes from $100–$200; optional private sessions $50–$150/hr",
+    "vetCare": "Annual wellness visits $200–$400; breed-specific screening recommended"
+  },
+  "healthContext": {
+    "claimSensitivity": "medium",
+    "disclaimerRequired": false,
+    "commonConcerns": [
+      "Brachycephalic Syndrome",
+      "Intervertebral Disc Disease (IVDD)",
+      "Skin Fold Dermatitis",
+      "Hip Dysplasia"
+    ],
+    "vetConversationPrompts": []
+  },
+  "monetizationHooks": {
+    "insurance": "high",
+    "training": "low",
+    "dna": "medium",
+    "grooming": "medium",
+    "food": "medium",
+    "onlineVet": "high"
+  },
+  "recommendedBlocks": [
+    "care-profile",
+    "cost-drivers",
+    "insurance-cta"
+  ],
+  "internalLinks": [
+    {
+      "label": "French Bulldog cost calculator",
+      "href": "/cost-calculator/french-bulldog"
+    },
+    {
+      "label": "French Bulldog names",
+      "href": "/dog-names/french-bulldog"
+    }
+  ]
+}

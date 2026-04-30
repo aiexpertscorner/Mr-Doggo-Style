@@ -1,222 +1,616 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const CONTACT_EMAIL = 'hello@pupwiki.com';
+
+const contactTopics = [
+  {
+    icon: '🔍',
+    title: 'Corrections',
+    desc: 'Found an error, outdated information, or a broken link? Send the page URL and the detail we should review.',
+  },
+  {
+    icon: '💡',
+    title: 'Product tips',
+    desc: 'Know a product we should consider? Tell us the product name, category, and why it may be useful for dog owners.',
+  },
+  {
+    icon: '🤝',
+    title: 'Partnerships',
+    desc: 'For brand, affiliate, or press enquiries, include your company name, website, and proposal summary.',
+  },
+  {
+    icon: '🐾',
+    title: 'Breed questions',
+    desc: 'Missing breed information or mixed-breed data? Let us know which page or breed needs attention.',
+  },
+];
+
+const helpfulDetails = [
+  'The page URL you are referring to',
+  'The specific correction, question, or suggestion',
+  'Any relevant source or product link',
+  'Whether this is urgent or safety-related',
+];
+
+const relatedLinks = [
+  ['/about', 'About PupWiki'],
+  ['/how-we-test', 'How we test products'],
+  ['/disclosure', 'Affiliate disclosure'],
+  ['/privacy', 'Privacy policy'],
+];
+
+const SITE = 'https://pupwiki.com';
+const breadcrumbLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',    item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: `${SITE}/contact` },
+  ],
+});
 ---
 
 <BaseLayout
-  title="Contact Us — Mr. Doggo Style"
-  description="Get in touch with the Mr. Doggo Style team. Questions, corrections, product suggestions, or partnership enquiries."
-  canonicalURL="https://mrdoggostyle.com/contact"
+  title="Contact Us — PupWiki"
+  description="Contact PupWiki for corrections, questions, product suggestions, partnership enquiries, and editorial feedback."
+  canonicalUrl="https://pupwiki.com/contact"
+  pageType="website"
 >
+<script type="application/ld+json" set:html={breadcrumbLd} />
+  <main class="contact-page">
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <div class="contact-container">
+        <nav class="contact-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span>Contact</span>
+        </nav>
 
-  <div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
-    <div class="max-w-3xl mx-auto px-4 py-14 sm:py-18">
-      <nav class="font-sans text-sm mb-6 flex items-center gap-1.5" style="color:#94a3b8">
-        <a href="/" class="hover:underline" style="color:#a0621c">Home</a>
-        <span>›</span>
-        <span style="color:#475569">Contact</span>
-      </nav>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-        Get in Touch
-      </h1>
-      <p class="font-sans text-lg leading-relaxed" style="color:#64748b">
-        We read every message. Whether it's a correction, a question, or just a photo of your dog — we'd love to hear from you.
-      </p>
-    </div>
-  </div>
+        <p class="contact-eyebrow">Contact PupWiki</p>
 
-  <div class="max-w-4xl mx-auto px-4 py-14">
-    <div class="grid md:grid-cols-[1fr_340px] gap-10 items-start">
+        <h1 id="contact-title" class="contact-hero__title">
+          Get in touch.
+        </h1>
 
-      <!-- Contact form -->
-      <div class="rounded-3xl p-8" style="background:white;border:1px solid #e8ccaa">
-        <h2 class="font-display text-2xl font-bold mb-6" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
-          Send us a message
-        </h2>
+        <p class="contact-hero__subtitle">
+          We read every serious message. Send corrections, questions, product suggestions,
+          partnership enquiries, or feedback about PupWiki content.
+        </p>
 
-        <form
-          id="contact-form"
-          class="space-y-5"
-          novalidate
-        >
-          <div>
-            <label for="name" class="block font-sans text-sm font-semibold mb-1.5" style="color:#1e293b">
-              Your name <span style="color:#dc2626">*</span>
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              placeholder="Jane Smith"
-              class="w-full font-sans text-sm px-4 py-3 rounded-xl border focus:outline-none focus:ring-2"
-              style="border-color:#e8ccaa;background:#fdf8f0;color:#1e293b;--tw-ring-color:#fbbf24"
-            />
-          </div>
-
-          <div>
-            <label for="email" class="block font-sans text-sm font-semibold mb-1.5" style="color:#1e293b">
-              Email address <span style="color:#dc2626">*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="jane@example.com"
-              class="w-full font-sans text-sm px-4 py-3 rounded-xl border focus:outline-none focus:ring-2"
-              style="border-color:#e8ccaa;background:#fdf8f0;color:#1e293b;--tw-ring-color:#fbbf24"
-            />
-          </div>
-
-          <div>
-            <label for="subject" class="block font-sans text-sm font-semibold mb-1.5" style="color:#1e293b">
-              Subject <span style="color:#dc2626">*</span>
-            </label>
-            <select
-              id="subject"
-              name="subject"
-              required
-              class="w-full font-sans text-sm px-4 py-3 rounded-xl border focus:outline-none focus:ring-2"
-              style="border-color:#e8ccaa;background:#fdf8f0;color:#1e293b;--tw-ring-color:#fbbf24"
-            >
-              <option value="" disabled selected>Select a topic…</option>
-              <option value="correction">I found an error or outdated info</option>
-              <option value="product">Product suggestion or recommendation</option>
-              <option value="breed">Question about a specific breed</option>
-              <option value="partnership">Brand / partnership enquiry</option>
-              <option value="press">Press enquiry</option>
-              <option value="other">Something else</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="message" class="block font-sans text-sm font-semibold mb-1.5" style="color:#1e293b">
-              Message <span style="color:#dc2626">*</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows="5"
-              placeholder="Tell us what's on your mind…"
-              class="w-full font-sans text-sm px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 resize-none"
-              style="border-color:#e8ccaa;background:#fdf8f0;color:#1e293b;--tw-ring-color:#fbbf24"
-            ></textarea>
-          </div>
-
-          <!-- Honeypot -->
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-
-          <button
-            type="submit"
-            id="submit-btn"
-            class="w-full font-sans font-bold text-sm py-4 rounded-xl text-white transition-all"
-            style="background:linear-gradient(135deg,#a0621c,#7d4a10)"
-          >
-            Send message →
-          </button>
-
-          <!-- Success / error messages -->
-          <div id="form-success" class="hidden rounded-xl p-4 text-center font-sans text-sm font-semibold" style="background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d">
-            ✓ Message sent! We'll get back to you within 2 business days.
-          </div>
-          <div id="form-error" class="hidden rounded-xl p-4 text-center font-sans text-sm" style="background:#fef2f2;border:1px solid #fecaca;color:#dc2626">
-            Something went wrong. Please email us directly at hello@mrdoggostyle.com
-          </div>
-        </form>
+        <div class="contact-hero__meta">
+          <span>Typical response: 1–2 business days</span>
+          <span>Corrections welcome</span>
+          <span>Gmail address stays private</span>
+        </div>
       </div>
+    </section>
 
-      <!-- Sidebar info -->
-      <aside class="space-y-5">
+    <section class="contact-main">
+      <div class="contact-container">
+        <div class="contact-layout">
+          <section class="contact-card contact-card--primary" aria-labelledby="email-contact-title">
+            <p class="contact-eyebrow">Best way to contact us</p>
 
-        <div class="rounded-2xl p-5" style="background:white;border:1px solid #e8ccaa">
-          <h3 class="font-sans font-bold text-sm mb-4" style="color:#1e293b">Common enquiries</h3>
-          <div class="space-y-3">
-            {[
-              ['🔍', 'Corrections', 'Found an error or outdated review? We take corrections seriously and update quickly.'],
-              ['💡', 'Product tips', 'Know a product we should review? Tell us the name and why you think it belongs.'],
-              ['🤝', 'Partnerships', 'Brand partnerships or press enquiries. We respond to all serious enquiries.'],
-              ['🐾', 'Breed questions', 'Can\'t find info about your breed? Let us know.'],
-            ].map(([icon, title, desc]) => (
-              <div class="flex gap-3 items-start pb-3" style="border-bottom:1px solid #f5e8d0">
-                <span style="font-size:1.1rem;flex-shrink:0;margin-top:1px">{icon}</span>
-                <div>
-                  <p class="font-sans text-sm font-bold" style="color:#1e293b">{title}</p>
-                  <p class="font-sans text-xs mt-0.5 leading-relaxed" style="color:#64748b">{desc}</p>
-                </div>
+            <h2 id="email-contact-title">
+              Email PupWiki directly
+            </h2>
+
+            <p>
+              The public contact address is <strong>{CONTACT_EMAIL}</strong>. Messages sent here
+              are routed privately to the PupWiki inbox. Please include enough detail so we can
+              review your request quickly.
+            </p>
+
+            <div class="contact-email-box">
+              <div>
+                <span>Email address</span>
+                <strong>{CONTACT_EMAIL}</strong>
               </div>
-            ))}
-          </div>
+
+              <button
+                type="button"
+                class="contact-copy-button"
+                data-copy-email={CONTACT_EMAIL}
+                aria-label={`Copy ${CONTACT_EMAIL}`}
+              >
+                Copy
+              </button>
+            </div>
+
+            <div class="contact-actions">
+              <a
+                href={`mailto:${CONTACT_EMAIL}?subject=PupWiki%20contact%20request`}
+                class="contact-button contact-button--primary"
+              >
+                Email us
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <a href="/disclosure" class="contact-button contact-button--secondary">
+                Affiliate disclosure
+              </a>
+            </div>
+
+            <p class="contact-note" data-copy-status aria-live="polite">
+              Use this address for editorial corrections, partnership enquiries, and general questions.
+            </p>
+          </section>
+
+          <aside class="contact-sidebar" aria-label="Contact information">
+            <section class="contact-side-card">
+              <h2>Common enquiries</h2>
+
+              <div class="contact-topic-list">
+                {contactTopics.map((item) => (
+                  <article>
+                    <span aria-hidden="true">{item.icon}</span>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.desc}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section class="contact-side-card contact-side-card--warm">
+              <h2>Helpful details to include</h2>
+
+              <ul class="contact-check-list">
+                {helpfulDetails.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section class="contact-side-card">
+              <h2>Related pages</h2>
+
+              <nav class="contact-related-nav" aria-label="Related policy and trust pages">
+                {relatedLinks.map(([href, label]) => (
+                  <a href={href}>{label} →</a>
+                ))}
+              </nav>
+            </section>
+          </aside>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <div class="rounded-2xl p-5" style="background:#fdf8f0;border:1px solid #e8ccaa">
-          <h3 class="font-sans font-bold text-sm mb-3" style="color:#1e293b">Response time</h3>
-          <p class="font-sans text-sm leading-relaxed" style="color:#64748b">
-            We typically respond within <strong style="color:#1e293b">1–2 business days</strong>. For urgent matters, include "Urgent" in your subject line.
-          </p>
-        </div>
+  <script>
+    document.querySelectorAll('[data-copy-email]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const email = button.getAttribute('data-copy-email') || '';
+        const status = document.querySelector('[data-copy-status]');
 
-        <div class="rounded-2xl p-5" style="background:#fdf8f0;border:1px solid #e8ccaa">
-          <h3 class="font-sans font-bold text-sm mb-3" style="color:#1e293b">Other pages</h3>
-          <div class="space-y-1.5">
-            {[
-              ['/about', 'About Mr. Doggo Style'],
-              ['/how-we-test', 'How we test products'],
-              ['/disclosure', 'Affiliate disclosure'],
-              ['/privacy', 'Privacy policy'],
-            ].map(([href, label]) => (
-              <a href={href} class="block font-sans text-sm hover:underline" style="color:#a0621c">{label} →</a>
-            ))}
-          </div>
-        </div>
+        try {
+          await navigator.clipboard.writeText(email);
+          button.textContent = 'Copied';
+          if (status) status.textContent = 'Email address copied to clipboard.';
 
-      </aside>
-    </div>
-  </div>
-
-<script>
-  const form = document.getElementById('contact-form') as HTMLFormElement;
-  const btn  = document.getElementById('submit-btn') as HTMLButtonElement;
-  const ok   = document.getElementById('form-success')!;
-  const err  = document.getElementById('form-error')!;
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // Basic validation
-    const name    = (form.querySelector('#name') as HTMLInputElement).value.trim();
-    const email   = (form.querySelector('#email') as HTMLInputElement).value.trim();
-    const subject = (form.querySelector('#subject') as HTMLSelectElement).value;
-    const message = (form.querySelector('#message') as HTMLTextAreaElement).value.trim();
-    const honey   = (form.querySelector('[name="_gotcha"]') as HTMLInputElement).value;
-
-    if (honey) return; // bot trap
-    if (!name || !email || !subject || !message) return;
-
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-
-    try {
-      // Using Formspree — replace YOUR_FORM_ID with your Formspree form ID
-      // Sign up free at formspree.io
-      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body:    JSON.stringify({ name, email, subject, message }),
+          window.setTimeout(() => {
+            button.textContent = 'Copy';
+          }, 1800);
+        } catch {
+          if (status) {
+            status.textContent = `Copy failed. Email us at ${email}.`;
+          }
+        }
       });
-
-      if (res.ok) {
-        form.style.display = 'none';
-        ok.classList.remove('hidden');
-      } else {
-        throw new Error('Server error');
-      }
-    } catch {
-      btn.disabled = false;
-      btn.textContent = 'Send message →';
-      err.classList.remove('hidden');
-    }
-  });
-</script>
-
+    });
+  </script>
 </BaseLayout>
+
+<style>
+  .contact-page {
+    background:
+      radial-gradient(circle at 88% 4%, rgba(255, 122, 0, 0.1), transparent 24rem),
+      radial-gradient(circle at 8% 2%, rgba(21, 54, 95, 0.08), transparent 22rem),
+      var(--color-bg);
+    color: var(--color-body);
+  }
+
+  .contact-container {
+    width: min(100%, var(--max-width));
+    margin-inline: auto;
+    padding-inline: var(--content-padding-mobile);
+  }
+
+  .contact-hero {
+    border-bottom: 1px solid var(--color-border);
+    background: linear-gradient(180deg, rgba(255, 250, 243, 0.98) 0%, #ffffff 78%);
+  }
+
+  .contact-hero .contact-container {
+    padding-block: clamp(2.5rem, 7vw, 5.75rem);
+  }
+
+  .contact-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+    margin-bottom: var(--space-5);
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+  }
+
+  .contact-breadcrumb a {
+    color: var(--color-primary);
+    font-weight: var(--weight-semi);
+    text-decoration: none;
+  }
+
+  .contact-breadcrumb a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .contact-eyebrow {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    margin: 0;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    padding: 0.54rem 0.85rem;
+    color: var(--color-accent-hover);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .contact-hero__title {
+    max-width: 11ch;
+    margin: var(--space-5) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(2.8rem, 12vw, 5.65rem);
+    font-weight: var(--weight-bold);
+    letter-spacing: -0.055em;
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+
+  .contact-hero__subtitle {
+    max-width: 46rem;
+    margin: var(--space-5) 0 0;
+    color: var(--color-body-soft);
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 2.2vw, var(--text-lg));
+    line-height: var(--leading-relaxed);
+    text-wrap: pretty;
+  }
+
+  .contact-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-6);
+  }
+
+  .contact-hero__meta span {
+    display: inline-flex;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.78);
+    padding: 0.5rem 0.72rem;
+    color: var(--color-body-soft);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    line-height: 1;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .contact-main {
+    padding-block: clamp(var(--space-8), 6vw, var(--space-14));
+  }
+
+  .contact-layout {
+    display: grid;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .contact-card,
+  .contact-side-card {
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-3xl);
+    background: rgba(255, 255, 255, 0.92);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+  }
+
+  .contact-card--primary {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 94% 8%, rgba(255, 122, 0, 0.12), transparent 18rem),
+      rgba(255, 255, 255, 0.94);
+  }
+
+  .contact-card h2,
+  .contact-side-card h2 {
+    margin: var(--space-3) 0 var(--space-4);
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-tight);
+  }
+
+  .contact-side-card h2 {
+    font-size: var(--text-2xl);
+  }
+
+  .contact-card p,
+  .contact-side-card p,
+  .contact-side-card li {
+    color: var(--color-body-soft);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+  }
+
+  .contact-card p {
+    margin: 0;
+  }
+
+  .contact-card strong {
+    color: var(--color-heading);
+  }
+
+  .contact-email-box {
+    display: grid;
+    gap: var(--space-3);
+    margin-block: var(--space-6);
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-2xl);
+    background: var(--color-accent-subtle);
+    padding: var(--space-4);
+  }
+
+  .contact-email-box span {
+    display: block;
+    margin-bottom: var(--space-1);
+    color: var(--color-accent-hover);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .contact-email-box strong {
+    display: block;
+    overflow-wrap: anywhere;
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-size: clamp(var(--text-lg), 4vw, var(--text-2xl));
+    line-height: var(--leading-tight);
+  }
+
+  .contact-copy-button {
+    display: inline-flex;
+    width: fit-content;
+    min-height: 2.45rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: #ffffff;
+    color: var(--color-accent-hover);
+    padding: 0.62rem 0.95rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+    cursor: pointer;
+    box-shadow: var(--shadow-xs);
+    transition: var(--transition-smooth);
+  }
+
+  .contact-copy-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .contact-button {
+    display: inline-flex;
+    min-height: 3.1rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    border-radius: var(--radius-xl);
+    padding: 0.9rem 1.1rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    line-height: 1;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .contact-button--primary {
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    box-shadow: var(--shadow-cta);
+  }
+
+  .contact-button--primary:hover {
+    background: var(--button-primary-bg-hover);
+    transform: translateY(-2px);
+  }
+
+  .contact-button--secondary {
+    border: 1px solid var(--button-outline-border);
+    background: var(--button-outline-bg);
+    color: var(--button-outline-text);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .contact-button--secondary:hover {
+    border-color: var(--color-border-primary);
+    background: var(--button-outline-bg-hover);
+    color: var(--color-primary-hover);
+    transform: translateY(-2px);
+  }
+
+  .contact-note {
+    margin-top: var(--space-4) !important;
+    color: var(--color-muted) !important;
+    font-size: var(--text-sm) !important;
+  }
+
+  .contact-sidebar {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .contact-side-card--warm {
+    border-color: var(--color-border-accent);
+    background: var(--color-accent-subtle);
+  }
+
+  .contact-topic-list {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .contact-topic-list article {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-4);
+  }
+
+  .contact-topic-list article:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .contact-topic-list span {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .contact-topic-list h3 {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-black);
+    line-height: var(--leading-tight);
+  }
+
+  .contact-topic-list p {
+    margin: var(--space-1) 0 0;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .contact-check-list {
+    display: grid;
+    gap: var(--space-2);
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .contact-check-list li {
+    position: relative;
+    border: 1px solid rgba(4, 120, 87, 0.18);
+    border-radius: var(--radius-xl);
+    background: var(--color-success-light);
+    padding: 0.75rem 0.85rem 0.75rem 2.25rem;
+    color: var(--color-body);
+    font-size: var(--text-sm);
+  }
+
+  .contact-check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0.85rem;
+    top: 0.75rem;
+    color: var(--color-success);
+    font-weight: var(--weight-black);
+  }
+
+  .contact-related-nav {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .contact-related-nav a {
+    border-radius: var(--radius-lg);
+    padding: 0.62rem 0.7rem;
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+    transition: var(--transition-base);
+  }
+
+  .contact-related-nav a:hover {
+    background: var(--color-bg-soft);
+    color: var(--color-accent-hover);
+  }
+
+  @media (min-width: 520px) {
+    .contact-email-box {
+      grid-template-columns: 1fr auto;
+      align-items: center;
+    }
+
+    .contact-actions {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .contact-button {
+      width: auto;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .contact-container {
+      padding-inline: var(--content-padding);
+    }
+
+    .contact-card,
+    .contact-side-card {
+      padding: var(--space-6);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .contact-container {
+      padding-inline: var(--content-padding-wide);
+    }
+
+    .contact-layout {
+      grid-template-columns: minmax(0, 1fr) 22rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-copy-button,
+    .contact-button,
+    .contact-related-nav a {
+      transition: none;
+      transform: none !important;
+    }
+  }
+</style>

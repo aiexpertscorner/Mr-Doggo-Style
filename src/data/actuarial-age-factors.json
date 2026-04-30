@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "dataset_name": "Actuarial Age Factors for Dogs",
+    "dataset_slug": "actuarial-age-factors",
+    "language": "en-US",
+    "version": "2026-04-21",
+    "last_updated": "2026-04-21",
+    "intended_use": "Multiply a breed base premium by premium_factor before applying state localization.",
+    "base_age_definition": "Age 1 and age 2 are the base rate (factor 1.00).",
+    "source_basis": "Forbes Advisor summary of Veterinary Pet Insurance Co. state insurance filing age-rating factors for dogs.",
+    "fallback_rule_beyond_max_age": "If you need a 15+ bucket, reuse the 14-year factor unless you have insurer-specific pricing.",
+    "example_formula": "localized_premium = breed_base_monthly_premium_usd * premium_factor * state_cost_multiplier"
+  },
+  "age_factors": [
+    { "age_key": "0_to_11_months", "min_age_years": 0.0,  "max_age_years": 0.99,  "display_age": "0–11 months", "life_stage": "puppy",         "premium_factor": 1.77, "premium_uplift_pct": 77  },
+    { "age_key": "1",              "min_age_years": 1.0,  "max_age_years": 1.99,  "display_age": "1 year",      "life_stage": "young_adult",    "premium_factor": 1.00, "premium_uplift_pct": 0   },
+    { "age_key": "2",              "min_age_years": 2.0,  "max_age_years": 2.99,  "display_age": "2 years",     "life_stage": "young_adult",    "premium_factor": 1.00, "premium_uplift_pct": 0   },
+    { "age_key": "3",              "min_age_years": 3.0,  "max_age_years": 3.99,  "display_age": "3 years",     "life_stage": "adult",          "premium_factor": 1.09, "premium_uplift_pct": 9   },
+    { "age_key": "4",              "min_age_years": 4.0,  "max_age_years": 4.99,  "display_age": "4 years",     "life_stage": "adult",          "premium_factor": 1.23, "premium_uplift_pct": 23  },
+    { "age_key": "5",              "min_age_years": 5.0,  "max_age_years": 5.99,  "display_age": "5 years",     "life_stage": "adult",          "premium_factor": 1.38, "premium_uplift_pct": 38  },
+    { "age_key": "6",              "min_age_years": 6.0,  "max_age_years": 6.99,  "display_age": "6 years",     "life_stage": "mature_adult",   "premium_factor": 1.55, "premium_uplift_pct": 55  },
+    { "age_key": "7",              "min_age_years": 7.0,  "max_age_years": 7.99,  "display_age": "7 years",     "life_stage": "senior",         "premium_factor": 1.71, "premium_uplift_pct": 71  },
+    { "age_key": "8",              "min_age_years": 8.0,  "max_age_years": 8.99,  "display_age": "8 years",     "life_stage": "senior",         "premium_factor": 1.90, "premium_uplift_pct": 90  },
+    { "age_key": "9",              "min_age_years": 9.0,  "max_age_years": 9.99,  "display_age": "9 years",     "life_stage": "senior",         "premium_factor": 2.15, "premium_uplift_pct": 115 },
+    { "age_key": "10",             "min_age_years": 10.0, "max_age_years": 10.99, "display_age": "10 years",    "life_stage": "senior",         "premium_factor": 2.43, "premium_uplift_pct": 143 },
+    { "age_key": "11",             "min_age_years": 11.0, "max_age_years": 11.99, "display_age": "11 years",    "life_stage": "senior",         "premium_factor": 2.73, "premium_uplift_pct": 173 },
+    { "age_key": "12",             "min_age_years": 12.0, "max_age_years": 12.99, "display_age": "12 years",    "life_stage": "senior",         "premium_factor": 3.05, "premium_uplift_pct": 205 },
+    { "age_key": "13",             "min_age_years": 13.0, "max_age_years": 13.99, "display_age": "13 years",    "life_stage": "senior",         "premium_factor": 3.29, "premium_uplift_pct": 229 },
+    { "age_key": "14",             "min_age_years": 14.0, "max_age_years": 14.99, "display_age": "14 years",    "life_stage": "senior",         "premium_factor": 3.53, "premium_uplift_pct": 253 },
+    { "age_key": "15_plus",        "min_age_years": 15.0, "max_age_years": 99.0,  "display_age": "15+ years",   "life_stage": "geriatric",      "premium_factor": 3.53, "premium_uplift_pct": 253 }
+  ]
+}

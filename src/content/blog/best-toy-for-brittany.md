@@ -4,7 +4,7 @@ description: "We matched the best toy to the Brittany's specific needs lots of a
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["brittany", "toys", "medium-breed", "needs-lots-of-activity"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "brittany"
 ---
 

@@ -6,7 +6,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import masterBreeds from '../../data/master-breeds.json';
 
-const SITE   = 'https://mrdoggostyle.com';
+const SITE   = 'https://pupwiki.com';
 const breeds = masterBreeds as any[];
 
 // ── Build-time derived data ─────────────────────────────────────
@@ -18,12 +18,62 @@ const sizeCounts: Record<string,number>     = {};
 const energyCounts: Record<string,number>   = {};
 const sheddingCounts: Record<string,number> = {};
 const trainingCounts: Record<string,number> = {};
+const coatCounts: Record<string,number>     = {};
+const groupCounts: Record<string,number>    = {};
+const originCounts: Record<string,number>   = {};
+
+function normalizeGroup(g: string): string {
+  return g.toLowerCase()
+    .replace(/ group$/, '').replace(/ class$/, '').replace(/ service$/, '')
+    .replace('foundation stock', 'fss').replace('miscellaneous', 'misc')
+    .trim();
+}
+
 breeds.forEach(b => {
-  sizeCounts[b.size_category]     = (sizeCounts[b.size_category]     || 0) + 1;
-  energyCounts[b.energy_level]    = (energyCounts[b.energy_level]    || 0) + 1;
-  sheddingCounts[b.shedding_level]= (sheddingCounts[b.shedding_level]|| 0) + 1;
-  trainingCounts[b.training_level]= (trainingCounts[b.training_level]|| 0) + 1;
+  sizeCounts[b.size_category]      = (sizeCounts[b.size_category]      || 0) + 1;
+  energyCounts[b.energy_level]     = (energyCounts[b.energy_level]     || 0) + 1;
+  sheddingCounts[b.shedding_level] = (sheddingCounts[b.shedding_level] || 0) + 1;
+  trainingCounts[b.training_level] = (trainingCounts[b.training_level] || 0) + 1;
+  if (b.coat_type)       coatCounts[b.coat_type]            = (coatCounts[b.coat_type]         || 0) + 1;
+  if (b.akc_group)     { const gk = normalizeGroup(b.akc_group); groupCounts[gk] = (groupCounts[gk] || 0) + 1; }
+  if (b.origin_country)  originCounts[b.origin_country]    = (originCounts[b.origin_country]  || 0) + 1;
 });
+
+const COAT_ORDER   = ['short','medium','long','double','silky','wiry','wavy','curly','rough','corded','hairless'];
+const COAT_LABELS: Record<string,string> = {
+  short:'Short', double:'Double', long:'Long', medium:'Medium', silky:'Silky',
+  wiry:'Wiry', wavy:'Wavy', curly:'Curly', corded:'Corded', rough:'Rough', hairless:'Hairless',
+};
+
+const GROUP_DEFS = [
+  { key:'herding',      label:'Herding',    emoji:'🐑' },
+  { key:'hound',        label:'Hound',      emoji:'🐕' },
+  { key:'sporting',     label:'Sporting',   emoji:'🦆' },
+  { key:'non-sporting', label:'Non-Sport.', emoji:'🏠' },
+  { key:'terrier',      label:'Terrier',    emoji:'🦊' },
+  { key:'toy',          label:'Toy',        emoji:'🧸' },
+  { key:'working',      label:'Working',    emoji:'💪' },
+  { key:'fss',          label:'FSS',        emoji:'📋' },
+  { key:'misc',         label:'Misc.',      emoji:'✨' },
+];
+
+const LIFESPAN_BUCKETS = [
+  { key:'lt10',  label:'< 10 yrs'  },
+  { key:'10-12', label:'10–12 yrs' },
+  { key:'12-14', label:'12–14 yrs' },
+  { key:'gt14',  label:'14+ yrs'   },
+];
+
+const COUNTRY_FLAGS: Record<string,string> = {
+  'Germany':'🇩🇪','United Kingdom':'🇬🇧','France':'🇫🇷','United States':'🇺🇸',
+  'Switzerland':'🇨🇭','China':'🇨🇳','Japan':'🇯🇵','Ireland':'🇮🇪',
+  'Netherlands':'🇳🇱','Russia':'🇷🇺','Australia':'🇦🇺','Belgium':'🇧🇪',
+  'Italy':'🇮🇹','Spain':'🇪🇸','Canada':'🇨🇦','Zimbabwe':'🇿🇼',
+};
+
+const TOP_ORIGINS = Object.entries(originCounts)
+  .sort((a, b) => b[1] - a[1]).slice(0, 8)
+  .map(([country, count]) => ({ country, count, flag: COUNTRY_FLAGS[country] || '🌍' }));
 
 // ── Display helpers ─────────────────────────────────────────────
 const SIZE_EMOJI: Record<string,string> = { small:'🐕', medium:'🐕‍🦺', large:'🐕‍🦺', giant:'🦮' };
@@ -106,31 +156,31 @@ const breadcrumbLd = JSON.stringify({
 <BaseLayout
   title="Dog Breed Directory 2026 — Browse All 277 Breeds"
   description={`Browse all ${breeds.length} dog breeds by size, energy, shedding and trainability. Each breed includes expert product picks, cost estimates, care guides and health info.`}
-  canonicalURL={`${SITE}/breeds`}
+  canonicalUrl={`${SITE}/breeds`}
 >
 <script type="application/ld+json" set:html={itemListLd} />
 <script type="application/ld+json" set:html={breadcrumbLd} />
 
 <!-- ── Hero ── -->
-<div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
+<div style="background:linear-gradient(to bottom,var(--color-surface-warm),var(--color-bg-soft));border-bottom:1px solid var(--color-border-warm)">
   <div class="max-w-7xl mx-auto px-4 py-10 sm:py-14">
-    <nav class="font-sans text-sm mb-4" style="color:#a0621c" aria-label="Breadcrumb">
-      <a href="/" style="color:#a0621c" class="hover:underline">Home</a>
-      <span style="color:#d4a574" aria-hidden="true"> › </span>
-      <span style="color:#5c340a" aria-current="page">All Breeds</span>
+    <nav class="font-sans text-sm mb-4" style="color:var(--color-accent)" aria-label="Breadcrumb">
+      <a href="/" style="color:var(--color-accent)" class="hover:underline">Home</a>
+      <span style="color:var(--color-accent-light)" aria-hidden="true"> › </span>
+      <span style="color:var(--color-accent-active)" aria-current="page">All Breeds</span>
     </nav>
     <h1 class="font-display text-4xl sm:text-5xl font-bold mb-3 leading-tight"
-        style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+        style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
       Dog Breed Directory
     </h1>
-    <p class="font-sans text-base sm:text-lg mb-5 max-w-2xl leading-relaxed" style="color:#64748b">
-      {breeds.length} breeds across 10 AKC groups — filter by size, energy, shedding and trainability.
+    <p class="font-sans text-base sm:text-lg mb-5 max-w-2xl leading-relaxed" style="color:var(--color-muted)">
+      {breeds.length} breeds across 10 AKC groups — filter by size, energy, coat, shedding, trainability, lifespan and country of origin.
       Each breed links to expert care guides, product picks and a full cost breakdown.
     </p>
     <div class="flex flex-wrap gap-2">
-      <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:#a0621c;color:white">{breeds.length} breeds</span>
-      <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#fef3c7;color:#92400e">Expert picks per breed</span>
-      <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:#f0fdf4;color:#15803d">Cost calculator for every breed</span>
+      <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:var(--color-accent);color:white">{breeds.length} breeds</span>
+      <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:var(--color-warning-light);color:var(--color-accent-active)">Expert picks per breed</span>
+      <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:var(--color-success-light);color:var(--color-success)">Cost calculator for every breed</span>
     </div>
   </div>
 </div>
@@ -139,33 +189,60 @@ const breadcrumbLd = JSON.stringify({
 
   <!-- ── Popular breeds (crawlable, hidden when filters active) ── -->
   <section id="popular-section" class="mb-8" aria-label="Most popular breeds">
-    <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:#94a3b8">
+    <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:var(--color-subtle)">
       Most popular breeds
     </p>
     <div class="flex flex-wrap gap-2">
       {popularBreeds.map(b => (
         <a
           href={`/breeds/${b.slug}`}
-          class="font-sans text-sm font-semibold px-3 py-1.5 rounded-full border transition-all hover:border-amber-600 hover:text-amber-800"
-          style="border-color:#e8ccaa;color:#475569;background:white;text-decoration:none"
+          class="popular-breed-link font-sans text-sm font-semibold px-3 py-1.5 rounded-full border transition-all"
+          style="border-color:var(--color-border-warm);color:var(--color-body-soft);background:white;text-decoration:none"
         >
           {b.name}
         </a>
       ))}
-      <a href="/breeds" class="font-sans text-sm px-3 py-1.5 rounded-full" style="color:#a0621c">
+      <a href="/breeds" class="font-sans text-sm px-3 py-1.5 rounded-full" style="color:var(--color-accent)">
         View all →
       </a>
     </div>
   </section>
 
+  <!-- ── Country origin browsing strip ── -->
+  {TOP_ORIGINS.length > 0 && (
+    <section id="origin-strip" class="mb-6" aria-label="Browse by country of origin">
+      <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:var(--color-subtle)">
+        Browse by country of origin
+        <span class="font-normal normal-case" style="color:var(--color-muted)">
+          &nbsp;— {TOP_ORIGINS.reduce((s, o) => s + o.count, 0)} breeds with origin data
+        </span>
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {TOP_ORIGINS.map(o => (
+          <button
+            class="origin-btn font-sans text-sm font-semibold px-3 py-1.5 rounded-full border transition-all"
+            style="border-color:var(--color-border-warm);color:var(--color-body-soft);background:white"
+            data-origin={o.country}
+            aria-label={`Show ${o.count} breeds from ${o.country}`}
+          >
+            {o.flag} {o.country} <span style="color:var(--color-subtle);font-size:0.7rem">{o.count}</span>
+          </button>
+        ))}
+        <button id="clear-origin" class="font-sans text-sm px-3 py-1.5 rounded-full font-semibold" style="color:var(--color-accent);display:none">
+          Clear origin ×
+        </button>
+      </div>
+    </section>
+  )}
+
   <!-- ── Filters ── -->
-  <div class="rounded-2xl mb-6 overflow-hidden" style="background:white;border:1px solid #e8ccaa">
+  <div class="rounded-2xl mb-6 overflow-hidden" style="background:white;border:1px solid var(--color-border-warm)">
 
     <!-- Mobile filter toggle -->
     <button
       id="filter-toggle"
       class="sm:hidden w-full flex items-center justify-between px-4 py-3 font-sans font-semibold text-sm"
-      style="color:#1e293b;background:white"
+      style="color:var(--color-heading);background:white"
       aria-expanded="false"
       aria-controls="filter-body"
     >
@@ -177,7 +254,7 @@ const breadcrumbLd = JSON.stringify({
 
       <!-- Size -->
       <fieldset>
-        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Size</legend>
+        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Size</legend>
         <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by size">
           <button class="filter-btn active" data-filter="size" data-value="all" aria-pressed="true">All</button>
           <button class="filter-btn" data-filter="size" data-value="small"  aria-pressed="false">🐕 Small <span class="count-badge">{sizeCounts.small||0}</span></button>
@@ -189,7 +266,7 @@ const breadcrumbLd = JSON.stringify({
 
       <!-- Energy -->
       <fieldset>
-        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Energy</legend>
+        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Energy</legend>
         <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by energy level">
           <button class="filter-btn active" data-filter="energy" data-value="all"     aria-pressed="true">All</button>
           <button class="filter-btn" data-filter="energy" data-value="active"  aria-pressed="false">⚡ Active <span class="count-badge">{energyCounts.active||0}</span></button>
@@ -200,7 +277,7 @@ const breadcrumbLd = JSON.stringify({
 
       <!-- Shedding -->
       <fieldset>
-        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Shedding</legend>
+        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Shedding</legend>
         <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by shedding level">
           <button class="filter-btn active" data-filter="shedding" data-value="all"      aria-pressed="true">All</button>
           <button class="filter-btn" data-filter="shedding" data-value="heavy"    aria-pressed="false">●●●● Heavy <span class="count-badge">{sheddingCounts.heavy||0}</span></button>
@@ -212,7 +289,7 @@ const breadcrumbLd = JSON.stringify({
 
       <!-- Training -->
       <fieldset>
-        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:#94a3b8">Trainability</legend>
+        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Trainability</legend>
         <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by training difficulty">
           <button class="filter-btn active" data-filter="training" data-value="all"       aria-pressed="true">All</button>
           <button class="filter-btn" data-filter="training" data-value="easy"      aria-pressed="false" style="--accent:#15803d">✓ Easy <span class="count-badge">{trainingCounts.easy||0}</span></button>
@@ -220,6 +297,62 @@ const breadcrumbLd = JSON.stringify({
           <button class="filter-btn" data-filter="training" data-value="difficult" aria-pressed="false" style="--accent:#dc2626">✗ Hard <span class="count-badge">{trainingCounts.difficult||0}</span></button>
         </div>
       </fieldset>
+
+      <!-- Coat type -->
+      <fieldset>
+        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Coat type</legend>
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by coat type">
+          <button class="filter-btn active" data-filter="coat" data-value="all" aria-pressed="true">All</button>
+          {COAT_ORDER.filter(c => coatCounts[c]).map(c => (
+            <button class="filter-btn" data-filter="coat" data-value={c} aria-pressed="false">
+              {COAT_LABELS[c]} <span class="count-badge">{coatCounts[c]}</span>
+            </button>
+          ))}
+        </div>
+      </fieldset>
+
+      <!-- AKC Group -->
+      <fieldset>
+        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">AKC Group</legend>
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by AKC group">
+          <button class="filter-btn active" data-filter="group" data-value="all" aria-pressed="true">All</button>
+          {GROUP_DEFS.filter(g => groupCounts[g.key]).map(g => (
+            <button class="filter-btn" data-filter="group" data-value={g.key} aria-pressed="false">
+              {g.emoji} {g.label} <span class="count-badge">{groupCounts[g.key]}</span>
+            </button>
+          ))}
+        </div>
+      </fieldset>
+
+      <!-- Lifespan -->
+      <fieldset>
+        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Lifespan</legend>
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by lifespan">
+          <button class="filter-btn active" data-filter="lifespan" data-value="all" aria-pressed="true">All</button>
+          {LIFESPAN_BUCKETS.map(b => (
+            <button class="filter-btn" data-filter="lifespan" data-value={b.key} aria-pressed="false">
+              {b.label}
+            </button>
+          ))}
+        </div>
+      </fieldset>
+
+      <!-- Country of origin -->
+      {TOP_ORIGINS.length > 0 && (
+        <fieldset>
+          <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">
+            Country of origin <span class="font-normal normal-case" style="color:var(--color-muted)">(57 breeds)</span>
+          </legend>
+          <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by country of origin">
+            <button class="filter-btn active" data-filter="origin" data-value="all" aria-pressed="true">All</button>
+            {TOP_ORIGINS.map(o => (
+              <button class="filter-btn" data-filter="origin" data-value={o.country} aria-pressed="false">
+                {o.flag} {o.country} <span class="count-badge">{o.count}</span>
+              </button>
+            ))}
+          </div>
+        </fieldset>
+      )}
 
       <!-- Search + sort + result count -->
       <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
@@ -231,16 +364,16 @@ const breadcrumbLd = JSON.stringify({
             placeholder="Search breeds…"
             autocomplete="off"
             class="w-full font-sans text-sm px-4 py-2 rounded-xl border focus:outline-none focus:ring-2"
-            style="border-color:#e8ccaa;--tw-ring-color:#fbbf24"
+            style="border-color:var(--color-border-warm)"
             aria-label="Search breed names"
           />
         </div>
         <div class="flex items-center gap-3">
-          <label for="sort-select" class="font-sans text-xs font-bold uppercase tracking-wider whitespace-nowrap" style="color:#94a3b8">Sort</label>
+          <label for="sort-select" class="font-sans text-xs font-bold uppercase tracking-wider whitespace-nowrap" style="color:var(--color-subtle)">Sort</label>
           <select
             id="sort-select"
             class="font-sans text-sm px-3 py-2 rounded-xl border focus:outline-none focus:ring-2"
-            style="border-color:#e8ccaa;--tw-ring-color:#fbbf24;color:#475569"
+            style="border-color:var(--color-border-warm);color:var(--color-body-soft)"
             aria-label="Sort breeds"
           >
             <option value="popular">Most popular</option>
@@ -251,10 +384,10 @@ const breadcrumbLd = JSON.stringify({
           </select>
         </div>
         <div class="flex items-center gap-3">
-          <p id="breed-count" class="font-sans text-sm whitespace-nowrap" style="color:#64748b" aria-live="polite" aria-atomic="true">
+          <p id="breed-count" class="font-sans text-sm whitespace-nowrap" style="color:var(--color-muted)" aria-live="polite" aria-atomic="true">
             {breeds.length} breeds
           </p>
-          <button id="clear-filters" class="font-sans text-sm font-semibold underline whitespace-nowrap" style="color:#a0621c;display:none" aria-label="Clear all filters">
+          <button id="clear-filters" class="font-sans text-sm font-semibold underline whitespace-nowrap" style="color:var(--color-accent);display:none" aria-label="Clear all filters">
             Clear
           </button>
         </div>
@@ -283,18 +416,22 @@ const breadcrumbLd = JSON.stringify({
         <a
           href={`/breeds/${b.slug}`}
           class="breed-card rounded-2xl overflow-hidden flex flex-col"
-          style="border:1px solid #e8ccaa;background:white;text-decoration:none"
+          style="border:1px solid var(--color-border-warm);background:white;text-decoration:none"
           data-size={b.size_category}
           data-energy={b.energy_level}
           data-shedding={b.shedding_level}
           data-training={b.training_level}
+          data-coat={b.coat_type || ''}
+          data-group={b.akc_group ? normalizeGroup(b.akc_group) : ''}
+          data-origin={b.origin_country || ''}
+          data-lifespan={midLifespan(b)}
           data-name={b.name.toLowerCase()}
           data-slug={b.slug}
           role="listitem"
           aria-label={`${b.name} — ${b.size_category}, ${b.energy_level} energy`}
         >
           <!-- Image -->
-          <div class="breed-img-wrap" style="height:130px;background:#fdf8f0;overflow:hidden;position:relative;flex-shrink:0">
+          <div class="breed-img-wrap" style="height:130px;background:var(--color-bg-soft);overflow:hidden;position:relative;flex-shrink:0">
             {b.image_url ? (
               <img
                 src={b.image_url}
@@ -322,9 +459,9 @@ const breadcrumbLd = JSON.stringify({
           <div class="p-3 flex flex-col gap-1.5 flex-1">
             <!-- Name + group -->
             <div>
-              <h2 class="font-sans font-bold text-sm leading-tight mb-0.5" style="color:#1e293b">{b.name}</h2>
+              <h2 class="font-sans font-bold text-sm leading-tight mb-0.5" style="color:var(--color-heading)">{b.name}</h2>
               {b.akc_group && (
-                <p class="font-sans text-xs leading-none" style="color:#94a3b8">
+                <p class="font-sans text-xs leading-none" style="color:var(--color-subtle)">
                   {b.akc_group.replace(' Group','').replace(' Service','').replace(' Class','')}
                 </p>
               )}
@@ -332,7 +469,7 @@ const breadcrumbLd = JSON.stringify({
 
             <!-- Lifespan + weight -->
             {(lifespan || weight) && (
-              <div class="flex gap-2 flex-wrap" style="font-family:sans-serif;font-size:11px;color:#64748b">
+              <div class="flex gap-2 flex-wrap" style="font-family:sans-serif;font-size:11px;color:var(--color-muted)">
                 {lifespan && <span title="Lifespan">⏱ {lifespan}</span>}
                 {weight   && <span title="Typical weight">⚖ {weight}</span>}
               </div>
@@ -357,10 +494,20 @@ const breadcrumbLd = JSON.stringify({
               </span>
             </div>
 
-            <!-- Size + energy tags -->
+            <!-- Size + energy + coat tags -->
             <div class="flex flex-wrap gap-1">
-              <span class="font-sans text-xs px-2 py-0.5 rounded-full capitalize" style="background:#f5e8d0;color:#7d4a10">{b.size_category}</span>
-              <span class="font-sans text-xs px-2 py-0.5 rounded-full capitalize" style="background:#f5e8d0;color:#7d4a10">{b.energy_level}</span>
+              <span class="font-sans text-xs px-2 py-0.5 rounded-full capitalize" style="background:var(--color-surface-warm);color:var(--color-accent-hover)">{b.size_category}</span>
+              <span class="font-sans text-xs px-2 py-0.5 rounded-full capitalize" style="background:var(--color-surface-warm);color:var(--color-accent-hover)">{b.energy_level}</span>
+              {b.coat_type && (
+                <span class="font-sans text-xs px-2 py-0.5 rounded-full capitalize" style="background:var(--color-bg-cool);color:var(--color-primary)">
+                  {COAT_LABELS[b.coat_type] || b.coat_type}
+                </span>
+              )}
+              {b.origin_country && COUNTRY_FLAGS[b.origin_country] && (
+                <span class="font-sans text-xs" title={b.origin_country} aria-label={`Origin: ${b.origin_country}`}>
+                  {COUNTRY_FLAGS[b.origin_country]}
+                </span>
+              )}
             </div>
           </div>
         </a>
@@ -371,12 +518,12 @@ const breadcrumbLd = JSON.stringify({
   <!-- ── No results ── -->
   <div id="no-results" class="hidden text-center py-16 px-4">
     <p class="font-sans text-3xl mb-3" aria-hidden="true">🔍</p>
-    <p class="font-sans text-lg font-semibold mb-2" style="color:#1e293b">No breeds match those filters.</p>
-    <p id="no-results-hint" class="font-sans text-sm mb-5" style="color:#64748b"></p>
+    <p class="font-sans text-lg font-semibold mb-2" style="color:var(--color-heading)">No breeds match those filters.</p>
+    <p id="no-results-hint" class="font-sans text-sm mb-5" style="color:var(--color-muted)"></p>
     <button
       id="clear-filters-2"
       class="font-sans text-sm font-bold px-5 py-2.5 rounded-xl text-white"
-      style="background:#a0621c"
+      style="background:var(--color-accent)"
       aria-label="Clear all filters and show all breeds"
     >
       Clear all filters
@@ -391,8 +538,28 @@ const breadcrumbLd = JSON.stringify({
 <script define:vars={{ sortData }}>
   const SORT_DATA = JSON.parse(sortData);
 
+  // ── Lifespan bucket helper ────────────────────────────────────
+  function checkLifespan(val, bucket) {
+    if (bucket === 'lt10')  return val < 10;
+    if (bucket === '10-12') return val >= 10 && val <= 12;
+    if (bucket === '12-14') return val > 12  && val <= 14;
+    if (bucket === 'gt14')  return val > 14;
+    return true;
+  }
+
   // ── State ─────────────────────────────────────────────────────
-  let state = { size:'all', energy:'all', shedding:'all', training:'all', q:'', sort:'popular' };
+  let state = {
+    size:'all', energy:'all', shedding:'all', training:'all',
+    coat:'all', group:'all', origin:'all', lifespan:'all',
+    q:'', sort:'popular',
+  };
+
+  // Read URL params on load
+  const _p = new URLSearchParams(location.search);
+  for (const k of ['size','energy','shedding','training','coat','group','origin','lifespan','sort']) {
+    if (_p.has(k)) state[k] = _p.get(k);
+  }
+  if (_p.has('q')) { state.q = _p.get('q'); }
 
   // ── Elements ──────────────────────────────────────────────────
   const grid       = document.getElementById('breed-grid');
@@ -414,11 +581,16 @@ const breadcrumbLd = JSON.stringify({
     let   visible = 0;
 
     cards.forEach(c => {
+      const lifeVal = parseFloat(c.dataset.lifespan || '11');
       const show =
         (state.size     === 'all' || c.dataset.size     === state.size)     &&
         (state.energy   === 'all' || c.dataset.energy   === state.energy)   &&
         (state.shedding === 'all' || c.dataset.shedding === state.shedding) &&
         (state.training === 'all' || c.dataset.training === state.training) &&
+        (state.coat     === 'all' || c.dataset.coat     === state.coat)     &&
+        (state.group    === 'all' || c.dataset.group    === state.group)    &&
+        (state.origin   === 'all' || c.dataset.origin   === state.origin)   &&
+        (state.lifespan === 'all' || checkLifespan(lifeVal, state.lifespan)) &&
         (!state.q || c.dataset.name.includes(state.q));
       c.style.display = show ? '' : 'none';
       if (show) visible++;
@@ -445,7 +617,22 @@ const breadcrumbLd = JSON.stringify({
     srAnnounce.textContent = label;
 
     // No-results hint with partial match count
-    const hasFilter = Object.values({ ...state, sort: 'x' }).some(v => v !== 'all' && v !== '' && v !== 'popular');
+    const hasFilter = ['size','energy','shedding','training','coat','group','origin','lifespan'].some(k => state[k] !== 'all') || !!state.q;
+
+    // Update URL for shareability
+    const urlP = new URLSearchParams();
+    for (const [k, v] of Object.entries(state))
+      if (v && v !== 'all' && v !== '' && v !== 'popular') urlP.set(k, v);
+    history.replaceState({}, '', urlP.toString() ? `?${urlP}` : location.pathname);
+
+    // Sync origin strip button active state
+    document.querySelectorAll('.origin-btn').forEach(btn => {
+      const active = btn.dataset.origin === state.origin;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    const clearOriginBtn = document.getElementById('clear-origin');
+    if (clearOriginBtn) clearOriginBtn.style.display = state.origin !== 'all' ? '' : 'none';
     if (visible === 0 && hasFilter) {
       const partials = cards.filter(c => state.q && c.dataset.name.includes(state.q.slice(0, 2)));
       noHint.textContent = partials.length
@@ -490,7 +677,7 @@ const breadcrumbLd = JSON.stringify({
 
   // ── Clear ─────────────────────────────────────────────────────
   function clearAll() {
-    state = { size:'all', energy:'all', shedding:'all', training:'all', q:'', sort: state.sort };
+    state = { size:'all', energy:'all', shedding:'all', training:'all', coat:'all', group:'all', origin:'all', lifespan:'all', q:'', sort: state.sort };
     if (searchInput) searchInput.value = '';
     document.querySelectorAll('[data-filter]').forEach(b => {
       const isAll = b.dataset.value === 'all';
@@ -499,6 +686,48 @@ const breadcrumbLd = JSON.stringify({
     });
     applyFilters();
     searchInput?.focus();
+  }
+
+  // ── Origin strip buttons ──────────────────────────────────────
+  document.querySelectorAll('.origin-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const country = btn.dataset.origin;
+      state.origin = state.origin === country ? 'all' : country;
+      // sync the origin filter-btn in the panel too
+      document.querySelectorAll('[data-filter="origin"]').forEach(b => {
+        const isActive = b.dataset.value === state.origin;
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+      applyFilters();
+    });
+  });
+
+  document.getElementById('clear-origin')?.addEventListener('click', () => {
+    state.origin = 'all';
+    document.querySelectorAll('[data-filter="origin"]').forEach(b => {
+      const isAll = b.dataset.value === 'all';
+      b.classList.toggle('active', isAll);
+      b.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+    });
+    applyFilters();
+  });
+
+  // Apply URL-loaded state on initial render
+  if (Object.values(state).some(v => v !== 'all' && v !== '' && v !== 'popular')) {
+    // Sync button active states from URL-loaded state
+    for (const k of ['size','energy','shedding','training','coat','group','origin','lifespan']) {
+      if (state[k] !== 'all') {
+        document.querySelectorAll(`[data-filter="${k}"]`).forEach(b => {
+          const isActive = b.dataset.value === state[k];
+          b.classList.toggle('active', isActive);
+          b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+      }
+    }
+    if (searchInput && state.q) searchInput.value = state.q;
+    if (sortSelect && state.sort !== 'popular') sortSelect.value = state.sort;
+    applyFilters();
   }
   clearBtns.forEach(b => b?.addEventListener('click', clearAll));
 
@@ -543,9 +772,9 @@ const breadcrumbLd = JSON.stringify({
     font-weight: 600;
     padding: 5px 13px;
     border-radius: 9999px;
-    border: 1px solid #e8ccaa;
+    border: 1px solid var(--color-border-warm);
     background: white;
-    color: #475569;
+    color: var(--color-body-soft);
     cursor: pointer;
     transition: border-color 0.15s, color 0.15s, background 0.15s;
     white-space: nowrap;
@@ -557,18 +786,33 @@ const breadcrumbLd = JSON.stringify({
     margin-left: 2px;
   }
   .filter-btn.active {
-    background: #a0621c;
-    border-color: #a0621c;
+    background: var(--color-accent);
+    border-color: var(--color-accent);
     color: white;
   }
   .filter-btn.active .count-badge { opacity: 0.8; }
   .filter-btn:hover:not(.active) {
-    border-color: #a0621c;
-    color: #7d4a10;
+    border-color: var(--color-accent);
+    color: var(--color-accent-hover);
   }
   .filter-btn:focus-visible {
-    outline: 2px solid #f59e0b;
+    outline: 2px solid var(--color-warning);
     outline-offset: 2px;
+  }
+
+  /* ── Origin strip + popular breed links ── */
+  .origin-btn.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+  }
+  .origin-btn:hover:not(.active) {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+  .popular-breed-link:hover {
+    border-color: var(--color-accent) !important;
+    color: var(--color-accent-hover) !important;
   }
 
   /* ── Breed cards ── */
@@ -578,8 +822,8 @@ const breadcrumbLd = JSON.stringify({
   .breed-card:hover,
   .breed-card:focus-visible {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(160, 98, 28, 0.14);
-    border-color: #a0621c !important;
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--color-accent) !important;
     outline: none;
   }
   .breed-card:hover .breed-img {

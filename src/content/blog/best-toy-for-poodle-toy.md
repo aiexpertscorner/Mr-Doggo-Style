@@ -4,7 +4,7 @@ description: "We matched the best toy to the Poodle (Toy)'s specific regular exe
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["poodle-toy", "toys", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "poodle-toy"
 ---
 

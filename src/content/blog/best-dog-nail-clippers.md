@@ -4,7 +4,7 @@ description: "Regular nail trims prevent joint pain and posture problems. We rev
 pubDate: 2026-02-14
 category: "Grooming"
 tags: ["grooming", "nail-trimmer", "nail-grinder", "tools"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 Long nails are one of the most overlooked dog health issues. When nails are too long, they push against the ground with each step, forcing the paw into an unnatural position. Over time, this affects gait, posture, and puts strain on joints. Nails that curl under can embed in paw pads. Most dogs' nails should be trimmed every 3-4 weeks.

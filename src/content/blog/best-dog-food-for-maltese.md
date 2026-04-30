@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Maltese's specific regular exe
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["maltese", "dog-food", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "maltese"
 ---
 

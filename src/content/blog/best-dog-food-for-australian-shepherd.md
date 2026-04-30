@@ -4,7 +4,7 @@ description: "We matched the best dog food to the Australian Shepherd's specific
 pubDate: 2026-03-16
 category: "Dog food"
 tags: ["australian-shepherd", "dog-food", "medium-breed", "energetic"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "australian-shepherd"
 ---
 

@@ -1,10 +1,12 @@
-name: Deploy to Cloudflare Pages
+name: Deploy PupWiki to Cloudflare Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - pupwiki
   pull_request:
-    branches: [main]
+    branches:
+      - pupwiki
 
 jobs:
   deploy:
@@ -20,20 +22,22 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: 20
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
+      - name: Sync AWIN affiliate data
+        env:
+          AWIN_OAUTH2_TOKEN: ${{ secrets.AWIN_OAUTH2_TOKEN }}
+        run: node scripts/sync-awin.mjs
+
       - name: Build
         run: npm run build
 
-      - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: mrdoggostyle
-          directory: dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to Cloudflare Pages with Wrangler
+        run: npx wrangler pages deploy dist --project-name=pupwiki
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

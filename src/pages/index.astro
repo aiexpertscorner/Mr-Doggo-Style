@@ -1,324 +1,159 @@
+
 ---
 /**
- * pages/index.astro — Homepage PupWiki
- * Design: Visual Authority 
- * Scope: The complete dog journey (Names, Costs, Gear, Training, Health, Breeds)
+ * src/pages/index.astro
+ * Refined PupWiki homepage
+ * Assumes:
+ * - updated BaseLayout.astro
+ * - updated site-config.ts
+ * - new /components/home/* section components
+ * - homepage-config.json
+ * - getHomepageData.ts
  */
+
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
 
-const posts = await getCollection('blog');
-const latest = posts
-  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
-  .slice(0, 3);
+import HomeHero from '../components/home/HomeHero.astro';
+import HomePrimaryJourneys from '../components/home/HomePrimaryJourneys.astro';
+import HomeTrustStrip from '../components/home/HomeTrustStrip.astro';
+import HomeBreedDiscovery from '../components/home/HomeBreedDiscovery.astro';
+import HomeMixedBreedDiscovery from '../components/home/HomeMixedBreedDiscovery.astro';
+import HomeCareDecisionLayer from '../components/home/HomeCareDecisionLayer.astro';
+import HomeEditorialHighlights from '../components/home/HomeEditorialHighlights.astro';
+import HomeMethodologyTeaser from '../components/home/HomeMethodologyTeaser.astro';
+import HomeLeadCapture from '../components/home/HomeLeadCapture.astro';
+import HomeAwinSpotlight from '../components/home/HomeAwinSpotlight.astro';
 
-// Strakke SVG iconen passend bij de nieuwe brede opzet
-const icons = {
-  tag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>`,
-  calculator: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16.01" y1="14" y2="14"/><line x1="16" x2="16.01" y1="10" y2="10"/><line x1="16" x2="16.01" y1="18" y2="18"/><line x1="8" x2="8.01" y1="10" y2="10"/><line x1="12" x2="12.01" y1="10" y2="10"/><line x1="8" x2="8.01" y1="14" y2="14"/><line x1="12" x2="12.01" y1="14" y2="14"/><line x1="8" x2="8.01" y1="18" y2="18"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>`,
-  health: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="M8 11h8"/><path d="M12 7v8"/></svg>`,
-  food: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c0 .28.22.5.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg>`,
-  training: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>`,
-  gear: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>`,
-  arrow: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>`
-};
+import getHomepageData from '../lib/homepage/getHomepageData';
 
-// Categorieën verbreed op basis van de daadwerkelijke sitemap flow
-const categories = [
-  { svg: icons.tag,        color: '#f3e8ff', iconColor: '#9333ea', title: 'Dog Name Generator',desc: 'Browse 5,000+ unique, popular, and breed-specific dog names.', href: '/dog-names' },
-  { svg: icons.calculator, color: '#fef3c7', iconColor: '#d97706', title: 'Cost Calculator',   desc: 'Estimate lifetime vet costs, food budgets, and puppy prices.', href: '/cost-calculator' },
-  { svg: icons.food,       color: '#dcfce7', iconColor: '#16a34a', title: 'Diet & Nutrition',  desc: 'Breed-specific feeding guides and independent food formula analysis.', href: '/categories/dog-food' },
-  { svg: icons.training,   color: '#fee2e2', iconColor: '#dc2626', title: 'Behavior & Training',desc: 'Energy levels, trainability scores, and behavioral guides.', href: '/categories/training' },
-  { svg: icons.health,     color: '#dbeafe', iconColor: '#2563eb', title: 'Health & Vet Care', desc: 'Genetic health risks, lifespan data, and pet insurance guides.', href: '/categories/health' },
-  { svg: icons.gear,       color: '#f1f5f9', iconColor: '#475569', title: 'Lifestyle & Gear',  desc: 'Tested reviews for toys, GPS collars, orthopedic beds, and travel.', href: '/categories/lifestyle' },
-];
+const homepage = await getHomepageData();
 
-const popularBreeds = [
-  { slug: 'labrador-retriever', name: 'Labrador Retriever', img: 'https://images.unsplash.com/photo-1599839619722-39751411ea63?w=400&q=80&fit=crop' },
-  { slug: 'french-bulldog',     name: 'French Bulldog',     img: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400&q=80&fit=crop' },
-  { slug: 'golden-retriever',   name: 'Golden Retriever',   img: 'https://images.unsplash.com/photo-1611250282006-4484dd3fba6b?w=400&q=80&fit=crop' },
-  { slug: 'german-shepherd-dog',name: 'German Shepherd',    img: 'https://images.unsplash.com/photo-1589966838848-18e5b02662c5?w=400&q=80&fit=crop' },
-  { slug: 'bulldog',            name: 'Bulldog',            img: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=400&q=80&fit=crop' },
-  { slug: 'poodle-standard',    name: 'Poodle',             img: 'https://images.unsplash.com/photo-1605639943265-27a38b2512d2?w=400&q=80&fit=crop' },
-];
+const {
+  seo,
+  featureFlags,
+  hero,
+  primaryJourneys,
+  trustStrip,
+  breedDiscovery,
+  mixedBreedDiscovery,
+  careDecisionLayer,
+  editorialHighlights,
+  methodologyTeaser,
+  leadCapture,
+} = homepage;
 
-// Content mix: Gear Compare, Food Compare, Inspiration (Names), and Data (Cost)
-const featuredGuides = [
-  { category: 'Tech Showdown', badgeClass: 'toys', title: 'Fi Series 4 vs Tractive: Which GPS Tracker is Better?', desc: 'We tested the top two dog GPS collars on accuracy, battery life, and subscription costs.', href: '/blog/fi-series-4-gps-vs-tractive-gps-dog-4' },
-  { category: 'Food Review',   badgeClass: 'food', title: 'The Farmer\'s Dog vs Ollie: Fresh Food Tested', desc: 'Is fresh dog food worth the price? We compared ingredients, delivery, and taste tests.', href: '/blog/the-farmers-dog-vs-ollie-fresh-food' },
-  { category: 'Inspiration',   badgeClass: 'health', title: '100 Best Golden Retriever Names for 2026', desc: 'From classic to unique, find the perfect name for your new golden boy or girl.', href: '/dog-names/golden-retriever' },
-  { category: 'Cost Data',     badgeClass: 'training',title: 'The True Lifetime Cost of a French Bulldog', desc: 'An honest look at the vet bills, food costs, and insurance premiums for Frenchies.', href: '/cost-calculator/french-bulldog' },
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: seo.title,
+    description: seo.description,
+    url: seo.canonicalUrl,
+    about: [
+      { '@type': 'Thing', name: 'Dog Breeds' },
+      { '@type': 'Thing', name: 'Mixed Breeds' },
+      { '@type': 'Thing', name: 'Dog Care' },
+      { '@type': 'Thing', name: 'Dog Costs' },
+      { '@type': 'Thing', name: 'Dog Training' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'PupWiki homepage journeys',
+    itemListElement: primaryJourneys.items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.title,
+      url: new URL(item.href, seo.canonicalUrl).toString(),
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Featured breed discovery',
+    itemListElement: breedDiscovery.breeds.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: new URL(item.href, seo.canonicalUrl).toString(),
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Featured mixed breed discovery',
+    itemListElement: mixedBreedDiscovery.items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: new URL(item.href, seo.canonicalUrl).toString(),
+    })),
+  },
 ];
 ---
 
 <BaseLayout
-  title="PupWiki | The Complete Guide to Dog Ownership"
-  description="Your ultimate platform for dog breeds, unique dog names, lifetime cost calculators, and expert gear reviews."
-  canonicalUrl="https://pupwiki.com"
+  title={seo.title}
+  description={seo.description}
+  canonicalUrl={seo.canonicalUrl}
+  ogImage={seo.ogImage}
+  ogImageAlt={seo.ogImageAlt}
+  pageType="website"
+  bodyClass="homepage bg-white text-slate-900"
+  structuredData={structuredData}
 >
+  <div class="overflow-x-clip">
+    {featureFlags.showHero && <HomeHero {...hero} />}
 
-  <style>
-    /* Warm & Uitnodigend, gericht op de volledige doelgroep */
-    :root {
-      --pup-brand: #a0621c; 
-      --pup-brand-light: #fdf8f0;
-    }
+    {featureFlags.showPrimaryJourneys && <HomePrimaryJourneys {...primaryJourneys} />}
 
-    .tool-card {
-      background: #ffffff;
-      border: 1px solid #f1f5f9;
-      border-radius: 16px;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-    }
-    .tool-card:hover {
-      border-color: #e2e8f0;
-      box-shadow: 0 12px 24px -8px rgba(160, 98, 28, 0.15);
-      transform: translateY(-4px);
-    }
-    .tool-card__icon-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-    }
-    .tool-card__title {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin: 0;
-    }
-    .tool-card__desc {
-      font-size: 0.9rem;
-      color: #64748b;
-      line-height: 1.5;
-      margin: 0;
-      flex-grow: 1;
-    }
+    {featureFlags.showTrustStrip && <HomeTrustStrip {...trustStrip} />}
 
-    .breed-photo-card {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 100px; 
-      padding: 0.5rem 1.25rem 0.5rem 0.5rem;
-      text-decoration: none;
-      color: #1e293b;
-      transition: all 0.2s ease;
-    }
-    .breed-photo-card:hover {
-      border-color: var(--pup-brand);
-      background: var(--pup-brand-light);
-      box-shadow: 0 8px 16px -4px rgba(160, 98, 28, 0.1);
-    }
-    .breed-photo-card img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .breed-photo-card__info {
-      flex-grow: 1;
-    }
-    .breed-photo-card__name {
-      display: block;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-    .breed-photo-card__arrow {
-      color: #cbd5e1;
-      transition: color 0.2s ease;
-    }
-    .breed-photo-card:hover .breed-photo-card__arrow {
-      color: var(--pup-brand);
-      transform: translateX(3px);
-    }
+    {featureFlags.showBreedDiscovery && (
+      <HomeBreedDiscovery
+        id="home-breed-discovery"
+        eyebrow={breedDiscovery.eyebrow}
+        title={breedDiscovery.title}
+        subtitle={breedDiscovery.subtitle}
+        viewAllHref={breedDiscovery.viewAllHref}
+        viewAllLabel={breedDiscovery.viewAllLabel}
+        routePrefix={breedDiscovery.routePrefix}
+        breeds={breedDiscovery.breeds}
+      />
+    )}
 
-    .hero-photo-wrapper {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-    }
-  </style>
+    {featureFlags.showMixedBreedDiscovery && (
+      <HomeMixedBreedDiscovery
+        id="home-mixed-breed-discovery"
+        eyebrow={mixedBreedDiscovery.eyebrow}
+        title={mixedBreedDiscovery.title}
+        subtitle={mixedBreedDiscovery.subtitle}
+        viewAllHref={mixedBreedDiscovery.viewAllHref}
+        viewAllLabel={mixedBreedDiscovery.viewAllLabel}
+        detailRoutePrefix={mixedBreedDiscovery.detailRoutePrefix}
+        items={mixedBreedDiscovery.items}
+      />
+    )}
 
-  <section class="hero hero--split" style="padding-top: 4rem; padding-bottom: 4rem; background: linear-gradient(to bottom, #ffffff, #f8fafc);">
-    <div class="hero__inner hero__inner--split container">
-      <div class="hero__content">
-        <span class="hero__eyebrow" style="display: inline-block; background: var(--pup-brand-light); color: var(--pup-brand); padding: 0.25rem 1rem; border-radius: 20px; font-weight: 700; font-size: 0.8rem; margin-bottom: 1.5rem;">
-          The Complete Dog Companion
-        </span>
+    {featureFlags.showCareDecisionLayer && <HomeCareDecisionLayer {...careDecisionLayer} />}
 
-        <h1 class="hero__title" style="font-size: 3.5rem; line-height: 1.1; color: #0f172a; margin-bottom: 1.5rem;">
-          From Puppy Love<br /><em style="color: var(--pup-brand); font-style: normal;">To Lifelong Care.</em>
-        </h1>
+    {(featureFlags as any).showAwinSpotlight && <HomeAwinSpotlight />}
 
-        <p class="hero__subtitle" style="font-size: 1.125rem; color: #475569; max-width: 480px; margin-bottom: 2rem; line-height: 1.6;">
-          Whether you're searching for the perfect breed, a unique name, or data-driven reviews on food and gear. PupWiki is your ultimate guide to dog ownership.
-        </p>
+    {featureFlags.showEditorialHighlights && (
+      <HomeEditorialHighlights
+        id="home-editorial-highlights"
+        eyebrow={editorialHighlights.eyebrow}
+        title={editorialHighlights.title}
+        subtitle={editorialHighlights.subtitle}
+        viewAllHref={editorialHighlights.viewAllHref}
+        viewAllLabel={editorialHighlights.viewAllLabel}
+        items={editorialHighlights.items}
+      />
+    )}
 
-        <div class="hero__actions" style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="/breeds" class="btn btn--primary btn--lg" style="background-color: var(--pup-brand); border-radius: 12px;">
-            Find a Breed
-          </a>
-          <a href="/dog-names" class="btn btn--outline btn--lg" style="border-radius: 12px; border-color: #cbd5e1;">
-            Name Generator
-          </a>
-        </div>
-      </div>
+    {featureFlags.showMethodologyTeaser && <HomeMethodologyTeaser {...methodologyTeaser} />}
 
-      <div class="hero__media" aria-hidden="true" style="position: relative;">
-        <div class="hero-photo-wrapper">
-          <img
-            src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=800&q=80&fit=crop"
-            alt="Happy dog owner with a golden retriever"
-            class="hero__image"
-            style="width: 100%; height: 500px; object-fit: cover; display: block;"
-          />
-        </div>
-        <div class="hero__card" style="position: absolute; bottom: -20px; left: -20px; background: white; border-radius: 16px; padding: 1.25rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border: 1px solid #f1f5f9; display: flex; align-items: center; gap: 1rem;">
-          <div style="background: var(--pup-brand-light); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--pup-brand);" set:html={icons.tag}></div>
-          <div>
-            <span style="display: block; color: #64748b; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Discover</span>
-            <strong style="color: #0f172a; font-size: 1.25rem;">5,000+ Dog Names</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top: 5rem;">
-    <div class="container">
-      <div class="section-header" style="margin-bottom: 2.5rem;">
-        <div>
-          <span style="color: var(--pup-brand); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Explore the Platform</span>
-          <h2 class="section-title" style="font-size: 2.25rem; color: #0f172a; margin-top: 0.5rem;">
-            Everything You Need
-          </h2>
-        </div>
-      </div>
-      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
-        {categories.map(cat => (
-          <a href={cat.href} class="tool-card">
-            <div class="tool-card__icon-wrapper" style={`background-color: ${cat.color}; color: ${cat.iconColor};`}>
-              <span set:html={cat.svg} />
-            </div>
-            <div>
-              <h3 class="tool-card__title">{cat.title}</h3>
-              <p class="tool-card__desc" style="margin-top: 0.5rem;">{cat.desc}</p>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top: 4rem; background: #f8fafc; margin-top: 4rem; padding-bottom: 4rem;">
-    <div class="container">
-      <div class="section-header" style="margin-bottom: 2.5rem;">
-        <div>
-          <span style="color: var(--pup-brand); font-weight: 700; font-size: 0.85rem; text-transform: uppercase;">Latest Insights</span>
-          <h2 class="section-title" style="font-size: 2.25rem; color: #0f172a; margin-top: 0.5rem;">
-            Trending Guides & Reviews
-          </h2>
-        </div>
-        <a href="/blog" style="color: var(--pup-brand); font-weight: 600; text-decoration: none;">Read the blog →</a>
-      </div>
-
-      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
-        {featuredGuides.map(guide => (
-          <a href={guide.href} style="display: flex; flex-direction: column; padding: 1.5rem; background: white; border: 1px solid #e2e8f0; border-radius: 16px; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#a0621c'; this.style.boxShadow='0 10px 15px -3px rgba(160,98,28,0.1)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
-            <span style="display: inline-block; background: #f1f5f9; color: #475569; padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; align-self: flex-start;">
-              {guide.category}
-            </span>
-            <h3 style="font-size: 1.125rem; font-weight: 700; color: #0f172a; margin-bottom: 0.75rem; line-height: 1.4;">{guide.title}</h3>
-            <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; flex-grow: 1;">{guide.desc}</p>
-            <span style="color: var(--pup-brand); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 4px;">
-              Read more <span set:html={icons.arrow} />
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top: 4rem;">
-    <div class="container">
-      <div class="section-header" style="margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
-        <div>
-          <span style="color: var(--pup-brand); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Breed Directory</span>
-          <h2 class="section-title" style="font-size: 2.25rem; color: #0f172a; margin-top: 0.5rem;">
-            Explore by Breed
-          </h2>
-        </div>
-        <a href="/breeds" style="color: var(--pup-brand); font-weight: 600; text-decoration: none;">View all 277 breeds →</a>
-      </div>
-
-      <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;">
-        {popularBreeds.map(breed => (
-          <a href={`/breeds/${breed.slug}`} class="breed-photo-card">
-            <img src={breed.img} alt={`Photo of a ${breed.name}`} loading="lazy" />
-            <div class="breed-photo-card__info">
-              <span class="breed-photo-card__name">{breed.name}</span>
-            </div>
-            <div class="breed-photo-card__arrow" set:html={icons.arrow} />
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="margin-top: 4rem; padding: 4rem 1rem; background: #1e293b; color: white; border-radius: 24px; max-width: 1200px; margin-inline: auto;">
-    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-      <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem;">Join the PupWiki Pack</h2>
-      <p style="font-size: 1.125rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 2rem;">
-        Join 10,000+ dog parents. Get weekly gear reviews, expert training tips, and our exclusive puppy prep checklist straight to your inbox.
-      </p>
-      
-      <form
-        id="homepage-newsletter"
-        action="#"
-        method="POST"
-        style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 400px; margin: 0 auto;"
-      >
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email address..."
-          required
-          style="padding: 1rem 1.25rem; border-radius: 12px; border: none; width: 100%; font-size: 1rem; color: #0f172a; outline: none;"
-        />
-        <button type="submit" style="background-color: var(--pup-brand); border: none; padding: 1rem 1.25rem; border-radius: 12px; color: white; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s ease;" onmouseover="this.style.backgroundColor='#8b5418'" onmouseout="this.style.backgroundColor='#a0621c'">
-          Subscribe Free →
-        </button>
-      </form>
-      <p id="newsletter-success" style="display:none; font-size: 0.9rem; color: #34d399; font-weight: 600; margin-top: 1rem;">
-        ✓ Welcome to the pack! Check your inbox.
-      </p>
-    </div>
-  </section>
-
-  <script>
-    const form = document.getElementById('homepage-newsletter') as HTMLFormElement | null;
-    const success = document.getElementById('newsletter-success');
-    if (form && success) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        form.style.display = 'none';
-        success.style.display = 'block';
-      });
-    }
-  </script>
-
+    {featureFlags.showLeadCapture && <HomeLeadCapture {...leadCapture} />}
+  </div>
 </BaseLayout>

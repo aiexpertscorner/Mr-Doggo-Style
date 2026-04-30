@@ -4,7 +4,7 @@ description: "We matched the best toy to the Dachshund's specific regular exerci
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["dachshund", "toys", "medium-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "dachshund"
 ---
 

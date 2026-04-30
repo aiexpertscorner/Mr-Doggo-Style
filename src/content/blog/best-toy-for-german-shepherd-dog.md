@@ -4,7 +4,7 @@ description: "We matched the best toy to the German Shepherd Dog's specific larg
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["german-shepherd-dog", "toys", "large-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "german-shepherd-dog"
 ---
 

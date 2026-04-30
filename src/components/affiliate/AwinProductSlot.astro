@@ -1,0 +1,82 @@
+---
+/**
+ * AwinProductSlot.astro
+ * Smart AWIN product card slot — auto-selects the best product for any page context.
+ * Falls back gracefully: awin-products.json → affiliate-products.json → nothing.
+ *
+ * Usage:
+ *   <AwinProductSlot topicTags={['food', 'nutrition']} pageType="breed" />
+ *   <AwinProductSlot topicTags={['training']} pageType="blog" variant="compact" />
+ *   <AwinProductSlot productId="chefpaw-1" /> — force a specific product
+ */
+
+import { matchTopProduct, type MatchContext } from '../../lib/awin/matchProducts';
+import AffiliateProductCard from '../ui/AffiliateProductCard.astro';
+
+// Try enriched API data first, then fall back to manual list
+let allProducts: any[] = [];
+try {
+  const enriched = await import('../../data/awin-products.json');
+  allProducts = Array.isArray(enriched.default) ? enriched.default : [];
+} catch {
+  // awin-products.json not yet generated — fall back to affiliate-products.json
+}
+if (allProducts.length === 0) {
+  try {
+    const manual = await import('../../data/affiliate-products.json');
+    allProducts = Array.isArray(manual.default) ? manual.default : [];
+  } catch {}
+}
+
+export interface Props {
+  topicTags?: string[];
+  pageType?: string;
+  category?: string;
+  breedSize?: string;
+  breedEnergy?: string;
+  breedTraining?: string;
+  excludeProductIds?: string[];
+  productId?: string;
+  variant?: 'card' | 'compact';
+  headline?: string;
+}
+
+const {
+  topicTags = [],
+  pageType = 'blog',
+  category,
+  breedSize,
+  breedEnergy,
+  breedTraining,
+  excludeProductIds = [],
+  productId,
+  variant = 'card',
+  headline,
+} = Astro.props;
+
+let product: any = null;
+
+if (productId) {
+  product = allProducts.find((p: any) => p.id === productId) ?? null;
+} else {
+  const context: MatchContext = {
+    topicTags,
+    pageType,
+    category,
+    breedSize,
+    breedEnergy,
+    breedTraining,
+    excludeProductIds,
+    limit: 1,
+  };
+  product = matchTopProduct(allProducts, context);
+}
+---
+
+{product && (
+  <AffiliateProductCard
+    product={product}
+    headline={headline}
+    variant={variant}
+  />
+)}

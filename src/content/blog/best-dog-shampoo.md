@@ -4,7 +4,7 @@ description: "Itchy, flaky, or irritated skin? We evaluated 12 dog shampoos for 
 pubDate: 2026-02-01
 category: "Grooming"
 tags: ["shampoo", "grooming", "sensitive-skin", "natural"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 Dogs with sensitive skin are a grooming challenge. The wrong shampoo strips natural oils, triggers flare-ups, and leaves your dog scratching for days after a bath. The right shampoo cleans effectively, maintains the skin barrier, and doesn't contain the fragrances or surfactants that irritate sensitive skin.

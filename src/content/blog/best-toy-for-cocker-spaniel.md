@@ -4,7 +4,7 @@ description: "We matched the best toy to the Cocker Spaniel's specific regular e
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["cocker-spaniel", "toys", "medium-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "cocker-spaniel"
 ---
 

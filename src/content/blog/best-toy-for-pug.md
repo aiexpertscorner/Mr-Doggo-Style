@@ -4,7 +4,7 @@ description: "We matched the best toy to the Pug's specific regular exercise ene
 pubDate: 2026-03-16
 category: "Toys"
 tags: ["pug", "toys", "small-breed", "regular-exercise"]
-author: "Mr. Doggo Style"
+author: "The PupWiki Team"
 breedSlug: "pug"
 ---
 

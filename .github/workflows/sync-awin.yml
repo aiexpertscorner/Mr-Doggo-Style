@@ -1,0 +1,100 @@
+name: Sync AWIN Affiliate Data
+
+on:
+  # Run daily at 03:00 UTC — keep product data fresh
+  schedule:
+    - cron: '0 3 * * *'
+
+  # Allow manual trigger with optional branch override
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to checkout and commit to'
+        required: false
+        default: 'Pupwiki'
+        type: string
+      commit_changes:
+        description: 'Commit updated data files'
+        required: false
+        default: 'true'
+        type: boolean
+
+jobs:
+  sync:
+    name: Sync AWIN product, programme & creative data
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch || 'Pupwiki' }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run AWIN sync
+        env:
+          AWIN_OAUTH2_TOKEN: ${{ secrets.AWIN_OAUTH2_TOKEN }}
+        run: node scripts/sync-awin.mjs
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet \
+            src/data/awin-products.json \
+            src/data/awin-programs.json \
+            src/data/affiliate-banners.json \
+            2>/dev/null \
+            && echo "changed=false" >> $GITHUB_OUTPUT \
+            || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit updated data
+        if: steps.changes.outputs.changed == 'true' && (github.event_name == 'schedule' || inputs.commit_changes == 'true')
+        run: |
+          TARGET_BRANCH="${{ inputs.branch || 'Pupwiki' }}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/data/awin-products.json \
+            src/data/awin-programs.json \
+            src/data/affiliate-banners.json
+          git commit -m "chore(awin): sync product, programme & banner data [skip ci]"
+          git push origin "$TARGET_BRANCH"
+
+      - name: Summary
+        run: |
+          echo "### AWIN sync complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f src/data/awin-products.json ]; then
+            TOTAL=$(node -e "const d=require('./src/data/awin-products.json');console.log(d.length)")
+            echo "- **Total products:** ${TOTAL}" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ -f src/data/awin-programs.json ]; then
+            node -e "
+              const d = require('./src/data/awin-programs.json');
+              const s = d.summary ?? [];
+              console.log('- **Programmes mapped:** ' + s.length);
+              s.forEach(p => console.log('  - ' + p.name + ': ' + p.productCount + ' products, ' + p.bannerCount + ' banners (' + (p.isActive ? 'active' : 'pending') + ')'));
+              console.log('- **Pending programmes:** ' + (d.pendingPrograms?.length ?? 0));
+            " >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ -f src/data/affiliate-banners.json ]; then
+            BANNERS=$(node -e "const d=require('./src/data/affiliate-banners.json');console.log(d.length)")
+            echo "- **Total banners:** ${BANNERS}" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "- **Branch:** ${{ inputs.branch || 'Pupwiki' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp:** $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY

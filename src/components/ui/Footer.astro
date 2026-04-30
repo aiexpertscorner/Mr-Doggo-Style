@@ -1,74 +1,176 @@
 ---
 /**
- * Footer.astro — Site footer, light theme.
+ * src/components/ui/Footer.astro
+ * Enhanced footer for PupWiki
+ * - matches the newer authority + decision-support positioning
+ * - uses site-config values
+ * - keeps routing safe for the current repo structure
  */
 
+import {
+  SITE_NAME,
+  SITE_URL,
+  SITE_EMAIL,
+  SITE_TAGLINE,
+  SITE_DESCRIPTION,
+  AFFILIATE_DISCLOSURE_SHORT,
+  BREEDS_PAGE_PATH,
+  DOG_NAMES_PAGE_PATH,
+  COST_CALCULATOR_PAGE_PATH,
+  ABOUT_PAGE_PATH,
+  METHODOLOGY_PAGE_PATH,
+  DISCLOSURE_PAGE_PATH,
+  PRIVACY_PAGE_PATH,
+  CONTACT_PAGE_PATH,
+  SITE_STATS,
+} from '../../lib/site-config';
+
 const year = new Date().getFullYear();
+
+/**
+ * IMPORTANT:
+ * The current Pupwiki branch does NOT yet have a dedicated /mixed-breeds hub route.
+ * Mixed breeds currently render through /breeds/[slug].
+ * So for now, keep the footer link pointed at /breeds.
+ * Once /mixed-breeds exists, change this to that route.
+ */
+const mixedBreedsHref = BREEDS_PAGE_PATH;
+
+const trustStats = [
+  `${SITE_STATS?.breedCount ?? 277} breed guides`,
+  `${SITE_STATS?.mixedBreedCount ?? 75} mixed breeds`,
+  `${SITE_STATS?.dogNameCount ?? 5000}+ dog names`,
+  'Cost and care tools',
+];
+
+const navSections = [
+  {
+    title: 'Discover',
+    links: [
+      { label: 'All Breeds', href: BREEDS_PAGE_PATH },
+      { label: 'Mixed Breeds', href: mixedBreedsHref },
+      { label: 'Dog Names', href: DOG_NAMES_PAGE_PATH },
+      { label: 'Blog', href: '/blog' },
+    ],
+  },
+  {
+    title: 'Care & Planning',
+    links: [
+      { label: 'Health & Care', href: '/categories/health' },
+      { label: 'Training', href: '/categories/training' },
+      { label: 'Cost & Insurance', href: COST_CALCULATOR_PAGE_PATH },
+      { label: 'Reviews', href: '/blog' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About', href: ABOUT_PAGE_PATH },
+      { label: 'Methodology', href: METHODOLOGY_PAGE_PATH },
+      { label: 'Disclosure', href: DISCLOSURE_PAGE_PATH },
+      { label: 'Privacy', href: PRIVACY_PAGE_PATH },
+      { label: 'Contact', href: CONTACT_PAGE_PATH },
+    ],
+  },
+];
 ---
 
-<footer class="site-footer" role="contentinfo">
-  <div class="site-footer__grid">
+<footer
+  class="mt-16 border-t border-stone-200 bg-stone-50/70"
+  role="contentinfo"
+>
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-5 lg:px-6 lg:py-16">
+    <div class="grid gap-10 lg:grid-cols-[1.35fr_1fr_1fr_1fr]">
+      <!-- Brand / trust column -->
+      <div class="max-w-md">
+        <a href="/" aria-label={`${SITE_NAME} home`} class="inline-flex items-center">
+          <img
+            src="/Pupwiki-logo.png"
+            alt={SITE_NAME}
+            class="h-11 w-auto sm:h-12"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
 
-    <!-- Brand column -->
-    <div>
-      <a href="/" class="site-footer__brand-name">Mr. Doggo Style</a>
-      <p class="site-footer__tagline">
-        Independent, data-driven research for conscientious dog owners.
-        We earn small commissions from qualifying purchases — this never influences our editorial independence.
-      </p>
-      <div class="site-footer__trust">
-        <span class="site-footer__trust-item">277 Breeds</span>
-        <span class="site-footer__trust-sep">·</span>
-        <span class="site-footer__trust-item">125+ Products</span>
-        <span class="site-footer__trust-sep">·</span>
-        <span class="site-footer__trust-item">No paid placements</span>
+        <p class="mt-4 text-sm font-semibold tracking-wide text-slate-900">
+          {SITE_TAGLINE}
+        </p>
+
+        <p class="mt-3 text-sm leading-6 text-slate-600">
+          {SITE_DESCRIPTION}
+        </p>
+
+        <div class="mt-5 flex flex-wrap gap-2">
+          {trustStats.map((item) => (
+            <span class="inline-flex rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700">
+              {item}
+            </span>
+          ))}
+        </div>
+
+        <div class="mt-5 rounded-2xl border border-teal-100 bg-teal-50/70 p-4">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-teal-800">
+            Editorial promise
+          </p>
+          <p class="mt-2 text-sm leading-6 text-slate-700">
+            PupWiki aims to give dog parents practical, transparent guidance for breed research,
+            care decisions, cost planning, and everyday dog ownership.
+          </p>
+        </div>
+      </div>
+
+      <!-- Navigation columns -->
+      {navSections.map((section) => (
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-[0.14em] text-slate-900">
+            {section.title}
+          </h3>
+
+          <ul class="mt-4 space-y-3">
+            {section.links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm text-slate-600 transition-colors hover:text-slate-900"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 border-t border-stone-200 pt-6">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div class="max-w-3xl">
+          <p class="text-sm leading-6 text-slate-600">
+            {AFFILIATE_DISCLOSURE_SHORT}
+          </p>
+          <p class="mt-2 text-xs leading-5 text-slate-500">
+            PupWiki content is for educational and informational purposes only and does not replace
+            professional veterinary, behavioral, legal, or financial advice.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-2 text-xs text-slate-500 lg:items-end">
+          <a
+            href={`mailto:${SITE_EMAIL}`}
+            class="transition-colors hover:text-slate-700"
+          >
+            {SITE_EMAIL}
+          </a>
+          <p>© {year} {SITE_NAME}. All rights reserved.</p>
+          <a
+            href={SITE_URL}
+            class="transition-colors hover:text-slate-700"
+          >
+            {SITE_URL.replace(/^https?:\/\//, '')}
+          </a>
+        </div>
       </div>
     </div>
-
-    <!-- Categories -->
-    <div>
-      <h3 class="site-footer__heading">Categories</h3>
-      <ul class="site-footer__links">
-        <li><a href="/categories/dog-food"  class="site-footer__link">Dog Food</a></li>
-        <li><a href="/categories/toys"      class="site-footer__link">Toys &amp; Gear</a></li>
-        <li><a href="/categories/health"    class="site-footer__link">Dog Health</a></li>
-        <li><a href="/categories/training"  class="site-footer__link">Training</a></li>
-        <li><a href="/categories/grooming"  class="site-footer__link">Grooming</a></li>
-        <li><a href="/categories/beds"      class="site-footer__link">Beds &amp; Sleep</a></li>
-      </ul>
-    </div>
-
-    <!-- Resources -->
-    <div>
-      <h3 class="site-footer__heading">Explore</h3>
-      <ul class="site-footer__links">
-        <li><a href="/blog/top-picks-2026"  class="site-footer__link">Top Picks 2026</a></li>
-        <li><a href="/breeds"               class="site-footer__link">All Breed Guides</a></li>
-        <li><a href="/blog"                 class="site-footer__link">Expert Blog</a></li>
-        <li><a href="/dog-names"            class="site-footer__link">Dog Name Generator</a></li>
-        <li><a href="/cost-calculator"      class="site-footer__link">Cost Calculator</a></li>
-      </ul>
-    </div>
-
-    <!-- Company -->
-    <div>
-      <h3 class="site-footer__heading">Company</h3>
-      <ul class="site-footer__links">
-        <li><a href="/about"        class="site-footer__link">About Us</a></li>
-        <li><a href="/how-we-test"  class="site-footer__link">How We Review</a></li>
-        <li><a href="/disclosure"   class="site-footer__link">Affiliate Policy</a></li>
-        <li><a href="/privacy"      class="site-footer__link">Privacy Policy</a></li>
-        <li><a href="/contact"      class="site-footer__link">Contact</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="site-footer__bottom">
-    <p class="site-footer__disclaimer">
-      As an Amazon Associate and Chewy affiliate, Mr. Doggo Style earns from qualifying purchases at no extra cost to you.
-      Our editorial scores are determined before affiliate relationships are considered.
-    </p>
-    <p class="site-footer__copy">© {year} Mr. Doggo Style</p>
   </div>
 </footer>

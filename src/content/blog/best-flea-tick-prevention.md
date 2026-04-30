@@ -4,7 +4,7 @@ description: "Fleas and ticks transmit serious diseases. We break down the most 
 pubDate: 2026-03-07
 category: "Supplements"
 tags: ["flea", "tick", "health", "prevention", "vet-recommended"]
-author: "The Mr. Doggo Style Team"
+author: "The PupWiki Team"
 ---
 
 Flea and tick prevention is one area of dog care where cutting corners has real health consequences — for your dog and for your family. Fleas cause flea allergy dermatitis (the most common canine skin condition), transmit tapeworms, and cause anemia in severe infestations. Ticks transmit Lyme disease, Rocky Mountain spotted fever, anaplasmosis, and ehrlichiosis — several of which can be fatal.
