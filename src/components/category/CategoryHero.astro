@@ -1,0 +1,60 @@
+---
+import Breadcrumb from '../ui/Breadcrumb.astro';
+import type { CategoryMeta } from '../../lib/categories/categoryConfig';
+
+export interface Props {
+  meta: CategoryMeta;
+}
+
+const { meta } = Astro.props;
+---
+
+<section class="category-hub__hero" aria-labelledby="category-title">
+  <div class="category-hub__container">
+    <Breadcrumb items={[
+      { label: 'Home', href: '/' },
+      { label: meta.title, current: true },
+    ]} />
+
+    <div class="category-hub__hero-grid">
+      <div class="category-hub__hero-content">
+        <p class="category-hub__eyebrow">
+          <span aria-hidden="true">{meta.emoji}</span>
+          {meta.heroLabel}
+        </p>
+
+        <h1 id="category-title">
+          {meta.title}
+          <em>guides for dog owners</em>
+        </h1>
+
+        <p class="category-hub__hero-desc">{meta.desc}</p>
+
+        <div class="category-hub__hero-actions">
+          <a href={meta.primaryCta.href} class="category-hub__button category-hub__button--primary">
+            {meta.primaryCta.label}
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href={meta.secondaryCta.href} class="category-hub__button category-hub__button--secondary">
+            {meta.secondaryCta.label}
+          </a>
+        </div>
+
+        <ul class="category-hub__badges" aria-label={`${meta.title} page highlights`}>
+          <li>{meta.updatedLabel}</li>
+          <li>Breed-specific resources</li>
+          <li>Affiliate-supported picks</li>
+        </ul>
+      </div>
+
+      <aside class="category-hub__hero-card" aria-label={`${meta.title} quick overview`}>
+        <span class="category-hub__hero-card-emoji" aria-hidden="true">{meta.emoji}</span>
+        <p>Owner resource hub</p>
+        <strong>{meta.shortTitle}</strong>
+        <span>
+          Browse breed-specific pages, related guides, and partner resources matched to this topic.
+        </span>
+      </aside>
+    </div>
+  </div>
+</section>
