@@ -1,193 +1,171 @@
 ---
 /**
- * categories/[category].astro — Category hub page
- * CATEGORIES defined at module scope (fixes Astro getStaticPaths scope issue)
+ * src/pages/categories/[category].astro
+ *
+ * Clean category hub route.
+ * Heavy config, helper logic and layout sections live outside this page.
  */
-import BaseLayout  from '../../layouts/BaseLayout.astro';
-import BlogCard     from '../../components/content/BlogCard.astro';
-import ProductGrid  from '../../components/content/ProductGrid.astro';
-import Breadcrumb   from '../../components/ui/Breadcrumb.astro';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import productsData   from '../../data/products.json';
-import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
-import masterBreeds   from '../../data/master-breeds.json';
-import breedLinkMap   from '../../data/breed-link-map.json';
-import contentStatus  from '../../data/content-status.json';
 
-const CATEGORIES: Record<string,{title:string;desc:string;emoji:string;theme:string;reviewCount:number}> = {
-  'dog-food':    { title:'Dog Food',        desc:'Dry, wet, grain-free and breed-specific formulas independently tested for nutrition, quality and value.',           emoji:'🍖', theme:'food',      reviewCount:24 },
-  'toys':        { title:'Toys & Gear',     desc:'Durable chew toys, interactive puzzles, enrichment feeders and fetch toys — ranked by real-world durability.',     emoji:'🎾', theme:'toys',      reviewCount:20 },
-  'health':      { title:'Dog Health',      desc:'DNA tests, flea/tick prevention, dental care and wound care reviewed for safety and efficacy.',                    emoji:'🩺', theme:'health',    reviewCount:15 },
-  'training':    { title:'Training',        desc:'Harnesses, GPS collars, training leads and tools tested on dogs of all sizes and temperaments.',                    emoji:'🦮', theme:'training',  reviewCount:9  },
-  'grooming':    { title:'Grooming',        desc:'Brushes, shampoos, nail trimmers and professional-grade grooming tools reviewed by coat type.',                    emoji:'✂️', theme:'grooming',  reviewCount:12 },
-  'beds':        { title:'Beds & Sleep',    desc:'Orthopedic, elevated, calming and travel beds tested for support, durability and ease of cleaning.',                emoji:'🛏️', theme:'beds',      reviewCount:13 },
-  'supplements': { title:'Supplements',     desc:'Joint, probiotic, omega-3 and calming supplements reviewed for quality, efficacy and value.',                      emoji:'💊', theme:'health',    reviewCount:10 },
-  'smart-tech':  { title:'Smart Tech',      desc:'AI health collars, GPS trackers, pet cameras and smart feeders — the best connected gear for 2026.',               emoji:'📡', theme:'health',    reviewCount:10 },
-  'travel':      { title:'Travel',          desc:'Carriers, car seat covers, travel bowls and crash-tested crates for dogs on the go.',                              emoji:'✈️', theme:'training',  reviewCount:5  },
-  'lifestyle':   { title:'Lifestyle',       desc:'Aesthetic harnesses, premium bowls, leashes and accessories for the modern dog-friendly home.',                    emoji:'🎨', theme:'training',  reviewCount:7  },
-};
+import CategoryHero from '../../components/category/CategoryHero.astro';
+import CategoryQuickNav from '../../components/category/CategoryQuickNav.astro';
+import CategoryPartnerBlock from '../../components/category/CategoryPartnerBlock.astro';
+import CategoryBreedGuides from '../../components/category/CategoryBreedGuides.astro';
+import CategoryOwnerResources from '../../components/category/CategoryOwnerResources.astro';
+import CategoryArticleGrid from '../../components/category/CategoryArticleGrid.astro';
+import CategoryRelatedTopics from '../../components/category/CategoryRelatedTopics.astro';
+import CategoryEmptyState from '../../components/category/CategoryEmptyState.astro';
 
+import masterBreeds from '../../data/master-breeds.json';
+import masterCrossbreeds from '../../data/master-crossbreeds.json';
+import breedLinkMap from '../../data/breed-link-map.json';
+import contentStatus from '../../data/content-status.json';
+
+import {
+  buildBreadcrumbLd,
+  buildCollectionPageLd,
+  buildItemListLd,
+  getAwinTags,
+  getCategoryBreedGuides,
+  getCategoryLinks,
+  getCategoryMeta,
+  getCategoryPosts,
+  getRelatedCategoryCards,
+  isCategorySlug,
+} from '../../lib/categories/categoryHelpers';
+
+import '../../styles/pages/category-hub.css';
+
+const SITE = 'https://pupwiki.com';
+
+/**
+ * Keep the slugs inside getStaticPaths.
+ * This avoids Astro/Cloudflare scope issues where imported or outer constants
+ * can fail during route-cache generation for dynamic pages.
+ */
 export function getStaticPaths() {
-  return Object.keys({
-    'dog-food':1,'toys':1,'health':1,'training':1,'grooming':1,
-    'beds':1,'supplements':1,'smart-tech':1,'travel':1,'lifestyle':1,
-  }).map(slug => ({ params: { category: slug } }));
+  return [
+    'dog-food',
+    'toys',
+    'health',
+    'training',
+    'grooming',
+    'beds',
+    'supplements',
+    'smart-tech',
+    'travel',
+    'lifestyle',
+  ].map((category) => ({
+    params: { category },
+  }));
 }
 
 const { category } = Astro.params;
-const meta         = CATEGORIES[category];
-const allPosts     = await getCollection('blog');
+const categorySlug = String(category || '');
 
-const catPosts = allPosts.filter(
-  p => (p.data.category || '').toLowerCase().replace(/\s+/g,'-') === category
-        || (p.data.tags || []).includes(category)
-);
+if (!isCategorySlug(categorySlug)) return Astro.redirect('/categories');
 
-type Prod = { name:string; asin:string; price?:number; rating?:number; image?:string; features?:string[]; verdict?:string; score?:number };
-const products: Prod[] = (productsData as Record<string,Prod[]>)[category] ?? [];
+const meta = getCategoryMeta(categorySlug)!;
+const allPosts = await getCollection('blog');
+const catPosts = getCategoryPosts(allPosts as any, categorySlug, meta);
+const featuredPosts = catPosts.slice(0, 6);
+const supportingPosts = catPosts.slice(6, 12);
 
-// ── Contextual breed strip ────────────────────────────────────
-const CAT_TO_LINK_KEY: Record<string, string> = {
-  'dog-food':    'food_post',
-  'toys':        'toy_post',
-  'health':      'health_post',
-  'training':    'training_post',
-  'grooming':    'grooming_post',
-  'beds':        'bed_post',
-  'supplements': 'supplement_post',
-};
-const CAT_AWIN_TAGS: Record<string, string[]> = {
-  'dog-food':    ['food', 'nutrition', 'fresh-food', 'feeding'],
-  'toys':        ['training', 'active', 'gear'],
-  'health':      ['food', 'nutrition', 'supplements'],
-  'training':    ['training', 'behavior', 'leash', 'harness', 'active'],
-  'grooming':    ['food', 'care'],
-  'beds':        ['food', 'nutrition'],
-  'supplements': ['food', 'nutrition', 'supplements'],
-  'smart-tech':  ['training', 'gear'],
-  'travel':      ['training', 'gear', 'active'],
-  'lifestyle':   ['gift', 'lifestyle', 'portrait', 'custom'],
-};
-const awinTags = CAT_AWIN_TAGS[category] ?? ['food'];
+const allBreedRecords = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
 
-const SITE = 'https://pupwiki.com';
-const breadcrumbLd = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home',       item: `${SITE}/` },
-    { '@type': 'ListItem', position: 2, name: meta.title,   item: `${SITE}/categories/${category}` },
-  ],
+const breedGuides = getCategoryBreedGuides({
+  categorySlug,
+  allBreeds: allBreedRecords,
+  breedLinkMap: breedLinkMap as any,
+  contentStatus: contentStatus as any,
+  limit: 10,
 });
 
-const linkKey = CAT_TO_LINK_KEY[category];
-const breedStrip = linkKey
-  ? (masterBreeds as any[])
-      .filter(b => (contentStatus as any)[b.slug]?.[linkKey] === true)
-      .slice(0, 8)
-      .map(b => ({
-        name: b.name,
-        slug: b.slug,
-        href: (breedLinkMap as any)[b.slug]?.[linkKey] ?? `/breeds/${b.slug}`,
-      }))
-  : [];
+const featuredBreedGuides = breedGuides.slice(0, 6);
+const breedChips = breedGuides.slice(0, 10);
+const categoryLinks = getCategoryLinks(categorySlug);
+const relatedCards = getRelatedCategoryCards(categorySlug);
+const awinTags = getAwinTags(categorySlug, meta);
+
+const breadcrumbLd = buildBreadcrumbLd(meta, categorySlug);
+const collectionPageLd = buildCollectionPageLd(meta, categorySlug);
+const itemListLd = buildItemListLd({
+  meta,
+  breedGuides: featuredBreedGuides,
+  posts: featuredPosts as any,
+});
 ---
 
 <BaseLayout
-  title={`${meta.title} Reviews 2026 — Expert Picks | PupWiki`}
-  description={meta.desc}
-  canonicalUrl={`${SITE}/categories/${category}`}
+  title={meta.seoTitle}
+  description={meta.seoDescription}
+  canonicalUrl={`${SITE}/categories/${categorySlug}`}
 >
   <script type="application/ld+json" set:html={breadcrumbLd} />
+  <script type="application/ld+json" set:html={collectionPageLd} />
+  {itemListLd && <script type="application/ld+json" set:html={itemListLd} />}
 
-  <div class="page-hero">
-    <div class="container page-hero__inner">
-      <Breadcrumb items={[
-        { label:'Home', href:'/' },
-        { label:meta.title, current:true },
-      ]} />
-      <h1 class="page-hero__title">
-        <span aria-hidden="true">{meta.emoji}</span> {meta.title} <em>Reviews</em>
-      </h1>
-      <p class="page-hero__desc">{meta.desc}</p>
-      <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-5)">
-        <span class="badge badge--primary">{meta.reviewCount} products reviewed</span>
-        <span class="badge badge--muted">Updated March 2026</span>
-        <span class="badge badge--success">Expert verified</span>
-      </div>
-    </div>
-  </div>
+  <main class:list={['category-hub', `category-hub--${meta.theme}`]}>
+    <CategoryHero meta={meta} />
 
-  {breedStrip.length >= 3 && (
-    <div style="background:var(--color-bg-muted);border-bottom:1px solid var(--color-border)">
-      <div class="container py-4">
-        <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:var(--color-muted)">
-          {meta.title} guides by breed
-        </p>
-        <div class="flex flex-wrap gap-2">
-          {breedStrip.map(b => (
-            <a
-              href={b.href}
-              class="font-sans text-sm font-semibold px-3 py-1.5 rounded-full transition-colors hover:opacity-80"
-              style="background:white;border:1px solid var(--color-border-warm);color:var(--color-primary);text-decoration:none"
-            >
-              {b.name}
-            </a>
-          ))}
-          <a href="/breeds"
-            class="font-sans text-sm px-3 py-1.5 rounded-full transition-colors"
-            style="color:var(--color-accent);text-decoration:none">
-            All breeds →
-          </a>
-        </div>
-      </div>
-    </div>
-  )}
+    <CategoryQuickNav
+      hasPosts={featuredPosts.length > 0}
+      hasBreedGuides={featuredBreedGuides.length > 0}
+    />
 
-  <main class="section">
-    <div class="container" style="display:flex;flex-direction:column;gap:var(--space-14)">
+    <CategoryPartnerBlock
+      meta={meta}
+      categorySlug={categorySlug}
+      tags={awinTags.primary}
+    />
 
-      {products.length > 0 && (
-        <ProductGrid
-          products={products.slice(0,6)}
-          eyebrow="Our picks"
-          heading={`Top Ranked ${meta.title}`}
-        />
-      )}
-
-      <AwinProductSlot topicTags={awinTags} pageType="category" />
-
-      {catPosts.length > 0 && (
-        <section>
-          <div class="section-header">
-            <div>
-              <span class="section-eyebrow">In-depth guides</span>
-              <h2 class="section-title">{meta.title} Guides</h2>
-            </div>
-            <span style="color:var(--color-muted);font-size:var(--text-sm)">{catPosts.length} articles</span>
+    {breedChips.length >= 3 && (
+      <section class="category-hub__strip" aria-label={`${meta.title} breed shortcuts`}>
+        <div class="category-hub__container">
+          <div class="category-hub__strip-header">
+            <p>{meta.title} by breed</p>
+            <a href="/breeds">All breeds →</a>
           </div>
-          <div class="grid grid-3">
-            {catPosts.map(post => (
-              <BlogCard
-                title={post.data.title}
-                excerpt={post.data.description ?? ''}
-                category={post.data.category ?? meta.title}
-                href={`/blog/${post.slug}`}
-                pubDate={post.data.pubDate?.toISOString()}
-              />
+
+          <div class="category-hub__chip-row">
+            {breedChips.map((breed) => (
+              <a href={breed.href}>{breed.name}</a>
             ))}
           </div>
-        </section>
-      )}
-
-      {products.length === 0 && catPosts.length === 0 && (
-        <div style="text-align:center;padding:var(--space-20) 0;color:var(--color-muted)">
-          <p style="font-size:var(--text-xl);margin-bottom:var(--space-4)">{meta.emoji} Content for {meta.title} coming soon.</p>
-          <a href="/" class="btn btn--outline">← Back to home</a>
         </div>
-      )}
+      </section>
+    )}
 
-    </div>
+    <CategoryBreedGuides
+      meta={meta}
+      guides={featuredBreedGuides}
+    />
+
+    <CategoryOwnerResources
+      meta={meta}
+      categorySlug={categorySlug}
+      links={categoryLinks}
+      tags={awinTags.secondary}
+    />
+
+    {featuredPosts.length > 0 && (
+      <CategoryArticleGrid
+        meta={meta}
+        posts={featuredPosts}
+        supportingPosts={supportingPosts}
+        totalCount={catPosts.length}
+      />
+    )}
+
+    <CategoryRelatedTopics
+      meta={meta}
+      cards={relatedCards}
+    />
+
+    {featuredPosts.length === 0 && featuredBreedGuides.length === 0 && (
+      <CategoryEmptyState meta={meta} />
+    )}
   </main>
-
 </BaseLayout>

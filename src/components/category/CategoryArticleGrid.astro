@@ -1,0 +1,62 @@
+---
+import BlogCard from '../content/BlogCard.astro';
+import type { CategoryMeta } from '../../lib/categories/categoryConfig';
+import { toIsoString, type BlogLikeEntry } from '../../lib/categories/categoryHelpers';
+
+export interface Props {
+  meta: CategoryMeta;
+  posts: BlogLikeEntry[];
+  supportingPosts?: BlogLikeEntry[];
+  totalCount?: number;
+}
+
+const {
+  meta,
+  posts,
+  supportingPosts = [],
+  totalCount = posts.length,
+} = Astro.props;
+---
+
+<section id="latest-guides" class="category-hub__section">
+  <div class="category-hub__container">
+    <div class="category-hub__section-header category-hub__section-header--split">
+      <div>
+        <p class="category-hub__eyebrow">Editorial guides</p>
+        <h2>Latest {meta.title} guides</h2>
+        <p>
+          Supporting guides and articles that expand the topic with owner-friendly research,
+          product context and practical decisions.
+        </p>
+      </div>
+
+      <span class="category-hub__count-pill">
+        {totalCount} article{totalCount === 1 ? '' : 's'}
+      </span>
+    </div>
+
+    <div class="category-hub__post-grid">
+      {posts.map((post) => (
+        <BlogCard
+          title={post.data.title}
+          excerpt={post.data.description ?? ''}
+          category={post.data.category ?? meta.title}
+          href={`/blog/${post.slug}`}
+          pubDate={toIsoString(post.data.pubDate)}
+        />
+      ))}
+    </div>
+
+    {supportingPosts.length > 0 && (
+      <div class="category-hub__supporting-list" aria-label={`More ${meta.title} guides`}>
+        {supportingPosts.map((post) => (
+          <a href={`/blog/${post.slug}`}>
+            <span>{post.data.category ?? meta.title}</span>
+            <strong>{post.data.title}</strong>
+            <em aria-hidden="true">→</em>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

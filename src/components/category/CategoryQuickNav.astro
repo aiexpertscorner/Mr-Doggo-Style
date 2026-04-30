@@ -1,0 +1,18 @@
+---
+export interface Props {
+  hasPosts?: boolean;
+  hasBreedGuides?: boolean;
+}
+
+const { hasPosts = false, hasBreedGuides = false } = Astro.props;
+---
+
+<nav class="category-hub__quick-nav" aria-label="Category quick links">
+  <div class="category-hub__container category-hub__quick-nav-inner">
+    <a href="#partner-resource">Partner resource</a>
+    {hasBreedGuides && <a href="#breed-guides">Breed guides</a>}
+    <a href="#owner-resources">Owner resources</a>
+    {hasPosts && <a href="#latest-guides">Latest guides</a>}
+    <a href="#related-topics">Related topics</a>
+  </div>
+</nav>

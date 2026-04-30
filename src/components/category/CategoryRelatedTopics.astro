@@ -1,0 +1,35 @@
+---
+import type { CategoryLink, CategoryMeta } from '../../lib/categories/categoryConfig';
+
+export interface Props {
+  meta: CategoryMeta;
+  cards: CategoryLink[];
+}
+
+const { meta, cards } = Astro.props;
+---
+
+<section id="related-topics" class="category-hub__section category-hub__section--related">
+  <div class="category-hub__container">
+    <div class="category-hub__section-header">
+      <p class="category-hub__eyebrow">Related topics</p>
+      <h2>Keep researching smarter</h2>
+      <p>
+        PupWiki works best as a connected research system: move between breed profiles,
+        care categories, cost planning and owner decision tools.
+      </p>
+    </div>
+
+    {cards.length > 0 && (
+      <div class="category-hub__related-grid">
+        {cards.map((item) => (
+          <a href={item.href} class="category-hub__related-card">
+            <span aria-hidden="true">{item.icon}</span>
+            <strong>{item.title}</strong>
+            <p>{item.desc}</p>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

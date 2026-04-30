@@ -1,0 +1,22 @@
+---
+import type { CategoryMeta } from '../../lib/categories/categoryConfig';
+
+export interface Props {
+  meta: CategoryMeta;
+}
+
+const { meta } = Astro.props;
+---
+
+<section class="category-hub__section">
+  <div class="category-hub__container">
+    <div class="category-hub__empty-card category-hub__empty-card--large">
+      <span aria-hidden="true">{meta.emoji}</span>
+      <h2>{meta.title} resources are being expanded</h2>
+      <p>
+        Explore related breed profiles and owner tools while this category grows.
+      </p>
+      <a href="/breeds">Browse dog breeds →</a>
+    </div>
+  </div>
+</section>

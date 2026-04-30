@@ -1,0 +1,51 @@
+---
+import type { CategoryMeta } from '../../lib/categories/categoryConfig';
+import type { CategoryBreedGuide } from '../../lib/categories/categoryHelpers';
+
+export interface Props {
+  meta: CategoryMeta;
+  guides: CategoryBreedGuide[];
+}
+
+const { meta, guides } = Astro.props;
+---
+
+<section id="breed-guides" class="category-hub__section">
+  <div class="category-hub__container">
+    <div class="category-hub__section-header category-hub__section-header--split">
+      <div>
+        <p class="category-hub__eyebrow">Breed-specific</p>
+        <h2>{meta.title} guides by breed</h2>
+        <p>
+          Start with the breed closest to your dog. Breed pages help connect size, energy, coat,
+          health context and ownership costs with practical next steps.
+        </p>
+      </div>
+
+      <a href="/breeds" class="category-hub__text-link">Browse all breeds →</a>
+    </div>
+
+    {guides.length > 0 ? (
+      <div class="category-hub__breed-grid">
+        {guides.map((breed) => (
+          <a href={breed.href} class="category-hub__breed-card">
+            <span aria-hidden="true">🐕</span>
+            <div>
+              <strong>{breed.name}</strong>
+              <p>{breed.label}</p>
+              <em>
+                {breed.size ? `${breed.size} size` : 'Breed guide'}
+                {breed.energy ? ` · ${breed.energy} energy` : ''}
+              </em>
+            </div>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div class="category-hub__empty-card">
+        <p>Breed-specific {meta.title.toLowerCase()} guides are being expanded.</p>
+        <a href="/breeds">Browse all breed profiles →</a>
+      </div>
+    )}
+  </div>
+</section>
