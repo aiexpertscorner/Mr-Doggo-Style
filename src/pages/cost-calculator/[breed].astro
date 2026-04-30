@@ -2,7 +2,7 @@
 /**
  * cost-calculator/[breed].astro
  * Breed-specific lifetime cost of ownership calculator.
- * Cleaned for PupWiki token-driven design system.
+ * Mobile-first, token-driven, and resilient against dataset field-name variants.
  */
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -50,6 +50,116 @@ const life = b.life_expectancy || {};
 const wt = b.weight || {};
 const n = b.name;
 
+const toNumber = (value: unknown, fallback = 0) => {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : fallback;
+};
+
+const titleCase = (value?: string | null) => {
+  if (!value) return '';
+  return String(value)
+    .replace(/[-_]+/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+};
+
+const normalizeKey = (value?: unknown) =>
+  String(value ?? '')
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/_/g, '-');
+
+const normalizeSizeCategory = (value?: unknown) => {
+  const key = normalizeKey(value);
+
+  if (key.includes('giant') || key.includes('xlarge') || key.includes('extra-large')) return 'giant';
+  if (key.includes('large')) return 'large';
+  if (key.includes('small') || key.includes('toy')) return 'small';
+  if (key.includes('medium')) return 'medium';
+
+  return 'medium';
+};
+
+const sizeCategory = normalizeSizeCategory(b.size_category || b.size || b.sizeCategory);
+const energyLevel = normalizeKey(b.energy_level || b.energy || b.activity_level || 'regular') || 'regular';
+const coatType = normalizeKey(b.coat_type || b.coat || b.coatType || 'medium') || 'medium';
+
+const breedWeightMin = toNumber(wt.min_lbs ?? wt.min ?? wt.min_weight_lbs ?? wt.minimum_lbs, 0);
+const breedWeightMax = toNumber(wt.max_lbs ?? wt.max ?? wt.max_weight_lbs ?? wt.maximum_lbs, 0);
+
+const breedWeight =
+  breedWeightMin && breedWeightMax
+    ? `${breedWeightMin}–${breedWeightMax} lb`
+    : breedWeightMin
+      ? `${breedWeightMin}+ lb`
+      : breedWeightMax
+        ? `up to ${breedWeightMax} lb`
+        : null;
+
+const lifeMin = toNumber(life.min ?? life.min_years ?? life.minimum_years, 0);
+const lifeMax = toNumber(life.max ?? life.max_years ?? life.maximum_years, 0);
+const rankLongevity = toNumber(rank.longevity_years, 0);
+
+const lifespan = rankLongevity || (lifeMin && lifeMax ? (lifeMin + lifeMax) / 2 : 12);
+
+function getImageUrl(item: any) {
+  if (!item) return '';
+  if (typeof item === 'string') return item;
+  return item.url || item.image_url || item.src || '';
+}
+
+function uniqueValidUrls(urls: unknown[]) {
+  const seen = new Set<string>();
+
+  return urls
+    .map(getImageUrl)
+    .filter((url): url is string => typeof url === 'string' && /^https?:\/\//.test(url))
+    .filter((url) => {
+      if (seen.has(url)) return false;
+      seen.add(url);
+      return true;
+    });
+}
+
+const breedImageUrls = uniqueValidUrls([
+  b.image_url,
+  ...(Array.isArray(b.image_urls) ? b.image_urls : []),
+  ...(Array.isArray(b.image_gallery) ? b.image_gallery : []),
+  ...(Array.isArray(b.image_url_candidates) ? b.image_url_candidates : []),
+  b.image_url_parent_1,
+  b.image_url_parent_2,
+]);
+
+const primaryImage = breedImageUrls[0] || '';
+
+const healthProfileList = Array.isArray((healthProfiles as any).profiles)
+  ? (healthProfiles as any).profiles
+  : Array.isArray(healthProfiles)
+    ? (healthProfiles as any)
+    : [];
+
+const healthProfile =
+  healthProfileList.find((profile: any) => profile.breed_slug === slug || profile.slug === slug) ?? null;
+
+const topHealthIssues = Array.isArray(healthProfile?.common_issues)
+  ? healthProfile.common_issues.slice(0, 3)
+  : [];
+
+const getIssueName = (issue: any) =>
+  typeof issue === 'string'
+    ? issue
+    : issue?.name || issue?.condition || issue?.title || 'Health consideration';
+
+const getIssueSeverity = (issue: any) =>
+  typeof issue === 'string'
+    ? 'Medium'
+    : issue?.severity || issue?.risk || 'Medium';
+
+const getIssueEarlyWarning = (issue: any) =>
+  typeof issue === 'string'
+    ? ''
+    : issue?.early_warning || issue?.warning_signs || issue?.symptoms || '';
+
 const SIZE_COSTS: Record<
   string,
   {
@@ -74,25 +184,31 @@ const COAT_GROOMING_MULT: Record<string, number> = {
   curly: 1.7,
   corded: 2.0,
   short: 0.8,
+  smooth: 0.8,
   wavy: 1.2,
   medium: 1.0,
 };
 
 const ENERGY_HEALTH_MULT: Record<string, number> = {
   active: 1.3,
+  high: 1.25,
+  'very-active': 1.35,
+  energetic: 1.25,
   regular: 1.0,
+  moderate: 1.0,
+  medium: 1.0,
   calm: 0.9,
+  low: 0.9,
 };
 
-const base = SIZE_COSTS[b.size_category] || SIZE_COSTS.medium;
-const gmult = COAT_GROOMING_MULT[b.coat_type] || 1.0;
-const hmult = ENERGY_HEALTH_MULT[b.energy_level] || 1.0;
-const lifespan = rank.longevity_years || ((life.min || 10) + (life.max || 14)) / 2;
+const base = SIZE_COSTS[sizeCategory] || SIZE_COSTS.medium;
+const gmult = COAT_GROOMING_MULT[coatType] || 1.0;
+const hmult = ENERGY_HEALTH_MULT[energyLevel] || 1.0;
 
-const annual_food = rank.annual_food_cost || base.food_annual;
+const annual_food = toNumber(rank.annual_food_cost, 0) || base.food_annual;
 const annual_vet = Math.round(base.vet_annual * hmult);
 const annual_groom = Math.round(base.grooming_annual * gmult);
-const annual_toys = b.energy_level === 'active' ? 400 : b.energy_level === 'calm' ? 150 : 250;
+const annual_toys = energyLevel === 'active' || energyLevel === 'high' || energyLevel === 'very-active' ? 400 : energyLevel === 'calm' || energyLevel === 'low' ? 150 : 250;
 const annual_other = 200;
 const annual_total = annual_food + annual_vet + annual_groom + annual_toys + annual_other;
 
@@ -100,12 +216,13 @@ const one_time_puppy = base.supplies_one_time;
 const one_time_spay = base.spay_neuter;
 const one_time_total = one_time_puppy + one_time_spay + 200;
 
-const lifetime_est = rank.lifetime_cost_usd || Math.round(one_time_total + annual_total * lifespan);
+const rankLifetimeCost = toNumber(rank.lifetime_cost_usd, 0);
+const lifetime_est = rankLifetimeCost || Math.round(one_time_total + annual_total * lifespan);
 
 const puppy_price_low =
-  b.size_category === 'small'
+  sizeCategory === 'small'
     ? 500
-    : b.size_category === 'large' || b.size_category === 'giant'
+    : sizeCategory === 'large' || sizeCategory === 'giant'
       ? 1200
       : 800;
 
@@ -122,7 +239,7 @@ const SIZE_FALLBACK: Record<string, number> = {
 };
 
 const breedRate = (actuarialRates as any).breed_rates.find((rate: any) => rate.breed_slug === slug);
-const insBasePremium = breedRate?.base_premium ?? SIZE_FALLBACK[b.size_category] ?? 50;
+const insBasePremium = breedRate?.base_premium ?? SIZE_FALLBACK[sizeCategory] ?? 50;
 const insRiskCategory = breedRate?.risk_category ?? 'Standard';
 const insIsEstimated = !breedRate;
 
@@ -145,25 +262,27 @@ const COST_ITEMS = [
     label: 'Dog food',
     annual: annual_food,
     icon: '🍖',
-    note: `Based on ${b.size_category} breed feeding requirements`,
+    note: `Based on ${titleCase(sizeCategory)} breed feeding requirements`,
   },
   {
     label: 'Veterinary care',
     annual: annual_vet,
     icon: '🩺',
-    note: `${b.energy_level} energy breeds have ${hmult > 1 ? 'higher' : 'typical'} baseline vet costs`,
+    note: `${titleCase(energyLevel)} energy breeds have ${hmult > 1 ? 'higher' : 'typical'} baseline vet costs`,
   },
   {
     label: 'Grooming',
     annual: annual_groom,
     icon: '✂️',
-    note: `${b.coat_type || 'standard'} coat requires ${gmult > 1.3 ? 'frequent' : 'regular'} grooming`,
+    note: `${titleCase(coatType || 'standard')} coat requires ${gmult > 1.3 ? 'frequent' : 'regular'} grooming`,
   },
   {
     label: 'Toys & enrichment',
     annual: annual_toys,
     icon: '🎾',
-    note: b.energy_level === 'active' ? 'Active breeds need more mental stimulation' : 'Standard toy rotation',
+    note: energyLevel === 'active' || energyLevel === 'high' || energyLevel === 'very-active'
+      ? 'Active breeds need more mental stimulation'
+      : 'Standard toy rotation',
   },
   {
     label: 'Other costs',
@@ -262,23 +381,10 @@ const savingTips = [
   },
 ];
 
-const healthProfile = (healthProfiles as any).profiles.find((profile: any) => profile.breed_slug === slug) ?? null;
-const topHealthIssues = healthProfile?.common_issues?.slice(0, 3) ?? [];
-
 const severityClass = (severity: string) =>
   `is-severity-${String(severity || 'medium').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
-const breedWeight =
-  wt.min && wt.max
-    ? `${wt.min}–${wt.max} lb`
-    : wt.min
-      ? `${wt.min}+ lb`
-      : wt.max
-        ? `up to ${wt.max} lb`
-        : null;
-
 const usd = (value: number) => `$${Math.round(value).toLocaleString()}`;
-const money = (value: number) => `$${Number(value).toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
 const monthly = (value: number) => `$${Number(value).toFixed(2)}`;
 
 const breadcrumbLd = JSON.stringify({
@@ -382,24 +488,27 @@ const jsonLd = JSON.stringify({
             </div>
 
             <ul class="cost-detail-hero__badges" aria-label={`${n} profile summary`}>
-              <li>{b.size_category || 'Breed'} size</li>
-              <li>{b.energy_level || 'Regular'} energy</li>
-              {b.coat_type && <li>{b.coat_type} coat</li>}
+              <li>{titleCase(sizeCategory)} size</li>
+              <li>{titleCase(energyLevel)} energy</li>
+              {coatType && <li>{titleCase(coatType)} coat</li>}
               {breedWeight && <li>{breedWeight}</li>}
             </ul>
           </div>
 
           <aside class="cost-detail-hero__media" aria-label={`${n} cost summary`}>
-            {b.image_url ? (
-              <img
-                src={b.image_url}
-                alt={`${n} dog`}
-                width="520"
-                height="420"
-                loading="eager"
-                decoding="async"
-                data-cost-detail-image
-              />
+            {primaryImage ? (
+              <>
+                <img
+                  src={primaryImage}
+                  alt={`${n} dog`}
+                  width="520"
+                  height="420"
+                  loading="eager"
+                  decoding="async"
+                  data-cost-detail-image
+                />
+                <div class="cost-detail-hero__fallback" hidden data-cost-detail-fallback aria-hidden="true">🐕</div>
+              </>
             ) : (
               <div class="cost-detail-hero__fallback" aria-hidden="true">🐕</div>
             )}
@@ -468,7 +577,7 @@ const jsonLd = JSON.stringify({
                   <article>
                     <p>Base premium</p>
                     <strong>{monthly(insBasePremium)}/mo</strong>
-                    <span>{insIsEstimated ? `${b.size_category} size estimate` : 'Breed-specific rate'}</span>
+                    <span>{insIsEstimated ? `${titleCase(sizeCategory)} size estimate` : 'Breed-specific rate'}</span>
                   </article>
 
                   <article>
@@ -538,8 +647,8 @@ const jsonLd = JSON.stringify({
               </div>
 
               <p class="cost-detail-footnote">
-                Estimates are based on the {n} profile: {b.size_category} size, {b.energy_level} energy,
-                and {b.coat_type || 'standard'} coat. Actual costs vary by location, lifestyle, product choices,
+                Estimates are based on the {n} profile: {titleCase(sizeCategory)} size, {titleCase(energyLevel)} energy,
+                and {titleCase(coatType || 'standard')} coat. Actual costs vary by location, lifestyle, product choices,
                 and individual health.
               </p>
             </section>
@@ -558,16 +667,16 @@ const jsonLd = JSON.stringify({
                   {topHealthIssues.map((issue: any) => (
                     <article class="health-issue-card">
                       <div>
-                        <h3>{issue.name}</h3>
-                        {issue.early_warning && (
+                        <h3>{getIssueName(issue)}</h3>
+                        {getIssueEarlyWarning(issue) && (
                           <p>
-                            <strong>Watch for:</strong> {issue.early_warning}
+                            <strong>Watch for:</strong> {getIssueEarlyWarning(issue)}
                           </p>
                         )}
                       </div>
 
-                      <span class:list={['health-severity-pill', severityClass(issue.severity)]}>
-                        {issue.severity}
+                      <span class:list={['health-severity-pill', severityClass(getIssueSeverity(issue))]}>
+                        {getIssueSeverity(issue)}
                       </span>
                     </article>
                   ))}
@@ -702,15 +811,15 @@ const jsonLd = JSON.stringify({
               <dl>
                 <div>
                   <dt>Size</dt>
-                  <dd>{b.size_category || 'Unknown'}</dd>
+                  <dd>{titleCase(sizeCategory)}</dd>
                 </div>
                 <div>
                   <dt>Energy</dt>
-                  <dd>{b.energy_level || 'Unknown'}</dd>
+                  <dd>{titleCase(energyLevel)}</dd>
                 </div>
                 <div>
                   <dt>Coat</dt>
-                  <dd>{b.coat_type || 'Unknown'}</dd>
+                  <dd>{titleCase(coatType)}</dd>
                 </div>
                 {breedWeight && (
                   <div>
@@ -731,7 +840,10 @@ const jsonLd = JSON.stringify({
 
             <PageBannerSlot placement="cost-calculator-sidebar" topicTags={['food','nutrition','training']} />
 
-            <AwinProductSlot topicTags={['food', 'nutrition', 'fresh-food']} pageType="cost-calculator" />
+            <AwinProductSlot
+              topicTags={['food', 'nutrition', 'fresh-food', sizeCategory, energyLevel, coatType]}
+              pageType="cost-calculator"
+            />
 
             <OfferSlot placement="pre-footer" pageType="cost-calculator" topicTags={['insurance','cost']} />
 
@@ -806,6 +918,9 @@ const jsonLd = JSON.stringify({
     document.querySelectorAll('[data-cost-detail-image]').forEach((image) => {
       image.addEventListener('error', () => {
         image.hidden = true;
+
+        const fallback = image.parentElement?.querySelector('[data-cost-detail-fallback]');
+        if (fallback) fallback.hidden = false;
       });
     });
   </script>
@@ -813,6 +928,7 @@ const jsonLd = JSON.stringify({
 
 <style>
   .cost-detail {
+    overflow-x: clip;
     background:
       radial-gradient(circle at 86% 4%, rgba(255, 122, 0, 0.1), transparent 24rem),
       radial-gradient(circle at 6% 2%, rgba(21, 54, 95, 0.08), transparent 22rem),
@@ -861,12 +977,15 @@ const jsonLd = JSON.stringify({
 
   .cost-detail-hero__grid {
     display: grid;
-    gap: clamp(var(--space-7), 6vw, var(--space-14));
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: clamp(var(--space-6), 6vw, var(--space-10));
+    align-items: start;
   }
 
   .cost-detail-hero__content {
+    width: 100%;
     max-width: 48rem;
+    min-width: 0;
   }
 
   .cost-detail-eyebrow {
@@ -923,6 +1042,7 @@ const jsonLd = JSON.stringify({
 
   .cost-detail-button {
     display: inline-flex;
+    width: 100%;
     min-height: 3.25rem;
     align-items: center;
     justify-content: center;
@@ -996,6 +1116,9 @@ const jsonLd = JSON.stringify({
   .cost-detail-hero__media {
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     min-height: 24rem;
     border: 1px solid var(--color-border-warm);
     border-radius: var(--radius-3xl);
@@ -1010,6 +1133,10 @@ const jsonLd = JSON.stringify({
     object-fit: cover;
   }
 
+  .cost-detail-hero__media img[hidden] {
+    display: none;
+  }
+
   .cost-detail-hero__fallback {
     display: grid;
     width: 100%;
@@ -1017,6 +1144,10 @@ const jsonLd = JSON.stringify({
     place-items: center;
     font-size: 5rem;
     background: var(--color-accent-subtle);
+  }
+
+  .cost-detail-hero__fallback[hidden] {
+    display: none;
   }
 
   .cost-detail-hero__summary {
@@ -1065,6 +1196,7 @@ const jsonLd = JSON.stringify({
 
   .cost-detail-layout {
     display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-8);
   }
 
@@ -1076,6 +1208,7 @@ const jsonLd = JSON.stringify({
 
   .cost-summary-grid {
     display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-4);
   }
 
@@ -1126,9 +1259,9 @@ const jsonLd = JSON.stringify({
   }
 
   .cost-summary-card--warm {
+    border: 1px solid var(--color-border-accent);
     background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent-subtle));
     color: var(--color-heading);
-    border: 1px solid var(--color-border-accent);
   }
 
   .cost-insurance-panel,
@@ -1147,6 +1280,7 @@ const jsonLd = JSON.stringify({
 
   .cost-insurance-panel__header {
     display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-4);
     padding: var(--space-5);
     background: linear-gradient(135deg, var(--color-surface-navy), var(--color-primary));
@@ -1206,6 +1340,7 @@ const jsonLd = JSON.stringify({
 
   .cost-insurance-metrics {
     display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-3);
   }
 
@@ -1274,7 +1409,20 @@ const jsonLd = JSON.stringify({
     color: var(--color-success);
   }
 
+  .cost-risk-pill.is-risk-low-standard {
+    border-color: rgba(4, 120, 87, 0.2);
+    background: var(--color-success-light);
+    color: var(--color-success);
+  }
+
+  .cost-risk-pill.is-risk-standard {
+    border-color: var(--color-border-primary);
+    background: var(--color-primary-subtle);
+    color: var(--color-primary);
+  }
+
   .cost-risk-pill.is-risk-medium,
+  .cost-risk-pill.is-risk-medium-high,
   .cost-risk-pill.is-risk-high,
   .cost-risk-pill.is-risk-very-high {
     border-color: var(--color-border-accent);
@@ -1599,6 +1747,7 @@ const jsonLd = JSON.stringify({
 
   .saving-tip-grid {
     display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-4);
   }
 
@@ -1666,6 +1815,7 @@ const jsonLd = JSON.stringify({
     display: grid;
     gap: var(--space-5);
     align-content: start;
+    min-width: 0;
   }
 
   .cost-sidebar-card {
@@ -1777,6 +1927,162 @@ const jsonLd = JSON.stringify({
       width: auto;
       padding-inline: 1.35rem;
     }
+  }
+
+  @media (max-width: 767px) {
+    .cost-detail-container {
+      padding-inline: max(1rem, var(--content-padding-mobile));
+    }
+
+    .cost-detail-hero .cost-detail-container {
+      padding-block: 2rem 2.5rem;
+    }
+
+    .cost-detail-hero__grid,
+    .cost-detail-layout,
+    .cost-summary-grid,
+    .cost-insurance-metrics,
+    .saving-tip-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .cost-detail-hero__content,
+    .cost-detail-content,
+    .cost-detail-sidebar,
+    .cost-detail-hero__media {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .cost-detail-hero__title {
+      max-width: 100%;
+      font-size: clamp(2.35rem, 12vw, 3.35rem);
+      line-height: 0.98;
+    }
+
+    .cost-detail-hero__subtitle {
+      font-size: 1rem;
+    }
+
+    .cost-detail-hero__actions {
+      width: 100%;
+    }
+
+    .cost-detail-button {
+      width: 100%;
+    }
+
+    .cost-detail-hero__media {
+      min-height: 20rem;
+      border-radius: var(--radius-2xl);
+    }
+
+    .cost-detail-hero__media img {
+      height: 22rem;
+    }
+
+    .cost-detail-hero__fallback {
+      min-height: 22rem;
+    }
+
+    .cost-detail-hero__summary {
+      right: var(--space-3);
+      bottom: var(--space-3);
+      left: var(--space-3);
+      padding: var(--space-3);
+      border-radius: var(--radius-xl);
+    }
+
+    .cost-detail-hero__summary strong {
+      font-size: var(--text-2xl);
+    }
+
+    .cost-summary-card,
+    .cost-detail-section,
+    .cost-detail-faq,
+    .cost-sidebar-card,
+    .cost-insurance-panel__body,
+    .cost-insurance-panel__header {
+      padding: var(--space-4);
+      border-radius: var(--radius-2xl);
+    }
+
+    .cost-insurance-panel__header {
+      grid-template-columns: 1fr;
+    }
+
+    .cost-insurance-panel__price strong {
+      font-size: var(--text-2xl);
+    }
+
+    .cost-breakdown-item {
+      grid-template-columns: 1fr;
+    }
+
+    .cost-breakdown-item__icon {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .cost-breakdown-item__top {
+      align-items: flex-start;
+    }
+
+    .cost-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+    }
+
+    .cost-row p {
+      text-align: left;
+      white-space: normal;
+    }
+
+    .cost-breakdown-total,
+    .cost-total-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+      text-align: left;
+    }
+
+    .cost-breakdown-total strong,
+    .cost-total-row strong {
+      text-align: left;
+    }
+
+    .cost-table-wrap {
+      margin-inline: calc(var(--space-4) * -1);
+      border-right: 0;
+      border-left: 0;
+      border-radius: 0;
+    }
+
+    .cost-detail-table {
+      min-width: 480px;
+    }
+
+    .cost-sidebar-card dl div {
+      align-items: flex-start;
+    }
+
+    :global(.cost-detail .pw-state-age__grid) {
+      grid-template-columns: 1fr !important;
+    }
+
+    :global(.cost-detail .pw-state-age__field select) {
+      min-width: 0;
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cost-detail-container {
+      padding-inline: var(--content-padding);
+    }
 
     .cost-summary-grid,
     .cost-insurance-metrics {
@@ -1790,12 +2096,6 @@ const jsonLd = JSON.stringify({
     .health-issue-card {
       grid-template-columns: 1fr auto;
       align-items: start;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .cost-detail-container {
-      padding-inline: var(--content-padding);
     }
 
     .cost-detail-section,
@@ -1818,6 +2118,7 @@ const jsonLd = JSON.stringify({
 
     .cost-detail-hero__grid {
       grid-template-columns: minmax(0, 1.05fr) minmax(24rem, 0.78fr);
+      align-items: center;
     }
 
     .cost-detail-layout {

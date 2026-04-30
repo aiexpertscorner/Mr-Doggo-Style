@@ -1,193 +1,1461 @@
 ---
 /**
- * categories/[category].astro — Category hub page
- * CATEGORIES defined at module scope (fixes Astro getStaticPaths scope issue)
+ * categories/[category].astro — Enhanced PupWiki category hub page
+ *
+ * Goals:
+ * - No Amazon/ProductGrid/products.json dependency.
+ * - AWIN-first monetization pipeline.
+ * - Strong internal linking to breed-specific guides, tools and related categories.
+ * - Mobile-first layout using PupWiki global design tokens.
+ * - Safer wording: no unsupported “expert verified” claims.
  */
-import BaseLayout  from '../../layouts/BaseLayout.astro';
-import BlogCard     from '../../components/content/BlogCard.astro';
-import ProductGrid  from '../../components/content/ProductGrid.astro';
-import Breadcrumb   from '../../components/ui/Breadcrumb.astro';
-import { getCollection } from 'astro:content';
-import productsData   from '../../data/products.json';
-import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
-import masterBreeds   from '../../data/master-breeds.json';
-import breedLinkMap   from '../../data/breed-link-map.json';
-import contentStatus  from '../../data/content-status.json';
 
-const CATEGORIES: Record<string,{title:string;desc:string;emoji:string;theme:string;reviewCount:number}> = {
-  'dog-food':    { title:'Dog Food',        desc:'Dry, wet, grain-free and breed-specific formulas independently tested for nutrition, quality and value.',           emoji:'🍖', theme:'food',      reviewCount:24 },
-  'toys':        { title:'Toys & Gear',     desc:'Durable chew toys, interactive puzzles, enrichment feeders and fetch toys — ranked by real-world durability.',     emoji:'🎾', theme:'toys',      reviewCount:20 },
-  'health':      { title:'Dog Health',      desc:'DNA tests, flea/tick prevention, dental care and wound care reviewed for safety and efficacy.',                    emoji:'🩺', theme:'health',    reviewCount:15 },
-  'training':    { title:'Training',        desc:'Harnesses, GPS collars, training leads and tools tested on dogs of all sizes and temperaments.',                    emoji:'🦮', theme:'training',  reviewCount:9  },
-  'grooming':    { title:'Grooming',        desc:'Brushes, shampoos, nail trimmers and professional-grade grooming tools reviewed by coat type.',                    emoji:'✂️', theme:'grooming',  reviewCount:12 },
-  'beds':        { title:'Beds & Sleep',    desc:'Orthopedic, elevated, calming and travel beds tested for support, durability and ease of cleaning.',                emoji:'🛏️', theme:'beds',      reviewCount:13 },
-  'supplements': { title:'Supplements',     desc:'Joint, probiotic, omega-3 and calming supplements reviewed for quality, efficacy and value.',                      emoji:'💊', theme:'health',    reviewCount:10 },
-  'smart-tech':  { title:'Smart Tech',      desc:'AI health collars, GPS trackers, pet cameras and smart feeders — the best connected gear for 2026.',               emoji:'📡', theme:'health',    reviewCount:10 },
-  'travel':      { title:'Travel',          desc:'Carriers, car seat covers, travel bowls and crash-tested crates for dogs on the go.',                              emoji:'✈️', theme:'training',  reviewCount:5  },
-  'lifestyle':   { title:'Lifestyle',       desc:'Aesthetic harnesses, premium bowls, leashes and accessories for the modern dog-friendly home.',                    emoji:'🎨', theme:'training',  reviewCount:7  },
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/content/BlogCard.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
+import masterBreeds from '../../data/master-breeds.json';
+import masterCrossbreeds from '../../data/master-crossbreeds.json';
+import breedLinkMap from '../../data/breed-link-map.json';
+import contentStatus from '../../data/content-status.json';
+
+const SITE = 'https://pupwiki.com';
+
+type CategoryMeta = {
+  title: string;
+  shortTitle: string;
+  desc: string;
+  emoji: string;
+  theme: string;
+  updatedLabel: string;
+  heroLabel: string;
+  seoTitle: string;
+  seoDescription: string;
+  primaryCta: {
+    label: string;
+    href: string;
+  };
+  secondaryCta: {
+    label: string;
+    href: string;
+  };
+};
+
+const CATEGORIES: Record<string, CategoryMeta> = {
+  'dog-food': {
+    title: 'Dog Food',
+    shortTitle: 'Food',
+    desc: 'Breed-specific dog food guides, feeding resources, nutrition considerations, and owner-friendly product research for smarter feeding decisions.',
+    emoji: '🍖',
+    theme: 'food',
+    updatedLabel: 'Updated 2026',
+    heroLabel: 'Nutrition & feeding hub',
+    seoTitle: 'Dog Food Guides 2026 — Breed-Specific Feeding & Owner Resources | PupWiki',
+    seoDescription:
+      'Explore PupWiki dog food guides by breed, nutrition need, life stage and owner intent. Includes breed-specific food guides, feeding resources and affiliate-supported recommendations.',
+    primaryCta: { label: 'Browse breed food guides', href: '#breed-guides' },
+    secondaryCta: { label: 'Compare breed costs', href: '/cost-calculator' },
+  },
+  toys: {
+    title: 'Toys & Gear',
+    shortTitle: 'Toys',
+    desc: 'Enrichment ideas, chew toys, puzzles, active-dog gear and breed-specific play resources for different sizes, energy levels and temperaments.',
+    emoji: '🎾',
+    theme: 'toys',
+    updatedLabel: 'Updated 2026',
+    heroLabel: 'Enrichment & play hub',
+    seoTitle: 'Dog Toy & Gear Guides 2026 — Enrichment, Chew Toys & Breed Resources | PupWiki',
+    seoDescription:
+      'Find dog toy and gear guides by breed, energy level and enrichment need. Explore PupWiki resources for chew toys, puzzles, active dogs and owner-friendly product research.',
+    primaryCta: { label: 'Explore toy guides', href: '#breed-guides' },
+    secondaryCta: { label: 'Browse training guides', href: '/categories/training' },
+  },
+  health: {
+    title: 'Dog Health',
+    shortTitle: 'Health',
+    desc: 'Breed health context, preventive care topics, owner planning resources and product categories such as supplements, insurance and wellness tools.',
+    emoji: '🩺',
+    theme: 'health',
+    updatedLabel: 'Updated 2026',
+    heroLabel: 'Breed health resource hub',
+    seoTitle: 'Dog Health Guides 2026 — Breed Risks, Care Planning & Owner Resources | PupWiki',
+    seoDescription:
+      'Explore dog health guides by breed, care topic and owner intent. Includes breed health context, wellness resources, insurance planning and general educational information.',
+    primaryCta: { label: 'Browse health guides', href: '#breed-guides' },
+    secondaryCta: { label: 'Estimate ownership costs', href: '/cost-calculator' },
+  },
+  training: {
+    title: 'Training',
+    shortTitle: 'Training',
+    desc: 'Breed-specific training guides, walking tools, behavior resources and gear research for dogs with different energy, size and owner-difficulty profiles.',
+    emoji: '🦮',
+    theme: 'training',
+    updatedLabel: 'Updated 2026',
+    heroLabel: 'Training & behavior hub',
+    seoTitle: 'Dog Training Guides 2026 — Breed-Specific Training, Walking Gear & Behavior | PupWiki',
+    seoDescription:
+      'Explore PupWiki dog training guides by breed and behavior need. Find training resources, walking gear ideas, breed-specific advice and owner planning tools.',
+    primaryCta: { label: 'Browse training guides', href: '#breed-guides' },
+    secondaryCta: { label: 'Take breed quiz', href: '/breed-quiz' },
+  },
+  grooming: {
+    title: 'Grooming',
+    shortTitle: 'Grooming',
+    desc: 'Coat-care guidance, grooming routines, brushes, shampoos and breed-specific grooming resources for short, long, curly, double and high-maintenance coats.',
+    emoji: '✂️',
+    theme: 'grooming',
+    updatedLabel: 'Updated 2026',
+    heroLabel: 'Coat care hub',
+    seoTitle: 'Dog Grooming Guides 2026 — Breed Coat Care, Tools & Owner Resources | PupWiki',
+    seoDescription:
+      'Browse dog grooming guides by breed and coat type. Find owner-friendly resources for brushes, shampoos, coat care routines and grooming cost planning.',
+    primaryCta: { label: 'Browse grooming guides', href: '#breed-guides' },
+    secondaryCta: { label: 'Compare breed coats', href: '/breeds' },
+  },
+  beds: {
+    title: 'Beds & Sleep',
+    shortTitle: 'Beds',
+    desc: 'Sleep, comfort, orthopedic support and breed-size resources for puppies, senior dogs, large breeds and dogs that need better rest.',
+    emoji: '🛏️',
+    theme: 'beds',
+    updatedLabel: 'Updated 2026',
+    heroLabel: 'Comfort & sleep hub',
+    seoTitle: 'Dog Bed Guides 2026 — Breed Size, Sleep Comfort & Owner Resources | PupWiki',
+    seoDescription:
+      'Explore dog bed and sleep guides by breed size, comfort need and life stage. Find PupWiki resources for orthopedic beds, calming beds and owner planning.',
+    primaryCta: { label: 'Browse bed guides', href: '#breed-guides' },
+    secondaryCta: { label: 'View breed sizes', href: '/breeds' },
+  },
+  supplements: {
+    title: 'Supplements',
+    shortTitle: 'Supplements',
+    desc: 'Joint, probiotic, omega, calming and wellness supplement topics, linked to breed health context and owner planning resources.',
+    emoji: '💊',
+    theme: 'health',
+    updatedLabel: 'Updated 2026',
+    heroLabel: 'Supplement research hub',
+    seoTitle: 'Dog Supplement Guides 2026 — Joint, Probiotic, Omega & Breed Resources | PupWiki',
+    seoDescription:
+      'Explore dog supplement guides and breed health resources. Learn about supplement categories, wellness planning and owner-friendly product research.',
+    primaryCta: { label: 'Browse supplement guides', href: '#breed-guides' },
+    secondaryCta: { label: 'Read health guides', href: '/categories/health' },
+  },
+  'smart-tech': {
+    title: 'Smart Tech',
+    shortTitle: 'Smart Tech',
+    desc: 'GPS trackers, smart feeders, pet cameras, health collars and connected tools for data-minded dog owners.',
+    emoji: '📡',
+    theme: 'tech',
+    updatedLabel: 'Updated 2026',
+    heroLabel: 'Connected pet tech hub',
+    seoTitle: 'Smart Dog Tech Guides 2026 — GPS Trackers, Cameras & Connected Gear | PupWiki',
+    seoDescription:
+      'Explore smart dog tech guides for GPS trackers, pet cameras, smart feeders, connected collars and dog-owner technology resources.',
+    primaryCta: { label: 'Explore smart tech', href: '#owner-resources' },
+    secondaryCta: { label: 'Browse active breeds', href: '/breeds' },
+  },
+  travel: {
+    title: 'Travel',
+    shortTitle: 'Travel',
+    desc: 'Dog travel resources for carriers, crates, car protection, portable bowls, road trips and breed-size planning.',
+    emoji: '✈️',
+    theme: 'travel',
+    updatedLabel: 'Updated 2026',
+    heroLabel: 'Travel-ready dog hub',
+    seoTitle: 'Dog Travel Guides 2026 — Carriers, Crates, Road Trips & Owner Resources | PupWiki',
+    seoDescription:
+      'Explore dog travel guides for carriers, crates, car gear, road trips and breed-size planning. Find owner-friendly travel resources on PupWiki.',
+    primaryCta: { label: 'Explore travel resources', href: '#owner-resources' },
+    secondaryCta: { label: 'Browse breeds by size', href: '/breeds' },
+  },
+  lifestyle: {
+    title: 'Lifestyle',
+    shortTitle: 'Lifestyle',
+    desc: 'Dog-owner lifestyle resources, gifts, home accessories, custom pet ideas and practical products for modern dog families.',
+    emoji: '🎨',
+    theme: 'lifestyle',
+    updatedLabel: 'Updated 2026',
+    heroLabel: 'Dog parent lifestyle hub',
+    seoTitle: 'Dog Lifestyle Guides 2026 — Gifts, Home Accessories & Owner Resources | PupWiki',
+    seoDescription:
+      'Explore PupWiki dog lifestyle guides for gifts, home accessories, custom pet ideas and owner-friendly resources for modern dog families.',
+    primaryCta: { label: 'Explore lifestyle guides', href: '#owner-resources' },
+    secondaryCta: { label: 'Browse dog breeds', href: '/breeds' },
+  },
 };
 
 export function getStaticPaths() {
-  return Object.keys({
-    'dog-food':1,'toys':1,'health':1,'training':1,'grooming':1,
-    'beds':1,'supplements':1,'smart-tech':1,'travel':1,'lifestyle':1,
-  }).map(slug => ({ params: { category: slug } }));
+  return Object.keys(CATEGORIES).map((slug) => ({ params: { category: slug } }));
 }
 
 const { category } = Astro.params;
-const meta         = CATEGORIES[category];
-const allPosts     = await getCollection('blog');
+const categorySlug = String(category || '');
+const meta = CATEGORIES[categorySlug];
 
-const catPosts = allPosts.filter(
-  p => (p.data.category || '').toLowerCase().replace(/\s+/g,'-') === category
-        || (p.data.tags || []).includes(category)
-);
+if (!meta) return Astro.redirect('/categories');
 
-type Prod = { name:string; asin:string; price?:number; rating?:number; image?:string; features?:string[]; verdict?:string; score?:number };
-const products: Prod[] = (productsData as Record<string,Prod[]>)[category] ?? [];
+const normalize = (value?: unknown) =>
+  String(value ?? '')
+    .trim()
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
 
-// ── Contextual breed strip ────────────────────────────────────
-const CAT_TO_LINK_KEY: Record<string, string> = {
-  'dog-food':    'food_post',
-  'toys':        'toy_post',
-  'health':      'health_post',
-  'training':    'training_post',
-  'grooming':    'grooming_post',
-  'beds':        'bed_post',
-  'supplements': 'supplement_post',
+const toDateValue = (value: unknown) => {
+  if (!value) return 0;
+  const date = value instanceof Date ? value : new Date(String(value));
+  const time = date.getTime();
+  return Number.isFinite(time) ? time : 0;
 };
-const CAT_AWIN_TAGS: Record<string, string[]> = {
-  'dog-food':    ['food', 'nutrition', 'fresh-food', 'feeding'],
-  'toys':        ['training', 'active', 'gear'],
-  'health':      ['food', 'nutrition', 'supplements'],
-  'training':    ['training', 'behavior', 'leash', 'harness', 'active'],
-  'grooming':    ['food', 'care'],
-  'beds':        ['food', 'nutrition'],
-  'supplements': ['food', 'nutrition', 'supplements'],
-  'smart-tech':  ['training', 'gear'],
-  'travel':      ['training', 'gear', 'active'],
-  'lifestyle':   ['gift', 'lifestyle', 'portrait', 'custom'],
-};
-const awinTags = CAT_AWIN_TAGS[category] ?? ['food'];
 
-const SITE = 'https://pupwiki.com';
+const toIsoString = (value: unknown) => {
+  if (!value) return undefined;
+  const date = value instanceof Date ? value : new Date(String(value));
+  return Number.isFinite(date.getTime()) ? date.toISOString() : undefined;
+};
+
+const allPosts = await getCollection('blog');
+
+const catPosts = allPosts
+  .filter((post) => {
+    const postCategory = normalize(post.data.category);
+    const tags = Array.isArray(post.data.tags) ? post.data.tags.map(normalize) : [];
+
+    return postCategory === categorySlug || tags.includes(categorySlug) || tags.includes(meta.theme);
+  })
+  .sort((a, b) => toDateValue(b.data.pubDate) - toDateValue(a.data.pubDate));
+
+const featuredPosts = catPosts.slice(0, 6);
+const supportingPosts = catPosts.slice(6, 12);
+
+const CAT_TO_LINK_KEY: Record<string, string | null> = {
+  'dog-food': 'food_post',
+  toys: 'toy_post',
+  health: 'health_post',
+  training: 'training_post',
+  grooming: 'grooming_post',
+  beds: 'bed_post',
+  supplements: 'supplement_post',
+  'smart-tech': null,
+  travel: null,
+  lifestyle: null,
+};
+
+const CAT_AWIN_TAGS: Record<string, { primary: string[]; secondary: string[] }> = {
+  'dog-food': {
+    primary: ['food', 'nutrition', 'fresh-food', 'feeding', 'dog-food'],
+    secondary: ['meal-prep', 'healthy-food', 'breed', 'puppy', 'senior-dog'],
+  },
+  toys: {
+    primary: ['toy', 'toys', 'enrichment', 'chew', 'puzzle', 'active'],
+    secondary: ['training', 'gear', 'behavior', 'high-energy', 'dog-owner'],
+  },
+  health: {
+    primary: ['health', 'wellness', 'insurance', 'supplements', 'preventive-care'],
+    secondary: ['vet', 'breed-health', 'care', 'nutrition', 'senior-dog'],
+  },
+  training: {
+    primary: ['training', 'behavior', 'leash', 'harness', 'walking', 'obedience'],
+    secondary: ['active', 'gear', 'puppy-training', 'recall', 'dog-owner'],
+  },
+  grooming: {
+    primary: ['grooming', 'care', 'coat', 'brush', 'shampoo'],
+    secondary: ['nail-trim', 'shedding', 'curly-coat', 'long-coat', 'dog-owner'],
+  },
+  beds: {
+    primary: ['bed', 'beds', 'sleep', 'orthopedic', 'comfort'],
+    secondary: ['senior-dog', 'large-dog', 'puppy', 'calming', 'home'],
+  },
+  supplements: {
+    primary: ['supplements', 'joint', 'probiotic', 'omega', 'calming'],
+    secondary: ['health', 'wellness', 'senior-dog', 'nutrition', 'breed-health'],
+  },
+  'smart-tech': {
+    primary: ['gps', 'tracker', 'camera', 'smart-feeder', 'smart-tech'],
+    secondary: ['training', 'active', 'connected', 'monitoring', 'dog-owner'],
+  },
+  travel: {
+    primary: ['travel', 'carrier', 'crate', 'car', 'road-trip'],
+    secondary: ['bowl', 'portable', 'gear', 'safety', 'dog-owner'],
+  },
+  lifestyle: {
+    primary: ['gift', 'lifestyle', 'custom-pet', 'portrait', 'dog-owner'],
+    secondary: ['home', 'accessory', 'premium', 'personalized', 'family'],
+  },
+};
+
+const awinPrimaryTags = [
+  ...(CAT_AWIN_TAGS[categorySlug]?.primary ?? [categorySlug]),
+  categorySlug,
+  meta.theme,
+  'dog',
+  'dog-owner',
+];
+
+const awinSecondaryTags = [
+  ...(CAT_AWIN_TAGS[categorySlug]?.secondary ?? []),
+  categorySlug,
+  meta.theme,
+  'dog-parent',
+];
+
+const CATEGORY_LINK_BLOCKS: Record<string, { title: string; desc: string; href: string; icon: string }[]> = {
+  'dog-food': [
+    { title: 'Breed food guides', desc: 'Find feeding resources matched to breed size, coat, activity and common owner needs.', href: '#breed-guides', icon: '🍖' },
+    { title: 'Dog cost calculator', desc: 'Estimate annual food, care, vet and lifetime ownership costs by breed.', href: '/cost-calculator', icon: '💰' },
+    { title: 'Health considerations', desc: 'Connect nutrition planning with common breed health context.', href: '/categories/health', icon: '🩺' },
+  ],
+  toys: [
+    { title: 'Breed toy guides', desc: 'Match enrichment ideas to breed energy, mouth strength and play style.', href: '#breed-guides', icon: '🎾' },
+    { title: 'Training resources', desc: 'Pair toys and enrichment with better walking, recall and structure.', href: '/categories/training', icon: '🦮' },
+    { title: 'Browse active breeds', desc: 'Explore high-energy breeds that need more mental stimulation.', href: '/breeds', icon: '🐕' },
+  ],
+  health: [
+    { title: 'Breed health guides', desc: 'Browse common breed health considerations and owner planning resources.', href: '#breed-guides', icon: '🩺' },
+    { title: 'Insurance estimates', desc: 'Use breed-specific cost calculators to understand insurance and care planning.', href: '/cost-calculator', icon: '🛡️' },
+    { title: 'Supplements hub', desc: 'Explore supplement categories linked to wellness and owner research.', href: '/categories/supplements', icon: '💊' },
+  ],
+  training: [
+    { title: 'Breed training guides', desc: 'Find training resources matched to temperament, energy and owner difficulty.', href: '#breed-guides', icon: '🦮' },
+    { title: 'Breed quiz', desc: 'Compare your lifestyle with breed traits before choosing a dog.', href: '/breed-quiz', icon: '🐾' },
+    { title: 'Toys & enrichment', desc: 'Support training routines with enrichment and structured play.', href: '/categories/toys', icon: '🎾' },
+  ],
+  grooming: [
+    { title: 'Breed grooming guides', desc: 'Find grooming advice by coat type, shedding level and maintenance needs.', href: '#breed-guides', icon: '✂️' },
+    { title: 'Breed profiles', desc: 'Compare coat types, size and grooming needs across breeds.', href: '/breeds', icon: '🐕' },
+    { title: 'Cost planning', desc: 'Estimate grooming and lifetime ownership costs by breed.', href: '/cost-calculator', icon: '💰' },
+  ],
+  beds: [
+    { title: 'Breed bed guides', desc: 'Match bed size, support and comfort needs to specific dog breeds.', href: '#breed-guides', icon: '🛏️' },
+    { title: 'Large breed planning', desc: 'Explore breed size profiles and care considerations.', href: '/breeds', icon: '📏' },
+    { title: 'Senior dog comfort', desc: 'Connect sleep support with health and long-term care planning.', href: '/categories/health', icon: '🩺' },
+  ],
+  supplements: [
+    { title: 'Breed supplement guides', desc: 'Explore supplement topics connected to common breed wellness considerations.', href: '#breed-guides', icon: '💊' },
+    { title: 'Health hub', desc: 'Read broader breed health and preventive care resources.', href: '/categories/health', icon: '🩺' },
+    { title: 'Cost calculator', desc: 'Plan supplement, food and care costs across a dog’s lifetime.', href: '/cost-calculator', icon: '💰' },
+  ],
+  'smart-tech': [
+    { title: 'Tracking & monitoring', desc: 'Explore technology for active dogs, routines and owner peace of mind.', href: '#owner-resources', icon: '📡' },
+    { title: 'Training tools', desc: 'Pair connected gear with structured training and behavior resources.', href: '/categories/training', icon: '🦮' },
+    { title: 'Browse active breeds', desc: 'Find breeds that may benefit from more activity tracking and enrichment.', href: '/breeds', icon: '🐕' },
+  ],
+  travel: [
+    { title: 'Travel resources', desc: 'Plan carriers, crates, bowls and road-trip gear around breed size.', href: '#owner-resources', icon: '✈️' },
+    { title: 'Breed size profiles', desc: 'Compare size and weight before choosing travel products.', href: '/breeds', icon: '📏' },
+    { title: 'Training before travel', desc: 'Build calmer routines before crates, cars and trips.', href: '/categories/training', icon: '🦮' },
+  ],
+  lifestyle: [
+    { title: 'Dog parent gifts', desc: 'Explore custom, personal and home-friendly resources for dog owners.', href: '#owner-resources', icon: '🎁' },
+    { title: 'Breed inspiration', desc: 'Browse breed profiles for personality, care needs and owner fit.', href: '/breeds', icon: '🐾' },
+    { title: 'Home comfort', desc: 'Explore sleep, bed and home accessory resources.', href: '/categories/beds', icon: '🛏️' },
+  ],
+};
+
+const RELATED_CATEGORIES: Record<string, string[]> = {
+  'dog-food': ['supplements', 'health', 'cost-calculator', 'training'],
+  toys: ['training', 'smart-tech', 'travel', 'lifestyle'],
+  health: ['supplements', 'dog-food', 'cost-calculator', 'grooming'],
+  training: ['toys', 'smart-tech', 'travel', 'dog-food'],
+  grooming: ['health', 'supplements', 'beds', 'dog-food'],
+  beds: ['health', 'lifestyle', 'travel', 'grooming'],
+  supplements: ['health', 'dog-food', 'cost-calculator', 'grooming'],
+  'smart-tech': ['training', 'travel', 'toys', 'health'],
+  travel: ['training', 'smart-tech', 'beds', 'lifestyle'],
+  lifestyle: ['beds', 'travel', 'toys', 'dog-food'],
+};
+
+const SPECIAL_LINKS: Record<string, { title: string; desc: string; href: string; icon: string }> = {
+  'cost-calculator': {
+    title: 'Cost Calculator',
+    desc: 'Estimate breed-specific food, vet, grooming and lifetime costs.',
+    href: '/cost-calculator',
+    icon: '💰',
+  },
+};
+
+const categoryLinks = CATEGORY_LINK_BLOCKS[categorySlug] ?? [];
+
+const relatedCategoryCards = (RELATED_CATEGORIES[categorySlug] ?? [])
+  .map((slug) => {
+    if (SPECIAL_LINKS[slug]) return SPECIAL_LINKS[slug];
+
+    const related = CATEGORIES[slug];
+    if (!related) return null;
+
+    return {
+      title: related.title,
+      desc: related.desc,
+      href: `/categories/${slug}`,
+      icon: related.emoji,
+    };
+  })
+  .filter(Boolean) as { title: string; desc: string; href: string; icon: string }[];
+
+const linkKey = CAT_TO_LINK_KEY[categorySlug];
+const allBreedRecords = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
+
+const preferredBreedSlugs = [
+  'bulldog',
+  'french-bulldog',
+  'golden-retriever',
+  'labrador-retriever',
+  'german-shepherd',
+  'beagle',
+  'poodle-standard',
+  'dachshund',
+  'boxer',
+  'border-collie',
+  'cavalier-king-charles-spaniel',
+  'goldendoodle',
+];
+
+const sortedBreeds = [...allBreedRecords].sort((a, b) => {
+  const aIndex = preferredBreedSlugs.indexOf(a.slug);
+  const bIndex = preferredBreedSlugs.indexOf(b.slug);
+
+  if (aIndex !== -1 || bIndex !== -1) {
+    return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+  }
+
+  return String(a.name || '').localeCompare(String(b.name || ''));
+});
+
+const breedGuides = linkKey
+  ? sortedBreeds
+      .filter((breed) => breed?.slug && (contentStatus as any)[breed.slug]?.[linkKey] === true)
+      .slice(0, 10)
+      .map((breed) => ({
+        name: breed.name,
+        slug: breed.slug,
+        size: breed.size_category,
+        energy: breed.energy_level,
+        href: (breedLinkMap as any)[breed.slug]?.[linkKey] ?? `/breeds/${breed.slug}`,
+      }))
+  : sortedBreeds
+      .filter((breed) => breed?.slug && breed?.name)
+      .slice(0, 10)
+      .map((breed) => ({
+        name: breed.name,
+        slug: breed.slug,
+        size: breed.size_category,
+        energy: breed.energy_level,
+        href: `/breeds/${breed.slug}`,
+      }));
+
+const featuredBreedGuides = breedGuides.slice(0, 6);
+const breedChips = breedGuides.slice(0, 10);
+
+const collectionPageLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `${meta.title} Guides`,
+  description: meta.seoDescription,
+  url: `${SITE}/categories/${categorySlug}`,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'PupWiki',
+    url: SITE,
+  },
+});
+
 const breadcrumbLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home',       item: `${SITE}/` },
-    { '@type': 'ListItem', position: 2, name: meta.title,   item: `${SITE}/categories/${category}` },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: meta.title, item: `${SITE}/categories/${categorySlug}` },
   ],
 });
 
-const linkKey = CAT_TO_LINK_KEY[category];
-const breedStrip = linkKey
-  ? (masterBreeds as any[])
-      .filter(b => (contentStatus as any)[b.slug]?.[linkKey] === true)
-      .slice(0, 8)
-      .map(b => ({
-        name: b.name,
-        slug: b.slug,
-        href: (breedLinkMap as any)[b.slug]?.[linkKey] ?? `/breeds/${b.slug}`,
-      }))
-  : [];
+const itemListEntries = [
+  ...featuredBreedGuides.map((guide, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: `${guide.name} ${meta.shortTitle} Guide`,
+    url: `${SITE}${guide.href}`,
+  })),
+  ...featuredPosts.slice(0, 6).map((post, index) => ({
+    '@type': 'ListItem',
+    position: featuredBreedGuides.length + index + 1,
+    name: post.data.title,
+    url: `${SITE}/blog/${post.slug}`,
+  })),
+];
+
+const itemListLd = itemListEntries.length
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: itemListEntries,
+    })
+  : null;
 ---
 
 <BaseLayout
-  title={`${meta.title} Reviews 2026 — Expert Picks | PupWiki`}
-  description={meta.desc}
-  canonicalUrl={`${SITE}/categories/${category}`}
+  title={meta.seoTitle}
+  description={meta.seoDescription}
+  canonicalUrl={`${SITE}/categories/${categorySlug}`}
 >
   <script type="application/ld+json" set:html={breadcrumbLd} />
+  <script type="application/ld+json" set:html={collectionPageLd} />
+  {itemListLd && <script type="application/ld+json" set:html={itemListLd} />}
 
-  <div class="page-hero">
-    <div class="container page-hero__inner">
-      <Breadcrumb items={[
-        { label:'Home', href:'/' },
-        { label:meta.title, current:true },
-      ]} />
-      <h1 class="page-hero__title">
-        <span aria-hidden="true">{meta.emoji}</span> {meta.title} <em>Reviews</em>
-      </h1>
-      <p class="page-hero__desc">{meta.desc}</p>
-      <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-5)">
-        <span class="badge badge--primary">{meta.reviewCount} products reviewed</span>
-        <span class="badge badge--muted">Updated March 2026</span>
-        <span class="badge badge--success">Expert verified</span>
-      </div>
-    </div>
-  </div>
+  <main class:list={['category-page', `category-page--${meta.theme}`]}>
+    <section class="category-hero" aria-labelledby="category-title">
+      <div class="category-container">
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: meta.title, current: true },
+        ]} />
 
-  {breedStrip.length >= 3 && (
-    <div style="background:var(--color-bg-muted);border-bottom:1px solid var(--color-border)">
-      <div class="container py-4">
-        <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:var(--color-muted)">
-          {meta.title} guides by breed
-        </p>
-        <div class="flex flex-wrap gap-2">
-          {breedStrip.map(b => (
-            <a
-              href={b.href}
-              class="font-sans text-sm font-semibold px-3 py-1.5 rounded-full transition-colors hover:opacity-80"
-              style="background:white;border:1px solid var(--color-border-warm);color:var(--color-primary);text-decoration:none"
-            >
-              {b.name}
-            </a>
-          ))}
-          <a href="/breeds"
-            class="font-sans text-sm px-3 py-1.5 rounded-full transition-colors"
-            style="color:var(--color-accent);text-decoration:none">
-            All breeds →
-          </a>
+        <div class="category-hero__grid">
+          <div class="category-hero__content">
+            <p class="category-eyebrow">
+              <span aria-hidden="true">{meta.emoji}</span>
+              {meta.heroLabel}
+            </p>
+
+            <h1 id="category-title">
+              {meta.title}
+              <em>guides for dog owners</em>
+            </h1>
+
+            <p class="category-hero__desc">{meta.desc}</p>
+
+            <div class="category-hero__actions">
+              <a href={meta.primaryCta.href} class="category-button category-button--primary">
+                {meta.primaryCta.label}
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href={meta.secondaryCta.href} class="category-button category-button--secondary">
+                {meta.secondaryCta.label}
+              </a>
+            </div>
+
+            <ul class="category-badges" aria-label={`${meta.title} page highlights`}>
+              <li>{meta.updatedLabel}</li>
+              <li>Breed-specific resources</li>
+              <li>Affiliate-supported picks</li>
+            </ul>
+          </div>
+
+          <aside class="category-hero-card" aria-label={`${meta.title} quick overview`}>
+            <span class="category-hero-card__emoji" aria-hidden="true">{meta.emoji}</span>
+            <p>Owner resource hub</p>
+            <strong>{meta.shortTitle}</strong>
+            <span>
+              Browse breed-specific pages, related guides, and partner resources matched to this topic.
+            </span>
+          </aside>
         </div>
       </div>
-    </div>
-  )}
+    </section>
 
-  <main class="section">
-    <div class="container" style="display:flex;flex-direction:column;gap:var(--space-14)">
+    <nav class="category-quick-nav" aria-label="Category quick links">
+      <div class="category-container category-quick-nav__inner">
+        <a href="#partner-resource">Partner resource</a>
+        <a href="#breed-guides">Breed guides</a>
+        <a href="#owner-resources">Owner resources</a>
+        {featuredPosts.length > 0 && <a href="#latest-guides">Latest guides</a>}
+        <a href="#related-topics">Related topics</a>
+      </div>
+    </nav>
 
-      {products.length > 0 && (
-        <ProductGrid
-          products={products.slice(0,6)}
-          eyebrow="Our picks"
-          heading={`Top Ranked ${meta.title}`}
-        />
-      )}
-
-      <AwinProductSlot topicTags={awinTags} pageType="category" />
-
-      {catPosts.length > 0 && (
-        <section>
-          <div class="section-header">
-            <div>
-              <span class="section-eyebrow">In-depth guides</span>
-              <h2 class="section-title">{meta.title} Guides</h2>
-            </div>
-            <span style="color:var(--color-muted);font-size:var(--text-sm)">{catPosts.length} articles</span>
+    <section id="partner-resource" class="category-section category-section--partner">
+      <div class="category-container">
+        <div class="category-partner-grid">
+          <div class="category-section-header">
+            <p class="category-eyebrow">Partner resource</p>
+            <h2>Recommended {meta.title.toLowerCase()} resource</h2>
+            <p>
+              Contextual partner resources are matched through the PupWiki affiliate pipeline using category,
+              breed, care and owner-intent signals.
+            </p>
           </div>
-          <div class="grid grid-3">
-            {catPosts.map(post => (
+
+          <AwinProductSlot
+            topicTags={awinPrimaryTags}
+            pageType="category"
+            category={categorySlug}
+            headline={`Featured ${meta.shortTitle.toLowerCase()} resource`}
+          />
+        </div>
+
+        <p class="category-affiliate-note">
+          Affiliate disclosure: PupWiki may earn a commission from qualifying partner links, at no extra cost to you.
+          Editorial pages remain informational and should be used as a starting point for your own research.
+        </p>
+      </div>
+    </section>
+
+    {breedChips.length >= 3 && (
+      <section class="category-breed-strip" aria-label={`${meta.title} breed shortcuts`}>
+        <div class="category-container">
+          <div class="category-breed-strip__header">
+            <p>{meta.title} by breed</p>
+            <a href="/breeds">All breeds →</a>
+          </div>
+
+          <div class="category-chip-row">
+            {breedChips.map((breed) => (
+              <a href={breed.href}>{breed.name}</a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <section id="breed-guides" class="category-section">
+      <div class="category-container">
+        <div class="category-section-header category-section-header--split">
+          <div>
+            <p class="category-eyebrow">Breed-specific</p>
+            <h2>{meta.title} guides by breed</h2>
+            <p>
+              Start with the breed closest to your dog. Breed pages help connect size, energy, coat,
+              health context and ownership costs with practical next steps.
+            </p>
+          </div>
+
+          <a href="/breeds" class="category-text-link">Browse all breeds →</a>
+        </div>
+
+        {featuredBreedGuides.length > 0 ? (
+          <div class="category-breed-grid">
+            {featuredBreedGuides.map((breed) => (
+              <a href={breed.href} class="category-breed-card">
+                <span aria-hidden="true">🐕</span>
+                <div>
+                  <strong>{breed.name}</strong>
+                  <p>
+                    {linkKey
+                      ? `${meta.shortTitle} guide and owner resources`
+                      : `Breed profile, care needs and owner fit`}
+                  </p>
+                  <em>
+                    {breed.size ? `${breed.size} size` : 'Breed guide'}
+                    {breed.energy ? ` · ${breed.energy} energy` : ''}
+                  </em>
+                </div>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div class="category-empty-card">
+            <p>Breed-specific {meta.title.toLowerCase()} guides are being expanded.</p>
+            <a href="/breeds">Browse all breed profiles →</a>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <section id="owner-resources" class="category-section category-section--soft">
+      <div class="category-container">
+        <div class="category-section-header">
+          <p class="category-eyebrow">Owner resources</p>
+          <h2>Plan smarter around {meta.title.toLowerCase()}</h2>
+          <p>
+            Use these internal resources to move from broad research to breed-specific decisions,
+            care planning and high-intent next steps.
+          </p>
+        </div>
+
+        <div class="category-link-grid">
+          {categoryLinks.map((item) => (
+            <a href={item.href} class="category-link-card">
+              <span aria-hidden="true">{item.icon}</span>
+              <strong>{item.title}</strong>
+              <p>{item.desc}</p>
+            </a>
+          ))}
+        </div>
+
+        <div class="category-secondary-partner">
+          <div>
+            <p class="category-eyebrow">Matched partner pick</p>
+            <h3>More resources for {meta.title.toLowerCase()}</h3>
+            <p>
+              A second contextual slot helps surface a different partner resource when available,
+              without relying on static Amazon product grids.
+            </p>
+          </div>
+
+          <AwinProductSlot
+            topicTags={awinSecondaryTags}
+            pageType="category"
+            category={categorySlug}
+            variant="compact"
+            headline={`${meta.shortTitle} partner resource`}
+          />
+        </div>
+      </div>
+    </section>
+
+    {featuredPosts.length > 0 && (
+      <section id="latest-guides" class="category-section">
+        <div class="category-container">
+          <div class="category-section-header category-section-header--split">
+            <div>
+              <p class="category-eyebrow">Editorial guides</p>
+              <h2>Latest {meta.title} guides</h2>
+              <p>
+                Supporting guides and articles that expand the topic with owner-friendly research,
+                product context and practical decisions.
+              </p>
+            </div>
+
+            <span class="category-count-pill">{catPosts.length} article{catPosts.length === 1 ? '' : 's'}</span>
+          </div>
+
+          <div class="category-post-grid">
+            {featuredPosts.map((post) => (
               <BlogCard
                 title={post.data.title}
                 excerpt={post.data.description ?? ''}
                 category={post.data.category ?? meta.title}
                 href={`/blog/${post.slug}`}
-                pubDate={post.data.pubDate?.toISOString()}
+                pubDate={toIsoString(post.data.pubDate)}
               />
             ))}
           </div>
-        </section>
-      )}
 
-      {products.length === 0 && catPosts.length === 0 && (
-        <div style="text-align:center;padding:var(--space-20) 0;color:var(--color-muted)">
-          <p style="font-size:var(--text-xl);margin-bottom:var(--space-4)">{meta.emoji} Content for {meta.title} coming soon.</p>
-          <a href="/" class="btn btn--outline">← Back to home</a>
+          {supportingPosts.length > 0 && (
+            <div class="category-supporting-list" aria-label={`More ${meta.title} guides`}>
+              {supportingPosts.map((post) => (
+                <a href={`/blog/${post.slug}`}>
+                  <span>{post.data.category ?? meta.title}</span>
+                  <strong>{post.data.title}</strong>
+                  <em aria-hidden="true">→</em>
+                </a>
+              ))}
+            </div>
+          )}
         </div>
-      )}
+      </section>
+    )}
 
-    </div>
+    <section id="related-topics" class="category-section category-section--related">
+      <div class="category-container">
+        <div class="category-section-header">
+          <p class="category-eyebrow">Related topics</p>
+          <h2>Keep researching smarter</h2>
+          <p>
+            PupWiki works best as a connected research system: move between breed profiles,
+            care categories, cost planning and owner decision tools.
+          </p>
+        </div>
+
+        <div class="category-related-grid">
+          {relatedCategoryCards.map((item) => (
+            <a href={item.href} class="category-related-card">
+              <span aria-hidden="true">{item.icon}</span>
+              <strong>{item.title}</strong>
+              <p>{item.desc}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {featuredPosts.length === 0 && featuredBreedGuides.length === 0 && (
+      <section class="category-section">
+        <div class="category-container">
+          <div class="category-empty-card category-empty-card--large">
+            <span aria-hidden="true">{meta.emoji}</span>
+            <h2>{meta.title} resources are being expanded</h2>
+            <p>
+              Explore related breed profiles and owner tools while this category grows.
+            </p>
+            <a href="/breeds">Browse dog breeds →</a>
+          </div>
+        </div>
+      </section>
+    )}
   </main>
-
 </BaseLayout>
+
+<style>
+  .category-page {
+    overflow-x: clip;
+    background:
+      radial-gradient(circle at 92% 3%, rgba(255, 122, 0, 0.1), transparent 24rem),
+      radial-gradient(circle at 4% 6%, rgba(21, 54, 95, 0.08), transparent 22rem),
+      var(--color-bg, #fffaf3);
+    color: var(--color-body, #334155);
+  }
+
+  .category-container {
+    width: min(100%, var(--max-width, 1180px));
+    margin-inline: auto;
+    padding-inline: var(--content-padding-mobile, 1rem);
+  }
+
+  .category-hero {
+    border-bottom: 1px solid var(--color-border, #e5e7eb);
+    background:
+      linear-gradient(180deg, rgba(255, 250, 243, 0.98) 0%, rgba(255, 255, 255, 0.96) 82%);
+  }
+
+  .category-hero .category-container {
+    padding-block: clamp(2.25rem, 7vw, 5.5rem);
+  }
+
+  .category-hero__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(var(--space-6, 1.5rem), 6vw, var(--space-12, 3rem));
+    align-items: start;
+    margin-top: var(--space-5, 1.25rem);
+  }
+
+  .category-hero__content {
+    max-width: 54rem;
+    min-width: 0;
+  }
+
+  .category-eyebrow {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0;
+    border: 1px solid var(--color-border-accent, rgba(255, 122, 0, 0.24));
+    border-radius: var(--radius-full, 999px);
+    background: var(--color-accent-subtle, #fff7ed);
+    padding: 0.55rem 0.85rem;
+    color: var(--color-accent-hover, #b45309);
+    font-family: var(--font-sans, system-ui);
+    font-size: 0.7rem;
+    font-weight: var(--weight-black, 800);
+    letter-spacing: var(--tracking-label, 0.08em);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .category-hero h1 {
+    max-width: 13ch;
+    margin: var(--space-5, 1.25rem) 0 0;
+    color: var(--color-heading, #111827);
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: clamp(2.55rem, 12vw, 5.3rem);
+    font-weight: var(--weight-bold, 800);
+    letter-spacing: -0.058em;
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+
+  .category-hero h1 em {
+    display: block;
+    color: var(--color-accent, #f97316);
+    font-style: normal;
+  }
+
+  .category-hero__desc {
+    max-width: 48rem;
+    margin: var(--space-5, 1.25rem) 0 0;
+    color: var(--color-body-soft, #475569);
+    font-family: var(--font-sans, system-ui);
+    font-size: clamp(1rem, 2.2vw, var(--text-lg, 1.125rem));
+    line-height: var(--leading-relaxed, 1.75);
+    text-wrap: pretty;
+  }
+
+  .category-hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3, 0.75rem);
+    margin-top: var(--space-7, 1.75rem);
+  }
+
+  .category-button {
+    display: inline-flex;
+    width: 100%;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: var(--radius-xl, 1rem);
+    padding: 0.95rem 1.15rem;
+    font-family: var(--font-sans, system-ui);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: var(--weight-bold, 700);
+    line-height: 1;
+    text-decoration: none;
+    transition: var(--transition-smooth, 180ms ease);
+  }
+
+  .category-button--primary {
+    background: var(--button-primary-bg, var(--color-primary, #134e4a));
+    color: var(--button-primary-text, #ffffff);
+    box-shadow: var(--shadow-cta, 0 16px 30px rgba(15, 23, 42, 0.15));
+  }
+
+  .category-button--primary:hover {
+    background: var(--button-primary-bg-hover, var(--color-primary-hover, #0f3f3c));
+    transform: translateY(-2px);
+  }
+
+  .category-button--secondary {
+    border: 1px solid var(--button-outline-border, var(--color-border, #e5e7eb));
+    background: rgba(255, 255, 255, 0.86);
+    color: var(--button-outline-text, var(--color-primary, #134e4a));
+    box-shadow: var(--shadow-xs, 0 1px 2px rgba(15, 23, 42, 0.06));
+  }
+
+  .category-button--secondary:hover {
+    border-color: var(--color-border-primary, rgba(19, 78, 74, 0.28));
+    background: var(--button-outline-bg-hover, #ffffff);
+    color: var(--color-primary-hover, #0f3f3c);
+    transform: translateY(-2px);
+  }
+
+  .category-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2, 0.5rem);
+    margin: var(--space-6, 1.5rem) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .category-badges li {
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: var(--radius-full, 999px);
+    background: rgba(255, 255, 255, 0.78);
+    padding: 0.55rem 0.72rem;
+    color: var(--color-body, #334155);
+    font-family: var(--font-sans, system-ui);
+    font-size: 0.76rem;
+    font-weight: var(--weight-semi, 600);
+    line-height: 1;
+    box-shadow: var(--shadow-xs, 0 1px 2px rgba(15, 23, 42, 0.06));
+    backdrop-filter: blur(12px);
+  }
+
+  .category-hero-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border-warm, rgba(255, 122, 0, 0.2));
+    border-radius: var(--radius-3xl, 1.5rem);
+    background:
+      radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.72), transparent 12rem),
+      linear-gradient(135deg, var(--color-surface-navy, #15365f), var(--color-primary, #134e4a));
+    padding: var(--space-6, 1.5rem);
+    color: #ffffff;
+    box-shadow: var(--shadow-xl, 0 24px 60px rgba(15, 23, 42, 0.18));
+  }
+
+  .category-hero-card__emoji {
+    display: grid;
+    width: 4rem;
+    height: 4rem;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: var(--radius-2xl, 1.25rem);
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 2rem;
+  }
+
+  .category-hero-card p,
+  .category-hero-card span {
+    color: rgba(255, 255, 255, 0.76);
+    font-family: var(--font-sans, system-ui);
+  }
+
+  .category-hero-card p {
+    margin: var(--space-5, 1.25rem) 0 0;
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: var(--weight-black, 800);
+    letter-spacing: var(--tracking-label, 0.08em);
+    text-transform: uppercase;
+  }
+
+  .category-hero-card strong {
+    display: block;
+    margin-top: var(--space-2, 0.5rem);
+    color: #ffffff;
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: clamp(var(--text-3xl, 1.875rem), 8vw, var(--text-5xl, 3rem));
+    line-height: 1;
+  }
+
+  .category-hero-card span:not(.category-hero-card__emoji) {
+    display: block;
+    margin-top: var(--space-3, 0.75rem);
+    font-size: var(--text-sm, 0.875rem);
+    line-height: var(--leading-relaxed, 1.7);
+  }
+
+  .category-quick-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid var(--color-border, #e5e7eb);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+  }
+
+  .category-quick-nav__inner {
+    display: flex;
+    gap: var(--space-2, 0.5rem);
+    overflow-x: auto;
+    padding-block: var(--space-3, 0.75rem);
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-quick-nav a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: var(--radius-full, 999px);
+    background: #ffffff;
+    padding: 0.62rem 0.82rem;
+    color: var(--color-primary, #134e4a);
+    font-family: var(--font-sans, system-ui);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: var(--weight-bold, 700);
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .category-quick-nav a:hover {
+    border-color: var(--color-border-accent, rgba(255, 122, 0, 0.28));
+    color: var(--color-accent-hover, #b45309);
+  }
+
+  .category-section {
+    padding-block: clamp(var(--space-8, 2rem), 6vw, var(--space-14, 3.5rem));
+  }
+
+  .category-section--partner {
+    background: rgba(255, 255, 255, 0.64);
+  }
+
+  .category-section--soft {
+    border-block: 1px solid var(--color-border, #e5e7eb);
+    background:
+      radial-gradient(circle at 88% 10%, rgba(255, 122, 0, 0.08), transparent 18rem),
+      var(--color-bg-muted, #f8fafc);
+  }
+
+  .category-section--related {
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  .category-section-header {
+    max-width: 48rem;
+    margin-bottom: var(--space-6, 1.5rem);
+  }
+
+  .category-section-header--split {
+    display: grid;
+    gap: var(--space-4, 1rem);
+    max-width: none;
+  }
+
+  .category-section-header h2 {
+    margin: var(--space-3, 0.75rem) 0 0;
+    color: var(--color-heading, #111827);
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: clamp(var(--text-2xl, 1.5rem), 5vw, var(--text-4xl, 2.25rem));
+    letter-spacing: var(--tracking-tight, -0.03em);
+    line-height: var(--leading-tight, 1.15);
+  }
+
+  .category-section-header h3 {
+    margin: 0;
+    color: var(--color-heading, #111827);
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: var(--text-2xl, 1.5rem);
+    line-height: var(--leading-tight, 1.15);
+  }
+
+  .category-section-header p,
+  .category-secondary-partner p,
+  .category-affiliate-note {
+    color: var(--color-body-soft, #475569);
+    font-family: var(--font-sans, system-ui);
+    line-height: var(--leading-relaxed, 1.7);
+  }
+
+  .category-section-header > p:not(.category-eyebrow) {
+    margin: var(--space-3, 0.75rem) 0 0;
+  }
+
+  .category-text-link {
+    align-self: start;
+    color: var(--color-primary, #134e4a);
+    font-family: var(--font-sans, system-ui);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: var(--weight-bold, 700);
+    text-decoration: none;
+  }
+
+  .category-text-link:hover {
+    color: var(--color-accent-hover, #b45309);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .category-partner-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-5, 1.25rem);
+    align-items: start;
+  }
+
+  .category-affiliate-note {
+    margin: var(--space-4, 1rem) 0 0;
+    font-size: var(--text-xs, 0.75rem);
+  }
+
+  .category-breed-strip {
+    border-block: 1px solid var(--color-border, #e5e7eb);
+    background: var(--color-bg-muted, #f8fafc);
+    padding-block: var(--space-4, 1rem);
+  }
+
+  .category-breed-strip__header {
+    display: flex;
+    gap: var(--space-3, 0.75rem);
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-3, 0.75rem);
+  }
+
+  .category-breed-strip__header p {
+    margin: 0;
+    color: var(--color-muted, #64748b);
+    font-family: var(--font-sans, system-ui);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: var(--weight-black, 800);
+    letter-spacing: var(--tracking-label, 0.08em);
+    text-transform: uppercase;
+  }
+
+  .category-breed-strip__header a {
+    color: var(--color-accent-hover, #b45309);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: var(--weight-bold, 700);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .category-chip-row {
+    display: flex;
+    gap: var(--space-2, 0.5rem);
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-chip-row a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    border: 1px solid var(--color-border-warm, rgba(255, 122, 0, 0.2));
+    border-radius: var(--radius-full, 999px);
+    background: #ffffff;
+    padding: 0.55rem 0.75rem;
+    color: var(--color-primary, #134e4a);
+    font-family: var(--font-sans, system-ui);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: var(--weight-semi, 600);
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: var(--shadow-xs, 0 1px 2px rgba(15, 23, 42, 0.06));
+  }
+
+  .category-chip-row a:hover {
+    color: var(--color-accent-hover, #b45309);
+    transform: translateY(-1px);
+  }
+
+  .category-breed-grid,
+  .category-link-grid,
+  .category-post-grid,
+  .category-related-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4, 1rem);
+  }
+
+  .category-breed-card,
+  .category-link-card,
+  .category-related-card {
+    display: grid;
+    gap: var(--space-3, 0.75rem);
+    border: 1px solid var(--card-border, var(--color-border, #e5e7eb));
+    border-radius: var(--radius-2xl, 1.25rem);
+    background: rgba(255, 255, 255, 0.92);
+    padding: var(--space-5, 1.25rem);
+    color: inherit;
+    text-decoration: none;
+    box-shadow: var(--shadow-card, 0 12px 32px rgba(15, 23, 42, 0.08));
+    transition: var(--transition-smooth, 180ms ease);
+  }
+
+  .category-breed-card {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
+
+  .category-breed-card:hover,
+  .category-link-card:hover,
+  .category-related-card:hover {
+    border-color: var(--color-border-accent, rgba(255, 122, 0, 0.28));
+    transform: translateY(-2px);
+  }
+
+  .category-breed-card > span,
+  .category-link-card > span,
+  .category-related-card > span {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    border: 1px solid var(--color-border-warm, rgba(255, 122, 0, 0.2));
+    border-radius: var(--radius-xl, 1rem);
+    background: var(--color-accent-subtle, #fff7ed);
+    font-size: 1.35rem;
+  }
+
+  .category-breed-card strong,
+  .category-link-card strong,
+  .category-related-card strong {
+    display: block;
+    color: var(--color-heading, #111827);
+    font-family: var(--font-sans, system-ui);
+    font-size: var(--text-base, 1rem);
+    font-weight: var(--weight-black, 800);
+    line-height: var(--leading-tight, 1.2);
+  }
+
+  .category-breed-card p,
+  .category-link-card p,
+  .category-related-card p {
+    margin: var(--space-2, 0.5rem) 0 0;
+    color: var(--color-body-soft, #475569);
+    font-family: var(--font-sans, system-ui);
+    font-size: var(--text-sm, 0.875rem);
+    line-height: var(--leading-relaxed, 1.7);
+  }
+
+  .category-breed-card em {
+    display: block;
+    margin-top: var(--space-2, 0.5rem);
+    color: var(--color-muted, #64748b);
+    font-family: var(--font-sans, system-ui);
+    font-size: var(--text-xs, 0.75rem);
+    font-style: normal;
+    text-transform: capitalize;
+  }
+
+  .category-secondary-partner {
+    display: grid;
+    gap: var(--space-4, 1rem);
+    align-items: center;
+    margin-top: var(--space-6, 1.5rem);
+    border: 1px solid var(--color-border-warm, rgba(255, 122, 0, 0.2));
+    border-radius: var(--radius-3xl, 1.5rem);
+    background: rgba(255, 255, 255, 0.84);
+    padding: var(--space-5, 1.25rem);
+    box-shadow: var(--shadow-card, 0 12px 32px rgba(15, 23, 42, 0.08));
+  }
+
+  .category-secondary-partner h3 {
+    margin: var(--space-3, 0.75rem) 0 0;
+    color: var(--color-heading, #111827);
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: var(--text-2xl, 1.5rem);
+    line-height: var(--leading-tight, 1.15);
+  }
+
+  .category-secondary-partner p:not(.category-eyebrow) {
+    margin: var(--space-2, 0.5rem) 0 0;
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .category-count-pill {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: var(--radius-full, 999px);
+    background: #ffffff;
+    padding: 0.55rem 0.72rem;
+    color: var(--color-muted, #64748b);
+    font-family: var(--font-sans, system-ui);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: var(--weight-bold, 700);
+    line-height: 1;
+  }
+
+  .category-supporting-list {
+    display: grid;
+    gap: var(--space-3, 0.75rem);
+    margin-top: var(--space-6, 1.5rem);
+  }
+
+  .category-supporting-list a {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-3, 0.75rem);
+    align-items: center;
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: var(--radius-2xl, 1.25rem);
+    background: rgba(255, 255, 255, 0.92);
+    padding: var(--space-4, 1rem);
+    text-decoration: none;
+    box-shadow: var(--shadow-xs, 0 1px 2px rgba(15, 23, 42, 0.06));
+  }
+
+  .category-supporting-list a span {
+    grid-column: 1 / -1;
+    color: var(--color-muted, #64748b);
+    font-family: var(--font-sans, system-ui);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: var(--weight-bold, 700);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .category-supporting-list a strong {
+    color: var(--color-heading, #111827);
+    font-family: var(--font-sans, system-ui);
+    font-size: var(--text-sm, 0.875rem);
+    line-height: var(--leading-snug, 1.35);
+  }
+
+  .category-supporting-list a em {
+    color: var(--color-accent-hover, #b45309);
+    font-style: normal;
+    font-weight: var(--weight-black, 800);
+  }
+
+  .category-empty-card {
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: var(--radius-3xl, 1.5rem);
+    background: rgba(255, 255, 255, 0.9);
+    padding: var(--space-6, 1.5rem);
+    text-align: center;
+    box-shadow: var(--shadow-card, 0 12px 32px rgba(15, 23, 42, 0.08));
+  }
+
+  .category-empty-card--large {
+    padding-block: var(--space-10, 2.5rem);
+  }
+
+  .category-empty-card span {
+    display: block;
+    margin-bottom: var(--space-3, 0.75rem);
+    font-size: 2.5rem;
+  }
+
+  .category-empty-card h2 {
+    margin: 0;
+    color: var(--color-heading, #111827);
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: var(--text-2xl, 1.5rem);
+  }
+
+  .category-empty-card p {
+    margin: var(--space-3, 0.75rem) auto 0;
+    max-width: 34rem;
+    color: var(--color-body-soft, #475569);
+    line-height: var(--leading-relaxed, 1.7);
+  }
+
+  .category-empty-card a {
+    display: inline-flex;
+    margin-top: var(--space-4, 1rem);
+    color: var(--color-primary, #134e4a);
+    font-weight: var(--weight-bold, 700);
+    text-decoration: none;
+  }
+
+  .category-empty-card a:hover {
+    color: var(--color-accent-hover, #b45309);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media (min-width: 520px) {
+    .category-hero__actions {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .category-button {
+      width: auto;
+      padding-inline: 1.35rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .category-container {
+      padding-inline: var(--content-padding, 1.5rem);
+    }
+
+    .category-breed-grid,
+    .category-link-grid,
+    .category-related-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-post-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-section-header--split {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+    }
+
+    .category-secondary-partner {
+      grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 0.75fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .category-container {
+      padding-inline: var(--content-padding-wide, 2rem);
+    }
+
+    .category-hero__grid {
+      grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.62fr);
+      align-items: center;
+    }
+
+    .category-partner-grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 0.62fr);
+    }
+
+    .category-breed-grid,
+    .category-link-grid,
+    .category-related-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .category-post-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .category-button,
+    .category-chip-row a,
+    .category-breed-card,
+    .category-link-card,
+    .category-related-card {
+      transition: none;
+      transform: none !important;
+    }
+  }
+</style>
