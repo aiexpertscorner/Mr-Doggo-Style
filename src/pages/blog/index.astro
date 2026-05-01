@@ -394,7 +394,7 @@ const FILTER_CATS = [
                   />
                 ) : null}
 
-                <div class="blog-image-fallback" style={getPostImage(featuredPost) ? 'display:none' : 'display:grid'}>
+                <div class:list={['blog-image-fallback', getPostImage(featuredPost) && 'is-hidden']}>
                   <span>{getCategory(featuredPost).icon}</span>
                 </div>
               </div>
@@ -431,11 +431,8 @@ const FILTER_CATS = [
             <div class="flex flex-wrap gap-2 mb-6" id="blog-cat-chips">
               {FILTER_CATS.map((c, i) => (
                 <button
-                  class="blog-cat-filter font-sans text-xs font-semibold px-3 py-1.5 rounded-full border transition-all"
                   data-cat={c.key}
-                  style={i === 0
-                    ? 'background:var(--color-accent);color:white;border-color:var(--color-accent)'
-                    : 'background:white;color:var(--color-body-soft);border-color:var(--color-border-warm)'}
+                  class:list={['blog-cat-filter', i === 0 && 'is-active']}
                 >
                   {c.label}
                 </button>
@@ -462,7 +459,7 @@ const FILTER_CATS = [
                         />
                       ) : null}
 
-                      <div class="blog-image-fallback" style={image ? 'display:none' : 'display:grid'}>
+                      <div class:list={['blog-image-fallback', image && 'is-hidden']}>
                         <span>{category.icon}</span>
                       </div>
 
@@ -530,18 +527,12 @@ const FILTER_CATS = [
 <script>
   document.querySelectorAll('.blog-cat-filter').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.blog-cat-filter').forEach((b: any) => {
-        b.style.background = 'white';
-        b.style.color = 'var(--color-body-soft)';
-        b.style.borderColor = 'var(--color-border-warm)';
-      });
+      document.querySelectorAll('.blog-cat-filter').forEach((b: any) => b.classList.remove('is-active'));
       const el = btn as HTMLButtonElement;
-      el.style.background = 'var(--color-accent)';
-      el.style.color = 'white';
-      el.style.borderColor = 'var(--color-accent)';
+      el.classList.add('is-active');
       const cat = el.dataset.cat || 'all';
       document.querySelectorAll<HTMLElement>('[data-blog-cat]').forEach(card => {
-        card.style.display = (cat === 'all' || card.dataset.blogCat === cat) ? '' : 'none';
+        card.hidden = !(cat === 'all' || card.dataset.blogCat === cat);
       });
     });
   });
@@ -811,6 +802,23 @@ const FILTER_CATS = [
   .blog-image-fallback span {
     font-size: clamp(3rem, 11vw, 5rem);
     line-height: 1;
+  }
+  .blog-image-fallback.is-hidden { display: none; }
+  .blog-cat-filter {
+    border: 1px solid var(--color-border-warm);
+    border-radius: var(--radius-full);
+    background: #fff;
+    padding: 0.375rem 0.75rem;
+    color: var(--color-body-soft);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semi);
+    transition: all 180ms ease;
+  }
+  .blog-cat-filter.is-active {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: #fff;
   }
 
   .blog-featured-card__body,
