@@ -30,6 +30,7 @@ export type MatchContext = {
   breedTraining?: string;
   excludeProductIds?: string[];
   limit?: number;
+  monetizationIntent?: 'high' | 'medium' | 'low' | string;
 };
 
 const normalize = (s?: string | null) => (s ?? '').toLowerCase().trim().replace(/[-_\s]+/g, '-');
@@ -68,6 +69,17 @@ function scoreProduct(product: ProductRecord, context: MatchContext): number {
 
   // Program priority base
   score += (program?.priority ?? 50) / 40;
+  const normalizedName = normalize(product.name);
+  const normalizedCategory = normalize(product.category);
+
+  // Intent-aware scoring (higher commercial intent pages get stronger buyer-signal products)
+  const intent = normalize(context.monetizationIntent);
+  if (intent === 'high') {
+    if (normalizedName.includes('best') || normalizedName.includes('top')) score += 1.5;
+    if (normalizedCategory.includes('training') || normalizedCategory.includes('food')) score += 1;
+  } else if (intent === 'medium') {
+    if (normalizedCategory.includes('accessories') || normalizedCategory.includes('health')) score += 0.75;
+  }
 
   // Image available bonus
   if (product.image && product.image.length > 5) score += 1;
@@ -96,6 +108,7 @@ export function matchProducts(
     .filter((p) => !excluded.has(p.id))
     .map((p) => ({ product: p, score: scoreProduct(p, context) }))
     .sort((a, b) => b.score - a.score)
+    .filter((entry, idx, arr) => arr.findIndex((x) => normalize(x.product.merchant) === normalize(entry.product.merchant)) === idx)
     .slice(0, limit)
     .map((r) => r.product);
 }
