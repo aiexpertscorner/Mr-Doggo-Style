@@ -1,8 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import masterBreeds from '../../data/master-breeds.json';
+import allNamesData from '../../data/dog-names.json';
+
+type DogNameEntry = {
+  name: string;
+  gender: string;
+  category: string;
+  inspiration: string;
+  rank: number;
+  letter?: string;
+  enriched?: boolean;
+};
 
 const breeds = masterBreeds as any[];
+const allNames = allNamesData as DogNameEntry[];
 
 const byLetter: Record<string, any[]> = {};
 
@@ -19,21 +31,29 @@ const featured = breeds
   .sort((a, b) => (a.akc_popularity || 999) - (b.akc_popularity || 999))
   .slice(0, 12);
 
+const categories = Array.from(new Set(allNames.map((item) => item.category).filter(Boolean))).sort();
+const inspirations = Array.from(new Set(allNames.map((item) => item.inspiration).filter(Boolean))).sort();
+
 const breedList = breeds.map((b: any) => ({
   name: b.name,
   slug: b.slug,
   img: b.image_url || '',
+  size: b.size_category || '',
+  energy: b.energy_level || '',
+  temperament: b.temperament || '',
+  styles: b.name_styles || [],
+  inspirations: b.name_inspirations || [],
 }));
 
-const SITE = 'https://pupwiki.com';
-const breadcrumbLd = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home',      item: `${SITE}/` },
-    { '@type': 'ListItem', position: 2, name: 'Dog Names', item: `${SITE}/dog-names` },
-  ],
-});
+const generatorNames = allNames.map((item) => ({
+  name: item.name,
+  gender: item.gender,
+  category: item.category,
+  inspiration: item.inspiration,
+  rank: item.rank || 9999,
+  letter: item.letter || item.name?.[0]?.toUpperCase() || '',
+  enriched: Boolean(item.enriched),
+}));
 ---
 
 <BaseLayout
@@ -42,34 +62,152 @@ const breadcrumbLd = JSON.stringify({
   canonicalUrl="https://pupwiki.com/dog-names"
   bodyClass="dog-names-page bg-white text-slate-900"
 >
-<script type="application/ld+json" set:html={breadcrumbLd} />
   <main class="dog-names">
     <section class="dog-names-hero" aria-labelledby="dog-names-title">
       <div class="dog-names-container">
-        <div class="dog-names-hero__content">
-          <p class="dog-names-eyebrow">Name finder</p>
+        <div class="dog-names-hero__grid">
+          <div class="dog-names-hero__content">
+            <p class="dog-names-eyebrow">Name finder</p>
 
-          <h1 id="dog-names-title" class="dog-names-hero__title">
-            Find the
-            <span>perfect name</span>
-            for your dog.
-          </h1>
+            <h1 id="dog-names-title" class="dog-names-hero__title">
+              Find the
+              <span>perfect name</span>
+              for your dog.
+            </h1>
 
-          <p class="dog-names-hero__subtitle">
-            {breeds.length} breed-matched lists. Boy and girl names curated for personality, temperament, and style.
-          </p>
+            <p class="dog-names-hero__subtitle">
+              {breeds.length} breed-matched lists. Boy, girl, and flexible name ideas curated for personality,
+              temperament, inspiration, and style.
+            </p>
 
-          <div class="dog-names-search" role="search">
-            <label class="sr-only" for="hero-search">Search your breed</label>
-            <input
-              type="search"
-              id="hero-search"
-              placeholder="Search your breed (e.g. Golden Retriever)…"
-              autocomplete="off"
-            />
-            <span class="dog-names-search__icon" aria-hidden="true">🔍</span>
-            <div id="search-dropdown" class="dog-names-search__dropdown" hidden></div>
+            <div class="dog-names-search" role="search">
+              <label class="sr-only" for="hero-search">Search your breed</label>
+              <input
+                type="search"
+                id="hero-search"
+                placeholder="Search your breed (e.g. Golden Retriever)…"
+                autocomplete="off"
+              />
+              <span class="dog-names-search__icon" aria-hidden="true">🔍</span>
+              <div id="search-dropdown" class="dog-names-search__dropdown" hidden></div>
+            </div>
           </div>
+
+          <aside class="dog-name-generator" aria-labelledby="global-generator-title">
+            <div class="dog-name-generator__header">
+              <p class="dog-names-eyebrow">Local name generator</p>
+              <h2 id="global-generator-title">Generate dog names</h2>
+              <span>No account needed. Favorites stay on this device.</span>
+            </div>
+
+            <form class="dog-name-generator__controls" data-name-generator-form>
+              <div class="dog-name-field">
+                <label for="gen-breed">Breed fit</label>
+                <select id="gen-breed" data-gen-breed>
+                  <option value="">Any breed</option>
+                  {breeds
+                    .slice()
+                    .sort((a: any, b: any) => a.name.localeCompare(b.name))
+                    .map((breed: any) => (
+                      <option value={breed.slug}>{breed.name}</option>
+                    ))}
+                </select>
+              </div>
+
+              <div class="dog-name-field">
+                <label for="gen-gender">Name type</label>
+                <select id="gen-gender" data-gen-gender>
+                  <option value="any">Any</option>
+                  <option value="boy">Boy</option>
+                  <option value="girl">Girl</option>
+                  <option value="neutral">Flexible / neutral</option>
+                </select>
+              </div>
+
+              <div class="dog-name-field">
+                <label for="gen-category">Style</label>
+                <select id="gen-category" data-gen-category>
+                  <option value="">Any style</option>
+                  {categories.map((category) => (
+                    <option value={category}>{category}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div class="dog-name-field">
+                <label for="gen-inspiration">Inspiration</label>
+                <select id="gen-inspiration" data-gen-inspiration>
+                  <option value="">Any inspiration</option>
+                  {inspirations.map((inspiration) => (
+                    <option value={inspiration}>{inspiration}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div class="dog-name-field">
+                <label for="gen-length">Name length</label>
+                <select id="gen-length" data-gen-length>
+                  <option value="any">Any length</option>
+                  <option value="short">Short / easy call</option>
+                  <option value="one-two">1–2 syllables</option>
+                  <option value="long">Longer / distinctive</option>
+                </select>
+              </div>
+
+              <div class="dog-name-field">
+                <label for="gen-starts">Starts with</label>
+                <input id="gen-starts" data-gen-starts maxlength="1" placeholder="Optional letter" />
+              </div>
+
+              <label class="dog-name-check">
+                <input type="checkbox" data-gen-avoid-commands checked />
+                <span>Avoid command-sounding names</span>
+              </label>
+
+              <label class="dog-name-check">
+                <input type="checkbox" data-gen-breed-fit checked />
+                <span>Boost breed-matched style</span>
+              </label>
+
+              <div class="dog-name-generator__actions">
+                <button type="submit" class="dog-name-button dog-name-button--primary">
+                  Generate names
+                  <span aria-hidden="true">→</span>
+                </button>
+                <button type="button" class="dog-name-button dog-name-button--secondary" data-gen-surprise>
+                  Surprise me
+                </button>
+              </div>
+            </form>
+
+            <div class="dog-name-generator__output" aria-live="polite">
+              <div class="dog-name-generator__output-header">
+                <div>
+                  <h3>Generated names</h3>
+                  <p data-gen-summary>Pick options and generate your first list.</p>
+                </div>
+                <button type="button" data-gen-copy class="dog-name-icon-button" aria-label="Copy generated names">
+                  Copy
+                </button>
+              </div>
+
+              <div class="dog-name-results" data-gen-results></div>
+
+              <div class="dog-name-generator__utility">
+                <button type="button" data-gen-save-all>Save all</button>
+                <button type="button" data-gen-export>Export favorites</button>
+                <button type="button" data-gen-share>Share</button>
+              </div>
+            </div>
+
+            <div class="dog-name-favorites">
+              <div class="dog-name-favorites__header">
+                <h3>Favorites</h3>
+                <button type="button" data-gen-clear-favorites>Clear</button>
+              </div>
+              <div class="dog-name-favorites__list" data-gen-favorites></div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -78,9 +216,9 @@ const breadcrumbLd = JSON.stringify({
       <div class="dog-names-container">
         <div class="dog-names-stats__grid">
           <span>🐕 <strong>{breeds.length}</strong> breeds</span>
-          <span>✍️ <strong>7,000+</strong> curated names</span>
-          <span>🎯 <strong>Personality-matched</strong></span>
-          <span>📅 <strong>Updated 2026</strong></span>
+          <span>✍️ <strong>{allNames.length.toLocaleString()}+</strong> name entries</span>
+          <span>🎯 <strong>Breed-aware generator</strong></span>
+          <span>💾 <strong>Local favorites</strong></span>
         </div>
       </div>
     </section>
@@ -174,9 +312,31 @@ const breadcrumbLd = JSON.stringify({
     </div>
   </main>
 
-  <script define:vars={{ breedList }}>
+  <script define:vars={{ breedList, generatorNames }}>
+    const STORAGE_KEY = 'pupwiki:dog-name-favorites:v1';
+    const LAST_OPTIONS_KEY = 'pupwiki:dog-name-generator-options:v1';
+
     const input = document.getElementById('hero-search');
     const dropdown = document.getElementById('search-dropdown');
+
+    const form = document.querySelector('[data-name-generator-form]');
+    const resultsEl = document.querySelector('[data-gen-results]');
+    const summaryEl = document.querySelector('[data-gen-summary]');
+    const favoritesEl = document.querySelector('[data-gen-favorites]');
+
+    const controls = {
+      breed: document.querySelector('[data-gen-breed]'),
+      gender: document.querySelector('[data-gen-gender]'),
+      category: document.querySelector('[data-gen-category]'),
+      inspiration: document.querySelector('[data-gen-inspiration]'),
+      length: document.querySelector('[data-gen-length]'),
+      starts: document.querySelector('[data-gen-starts]'),
+      avoidCommands: document.querySelector('[data-gen-avoid-commands]'),
+      breedFit: document.querySelector('[data-gen-breed-fit]'),
+    };
+
+    const COMMAND_WORDS = ['sit', 'stay', 'no', 'down', 'come', 'heel', 'drop', 'leave', 'wait', 'off'];
+    let currentResults = [];
 
     const escapeHtml = (value) =>
       String(value ?? '')
@@ -185,6 +345,281 @@ const breadcrumbLd = JSON.stringify({
         .replaceAll('>', '&gt;')
         .replaceAll('"', '&quot;')
         .replaceAll("'", '&#039;');
+
+    const normalize = (value) => String(value || '').toLowerCase().replace(/[^a-z]/g, '');
+
+    const estimateSyllables = (name) => {
+      const cleaned = normalize(name);
+      if (!cleaned) return 1;
+      const groups = cleaned.match(/[aeiouy]+/g) || [];
+      let count = groups.length || 1;
+      if (cleaned.endsWith('e') && count > 1) count -= 1;
+      return Math.max(1, count);
+    };
+
+    const soundsLikeCommand = (name) => {
+      const cleaned = normalize(name);
+      return COMMAND_WORDS.some((command) => cleaned === command || cleaned.includes(command));
+    };
+
+    const getFavorites = () => {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      } catch {
+        return [];
+      }
+    };
+
+    const setFavorites = (favorites) => {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites.slice(0, 80)));
+      renderFavorites();
+    };
+
+    const favoriteKey = (item) => `${item.name}|${item.gender}|${item.category}`;
+
+    const addFavorite = (item) => {
+      const favorites = getFavorites();
+      const key = favoriteKey(item);
+      if (!favorites.some((fav) => favoriteKey(fav) === key)) {
+        favorites.unshift({ ...item, savedAt: new Date().toISOString() });
+        setFavorites(favorites);
+      }
+    };
+
+    const removeFavorite = (key) => {
+      setFavorites(getFavorites().filter((fav) => favoriteKey(fav) !== key));
+    };
+
+    const getOptions = () => ({
+      breed: controls.breed?.value || '',
+      gender: controls.gender?.value || 'any',
+      category: controls.category?.value || '',
+      inspiration: controls.inspiration?.value || '',
+      length: controls.length?.value || 'any',
+      starts: (controls.starts?.value || '').trim().slice(0, 1).toUpperCase(),
+      avoidCommands: Boolean(controls.avoidCommands?.checked),
+      breedFit: Boolean(controls.breedFit?.checked),
+    });
+
+    const saveOptions = () => {
+      localStorage.setItem(LAST_OPTIONS_KEY, JSON.stringify(getOptions()));
+    };
+
+    const loadOptions = () => {
+      try {
+        const options = JSON.parse(localStorage.getItem(LAST_OPTIONS_KEY) || '{}');
+        Object.entries(options).forEach(([key, value]) => {
+          if (!controls[key]) return;
+          if (controls[key].type === 'checkbox') controls[key].checked = Boolean(value);
+          else controls[key].value = value;
+        });
+      } catch {
+        // Ignore invalid stored options.
+      }
+    };
+
+    const getBreed = (slug) => breedList.find((breed) => breed.slug === slug);
+
+    const scoreName = (item, options, breed) => {
+      let score = 1000 - Number(item.rank || 999);
+
+      if (item.enriched) score += 20;
+      if (options.gender !== 'any' && options.gender !== 'neutral' && item.gender === options.gender) score += 120;
+      if (options.gender === 'neutral') score += item.name.length <= 6 ? 60 : 0;
+      if (options.category && item.category === options.category) score += 180;
+      if (options.inspiration && item.inspiration === options.inspiration) score += 160;
+      if (options.starts && item.name.toUpperCase().startsWith(options.starts)) score += 140;
+
+      if (breed && options.breedFit) {
+        if (Array.isArray(breed.styles) && breed.styles.includes(item.category)) score += 220;
+        if (Array.isArray(breed.inspirations) && breed.inspirations.includes(item.inspiration)) score += 180;
+
+        const temperament = String(breed.temperament || '').toLowerCase();
+        if (temperament.includes('friendly') && ['Cute', 'Classic', 'Trendy'].includes(item.category)) score += 50;
+        if ((temperament.includes('loyal') || temperament.includes('protective')) && item.category === 'Tough') score += 70;
+        if ((temperament.includes('intelligent') || temperament.includes('smart')) && ['Mythology', 'Human'].includes(item.inspiration)) score += 55;
+        if (breed.energy === 'active' && ['Tough', 'Trendy'].includes(item.category)) score += 45;
+        if (breed.energy === 'calm' && ['Classic', 'Cute'].includes(item.category)) score += 45;
+      }
+
+      const syllables = estimateSyllables(item.name);
+      if (options.length === 'short' && item.name.length <= 5) score += 140;
+      if (options.length === 'one-two' && syllables <= 2) score += 130;
+      if (options.length === 'long' && item.name.length >= 7) score += 120;
+
+      score += Math.random() * 18;
+      return score;
+    };
+
+    const filterPool = (options) => {
+      const breed = getBreed(options.breed);
+
+      return generatorNames
+        .filter((item) => {
+          if (!item.name) return false;
+          if (options.gender !== 'any' && options.gender !== 'neutral' && item.gender !== options.gender) return false;
+          if (options.category && item.category !== options.category) return false;
+          if (options.inspiration && item.inspiration !== options.inspiration) return false;
+          if (options.starts && !item.name.toUpperCase().startsWith(options.starts)) return false;
+          if (options.avoidCommands && soundsLikeCommand(item.name)) return false;
+
+          const syllables = estimateSyllables(item.name);
+          if (options.length === 'short' && item.name.length > 5) return false;
+          if (options.length === 'one-two' && syllables > 2) return false;
+          if (options.length === 'long' && item.name.length < 7) return false;
+
+          return true;
+        })
+        .map((item) => ({
+          ...item,
+          syllables: estimateSyllables(item.name),
+          score: scoreName(item, options, breed),
+          breedName: breed?.name || '',
+        }))
+        .sort((a, b) => b.score - a.score);
+    };
+
+    const renderResults = (items, options) => {
+      currentResults = items.slice(0, 12);
+
+      if (!resultsEl || !summaryEl) return;
+
+      if (!currentResults.length) {
+        summaryEl.textContent = 'No names matched those filters. Try removing one option.';
+        resultsEl.innerHTML = '<p class="dog-name-empty">No matching names yet.</p>';
+        return;
+      }
+
+      const breed = getBreed(options.breed);
+      const bits = [
+        breed?.name || 'Any breed',
+        options.gender !== 'any' ? options.gender : 'all name types',
+        options.category || 'any style',
+        options.inspiration || 'any inspiration',
+      ];
+
+      summaryEl.textContent = bits.join(' · ');
+
+      resultsEl.innerHTML = currentResults
+        .map(
+          (item, index) => `
+            <article class="dog-name-result-card">
+              <div>
+                <span>#${index + 1}</span>
+                <h4>${escapeHtml(item.name)}</h4>
+                <p>${escapeHtml(item.gender)} · ${escapeHtml(item.category)} · ${escapeHtml(item.inspiration)} · ${item.syllables} syll.</p>
+              </div>
+              <button type="button" data-save-name="${escapeHtml(favoriteKey(item))}">♡</button>
+            </article>
+          `
+        )
+        .join('');
+
+      resultsEl.querySelectorAll('[data-save-name]').forEach((button, index) => {
+        button.addEventListener('click', () => {
+          addFavorite(currentResults[index]);
+          button.textContent = '♥';
+        });
+      });
+    };
+
+    const generate = () => {
+      const options = getOptions();
+      saveOptions();
+      renderResults(filterPool(options), options);
+    };
+
+    const surprise = () => {
+      const random = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+      controls.gender.value = random(['any', 'boy', 'girl', 'neutral']);
+      controls.category.value = random(['', ...new Set(generatorNames.map((item) => item.category).filter(Boolean))]);
+      controls.inspiration.value = random(['', ...new Set(generatorNames.map((item) => item.inspiration).filter(Boolean))]);
+      controls.length.value = random(['any', 'short', 'one-two', 'long']);
+      controls.starts.value = '';
+      controls.avoidCommands.checked = true;
+      controls.breedFit.checked = true;
+
+      generate();
+    };
+
+    const renderFavorites = () => {
+      if (!favoritesEl) return;
+
+      const favorites = getFavorites();
+
+      if (!favorites.length) {
+        favoritesEl.innerHTML = '<p class="dog-name-empty">No favorites yet. Tap ♡ on generated names.</p>';
+        return;
+      }
+
+      favoritesEl.innerHTML = favorites
+        .map(
+          (item) => `
+            <div class="dog-name-favorite-item">
+              <span>${escapeHtml(item.name)}</span>
+              <button type="button" data-remove-favorite="${escapeHtml(favoriteKey(item))}" aria-label="Remove ${escapeHtml(item.name)}">×</button>
+            </div>
+          `
+        )
+        .join('');
+
+      favoritesEl.querySelectorAll('[data-remove-favorite]').forEach((button) => {
+        button.addEventListener('click', () => removeFavorite(button.dataset.removeFavorite));
+      });
+    };
+
+    const namesText = (items) => items.map((item) => item.name).join(', ');
+
+    const copyGenerated = async () => {
+      const text = namesText(currentResults);
+      if (!text) return;
+      await navigator.clipboard?.writeText(text);
+    };
+
+    const saveAll = () => {
+      currentResults.forEach(addFavorite);
+      renderFavorites();
+    };
+
+    const exportFavorites = () => {
+      const favorites = getFavorites();
+      const rows = [
+        ['name', 'gender', 'category', 'inspiration', 'source_breed', 'saved_at'],
+        ...favorites.map((item) => [
+          item.name,
+          item.gender,
+          item.category,
+          item.inspiration,
+          item.breedName || '',
+          item.savedAt || '',
+        ]),
+      ];
+
+      const csv = rows
+        .map((row) => row.map((cell) => `"${String(cell || '').replaceAll('"', '""')}"`).join(','))
+        .join('\n');
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'pupwiki-dog-name-favorites.csv';
+      link.click();
+      URL.revokeObjectURL(url);
+    };
+
+    const shareNames = async () => {
+      const favorites = getFavorites();
+      const list = favorites.length ? favorites : currentResults;
+      const text = `My PupWiki dog name ideas: ${namesText(list)}`;
+
+      if (navigator.share) {
+        await navigator.share({ title: 'PupWiki dog name ideas', text, url: window.location.href });
+      } else {
+        await navigator.clipboard?.writeText(`${text}\n${window.location.href}`);
+      }
+    };
 
     function hideDropdown() {
       if (!dropdown) return;
@@ -221,9 +656,7 @@ const breadcrumbLd = JSON.stringify({
         return;
       }
 
-      const hits = breedList
-        .filter((breed) => breed.name.toLowerCase().includes(q))
-        .slice(0, 8);
+      const hits = breedList.filter((breed) => breed.name.toLowerCase().includes(q)).slice(0, 8);
 
       if (!hits.length) {
         hideDropdown();
@@ -239,6 +672,22 @@ const breadcrumbLd = JSON.stringify({
       }
     });
 
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      generate();
+    });
+
+    document.querySelector('[data-gen-surprise]')?.addEventListener('click', surprise);
+    document.querySelector('[data-gen-copy]')?.addEventListener('click', copyGenerated);
+    document.querySelector('[data-gen-save-all]')?.addEventListener('click', saveAll);
+    document.querySelector('[data-gen-export]')?.addEventListener('click', exportFavorites);
+    document.querySelector('[data-gen-share]')?.addEventListener('click', shareNames);
+    document.querySelector('[data-gen-clear-favorites]')?.addEventListener('click', () => setFavorites([]));
+
+    controls.starts?.addEventListener('input', () => {
+      controls.starts.value = controls.starts.value.replace(/[^a-z]/gi, '').slice(0, 1).toUpperCase();
+    });
+
     document.querySelectorAll('[data-dog-name-image]').forEach((image) => {
       image.addEventListener('error', () => {
         const fallback = image.nextElementSibling;
@@ -252,6 +701,10 @@ const breadcrumbLd = JSON.stringify({
         image.hidden = true;
       });
     });
+
+    loadOptions();
+    renderFavorites();
+    generate();
   </script>
 </BaseLayout>
 
@@ -292,7 +745,13 @@ const breadcrumbLd = JSON.stringify({
   .dog-names-hero .dog-names-container {
     position: relative;
     z-index: 1;
-    padding-block: clamp(3.6rem, 10vw, 7.25rem);
+    padding-block: clamp(3rem, 9vw, 7rem);
+  }
+
+  .dog-names-hero__grid {
+    display: grid;
+    gap: clamp(var(--space-8), 6vw, var(--space-14));
+    align-items: center;
   }
 
   .dog-names-hero__content {
@@ -357,29 +816,35 @@ const breadcrumbLd = JSON.stringify({
     margin-top: var(--space-8);
   }
 
-  .dog-names-search input {
+  .dog-names-search input,
+  .dog-name-field select,
+  .dog-name-field input {
     width: 100%;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-xl);
+    background: #ffffff;
+    color: var(--color-heading);
+    font-family: var(--font-sans);
+    font-weight: var(--weight-semi);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .dog-names-search input {
     min-height: 3.85rem;
-    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-color: rgba(255, 255, 255, 0.38);
     border-radius: var(--radius-2xl);
     background: rgba(255, 255, 255, 0.96);
-    color: var(--color-heading);
     padding: 1rem 3.25rem 1rem 1.1rem;
-    font-family: var(--font-sans);
     font-size: var(--text-base);
-    font-weight: var(--weight-semi);
     box-shadow: 0 18px 44px rgba(7, 23, 39, 0.22);
   }
 
-  .dog-names-search input::placeholder {
-    color: var(--color-muted);
-  }
-
-  .dog-names-search input:focus {
+  .dog-names-search input:focus,
+  .dog-name-field select:focus,
+  .dog-name-field input:focus {
+    border-color: var(--color-accent);
     outline: none;
-    box-shadow:
-      var(--ring-accent),
-      0 18px 44px rgba(7, 23, 39, 0.22);
+    box-shadow: var(--ring-accent);
   }
 
   .dog-names-search__icon {
@@ -419,10 +884,6 @@ const breadcrumbLd = JSON.stringify({
     transition: var(--transition-base);
   }
 
-  .dog-names-search__result:last-child {
-    border-bottom: 0;
-  }
-
   .dog-names-search__result:hover {
     background: var(--color-bg-soft);
     color: var(--color-accent-hover);
@@ -442,6 +903,241 @@ const breadcrumbLd = JSON.stringify({
   .dog-names-search__fallback {
     display: grid;
     place-items: center;
+  }
+
+  .dog-name-generator {
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: var(--radius-3xl);
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--color-body);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-xl);
+    backdrop-filter: blur(18px);
+  }
+
+  .dog-name-generator .dog-names-eyebrow {
+    border-color: var(--color-border-accent);
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-hover);
+  }
+
+  .dog-name-generator__header h2 {
+    margin: var(--space-3) 0 var(--space-2);
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    line-height: var(--leading-tight);
+  }
+
+  .dog-name-generator__header span {
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+  }
+
+  .dog-name-generator__controls {
+    display: grid;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+  }
+
+  .dog-name-field {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .dog-name-field label {
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .dog-name-field select,
+  .dog-name-field input {
+    min-height: 2.75rem;
+    padding: 0.72rem 0.82rem;
+    font-size: var(--text-sm);
+  }
+
+  .dog-name-check {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semi);
+  }
+
+  .dog-name-check input {
+    accent-color: var(--color-accent);
+  }
+
+  .dog-name-generator__actions,
+  .dog-name-generator__utility {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .dog-name-button {
+    display: inline-flex;
+    min-height: 2.85rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-xl);
+    padding: 0.8rem 1rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+  }
+
+  .dog-name-button--primary {
+    border: 0;
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    box-shadow: var(--shadow-cta);
+  }
+
+  .dog-name-button--secondary {
+    border: 1px solid var(--button-outline-border);
+    background: var(--button-outline-bg);
+    color: var(--button-outline-text);
+  }
+
+  .dog-name-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .dog-name-generator__output,
+  .dog-name-favorites {
+    margin-top: var(--space-5);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: var(--color-bg-soft);
+    padding: var(--space-4);
+  }
+
+  .dog-name-generator__output-header,
+  .dog-name-favorites__header {
+    display: flex;
+    gap: var(--space-3);
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+  }
+
+  .dog-name-generator__output h3,
+  .dog-name-favorites h3 {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: var(--text-base);
+    font-weight: var(--weight-black);
+  }
+
+  .dog-name-generator__output p,
+  .dog-name-empty {
+    margin: var(--space-1) 0 0;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+  }
+
+  .dog-name-icon-button,
+  .dog-name-generator__utility button,
+  .dog-name-favorites__header button {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: #ffffff;
+    color: var(--color-primary);
+    padding: 0.45rem 0.68rem;
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+    cursor: pointer;
+  }
+
+  .dog-name-results {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .dog-name-result-card {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: #ffffff;
+    padding: var(--space-3);
+  }
+
+  .dog-name-result-card span {
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-black);
+  }
+
+  .dog-name-result-card h4 {
+    margin: var(--space-1) 0 0;
+    color: var(--color-heading);
+    font-size: var(--text-base);
+    font-weight: var(--weight-black);
+  }
+
+  .dog-name-result-card p {
+    margin: var(--space-1) 0 0;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+  }
+
+  .dog-name-result-card button {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    color: var(--color-accent-hover);
+    font-weight: var(--weight-black);
+    cursor: pointer;
+  }
+
+  .dog-name-favorites__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .dog-name-favorite-item {
+    display: inline-flex;
+    gap: var(--space-2);
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: #ffffff;
+    padding: 0.45rem 0.55rem 0.45rem 0.75rem;
+    color: var(--color-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+  }
+
+  .dog-name-favorite-item button {
+    display: grid;
+    width: 1.35rem;
+    height: 1.35rem;
+    place-items: center;
+    border: 0;
+    border-radius: var(--radius-full);
+    background: var(--color-bg-muted);
+    color: var(--color-muted);
+    cursor: pointer;
   }
 
   .dog-names-stats {
@@ -468,10 +1164,6 @@ const breadcrumbLd = JSON.stringify({
     display: grid;
     gap: clamp(var(--space-10), 7vw, var(--space-16));
     padding-block: clamp(var(--space-10), 7vw, var(--space-16));
-  }
-
-  .dog-names-section {
-    min-width: 0;
   }
 
   .dog-names-section__header {
@@ -562,10 +1254,6 @@ const breadcrumbLd = JSON.stringify({
     height: 100%;
     place-items: center;
     font-size: 2.75rem;
-  }
-
-  .dog-name-breed-card__fallback--visible {
-    display: grid;
   }
 
   .dog-name-breed-card__body {
@@ -696,6 +1384,15 @@ const breadcrumbLd = JSON.stringify({
   }
 
   @media (min-width: 640px) {
+    .dog-name-generator__controls {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dog-name-check,
+    .dog-name-generator__actions {
+      grid-column: 1 / -1;
+    }
+
     .dog-names-featured-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -724,6 +1421,10 @@ const breadcrumbLd = JSON.stringify({
       padding-inline: var(--content-padding-wide);
     }
 
+    .dog-names-hero__grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(24rem, 0.78fr);
+    }
+
     .dog-names-featured-grid {
       grid-template-columns: repeat(6, minmax(0, 1fr));
     }
@@ -740,6 +1441,7 @@ const breadcrumbLd = JSON.stringify({
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .dog-name-button,
     .dog-name-breed-card,
     .dog-name-breed-card__media img,
     .dog-names-letter-nav a,

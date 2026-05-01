@@ -1,853 +1,947 @@
 ---
 /**
- * breeds/index.astro — Breed Directory v3
- * Mobile-first. Richer cards. More filters. Crawlable static sections.
+ * src/pages/breeds/index.astro — PupWiki Breed Finder / Directory
+ *
+ * Enhanced rebuild:
+ * - Uses normalized breed data from src/lib/breeds/*.
+ * - Includes master breeds + crossbreeds.
+ * - Mobile-first search, quick filters, advanced filters and active chips.
+ * - URL-state ready: /breeds/?size=small&energy=calm&q=bulldog
+ * - Robust image fallbacks and guide availability chips.
+ * - No inline utility-heavy layout; page styles live in src/styles/pages/breed-directory.css.
  */
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import masterBreeds from '../../data/master-breeds.json';
+import masterCrossbreeds from '../../data/master-crossbreeds.json';
+import breedLinkMap from '../../data/breed-link-map.json';
+import contentStatus from '../../data/content-status.json';
+import '../../styles/pages/breed-directory.css';
 
-const SITE   = 'https://pupwiki.com';
-const breeds = masterBreeds as any[];
+import {
+  normalizeBreedList,
+  serializeBreedForClient,
+  type NormalizedBreed,
+} from '../../lib/breeds/normalizeBreed';
 
-// ── Build-time derived data ─────────────────────────────────────
-const byPopularity = [...breeds].sort((a,b) => (a.akc_popularity||999) - (b.akc_popularity||999));
-const popularBreeds = byPopularity.slice(0, 12);
+import {
+  createBreedFilterOptions,
+  filterBreedRecords,
+  getCollectionLinks,
+  QUICK_BREED_FILTERS,
+} from '../../lib/breeds/filterBreeds';
 
-// Count per filter value (for badge labels)
-const sizeCounts: Record<string,number>     = {};
-const energyCounts: Record<string,number>   = {};
-const sheddingCounts: Record<string,number> = {};
-const trainingCounts: Record<string,number> = {};
-const coatCounts: Record<string,number>     = {};
-const groupCounts: Record<string,number>    = {};
-const originCounts: Record<string,number>   = {};
+const SITE = 'https://pupwiki.com';
 
-function normalizeGroup(g: string): string {
-  return g.toLowerCase()
-    .replace(/ group$/, '').replace(/ class$/, '').replace(/ service$/, '')
-    .replace('foundation stock', 'fss').replace('miscellaneous', 'misc')
-    .trim();
-}
+const rawBreeds = [
+  ...(masterBreeds as any[]),
+  ...(masterCrossbreeds as any[]),
+];
 
-breeds.forEach(b => {
-  sizeCounts[b.size_category]      = (sizeCounts[b.size_category]      || 0) + 1;
-  energyCounts[b.energy_level]     = (energyCounts[b.energy_level]     || 0) + 1;
-  sheddingCounts[b.shedding_level] = (sheddingCounts[b.shedding_level] || 0) + 1;
-  trainingCounts[b.training_level] = (trainingCounts[b.training_level] || 0) + 1;
-  if (b.coat_type)       coatCounts[b.coat_type]            = (coatCounts[b.coat_type]         || 0) + 1;
-  if (b.akc_group)     { const gk = normalizeGroup(b.akc_group); groupCounts[gk] = (groupCounts[gk] || 0) + 1; }
-  if (b.origin_country)  originCounts[b.origin_country]    = (originCounts[b.origin_country]  || 0) + 1;
+const breeds = normalizeBreedList(rawBreeds, {
+  breedLinkMap: breedLinkMap as any,
+  contentStatus: contentStatus as any,
 });
 
-const COAT_ORDER   = ['short','medium','long','double','silky','wiry','wavy','curly','rough','corded','hairless'];
-const COAT_LABELS: Record<string,string> = {
-  short:'Short', double:'Double', long:'Long', medium:'Medium', silky:'Silky',
-  wiry:'Wiry', wavy:'Wavy', curly:'Curly', corded:'Corded', rough:'Rough', hairless:'Hairless',
-};
+const filterOptions = createBreedFilterOptions(breeds);
+const recommendedBreeds = filterBreedRecords(breeds, { sort: 'recommended' });
+const popularBreeds = filterBreedRecords(breeds, { sort: 'popular' }).slice(0, 12);
+const collectionLinks = getCollectionLinks();
 
-const GROUP_DEFS = [
-  { key:'herding',      label:'Herding',    emoji:'🐑' },
-  { key:'hound',        label:'Hound',      emoji:'🐕' },
-  { key:'sporting',     label:'Sporting',   emoji:'🦆' },
-  { key:'non-sporting', label:'Non-Sport.', emoji:'🏠' },
-  { key:'terrier',      label:'Terrier',    emoji:'🦊' },
-  { key:'toy',          label:'Toy',        emoji:'🧸' },
-  { key:'working',      label:'Working',    emoji:'💪' },
-  { key:'fss',          label:'FSS',        emoji:'📋' },
-  { key:'misc',         label:'Misc.',      emoji:'✨' },
-];
+const topOrigins = filterOptions.origins.slice(0, 10);
+const topGroups = filterOptions.groups.slice(0, 9);
+const purebredCount = breeds.filter((breed) => breed.type === 'purebred').length;
+const mixedBreedCount = breeds.filter((breed) => breed.type === 'mixed').length;
+const foodGuideCount = breeds.filter((breed) => breed.guideAvailability.food).length;
+const healthGuideCount = breeds.filter((breed) => breed.guideAvailability.health).length;
+const costCalculatorCount = breeds.filter((breed) => breed.guideAvailability.cost).length;
 
-const LIFESPAN_BUCKETS = [
-  { key:'lt10',  label:'< 10 yrs'  },
-  { key:'10-12', label:'10–12 yrs' },
-  { key:'12-14', label:'12–14 yrs' },
-  { key:'gt14',  label:'14+ yrs'   },
-];
+const clientBreeds = breeds.map(serializeBreedForClient);
+const breedsJson = JSON.stringify(clientBreeds);
+const defaultVisibleCount = 48;
 
-const COUNTRY_FLAGS: Record<string,string> = {
-  'Germany':'🇩🇪','United Kingdom':'🇬🇧','France':'🇫🇷','United States':'🇺🇸',
-  'Switzerland':'🇨🇭','China':'🇨🇳','Japan':'🇯🇵','Ireland':'🇮🇪',
-  'Netherlands':'🇳🇱','Russia':'🇷🇺','Australia':'🇦🇺','Belgium':'🇧🇪',
-  'Italy':'🇮🇹','Spain':'🇪🇸','Canada':'🇨🇦','Zimbabwe':'🇿🇼',
-};
-
-const TOP_ORIGINS = Object.entries(originCounts)
-  .sort((a, b) => b[1] - a[1]).slice(0, 8)
-  .map(([country, count]) => ({ country, count, flag: COUNTRY_FLAGS[country] || '🌍' }));
-
-// ── Display helpers ─────────────────────────────────────────────
-const SIZE_EMOJI: Record<string,string> = { small:'🐕', medium:'🐕‍🦺', large:'🐕‍🦺', giant:'🦮' };
-
-const TRAINING_COLOR: Record<string,string> = {
-  easy:     '#15803d',
-  moderate: '#d97706',
-  difficult:'#dc2626',
-};
-const TRAINING_LABEL: Record<string,string> = {
-  easy:     'Easy',
-  moderate: 'Moderate',
-  difficult:'Hard',
-};
-
-const SHEDDING_DOTS: Record<string,string> = {
-  heavy:    '●●●●',
-  seasonal: '●●●○',
-  low:      '●●○○',
-  minimal:  '●○○○',
-};
-const SHEDDING_COLOR: Record<string,string> = {
-  heavy:    '#dc2626',
-  seasonal: '#d97706',
-  low:      '#15803d',
-  minimal:  '#6b7280',
-};
-
-function lifespanStr(b: any) {
-  const l = b.life_expectancy || {};
-  if (l.min && l.max) return `${l.min}–${l.max} yrs`;
-  if (l.max) return `≤${l.max} yrs`;
-  return null;
-}
-function weightStr(b: any) {
-  const w = b.weight || {};
-  if (w.min_lbs && w.max_lbs) return `${w.min_lbs}–${w.max_lbs} lbs`;
-  if (w.max_lbs) return `≤${w.max_lbs} lbs`;
-  return null;
-}
-function midLifespan(b: any) {
-  const l = b.life_expectancy || {};
-  return ((l.min || 10) + (l.max || 13)) / 2;
-}
-
-// Serialise sort data for client JS
-const sortData = JSON.stringify(
-  Object.fromEntries(breeds.map(b => [b.slug, {
-    pop:      b.akc_popularity || 999,
-    lifespan: midLifespan(b),
-    name:     b.name,
-  }]))
-);
-
-// ── JSON-LD ─────────────────────────────────────────────────────
 const itemListLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  'name': 'Dog Breed Directory — 277 Breeds',
-  'description': 'Complete guide to 277 dog breeds with expert care information, product picks and cost guides.',
-  'numberOfItems': breeds.length,
-  'itemListElement': byPopularity.slice(0, 20).map((b, i) => ({
+  name: `Dog Breed Directory — ${breeds.length} Breeds`,
+  description: 'PupWiki dog breed finder with filters for size, energy, shedding, coat, trainability, lifespan and owner resources.',
+  numberOfItems: breeds.length,
+  itemListElement: recommendedBreeds.slice(0, 30).map((breed, index) => ({
     '@type': 'ListItem',
-    'position': i + 1,
-    'name': b.name,
-    'url': `${SITE}/breeds/${b.slug}`,
+    position: index + 1,
+    name: breed.name,
+    url: `${SITE}/breeds/${breed.slug}`,
   })),
 });
 
 const breadcrumbLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  'itemListElement': [
-    { '@type': 'ListItem', 'position': 1, 'name': 'Home',               'item': `${SITE}/` },
-    { '@type': 'ListItem', 'position': 2, 'name': 'Dog Breed Directory','item': `${SITE}/breeds` },
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Dog Breed Directory', item: `${SITE}/breeds` },
   ],
 });
+
+const collectionPageLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Dog Breed Directory',
+  description: `Browse ${breeds.length} dog breeds by size, energy, coat, shedding, trainability, lifespan and owner fit.`,
+  url: `${SITE}/breeds`,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'PupWiki',
+    url: SITE,
+  },
+});
+
+function guideByKey(breed: NormalizedBreed, key: string) {
+  return breed.guideLinks.find((link) => link.key === key && link.available);
+}
+
+function cardGuideChips(breed: NormalizedBreed) {
+  return ['cost', 'food', 'health', 'training']
+    .map((key) => guideByKey(breed, key))
+    .filter(Boolean)
+    .slice(0, 3);
+}
 ---
 
 <BaseLayout
-  title="Dog Breed Directory 2026 — Browse All 277 Breeds"
-  description={`Browse all ${breeds.length} dog breeds by size, energy, shedding and trainability. Each breed includes expert product picks, cost estimates, care guides and health info.`}
+  title={`Dog Breed Directory 2026 — Find and Compare ${breeds.length} Breeds | PupWiki`}
+  description={`Browse ${breeds.length} dog breeds by size, energy, shedding, trainability, coat type, lifespan and owner fit. Includes breed profiles, cost calculators and care resources.`}
   canonicalUrl={`${SITE}/breeds`}
+  bodyClass="breed-directory-page"
 >
-<script type="application/ld+json" set:html={itemListLd} />
-<script type="application/ld+json" set:html={breadcrumbLd} />
+  <script type="application/ld+json" set:html={itemListLd} />
+  <script type="application/ld+json" set:html={breadcrumbLd} />
+  <script type="application/ld+json" set:html={collectionPageLd} />
 
-<!-- ── Hero ── -->
-<div style="background:linear-gradient(to bottom,var(--color-surface-warm),var(--color-bg-soft));border-bottom:1px solid var(--color-border-warm)">
-  <div class="max-w-7xl mx-auto px-4 py-10 sm:py-14">
-    <nav class="font-sans text-sm mb-4" style="color:var(--color-accent)" aria-label="Breadcrumb">
-      <a href="/" style="color:var(--color-accent)" class="hover:underline">Home</a>
-      <span style="color:var(--color-accent-light)" aria-hidden="true"> › </span>
-      <span style="color:var(--color-accent-active)" aria-current="page">All Breeds</span>
-    </nav>
-    <h1 class="font-display text-4xl sm:text-5xl font-bold mb-3 leading-tight"
-        style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
-      Dog Breed Directory
-    </h1>
-    <p class="font-sans text-base sm:text-lg mb-5 max-w-2xl leading-relaxed" style="color:var(--color-muted)">
-      {breeds.length} breeds across 10 AKC groups — filter by size, energy, coat, shedding, trainability, lifespan and country of origin.
-      Each breed links to expert care guides, product picks and a full cost breakdown.
-    </p>
-    <div class="flex flex-wrap gap-2">
-      <span class="font-sans text-xs font-bold px-3 py-1 rounded-full" style="background:var(--color-accent);color:white">{breeds.length} breeds</span>
-      <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:var(--color-warning-light);color:var(--color-accent-active)">Expert picks per breed</span>
-      <span class="font-sans text-xs font-semibold px-3 py-1 rounded-full" style="background:var(--color-success-light);color:var(--color-success)">Cost calculator for every breed</span>
-    </div>
-  </div>
-</div>
+  <main class="breed-directory" data-breed-directory>
+    <section class="breed-directory-hero" aria-labelledby="breed-directory-title">
+      <div class="breed-directory-container">
+        <nav class="breed-directory-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">All Breeds</span>
+        </nav>
 
-<div class="max-w-7xl mx-auto px-4 py-6 sm:py-8">
+        <div class="breed-directory-hero__grid">
+          <div class="breed-directory-hero__content">
+            <p class="breed-directory-eyebrow">
+              <span aria-hidden="true">🐾</span>
+              Breed finder
+            </p>
 
-  <!-- ── Popular breeds (crawlable, hidden when filters active) ── -->
-  <section id="popular-section" class="mb-8" aria-label="Most popular breeds">
-    <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:var(--color-subtle)">
-      Most popular breeds
-    </p>
-    <div class="flex flex-wrap gap-2">
-      {popularBreeds.map(b => (
-        <a
-          href={`/breeds/${b.slug}`}
-          class="popular-breed-link font-sans text-sm font-semibold px-3 py-1.5 rounded-full border transition-all"
-          style="border-color:var(--color-border-warm);color:var(--color-body-soft);background:white;text-decoration:none"
-        >
-          {b.name}
-        </a>
-      ))}
-      <a href="/breeds" class="font-sans text-sm px-3 py-1.5 rounded-full" style="color:var(--color-accent)">
-        View all →
-      </a>
-    </div>
-  </section>
+            <h1 id="breed-directory-title">
+              Dog Breed Directory
+              <em>Find your fit faster.</em>
+            </h1>
 
-  <!-- ── Country origin browsing strip ── -->
-  {TOP_ORIGINS.length > 0 && (
-    <section id="origin-strip" class="mb-6" aria-label="Browse by country of origin">
-      <p class="font-sans text-xs font-bold uppercase tracking-wider mb-3" style="color:var(--color-subtle)">
-        Browse by country of origin
-        <span class="font-normal normal-case" style="color:var(--color-muted)">
-          &nbsp;— {TOP_ORIGINS.reduce((s, o) => s + o.count, 0)} breeds with origin data
-        </span>
-      </p>
-      <div class="flex flex-wrap gap-2">
-        {TOP_ORIGINS.map(o => (
-          <button
-            class="origin-btn font-sans text-sm font-semibold px-3 py-1.5 rounded-full border transition-all"
-            style="border-color:var(--color-border-warm);color:var(--color-body-soft);background:white"
-            data-origin={o.country}
-            aria-label={`Show ${o.count} breeds from ${o.country}`}
-          >
-            {o.flag} {o.country} <span style="color:var(--color-subtle);font-size:0.7rem">{o.count}</span>
-          </button>
-        ))}
-        <button id="clear-origin" class="font-sans text-sm px-3 py-1.5 rounded-full font-semibold" style="color:var(--color-accent);display:none">
-          Clear origin ×
-        </button>
+            <p class="breed-directory-hero__desc">
+              Search and filter {breeds.length} breed profiles by size, energy, coat, shedding,
+              trainability, lifespan and owner resources. Every breed links into PupWiki’s care,
+              cost and category ecosystem.
+            </p>
+
+            <div class="breed-directory-hero__actions">
+              <a href="#breed-finder" class="breed-directory-button breed-directory-button--primary">
+                Start filtering
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="/breed-quiz" class="breed-directory-button breed-directory-button--secondary">
+                Take breed quiz
+              </a>
+              <a href="/cost-calculator" class="breed-directory-button breed-directory-button--ghost">
+                Compare costs
+              </a>
+            </div>
+          </div>
+
+          <aside class="breed-directory-hero-card" aria-label="Breed directory summary">
+            <div class="breed-directory-hero-card__icon" aria-hidden="true">🐕</div>
+            <p>Directory coverage</p>
+            <strong>{breeds.length} breeds</strong>
+            <dl>
+              <div>
+                <dt>Purebreds</dt>
+                <dd>{purebredCount}</dd>
+              </div>
+              <div>
+                <dt>Mixed breeds</dt>
+                <dd>{mixedBreedCount}</dd>
+              </div>
+              <div>
+                <dt>Cost tools</dt>
+                <dd>{costCalculatorCount}</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
       </div>
     </section>
-  )}
 
-  <!-- ── Filters ── -->
-  <div class="rounded-2xl mb-6 overflow-hidden" style="background:white;border:1px solid var(--color-border-warm)">
+    <section class="breed-directory-stats" aria-label="Directory highlights">
+      <div class="breed-directory-container breed-directory-stats__grid">
+        <article>
+          <strong>{breeds.length}</strong>
+          <span>Total breed profiles</span>
+        </article>
+        <article>
+          <strong>{foodGuideCount}</strong>
+          <span>Food guide links</span>
+        </article>
+        <article>
+          <strong>{healthGuideCount}</strong>
+          <span>Health guide links</span>
+        </article>
+        <article>
+          <strong>{filterOptions.origins.length}</strong>
+          <span>Origin countries</span>
+        </article>
+      </div>
+    </section>
 
-    <!-- Mobile filter toggle -->
-    <button
-      id="filter-toggle"
-      class="sm:hidden w-full flex items-center justify-between px-4 py-3 font-sans font-semibold text-sm"
-      style="color:var(--color-heading);background:white"
-      aria-expanded="false"
-      aria-controls="filter-body"
-    >
-      <span>Filters &amp; Sort</span>
-      <span id="filter-toggle-icon" style="font-size:1.1rem;transition:transform 0.2s">▾</span>
-    </button>
-
-    <div id="filter-body" class="p-4 sm:p-5 space-y-4 hidden sm:block">
-
-      <!-- Size -->
-      <fieldset>
-        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Size</legend>
-        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by size">
-          <button class="filter-btn active" data-filter="size" data-value="all" aria-pressed="true">All</button>
-          <button class="filter-btn" data-filter="size" data-value="small"  aria-pressed="false">🐕 Small <span class="count-badge">{sizeCounts.small||0}</span></button>
-          <button class="filter-btn" data-filter="size" data-value="medium" aria-pressed="false">🐕‍🦺 Medium <span class="count-badge">{sizeCounts.medium||0}</span></button>
-          <button class="filter-btn" data-filter="size" data-value="large"  aria-pressed="false">🐕‍🦺 Large <span class="count-badge">{sizeCounts.large||0}</span></button>
-          <button class="filter-btn" data-filter="size" data-value="giant"  aria-pressed="false">🦮 Giant <span class="count-badge">{sizeCounts.giant||0}</span></button>
+    <section id="breed-finder" class="breed-finder" aria-labelledby="breed-finder-title">
+      <div class="breed-directory-container">
+        <div class="breed-finder__header">
+          <div>
+            <p class="breed-directory-eyebrow">Search & filter</p>
+            <h2 id="breed-finder-title">Find breeds by lifestyle, care needs and owner intent</h2>
+            <p>
+              Start with search or tap a quick filter. Advanced filters stay available without overwhelming mobile users.
+            </p>
+          </div>
         </div>
-      </fieldset>
 
-      <!-- Energy -->
-      <fieldset>
-        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Energy</legend>
-        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by energy level">
-          <button class="filter-btn active" data-filter="energy" data-value="all"     aria-pressed="true">All</button>
-          <button class="filter-btn" data-filter="energy" data-value="active"  aria-pressed="false">⚡ Active <span class="count-badge">{energyCounts.active||0}</span></button>
-          <button class="filter-btn" data-filter="energy" data-value="regular" aria-pressed="false">🚶 Regular <span class="count-badge">{energyCounts.regular||0}</span></button>
-          <button class="filter-btn" data-filter="energy" data-value="calm"    aria-pressed="false">😴 Calm <span class="count-badge">{energyCounts.calm||0}</span></button>
-        </div>
-      </fieldset>
+        <div class="breed-search-panel">
+          <div class="breed-search-panel__top">
+            <div class="breed-search-field" role="search">
+              <label for="breed-search">Search breeds</label>
+              <div class="breed-search-field__control">
+                <span aria-hidden="true">🔍</span>
+                <input
+                  id="breed-search"
+                  type="search"
+                  name="q"
+                  placeholder="Search e.g. bulldog, low shedding, Germany, retriever…"
+                  autocomplete="off"
+                  spellcheck="false"
+                  data-breed-search
+                />
+                <button type="button" class="breed-search-clear" data-clear-search hidden aria-label="Clear search">
+                  ×
+                </button>
+              </div>
+            </div>
 
-      <!-- Shedding -->
-      <fieldset>
-        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Shedding</legend>
-        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by shedding level">
-          <button class="filter-btn active" data-filter="shedding" data-value="all"      aria-pressed="true">All</button>
-          <button class="filter-btn" data-filter="shedding" data-value="heavy"    aria-pressed="false">●●●● Heavy <span class="count-badge">{sheddingCounts.heavy||0}</span></button>
-          <button class="filter-btn" data-filter="shedding" data-value="seasonal" aria-pressed="false">●●●○ Seasonal <span class="count-badge">{sheddingCounts.seasonal||0}</span></button>
-          <button class="filter-btn" data-filter="shedding" data-value="low"      aria-pressed="false">●●○○ Low <span class="count-badge">{sheddingCounts.low||0}</span></button>
-          <button class="filter-btn" data-filter="shedding" data-value="minimal"  aria-pressed="false">●○○○ Minimal <span class="count-badge">{sheddingCounts.minimal||0}</span></button>
-        </div>
-      </fieldset>
+            <div class="breed-sort-field">
+              <label for="breed-sort">Sort</label>
+              <select id="breed-sort" data-breed-sort>
+                <option value="recommended">Recommended</option>
+                <option value="popular">Most popular</option>
+                <option value="az">A → Z</option>
+                <option value="za">Z → A</option>
+                <option value="smallest">Smallest first</option>
+                <option value="largest">Largest first</option>
+                <option value="lifespan-desc">Longest lived</option>
+                <option value="lifespan-asc">Shortest lived</option>
+                <option value="low-shedding">Lowest shedding</option>
+                <option value="easy-training">Easiest to train</option>
+              </select>
+            </div>
+          </div>
 
-      <!-- Training -->
-      <fieldset>
-        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Trainability</legend>
-        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by training difficulty">
-          <button class="filter-btn active" data-filter="training" data-value="all"       aria-pressed="true">All</button>
-          <button class="filter-btn" data-filter="training" data-value="easy"      aria-pressed="false" style="--accent:#15803d">✓ Easy <span class="count-badge">{trainingCounts.easy||0}</span></button>
-          <button class="filter-btn" data-filter="training" data-value="moderate"  aria-pressed="false" style="--accent:#d97706">◈ Moderate <span class="count-badge">{trainingCounts.moderate||0}</span></button>
-          <button class="filter-btn" data-filter="training" data-value="difficult" aria-pressed="false" style="--accent:#dc2626">✗ Hard <span class="count-badge">{trainingCounts.difficult||0}</span></button>
-        </div>
-      </fieldset>
-
-      <!-- Coat type -->
-      <fieldset>
-        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Coat type</legend>
-        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by coat type">
-          <button class="filter-btn active" data-filter="coat" data-value="all" aria-pressed="true">All</button>
-          {COAT_ORDER.filter(c => coatCounts[c]).map(c => (
-            <button class="filter-btn" data-filter="coat" data-value={c} aria-pressed="false">
-              {COAT_LABELS[c]} <span class="count-badge">{coatCounts[c]}</span>
-            </button>
-          ))}
-        </div>
-      </fieldset>
-
-      <!-- AKC Group -->
-      <fieldset>
-        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">AKC Group</legend>
-        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by AKC group">
-          <button class="filter-btn active" data-filter="group" data-value="all" aria-pressed="true">All</button>
-          {GROUP_DEFS.filter(g => groupCounts[g.key]).map(g => (
-            <button class="filter-btn" data-filter="group" data-value={g.key} aria-pressed="false">
-              {g.emoji} {g.label} <span class="count-badge">{groupCounts[g.key]}</span>
-            </button>
-          ))}
-        </div>
-      </fieldset>
-
-      <!-- Lifespan -->
-      <fieldset>
-        <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">Lifespan</legend>
-        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by lifespan">
-          <button class="filter-btn active" data-filter="lifespan" data-value="all" aria-pressed="true">All</button>
-          {LIFESPAN_BUCKETS.map(b => (
-            <button class="filter-btn" data-filter="lifespan" data-value={b.key} aria-pressed="false">
-              {b.label}
-            </button>
-          ))}
-        </div>
-      </fieldset>
-
-      <!-- Country of origin -->
-      {TOP_ORIGINS.length > 0 && (
-        <fieldset>
-          <legend class="font-sans text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--color-subtle)">
-            Country of origin <span class="font-normal normal-case" style="color:var(--color-muted)">(57 breeds)</span>
-          </legend>
-          <div class="flex flex-wrap gap-2" role="group" aria-label="Filter by country of origin">
-            <button class="filter-btn active" data-filter="origin" data-value="all" aria-pressed="true">All</button>
-            {TOP_ORIGINS.map(o => (
-              <button class="filter-btn" data-filter="origin" data-value={o.country} aria-pressed="false">
-                {o.flag} {o.country} <span class="count-badge">{o.count}</span>
+          <div class="breed-quick-filters" aria-label="Quick breed filters">
+            {QUICK_BREED_FILTERS.map((item) => (
+              <button
+                type="button"
+                class="breed-quick-filter"
+                data-quick-filter={JSON.stringify(item.state)}
+              >
+                <span aria-hidden="true">{item.emoji}</span>
+                <strong>{item.label}</strong>
+                <em>{item.description}</em>
               </button>
             ))}
           </div>
-        </fieldset>
-      )}
 
-      <!-- Search + sort + result count -->
-      <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
-        <div role="search" class="flex-1 max-w-xs">
-          <label for="breed-search" class="sr-only">Search breeds</label>
-          <input
-            type="search"
-            id="breed-search"
-            placeholder="Search breeds…"
-            autocomplete="off"
-            class="w-full font-sans text-sm px-4 py-2 rounded-xl border focus:outline-none focus:ring-2"
-            style="border-color:var(--color-border-warm)"
-            aria-label="Search breed names"
-          />
-        </div>
-        <div class="flex items-center gap-3">
-          <label for="sort-select" class="font-sans text-xs font-bold uppercase tracking-wider whitespace-nowrap" style="color:var(--color-subtle)">Sort</label>
-          <select
-            id="sort-select"
-            class="font-sans text-sm px-3 py-2 rounded-xl border focus:outline-none focus:ring-2"
-            style="border-color:var(--color-border-warm);color:var(--color-body-soft)"
-            aria-label="Sort breeds"
+          <div class="breed-active-row">
+            <p id="breed-result-count" class="breed-result-count" aria-live="polite" aria-atomic="true">
+              Showing {breeds.length} breeds
+            </p>
+            <div id="breed-active-chips" class="breed-active-chips" aria-label="Active filters"></div>
+            <button type="button" id="breed-clear-filters" class="breed-clear-filters" hidden>
+              Clear all
+            </button>
+          </div>
+
+          <button
+            type="button"
+            class="breed-filter-toggle"
+            data-filter-toggle
+            aria-expanded="false"
+            aria-controls="breed-filter-panel"
           >
-            <option value="popular">Most popular</option>
-            <option value="az">A → Z</option>
-            <option value="za">Z → A</option>
-            <option value="lifespan-desc">Longest lived</option>
-            <option value="lifespan-asc">Shortest lived</option>
-          </select>
-        </div>
-        <div class="flex items-center gap-3">
-          <p id="breed-count" class="font-sans text-sm whitespace-nowrap" style="color:var(--color-muted)" aria-live="polite" aria-atomic="true">
-            {breeds.length} breeds
-          </p>
-          <button id="clear-filters" class="font-sans text-sm font-semibold underline whitespace-nowrap" style="color:var(--color-accent);display:none" aria-label="Clear all filters">
-            Clear
+            <span>Advanced filters</span>
+            <em aria-hidden="true">▾</em>
           </button>
+
+          <div id="breed-filter-panel" class="breed-filter-panel" data-filter-panel>
+            <div class="breed-filter-panel__grid">
+              <fieldset class="breed-filter-group">
+                <legend>Breed type</legend>
+                <div class="breed-filter-buttons">
+                  <button type="button" data-filter="type" data-value="all" class="breed-filter-button is-active">All</button>
+                  {filterOptions.types.map((option) => (
+                    <button type="button" data-filter="type" data-value={option.value} class="breed-filter-button">
+                      {option.emoji && <span aria-hidden="true">{option.emoji}</span>}
+                      {option.label}
+                      <span class="breed-count-badge" data-count-filter="type" data-count-value={option.value}>{option.count}</span>
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+
+              <fieldset class="breed-filter-group">
+                <legend>Size</legend>
+                <div class="breed-filter-buttons">
+                  <button type="button" data-filter="size" data-value="all" class="breed-filter-button is-active">All</button>
+                  {filterOptions.sizes.map((option) => (
+                    <button type="button" data-filter="size" data-value={option.value} class="breed-filter-button">
+                      {option.emoji && <span aria-hidden="true">{option.emoji}</span>}
+                      {option.label}
+                      <span class="breed-count-badge" data-count-filter="size" data-count-value={option.value}>{option.count}</span>
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+
+              <fieldset class="breed-filter-group">
+                <legend>Energy</legend>
+                <div class="breed-filter-buttons">
+                  <button type="button" data-filter="energy" data-value="all" class="breed-filter-button is-active">All</button>
+                  {filterOptions.energy.map((option) => (
+                    <button type="button" data-filter="energy" data-value={option.value} class="breed-filter-button">
+                      {option.emoji && <span aria-hidden="true">{option.emoji}</span>}
+                      {option.label}
+                      <span class="breed-count-badge" data-count-filter="energy" data-count-value={option.value}>{option.count}</span>
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+
+              <fieldset class="breed-filter-group">
+                <legend>Shedding</legend>
+                <div class="breed-filter-buttons">
+                  <button type="button" data-filter="shedding" data-value="all" class="breed-filter-button is-active">All</button>
+                  {filterOptions.shedding.map((option) => (
+                    <button type="button" data-filter="shedding" data-value={option.value} class="breed-filter-button">
+                      {option.emoji && <span aria-hidden="true">{option.emoji}</span>}
+                      {option.label}
+                      <span class="breed-count-badge" data-count-filter="shedding" data-count-value={option.value}>{option.count}</span>
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+
+              <fieldset class="breed-filter-group">
+                <legend>Trainability</legend>
+                <div class="breed-filter-buttons">
+                  <button type="button" data-filter="training" data-value="all" class="breed-filter-button is-active">All</button>
+                  {filterOptions.training.map((option) => (
+                    <button type="button" data-filter="training" data-value={option.value} class="breed-filter-button">
+                      {option.emoji && <span aria-hidden="true">{option.emoji}</span>}
+                      {option.label}
+                      <span class="breed-count-badge" data-count-filter="training" data-count-value={option.value}>{option.count}</span>
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+
+              <fieldset class="breed-filter-group">
+                <legend>Coat type</legend>
+                <div class="breed-filter-buttons">
+                  <button type="button" data-filter="coat" data-value="all" class="breed-filter-button is-active">All</button>
+                  {filterOptions.coats.map((option) => (
+                    <button type="button" data-filter="coat" data-value={option.value} class="breed-filter-button">
+                      {option.label}
+                      <span class="breed-count-badge" data-count-filter="coat" data-count-value={option.value}>{option.count}</span>
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+
+              <fieldset class="breed-filter-group">
+                <legend>Group</legend>
+                <div class="breed-filter-buttons">
+                  <button type="button" data-filter="group" data-value="all" class="breed-filter-button is-active">All</button>
+                  {topGroups.map((option) => (
+                    <button type="button" data-filter="group" data-value={option.value} class="breed-filter-button">
+                      {option.emoji && <span aria-hidden="true">{option.emoji}</span>}
+                      {option.label}
+                      <span class="breed-count-badge" data-count-filter="group" data-count-value={option.value}>{option.count}</span>
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+
+              <fieldset class="breed-filter-group">
+                <legend>Origin</legend>
+                <div class="breed-filter-buttons">
+                  <button type="button" data-filter="origin" data-value="all" class="breed-filter-button is-active">All</button>
+                  {topOrigins.map((option) => (
+                    <button type="button" data-filter="origin" data-value={option.value} class="breed-filter-button">
+                      {option.emoji && <span aria-hidden="true">{option.emoji}</span>}
+                      {option.label}
+                      <span class="breed-count-badge" data-count-filter="origin" data-count-value={option.value}>{option.count}</span>
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+
+              <fieldset class="breed-filter-group">
+                <legend>Lifespan</legend>
+                <div class="breed-filter-buttons">
+                  <button type="button" data-filter="lifespan" data-value="all" class="breed-filter-button is-active">All</button>
+                  {filterOptions.lifespan.map((option) => (
+                    <button type="button" data-filter="lifespan" data-value={option.value} class="breed-filter-button">
+                      {option.label}
+                      <span class="breed-count-badge" data-count-filter="lifespan" data-count-value={option.value}>{option.count}</span>
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+
+              <fieldset class="breed-filter-group">
+                <legend>Available guides</legend>
+                <div class="breed-filter-buttons">
+                  <button type="button" data-filter="guide" data-value="all" class="breed-filter-button is-active">All</button>
+                  {filterOptions.guides.map((option) => (
+                    <button type="button" data-filter="guide" data-value={option.value} class="breed-filter-button">
+                      {option.label}
+                      <span class="breed-count-badge" data-count-filter="guide" data-count-value={option.value}>{option.count}</span>
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+
+        {popularBreeds.length > 0 && (
+          <section class="breed-popular-strip" aria-label="Popular breed shortcuts">
+            <div class="breed-popular-strip__header">
+              <p>Popular breeds</p>
+              <a href="/breeds/?sort=popular">View popular →</a>
+            </div>
+            <div class="breed-chip-row">
+              {popularBreeds.map((breed) => (
+                <a href={`/breeds/${breed.slug}`}>{breed.name}</a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <section class="breed-grid-section" aria-labelledby="breed-grid-title">
+          <div class="breed-grid-section__header">
+            <div>
+              <p class="breed-directory-eyebrow">Directory</p>
+              <h2 id="breed-grid-title">Browse breed profiles</h2>
+            </div>
+            <button type="button" class="breed-load-more" data-show-all>
+              Show all breeds
+            </button>
+          </div>
+
+          <div id="breed-grid" class="breed-grid" role="list" aria-label="Dog breed cards">
+            {recommendedBreeds.map((breed, index) => {
+              const guideChips = cardGuideChips(breed);
+              const visibleByDefault = index < defaultVisibleCount;
+
+              return (
+                <article
+                  class:list={['breed-directory-card', !visibleByDefault && 'is-extra']}
+                  data-breed-card
+                  data-slug={breed.slug}
+                  data-default-visible={visibleByDefault ? 'true' : 'false'}
+                  role="listitem"
+                >
+                  <a href={`/breeds/${breed.slug}`} class="breed-directory-card__image" aria-label={`View ${breed.name} breed profile`}>
+                    {breed.primaryImage ? (
+                      <img
+                        src={breed.primaryImage}
+                        alt={breed.imageAlt}
+                        width="360"
+                        height="240"
+                        loading={index < 12 ? 'eager' : 'lazy'}
+                        fetchpriority={index === 0 ? 'high' : 'auto'}
+                        decoding="async"
+                        data-card-image
+                      />
+                    ) : null}
+                    <span class="breed-directory-card__fallback" data-card-fallback style={breed.primaryImage ? 'display:none' : ''} aria-hidden="true">
+                      {breed.fallbackEmoji}
+                    </span>
+                    <span class="breed-directory-card__type">{breed.type === 'mixed' ? 'Mixed' : 'Purebred'}</span>
+                  </a>
+
+                  <div class="breed-directory-card__body">
+                    <div class="breed-directory-card__title-row">
+                      <div>
+                        <h3><a href={`/breeds/${breed.slug}`}>{breed.name}</a></h3>
+                        <p>{breed.group.label}{breed.origin.key !== 'unknown' ? ` · ${breed.origin.label}` : ''}</p>
+                      </div>
+                      {breed.popularityRank < 9999 && (
+                        <span class="breed-directory-card__rank">#{breed.popularityRank}</span>
+                      )}
+                    </div>
+
+                    <div class="breed-directory-card__facts" aria-label={`${breed.name} quick facts`}>
+                      <span>{breed.size.label}</span>
+                      <span>{breed.energy.label} energy</span>
+                      {breed.lifespan.label && <span>{breed.lifespan.label}</span>}
+                      {breed.weight.label && <span>{breed.weight.label}</span>}
+                    </div>
+
+                    <div class="breed-directory-card__traits">
+                      <span class:list={['is-shedding', breed.flags.isLowShedding && 'is-positive']}>
+                        {breed.shedding.label} shedding
+                      </span>
+                      <span class:list={['is-training', breed.flags.isEasyToTrain && 'is-positive', breed.flags.isHardToTrain && 'is-warning']}>
+                        {breed.training.label} training
+                      </span>
+                      {breed.coat.key !== 'unknown' && <span>{breed.coat.label} coat</span>}
+                    </div>
+
+                    {guideChips.length > 0 && (
+                      <div class="breed-directory-card__guides" aria-label={`${breed.name} available guides`}>
+                        {guideChips.map((guide) => (
+                          <a href={guide?.href}>{guide?.label}</a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div id="breed-no-results" class="breed-no-results" hidden>
+            <span aria-hidden="true">🔍</span>
+            <h2>No breeds match those filters</h2>
+            <p>Try removing one filter, clearing the search term, or starting with a broader quick filter.</p>
+            <div>
+              <button type="button" data-clear-all-empty>Clear all filters</button>
+              <a href="/breed-quiz">Take breed quiz</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="breed-collections" aria-labelledby="breed-collections-title">
+      <div class="breed-directory-container">
+        <div class="breed-section-header">
+          <p class="breed-directory-eyebrow">Explore collections</p>
+          <h2 id="breed-collections-title">Popular ways to browse breeds</h2>
+          <p>
+            These crawlable collection links open the directory with useful filters already applied.
+          </p>
+        </div>
+
+        <div class="breed-collection-grid">
+          {collectionLinks.map((item) => (
+            <a href={item.href} class="breed-collection-card">
+              <span aria-hidden="true">{item.icon}</span>
+              <strong>{item.label}</strong>
+              <p>{item.desc}</p>
+            </a>
+          ))}
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
+    <section class="breed-owner-links" aria-labelledby="breed-owner-links-title">
+      <div class="breed-directory-container">
+        <div class="breed-section-header">
+          <p class="breed-directory-eyebrow">Owner resources</p>
+          <h2 id="breed-owner-links-title">Move from breed research to real planning</h2>
+          <p>
+            Use PupWiki’s connected pages to compare care, cost, food, health and training decisions by breed.
+          </p>
+        </div>
 
-  <!-- ── Breed grid ── -->
-  <div
-    id="breed-grid"
-    class="grid gap-3 sm:gap-4"
-    style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr))"
-    role="list"
-    aria-label="Breed cards"
-  >
-    {breeds.map((b, i) => {
-      const lifespan  = lifespanStr(b);
-      const weight    = weightStr(b);
-      const shed      = SHEDDING_DOTS[b.shedding_level]   || '●●○○';
-      const shedColor = SHEDDING_COLOR[b.shedding_level]  || '#6b7280';
-      const trainLabel= TRAINING_LABEL[b.training_level]  || 'Moderate';
-      const trainColor= TRAINING_COLOR[b.training_level]  || '#d97706';
-      const isEager   = i < 12;
-      return (
-        <a
-          href={`/breeds/${b.slug}`}
-          class="breed-card rounded-2xl overflow-hidden flex flex-col"
-          style="border:1px solid var(--color-border-warm);background:white;text-decoration:none"
-          data-size={b.size_category}
-          data-energy={b.energy_level}
-          data-shedding={b.shedding_level}
-          data-training={b.training_level}
-          data-coat={b.coat_type || ''}
-          data-group={b.akc_group ? normalizeGroup(b.akc_group) : ''}
-          data-origin={b.origin_country || ''}
-          data-lifespan={midLifespan(b)}
-          data-name={b.name.toLowerCase()}
-          data-slug={b.slug}
-          role="listitem"
-          aria-label={`${b.name} — ${b.size_category}, ${b.energy_level} energy`}
-        >
-          <!-- Image -->
-          <div class="breed-img-wrap" style="height:130px;background:var(--color-bg-soft);overflow:hidden;position:relative;flex-shrink:0">
-            {b.image_url ? (
-              <img
-                src={b.image_url}
-                alt={`${b.name} dog`}
-                width="200"
-                height="130"
-                loading={isEager ? 'eager' : 'lazy'}
-                fetchpriority={i === 0 ? 'high' : undefined}
-                decoding="async"
-                class="breed-img"
-                style="width:100%;height:100%;object-fit:cover;transition:transform 0.3s ease"
-                onerror={`this.style.display='none';this.nextElementSibling.style.display='flex'`}
-              />
-            ) : null}
-            <div
-              class="breed-img-fallback"
-              style={`${b.image_url ? 'display:none' : 'display:flex'};align-items:center;justify-content:center;width:100%;height:100%;font-size:2.8rem`}
-              aria-hidden="true"
-            >
-              {SIZE_EMOJI[b.size_category] || '🐕'}
-            </div>
-          </div>
+        <div class="breed-owner-link-grid">
+          <a href="/cost-calculator">
+            <span aria-hidden="true">💰</span>
+            <strong>Breed cost calculator</strong>
+            <p>Estimate food, vet, grooming, insurance and lifetime costs.</p>
+          </a>
+          <a href="/categories/dog-food">
+            <span aria-hidden="true">🍖</span>
+            <strong>Dog food guides</strong>
+            <p>Connect breed size, age and care needs with feeding research.</p>
+          </a>
+          <a href="/categories/health">
+            <span aria-hidden="true">🩺</span>
+            <strong>Health resources</strong>
+            <p>Review general breed health context and planning resources.</p>
+          </a>
+          <a href="/categories/training">
+            <span aria-hidden="true">🦮</span>
+            <strong>Training guides</strong>
+            <p>Match training expectations to breed energy and difficulty.</p>
+          </a>
+        </div>
+      </div>
+    </section>
 
-          <!-- Card body -->
-          <div class="p-3 flex flex-col gap-1.5 flex-1">
-            <!-- Name + group -->
-            <div>
-              <h2 class="font-sans font-bold text-sm leading-tight mb-0.5" style="color:var(--color-heading)">{b.name}</h2>
-              {b.akc_group && (
-                <p class="font-sans text-xs leading-none" style="color:var(--color-subtle)">
-                  {b.akc_group.replace(' Group','').replace(' Service','').replace(' Class','')}
-                </p>
-              )}
-            </div>
+    <div class="sr-only" aria-live="assertive" id="breed-sr-announce"></div>
+  </main>
 
-            <!-- Lifespan + weight -->
-            {(lifespan || weight) && (
-              <div class="flex gap-2 flex-wrap" style="font-family:sans-serif;font-size:11px;color:var(--color-muted)">
-                {lifespan && <span title="Lifespan">⏱ {lifespan}</span>}
-                {weight   && <span title="Typical weight">⚖ {weight}</span>}
-              </div>
-            )}
+  <script define:vars={{ breedsJson, defaultVisibleCount }}>
+    const BREEDS = JSON.parse(breedsJson);
 
-            <!-- Training + shedding -->
-            <div class="flex items-center gap-2 mt-auto pt-1" style="flex-wrap:wrap">
-              <span
-                class="font-sans text-xs font-semibold px-2 py-0.5 rounded-full"
-                style={`background:${trainColor}18;color:${trainColor};border:1px solid ${trainColor}30`}
-                title={`Trainability: ${trainLabel}`}
-              >
-                {trainLabel}
-              </span>
-              <span
-                class="font-sans text-xs"
-                style={`color:${shedColor};letter-spacing:1px`}
-                title={`Shedding: ${b.shedding_level || 'moderate'}`}
-                aria-label={`Shedding: ${b.shedding_level || 'moderate'}`}
-              >
-                {shed}
-              </span>
-            </div>
+    const DEFAULT_STATE = {
+      q: '',
+      type: 'all',
+      size: 'all',
+      energy: 'all',
+      shedding: 'all',
+      training: 'all',
+      coat: 'all',
+      group: 'all',
+      origin: 'all',
+      lifespan: 'all',
+      guide: 'all',
+      sort: 'recommended',
+    };
 
-            <!-- Size + energy + coat tags -->
-            <div class="flex flex-wrap gap-1">
-              <span class="font-sans text-xs px-2 py-0.5 rounded-full capitalize" style="background:var(--color-surface-warm);color:var(--color-accent-hover)">{b.size_category}</span>
-              <span class="font-sans text-xs px-2 py-0.5 rounded-full capitalize" style="background:var(--color-surface-warm);color:var(--color-accent-hover)">{b.energy_level}</span>
-              {b.coat_type && (
-                <span class="font-sans text-xs px-2 py-0.5 rounded-full capitalize" style="background:var(--color-bg-cool);color:var(--color-primary)">
-                  {COAT_LABELS[b.coat_type] || b.coat_type}
-                </span>
-              )}
-              {b.origin_country && COUNTRY_FLAGS[b.origin_country] && (
-                <span class="font-sans text-xs" title={b.origin_country} aria-label={`Origin: ${b.origin_country}`}>
-                  {COUNTRY_FLAGS[b.origin_country]}
-                </span>
-              )}
-            </div>
-          </div>
-        </a>
-      );
-    })}
-  </div>
+    const FILTER_KEYS = ['type', 'size', 'energy', 'shedding', 'training', 'coat', 'group', 'origin', 'lifespan', 'guide'];
+    const ALL_STATE_KEYS = ['q', ...FILTER_KEYS, 'sort'];
 
-  <!-- ── No results ── -->
-  <div id="no-results" class="hidden text-center py-16 px-4">
-    <p class="font-sans text-3xl mb-3" aria-hidden="true">🔍</p>
-    <p class="font-sans text-lg font-semibold mb-2" style="color:var(--color-heading)">No breeds match those filters.</p>
-    <p id="no-results-hint" class="font-sans text-sm mb-5" style="color:var(--color-muted)"></p>
-    <button
-      id="clear-filters-2"
-      class="font-sans text-sm font-bold px-5 py-2.5 rounded-xl text-white"
-      style="background:var(--color-accent)"
-      aria-label="Clear all filters and show all breeds"
-    >
-      Clear all filters
-    </button>
-  </div>
+    const grid = document.getElementById('breed-grid');
+    const searchInput = document.querySelector('[data-breed-search]');
+    const clearSearch = document.querySelector('[data-clear-search]');
+    const sortSelect = document.querySelector('[data-breed-sort]');
+    const resultCount = document.getElementById('breed-result-count');
+    const activeChips = document.getElementById('breed-active-chips');
+    const clearFilters = document.getElementById('breed-clear-filters');
+    const noResults = document.getElementById('breed-no-results');
+    const srAnnounce = document.getElementById('breed-sr-announce');
+    const filterPanel = document.querySelector('[data-filter-panel]');
+    const filterToggle = document.querySelector('[data-filter-toggle]');
+    const showAllButton = document.querySelector('[data-show-all]');
+    const cards = Array.from(document.querySelectorAll('[data-breed-card]'));
 
-</div>
+    let showAll = false;
+    let state = { ...DEFAULT_STATE };
 
-<!-- ── Keyboard shortcut hint (screen-reader friendly) ── -->
-<div class="sr-only" aria-live="assertive" id="sr-announce"></div>
+    const bySlug = new Map(BREEDS.map((breed) => [breed.slug, breed]));
+    const cardBySlug = new Map(cards.map((card) => [card.dataset.slug, card]));
 
-<script define:vars={{ sortData }}>
-  const SORT_DATA = JSON.parse(sortData);
-
-  // ── Lifespan bucket helper ────────────────────────────────────
-  function checkLifespan(val, bucket) {
-    if (bucket === 'lt10')  return val < 10;
-    if (bucket === '10-12') return val >= 10 && val <= 12;
-    if (bucket === '12-14') return val > 12  && val <= 14;
-    if (bucket === 'gt14')  return val > 14;
-    return true;
-  }
-
-  // ── State ─────────────────────────────────────────────────────
-  let state = {
-    size:'all', energy:'all', shedding:'all', training:'all',
-    coat:'all', group:'all', origin:'all', lifespan:'all',
-    q:'', sort:'popular',
-  };
-
-  // Read URL params on load
-  const _p = new URLSearchParams(location.search);
-  for (const k of ['size','energy','shedding','training','coat','group','origin','lifespan','sort']) {
-    if (_p.has(k)) state[k] = _p.get(k);
-  }
-  if (_p.has('q')) { state.q = _p.get('q'); }
-
-  // ── Elements ──────────────────────────────────────────────────
-  const grid       = document.getElementById('breed-grid');
-  const countEl    = document.getElementById('breed-count');
-  const noResults  = document.getElementById('no-results');
-  const noHint     = document.getElementById('no-results-hint');
-  const srAnnounce = document.getElementById('sr-announce');
-  const popSection = document.getElementById('popular-section');
-  const searchInput= document.getElementById('breed-search');
-  const sortSelect = document.getElementById('sort-select');
-  const clearBtns  = [
-    document.getElementById('clear-filters'),
-    document.getElementById('clear-filters-2'),
-  ];
-
-  // ── Core filter + sort ────────────────────────────────────────
-  function applyFilters() {
-    const cards   = Array.from(grid.querySelectorAll('.breed-card'));
-    let   visible = 0;
-
-    cards.forEach(c => {
-      const lifeVal = parseFloat(c.dataset.lifespan || '11');
-      const show =
-        (state.size     === 'all' || c.dataset.size     === state.size)     &&
-        (state.energy   === 'all' || c.dataset.energy   === state.energy)   &&
-        (state.shedding === 'all' || c.dataset.shedding === state.shedding) &&
-        (state.training === 'all' || c.dataset.training === state.training) &&
-        (state.coat     === 'all' || c.dataset.coat     === state.coat)     &&
-        (state.group    === 'all' || c.dataset.group    === state.group)    &&
-        (state.origin   === 'all' || c.dataset.origin   === state.origin)   &&
-        (state.lifespan === 'all' || checkLifespan(lifeVal, state.lifespan)) &&
-        (!state.q || c.dataset.name.includes(state.q));
-      c.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
-
-    // Sort visible cards in DOM
-    const visibleCards = cards.filter(c => c.style.display !== 'none');
-    visibleCards.sort((a, b) => {
-      const sa = SORT_DATA[a.dataset.slug] || {};
-      const sb = SORT_DATA[b.dataset.slug] || {};
-      switch (state.sort) {
-        case 'az':            return sa.name.localeCompare(sb.name);
-        case 'za':            return sb.name.localeCompare(sa.name);
-        case 'lifespan-desc': return sb.lifespan - sa.lifespan;
-        case 'lifespan-asc':  return sa.lifespan - sb.lifespan;
-        default:              return sa.pop - sb.pop;
-      }
-    });
-    visibleCards.forEach(c => grid.appendChild(c));
-
-    // Count label
-    const label = `${visible} breed${visible !== 1 ? 's' : ''}`;
-    countEl.textContent = label;
-    srAnnounce.textContent = label;
-
-    // No-results hint with partial match count
-    const hasFilter = ['size','energy','shedding','training','coat','group','origin','lifespan'].some(k => state[k] !== 'all') || !!state.q;
-
-    // Update URL for shareability
-    const urlP = new URLSearchParams();
-    for (const [k, v] of Object.entries(state))
-      if (v && v !== 'all' && v !== '' && v !== 'popular') urlP.set(k, v);
-    history.replaceState({}, '', urlP.toString() ? `?${urlP}` : location.pathname);
-
-    // Sync origin strip button active state
-    document.querySelectorAll('.origin-btn').forEach(btn => {
-      const active = btn.dataset.origin === state.origin;
-      btn.classList.toggle('active', active);
-      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
-    });
-    const clearOriginBtn = document.getElementById('clear-origin');
-    if (clearOriginBtn) clearOriginBtn.style.display = state.origin !== 'all' ? '' : 'none';
-    if (visible === 0 && hasFilter) {
-      const partials = cards.filter(c => state.q && c.dataset.name.includes(state.q.slice(0, 2)));
-      noHint.textContent = partials.length
-        ? `${partials.length} breed${partials.length > 1 ? 's' : ''} partially match "${state.q}" — try clearing a filter.`
-        : 'Try removing one filter at a time to find what you're looking for.';
+    function normalizeQuery(value) {
+      return String(value || '')
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/&/g, ' and ')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
     }
 
-    noResults.classList.toggle('hidden', visible > 0);
-    clearBtns.forEach(b => b && (b.style.display = hasFilter ? '' : 'none'));
+    function readStateFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const next = { ...DEFAULT_STATE };
 
-    // Hide popular section when filters are active
-    if (popSection) popSection.style.display = hasFilter ? 'none' : '';
-  }
+      for (const key of ALL_STATE_KEYS) {
+        const value = params.get(key);
+        if (value) next[key] = value;
+      }
 
-  // ── Filter buttons ────────────────────────────────────────────
-  document.querySelectorAll('[data-filter]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const f = btn.dataset.filter;
-      const v = btn.dataset.value;
-      document.querySelectorAll(`[data-filter="${f}"]`).forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-pressed', 'false');
+      return next;
+    }
+
+    function writeStateToUrl() {
+      const params = new URLSearchParams();
+
+      for (const key of ALL_STATE_KEYS) {
+        if (!state[key] || state[key] === DEFAULT_STATE[key]) continue;
+        params.set(key, state[key]);
+      }
+
+      const query = params.toString();
+      const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}`;
+      window.history.replaceState({}, '', nextUrl);
+    }
+
+    function isDefaultState() {
+      return ALL_STATE_KEYS.every((key) => state[key] === DEFAULT_STATE[key]);
+    }
+
+    function searchMatches(breed) {
+      const q = normalizeQuery(state.q);
+      if (!q) return true;
+      const tokens = q.split(' ').filter(Boolean);
+      return tokens.every((token) => breed.searchText.includes(token));
+    }
+
+    function lifespanMatches(value) {
+      if (state.lifespan === 'all') return true;
+      if (typeof value !== 'number') return false;
+      if (state.lifespan === 'lt10') return value < 10;
+      if (state.lifespan === '10-12') return value >= 10 && value <= 12;
+      if (state.lifespan === '12-14') return value > 12 && value <= 14;
+      if (state.lifespan === 'gt14') return value > 14;
+      return true;
+    }
+
+    function guideMatches(breed) {
+      if (state.guide === 'all') return true;
+      return Boolean(breed.guideAvailability?.[state.guide] || (state.guide === 'cost' && breed.flags?.hasCostCalculator));
+    }
+
+    function matches(breed, override = {}) {
+      const current = { ...state, ...override };
+      const previous = state;
+      state = current;
+
+      const result =
+        searchMatches(breed) &&
+        (state.type === 'all' || breed.type === state.type) &&
+        (state.size === 'all' || breed.size === state.size) &&
+        (state.energy === 'all' || breed.energy === state.energy) &&
+        (state.shedding === 'all' || breed.shedding === state.shedding) &&
+        (state.training === 'all' || breed.training === state.training) &&
+        (state.coat === 'all' || breed.coat === state.coat) &&
+        (state.group === 'all' || breed.group === state.group) &&
+        (state.origin === 'all' || breed.origin === state.origin) &&
+        lifespanMatches(breed.lifespan) &&
+        guideMatches(breed);
+
+      state = previous;
+      return result;
+    }
+
+    function recommendedScore(breed) {
+      let score = 0;
+      if (breed.popularityRank && breed.popularityRank < 9999) score += Math.max(0, 220 - breed.popularityRank);
+      if (breed.flags?.hasFoodGuide) score += 12;
+      if (breed.flags?.hasHealthGuide) score += 12;
+      if (breed.flags?.hasTrainingGuide) score += 10;
+      if (breed.flags?.hasMonetizableGuides) score += 10;
+      if (breed.origin !== 'unknown') score += 4;
+      if (breed.lifespan) score += 4;
+      return score;
+    }
+
+    const sizeOrder = { small: 1, medium: 2, large: 3, giant: 4, unknown: 99 };
+    const sheddingOrder = { minimal: 1, low: 2, seasonal: 3, heavy: 4, unknown: 99 };
+    const trainingOrder = { easy: 1, moderate: 2, difficult: 3, unknown: 99 };
+
+    function sortBreeds(items) {
+      return [...items].sort((a, b) => {
+        if (state.sort === 'recommended') return recommendedScore(b) - recommendedScore(a) || a.name.localeCompare(b.name);
+        if (state.sort === 'popular') return (a.popularityRank || 9999) - (b.popularityRank || 9999) || a.name.localeCompare(b.name);
+        if (state.sort === 'az') return a.name.localeCompare(b.name);
+        if (state.sort === 'za') return b.name.localeCompare(a.name);
+        if (state.sort === 'smallest') return (sizeOrder[a.size] || 99) - (sizeOrder[b.size] || 99) || a.name.localeCompare(b.name);
+        if (state.sort === 'largest') return (sizeOrder[b.size] || 99) - (sizeOrder[a.size] || 99) || a.name.localeCompare(b.name);
+        if (state.sort === 'lifespan-desc') return (b.lifespan || -1) - (a.lifespan || -1) || a.name.localeCompare(b.name);
+        if (state.sort === 'lifespan-asc') return (a.lifespan || 999) - (b.lifespan || 999) || a.name.localeCompare(b.name);
+        if (state.sort === 'low-shedding') return (sheddingOrder[a.shedding] || 99) - (sheddingOrder[b.shedding] || 99) || a.name.localeCompare(b.name);
+        if (state.sort === 'easy-training') return (trainingOrder[a.training] || 99) - (trainingOrder[b.training] || 99) || a.name.localeCompare(b.name);
+        return 0;
       });
-      btn.classList.add('active');
-      btn.setAttribute('aria-pressed', 'true');
-      state[f] = v;
+    }
+
+    function getFilteredBreeds() {
+      return sortBreeds(BREEDS.filter((breed) => matches(breed)));
+    }
+
+    function updateControls() {
+      if (searchInput) searchInput.value = state.q;
+      if (clearSearch) clearSearch.hidden = !state.q;
+      if (sortSelect) sortSelect.value = state.sort;
+
+      document.querySelectorAll('[data-filter]').forEach((button) => {
+        const key = button.dataset.filter;
+        const value = button.dataset.value;
+        const active = state[key] === value;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+    }
+
+    function updateActiveChips() {
+      if (!activeChips) return;
+      activeChips.innerHTML = '';
+
+      const labels = {
+        q: state.q ? `Search: ${state.q}` : '',
+        type: state.type,
+        size: state.size,
+        energy: state.energy,
+        shedding: state.shedding,
+        training: state.training,
+        coat: state.coat,
+        group: state.group,
+        origin: state.origin,
+        lifespan: state.lifespan,
+        guide: state.guide,
+      };
+
+      for (const key of ['q', ...FILTER_KEYS]) {
+        if (state[key] === DEFAULT_STATE[key]) continue;
+
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'breed-active-chip';
+        chip.dataset.clearKey = key;
+        chip.textContent = `${String(labels[key]).replace(/-/g, ' ')} ×`;
+        activeChips.appendChild(chip);
+      }
+
+      if (clearFilters) clearFilters.hidden = isDefaultState();
+    }
+
+    function updateDynamicCounts() {
+      document.querySelectorAll('[data-count-filter][data-count-value]').forEach((badge) => {
+        const key = badge.dataset.countFilter;
+        const value = badge.dataset.countValue;
+        const count = BREEDS.filter((breed) => matches(breed, { [key]: value })).length;
+        badge.textContent = String(count);
+
+        const button = badge.closest('[data-filter]');
+        if (button) {
+          const isActive = state[key] === value;
+          button.disabled = count === 0 && !isActive;
+        }
+      });
+    }
+
+    function applyFilters({ updateUrl = true, announce = true } = {}) {
+      const filtered = getFilteredBreeds();
+      const visibleSlugs = new Set(filtered.map((breed) => breed.slug));
+      const shouldLimit = !showAll && isDefaultState();
+      const visibleLimited = shouldLimit ? filtered.slice(0, defaultVisibleCount) : filtered;
+      const limitedSlugs = new Set(visibleLimited.map((breed) => breed.slug));
+
+      for (const breed of filtered) {
+        const card = cardBySlug.get(breed.slug);
+        if (card && grid) grid.appendChild(card);
+      }
+
+      cards.forEach((card) => {
+        const slug = card.dataset.slug;
+        const isVisible = visibleSlugs.has(slug) && limitedSlugs.has(slug);
+        card.hidden = !isVisible;
+      });
+
+      if (noResults) noResults.hidden = filtered.length !== 0;
+      if (resultCount) {
+        const limitedCopy = shouldLimit && filtered.length > defaultVisibleCount ? ` · showing first ${defaultVisibleCount}` : '';
+        resultCount.textContent = `Showing ${filtered.length} breed${filtered.length === 1 ? '' : 's'}${limitedCopy}`;
+      }
+
+      if (showAllButton) {
+        showAllButton.hidden = !(isDefaultState() && !showAll && filtered.length > defaultVisibleCount);
+      }
+
+      updateControls();
+      updateActiveChips();
+      updateDynamicCounts();
+      if (updateUrl) writeStateToUrl();
+      if (announce && srAnnounce) srAnnounce.textContent = `${filtered.length} breeds shown`;
+    }
+
+    function resetState() {
+      state = { ...DEFAULT_STATE };
+      showAll = false;
+      applyFilters();
+    }
+
+    searchInput?.addEventListener('input', () => {
+      state.q = searchInput.value;
+      showAll = true;
       applyFilters();
     });
-  });
 
-  // ── Search ────────────────────────────────────────────────────
-  searchInput?.addEventListener('input', e => {
-    state.q = e.target.value.toLowerCase().trim();
-    applyFilters();
-  });
-
-  // ── Sort ──────────────────────────────────────────────────────
-  sortSelect?.addEventListener('change', e => {
-    state.sort = e.target.value;
-    applyFilters();
-  });
-
-  // ── Clear ─────────────────────────────────────────────────────
-  function clearAll() {
-    state = { size:'all', energy:'all', shedding:'all', training:'all', coat:'all', group:'all', origin:'all', lifespan:'all', q:'', sort: state.sort };
-    if (searchInput) searchInput.value = '';
-    document.querySelectorAll('[data-filter]').forEach(b => {
-      const isAll = b.dataset.value === 'all';
-      b.classList.toggle('active', isAll);
-      b.setAttribute('aria-pressed', isAll ? 'true' : 'false');
-    });
-    applyFilters();
-    searchInput?.focus();
-  }
-
-  // ── Origin strip buttons ──────────────────────────────────────
-  document.querySelectorAll('.origin-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const country = btn.dataset.origin;
-      state.origin = state.origin === country ? 'all' : country;
-      // sync the origin filter-btn in the panel too
-      document.querySelectorAll('[data-filter="origin"]').forEach(b => {
-        const isActive = b.dataset.value === state.origin;
-        b.classList.toggle('active', isActive);
-        b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-      });
-      applyFilters();
-    });
-  });
-
-  document.getElementById('clear-origin')?.addEventListener('click', () => {
-    state.origin = 'all';
-    document.querySelectorAll('[data-filter="origin"]').forEach(b => {
-      const isAll = b.dataset.value === 'all';
-      b.classList.toggle('active', isAll);
-      b.setAttribute('aria-pressed', isAll ? 'true' : 'false');
-    });
-    applyFilters();
-  });
-
-  // Apply URL-loaded state on initial render
-  if (Object.values(state).some(v => v !== 'all' && v !== '' && v !== 'popular')) {
-    // Sync button active states from URL-loaded state
-    for (const k of ['size','energy','shedding','training','coat','group','origin','lifespan']) {
-      if (state[k] !== 'all') {
-        document.querySelectorAll(`[data-filter="${k}"]`).forEach(b => {
-          const isActive = b.dataset.value === state[k];
-          b.classList.toggle('active', isActive);
-          b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-        });
-      }
-    }
-    if (searchInput && state.q) searchInput.value = state.q;
-    if (sortSelect && state.sort !== 'popular') sortSelect.value = state.sort;
-    applyFilters();
-  }
-  clearBtns.forEach(b => b?.addEventListener('click', clearAll));
-
-  // ── Mobile filter toggle ──────────────────────────────────────
-  const toggleBtn  = document.getElementById('filter-toggle');
-  const filterBody = document.getElementById('filter-body');
-  const toggleIcon = document.getElementById('filter-toggle-icon');
-
-  toggleBtn?.addEventListener('click', () => {
-    const open = filterBody.classList.toggle('hidden') === false;
-    toggleBtn.setAttribute('aria-expanded', String(open));
-    toggleIcon.style.transform = open ? 'rotate(180deg)' : '';
-  });
-
-  // ── Keyboard shortcut: "/" focuses search ─────────────────────
-  document.addEventListener('keydown', e => {
-    if (e.key === '/' && document.activeElement !== searchInput) {
-      e.preventDefault();
-      // Open filters on mobile if closed
-      if (filterBody.classList.contains('hidden') && window.innerWidth < 640) {
-        filterBody.classList.remove('hidden');
-        toggleBtn?.setAttribute('aria-expanded', 'true');
-        if (toggleIcon) toggleIcon.style.transform = 'rotate(180deg)';
-      }
-      searchInput?.focus();
-    }
-    if (e.key === 'Escape' && document.activeElement === searchInput) {
-      searchInput.value = '';
+    clearSearch?.addEventListener('click', () => {
       state.q = '';
+      searchInput?.focus();
       applyFilters();
-    }
-  });
-</script>
+    });
 
+    sortSelect?.addEventListener('change', () => {
+      state.sort = sortSelect.value;
+      applyFilters();
+    });
+
+    document.querySelectorAll('[data-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const key = button.dataset.filter;
+        const value = button.dataset.value;
+        state[key] = value;
+        showAll = true;
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll('[data-quick-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        try {
+          const quickState = JSON.parse(button.dataset.quickFilter || '{}');
+          state = { ...state, ...quickState };
+          showAll = true;
+          applyFilters();
+          document.getElementById('breed-grid-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } catch {
+          // Ignore malformed quick filter payloads.
+        }
+      });
+    });
+
+    activeChips?.addEventListener('click', (event) => {
+      const target = event.target.closest('[data-clear-key]');
+      if (!target) return;
+      const key = target.dataset.clearKey;
+      state[key] = DEFAULT_STATE[key];
+      applyFilters();
+    });
+
+    clearFilters?.addEventListener('click', resetState);
+    document.querySelector('[data-clear-all-empty]')?.addEventListener('click', resetState);
+
+    showAllButton?.addEventListener('click', () => {
+      showAll = true;
+      applyFilters({ updateUrl: false });
+    });
+
+    filterToggle?.addEventListener('click', () => {
+      const isOpen = filterPanel?.classList.toggle('is-open');
+      filterToggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+    });
+
+    document.querySelectorAll('[data-card-image]').forEach((image) => {
+      image.addEventListener('error', () => {
+        image.hidden = true;
+        const fallback = image.closest('.breed-directory-card__image')?.querySelector('[data-card-fallback]');
+        if (fallback) fallback.style.display = 'grid';
+      });
+    });
+
+    window.addEventListener('popstate', () => {
+      state = readStateFromUrl();
+      showAll = true;
+      applyFilters({ updateUrl: false });
+    });
+
+    state = readStateFromUrl();
+    showAll = !isDefaultState();
+    applyFilters({ updateUrl: false, announce: false });
+  </script>
 </BaseLayout>
-
-<style>
-  /* ── Filter buttons ── */
-  .filter-btn {
-    font-family: sans-serif;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    padding: 5px 13px;
-    border-radius: 9999px;
-    border: 1px solid var(--color-border-warm);
-    background: white;
-    color: var(--color-body-soft);
-    cursor: pointer;
-    transition: border-color 0.15s, color 0.15s, background 0.15s;
-    white-space: nowrap;
-  }
-  .filter-btn .count-badge {
-    font-size: 0.7rem;
-    font-weight: 700;
-    opacity: 0.65;
-    margin-left: 2px;
-  }
-  .filter-btn.active {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: white;
-  }
-  .filter-btn.active .count-badge { opacity: 0.8; }
-  .filter-btn:hover:not(.active) {
-    border-color: var(--color-accent);
-    color: var(--color-accent-hover);
-  }
-  .filter-btn:focus-visible {
-    outline: 2px solid var(--color-warning);
-    outline-offset: 2px;
-  }
-
-  /* ── Origin strip + popular breed links ── */
-  .origin-btn.active {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: white;
-  }
-  .origin-btn:hover:not(.active) {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-  }
-  .popular-breed-link:hover {
-    border-color: var(--color-accent) !important;
-    color: var(--color-accent-hover) !important;
-  }
-
-  /* ── Breed cards ── */
-  .breed-card {
-    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-  }
-  .breed-card:hover,
-  .breed-card:focus-visible {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-card-hover);
-    border-color: var(--color-accent) !important;
-    outline: none;
-  }
-  .breed-card:hover .breed-img {
-    transform: scale(1.05);
-  }
-
-  /* ── Screen-reader only ── */
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  /* ── Mobile: tighter grid ── */
-  @media (max-width: 479px) {
-    #breed-grid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
-      gap: 0.625rem !important;
-    }
-  }
-</style>
