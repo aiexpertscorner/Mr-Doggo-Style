@@ -88,24 +88,24 @@ const whatToLookFor = [
 
   <div class="pi-page">
     <!-- Breadcrumb -->
-    <nav class="pi-breadcrumb font-sans text-sm" aria-label="Breadcrumb" style="color:var(--color-muted)">
-      <a href="/" style="color:var(--color-accent);text-decoration:none">Home</a>
+    <nav class="pi-breadcrumb font-sans text-sm" aria-label="Breadcrumb">
+      <a href="/" class="pi-link">Home</a>
       <span aria-hidden="true"> / </span>
-      <span style="color:var(--color-heading)">Pet Insurance</span>
+      <span class="pi-heading">Pet Insurance</span>
     </nav>
 
     <!-- Hero -->
     <section class="pi-hero">
-      <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:var(--color-accent)">Ownership planning</p>
-      <h1 class="font-sans font-bold mb-4" style="color:var(--color-heading)">Do You Need Pet Insurance for Your Dog?</h1>
-      <p class="font-sans text-lg" style="color:var(--color-muted)">
+      <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2 pi-kicker">Ownership planning</p>
+      <h1 class="font-sans font-bold mb-4 pi-heading">Do You Need Pet Insurance for Your Dog?</h1>
+      <p class="font-sans text-lg pi-muted">
         An honest look at what pet insurance does and doesn't cover, how much it costs, and whether it makes sense for your situation — without the sales pressure.
       </p>
     </section>
 
     <!-- Affiliate disclosure -->
-    <aside class="font-sans text-xs px-4 py-3 rounded-xl mb-8" style="background:var(--color-bg-soft);border:1px solid var(--color-border-warm);color:var(--color-subtle)">
-      <strong style="color:var(--color-muted)">Disclosure:</strong> This page contains general information only. PupWiki may earn a commission from affiliate links on linked pages. This does not influence our editorial guidance.
+    <aside class="font-sans text-xs px-4 py-3 rounded-xl mb-8 pi-card pi-subtle">
+      <strong class="pi-muted">Disclosure:</strong> This page contains general information only. PupWiki may earn a commission from affiliate links on linked pages. This does not influence our editorial guidance.
     </aside>
 
     <div class="pi-layout">
@@ -113,29 +113,29 @@ const whatToLookFor = [
 
         <!-- Intro -->
         <section class="pi-section">
-          <h2 class="font-sans font-bold mb-3" style="color:var(--color-heading)">What pet insurance typically covers</h2>
-          <p class="font-sans text-sm mb-5" style="color:var(--color-muted)">
+          <h2 class="font-sans font-bold mb-3 pi-heading">What pet insurance typically covers</h2>
+          <p class="font-sans text-sm mb-5 pi-muted">
             Most comprehensive pet insurance plans cover unexpected illness and accidents. What's included varies significantly between providers.
           </p>
           <div class="pi-cover-grid">
             {whatToCover.map(item => (
-              <div class="pi-cover-card rounded-xl p-4" style="background:var(--color-bg-soft);border:1px solid var(--color-border-warm)">
+              <div class="pi-cover-card rounded-xl p-4 pi-card">
                 <span class="text-xl block mb-2">{item.icon}</span>
-                <p class="font-sans text-sm font-bold mb-1" style="color:var(--color-heading)">{item.title}</p>
-                <p class="font-sans text-xs" style="color:var(--color-muted)">{item.desc}</p>
+                <p class="font-sans text-sm font-bold mb-1 pi-heading">{item.title}</p>
+                <p class="font-sans text-xs pi-muted">{item.desc}</p>
               </div>
             ))}
           </div>
-          <p class="font-sans text-sm mt-4" style="color:var(--color-muted)">
-            <strong style="color:var(--color-heading)">What it doesn't cover:</strong> Pre-existing conditions, routine wellness visits (unless add-on purchased), elective procedures, and preventive care like vaccinations and flea treatments. Always read the full policy terms.
+          <p class="font-sans text-sm mt-4 pi-muted">
+            <strong class="pi-heading">What it doesn't cover:</strong> Pre-existing conditions, routine wellness visits (unless add-on purchased), elective procedures, and preventive care like vaccinations and flea treatments. Always read the full policy terms.
           </p>
         </section>
 
         <!-- Who should get it -->
         <section class="pi-section">
-          <h2 class="font-sans font-bold mb-3" style="color:var(--color-heading)">Who pet insurance is commonly recommended for</h2>
-          <ul class="pi-list font-sans text-sm" style="color:var(--color-muted)">
-            <li><strong style="color:var(--color-heading)">Puppies</strong> — Premiums are lower for younger dogs and you avoid the pre-existing condition trap.</li>
+          <h2 class="font-sans font-bold mb-3 pi-heading">Who pet insurance is commonly recommended for</h2>
+          <ul class="pi-list font-sans text-sm pi-muted">
+            <li><strong class="pi-heading">Puppies</strong> — Premiums are lower for younger dogs and you avoid the pre-existing condition trap.</li>
             <li><strong style="color:var(--color-heading)">Breeds with known health risks</strong> — French Bulldogs, Great Danes, and Golden Retrievers have higher average lifetime vet costs.</li>
             <li><strong style="color:var(--color-heading)">Owners without an emergency fund</strong> — A $3,000–$8,000 surgery bill can be devastating without insurance or savings.</li>
             <li><strong style="color:var(--color-heading)">Multi-dog households</strong> — Some insurers offer multi-pet discounts that meaningfully reduce per-dog costs.</li>
@@ -169,8 +169,8 @@ const whatToLookFor = [
               </div>
             ))}
           </div>
-          <p class="font-sans text-sm mt-4" style="color:var(--color-muted)">
-            Learn more about our research approach on the <a href="/how-we-test" style="color:var(--color-accent)">how we test</a> page.
+          <p class="font-sans text-sm mt-4 pi-muted">
+            Learn more about our research approach on the <a href="/how-we-test" class="pi-link">how we test</a> page.
           </p>
         </section>
 
@@ -180,13 +180,13 @@ const whatToLookFor = [
           <p class="font-sans text-sm mb-4" style="color:var(--color-muted)">
             Estimates based on PupWiki actuarial research. Actual premiums vary by age, breed health history, location, deductible, and reimbursement level.
           </p>
-          <div class="pi-table-wrap rounded-xl overflow-hidden" style="border:1px solid var(--color-border-warm)">
-            <table class="pi-table font-sans text-sm w-full" style="border-collapse:collapse">
-              <thead style="background:var(--color-surface-warm)">
+          <div class="pi-table-wrap rounded-xl overflow-hidden">
+            <table class="pi-table font-sans text-sm w-full">
+              <thead class="pi-table-head">
                 <tr>
-                  <th class="text-left px-4 py-3 font-bold" style="color:var(--color-heading)">Dog size</th>
-                  <th class="text-left px-4 py-3 font-bold" style="color:var(--color-heading)">Monthly range</th>
-                  <th class="text-left px-4 py-3 font-bold hidden sm:table-cell" style="color:var(--color-heading)">Example breeds</th>
+                  <th class="text-left px-4 py-3 font-bold pi-heading">Dog size</th>
+                  <th class="text-left px-4 py-3 font-bold pi-heading">Monthly range</th>
+                  <th class="text-left px-4 py-3 font-bold hidden sm:table-cell pi-heading">Example breeds</th>
                 </tr>
               </thead>
               <tbody>
@@ -279,6 +279,15 @@ const whatToLookFor = [
   padding: 1.5rem 1rem 4rem;
 }
 .pi-breadcrumb { margin-bottom: 1.5rem; }
+.pi-kicker, .pi-link { color: var(--color-accent); }
+.pi-link { text-decoration: none; }
+.pi-heading { color: var(--color-heading); }
+.pi-muted { color: var(--color-muted); }
+.pi-subtle { color: var(--color-subtle); }
+.pi-card {
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border-warm);
+}
 .pi-hero {
   margin-bottom: 2rem;
 }
@@ -313,6 +322,8 @@ const whatToLookFor = [
 .pi-list li::before { content: '→'; position: absolute; left: 0; color: var(--color-accent); }
 .pi-table { border-collapse: collapse; }
 .pi-table th, .pi-table td { border-bottom: 1px solid var(--color-border-warm); }
+.pi-table-wrap { border: 1px solid var(--color-border-warm); }
+.pi-table-head { background: var(--color-surface-warm); }
 .pi-breed-strip {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
