@@ -1,0 +1,34 @@
+<script is:inline>
+  (() => {
+    if (window.__pupwikiAmazonClickTracker) return;
+    window.__pupwikiAmazonClickTracker = true;
+
+    document.addEventListener('click', (event) => {
+      const link = event.target?.closest?.('[data-amazon-product-id]');
+      if (!link) return;
+
+      const payload = {
+        event: 'affiliate_click',
+        affiliate_network: 'amazon',
+        merchant: 'Amazon',
+        product_id: link.getAttribute('data-amazon-product-id') || '',
+        product_name: link.getAttribute('data-amazon-product-name') || '',
+        placement: link.getAttribute('data-amazon-placement') || '',
+        link_url: link.href || '',
+      };
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'affiliate_click', {
+          affiliate_network: payload.affiliate_network,
+          merchant: payload.merchant,
+          product_id: payload.product_id,
+          product_name: payload.product_name,
+          placement: payload.placement,
+        });
+      }
+    });
+  })();
+</script>

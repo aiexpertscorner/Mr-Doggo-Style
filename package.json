@@ -4,16 +4,19 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-
-    "prebuild": "npm run images:enrich:ci",
+    "prebuild": "npm run images:enrich:ci && npm run amazon:sync",
     "build": "astro build",
-
     "build:fast": "astro build",
+    "build:prod": "npm run awin:sync && npm run build",
     "build:with-images": "npm run images:enrich:force && astro build",
-
+    "build:with-amazon": "npm run amazon:sync && npm run build:fast",
     "preview": "astro preview",
     "astro": "astro",
-
+    "awin:sync": "node scripts/sync-awin.mjs",
+    "amazon:sync": "node scripts/sync-amazon-products.mjs",
+    "amazon:sync:strict": "node scripts/sync-amazon-products.mjs --strict",
+    "amazon:audit": "node scripts/audit-amazon-products.mjs",
+    "affiliate:sync": "npm run awin:sync && npm run amazon:sync",
     "images:enrich": "node scripts/enrich-breed-image-gallery.mjs",
     "images:enrich:force": "node scripts/enrich-breed-image-gallery.mjs --force --count 5",
     "images:enrich:ci": "node scripts/enrich-breed-image-gallery.mjs --force --count 5 || echo \"Image enrichment failed; continuing build with existing image data\"",

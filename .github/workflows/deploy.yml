@@ -4,12 +4,14 @@ on:
   push:
     branches:
       - pupwiki
+      - Pupwiki
   pull_request:
     branches:
       - pupwiki
+      - Pupwiki
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -31,12 +33,22 @@ jobs:
       - name: Sync AWIN affiliate data
         env:
           AWIN_OAUTH2_TOKEN: ${{ secrets.AWIN_OAUTH2_TOKEN }}
-        run: node scripts/sync-awin.mjs
+        run: npm run awin:sync
 
-      - name: Build
+      - name: Build Astro site
+        env:
+          PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.PUBLIC_GA_MEASUREMENT_ID }}
+          PUBLIC_AMAZON_TAG: ${{ secrets.PUBLIC_AMAZON_TAG }}
+          PUBLIC_ENABLE_AMAZON_BUTTONS: ${{ vars.PUBLIC_ENABLE_AMAZON_BUTTONS }}
+          PUBLIC_ENABLE_AWIN_MASTERTAG: ${{ vars.PUBLIC_ENABLE_AWIN_MASTERTAG }}
+          PUBLIC_EMAILOCTOPUS_URL: ${{ secrets.PUBLIC_EMAILOCTOPUS_URL }}
         run: npm run build
 
+      - name: Audit Amazon products
+        run: npm run amazon:audit
+
       - name: Deploy to Cloudflare Pages with Wrangler
+        if: github.event_name == 'push'
         run: npx wrangler pages deploy dist --project-name=pupwiki
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

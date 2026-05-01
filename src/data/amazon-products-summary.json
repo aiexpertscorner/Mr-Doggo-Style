@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-05-01T02:33:11.008Z",
+  "sourceCsv": "amazon-products-live-checked.csv",
+  "totalRows": 90,
+  "totalProducts": 90,
+  "enabledProducts": 32,
+  "enabledWithAffiliateUrl": 32,
+  "liveEligible": 32,
+  "categoryGroups": [
+    "beds_comfort",
+    "cleanup_odor",
+    "crates_gates_home",
+    "food_bowls_feeding",
+    "grooming_shedding",
+    "health_adjacent",
+    "puppy_starter",
+    "tech_tracking",
+    "toys_enrichment",
+    "travel_safety",
+    "treats_training",
+    "walking_harness_leash"
+  ],
+  "byCategoryGroup": {
+    "grooming_shedding": 10,
+    "toys_enrichment": 9,
+    "crates_gates_home": 6,
+    "food_bowls_feeding": 8,
+    "puppy_starter": 6,
+    "walking_harness_leash": 9,
+    "beds_comfort": 7,
+    "cleanup_odor": 7,
+    "travel_safety": 8,
+    "treats_training": 8,
+    "tech_tracking": 5,
+    "health_adjacent": 7
+  },
+  "byComplianceRisk": {
+    "low": 81,
+    "medium": 9
+  },
+  "detectedHeaders": [
+    "id",
+    "enabled",
+    "priorityScore",
+    "liveSearchStatus",
+    "liveSearchNote",
+    "salesIntent",
+    "categoryGroup",
+    "categoryLabel",
+    "name",
+    "Greenies Pill Pockets for Dogs",
+    "amazonSearchQuery",
+    "asin",
+    "amazonAffiliateUrl",
+    "recommendedPlacement",
+    "topicTags",
+    "targetPageSlugs",
+    "complianceRisk",
+    "complianceNotes"
+  ],
+  "missingLinks": []
+}

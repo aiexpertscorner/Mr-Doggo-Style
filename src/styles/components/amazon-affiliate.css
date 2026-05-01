@@ -1,0 +1,208 @@
+.amazon-slot {
+  --amazon-bg: color-mix(in srgb, var(--color-surface-warm, #fff7ed) 74%, white);
+  --amazon-border: var(--color-border-strong, rgba(148, 163, 184, 0.35));
+  --amazon-text: var(--color-text-primary, #172033);
+  --amazon-muted: var(--color-text-muted, #64748b);
+  --amazon-accent: var(--color-accent, #d97706);
+  --amazon-accent-hover: var(--color-accent-hover, #b45309);
+
+  margin: clamp(2rem, 5vw, 4rem) 0;
+}
+
+.amazon-slot__shell {
+  border: 1px solid var(--amazon-border);
+  border-radius: clamp(1.25rem, 3vw, 2rem);
+  background:
+    radial-gradient(circle at top left, rgba(217, 119, 6, 0.14), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), var(--amazon-bg));
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  overflow: hidden;
+}
+
+.amazon-slot__header {
+  max-width: 52rem;
+  margin-bottom: 1rem;
+}
+
+.amazon-slot__eyebrow {
+  margin: 0 0 0.4rem;
+  color: var(--amazon-accent-hover);
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.amazon-slot__title {
+  margin: 0;
+  color: var(--amazon-text);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.amazon-slot__description {
+  max-width: 44rem;
+  margin: 0.55rem 0 0;
+  color: var(--amazon-muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.amazon-slot__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--amazon-cols, 3), minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.amazon-card {
+  display: flex;
+  min-height: 100%;
+  gap: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+  padding: 1rem;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.amazon-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(217, 119, 6, 0.38);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.1);
+}
+
+.amazon-card--compact {
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.85rem;
+}
+
+.amazon-card__icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.13), rgba(20, 184, 166, 0.1));
+  font-size: 1.3rem;
+}
+
+.amazon-card__body {
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.amazon-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 0.45rem;
+  color: var(--amazon-accent-hover);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.amazon-card__meta span:not(:last-child)::after {
+  content: '·';
+  margin-left: 0.35rem;
+  opacity: 0.55;
+}
+
+.amazon-card__title {
+  margin: 0;
+  color: var(--amazon-text);
+  font-size: 1rem;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  line-height: 1.22;
+}
+
+.amazon-card__note,
+.amazon-card__context {
+  margin: 0.55rem 0 0;
+  color: var(--amazon-muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.amazon-card__context {
+  opacity: 0.82;
+}
+
+.amazon-card__actions {
+  margin-top: auto;
+  padding-top: 0.85rem;
+}
+
+.amazon-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.45rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--amazon-accent), var(--amazon-accent-hover));
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 850;
+  line-height: 1;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  box-shadow: 0 12px 24px rgba(180, 83, 9, 0.18);
+}
+
+.amazon-card__button:hover {
+  filter: brightness(0.98);
+  transform: translateY(-1px);
+}
+
+.amazon-disclosure {
+  margin-top: 0.9rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  padding-top: 0.9rem;
+}
+
+.amazon-disclosure p {
+  margin: 0;
+  color: var(--amazon-muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 920px) {
+  .amazon-slot__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .amazon-slot {
+    margin: 1.5rem 0;
+  }
+
+  .amazon-slot__shell {
+    border-radius: 1.25rem;
+    padding: 0.85rem;
+  }
+
+  .amazon-slot__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amazon-card {
+    border-radius: 1.1rem;
+    padding: 0.85rem;
+  }
+
+  .amazon-card__button {
+    width: 100%;
+  }
+}

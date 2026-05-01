@@ -1,7 +1,6 @@
 /**
  * src/lib/site-config.ts
  * Global site and brand configuration for PupWiki.
- * Keep this file focused on site-wide identity, metadata, and disclosure defaults.
  */
 
 export const SITE_URL = 'https://pupwiki.com';
@@ -17,8 +16,7 @@ export const SITE_LANGUAGE = 'en';
 export const SITE_LOCALE = 'en_US';
 export const SITE_COUNTRY = 'US';
 
-export const SITE_TAGLINE =
-  'Trusted guidance for dog parents.';
+export const SITE_TAGLINE = 'Trusted guidance for dog parents.';
 
 export const SITE_SHORT_DESCRIPTION =
   'Trusted dog breed, care, cost, and training guidance for modern dog parents.';
@@ -35,16 +33,20 @@ export const SITE_AUDIENCE =
 export const SITE_POSITIONING =
   'An editorial dog decision-support platform combining breed data, care guidance, cost planning, and practical discovery tools.';
 
-export const AFFILIATE_TAG = 'aiexpertscorn-20';
+export const AFFILIATE_TAG =
+  import.meta.env.PUBLIC_AMAZON_TAG || 'aiexpertscorn-20';
 
-export const ENABLE_CHEWY = false;
-export const ENABLE_AMAZON_BUTTONS = false;
+export const ENABLE_CHEWY =
+  import.meta.env.PUBLIC_ENABLE_CHEWY === 'true';
+
+export const ENABLE_AMAZON_BUTTONS =
+  import.meta.env.PUBLIC_ENABLE_AMAZON_BUTTONS !== 'false';
 
 export const AFFILIATE_DISCLOSURE_SHORT =
-  'PupWiki may earn commissions from qualifying purchases or partner referrals. These relationships do not determine our editorial recommendations.';
+  'PupWiki may earn commissions from qualifying purchases or partner referrals. These relationships do not determine our editorial recommendations. As an Amazon Associate, PupWiki may earn from qualifying purchases.';
 
 export const AFFILIATE_DISCLOSURE_LONG =
-  'PupWiki may earn commissions from qualifying purchases, affiliate links, or selected partner referrals. Our editorial decisions, comparisons, and recommendations are made independently and are intended to be useful, transparent, and reader-first.';
+  'PupWiki may earn commissions from qualifying purchases, affiliate links, Amazon Associate links, or selected partner referrals. Our editorial decisions, comparisons, and recommendations are made independently and are intended to be useful, transparent, and reader-first.';
 
 export const REVIEW_METHOD_SUMMARY =
   'We combine structured breed data, practical product and care research, and editorial review standards to create useful, transparent guidance for dog parents.';
@@ -66,8 +68,6 @@ export const SITE_DEFAULT_OG_IMAGE_ABSOLUTE = `${SITE_URL}${SITE_DEFAULT_OG_IMAG
 
 export const ORGANIZATION_SAME_AS: string[] = [
   // Add official brand/social URLs here when ready.
-  // 'https://www.pinterest.com/yourhandle/',
-  // 'https://x.com/yourhandle',
 ];
 
 export const SITE_SOCIALS = {

@@ -1,0 +1,48 @@
+---
+import type { AmazonProductRecord } from '../../lib/amazon/amazonTypes';
+
+export interface Props {
+  product: AmazonProductRecord;
+  variant?: 'card' | 'compact';
+  placement?: string;
+}
+
+const { product, variant = 'card', placement = 'amazon-slot' } = Astro.props;
+
+const categoryLabel = product.categoryLabel || product.categoryGroup || 'Dog product';
+const brandLabel = product.brand || 'Amazon';
+const note = product.recommendedPlacement || 'Useful for dog-parent research and shopping.';
+---
+
+<article class:list={['amazon-card', `amazon-card--${variant}`]}>
+  <div class="amazon-card__icon" aria-hidden="true">🐾</div>
+
+  <div class="amazon-card__body">
+    <p class="amazon-card__meta">
+      <span>{brandLabel}</span>
+      <span>{categoryLabel}</span>
+    </p>
+
+    <h3 class="amazon-card__title">{product.name}</h3>
+
+    <p class="amazon-card__note">{note}</p>
+
+    {product.liveSearchNote && (
+      <p class="amazon-card__context">{product.liveSearchNote}</p>
+    )}
+
+    <div class="amazon-card__actions">
+      <a
+        href={product.amazonAffiliateUrl}
+        target="_blank"
+        rel="nofollow sponsored noopener"
+        class="amazon-card__button"
+        data-amazon-product-id={product.id}
+        data-amazon-product-name={product.name}
+        data-amazon-placement={placement}
+      >
+        View on Amazon →
+      </a>
+    </div>
+  </div>
+</article>

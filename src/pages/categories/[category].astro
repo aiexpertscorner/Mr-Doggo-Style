@@ -2,8 +2,8 @@
 /**
  * src/pages/categories/[category].astro
  *
- * Clean category hub route.
- * Heavy config, helper logic and layout sections live outside this page.
+ * Clean category hub route with AWIN + Amazon partner layers.
+ * Keep heavy config/helper logic outside this page.
  */
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -12,6 +12,7 @@ import { getCollection } from 'astro:content';
 import CategoryHero from '../../components/category/CategoryHero.astro';
 import CategoryQuickNav from '../../components/category/CategoryQuickNav.astro';
 import CategoryPartnerBlock from '../../components/category/CategoryPartnerBlock.astro';
+import CategoryAmazonBlock from '../../components/category/CategoryAmazonBlock.astro';
 import CategoryBreedGuides from '../../components/category/CategoryBreedGuides.astro';
 import CategoryOwnerResources from '../../components/category/CategoryOwnerResources.astro';
 import CategoryArticleGrid from '../../components/category/CategoryArticleGrid.astro';
@@ -40,11 +41,6 @@ import '../../styles/pages/category-hub.css';
 
 const SITE = 'https://pupwiki.com';
 
-/**
- * Keep the slugs inside getStaticPaths.
- * This avoids Astro/Cloudflare scope issues where imported or outer constants
- * can fail during route-cache generation for dynamic pages.
- */
 export function getStaticPaths() {
   return [
     'dog-food',
@@ -102,6 +98,7 @@ const itemListLd = buildItemListLd({
   title={meta.seoTitle}
   description={meta.seoDescription}
   canonicalUrl={`${SITE}/categories/${categorySlug}`}
+  pageType="collection"
 >
   <script type="application/ld+json" set:html={breadcrumbLd} />
   <script type="application/ld+json" set:html={collectionPageLd} />
@@ -119,6 +116,11 @@ const itemListLd = buildItemListLd({
       meta={meta}
       categorySlug={categorySlug}
       tags={awinTags.primary}
+    />
+
+    <CategoryAmazonBlock
+      meta={meta}
+      categorySlug={categorySlug}
     />
 
     {breedChips.length >= 3 && (
