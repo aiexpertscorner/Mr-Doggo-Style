@@ -17,6 +17,7 @@
 @import './components/hero.css';
 @import './components/cards.css';
 @import './components/misc.css';
+@import './components/monetization.css';
 
 /* Feature styles */
 @import './components/breed.css';
