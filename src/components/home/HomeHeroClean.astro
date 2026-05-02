@@ -1,4 +1,11 @@
 ---
+/**
+ * HomeHeroClean.astro — PupWiki modern responsive hero.
+ * Mobile-first, no inline styles, no horizontal overflow, image data enriched by Pexels when available.
+ */
+
+import heroImageData from '../../data/home-hero-images.json';
+
 export interface Cta { label: string; href: string }
 export interface HeroStat { value: string; label: string }
 export interface HeroFeature { icon?: string; title: string; text: string }
@@ -18,47 +25,116 @@ export interface Props {
   features?: HeroFeature[];
   stats?: HeroStat[];
 }
+
 const {
   id = 'home-hero',
   eyebrow = 'Trusted guidance for dog parents',
-  title = 'Research breeds, plan care, and raise a happier dog.',
-  accent = 'All in one trusted place.',
-  subtitle = 'PupWiki helps dog parents compare breeds and mixed breeds, understand care and health considerations, explore training guidance, and make smarter ownership decisions.',
+  title = 'Research breeds, plan costs, and care smarter.',
+  accent = 'All in one place.',
+  subtitle = 'PupWiki helps dog parents compare breeds and mixed breeds, understand care needs, plan costs, and make more confident ownership decisions.',
   primaryCta = { label: 'Explore Dog Breeds', href: '/breeds' },
-  secondaryCta = { label: 'Compare Breeds', href: '/breed-comparison' },
-  imageSrc = 'https://images.unsplash.com/photo-1544568100-847a948585b9?w=1400&q=82&fit=crop',
-  imageAlt = 'Happy dog outdoors',
-  heroCardEyebrow = 'Data-backed dog guidance',
-  heroCardText = 'Breed profiles, mixed breeds, cost tools, care guidance, and practical next steps for real dog owners.',
+  secondaryCta = { label: 'Plan Costs', href: '/cost-calculator' },
+  imageSrc = 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1400&q=82&fit=crop',
+  imageAlt = 'Happy dogs outdoors',
+  heroCardEyebrow = 'Decision support for dog parents',
+  heroCardText = 'Breed guides, mixed-breed profiles, cost calculators, training paths, and practical care resources in one place.',
   trustItems = [],
   features = [],
   stats = [],
 } = Astro.props;
+
+const enrichedImages = Array.isArray((heroImageData as any).images) ? (heroImageData as any).images : [];
+const mainImage = enrichedImages[0] || { src: imageSrc, mobileSrc: imageSrc, alt: imageAlt, focal: 'center' };
+const sideImages = enrichedImages.slice(1, 4);
+const heroStats = stats.slice(0, 3);
+const heroFeatures = features.slice(0, 3);
+const quickLinks = [
+  { label: 'Puppy hub', href: '/categories/puppy', icon: '🐶' },
+  { label: 'Senior dogs', href: '/categories/senior-dogs', icon: '🐕‍🦺' },
+  { label: 'Dog food', href: '/categories/dog-food', icon: '🍖' },
+];
 ---
+
 <section id={id} class="pw-hero" aria-labelledby={`${id}-title`}>
   <div class="pw-hero__inner">
     <div class="pw-hero__grid">
-      <div class="pw-hero__content pw-stack pw-stack--lg">
-        <div class="pw-stack">
-          <p class="pw-eyebrow pw-hero__eyebrow">{eyebrow}</p>
-          <h1 id={`${id}-title`} class="pw-title-xl pw-hero__title">{title}<span>{accent}</span></h1>
-          <p class="pw-lede pw-hero__subtitle">{subtitle}</p>
-        </div>
+      <div class="pw-hero__content">
+        <p class="pw-hero__eyebrow">{eyebrow}</p>
+
+        <h1 id={`${id}-title`} class="pw-hero__title">
+          <span>{title}</span>
+          <em>{accent}</em>
+        </h1>
+
+        <p class="pw-hero__subtitle">{subtitle}</p>
+
         <div class="pw-hero__actions" aria-label="Primary homepage actions">
-          <a href={primaryCta.href} class="pw-btn pw-btn--primary"><span>{primaryCta.label}</span><span class="pw-hero__button-icon" aria-hidden="true">→</span></a>
+          <a href={primaryCta.href} class="pw-btn pw-btn--primary">
+            {primaryCta.label}
+            <span aria-hidden="true">→</span>
+          </a>
           <a href={secondaryCta.href} class="pw-btn pw-btn--outline">{secondaryCta.label}</a>
         </div>
-        {trustItems.length > 0 && <ul class="pw-hero__trust" aria-label="PupWiki highlights">{trustItems.map((item) => <li>{item}</li>)}</ul>}
-        {stats.length > 0 && <div class="pw-hero__stats" aria-label="PupWiki statistics">{stats.map((stat) => <article class="pw-stat-card"><strong>{stat.value}</strong><span>{stat.label}</span></article>)}</div>}
+
+        {trustItems.length > 0 && (
+          <ul class="pw-hero__trust" aria-label="PupWiki highlights">
+            {trustItems.slice(0, 4).map((item) => <li>{item}</li>)}
+          </ul>
+        )}
+
+        <nav class="pw-hero__quick-links" aria-label="Popular PupWiki starting points">
+          {quickLinks.map((link) => (
+            <a href={link.href}><span aria-hidden="true">{link.icon}</span>{link.label}</a>
+          ))}
+        </nav>
       </div>
-      <div class="pw-hero__media-wrap">
-        <figure class="pw-media-frame pw-hero__media">
-          <img src={imageSrc} alt={imageAlt} loading="eager" decoding="async" />
-          <div class="pw-media-shade" aria-hidden="true"></div>
-          <figcaption class="pw-hero__floating-card"><p>{heroCardEyebrow}</p><span>{heroCardText}</span></figcaption>
+
+      <div class="pw-hero__visual" aria-label="Dog care and breed research visuals">
+        <figure class="pw-hero__image-card pw-hero__image-card--main">
+          <picture>
+            <source srcset={mainImage.mobileSrc || mainImage.src} media="(max-width: 640px)" />
+            <img src={mainImage.src || imageSrc} alt={mainImage.alt || imageAlt} width="760" height="620" loading="eager" decoding="async" fetchpriority="high" />
+          </picture>
+          <div class="pw-hero__image-shade" aria-hidden="true"></div>
+          <figcaption class="pw-hero__insight-card">
+            <span>{heroCardEyebrow}</span>
+            <strong>{heroCardText}</strong>
+          </figcaption>
         </figure>
+
+        {sideImages.length > 0 && (
+          <div class="pw-hero__mini-strip" aria-hidden="true">
+            {sideImages.map((image) => (
+              <img src={image.mobileSrc || image.src} alt="" width="132" height="104" loading="lazy" decoding="async" />
+            ))}
+          </div>
+        )}
+
+        {heroStats.length > 0 && (
+          <div class="pw-hero__stats" aria-label="PupWiki statistics">
+            {heroStats.map((stat) => (
+              <article>
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </article>
+            ))}
+          </div>
+        )}
       </div>
     </div>
-    {features.length > 0 && <div class="pw-hero__features" aria-label="PupWiki sections">{features.map((feature) => <article class="pw-card pw-hero__feature"><div class="pw-hero__feature-icon" aria-hidden="true">{feature.icon ?? '•'}</div><div><h2>{feature.title}</h2><p>{feature.text}</p></div></article>)}</div>}
+
+    {heroFeatures.length > 0 && (
+      <div class="pw-hero__features" aria-label="PupWiki sections">
+        {heroFeatures.map((feature) => (
+          <article class="pw-hero__feature">
+            <span class="pw-hero__feature-icon" aria-hidden="true">{feature.icon ?? '🐾'}</span>
+            <div>
+              <h2>{feature.title}</h2>
+              <p>{feature.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
   </div>
 </section>
