@@ -3,6 +3,7 @@ import {
   normalizeAmazonPath,
   normalizeAmazonTag,
 } from './amazonConfig';
+import { mergeAmazonProductsWithFallbacks } from './amazonDeeplink';
 import type { AmazonPlacementContext, AmazonProductRecord } from './amazonTypes';
 
 function safeNumber(value: unknown, fallback = 0) {
@@ -25,16 +26,8 @@ function targetMatchesPage(target: string, pageSlug: string) {
 
   if (!normalizedTarget || !normalizedPage) return false;
   if (normalizedTarget === normalizedPage) return true;
-
-  // Seed convention: /breeds/[breed] matches all generated breed pages.
-  if (normalizedTarget.includes('[breed]') && normalizedPage.startsWith('/breeds/')) {
-    return true;
-  }
-
-  // Broad sections can match descendants.
-  if (!normalizedTarget.includes('[') && normalizedPage.startsWith(`${normalizedTarget}/`)) {
-    return true;
-  }
+  if (normalizedTarget.includes('[breed]') && normalizedPage.startsWith('/breeds/')) return true;
+  if (!normalizedTarget.includes('[') && normalizedPage.startsWith(`${normalizedTarget}/`)) return true;
 
   return false;
 }
@@ -56,10 +49,7 @@ function salesIntentScore(value?: string) {
   return 0;
 }
 
-export function scoreAmazonProduct(
-  product: AmazonProductRecord,
-  context: AmazonPlacementContext = {}
-) {
+export function scoreAmazonProduct(product: AmazonProductRecord, context: AmazonPlacementContext = {}) {
   let score = 0;
 
   const productTags = normalizeList(product.topicTags);
@@ -71,16 +61,14 @@ export function scoreAmazonProduct(
     context.breedLifeStage ?? '',
   ]);
 
-  const productBlob = normalizeAmazonTag(
-    [
-      product.name,
-      product.brand,
-      product.categoryGroup,
-      product.categoryLabel,
-      product.recommendedPlacement,
-      product.amazonSearchQuery,
-    ].filter(Boolean).join(' ')
-  );
+  const productBlob = normalizeAmazonTag([
+    product.name,
+    product.brand,
+    product.categoryGroup,
+    product.categoryLabel,
+    product.recommendedPlacement,
+    product.amazonSearchQuery,
+  ].filter(Boolean).join(' '));
 
   for (const tag of contextTags) {
     if (productTags.includes(tag)) score += 10;
@@ -89,10 +77,7 @@ export function scoreAmazonProduct(
 
   const pageSlug = context.pageSlug || '';
   const targetSlugs = product.targetPageSlugs ?? [];
-
-  if (pageSlug && targetSlugs.some((target) => targetMatchesPage(target, pageSlug))) {
-    score += 18;
-  }
+  if (pageSlug && targetSlugs.some((target) => targetMatchesPage(target, pageSlug))) score += 18;
 
   const pageType = normalizeAmazonTag(context.pageType);
   if (pageType === 'category' && targetSlugs.some((target) => target.startsWith('/categories/'))) score += 5;
@@ -105,12 +90,9 @@ export function scoreAmazonProduct(
   if (normalizeAmazonTag(product.liveSearchStatus).includes('validated')) score += 4;
   if (product.isLiveEligible) score += 3;
 
-  // Keep health-adjacent products narrow unless page context asks for it.
   if (
     normalizeAmazonTag(product.categoryGroup) === 'health-adjacent' &&
-    !contextTags.some((tag) =>
-      ['health', 'wellness', 'supplements', 'joint', 'dental', 'pill', 'calming'].includes(tag)
-    )
+    !contextTags.some((tag) => ['health', 'wellness', 'supplements', 'joint', 'dental', 'pill', 'calming'].includes(tag))
   ) {
     score -= 6;
   }
@@ -118,10 +100,7 @@ export function scoreAmazonProduct(
   return score;
 }
 
-export function matchAmazonProducts(
-  products: AmazonProductRecord[],
-  context: AmazonPlacementContext = {}
-) {
+export function matchValidatedAmazonProducts(products: AmazonProductRecord[], context: AmazonPlacementContext = {}) {
   const excluded = new Set(context.excludeProductIds ?? []);
   const limit = Math.max(1, context.limit ?? 3);
 
@@ -130,23 +109,24 @@ export function matchAmazonProducts(
     .filter((product) => !excluded.has(product.id))
     .filter(hasValidAmazonLink)
     .filter((product) => isAllowedByCompliance(product, context))
-    .map((product) => ({
-      product,
-      score: scoreAmazonProduct(product, context),
-    }))
+    .map((product) => ({ product, score: scoreAmazonProduct(product, context) }))
     .filter((entry) => entry.score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
     .map((entry) => entry.product);
 }
 
-export function matchTopAmazonProduct(
-  products: AmazonProductRecord[],
-  context: AmazonPlacementContext = {}
-) {
+export function matchAmazonProducts(products: AmazonProductRecord[], context: AmazonPlacementContext = {}) {
+  const validated = matchValidatedAmazonProducts(products, context);
+  return mergeAmazonProductsWithFallbacks(validated, context);
+}
+
+export function matchTopAmazonProduct(products: AmazonProductRecord[], context: AmazonPlacementContext = {}) {
   return matchAmazonProducts(products, { ...context, limit: 1 })[0] ?? null;
 }
 
 export function getEnabledAmazonProductCount(products: AmazonProductRecord[]) {
   return products.filter((product) => product.enabled && hasValidAmazonLink(product)).length;
 }
+
+export type { AmazonPlacementContext } from './amazonTypes';
