@@ -111,15 +111,15 @@ const structuredData = [
             const cluster = clusterFor(program);
             const kpi = program.kpi || {};
             return (
-              <article class="pw-card pw-card--interactive pw-stack" style="padding: var(--space-5);">
-                <div class="pw-cluster" style="justify-content: space-between; align-items: flex-start;">
-                  {program.logoUrl ? <img src={program.logoUrl} alt={`${program.name} logo`} width="64" height="64" loading="lazy" decoding="async" style="width:64px;height:64px;object-fit:contain;border-radius:16px;background:#fff;border:1px solid var(--color-border);padding:8px;" /> : <span class="pw-chip pw-chip--accent">AWIN</span>}
-                  <span class="pw-chip pw-chip--primary">{cluster.icon} {cluster.label}</span>
+              <article class="pw-card pw-card--interactive pw-stack partner-card">
+                <div class="pw-cluster partner-card__top">
+                  {program.logoUrl ? <img class="partner-card__logo" src={program.logoUrl} alt={`${program.name} logo`} width="64" height="64" loading="lazy" decoding="async" /> : <span class="pw-chip pw-chip--accent">AWIN</span>}
+                  <a class="pw-chip pw-chip--primary" href={cluster.href}>{cluster.icon} {cluster.label}</a>
                 </div>
 
                 <div>
-                  <h3 style="margin:0;color:var(--color-heading);font-family:var(--font-serif);font-size:var(--text-2xl);line-height:1.05;">{program.name}</h3>
-                  <p style="margin:var(--space-3) 0 0;color:var(--color-body-soft);font-size:var(--text-sm);line-height:var(--leading-relaxed);">
+                  <h3 class="partner-card__title">{program.name}</h3>
+                  <p class="partner-card__meta">
                     {program.primarySector || 'Partner programme'} · {percentRange(program.commissionRange)} · {program.linkStatus || 'online'}
                   </p>
                 </div>
@@ -128,14 +128,14 @@ const structuredData = [
                   {(program.topicTags || []).slice(0, 4).map((tag: string) => <span class="pw-chip">{titleCase(tag)}</span>)}
                 </div>
 
-                <dl class="pw-grid pw-grid--2" style="gap:var(--space-3);margin:0;">
-                  <div class="pw-note"><strong>{productCount(program)}</strong><br />Product rows</div>
-                  <div class="pw-note"><strong>{creativeCount(program)}</strong><br />Creative rows</div>
-                  <div class="pw-note"><strong>{kpi.epc ?? 'n/a'}</strong><br />EPC</div>
-                  <div class="pw-note"><strong>{kpi.conversionRate ?? 'n/a'}%</strong><br />Conv. rate</div>
+                <dl class="pw-grid pw-grid--2 partner-card__stats">
+                  <div class="pw-note partner-card__stat"><strong>{productCount(program)}</strong><br />Product rows</div>
+                  <div class="pw-note partner-card__stat"><strong>{creativeCount(program)}</strong><br />Creative rows</div>
+                  <div class="pw-note partner-card__stat"><strong>{kpi.epc ?? 'n/a'}</strong><br />EPC</div>
+                  <div class="pw-note partner-card__stat"><strong>{kpi.conversionRate ?? 'n/a'}%</strong><br />Conv. rate</div>
                 </dl>
 
-                <div class="pw-cluster">
+                <div class="pw-cluster partner-card__actions">
                   <a class="pw-btn pw-btn--primary" href={profileHref(program)}>View profile</a>
                   <a class="pw-btn pw-btn--outline" href={program.deeplink || program.clickThroughUrl} target="_blank" rel="sponsored noopener">Partner link</a>
                 </div>
@@ -155,9 +155,9 @@ const structuredData = [
         </div>
 
         <div class="pw-grid pw-grid--3">
-          <article class="pw-card pw-stack" style="padding:var(--space-5);"><span class="pw-chip pw-chip--accent">1</span><h3>Match by intent</h3><p>Use topic tags, category clusters, lifecycle context and page type before showing partner CTAs.</p></article>
-          <article class="pw-card pw-stack" style="padding:var(--space-5);"><span class="pw-chip pw-chip--accent">2</span><h3>Disclose clearly</h3><p>Every affiliate placement needs a visible disclosure and sponsored/noopener link attributes.</p></article>
-          <article class="pw-card pw-stack" style="padding:var(--space-5);"><span class="pw-chip pw-chip--accent">3</span><h3>Avoid overclaiming</h3><p>Health, supplement, insurance and vet-adjacent pages should use planning language, not treatment claims.</p></article>
+          <article class="pw-card pw-stack partner-rule-card"><span class="pw-chip pw-chip--accent">1</span><h3>Match by intent</h3><p>Use topic tags, category clusters, lifecycle context and page type before showing partner CTAs.</p></article>
+          <article class="pw-card pw-stack partner-rule-card"><span class="pw-chip pw-chip--accent">2</span><h3>Disclose clearly</h3><p>Every affiliate placement needs a visible disclosure and sponsored/noopener link attributes.</p></article>
+          <article class="pw-card pw-stack partner-rule-card"><span class="pw-chip pw-chip--accent">3</span><h3>Avoid overclaiming</h3><p>Health, supplement, insurance and vet-adjacent pages should use planning language, not treatment claims.</p></article>
         </div>
       </div>
     </section>
