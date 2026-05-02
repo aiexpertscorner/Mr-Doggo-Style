@@ -1,108 +1,152 @@
 /**
  * generate-sitemap.mjs
- * Generates public/sitemap.xml covering all 3000+ pages
- * Run: node generate-sitemap.mjs
- * Then commit public/sitemap.xml — Cloudflare serves it statically
+ * Generates public/sitemap.xml from real page/content inventory.
  */
 
-import fs   from 'fs';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const ROOT    = path.dirname(fileURLToPath(import.meta.url));
-const SITE    = 'https://pupwiki.com';
-const TODAY   = new Date().toISOString().split('T')[0];
-const OUT     = path.join(ROOT, 'public', 'sitemap.xml');
+const ROOT = path.dirname(fileURLToPath(import.meta.url));
+const SITE = 'https://pupwiki.com';
+const TODAY = new Date().toISOString().split('T')[0];
+const OUT = path.join(ROOT, 'public', 'sitemap.xml');
 
-const breeds      = JSON.parse(fs.readFileSync(path.join(ROOT,'src','data','master-breeds.json'),'utf8'));
-const crossbreeds = JSON.parse(fs.readFileSync(path.join(ROOT,'src','data','master-crossbreeds.json'),'utf8'));
-const status      = JSON.parse(fs.readFileSync(path.join(ROOT,'src','data','content-status.json'),'utf8'));
-
-const urls = [];
-
-// Helper
-function add(loc, priority, changefreq = 'weekly') {
-  urls.push({ loc: `${SITE}${loc}`, priority, changefreq, lastmod: TODAY });
+function readJson(rel, fallback) {
+  try { return JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8')); }
+  catch { return fallback; }
+}
+function walk(dir, suffixes = []) {
+  if (!fs.existsSync(dir)) return [];
+  const out = [];
+  for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, item.name);
+    if (item.isDirectory()) out.push(...walk(full, suffixes));
+    else if (!suffixes.length || suffixes.some((suffix) => item.name.endsWith(suffix))) out.push(full);
+  }
+  return out;
+}
+function parseFrontmatter(text) {
+  if (!text.startsWith('---')) return {};
+  const end = text.indexOf('\n---', 3);
+  if (end === -1) return {};
+  const raw = text.slice(4, end);
+  const data = {};
+  for (const line of raw.split(/\r?\n/)) {
+    const match = line.match(/^([A-Za-z][A-Za-z0-9_]*):\s*(.*)$/);
+    if (!match) continue;
+    let value = match[2].trim();
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) value = value.slice(1, -1);
+    data[match[1]] = value;
+  }
+  return data;
+}
+function loadClusterSlugs() {
+  const file = path.join(ROOT, 'src/lib/content/contentClusterConfig.ts');
+  if (!fs.existsSync(file)) return [];
+  const text = fs.readFileSync(file, 'utf8');
+  return Array.from(new Set([...text.matchAll(/^\s*['"]?([a-z0-9-]+)['"]?:\s*\{/gm)].map((m) => m[1]).filter((slug) => slug !== 'slug')));
 }
 
-// Static pages
+const breeds = readJson('src/data/master-breeds.json', []);
+const crossbreeds = readJson('src/data/master-crossbreeds.json', []);
+const status = readJson('src/data/content-status.json', {});
+const backlog = readJson('src/data/pseo-opportunity-backlog.json', { items: [] });
+const partnerSummary = readJson('src/data/pupwiki-partners-summary.json', { partners: [] });
+const allBreeds = [...breeds, ...crossbreeds];
+const urls = new Map();
+
+function add(loc, priority = 0.6, changefreq = 'weekly', lastmod = TODAY) {
+  if (!loc || loc.includes(':') || loc.includes('[')) return;
+  const clean = loc === '/' ? '/' : loc.replace(/\/$/, '');
+  urls.set(clean, { loc: `${SITE}${clean}`, priority, changefreq, lastmod });
+}
+
+// Core static pages.
 add('/', 1.0, 'daily');
-add('/breeds', 0.9, 'weekly');
-add('/blog', 0.8, 'daily');
-add('/dog-names', 0.8, 'weekly');
-add('/about', 0.4, 'monthly');
-add('/disclosure', 0.3, 'monthly');
-
-// Category pages
-const CATS = ['dog-food','toys','beds','health','training','grooming','supplements','smart-tech','travel','lifestyle'];
-CATS.forEach(c => add(`/categories/${c}`, 0.85, 'weekly'));
-
-// Breed hub pages (277)
-breeds.forEach(b => add(`/breeds/${b.slug}`, 0.9, 'weekly'));
-crossbreeds.forEach(b => add(`/breeds/${b.slug}`, 0.85, 'weekly'));
-
-// Cost calculator hub + all breed pages
+add('/breeds', 0.92, 'weekly');
+add('/blog', 0.82, 'daily');
+add('/categories', 0.74, 'weekly');
+add('/dog-names', 0.82, 'weekly');
 add('/cost-calculator', 0.9, 'weekly');
-breeds.forEach(b => add(`/cost-calculator/${b.slug}`, 0.85, 'weekly'));
-crossbreeds.forEach(b => add(`/cost-calculator/${b.slug}`, 0.80, 'weekly'));
+add('/about', 0.4, 'monthly');
+add('/disclosure', 0.34, 'monthly');
+add('/privacy', 0.3, 'monthly');
+add('/contact', 0.35, 'monthly');
+add('/how-we-test', 0.55, 'monthly');
 
-// Breed cluster blog posts
-breeds.forEach(b => {
-  const s = status[b.slug] || {};
-  if (s.food_post)        add(`/blog/best-food-for-${b.slug}`,       0.80, 'monthly');
-  if (s.toy_post)         add(`/blog/best-toys-for-${b.slug}`,        0.75, 'monthly');
-  if (s.bed_post)         add(`/blog/best-bed-for-${b.slug}`,         0.70, 'monthly');
-  if (s.grooming_post)    add(`/blog/best-grooming-for-${b.slug}`,    0.70, 'monthly');
-  if (s.health_post)      add(`/blog/${b.slug}-health-problems`,       0.75, 'monthly');
-  if (s.supplement_post)  add(`/blog/best-supplements-for-${b.slug}`, 0.65, 'monthly');
-  if (s.training_post)    add(`/blog/training-a-${b.slug}`,           0.65, 'monthly');
-  if (s.names_page)       add(`/dog-names/${b.slug}`,                 0.75, 'monthly');
-});
+// Category and cluster pages.
+const legacyCategories = ['dog-food','toys','beds','health','training','grooming','supplements','smart-tech','travel','lifestyle'];
+const clusters = loadClusterSlugs();
+[...new Set([...legacyCategories, ...clusters])].forEach((c) => add(`/categories/${c}`, c === 'puppy' || c === 'senior-dogs' || c === 'insurance' ? 0.88 : 0.84, 'weekly'));
 
-// Static blog posts (existing non-breed posts)
-const staticPosts = [
-  'best-dog-food-large-breeds','best-dog-beds-orthopedic','best-gps-dog-trackers',
-  'best-indestructible-dog-toys','best-no-pull-harnesses','best-interactive-dog-toys',
-  'best-joint-supplements-dogs','best-dog-grooming-tools','best-dog-shampoo',
-  'best-dog-training-collars','best-grain-free-dog-food','best-senior-dog-food',
-  'best-puppy-food-large-breeds','best-fetch-toys-dogs','best-flea-tick-prevention',
-  'best-automatic-dog-feeders','best-dog-cooling-mats','best-dog-crates-large-breeds',
-  'best-dog-dental-chews','best-dog-leashes-large-dogs','best-dog-nail-clippers',
-  'best-elevated-dog-beds','chewy-vs-amazon-dog-food','furminator-vs-cheaper-alternatives',
-  'kong-vs-goughnuts',
-  // Phase 5 money pages
-  'best-dog-food-maker-chefpaw-review-2026',
-  'best-gifts-for-dog-lovers-2026',
-  'best-training-tools-stubborn-dogs-2026',
-  // Comparison posts
-  'embark-dna-test-vs-wisdom-panel-essential','kong-extreme-vs-goughnuts-maxx',
-  'kong-classic-vs-west-paw-toppl','fi-series-4-gps-vs-tractive-gps-dog-4',
-  'purina-pro-plan-large-breed-vs-hills-science-diet-large-breed',
-  'the-farmers-dog-vs-ollie-fresh-food','big-barker-orthopedic-vs-petfusion-ultimate-bed',
-  'ruffwear-front-range-vs-rabbitgoo-no-pull-harness','nutramax-cosequin-vs-zesty-paws-mobility',
-  'stella-chewys-freeze-dried-vs-instinct-raw-boost-mixers',
-];
-staticPosts.forEach(s => add(`/blog/${s}`, 0.65, 'monthly'));
+// Breed hubs and tools.
+for (const breed of breeds) {
+  add(`/breeds/${breed.slug}`, 0.9, 'weekly');
+  add(`/cost-calculator/${breed.slug}`, 0.84, 'weekly');
+  add(`/dog-names/${breed.slug}`, 0.74, 'monthly');
+}
+for (const breed of crossbreeds) {
+  add(`/breeds/${breed.slug}`, 0.84, 'weekly');
+  add(`/cost-calculator/${breed.slug}`, 0.78, 'weekly');
+  add(`/dog-names/${breed.slug}`, 0.68, 'monthly');
+}
 
-// Build XML
+// Existing generated breed cluster posts from content-status.
+for (const breed of allBreeds) {
+  const s = status[breed.slug] || {};
+  if (s.food_post) add(`/blog/best-food-for-${breed.slug}`, 0.78, 'monthly');
+  if (s.toy_post) add(`/blog/best-toys-for-${breed.slug}`, 0.72, 'monthly');
+  if (s.bed_post) add(`/blog/best-bed-for-${breed.slug}`, 0.72, 'monthly');
+  if (s.grooming_post) add(`/blog/best-grooming-for-${breed.slug}`, 0.68, 'monthly');
+  if (s.health_post) add(`/blog/${breed.slug}-health-problems`, 0.66, 'monthly');
+  if (s.supplement_post) add(`/blog/best-supplements-for-${breed.slug}`, 0.58, 'monthly');
+  if (s.training_post) add(`/blog/training-a-${breed.slug}`, 0.68, 'monthly');
+}
+
+// Real blog markdown collection, including generated partner profiles.
+const blogDir = path.join(ROOT, 'src/content/blog');
+for (const file of walk(blogDir, ['.md'])) {
+  const slug = path.basename(file, '.md');
+  const data = parseFrontmatter(fs.readFileSync(file, 'utf8'));
+  if (String(data.noIndex || '').toLowerCase() === 'true') continue;
+  const isPartner = slug.startsWith('partner-') || data.category === 'PupWiki Partners';
+  const isGenerated = String(data.generated || '').toLowerCase() === 'true';
+  const priority = isPartner ? 0.58 : isGenerated ? 0.62 : 0.72;
+  const updated = data.updatedDate || data.pubDate || TODAY;
+  add(`/blog/${slug}`, priority, isPartner ? 'monthly' : 'weekly', String(updated).slice(0, 10));
+}
+
+// Explicit partner summary pages, in case the markdown was generated in prebuild.
+for (const partner of partnerSummary.partners || []) {
+  if (partner.href) add(partner.href, 0.58, 'monthly');
+}
+
+// Opportunity backlog: include only existing route suggestions with exists=true.
+for (const item of backlog.items || []) {
+  if (item?.exists && item?.suggestedPath && item?.sitemap?.include) {
+    add(item.suggestedPath, item.sitemap.priority || 0.62, item.sitemap.changefreq || 'monthly');
+  }
+}
+
+const sorted = [...urls.values()].sort((a, b) => a.loc.localeCompare(b.loc));
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url>
+${sorted.map((u) => `  <url>
     <loc>${u.loc}</loc>
     <lastmod>${u.lastmod}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority}</priority>
+    <priority>${u.priority.toFixed(2)}</priority>
   </url>`).join('\n')}
 </urlset>`;
 
+fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, xml, 'utf8');
 
 console.log(`\n✓ sitemap.xml written to public/`);
-console.log(`  Total URLs: ${urls.length}`);
-console.log(`  Breed hubs: ${breeds.length}`);
-console.log(`  Blog posts: ${urls.filter(u=>u.loc.includes('/blog/')).length}`);
-console.log(`  Name pages: ${urls.filter(u=>u.loc.includes('/dog-names/')).length}`);
-console.log(`\nNext steps:`);
-console.log(`  1. npm run build  (no more sitemap error)`);
-console.log(`  2. git add public/sitemap.xml && git commit -m "sitemap: ${urls.length} URLs"`);
-console.log(`  3. Submit https://pupwiki.com/sitemap.xml to Google Search Console\n`);
+console.log(`  Total URLs: ${sorted.length}`);
+console.log(`  Breed hubs: ${allBreeds.length}`);
+console.log(`  Blog URLs: ${sorted.filter((u) => u.loc.includes('/blog/')).length}`);
+console.log(`  Category URLs: ${sorted.filter((u) => u.loc.includes('/categories/')).length}`);
+console.log(`  Name pages: ${sorted.filter((u) => u.loc.includes('/dog-names/')).length}`);
+console.log(`\nSubmit: https://pupwiki.com/sitemap.xml\n`);
