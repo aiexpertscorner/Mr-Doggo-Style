@@ -12,16 +12,19 @@
  * Required for live programme sync:
  * - AWIN_OAUTH2_TOKEN
  *
- * Optional for product feeds:
+ * Required for live product feed enrichment:
  * - AWIN_PRODUCT_FEED_API_KEY
  *
  * Optional:
- * - AWIN_PUBLISHER_ID
- * - AWIN_COUNTRY_CODE
+ * - AWIN_PUBLISHER_ID=2861861
+ * - AWIN_COUNTRY_CODE=US
  * - AWIN_FETCH_CREATIVES=true
+ * - AWIN_PRODUCT_FEED_LIST_URL=<full feedList URL from Awin UI>
+ * - AWIN_SYNC_DISABLED=true
+ * - AWIN_ALLOW_FALLBACK_WRITE=true
  */
 
-import { readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -29,14 +32,22 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const DATA = join(ROOT, 'src', 'data');
 
+loadLocalEnv();
+
 const AWIN_API = 'https://api.awin.com';
-const PUBLISHER_ID = process.env.AWIN_PUBLISHER_ID || '2861861';
-const TOKEN = process.env.AWIN_OAUTH2_TOKEN || '';
-const PRODUCT_FEED_KEY = process.env.AWIN_PRODUCT_FEED_API_KEY || '';
-const COUNTRY_CODE = process.env.AWIN_COUNTRY_CODE || 'US';
-const FETCH_CREATIVES = String(process.env.AWIN_FETCH_CREATIVES || '').toLowerCase() === 'true';
-const TIMEOUT_MS = 15000;
-const PAGE_SIZE = 250;
+const PUBLISHER_ID = env('AWIN_PUBLISHER_ID', '2861861');
+const TOKEN = env('AWIN_OAUTH2_TOKEN', '');
+const PRODUCT_FEED_KEY = extractProductFeedKey(env('AWIN_PRODUCT_FEED_API_KEY', ''));
+const PRODUCT_FEED_LIST_URL = env('AWIN_PRODUCT_FEED_LIST_URL', '');
+const COUNTRY_CODE = env('AWIN_COUNTRY_CODE', 'US');
+const FETCH_CREATIVES = boolEnv('AWIN_FETCH_CREATIVES', false);
+const SYNC_DISABLED = boolEnv('AWIN_SYNC_DISABLED', false);
+const ALLOW_FALLBACK_WRITE = boolEnv('AWIN_ALLOW_FALLBACK_WRITE', false);
+const STRICT = process.argv.includes('--strict');
+const REQUIRE_PRODUCT_FEED_KEY = STRICT || boolEnv('AWIN_REQUIRE_PRODUCT_FEED_KEY', false);
+const REQUIRE_FEED_PRODUCTS = boolEnv('AWIN_REQUIRE_FEED_PRODUCTS', false);
+const TIMEOUT_MS = Number(env('AWIN_TIMEOUT_MS', '25000')) || 25000;
+const PAGE_SIZE = Number(env('AWIN_PRODUCT_PAGE_SIZE', '250')) || 250;
 
 const PRODUCT_COLUMNS = [
   'aw_product_id',
@@ -55,9 +66,90 @@ const PRODUCT_COLUMNS = [
   'last_updated',
 ];
 
+const runtime = {
+  warnings: [],
+  errors: [],
+  fetches: [],
+  feedListEndpointUsed: '',
+  feedProductFetchFailures: 0,
+};
+
+function env(name, fallback = '') {
+  const value = process.env[name];
+  return value == null || value === '' ? fallback : value;
+}
+
+function boolEnv(name, fallback = false) {
+  const value = process.env[name];
+  if (value == null || value === '') return fallback;
+  return ['1', 'true', 'yes', 'on'].includes(String(value).toLowerCase());
+}
+
+function loadLocalEnv() {
+  // Node scripts do not automatically load .env.local. This small loader keeps local runs simple
+  // without adding a dotenv dependency.
+  for (const fileName of ['.env', '.env.local']) {
+    const file = join(ROOT, fileName);
+    if (!existsSync(file)) continue;
+
+    const lines = readFileSync(file, 'utf8').split(/\r?\n/);
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const match = trimmed.match(/^([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$/);
+      if (!match) continue;
+      const [, key, rawValue] = match;
+      if (process.env[key] != null) continue;
+      process.env[key] = unquoteEnvValue(rawValue);
+    }
+  }
+}
+
+function unquoteEnvValue(value) {
+  let output = String(value || '').trim();
+  if ((output.startsWith('"') && output.endsWith('"')) || (output.startsWith("'") && output.endsWith("'"))) {
+    output = output.slice(1, -1);
+  }
+  return output;
+}
+
+function extractProductFeedKey(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return '';
+
+  // Allows users to paste either the bare key or the full Darwin URL:
+  // https://ui.awin.com/productdata-darwin-download/publisher/2861861/<key>/1/feedList
+  try {
+    const url = new URL(raw);
+    const parts = url.pathname.split('/').filter(Boolean);
+    const publisherIndex = parts.indexOf('publisher');
+    if (publisherIndex !== -1 && parts[publisherIndex + 2]) return parts[publisherIndex + 2];
+    const apiKeyIndex = parts.indexOf('apikey');
+    if (apiKeyIndex !== -1 && parts[apiKeyIndex + 1]) return parts[apiKeyIndex + 1];
+  } catch {
+    // Not a URL. Treat as a bare API key.
+  }
+  return raw;
+}
+
 function log(msg) { console.log(`[sync-awin] ${msg}`); }
-function warn(msg) { console.warn(`[sync-awin] WARN ${msg}`); }
+function warn(msg) {
+  runtime.warnings.push(msg);
+  console.warn(`[sync-awin] WARN ${msg}`);
+}
+function error(msg) {
+  runtime.errors.push(msg);
+  console.error(`[sync-awin] ERROR ${msg}`);
+}
 function ok(msg) { console.log(`[sync-awin] OK ${msg}`); }
+
+function failOrWarn(msg) {
+  if (STRICT) {
+    error(msg);
+    process.exit(1);
+  }
+  warn(msg);
+}
 
 function readJson(file, fallback = null) {
   try { return JSON.parse(readFileSync(file, 'utf8')); }
@@ -69,15 +161,16 @@ function writeJson(file, data) {
 }
 
 function normalize(value) {
-  return String(value || '').toLowerCase().trim().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return String(value || '')
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 function compact(value) {
   return normalize(value).replace(/-/g, '');
-}
-
-function titleFromSlug(slug) {
-  return String(slug || '').split('-').filter(Boolean).map((word) => word[0]?.toUpperCase() + word.slice(1)).join(' ');
 }
 
 function toArray(data, keys = []) {
@@ -88,51 +181,87 @@ function toArray(data, keys = []) {
   return [];
 }
 
-function parseCsv(text) {
-  const rows = [];
-  let row = [];
+function stripBom(text) {
+  return String(text || '').replace(/^\uFEFF/, '');
+}
+
+function splitDelimitedLine(line, delimiter) {
+  const cells = [];
   let cell = '';
   let quoted = false;
 
-  for (let i = 0; i < text.length; i++) {
-    const char = text[i];
-    const next = text[i + 1];
-
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    const next = line[i + 1];
     if (char === '"' && quoted && next === '"') {
       cell += '"';
       i++;
     } else if (char === '"') {
       quoted = !quoted;
-    } else if (char === ',' && !quoted) {
-      row.push(cell);
-      cell = '';
-    } else if ((char === '\n' || char === '\r') && !quoted) {
-      if (char === '\r' && next === '\n') i++;
-      row.push(cell);
-      if (row.some((value) => value !== '')) rows.push(row);
-      row = [];
+    } else if (char === delimiter && !quoted) {
+      cells.push(cell);
       cell = '';
     } else {
       cell += char;
     }
   }
-
-  if (cell || row.length) {
-    row.push(cell);
-    if (row.some((value) => value !== '')) rows.push(row);
-  }
-
-  if (rows.length < 2) return [];
-  const headers = rows[0].map((header) => normalize(header).replace(/-/g, '_'));
-  return rows.slice(1).map((values) => Object.fromEntries(headers.map((header, index) => [header, values[index] || ''])));
+  cells.push(cell);
+  return cells;
 }
 
-function parseMaybeJsonOrCsv(text) {
+function detectDelimiter(headerLine) {
+  const candidates = [',', '\t', ';', '|'];
+  return candidates
+    .map((delimiter) => ({ delimiter, count: splitDelimitedLine(headerLine, delimiter).length }))
+    .sort((a, b) => b.count - a.count)[0]?.delimiter || ',';
+}
+
+function parseDelimited(text) {
+  const normalizedText = stripBom(text).replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  const lines = [];
+  let current = '';
+  let quoted = false;
+
+  for (let i = 0; i < normalizedText.length; i++) {
+    const char = normalizedText[i];
+    const next = normalizedText[i + 1];
+    if (char === '"' && quoted && next === '"') {
+      current += '"';
+      i++;
+    } else if (char === '"') {
+      quoted = !quoted;
+      current += char;
+    } else if (char === '\n' && !quoted) {
+      if (current.trim()) lines.push(current);
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+  if (current.trim()) lines.push(current);
+  if (lines.length < 2) return [];
+
+  const delimiter = detectDelimiter(lines[0]);
+  const headers = splitDelimitedLine(lines[0], delimiter).map((header) => normalize(header).replace(/-/g, '_'));
+  return lines.slice(1).map((line) => {
+    const values = splitDelimitedLine(line, delimiter);
+    return Object.fromEntries(headers.map((header, index) => [header, values[index] || '']));
+  });
+}
+
+function parseMaybeJsonOrDelimited(text) {
+  const clean = stripBom(text).trim();
+  if (!clean) return [];
+  if (clean.startsWith('<')) {
+    warn('Received XML/HTML-like response where JSON/CSV/TSV was expected; skipping parse for this endpoint.');
+    return [];
+  }
+
   try {
-    const json = JSON.parse(text);
-    return toArray(json, ['data', 'feeds', 'products', 'items']);
+    const json = JSON.parse(clean);
+    return toArray(json, ['data', 'feeds', 'feedList', 'products', 'items', 'productList', 'rows']);
   } catch {
-    return parseCsv(text);
+    return parseDelimited(clean);
   }
 }
 
@@ -179,11 +308,11 @@ function inferTopicTags(program) {
   ].join(' ').toLowerCase();
 
   const tags = new Set(['partner']);
-  if (/food|meal|nutrition|treat|raw|pawco|pupford|montana/.test(text)) tags.add('food'), tags.add('nutrition');
+  if (/food|meal|nutrition|treat|raw|pawco|pupford|montana|broth/.test(text)) tags.add('food'), tags.add('nutrition');
   if (/insurance|vet|health|wuffes|odie|dutch/.test(text)) tags.add('health');
-  if (/harness|leash|collar|training|crate|neewa|joyride|impact/.test(text)) tags.add('training'), tags.add('gear');
+  if (/harness|leash|collar|training|crate|neewa|joyride|impact|fence/.test(text)) tags.add('training'), tags.add('gear');
   if (/bed|foggy|blanket|home|petmate/.test(text)) tags.add('beds');
-  if (/gift|portrait|willow|crown|muse|bereave/.test(text)) tags.add('gift'), tags.add('lifestyle');
+  if (/gift|portrait|willow|crown|muse|bereave|license/.test(text)) tags.add('gift'), tags.add('lifestyle');
   return [...tags];
 }
 
@@ -204,17 +333,6 @@ function getProgramIdentity(program) {
   };
 }
 
-function getProgramDeeplink(programRecord) {
-  return (
-    programRecord.staticConfig?.deeplink ||
-    programRecord.clickThroughUrl ||
-    programRecord.programmeInfo?.clickThroughUrl ||
-    programRecord.displayUrl ||
-    programRecord.programmeInfo?.displayUrl ||
-    ''
-  );
-}
-
 function isActiveStatus(status) {
   const value = String(status || '').toLowerCase();
   return ['joined', 'active', 'approved'].includes(value);
@@ -222,37 +340,31 @@ function isActiveStatus(status) {
 
 async function apiFetch(path, description = path) {
   if (!TOKEN) return null;
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
-  try {
-    const separator = path.includes('?') ? '&' : '?';
-    const url = `${AWIN_API}${path}${path.includes('accessToken=') ? '' : `${separator}accessToken=${encodeURIComponent(TOKEN)}`}`;
-    const res = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-        Accept: 'application/json',
-      },
-      signal: controller.signal,
-    });
-    clearTimeout(timer);
-    if (!res.ok) {
-      warn(`${description} -> HTTP ${res.status}`);
-      return null;
-    }
-    return await res.json();
-  } catch (err) {
-    clearTimeout(timer);
-    warn(`${description} -> ${err.message || err}`);
+  const separator = path.includes('?') ? '&' : '?';
+  const url = `${AWIN_API}${path}${path.includes('accessToken=') ? '' : `${separator}accessToken=${encodeURIComponent(TOKEN)}`}`;
+  return jsonFetch(url, description, {
+    Authorization: `Bearer ${TOKEN}`,
+    Accept: 'application/json',
+  });
+}
+
+async function jsonFetch(url, description = url, headers = {}) {
+  const text = await rawFetch(url, description, headers);
+  if (!text) return null;
+  try { return JSON.parse(text); }
+  catch {
+    warn(`${description} returned a non-JSON response`);
     return null;
   }
 }
 
-async function rawFetch(url, description = url) {
+async function rawFetch(url, description = url, headers = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    const res = await fetch(url, { signal: controller.signal });
+    const res = await fetch(url, { headers, signal: controller.signal });
     clearTimeout(timer);
+    runtime.fetches.push({ description, ok: res.ok, status: res.status });
     if (!res.ok) {
       warn(`${description} -> HTTP ${res.status}`);
       return null;
@@ -260,6 +372,7 @@ async function rawFetch(url, description = url) {
     return await res.text();
   } catch (err) {
     clearTimeout(timer);
+    runtime.fetches.push({ description, ok: false, status: 'error' });
     warn(`${description} -> ${err.message || err}`);
     return null;
   }
@@ -329,37 +442,68 @@ function normalizeProgram(program, relationship, details = null) {
   };
 }
 
+function productFeedListUrls() {
+  const urls = [];
+  if (PRODUCT_FEED_LIST_URL) urls.push(PRODUCT_FEED_LIST_URL.replace('<publisherId>', PUBLISHER_ID).replace('<apiKey>', PRODUCT_FEED_KEY));
+  if (PRODUCT_FEED_KEY) {
+    urls.push(`https://productdata.awin.com/datafeed/list/apikey/${encodeURIComponent(PRODUCT_FEED_KEY)}`);
+    urls.push(`https://ui.awin.com/productdata-darwin-download/publisher/${encodeURIComponent(PUBLISHER_ID)}/${encodeURIComponent(PRODUCT_FEED_KEY)}/1/feedList`);
+  }
+  return [...new Set(urls)];
+}
+
 async function fetchProductFeeds() {
   if (!PRODUCT_FEED_KEY) {
     warn('No AWIN_PRODUCT_FEED_API_KEY; skipping Product Feed List download');
     return [];
   }
 
-  log('Fetching Product Feed List from productdata.awin.com');
-  const url = `https://productdata.awin.com/datafeed/list/apikey/${encodeURIComponent(PRODUCT_FEED_KEY)}`;
-  const text = await rawFetch(url, 'product-feed-list');
-  if (!text) return [];
-  const list = parseMaybeJsonOrCsv(text);
-  ok(`Found ${list.length} product feed list row(s)`);
-  return list;
+  for (const url of productFeedListUrls()) {
+    log(`Fetching Product Feed List via ${url.includes('darwin') ? 'Awin Darwin' : 'Awin productdata'} endpoint`);
+    const text = await rawFetch(url, url.includes('darwin') ? 'product-feed-list/darwin' : 'product-feed-list/productdata');
+    if (!text) continue;
+    const list = parseMaybeJsonOrDelimited(text);
+    if (list.length) {
+      runtime.feedListEndpointUsed = url.includes('darwin') ? 'darwin' : 'productdata';
+      ok(`Found ${list.length} product feed list row(s)`);
+      return list;
+    }
+    warn('Product Feed List endpoint returned no parseable rows; trying next endpoint if available.');
+  }
+
+  warn('No product feed list rows found. Static configured feed IDs will still be attempted.');
+  return [];
+}
+
+function valueFrom(raw, keys) {
+  for (const key of keys) {
+    const value = raw?.[key];
+    if (value != null && String(value).trim() !== '') return value;
+  }
+  return '';
 }
 
 function feedAdvertiserId(feed) {
-  return String(
-    feed.advertiser_id ||
-    feed.advertiserid ||
-    feed.merchant_id ||
-    feed.merchantid ||
-    feed.programme_id ||
-    feed.programmeid ||
-    feed.advertiserId ||
-    feed.merchantId ||
-    ''
-  );
+  return String(valueFrom(feed, [
+    'advertiser_id', 'advertiserid', 'advertiser', 'advertiserId',
+    'merchant_id', 'merchantid', 'merchant', 'merchantId',
+    'programme_id', 'programmeid', 'programmeId', 'program_id', 'programid', 'programId',
+    'mid', 'merchant_aw_id', 'aw_merchant_id',
+  ]));
 }
 
 function feedIdValue(feed) {
-  return String(feed.feed_id || feed.feedid || feed.fid || feed.id || feed.feedId || '');
+  return String(valueFrom(feed, [
+    'feed_id', 'feedid', 'feedId', 'fid', 'id', 'datafeed_id', 'data_feed_id',
+    'product_feed_id', 'productfeedid', 'feed_reference',
+  ]));
+}
+
+function feedDownloadUrl(feed) {
+  return String(valueFrom(feed, [
+    'download_url', 'downloadurl', 'downloadUrl', 'url', 'feed_url', 'feedurl', 'feedUrl',
+    'product_feed_url', 'productfeedurl', 'location', 'href',
+  ]));
 }
 
 function buildFeedMap(feeds) {
@@ -372,39 +516,68 @@ function buildFeedMap(feeds) {
   }
 
   for (const program of staticConfig.programs || []) {
-    if (program.merchantId && program.feedId && !map.has(String(program.merchantId))) {
-      map.set(String(program.merchantId), [{
-        id: program.feedId,
-        feed_id: program.feedId,
-        advertiser_id: program.merchantId,
-        merchant_id: program.merchantId,
-        name: program.label,
-        source: 'static-config',
-      }]);
+    if (program.merchantId && program.feedId) {
+      if (!map.has(String(program.merchantId))) map.set(String(program.merchantId), []);
+      const existing = map.get(String(program.merchantId));
+      const hasFeed = existing.some((feed) => feedIdValue(feed) === String(program.feedId));
+      if (!hasFeed) {
+        existing.push({
+          id: program.feedId,
+          feed_id: program.feedId,
+          advertiser_id: program.merchantId,
+          merchant_id: program.merchantId,
+          name: program.label,
+          source: 'static-config',
+        });
+      }
     }
   }
 
   return map;
 }
 
-async function fetchFeedProducts(feedId, label) {
-  if (!PRODUCT_FEED_KEY) return [];
-  if (!feedId) return [];
+function feedProductUrls(feedId, feed) {
+  const urls = [];
+  const directUrl = feedDownloadUrl(feed);
+  if (directUrl) urls.push(directUrl);
+
+  const columns = encodeURIComponent(PRODUCT_COLUMNS.join(','));
+  if (PRODUCT_FEED_KEY && feedId) {
+    urls.push([
+      `https://productdata.awin.com/datafeed/download/apikey/${encodeURIComponent(PRODUCT_FEED_KEY)}`,
+      `language/en/fid/${encodeURIComponent(feedId)}`,
+      `columns/${columns}`,
+      `format/json/limit/${PAGE_SIZE}`,
+    ].join('/'));
+
+    urls.push(`https://ui.awin.com/productdata-darwin-download/publisher/${encodeURIComponent(PUBLISHER_ID)}/${encodeURIComponent(PRODUCT_FEED_KEY)}/${encodeURIComponent(feedId)}/download?format=json&columns=${columns}&limit=${PAGE_SIZE}`);
+    urls.push(`https://ui.awin.com/productdata-darwin-download/publisher/${encodeURIComponent(PUBLISHER_ID)}/${encodeURIComponent(PRODUCT_FEED_KEY)}/${encodeURIComponent(feedId)}/download`);
+  }
+
+  return [...new Set(urls)];
+}
+
+async function fetchFeedProducts(feed, label) {
+  const feedId = feedIdValue(feed);
+  if (!PRODUCT_FEED_KEY || !feedId) return [];
 
   log(`Fetching products from feed ${feedId} (${label})`);
-  const columns = PRODUCT_COLUMNS.join(',');
-  const url = [
-    `https://productdata.awin.com/datafeed/download/apikey/${encodeURIComponent(PRODUCT_FEED_KEY)}`,
-    `language/en/fid/${encodeURIComponent(feedId)}`,
-    `columns/${encodeURIComponent(columns)}`,
-    `format/json/limit/${PAGE_SIZE}`,
-  ].join('/');
+  for (const url of feedProductUrls(feedId, feed)) {
+    const text = await rawFetch(url, `feed/${feedId}`);
+    if (!text) {
+      runtime.feedProductFetchFailures++;
+      continue;
+    }
+    const products = parseMaybeJsonOrDelimited(text);
+    if (products.length) {
+      ok(`${products.length} product row(s) from feed ${feedId}`);
+      return products;
+    }
+    warn(`feed/${feedId} returned no parseable products from one endpoint; trying next endpoint if available.`);
+  }
 
-  const text = await rawFetch(url, `feed/${feedId}`);
-  if (!text) return [];
-  const products = parseMaybeJsonOrCsv(text);
-  ok(`${products.length} product row(s) from feed ${feedId}`);
-  return products;
+  warn(`No product rows could be imported from feed ${feedId} (${label})`);
+  return [];
 }
 
 async function fetchCreativesForProgram(program) {
@@ -449,24 +622,26 @@ function normalizeCreative(creative, program) {
 }
 
 function normalizeProduct(raw, program) {
-  const rawId = raw.aw_product_id || raw.id || raw.merchantProductId || raw.merchant_product_id || raw.product_id;
-  const name = raw.product_name || raw.productName || raw.name || raw.title || '';
+  const rawId = valueFrom(raw, [
+    'aw_product_id', 'awproductid', 'id', 'product_id', 'productid', 'merchant_product_id', 'merchantproductid', 'sku', 'ean', 'gtin',
+  ]);
+  const name = valueFrom(raw, ['product_name', 'productname', 'name', 'title', 'product_title', 'producttitle']);
   if (!rawId || !name) return null;
 
-  const price = Number.parseFloat(raw.search_price || raw.searchPrice || raw.price || raw.current_price || '0') || 0;
-  const merchant = raw.merchant_name || raw.merchantName || raw.merchant || program.name || '';
-  const category = raw.category_name || raw.categoryName || raw.category || program.primarySector || '';
-  const image = raw.merchant_image_url || raw.aw_image_url || raw.merchantImageUrl || raw.image || raw.imageUrl || '';
-  const url = raw.aw_deep_link || raw.awDeepLink || raw.deepLink || raw.url || program.deeplink || program.clickThroughUrl || '';
+  const price = Number.parseFloat(String(valueFrom(raw, ['search_price', 'searchprice', 'price', 'current_price', 'currentprice', 'display_price'])).replace(/[^0-9.,-]/g, '').replace(',', '.')) || 0;
+  const merchant = valueFrom(raw, ['merchant_name', 'merchantname', 'merchant', 'advertiser_name', 'advertisername']) || program.name || '';
+  const category = valueFrom(raw, ['category_name', 'categoryname', 'category', 'merchant_category', 'merchantcategory']) || program.primarySector || '';
+  const image = valueFrom(raw, ['merchant_image_url', 'merchantimageurl', 'aw_image_url', 'awimageurl', 'image', 'image_url', 'imageurl', 'product_image', 'productimage']);
+  const url = valueFrom(raw, ['aw_deep_link', 'awdeeplink', 'deep_link', 'deeplink', 'aw_link', 'awlink', 'url', 'product_url', 'producturl']) || program.deeplink || program.clickThroughUrl || '';
 
   return {
     id: `${program.key}-${String(rawId).replace(/\W+/g, '-').toLowerCase()}`,
-    awProductId: String(raw.aw_product_id || raw.id || ''),
-    merchantProductId: String(raw.merchant_product_id || raw.merchantProductId || ''),
+    awProductId: String(valueFrom(raw, ['aw_product_id', 'awproductid', 'id']) || ''),
+    merchantProductId: String(valueFrom(raw, ['merchant_product_id', 'merchantproductid', 'sku']) || ''),
     name: String(name).trim(),
-    description: String(raw.description || raw.productDescription || '').trim().slice(0, 500),
+    description: String(valueFrom(raw, ['description', 'product_description', 'productdescription', 'short_description', 'shortdescription']) || '').trim().slice(0, 500),
     price,
-    currency: raw.currency || program.currencyCode || 'USD',
+    currency: valueFrom(raw, ['currency', 'currency_code', 'currencycode']) || program.currencyCode || 'USD',
     url,
     image,
     merchant: String(merchant).trim(),
@@ -474,7 +649,7 @@ function normalizeProduct(raw, program) {
     advertiserId: program.advertiserId,
     programId: program.key,
     topicTags: program.topicTags || [],
-    availability: raw.in_stock || raw.availability || '',
+    availability: valueFrom(raw, ['in_stock', 'instock', 'availability', 'stock_status', 'stockstatus']) || '',
     source: 'awin-product-feed',
     syncedAt: new Date().toISOString(),
   };
@@ -575,13 +750,7 @@ function buildLogoBanners(programs) {
 }
 
 function scoreCreative(banner) {
-  const preferred = [
-    [300, 250],
-    [728, 90],
-    [160, 600],
-    [468, 60],
-    [320, 50],
-  ];
+  const preferred = [[300, 250], [728, 90], [160, 600], [468, 60], [320, 50]];
   const index = preferred.findIndex(([w, h]) => Number(banner.width) === w && Number(banner.height) === h);
   return index === -1 ? 0 : preferred.length - index;
 }
@@ -606,12 +775,43 @@ function mergeBanners(registry, apiBanners, logoBanners) {
   };
 }
 
+function writeFallbackData(fallbackProducts, bannerRegistry, note) {
+  writeJson(join(DATA, 'awin-products.json'), enrichFallbackProducts(fallbackProducts));
+  writeJson(join(DATA, 'awin-programs.json'), {
+    publisherId: PUBLISHER_ID,
+    countryCode: COUNTRY_CODE,
+    syncedAt: new Date().toISOString(),
+    note,
+    programs: [],
+    pendingPrograms: [],
+    summary: [],
+    stats: {
+      joined: 0,
+      pending: 0,
+      products: fallbackProducts.length,
+      apiProducts: 0,
+      banners: bannerRegistry.banners.length,
+      oauthTokenPresent: Boolean(TOKEN),
+      productFeedKeyPresent: Boolean(PRODUCT_FEED_KEY),
+      warnings: runtime.warnings,
+      errors: runtime.errors,
+    },
+  });
+  ok('Fallback data written');
+}
+
 async function main() {
+  if (SYNC_DISABLED) {
+    log('AWIN sync disabled via AWIN_SYNC_DISABLED=true; preserving existing data files.');
+    return;
+  }
+
   log('-------------------------------------');
   log('PupWiki x AWIN sync starting');
   log(`Publisher ID: ${PUBLISHER_ID}`);
   log(`OAuth token present: ${TOKEN ? 'yes' : 'NO - set AWIN_OAUTH2_TOKEN'}`);
   log(`Product feed key present: ${PRODUCT_FEED_KEY ? 'yes' : 'NO - set AWIN_PRODUCT_FEED_API_KEY for feeds'}`);
+  log(`Mode: ${STRICT ? 'strict' : 'safe'}`);
   log('-------------------------------------');
 
   const fallbackProducts = readJson(join(DATA, 'affiliate-products.json'), []);
@@ -620,25 +820,19 @@ async function main() {
   log(`Existing banners loaded: ${bannerRegistry.banners.length}`);
 
   if (!TOKEN) {
-    warn('No AWIN_OAUTH2_TOKEN; writing enriched fallback products and preserving banners');
-    writeJson(join(DATA, 'awin-products.json'), enrichFallbackProducts(fallbackProducts));
-    writeJson(join(DATA, 'awin-programs.json'), {
-      publisherId: PUBLISHER_ID,
-      syncedAt: new Date().toISOString(),
-      note: 'No token - using fallback product data',
-      programs: [],
-      pendingPrograms: [],
-      summary: [],
-      stats: {
-        joined: 0,
-        pending: 0,
-        products: fallbackProducts.length,
-        apiProducts: 0,
-        banners: bannerRegistry.banners.length,
-      },
-    });
-    ok('Fallback data written');
+    const message = 'No AWIN_OAUTH2_TOKEN; cannot run live programme sync.';
+    if (STRICT) failOrWarn(message);
+    if (ALLOW_FALLBACK_WRITE) {
+      warn(`${message} Writing fallback output because AWIN_ALLOW_FALLBACK_WRITE=true.`);
+      writeFallbackData(fallbackProducts, bannerRegistry, 'No AWIN OAuth token - using fallback product data');
+    } else {
+      warn(`${message} Existing AWIN data files were preserved to avoid overwriting live data with fallback data.`);
+    }
     return;
+  }
+
+  if (!PRODUCT_FEED_KEY && REQUIRE_PRODUCT_FEED_KEY) {
+    failOrWarn('No AWIN_PRODUCT_FEED_API_KEY; strict product feed sync cannot continue.');
   }
 
   const { joined, pending } = await fetchProgrammes();
@@ -676,8 +870,7 @@ async function main() {
 
     if (program.relationship === 'joined') {
       for (const feed of feedsForProgram.slice(0, 3)) {
-        const feedId = feedIdValue(feed);
-        const rows = await fetchFeedProducts(feedId, program.name);
+        const rows = await fetchFeedProducts(feed, program.name);
         for (const row of rows) {
           const normalized = normalizeProduct(row, program);
           if (normalized) {
@@ -694,6 +887,10 @@ async function main() {
         perProgramStats[program.key].hasCreatives = true;
       }
     }
+  }
+
+  if (REQUIRE_FEED_PRODUCTS && PRODUCT_FEED_KEY && apiProducts.length === 0) {
+    failOrWarn('AWIN product feed key is present, but no live product feed rows were imported.');
   }
 
   const programOfferProducts = buildProgramOfferProducts(livePrograms, apiProducts);
@@ -748,8 +945,13 @@ async function main() {
       apiBanners: apiBanners.length,
       logoBanners: logoBanners.length,
       totalBanners: mergedBannerRegistry.banners.length,
+      oauthTokenPresent: Boolean(TOKEN),
       productFeedKeyPresent: Boolean(PRODUCT_FEED_KEY),
+      feedListEndpointUsed: runtime.feedListEndpointUsed || null,
+      feedProductFetchFailures: runtime.feedProductFetchFailures,
       experimentalCreativesEnabled: FETCH_CREATIVES,
+      warnings: runtime.warnings,
+      errors: runtime.errors,
     },
   };
 
@@ -763,6 +965,9 @@ async function main() {
     log(`${program.name}: relationship=${program.relationship}, products=${program.productCount}, feed=${program.hasProductFeed ? 'yes' : 'no'}, logo=${program.hasLogo ? 'yes' : 'no'}`);
   }
 
+  if (runtime.warnings.length) {
+    log(`Completed with ${runtime.warnings.length} warning(s). Run npm run awin:audit for a structured report.`);
+  }
   log('-------------------------------------');
   log('Sync complete');
 }
