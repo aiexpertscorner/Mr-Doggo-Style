@@ -18,6 +18,7 @@ import AwinProductSlot from '../components/affiliate/AwinProductSlot.astro';
 
 export interface Props {
   title: string;
+  displayTitle?: string;
   description: string;
   canonicalUrl?: string;
   pubDate: string;
@@ -41,6 +42,7 @@ export interface Props {
 
 const {
   title,
+  displayTitle = title,
   description,
   canonicalUrl,
   pubDate,
@@ -127,7 +129,7 @@ const awinTopicTags = [
 const defaultArticleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: title,
+  headline: displayTitle,
   description,
   image: heroImage || undefined,
   datePublished: publishedIso,
@@ -159,7 +161,7 @@ const breadcrumbLd = {
     { '@type': 'ListItem', position: 1, name: 'Home',        item: `${SITE}/` },
     { '@type': 'ListItem', position: 2, name: 'Blog',        item: `${SITE}/blog` },
     { '@type': 'ListItem', position: 3, name: categoryMeta.label, item: `${SITE}/categories/${slugifiedCat}` },
-    ...(canonicalUrl ? [{ '@type': 'ListItem', position: 4, name: title, item: canonicalUrl }] : []),
+    ...(canonicalUrl ? [{ '@type': 'ListItem', position: 4, name: displayTitle, item: canonicalUrl }] : []),
   ],
 };
 ---
@@ -190,7 +192,7 @@ const breadcrumbLd = {
             { label: 'Home', href: '/' },
             { label: 'Guides', href: '/blog' },
             { label: categoryMeta.label, href: categoryPath },
-            { label: title, current: true },
+            { label: displayTitle, current: true },
           ]}
         />
 
@@ -204,7 +206,7 @@ const breadcrumbLd = {
           <span>{readTime} min read</span>
         </div>
 
-        <h1>{title}</h1>
+        <h1>{displayTitle}</h1>
 
         <p class="article-hero__subtitle">
           {description}
@@ -496,14 +498,14 @@ const breadcrumbLd = {
   }
 
   .article-hero h1 {
-    max-width: 15ch;
+    max-width: 18ch;
     margin: var(--space-5) 0 0;
     color: var(--color-heading);
     font-family: var(--font-serif);
-    font-size: clamp(2.45rem, 9.5vw, 5.25rem);
+    font-size: 2.35rem;
     font-weight: var(--weight-bold);
-    letter-spacing: -0.055em;
-    line-height: 0.98;
+    letter-spacing: 0;
+    line-height: 1.02;
     text-wrap: balance;
   }
 
@@ -512,7 +514,7 @@ const breadcrumbLd = {
     margin: var(--space-5) 0 0;
     color: var(--color-body-soft);
     font-family: var(--font-sans);
-    font-size: clamp(1rem, 2.2vw, var(--text-lg));
+    font-size: var(--text-lg);
     line-height: var(--leading-relaxed);
     text-wrap: pretty;
   }
@@ -615,6 +617,42 @@ const breadcrumbLd = {
 
   .article-content {
     min-width: 0;
+  }
+
+  .article-content :global(table) {
+    display: block;
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: #ffffff;
+    box-shadow: var(--shadow-xs);
+  }
+
+  .article-content :global(thead),
+  .article-content :global(tbody),
+  .article-content :global(tr) {
+    min-width: 42rem;
+  }
+
+  .article-content :global(th),
+  .article-content :global(td) {
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.75rem 0.85rem;
+    vertical-align: top;
+    color: var(--color-body);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    text-align: left;
+  }
+
+  .article-content :global(th) {
+    background: var(--color-bg-muted);
+    color: var(--color-heading);
+    font-weight: var(--weight-black);
+  }
+
+  .article-content :global(tr:last-child td) {
+    border-bottom: 0;
   }
 
   .article-tool-cta {
@@ -815,6 +853,10 @@ const breadcrumbLd = {
     .article-tool-cta,
     .article-correction-card {
       padding: var(--space-5);
+    }
+
+    .article-hero h1 {
+      font-size: 4.8rem;
     }
   }
 

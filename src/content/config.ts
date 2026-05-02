@@ -25,6 +25,9 @@ const blog = defineCollection({
     breedCoat:     z.string().optional(),
 
     // SEO / media
+    seoTitle:      z.string().optional(),
+    displayTitle:  z.string().optional(),
+    titlePattern:  z.string().optional(),
     heroImage:     z.string().optional(),
     heroImageAlt:  z.string().optional(),
     readTime:      z.number().optional(),

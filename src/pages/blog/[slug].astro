@@ -23,6 +23,7 @@ import contentStatus from '../../data/content-status.json';
 import BreedImage from '../../components/breed/BreedImage.astro';
 import PageBannerSlot from '../../components/affiliate/PageBannerSlot.astro';
 import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
+import AmazonProductSlot from '../../components/amazon/AmazonProductSlot.astro';
 
 const SITE = 'https://pupwiki.com';
 
@@ -43,6 +44,8 @@ const fm = post.data;
 
 const category = fm.category || 'Guide';
 const tags = Array.isArray(fm.tags) ? fm.tags : [];
+const pageTitle = fm.seoTitle || fm.title;
+const displayTitle = fm.displayTitle || fm.title;
 
 function normalize(value: unknown) {
   return String(value || '').toLowerCase();
@@ -110,10 +113,11 @@ const heroImage =
   (Array.isArray(breed?.image_urls) ? breed.image_urls[0] : null) ||
   '';
 
+const breedAltLabel = breedName?.endsWith(' Dog') ? breedName : `${breedName} dog`;
 const heroImageAlt =
   fm.heroImageAlt ||
   fm.imageAlt ||
-  (breedName ? `${breedName} dog guide` : fm.title);
+  (breedName ? `${breedAltLabel} guide` : displayTitle);
 
 const awinTopicTags = [
   normalize(category),
@@ -200,10 +204,16 @@ const showCommercialMidContent =
     ['medical-warning', 'vet-critical', 'emergency-vet', 'diagnosis', 'treatment'].includes(normalize(tag))
   );
 
+const showProductRoundupCommerce =
+  normalize(fm.postType) === 'product-roundup' &&
+  !tags.some((tag: string) =>
+    ['medical-warning', 'vet-critical', 'emergency-vet', 'diagnosis', 'treatment'].includes(normalize(tag))
+  );
+
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: fm.title,
+  headline: displayTitle,
   description: fm.description,
   image: heroImage || undefined,
   datePublished: new Date(fm.pubDate).toISOString(),
@@ -251,7 +261,7 @@ const breadcrumbSchema = {
     {
       '@type': 'ListItem',
       position: 4,
-      name: fm.title,
+      name: displayTitle,
       item: canonicalUrl,
     },
   ],
@@ -282,7 +292,8 @@ const relatedToolLinks = [
 ---
 
 <BlogLayout
-  title={fm.title}
+  title={pageTitle}
+  displayTitle={displayTitle}
   description={fm.description}
   canonicalUrl={canonicalUrl}
   pubDate={fm.pubDate}
@@ -355,6 +366,44 @@ const relatedToolLinks = [
   )}
 
   <Content />
+
+  {showProductRoundupCommerce && (
+    <section class="article-commerce-suite not-prose" aria-label="Relevant shopping resources">
+      <div class="article-commerce-suite__header">
+        <p>Shopping resources</p>
+        <h2>Current partner and Amazon.com options</h2>
+        <span>
+          These modules are matched from the active affiliate feeds. Always confirm formula, size,
+          availability, and seller details before purchase.
+        </span>
+      </div>
+
+      <div class="article-commerce-suite__grid">
+        <AwinProductSlot
+          topicTags={awinTopicTags}
+          pageType="blog"
+          category={normalize(category)}
+          breedSize={breed?.size_category || fm.breedSize}
+          breedEnergy={breed?.energy_level || fm.breedEnergy}
+          breedTraining={breed?.training_level}
+          headline="AWIN partner match"
+          monetizationIntent="high"
+        />
+
+        <AmazonProductSlot
+          topicTags={awinTopicTags}
+          pageType="blog"
+          pageSlug={`/blog/${post.slug}`}
+          category={normalize(category)}
+          breedSize={breed?.size_category || fm.breedSize}
+          breedEnergy={breed?.energy_level || fm.breedEnergy}
+          breedCoat={breed?.coat_type || fm.breedCoat}
+          headline="Amazon.com matches"
+          limit={3}
+        />
+      </div>
+    </section>
+  )}
 
   {showCommercialMidContent && (
     <div class="article-partner-strip not-prose">
@@ -574,15 +623,56 @@ const relatedToolLinks = [
   }
 
   .article-related-breed,
-  .article-next-tools {
+  .article-next-tools,
+  .article-commerce-suite {
     margin-top: var(--space-10);
     border-top: 1px solid var(--color-border);
     padding-top: var(--space-8);
   }
 
   .article-related-breed__header,
-  .article-next-tools__header {
+  .article-next-tools__header,
+  .article-commerce-suite__header {
     margin-bottom: var(--space-5);
+  }
+
+  .article-commerce-suite__header p {
+    display: inline-flex;
+    width: fit-content;
+    margin: 0;
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    padding: 0.44rem 0.7rem;
+    color: var(--color-accent-hover);
+    font-size: 0.68rem;
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-label);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .article-commerce-suite__header h2 {
+    margin: var(--space-3) 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-serif);
+    font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
+    letter-spacing: 0;
+    line-height: var(--leading-tight);
+  }
+
+  .article-commerce-suite__header span {
+    display: block;
+    max-width: 48rem;
+    margin-top: var(--space-3);
+    color: var(--color-body-soft);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .article-commerce-suite__grid {
+    display: grid;
+    gap: var(--space-4);
   }
 
   .article-related-grid,
@@ -709,6 +799,11 @@ const relatedToolLinks = [
   }
 
   @media (min-width: 900px) {
+    .article-commerce-suite__grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr);
+      align-items: start;
+    }
+
     .article-related-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }

@@ -1,8 +1,8 @@
 ---
-title: "Best Dog Beds for Yorkshire Terriers 2026 — Orthopedic, Calming & Size-Matched Picks"
-description: "Expert bed recommendations for Yorkshire Terriers: orthopedic for joint health, calming for anxious dogs, elevated for hot climates. All matched to small breed requirements."
+title: "Dog Beds for Yorkshire Terrier: Home, Crate, and Travel"
+description: "Shortlist dog beds for Yorkshire Terrier owners with joint comfort, crate fit, travel use, and cover care in view."
 pubDate: 2026-03-22
-updatedDate: 2026-03-22
+updatedDate: 2026-05-02
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "yorkshire-terrier"
@@ -17,6 +17,16 @@ topProduct:
   rating: 4.4
   image: "https://m.media-amazon.com/images/I/81mTKkm4e1L._AC_SL500_.jpg"
 schemaType: "Article"
+contentTier: "money"
+generated: true
+reviewMethod: "product-data-comparison"
+claimSensitivity: "medium"
+monetizationIntent: "cost"
+affiliateDisclosure: true
+medicalDisclaimer: false
+seoTitle: "Dog Beds for Yorkshire Terrier: Home, Crate, and Travel"
+displayTitle: "Dog beds for Yorkshire Terrier: home, crate, and travel"
+titlePattern: "beds-home"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Yorkshire Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.
@@ -27,19 +37,23 @@ The estimated lifetime ownership cost of a Yorkshire Terrier is around $20.701. 
 
 We selected the best beds for Yorkshire Terriers across four categories — orthopedic, calming, elevated, and travel — based on size match, washability, durability, and long-term value.
 
-> **Disclosure:** We earn a small commission on qualifying purchases. This doesn't affect our rankings.
 
 ---
 
-## Quick Comparison: Best Beds for Yorkshire Terriers
 
-| Bed | Price | Type | Award |
+## How this page was refreshed
+
+This guide now separates editorial guidance from shopping modules. The article explains fit, trade-offs, and breed context; the page template adds current AWIN and Amazon.com components from active data feeds where appropriate.
+
+## Bed shortlist for Yorkshire Terrier owners
+
+| Bed | Availability | Type | Award |
 |---|---|---|---|
-| FurHaven Ultra Plush Luxe Lounger | $44.99 | plush | 🥇 Top pick |
-| Coolaroo Elevated Pet Bed | $42.99 | elevated |  |
-| K&H Self-Warming Dog Bed | $34.99 | heated |  |
-| Best Friends by Sheri Calming Donut Bed | $49.99 | calming |  |
-| Casper Dog Bed | $125.00 | orthopedic |  |
+| FurHaven Ultra Plush Luxe Lounger | Retailer page | plush | 🥇 Top pick |
+| Coolaroo Elevated Pet Bed | Retailer page | elevated |  |
+| K&H Self-Warming Dog Bed | Retailer page | heated |  |
+| Best Friends by Sheri Calming Donut Bed | Retailer page | calming |  |
+| Casper Dog Bed | Retailer page | orthopedic |  |
 
 ---
 
@@ -63,9 +77,7 @@ An inner waterproof liner (under the removable cover) protects the foam from acc
 
 ### 1. Casper Dog Bed — Best Orthopedic for Yorkshire Terriers
 
-**$125.00 | ★★★★★ 4.5/5**
-
-[Check current price on Amazon →](https://www.amazon.com/dp/B07P3J5QWZ/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
+[Compare on Amazon.com](https://www.amazon.com/dp/B07P3J5QWZ/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 
 Best lifestyle orthopedic bed — Casper's mattress tech in a premium aesthetic package
 
@@ -84,9 +96,7 @@ Best lifestyle orthopedic bed — Casper's mattress tech in a premium aesthetic 
 
 ### 2. Best Friends by Sheri Calming Donut Bed — Best for Anxious Yorkshire Terriers
 
-**$49.99 | ★★★★★ 4.7/5**
-
-[Check current price on Amazon →](https://www.amazon.com/dp/B07V1WKZP6/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
+[Compare on Amazon.com](https://www.amazon.com/dp/B07V1WKZP6/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 
 Best calming bed — the raised rim mimics the den instinct perfectly
 
@@ -101,9 +111,7 @@ Best calming bed — the raised rim mimics the den instinct perfectly
 
 ### 3. Coolaroo Elevated Pet Bed — Best Elevated/Outdoor Option
 
-**$42.99 | ★★★★☆ 4.4/5**
-
-[Check current price on Amazon →](https://www.amazon.com/dp/B001KFZH12/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
+[Compare on Amazon.com](https://www.amazon.com/dp/B001KFZH12/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 
 Best outdoor elevated bed — extremely durable for outdoor use
 
@@ -116,9 +124,7 @@ Best outdoor elevated bed — extremely durable for outdoor use
 
 ### 4. Best Friends by Sheri Calming Donut Bed — Best Travel Bed
 
-**$49.99 | ★★★★★ 4.7/5**
-
-[Check current price on Amazon →](https://www.amazon.com/dp/B07V1WKZP6/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
+[Compare on Amazon.com](https://www.amazon.com/dp/B07V1WKZP6/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 
 Best calming bed — the raised rim mimics the den instinct perfectly
 

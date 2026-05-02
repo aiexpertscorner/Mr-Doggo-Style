@@ -18,6 +18,7 @@
 import fs   from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { buildPseoCopy } from './scripts/lib/pseo-copy-engine.mjs';
 
 const ROOT        = path.dirname(fileURLToPath(import.meta.url));
 const DATA        = path.join(ROOT, 'src', 'data');
@@ -137,6 +138,7 @@ function get_names(styles, insps, gender, count) {
 // ── FOOD TEMPLATE (1600w+) ─────────────────────────────────────
 function tmpl_food(breed, products) {
   const n = breed.name, sz = breed.size_category, en = breed.energy_level;
+  const pseo = buildPseoCopy('food', breed);
   const tr = breed.training_level, shed = breed.shedding_level;
   const life = breed.life_expectancy || {}, le = life.max || 12;
   const wt = breed.weight || {};
@@ -181,8 +183,11 @@ function tmpl_food(breed, products) {
   }).join('\n');
 
   return `---
-title: ${ys(`Best Dog Food for ${n}s 2026 — Vet-Guided Picks for ${sz.charAt(0).toUpperCase()+sz.slice(1)} Breeds`)}
-description: ${ys(`We tested 30+ formulas for ${sz} ${en} breeds like the ${n}. Top picks matched to their nutrition needs, joint health, and life stage — updated March 2026.`)}
+title: ${ys(pseo.seoTitle)}
+seoTitle: ${ys(pseo.seoTitle)}
+displayTitle: ${ys(pseo.displayTitle)}
+titlePattern: ${ys(pseo.titlePattern)}
+description: ${ys(pseo.description)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 category: "Dog Food"
@@ -201,6 +206,13 @@ topProduct:
   rating: ${top.rating||4.5}
   image: ${ys(top.image||'')}
 schemaType: "Article"
+contentTier: ${ys(pseo.contentTier)}
+generated: true
+reviewMethod: ${ys(pseo.reviewMethod)}
+claimSensitivity: ${ys(pseo.claimSensitivity)}
+monetizationIntent: ${ys(pseo.monetizationIntent)}
+affiliateDisclosure: true
+medicalDisclaimer: ${pseo.medicalDisclaimer ? 'true' : 'false'}
 ---
 
 Feeding a ${n} well isn't as simple as grabbing the bag with the highest rating. ${n}s are ${sz} dogs with ${en} energy, a ${longevity}, and nutritional vulnerabilities that change across their life stages.
@@ -213,7 +225,7 @@ We spent time cross-referencing 30+ dog food formulas against the ${n}'s breed p
 
 ---
 
-## Quick Comparison: Best Dog Foods for ${n}s
+## ${pseo.headings.comparison}
 
 | Formula | Price | Grain-Free | Vet-Recommended | Best For |
 |---|---|---|---|---|
@@ -221,7 +233,7 @@ ${table_rows}
 
 ---
 
-## Why ${n}s Have Specific Nutrition Needs
+## ${pseo.headings.why}
 
 ${energy_copy}
 
@@ -240,7 +252,7 @@ ${cost_line}
 
 ---
 
-## Top Picks for ${n}s
+## ${pseo.headings.picks}
 
 ### 1. ${top.name} — Best Overall
 
@@ -391,6 +403,7 @@ If you prefer grain-free: **${gfree.name}** is the most proven option — but di
 // ── TOYS TEMPLATE (1400w+) ─────────────────────────────────────
 function tmpl_toys(breed, products) {
   const n = breed.name, sz = breed.size_category, en = breed.energy_level, tr = breed.training_level;
+  const pseo = buildPseoCopy('toys', breed);
   const links = linkMap[breed.slug] || {};
   const rank = breed.ranking_data || {};
 
@@ -422,8 +435,11 @@ function tmpl_toys(breed, products) {
   }[en] || '';
 
   return `---
-title: ${ys(`Best Toys for ${n}s in 2026: Enrichment, Durability & Play Picks`)}
-description: ${ys(`The best toys for ${n}s matched to their ${en} energy and ${sz} size — from indestructible chews to puzzle enrichment. Expert picks for 2026.`)}
+title: ${ys(pseo.seoTitle)}
+seoTitle: ${ys(pseo.seoTitle)}
+displayTitle: ${ys(pseo.displayTitle)}
+titlePattern: ${ys(pseo.titlePattern)}
+description: ${ys(pseo.description)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 category: "Toys"
@@ -441,6 +457,13 @@ topProduct:
   rating: ${top.rating||4.5}
   image: ${ys(top.image||'')}
 schemaType: "Article"
+contentTier: ${ys(pseo.contentTier)}
+generated: true
+reviewMethod: ${ys(pseo.reviewMethod)}
+claimSensitivity: ${ys(pseo.claimSensitivity)}
+monetizationIntent: ${ys(pseo.monetizationIntent)}
+affiliateDisclosure: true
+medicalDisclaimer: ${pseo.medicalDisclaimer ? 'true' : 'false'}
 ---
 
 Choosing the wrong toy for a ${n} means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.
@@ -451,7 +474,7 @@ ${n}s need **${energy_schedule}**. The toys below are selected to cover every an
 
 ---
 
-## Quick Comparison: Best Toys for ${n}s
+## ${pseo.headings.comparison}
 
 | Toy | Price | Type | Award |
 |---|---|---|---|
@@ -475,7 +498,7 @@ ${chew_ratings}
 
 ---
 
-## Our Top Picks
+## ${pseo.headings.picks}
 
 ### 1. ${top.name} — Best Overall for ${n}s
 
@@ -620,6 +643,7 @@ Start with **${top.name}** as your foundation, add **${puzzle.name}** for daily 
 // ── BEDS TEMPLATE (1400w+) ─────────────────────────────────────
 function tmpl_beds(breed, products) {
   const n = breed.name, sz = breed.size_category, shed = breed.shedding_level;
+  const pseo = buildPseoCopy('beds', breed);
   const life = breed.life_expectancy || {}, le = life.max || 12;
   const links = linkMap[breed.slug] || {};
   const rank = breed.ranking_data || {};
@@ -658,8 +682,11 @@ function tmpl_beds(breed, products) {
   }).join('\n');
 
   return `---
-title: ${ys(`Best Dog Beds for ${n}s 2026 — Orthopedic, Calming & Size-Matched Picks`)}
-description: ${ys(`Expert bed recommendations for ${n}s: orthopedic for joint health, calming for anxious dogs, elevated for hot climates. All matched to ${sz} breed requirements.`)}
+title: ${ys(pseo.seoTitle)}
+seoTitle: ${ys(pseo.seoTitle)}
+displayTitle: ${ys(pseo.displayTitle)}
+titlePattern: ${ys(pseo.titlePattern)}
+description: ${ys(pseo.description)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 category: "Beds"
@@ -676,6 +703,13 @@ topProduct:
   rating: ${top.rating||4.5}
   image: ${ys(top.image||'')}
 schemaType: "Article"
+contentTier: ${ys(pseo.contentTier)}
+generated: true
+reviewMethod: ${ys(pseo.reviewMethod)}
+claimSensitivity: ${ys(pseo.claimSensitivity)}
+monetizationIntent: ${ys(pseo.monetizationIntent)}
+affiliateDisclosure: true
+medicalDisclaimer: ${pseo.medicalDisclaimer ? 'true' : 'false'}
 ---
 
 A dog spends 12–14 hours a day sleeping. For a ${n}, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for ${sz} breeds.
@@ -690,7 +724,7 @@ We selected the best beds for ${n}s across four categories — orthopedic, calmi
 
 ---
 
-## Quick Comparison: Best Beds for ${n}s
+## ${pseo.headings.comparison}
 
 | Bed | Price | Type | Award |
 |---|---|---|---|
@@ -716,7 +750,7 @@ An inner waterproof liner (under the removable cover) protects the foam from acc
 
 ---
 
-## Our Top Picks
+## ${pseo.headings.picks}
 
 ### 1. ${orthop.name} — Best Orthopedic for ${n}s
 
@@ -845,6 +879,7 @@ Add a calming bed (**${calming.name}**) if your ${n} shows any anxiety signs, or
 // ── GROOMING TEMPLATE (1400w+) ─────────────────────────────────
 function tmpl_grooming(breed, products) {
   const n = breed.name, coat = breed.coat_type, shed = breed.shedding_level;
+  const pseo = buildPseoCopy('grooming', breed);
   const gfreq = breed.grooming_freq || 'Weekly Brushing';
   const sz = breed.size_category;
   const links = linkMap[breed.slug] || {};
@@ -897,8 +932,11 @@ function tmpl_grooming(breed, products) {
   }[shed] || { brushing: 'Weekly', bath: 'Monthly', nail: 'Monthly' };
 
   return `---
-title: ${ys(`${n} Grooming Guide 2026: Tools, Schedule & Expert Tips for ${coat.charAt(0).toUpperCase()+coat.slice(1)} Coats`)}
-description: ${ys(`Complete grooming guide for ${n}s with ${coat} coats. Best brushes, deshedders, shampoos and nail trimmers — plus a breed-specific grooming schedule.`)}
+title: ${ys(pseo.seoTitle)}
+seoTitle: ${ys(pseo.seoTitle)}
+displayTitle: ${ys(pseo.displayTitle)}
+titlePattern: ${ys(pseo.titlePattern)}
+description: ${ys(pseo.description)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 category: "Grooming"
@@ -915,6 +953,13 @@ topProduct:
   rating: ${top.rating||4.5}
   image: ${ys(top.image||'')}
 schemaType: "HowTo"
+contentTier: ${ys(pseo.contentTier)}
+generated: true
+reviewMethod: ${ys(pseo.reviewMethod)}
+claimSensitivity: ${ys(pseo.claimSensitivity)}
+monetizationIntent: ${ys(pseo.monetizationIntent)}
+affiliateDisclosure: true
+medicalDisclaimer: ${pseo.medicalDisclaimer ? 'true' : 'false'}
 ---
 
 ${n}s have a **${coat} coat** that requires ${gfreq.toLowerCase()}. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.
@@ -925,7 +970,7 @@ The most common ${n} grooming mistake: using the wrong tool for the coat type. $
 
 ---
 
-## ${n} Grooming at a Glance
+## ${pseo.headings.comparison}
 
 | Task | Frequency | Tool |
 |---|---|---|
@@ -953,7 +998,7 @@ The most common ${n} grooming mistake: using the wrong tool for the coat type. $
 
 ---
 
-## Best Grooming Tools for ${n}s
+## ${pseo.headings.picks}
 
 ### 1. ${brush.name} — Best Brush/Deshedder
 
@@ -1077,6 +1122,7 @@ The bigger commitment is consistency. 15 minutes of regular brushing prevents 2 
 // ── HEALTH TEMPLATE (1400w+) ───────────────────────────────────
 function tmpl_health(breed, products) {
   const n = breed.name, sz = breed.size_category, en = breed.energy_level;
+  const pseo = buildPseoCopy('health', breed);
   const coat = breed.coat_type, life = breed.life_expectancy || {}, le = life.max || 12;
   const group = breed.akc_group || '', links = linkMap[breed.slug] || {};
   const rank = breed.ranking_data || {};
@@ -1107,8 +1153,11 @@ function tmpl_health(breed, products) {
   }).join('\n');
 
   return `---
-title: ${ys(`Common ${n} Health Problems 2026 — Prevention, Symptoms & Products`)}
-description: ${ys(`The most common health issues in ${n}s, how to spot them early, and the best products for prevention and home management — updated March 2026.`)}
+title: ${ys(pseo.seoTitle)}
+seoTitle: ${ys(pseo.seoTitle)}
+displayTitle: ${ys(pseo.displayTitle)}
+titlePattern: ${ys(pseo.titlePattern)}
+description: ${ys(pseo.description)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 category: "Health"
@@ -1125,6 +1174,13 @@ topProduct:
   rating: ${dna.rating||4.5}
   image: ${ys(dna.image||'')}
 schemaType: "Article"
+contentTier: ${ys(pseo.contentTier)}
+generated: true
+reviewMethod: ${ys(pseo.reviewMethod)}
+claimSensitivity: ${ys(pseo.claimSensitivity)}
+monetizationIntent: ${ys(pseo.monetizationIntent)}
+affiliateDisclosure: true
+medicalDisclaimer: ${pseo.medicalDisclaimer ? 'true' : 'false'}
 ---
 
 ${n}s are generally ${en === 'active' ? 'robust, athletic dogs' : 'even-tempered companions'}, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
@@ -1137,7 +1193,7 @@ ${genetic_text}
 
 ---
 
-## ${n} Health Products at a Glance
+## ${pseo.headings.comparison}
 
 | Product | Price | Protects Against |
 |---|---|---|
@@ -1145,7 +1201,7 @@ ${table_rows}
 
 ---
 
-## Most Common ${n} Health Issues
+## ${pseo.headings.picks}
 
 ${all_issues.map((issue, i) => {
   const slug_issue = issue.toLowerCase();
@@ -1315,6 +1371,7 @@ The biggest payoff comes from early detection — most of the conditions ${n}s a
 // ── SUPPLEMENTS TEMPLATE (1300w+) ──────────────────────────────
 function tmpl_supplements(breed, products) {
   const n = breed.name, sz = breed.size_category, en = breed.energy_level, coat = breed.coat_type||'short';
+  const pseo = buildPseoCopy('supplements', breed);
   const shed = breed.shedding_level, life = breed.life_expectancy||{}, le = life.max||12;
   const links = linkMap[breed.slug]||{}, rank = breed.ranking_data||{};
   const group = breed.akc_group||'';
@@ -1339,8 +1396,11 @@ function tmpl_supplements(breed, products) {
   }).join('\n');
 
   return `---
-title: ${ys(`Best Supplements for ${n}s 2026 — Joint, Gut, Coat & Calming Picks`)}
-description: ${ys(`Vet-guided supplement picks for ${n}s matched to their ${sz} breed health profile. Joint support, probiotics, omega-3 and calming options — updated March 2026.`)}
+title: ${ys(pseo.seoTitle)}
+seoTitle: ${ys(pseo.seoTitle)}
+displayTitle: ${ys(pseo.displayTitle)}
+titlePattern: ${ys(pseo.titlePattern)}
+description: ${ys(pseo.description)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 category: "Supplements"
@@ -1357,6 +1417,13 @@ topProduct:
   rating: ${joint.rating||4.5}
   image: ${ys(joint.image||'')}
 schemaType: "Article"
+contentTier: ${ys(pseo.contentTier)}
+generated: true
+reviewMethod: ${ys(pseo.reviewMethod)}
+claimSensitivity: ${ys(pseo.claimSensitivity)}
+monetizationIntent: ${ys(pseo.monetizationIntent)}
+affiliateDisclosure: true
+medicalDisclaimer: ${pseo.medicalDisclaimer ? 'true' : 'false'}
 ---
 
 Not every dog needs supplements — but ${n}s, as a ${sz} breed with ${en} energy and a lifespan of ${life.min||''}–${le} years, have specific supplementation needs worth knowing about.${genetic ? ` ${n}s have known genetic health concerns including ${genetic} — targeted supplements address these directly.` : ''}
@@ -1367,7 +1434,7 @@ This guide covers what works, what's marketing, and which products are worth the
 
 ---
 
-## ${n} Supplement Priority Matrix
+## ${pseo.headings.comparison}
 
 | Supplement | Priority | Why |
 |---|---|---|
@@ -1379,7 +1446,7 @@ This guide covers what works, what's marketing, and which products are worth the
 
 ---
 
-## Top Picks
+## ${pseo.headings.picks}
 
 | Supplement | Price | Targets | Award |
 |---|---|---|---|
@@ -1770,6 +1837,7 @@ ${(b.cons||['Check suitability']).map(c=>`- ${c}`).join('\n')}
 // ── TRAINING TEMPLATE (1400w+) — NEW in v2.1 ──────────────────
 function tmpl_training(breed, products) {
   const n  = breed.name, sz = breed.size_category, en = breed.energy_level;
+  const pseo = buildPseoCopy('training', breed);
   const tr = breed.training_level, coat = breed.coat_type || 'short';
   const links = linkMap[breed.slug] || {}, rank = breed.ranking_data || {};
 
@@ -1793,12 +1861,15 @@ function tmpl_training(breed, products) {
   ).join('\n');
 
   return `---
-title: ${ys(`How to Train a ${n} 2026 — Guide for ${tr.charAt(0).toUpperCase()+tr.slice(1)}-to-Train Breeds`)}
-description: ${ys(`Step-by-step training guide for ${n}s with the best harnesses, leashes and tools for ${sz} ${en}-energy dogs. Updated March 2026.`)}
+title: ${ys(pseo.seoTitle)}
+seoTitle: ${ys(pseo.seoTitle)}
+displayTitle: ${ys(pseo.displayTitle)}
+titlePattern: ${ys(pseo.titlePattern)}
+description: ${ys(pseo.description)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 category: "Training"
-postType: "product-roundup"
+postType: "how-to"
 breedSlug: ${ys(breed.slug)}
 breedName: ${ys(n)}
 breedSize: ${ys(sz)}
@@ -1812,6 +1883,13 @@ topProduct:
   rating: ${top.rating||4.5}
   image: ${ys(top.image||'')}
 schemaType: "HowTo"
+contentTier: ${ys(pseo.contentTier)}
+generated: true
+reviewMethod: ${ys(pseo.reviewMethod)}
+claimSensitivity: ${ys(pseo.claimSensitivity)}
+monetizationIntent: ${ys(pseo.monetizationIntent)}
+affiliateDisclosure: true
+medicalDisclaimer: ${pseo.medicalDisclaimer ? 'true' : 'false'}
 ---
 
 Training a ${n} starts with understanding how they learn. ${intel}
@@ -1822,7 +1900,7 @@ ${approach}
 
 ---
 
-## Training Gear at a Glance
+## ${pseo.headings.comparison}
 
 | Tool | Price | Type | Award |
 |---|---|---|---|

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "npm run images:enrich:ci && npm run amazon:sync",
+    "prebuild": "npm run content:refresh && npm run images:enrich:ci && npm run amazon:sync",
     "build": "astro build",
     "build:fast": "astro build",
     "build:prod": "npm run awin:sync && npm run build",
@@ -16,6 +16,9 @@
     "amazon:sync": "node scripts/sync-amazon-products.mjs",
     "amazon:sync:strict": "node scripts/sync-amazon-products.mjs --strict",
     "amazon:audit": "node scripts/audit-amazon-products.mjs",
+    "content:refresh": "node scripts/content/refresh-generated-posts.mjs --apply",
+    "content:refresh:check": "node scripts/content/refresh-generated-posts.mjs",
+    "content:audit:pseo": "node scripts/content/audit-pseo-copy.mjs",
     "affiliate:sync": "npm run awin:sync && npm run amazon:sync",
     "images:enrich": "node scripts/enrich-breed-image-gallery.mjs",
     "images:enrich:force": "node scripts/enrich-breed-image-gallery.mjs --force --count 5",
