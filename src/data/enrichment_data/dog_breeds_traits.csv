@@ -1,0 +1,21 @@
+breed,size,energy_level,friendliness,trainability,shedding,barking,lifespan,origin_country,breed_group
+Labrador Retriever,large,5,5,5,3,3,12,Canada,sporting
+Chihuahua,small,4,3,2,2,5,14,Mexico,toy
+German Shepherd,large,5,4,5,4,4,10,Germany,herding
+Beagle,medium,4,5,3,3,5,13,England,hound
+Poodle (Standard),medium,3,5,5,2,2,14,Germany/France,non-sporting
+Bulldog,medium,2,4,3,2,2,9,England,non-sporting
+Golden Retriever,large,5,5,5,3,3,12,Scotland,sporting
+Dachshund,small,3,4,3,3,4,13,Germany,hound
+Boxer,large,4,5,4,3,3,10,Germany,working
+Shih Tzu,small,2,5,3,2,2,14,China,toy
+Siberian Husky,large,5,4,3,4,4,12,Russia,working
+Cavalier King Charles Spaniel,small,3,5,4,2,2,13,England,toy
+Rottweiler,large,4,3,4,3,3,10,Germany,working
+Pomeranian,small,3,4,3,3,5,14,Germany/Poland,toy
+Border Collie,medium,5,5,5,3,4,13,Scotland,herding
+Great Dane,large,2,5,3,3,2,8,Germany,working
+Basset Hound,medium,2,4,2,4,3,12,France,hound
+Yorkshire Terrier,small,3,4,4,2,4,13,England,toy
+Doberman Pinscher,large,5,4,5,3,3,11,Germany,working
+Maltese,small,3,5,4,1,2,15,Malta,toy
