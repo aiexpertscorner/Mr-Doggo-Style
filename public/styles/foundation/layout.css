@@ -12,6 +12,25 @@
   --pw-content-wide: min(100% - (var(--pw-page-gutter) * 2), var(--max-width-wide));
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 0.75rem 1rem;
+  background: var(--color-heading);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  font-weight: var(--weight-bold);
+  box-shadow: var(--shadow-lg);
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
 .pw-page {
   overflow-x: clip;
   background:
