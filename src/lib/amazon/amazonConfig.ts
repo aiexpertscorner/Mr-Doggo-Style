@@ -1,8 +1,8 @@
 export const AMAZON_ASSOCIATE_TAG =
-  import.meta.env.PUBLIC_AMAZON_TAG || 'aiexpertscorn-20';
+  import.meta.env.PUBLIC_AMAZON_TAG || 'pupwiki-20';
 
 export const ENABLE_AMAZON_BUTTONS =
-  import.meta.env.PUBLIC_ENABLE_AMAZON_BUTTONS !== 'true';
+  import.meta.env.PUBLIC_ENABLE_AMAZON_BUTTONS !== 'false';
 
 export const AMAZON_DISCLOSURE =
   'As an Amazon Associate, PupWiki may earn from qualifying purchases. Product availability and listing details can change on Amazon.';
@@ -108,6 +108,30 @@ const CATEGORY_TAG_MAP: Record<string, string[]> = {
     'cleanup',
     'home-setup',
     'chew',
+    'puppy-food',
+  ],
+  'senior-dogs': [
+    'senior-dog',
+    'orthopedic',
+    'beds',
+    'joint',
+    'comfort',
+    'mobility',
+    'wellness',
+  ],
+  insurance: [
+    'insurance',
+    'health',
+    'vet-care',
+    'puppy',
+    'senior-dog',
+  ],
+  'pupwiki-partners': [
+    'partner',
+    'awin',
+    'affiliate',
+    'dog-supplies',
+    'dog-products',
   ],
   home: [
     'home',
