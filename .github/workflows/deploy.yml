@@ -35,6 +35,14 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: npm run images:hero:ci
 
+      - name: Refresh generated content
+        run: npm run content:refresh
+
+      - name: Enrich content images with Pexels
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: npm run images:content:ci
+
       - name: Sync AWIN affiliate data
         env:
           AWIN_OAUTH2_TOKEN: ${{ secrets.AWIN_OAUTH2_TOKEN }}
@@ -49,19 +57,17 @@ jobs:
       - name: Generate PupWiki partner profiles
         run: npm run partners:generate
 
-      - name: Refresh generated content
-        run: npm run content:refresh
+      - name: Sync Amazon products
+        run: npm run amazon:sync
 
-      - name: Enrich content images with Pexels
-        env:
-          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-        run: npm run images:content:ci
+      - name: Audit content inventory and opportunities
+        run: npm run content:inventory
 
       - name: Enrich breed galleries
         run: npm run images:enrich:ci
 
-      - name: Sync Amazon products
-        run: npm run amazon:sync
+      - name: Generate sitemap
+        run: npm run sitemap:generate
 
       - name: Build Astro site
         env:
