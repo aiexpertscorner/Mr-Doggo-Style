@@ -25,7 +25,9 @@ export interface Props {
 }
 
 const { product, headline, variant = 'card' } = Astro.props;
-const formattedPrice = product.price.toFixed(2);
+const numericPrice = Number(product.price);
+const hasPrice = Number.isFinite(numericPrice) && numericPrice > 0;
+const formattedPrice = hasPrice ? numericPrice.toFixed(2) : '';
 ---
 
 {variant === 'card' ? (
@@ -64,7 +66,7 @@ const formattedPrice = product.price.toFixed(2);
 
       <div class="flex items-center justify-between pt-2 mt-auto" style="border-top:1px solid var(--color-surface-warm)">
         <span class="font-sans font-black text-lg" style="color:#1e293b">
-          ${formattedPrice}
+          {hasPrice ? `$${formattedPrice}` : 'Partner site'}
         </span>
         <a
           href={product.url}
@@ -104,7 +106,9 @@ const formattedPrice = product.price.toFixed(2);
     <div class="flex-1 min-w-0">
       <p class="font-sans text-xs font-bold leading-snug truncate" style="color:#1e293b">{product.name}</p>
       <p class="font-sans text-xs" style="color:#64748b">{product.merchant}</p>
-      <p class="font-sans font-black text-sm" style="color:var(--color-accent)">${formattedPrice}</p>
+      <p class="font-sans font-black text-sm" style="color:var(--color-accent)">
+        {hasPrice ? `$${formattedPrice}` : 'Partner site'}
+      </p>
     </div>
     <a
       href={product.url}

@@ -1,5 +1,15 @@
 {
+  "publisherId": "2861861",
+  "syncedAt": "2026-05-02T02:26:45.612Z",
+  "note": "No token - using fallback product data",
   "programs": [],
-  "syncedAt": "2026-04-26T04:49:23.826Z",
-  "note": "No token — using fallback"
+  "pendingPrograms": [],
+  "summary": [],
+  "stats": {
+    "joined": 0,
+    "pending": 0,
+    "products": 15,
+    "apiProducts": 0,
+    "banners": 6
+  }
 }

@@ -9,14 +9,18 @@
     "image": "https://images2.productserve.com/?w=70&h=70&bg=white&trim=5&t=letterbox&url=ssl%3Awww.chefpaw.com%2Fcdn%2Fshop%2Ffiles%2Fpricing_main_image.png&feedId=93508&k=0737b5e8d7e35a0ed03083f6c612114713b10f23",
     "merchant": "Chef Paw (US)",
     "category": "Appliances",
+    "advertiserId": "63546",
     "programId": "chefpaw",
     "topicTags": [
       "food",
       "nutrition",
       "feeding",
       "fresh-food",
+      "raw-food",
       "sensitive-stomach",
-      "care"
+      "allergies",
+      "care",
+      "appliances"
     ],
     "source": "manual-fallback"
   },
@@ -30,14 +34,18 @@
     "image": "https://images2.productserve.com/?w=70&h=70&bg=white&trim=5&t=letterbox&url=ssl%3Awww.chefpaw.com%2Fcdn%2Fshop%2Ffiles%2Fpricing_main_image.png&feedId=93508&k=0737b5e8d7e35a0ed03083f6c612114713b10f23",
     "merchant": "Chef Paw (US)",
     "category": "Appliances",
+    "advertiserId": "63546",
     "programId": "chefpaw",
     "topicTags": [
       "food",
       "nutrition",
       "feeding",
       "fresh-food",
+      "raw-food",
       "sensitive-stomach",
-      "care"
+      "allergies",
+      "care",
+      "appliances"
     ],
     "source": "manual-fallback"
   },
@@ -54,10 +62,13 @@
     "programId": "rawwild",
     "topicTags": [
       "food",
+      "nutrition",
       "raw-food",
       "freeze-dried",
-      "nutrition",
-      "sensitive-stomach"
+      "sensitive-stomach",
+      "allergies",
+      "feeding",
+      "single-protein"
     ],
     "source": "manual-fallback"
   },
@@ -74,10 +85,13 @@
     "programId": "rawwild",
     "topicTags": [
       "food",
+      "nutrition",
       "raw-food",
       "freeze-dried",
-      "nutrition",
-      "sensitive-stomach"
+      "sensitive-stomach",
+      "allergies",
+      "feeding",
+      "single-protein"
     ],
     "source": "manual-fallback"
   },
@@ -91,13 +105,16 @@
     "image": "",
     "merchant": "JugBow",
     "category": "Training",
+    "advertiserId": "79708",
     "programId": "jugbow",
     "topicTags": [
       "training",
       "behavior",
       "obedience",
+      "recall",
       "leash",
       "harness",
+      "working",
       "active",
       "gear"
     ],
@@ -113,13 +130,16 @@
     "image": "",
     "merchant": "JugBow",
     "category": "Training",
+    "advertiserId": "79708",
     "programId": "jugbow",
     "topicTags": [
       "training",
       "behavior",
       "obedience",
+      "recall",
       "leash",
       "harness",
+      "working",
       "active",
       "gear"
     ],
@@ -135,13 +155,16 @@
     "image": "",
     "merchant": "JugBow",
     "category": "Training",
+    "advertiserId": "79708",
     "programId": "jugbow",
     "topicTags": [
       "training",
       "behavior",
       "obedience",
+      "recall",
       "leash",
       "harness",
+      "working",
       "active",
       "gear"
     ],
@@ -157,13 +180,16 @@
     "image": "https://crownandpaw.com/cdn/shop/files/crownandpaw_109844584_1200002630342874_1492102714399702302_n_500x.jpg?v=1694364336",
     "merchant": "Crown and Paw",
     "category": "Gifts",
+    "advertiserId": "57823",
     "programId": "crownandpaw",
     "topicTags": [
       "gift",
       "lifestyle",
       "portrait",
+      "memorial",
       "dog-names",
-      "apparel"
+      "apparel",
+      "accessories"
     ],
     "source": "manual-fallback"
   },
@@ -177,13 +203,16 @@
     "image": "https://crownandpaw.com/cdn/shop/products/TheNoble_500x.jpg?v=1682395728",
     "merchant": "Crown and Paw",
     "category": "Gifts",
+    "advertiserId": "57823",
     "programId": "crownandpaw",
     "topicTags": [
       "gift",
       "lifestyle",
       "portrait",
+      "memorial",
       "dog-names",
-      "apparel"
+      "apparel",
+      "accessories"
     ],
     "source": "manual-fallback"
   },
@@ -197,13 +226,16 @@
     "image": "https://crownandpaw.com/cdn/shop/products/frchi_elite_500x.jpg?v=1682479615",
     "merchant": "Crown and Paw",
     "category": "Gifts",
+    "advertiserId": "57823",
     "programId": "crownandpaw",
     "topicTags": [
       "gift",
       "lifestyle",
       "portrait",
+      "memorial",
       "dog-names",
-      "apparel"
+      "apparel",
+      "accessories"
     ],
     "source": "manual-fallback"
   },
@@ -217,13 +249,16 @@
     "image": "https://crownandpaw.com/cdn/shop/products/pet_portrait_military_outfit_veteran_500x.jpg?v=1694359805",
     "merchant": "Crown and Paw",
     "category": "Gifts",
+    "advertiserId": "57823",
     "programId": "crownandpaw",
     "topicTags": [
       "gift",
       "lifestyle",
       "portrait",
+      "memorial",
       "dog-names",
-      "apparel"
+      "apparel",
+      "accessories"
     ],
     "source": "manual-fallback"
   },
@@ -237,13 +272,16 @@
     "image": "https://crownandpaw.com/cdn/shop/products/beatricemgolden_123721522_383477622844716_9103325890636000004_n_500x.jpg?v=1698156254",
     "merchant": "Crown and Paw",
     "category": "Gifts",
+    "advertiserId": "57823",
     "programId": "crownandpaw",
     "topicTags": [
       "gift",
       "lifestyle",
       "portrait",
+      "memorial",
       "dog-names",
-      "apparel"
+      "apparel",
+      "accessories"
     ],
     "source": "manual-fallback"
   },
@@ -257,13 +295,16 @@
     "image": "https://crownandpaw.com/cdn/shop/files/CustomPetMugPortraitWhite4_500x.jpg?v=1736764871",
     "merchant": "Crown and Paw",
     "category": "Gifts",
+    "advertiserId": "57823",
     "programId": "crownandpaw",
     "topicTags": [
       "gift",
       "lifestyle",
       "portrait",
+      "memorial",
       "dog-names",
-      "apparel"
+      "apparel",
+      "accessories"
     ],
     "source": "manual-fallback"
   },
@@ -277,13 +318,16 @@
     "image": "https://crownandpaw.com/cdn/shop/files/671a6a0a1ed62_large_c8d2b3fa-bdff-4fb5-b94a-548deb2abab4_500x.webp?v=1729784357",
     "merchant": "Crown and Paw",
     "category": "Apparel",
+    "advertiserId": "57823",
     "programId": "crownandpaw",
     "topicTags": [
       "gift",
       "lifestyle",
       "portrait",
+      "memorial",
       "dog-names",
-      "apparel"
+      "apparel",
+      "accessories"
     ],
     "source": "manual-fallback"
   },
@@ -297,13 +341,16 @@
     "image": "https://crownandpaw.com/cdn/shop/files/682efa9d6e3b6_large_ec9cba0f-e12e-4c5d-95c5-959535ab1216_500x.webp?v=1747909356",
     "merchant": "Crown and Paw",
     "category": "Apparel",
+    "advertiserId": "57823",
     "programId": "crownandpaw",
     "topicTags": [
       "gift",
       "lifestyle",
       "portrait",
+      "memorial",
       "dog-names",
-      "apparel"
+      "apparel",
+      "accessories"
     ],
     "source": "manual-fallback"
   }
