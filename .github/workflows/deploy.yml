@@ -33,7 +33,22 @@ jobs:
       - name: Sync AWIN affiliate data
         env:
           AWIN_OAUTH2_TOKEN: ${{ secrets.AWIN_OAUTH2_TOKEN }}
-        run: npm run awin:sync
+          AWIN_PRODUCT_FEED_API_KEY: ${{ secrets.AWIN_PRODUCT_FEED_API_KEY }}
+          AWIN_PUBLISHER_ID: '2861861'
+          AWIN_COUNTRY_CODE: 'US'
+        run: npm run awin:sync:strict
+
+      - name: Audit AWIN affiliate data
+        run: npm run awin:audit:strict
+
+      - name: Refresh generated content
+        run: npm run content:refresh
+
+      - name: Enrich images
+        run: npm run images:enrich:ci
+
+      - name: Sync Amazon products
+        run: npm run amazon:sync
 
       - name: Build Astro site
         env:
@@ -42,7 +57,7 @@ jobs:
           PUBLIC_ENABLE_AMAZON_BUTTONS: ${{ vars.PUBLIC_ENABLE_AMAZON_BUTTONS }}
           PUBLIC_ENABLE_AWIN_MASTERTAG: ${{ vars.PUBLIC_ENABLE_AWIN_MASTERTAG }}
           PUBLIC_EMAILOCTOPUS_URL: ${{ secrets.PUBLIC_EMAILOCTOPUS_URL }}
-        run: npm run build
+        run: npm run build:fast
 
       - name: Audit Amazon products
         run: npm run amazon:audit
