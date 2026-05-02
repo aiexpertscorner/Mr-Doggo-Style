@@ -44,7 +44,12 @@ jobs:
       - name: Refresh generated content
         run: npm run content:refresh
 
-      - name: Enrich images
+      - name: Enrich content images with Pexels
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: npm run images:content:ci
+
+      - name: Enrich breed galleries
         run: npm run images:enrich:ci
 
       - name: Sync Amazon products
