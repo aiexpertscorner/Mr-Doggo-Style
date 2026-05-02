@@ -41,6 +41,9 @@ jobs:
       - name: Audit AWIN affiliate data
         run: npm run awin:audit:strict
 
+      - name: Generate PupWiki partner profiles
+        run: npm run partners:generate
+
       - name: Refresh generated content
         run: npm run content:refresh
 

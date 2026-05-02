@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import awinData from '../../data/awin-programs.json';
+import products from '../../data/awin-products.json';
+import bannerRegistry from '../../data/affiliate-banners.json';
+import partnerSummary from '../../data/pupwiki-partners-summary.json';
+
+const SITE = 'https://pupwiki.com';
+const activePrograms = ((awinData as any).programs || []).filter((program: any) => program.relationship === 'joined' && program.isActive !== false);
+const pendingPrograms = ((awinData as any).pendingPrograms || []).filter(Boolean);
+const allProducts = Array.isArray(products) ? products : [];
+const banners = Array.isArray(bannerRegistry) ? bannerRegistry : ((bannerRegistry as any).banners || []);
+const summaryPartners = ((partnerSummary as any).partners || []) as any[];
+
+function titleCase(value: string) {
+  return String(value || '').replace(/[-_]+/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+}
+function percentRange(range: any) {
+  const items = Array.isArray(range) ? range : [];
+  const pct = items.find((item) => item?.type === 'percentage');
+  if (!pct) return 'AWIN terms';
+  if (Number(pct.min) === Number(pct.max)) return `${pct.max}%`;
+  return `${pct.min}%–${pct.max}%`;
+}
+function clusterFor(program: any) {
+  const blob = [program.name, program.primarySector, ...(program.topicTags || [])].join(' ').toLowerCase();
+  if (/food|nutrition|broth|fresh|raw|feeding/.test(blob)) return { label: 'Food & nutrition', href: '/categories/dog-food', icon: '🍖' };
+  if (/training|leash|harness|collar|fence|obedience|gear/.test(blob)) return { label: 'Training & gear', href: '/categories/training', icon: '🦮' };
+  if (/gift|portrait|memorial|license|lifestyle|apparel|accessor/.test(blob)) return { label: 'Lifestyle & gifts', href: '/categories/lifestyle', icon: '🎁' };
+  if (/bed|sleep|comfort|home/.test(blob)) return { label: 'Beds & comfort', href: '/categories/beds', icon: '🛏️' };
+  if (/health|insurance|vet|wellness|supplement/.test(blob)) return { label: 'Health & wellness', href: '/categories/health', icon: '🩺' };
+  return { label: 'Partner resources', href: '/categories/pupwiki-partners', icon: '🤝' };
+}
+function productCount(program: any) {
+  return allProducts.filter((product: any) => String(product.advertiserId || '') === String(program.advertiserId || '') || String(product.programId || '') === String(program.key || '')).length;
+}
+function creativeCount(program: any) {
+  return banners.filter((banner: any) => String(banner.advertiserId || '') === String(program.advertiserId || '') || String(banner.programKey || '') === String(program.key || '')).length;
+}
+function profileHref(program: any) {
+  const match = summaryPartners.find((item) => item.key === program.key);
+  return match?.href || `/blog/partner-${program.key}`;
+}
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'PupWiki Partners',
+    description: 'PupWiki partner directory for active AWIN programmes, product/service profiles, affiliate deeplinks and commerce placement context.',
+    url: `${SITE}/categories/pupwiki-partners`,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Active PupWiki AWIN partners',
+    itemListElement: activePrograms.map((program: any, index: number) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: program.name,
+      url: `${SITE}${profileHref(program)}`,
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="PupWiki Partners — AWIN Partner Directory, Deeplinks & Product Resources"
+  description="Explore PupWiki’s active partner ecosystem: AWIN partner profiles, product and service focus, deeplinks, logos, commercial fit, and responsible affiliate disclosure context."
+  canonicalUrl={`${SITE}/categories/pupwiki-partners`}
+  pageType="collection"
+  bodyClass="pw-page"
+  structuredData={structuredData}
+>
+  <main class="pw-page">
+    <section class="pw-section pw-section--soft">
+      <div class="pw-container pw-stack pw-stack--lg">
+        <nav class="pw-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a><span aria-hidden="true">›</span><span>PupWiki Partners</span>
+        </nav>
+
+        <div class="pw-page-header pw-stack">
+          <p class="pw-eyebrow">Affiliate ecosystem</p>
+          <h1 class="pw-title-xl">PupWiki Partners</h1>
+          <p class="pw-lede">
+            A transparent directory of active AWIN programmes used by PupWiki’s content and commerce engine.
+            Each partner profile explains the product or service focus, deeplink, topic fit, logo/feed status and safe placement context.
+          </p>
+        </div>
+
+        <div class="pw-grid pw-grid--4">
+          <article class="pw-stat-card"><strong>{activePrograms.length}</strong><span>Active joined partners</span></article>
+          <article class="pw-stat-card"><strong>{pendingPrograms.length}</strong><span>Pending programmes</span></article>
+          <article class="pw-stat-card"><strong>{allProducts.length}</strong><span>AWIN product rows</span></article>
+          <article class="pw-stat-card"><strong>{banners.length}</strong><span>Creative/logo rows</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pw-section">
+      <div class="pw-container pw-stack pw-stack--lg">
+        <div class="pw-section-head">
+          <p class="pw-eyebrow">Active programmes</p>
+          <h2 class="pw-title-md">Partner profiles generated from AWIN data</h2>
+          <p>Profiles are generated after the AWIN sync step, so the latest joined/active programmes become indexable partner resources without manual page creation.</p>
+        </div>
+
+        <div class="pw-grid pw-grid--3">
+          {activePrograms.map((program: any) => {
+            const cluster = clusterFor(program);
+            const kpi = program.kpi || {};
+            return (
+              <article class="pw-card pw-card--interactive pw-stack partner-card">
+                <div class="pw-cluster partner-card__top">
+                  {program.logoUrl ? <img class="partner-card__logo" src={program.logoUrl} alt={`${program.name} logo`} width="64" height="64" loading="lazy" decoding="async" /> : <span class="pw-chip pw-chip--accent">AWIN</span>}
+                  <a class="pw-chip pw-chip--primary" href={cluster.href}>{cluster.icon} {cluster.label}</a>
+                </div>
+
+                <div>
+                  <h3 class="partner-card__title">{program.name}</h3>
+                  <p class="partner-card__meta">
+                    {program.primarySector || 'Partner programme'} · {percentRange(program.commissionRange)} · {program.linkStatus || 'online'}
+                  </p>
+                </div>
+
+                <div class="pw-cluster">
+                  {(program.topicTags || []).slice(0, 4).map((tag: string) => <span class="pw-chip">{titleCase(tag)}</span>)}
+                </div>
+
+                <dl class="pw-grid pw-grid--2 partner-card__stats">
+                  <div class="pw-note partner-card__stat"><strong>{productCount(program)}</strong><br />Product rows</div>
+                  <div class="pw-note partner-card__stat"><strong>{creativeCount(program)}</strong><br />Creative rows</div>
+                  <div class="pw-note partner-card__stat"><strong>{kpi.epc ?? 'n/a'}</strong><br />EPC</div>
+                  <div class="pw-note partner-card__stat"><strong>{kpi.conversionRate ?? 'n/a'}%</strong><br />Conv. rate</div>
+                </dl>
+
+                <div class="pw-cluster partner-card__actions">
+                  <a class="pw-btn pw-btn--primary" href={profileHref(program)}>View profile</a>
+                  <a class="pw-btn pw-btn--outline" href={program.deeplink || program.clickThroughUrl} target="_blank" rel="sponsored noopener">Partner link</a>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <section class="pw-section pw-section--muted pw-section--bordered">
+      <div class="pw-container pw-stack pw-stack--lg">
+        <div class="pw-section-head">
+          <p class="pw-eyebrow">How partners are used</p>
+          <h2 class="pw-title-md">Placement rules for rich content and PSEO pages</h2>
+          <p>Partner modules should support the reader’s task. Food partners fit nutrition pages, training partners fit training/gear pages, lifestyle partners fit gift and owner-resource pages, and health-adjacent services need conservative wording.</p>
+        </div>
+
+        <div class="pw-grid pw-grid--3">
+          <article class="pw-card pw-stack partner-rule-card"><span class="pw-chip pw-chip--accent">1</span><h3>Match by intent</h3><p>Use topic tags, category clusters, lifecycle context and page type before showing partner CTAs.</p></article>
+          <article class="pw-card pw-stack partner-rule-card"><span class="pw-chip pw-chip--accent">2</span><h3>Disclose clearly</h3><p>Every affiliate placement needs a visible disclosure and sponsored/noopener link attributes.</p></article>
+          <article class="pw-card pw-stack partner-rule-card"><span class="pw-chip pw-chip--accent">3</span><h3>Avoid overclaiming</h3><p>Health, supplement, insurance and vet-adjacent pages should use planning language, not treatment claims.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -28,6 +28,7 @@
 @import './pages/home.css';
 @import './pages/blog.css';
 @import './pages/article.css';
+@import './pages/partners.css';
 
 /* Prose / rich text */
 .prose { max-width: 72ch; }
