@@ -1,12 +1,17 @@
 /* =============================================================
-   main.css — Entry point. Imports all stylesheets in order.
+   main.css — Global PupWiki stylesheet entry point.
+   Imports are intentionally ordered from primitives → components → features.
    ============================================================= */
 
 @import './tokens.css';
 @import './base.css';
-@import './layouts/grid.css';
 
-/* Component styles */
+/* Foundation primitives */
+@import './foundation/layout.css';
+@import './foundation/components.css';
+
+/* Existing layout/component styles retained during migration */
+@import './layouts/grid.css';
 @import './components/nav.css';
 @import './components/buttons.css';
 @import './components/hero.css';
@@ -57,7 +62,7 @@
   color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(13,148,136,0.35);
+  text-decoration-color: rgba(21, 54, 95, 0.35);
   font-weight: var(--weight-medium);
   transition: text-decoration-color var(--transition-base), color var(--transition-base);
 }
@@ -71,7 +76,7 @@
 
 .prose blockquote {
   border-left: 3px solid var(--color-primary);
-  background: rgba(13,148,136,0.04);
+  background: rgba(21, 54, 95, 0.04);
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   padding: var(--space-4) var(--space-5);
   margin: var(--space-6) 0;
