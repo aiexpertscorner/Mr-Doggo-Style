@@ -1,19 +1,12 @@
-
 ---
 /**
- * src/pages/index.astro
- * Refined PupWiki homepage
- * Assumes:
- * - updated BaseLayout.astro
- * - updated site-config.ts
- * - new /components/home/* section components
- * - homepage-config.json
- * - getHomepageData.ts
+ * src/pages/index.astro — PupWiki homepage
+ * Sprint 1: global design foundation + clean component composition.
  */
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-import HomeHero from '../components/home/HomeHero.astro';
+import HomeHero from '../components/home/HomeHeroClean.astro';
 import HomePrimaryJourneys from '../components/home/HomePrimaryJourneys.astro';
 import HomeTrustStrip from '../components/home/HomeTrustStrip.astro';
 import HomeBreedDiscovery from '../components/home/HomeBreedDiscovery.astro';
@@ -100,7 +93,7 @@ const structuredData = [
   ogImage={seo.ogImage}
   ogImageAlt={seo.ogImageAlt}
   pageType="website"
-  bodyClass="homepage bg-white text-slate-900"
+  bodyClass="homepage pw-page"
   structuredData={structuredData}
 >
   <div class="overflow-x-clip">
