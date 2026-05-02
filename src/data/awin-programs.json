@@ -1,7 +1,7 @@
 {
   "publisherId": "2861861",
   "countryCode": "US",
-  "syncedAt": "2026-05-02T05:30:28.954Z",
+  "syncedAt": "2026-05-02T21:39:51.007Z",
   "programs": [
     {
       "key": "brutus-broth",
@@ -58,8 +58,10 @@
         "category"
       ],
       "priority": 50,
-      "hasProductFeed": false,
-      "feedIds": [],
+      "hasProductFeed": true,
+      "feedIds": [
+        "105633"
+      ],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -122,8 +124,10 @@
         "homepage"
       ],
       "priority": 75,
-      "hasProductFeed": false,
-      "feedIds": [],
+      "hasProductFeed": true,
+      "feedIds": [
+        "103192"
+      ],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -194,6 +198,7 @@
       "priority": 85,
       "hasProductFeed": true,
       "feedIds": [
+        "88241",
         "93508"
       ],
       "hasCreatives": false,
@@ -260,8 +265,10 @@
         "category"
       ],
       "priority": 90,
-      "hasProductFeed": false,
-      "feedIds": [],
+      "hasProductFeed": true,
+      "feedIds": [
+        "108549"
+      ],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -310,7 +317,9 @@
       "configuredDeeplink": "",
       "deeplink": "https://www.awin1.com/awclick.php?mid=87999&id=2861861",
       "topicTags": [
-        "partner"
+        "partner",
+        "training",
+        "gear"
       ],
       "pageTypes": [
         "blog",
@@ -318,8 +327,10 @@
         "category"
       ],
       "priority": 50,
-      "hasProductFeed": false,
-      "feedIds": [],
+      "hasProductFeed": true,
+      "feedIds": [
+        "105980"
+      ],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -444,7 +455,9 @@
       "topicTags": [
         "partner",
         "training",
-        "gear"
+        "gear",
+        "gift",
+        "lifestyle"
       ],
       "pageTypes": [
         "blog",
@@ -612,7 +625,9 @@
       "deeplink": "https://www.awin1.com/awclick.php?mid=78166&id=2861861",
       "topicTags": [
         "partner",
-        "health"
+        "health",
+        "gift",
+        "lifestyle"
       ],
       "pageTypes": [
         "blog",
@@ -1426,8 +1441,10 @@
       "relationship": "joined",
       "status": "Joined",
       "isActive": true,
-      "hasProductFeed": false,
-      "feedIds": [],
+      "hasProductFeed": true,
+      "feedIds": [
+        "105633"
+      ],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -1450,8 +1467,10 @@
       "relationship": "joined",
       "status": "Joined",
       "isActive": true,
-      "hasProductFeed": false,
-      "feedIds": [],
+      "hasProductFeed": true,
+      "feedIds": [
+        "103192"
+      ],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -1478,6 +1497,7 @@
       "isActive": true,
       "hasProductFeed": true,
       "feedIds": [
+        "88241",
         "93508"
       ],
       "hasCreatives": false,
@@ -1506,8 +1526,10 @@
       "relationship": "joined",
       "status": "Joined",
       "isActive": true,
-      "hasProductFeed": false,
-      "feedIds": [],
+      "hasProductFeed": true,
+      "feedIds": [
+        "108549"
+      ],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -1534,8 +1556,10 @@
       "relationship": "joined",
       "status": "Joined",
       "isActive": true,
-      "hasProductFeed": false,
-      "feedIds": [],
+      "hasProductFeed": true,
+      "feedIds": [
+        "105980"
+      ],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -1544,7 +1568,9 @@
       "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/87999.png",
       "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=87999&id=2861861",
       "topicTags": [
-        "partner"
+        "partner",
+        "training",
+        "gear"
       ]
     },
     {
@@ -1588,7 +1614,9 @@
       "topicTags": [
         "partner",
         "training",
-        "gear"
+        "gear",
+        "gift",
+        "lifestyle"
       ]
     },
     {
@@ -1652,7 +1680,9 @@
       "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=78166&id=2861861",
       "topicTags": [
         "partner",
-        "health"
+        "health",
+        "gift",
+        "lifestyle"
       ]
     },
     {
@@ -1991,14 +2021,27 @@
   "stats": {
     "joined": 7,
     "pending": 18,
-    "feeds": 0,
+    "feeds": 601,
     "apiProducts": 0,
     "programOfferProducts": 7,
     "totalProducts": 9,
     "apiBanners": 0,
     "logoBanners": 7,
     "totalBanners": 13,
-    "productFeedKeyPresent": false,
-    "experimentalCreativesEnabled": false
+    "oauthTokenPresent": true,
+    "productFeedKeyPresent": true,
+    "feedListEndpointUsed": "productdata",
+    "feedProductFetchFailures": 0,
+    "experimentalCreativesEnabled": false,
+    "warnings": [
+      "programmedetails/106409 -> HTTP 429",
+      "programmedetails/111234 -> HTTP 429",
+      "programmedetails/111784 -> HTTP 429",
+      "programmedetails/119433 -> HTTP 429",
+      "programmedetails/120007 -> HTTP 429",
+      "programmedetails/120960 -> HTTP 429",
+      "programmedetails/122204 -> HTTP 429"
+    ],
+    "errors": []
   }
 }

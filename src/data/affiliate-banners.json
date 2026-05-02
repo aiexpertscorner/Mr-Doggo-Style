@@ -47,7 +47,7 @@
         "beds"
       ],
       "source": "awin-program-logo",
-      "syncedAt": "2026-05-02T05:30:28.952Z",
+      "syncedAt": "2026-05-02T21:39:51.003Z",
       "imageFit": "contain"
     },
     {
@@ -83,7 +83,7 @@
         "accessories"
       ],
       "source": "awin-program-logo",
-      "syncedAt": "2026-05-02T05:30:28.952Z",
+      "syncedAt": "2026-05-02T21:39:51.003Z",
       "imageFit": "contain"
     },
     {
@@ -122,7 +122,7 @@
         "appliances"
       ],
       "source": "awin-program-logo",
-      "syncedAt": "2026-05-02T05:30:28.952Z",
+      "syncedAt": "2026-05-02T21:39:51.003Z",
       "imageFit": "contain"
     },
     {
@@ -160,7 +160,7 @@
         "gear"
       ],
       "source": "awin-program-logo",
-      "syncedAt": "2026-05-02T05:30:28.952Z",
+      "syncedAt": "2026-05-02T21:39:51.003Z",
       "imageFit": "contain"
     },
     {
@@ -187,10 +187,12 @@
         "category"
       ],
       "topicTags": [
-        "partner"
+        "partner",
+        "training",
+        "gear"
       ],
       "source": "awin-program-logo",
-      "syncedAt": "2026-05-02T05:30:28.952Z",
+      "syncedAt": "2026-05-02T21:39:51.003Z",
       "imageFit": "contain"
     },
     {
@@ -222,7 +224,7 @@
         "nutrition"
       ],
       "source": "awin-program-logo",
-      "syncedAt": "2026-05-02T05:30:28.952Z",
+      "syncedAt": "2026-05-02T21:39:51.003Z",
       "imageFit": "contain"
     },
     {
@@ -251,10 +253,12 @@
       "topicTags": [
         "partner",
         "training",
-        "gear"
+        "gear",
+        "gift",
+        "lifestyle"
       ],
       "source": "awin-program-logo",
-      "syncedAt": "2026-05-02T05:30:28.952Z",
+      "syncedAt": "2026-05-02T21:39:51.003Z",
       "imageFit": "contain"
     },
     {

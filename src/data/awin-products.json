@@ -20,7 +20,7 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-02T05:30:28.951Z"
+    "syncedAt": "2026-05-02T21:39:51.001Z"
   },
   {
     "id": "crownandpaw-partner-offer",
@@ -45,7 +45,7 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-02T05:30:28.951Z"
+    "syncedAt": "2026-05-02T21:39:51.002Z"
   },
   {
     "id": "chefpaw-partner-offer",
@@ -72,7 +72,7 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-02T05:30:28.951Z"
+    "syncedAt": "2026-05-02T21:39:51.002Z"
   },
   {
     "id": "jugbow-partner-offer",
@@ -99,7 +99,7 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-02T05:30:28.951Z"
+    "syncedAt": "2026-05-02T21:39:51.002Z"
   },
   {
     "id": "radiofence-com-partner-offer",
@@ -114,11 +114,13 @@
     "advertiserId": "87999",
     "programId": "radiofence-com",
     "topicTags": [
-      "partner"
+      "partner",
+      "training",
+      "gear"
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-02T05:30:28.951Z"
+    "syncedAt": "2026-05-02T21:39:51.002Z"
   },
   {
     "id": "raw-wild-llc-partner-offer",
@@ -139,7 +141,7 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-02T05:30:28.951Z"
+    "syncedAt": "2026-05-02T21:39:51.002Z"
   },
   {
     "id": "mypetdmv-the-original-pet-drivers-license-partner-offer",
@@ -156,11 +158,13 @@
     "topicTags": [
       "partner",
       "training",
-      "gear"
+      "gear",
+      "gift",
+      "lifestyle"
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-02T05:30:28.951Z"
+    "syncedAt": "2026-05-02T21:39:51.002Z"
   },
   {
     "id": "rawwild-beef-chicken",
