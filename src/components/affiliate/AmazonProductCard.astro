@@ -10,7 +10,7 @@ export interface Props {
 const { product, variant = 'card', placement = 'amazon-slot' } = Astro.props;
 
 const categoryLabel = product.categoryLabel || product.categoryGroup || 'Dog product';
-const brandLabel = product.brand || 'Amazon';
+const brandLabel = product.brand || 'Amazon.com';
 const note = product.recommendedPlacement || 'Useful for dog-parent research and shopping.';
 ---
 
