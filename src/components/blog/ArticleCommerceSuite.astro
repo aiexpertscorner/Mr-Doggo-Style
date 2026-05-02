@@ -1,0 +1,73 @@
+---
+import AwinProductSlot from '../affiliate/AwinProductSlot.astro';
+import AmazonProductSlot from '../amazon/AmazonProductSlot.astro';
+
+export interface Props {
+  topicTags: string[];
+  category?: string;
+  breedSize?: string;
+  breedEnergy?: string;
+  breedTraining?: string;
+  breedCoat?: string;
+  pageSlug?: string;
+  showAmazon?: boolean;
+  showAwin?: boolean;
+  heading?: string;
+  description?: string;
+}
+
+const {
+  topicTags = [],
+  category = '',
+  breedSize,
+  breedEnergy,
+  breedTraining,
+  breedCoat,
+  pageSlug = '',
+  showAmazon = true,
+  showAwin = true,
+  heading = 'Current partner and Amazon.com options',
+  description = 'These modules are matched from active affiliate feeds and safe search/link templates. Always confirm formula, size, availability, and seller details before purchase.',
+} = Astro.props;
+---
+
+<section class="article-commerce-suite not-prose" aria-label="Relevant shopping resources">
+  <div class="article-commerce-suite__header">
+    <p>Shopping resources</p>
+    <h2>{heading}</h2>
+    <span>{description}</span>
+  </div>
+
+  <div class="article-commerce-suite__grid pw-money-grid pw-money-grid--wide">
+    {showAwin && (
+      <AwinProductSlot
+        topicTags={topicTags}
+        pageType="blog"
+        category={category}
+        breedSize={breedSize}
+        breedEnergy={breedEnergy}
+        breedTraining={breedTraining}
+        headline="AWIN partner match"
+        monetizationIntent="high"
+      />
+    )}
+
+    {showAmazon && (
+      <AmazonProductSlot
+        topicTags={topicTags}
+        pageType="blog"
+        pageSlug={pageSlug}
+        category={category}
+        breedSize={breedSize}
+        breedEnergy={breedEnergy}
+        breedCoat={breedCoat}
+        headline="Amazon.com matches"
+        limit={3}
+      />
+    )}
+  </div>
+
+  <p class="pw-disclosure-note">
+    Affiliate disclosure: PupWiki may earn from qualifying links. Amazon links are for Amazon.com and should use sponsored/noopener link attributes.
+  </p>
+</section>
