@@ -16,6 +16,7 @@ imageCreditUrl: "https://www.pexels.com/photo/close-up-of-dog-food-18764141/"
 imageSearchQuery: "dog supplements"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Flea and tick prevention is one area of dog care where cutting corners has real health consequences — for your dog and for your family. Fleas cause flea allergy dermatitis (the most common canine skin condition), transmit tapeworms, and cause anemia in severe infestations. Ticks transmit Lyme disease, Rocky Mountain spotted fever, anaplasmosis, and ehrlichiosis — several of which can be fatal.

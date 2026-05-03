@@ -8,7 +8,7 @@ updatedDate: 2026-05-03
 author: "The PupWiki Team"
 category: "PupWiki Partners"
 tags: ["brand-guide", "training", "behavior", "obedience", "recall", "leash", "harness", "working", "active", "gear"]
-postType: "review"
+postType: "comparison"
 contentTier: "money"
 indexInBlog: false
 generated: true

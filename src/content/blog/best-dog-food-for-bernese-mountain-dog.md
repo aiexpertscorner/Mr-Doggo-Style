@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/a-close-up-shot-of-a-bernese-mount
 imageSearchQuery: "Bernese Mountain Dog dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Bernese Mountain Dogs have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 70–115 lbs, energetic energy, frequent shedding, and good-natured, calm, strong temperament.

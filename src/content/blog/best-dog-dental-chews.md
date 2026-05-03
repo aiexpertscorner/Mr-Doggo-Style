@@ -16,6 +16,7 @@ imageCreditUrl: "https://www.pexels.com/photo/close-up-of-dog-food-18764141/"
 imageSearchQuery: "dog supplements"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Dental disease affects over 80% of dogs over the age of three. Left untreated, periodontal disease causes chronic pain, tooth loss, and bacteria that can enter the bloodstream and damage the heart, kidneys, and liver. Regular brushing is the gold standard — but daily dental chews can provide meaningful supplemental benefit.

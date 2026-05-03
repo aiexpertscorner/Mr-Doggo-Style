@@ -16,6 +16,7 @@ imageCreditUrl: "https://www.pexels.com/photo/dog-groomer-at-work-19145893/"
 imageSearchQuery: "dog grooming"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Professional grooming visits average $75-120 for a medium-large dog, $50-80 for smaller breeds. If you're going every 6-8 weeks, that's $750-1,500 per year. A well-chosen home grooming kit costs $80-120 total and pays for itself in two sessions.

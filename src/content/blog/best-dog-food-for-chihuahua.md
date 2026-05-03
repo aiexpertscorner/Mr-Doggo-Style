@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/a-dog-eating-on-a-bowl-8434725/"
 imageSearchQuery: "Chihuahua dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Chihuahuas have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 6–6 lbs, regular exercise energy, occasional shedding, and charming, graceful, sassy temperament.

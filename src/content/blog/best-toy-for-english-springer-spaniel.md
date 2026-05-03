@@ -8,6 +8,7 @@ author: "The PupWiki Team"
 breedSlug: "english-springer-spaniel"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 English Springer Spaniels have specific needs that generic "toy for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 40–50 lbs, regular exercise energy, occasional shedding, and friendly, playful, obedient temperament.

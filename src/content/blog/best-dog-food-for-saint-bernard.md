@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/saint-bernard-lying-on-a-grassy-fi
 imageSearchQuery: "Saint Bernard dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Saint Bernards have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 120–180 lbs, regular exercise energy, seasonal shedding, and playful, charming, inquisitive temperament.

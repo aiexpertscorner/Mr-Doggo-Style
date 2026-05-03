@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/black-and-white-dalmatian-dog-eati
 imageSearchQuery: "Newfoundland dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Newfoundlands have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 100–150 lbs, regular exercise energy, seasonal shedding, and sweet, patient, devoted temperament.

@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/woman-in-gray-and-black-stripe-shi
 imageSearchQuery: "Bichon Frise dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Bichon Frises have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 12–18 lbs, regular exercise energy, infrequent shedding, and playful, curious, peppy temperament.

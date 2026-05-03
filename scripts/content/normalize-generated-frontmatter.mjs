@@ -4,6 +4,7 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import {
   normalizeMonetizationIntent,
+  normalizePostType,
   normalizeReviewMethod,
   sanitizePublicDogCopy,
   validatePublicDogCopy,
@@ -69,7 +70,9 @@ for (const filename of files) {
 
   const reviewMethod = normalizeReviewMethod(getYamlScalar(parsed.raw, 'reviewMethod'));
   const monetizationIntent = normalizeMonetizationIntent(getYamlScalar(parsed.raw, 'monetizationIntent'), 'none');
+  const postType = normalizePostType(getYamlScalar(parsed.raw, 'postType'));
   const updatedYaml = setYaml(parsed.raw, {
+    postType: quote(postType),
     reviewMethod: quote(reviewMethod),
     monetizationIntent: quote(monetizationIntent),
   });

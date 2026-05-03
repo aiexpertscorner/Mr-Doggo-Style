@@ -11,6 +11,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import {
   normalizeMonetizationIntent,
+  normalizePostType,
   normalizeReviewMethod,
   sanitizePublicDogCopy,
 } from '../lib/public-content-contract.mjs';
@@ -163,7 +164,7 @@ updatedDate: ${TODAY}
 author: "The PupWiki Team"
 category: "PupWiki Partners"
 tags: ${yamlList(tags)}
-postType: "review"
+postType: ${quote(normalizePostType('review'))}
 contentTier: "money"
 indexInBlog: false
 generated: true

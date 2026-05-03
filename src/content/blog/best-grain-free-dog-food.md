@@ -7,6 +7,7 @@ tags: ["dog-food", "grain-free", "nutrition", "allergies"]
 author: "The PupWiki Team"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Grain-free dog food has been one of the biggest trends in pet nutrition over the past decade — and one of the most controversial. The FDA's ongoing investigation into grain-free diets and dilated cardiomyopathy (DCM) in dogs has created real concern among owners and vets alike.

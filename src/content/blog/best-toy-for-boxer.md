@@ -8,6 +8,7 @@ author: "The PupWiki Team"
 breedSlug: "boxer"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Boxers have specific needs that generic "toy for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 15–80 lbs, energetic energy, occasional shedding, and bright, fun-loving, active temperament.

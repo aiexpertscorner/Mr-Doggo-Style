@@ -16,6 +16,7 @@ imageCreditUrl: "https://www.pexels.com/photo/dog-biting-person-hand-during-trai
 imageSearchQuery: "dog training"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Training collars are among the most debated tools in dog ownership. E-collars (electronic collars) in particular generate strong opinions from both professional trainers and casual dog owners. Our goal in this guide is to provide clear, evidence-based information about each type — who they're for, when they're appropriate, and when they're not.

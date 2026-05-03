@@ -8,7 +8,7 @@ updatedDate: 2026-05-03
 author: "The PupWiki Team"
 category: "PupWiki Partners"
 tags: ["brand-guide", "dog-food", "partner", "food", "nutrition", "health", "beds"]
-postType: "review"
+postType: "comparison"
 contentTier: "money"
 indexInBlog: false
 generated: true

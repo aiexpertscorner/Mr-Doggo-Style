@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/anonymous-black-man-and-purebred-d
 imageSearchQuery: "Akita dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Akitas have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 70–130 lbs, energetic energy, seasonal shedding, and courageous, dignified, profoundly loyal temperament.

@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/adorable-basset-hound-dog-in-summe
 imageSearchQuery: "Basset Hound dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Basset Hounds have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 40–65 lbs, couch potato energy, occasional shedding, and charming, patient, low-key temperament.

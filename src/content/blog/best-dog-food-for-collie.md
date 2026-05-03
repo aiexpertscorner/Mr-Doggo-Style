@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/a-close-up-shot-of-a-collie-dog-59
 imageSearchQuery: "Collie dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Collies have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 50–75 lbs, regular exercise energy, seasonal shedding, and devoted, graceful, proud temperament.

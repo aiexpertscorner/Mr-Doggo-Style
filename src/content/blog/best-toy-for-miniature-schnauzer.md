@@ -8,6 +8,7 @@ author: "The PupWiki Team"
 breedSlug: "miniature-schnauzer"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Miniature Schnauzers have specific needs that generic "toy for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 11–20 lbs, regular exercise energy, infrequent shedding, and friendly, smart, obedient temperament.

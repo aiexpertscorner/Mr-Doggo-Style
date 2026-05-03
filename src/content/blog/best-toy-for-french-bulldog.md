@@ -8,6 +8,7 @@ author: "The PupWiki Team"
 breedSlug: "french-bulldog"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 French Bulldogs have specific needs that generic "toy for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 28–28 lbs, calm energy, regularly shedding, and adaptable, playful, smart temperament.

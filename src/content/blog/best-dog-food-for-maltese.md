@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/a-boy-eating-his-breakfast-while-s
 imageSearchQuery: "Maltese dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Malteses have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 7–7 lbs, regular exercise energy, infrequent shedding, and gentle, playful, charming temperament.

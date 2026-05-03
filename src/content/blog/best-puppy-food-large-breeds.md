@@ -7,6 +7,7 @@ tags: ["dog-food", "puppy", "large-breed", "nutrition"]
 author: "The PupWiki Team"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Feeding a large breed puppy isn't the same as feeding any other puppy. Large and giant breeds grow at an astonishing rate — a Great Dane goes from 1 lb at birth to 100+ lbs in 18 months. That rapid growth creates specific nutritional vulnerabilities that can result in lifelong skeletal problems if the wrong food is fed.

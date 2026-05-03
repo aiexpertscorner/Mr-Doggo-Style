@@ -16,6 +16,7 @@ imageCreditUrl: "https://www.pexels.com/photo/white-and-black-short-coated-dog-s
 imageSearchQuery: "dog bed"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 In summer months, a dog lying on a foam bed is lying on an insulating surface that traps body heat. Elevated beds solve this by lifting the dog off the floor entirely, allowing air to circulate underneath and dramatically reducing heat retention.

@@ -7,6 +7,7 @@ tags: ["dog-food", "senior", "older-dogs", "joint-health", "nutrition"]
 author: "The PupWiki Team"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Somewhere around age 7-9 (depending on size), your dog crosses into senior territory. Their metabolism slows, muscle mass decreases, joints stiffen, and digestive efficiency declines. The food that served them well at age 3 may no longer be ideal.

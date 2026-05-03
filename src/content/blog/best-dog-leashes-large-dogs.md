@@ -16,6 +16,7 @@ imageCreditUrl: "https://www.pexels.com/photo/dog-biting-person-hand-during-trai
 imageSearchQuery: "dog training"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 A leash is a safety device first. With large dogs — 60, 80, 100+ lbs — a leash failure means your dog is loose in traffic, at a dog park, or away from you in any number of dangerous situations. Material, hardware, and handle design matter more than most owners realize.

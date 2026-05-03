@@ -8,6 +8,7 @@ author: "The PupWiki Team"
 breedSlug: "shih-tzu"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Shih Tzus have specific needs that generic "toy for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 9–16 lbs, regular exercise energy, infrequent shedding, and affectionate, playful, outgoing temperament.

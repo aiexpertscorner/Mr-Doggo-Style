@@ -8,6 +8,7 @@ author: "The PupWiki Team"
 breedSlug: "poodle-miniature"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Poodle (Miniature)s have specific needs that generic "toy for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 10–15 lbs, regular exercise energy, occasionally shedding, and active, proud, very smart temperament.

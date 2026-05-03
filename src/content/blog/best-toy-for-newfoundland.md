@@ -8,6 +8,7 @@ author: "The PupWiki Team"
 breedSlug: "newfoundland"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Newfoundlands have specific needs that generic "toy for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 100–150 lbs, regular exercise energy, seasonal shedding, and sweet, patient, devoted temperament.

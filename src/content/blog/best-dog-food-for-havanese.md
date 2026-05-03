@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/adorable-fluffy-dog-relaxing-on-sa
 imageSearchQuery: "Havanese dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Havaneses have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 7–13 lbs, regular exercise energy, occasional shedding, and intelligent, outgoing, funny temperament.

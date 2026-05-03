@@ -8,7 +8,7 @@ updatedDate: 2026-05-03
 author: "The PupWiki Team"
 category: "PupWiki Partners"
 tags: ["brand-guide", "lifestyle", "gift", "portrait", "memorial", "dog-names", "apparel", "accessories"]
-postType: "review"
+postType: "comparison"
 contentTier: "money"
 indexInBlog: false
 generated: true

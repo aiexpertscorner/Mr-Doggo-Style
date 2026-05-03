@@ -8,6 +8,7 @@ author: "The PupWiki Team"
 breedSlug: "dachshund"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Dachshunds have specific needs that generic "toy for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 11–32 lbs, regular exercise energy, occasional shedding, and friendly, curious, spunky temperament.

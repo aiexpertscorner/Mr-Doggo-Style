@@ -7,6 +7,7 @@ tags: ["toys", "interactive", "mental-stimulation", "puzzle", "boredom"]
 author: "The PupWiki Team"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Physical exercise gets most of the attention in dog care — but mental stimulation is equally important, especially for intelligent breeds. A working dog breed (Border Collie, Australian Shepherd, Malinois) that gets two hours of physical exercise but zero mental challenge will still be destructive, anxious, and difficult to manage.

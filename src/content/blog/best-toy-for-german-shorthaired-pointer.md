@@ -8,6 +8,7 @@ author: "The PupWiki Team"
 breedSlug: "german-shorthaired-pointer"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 German Shorthaired Pointers have specific needs that generic "toy for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 45–70 lbs, needs lots of activity energy, regularly shedding, and friendly, smart, willing to please temperament.

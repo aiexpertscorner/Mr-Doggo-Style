@@ -37,6 +37,23 @@ const MONETIZATION_ALIASES = {
   lifestyle: 'gift',
 };
 
+const POST_TYPES = new Set([
+  'product-roundup',
+  'comparison',
+  'breed-hub',
+  'how-to',
+  'health',
+  'ranking',
+  'cost-calculator',
+  'general',
+]);
+
+const POST_TYPE_ALIASES = {
+  review: 'comparison',
+  'brand-review': 'comparison',
+  'partner-profile': 'comparison',
+};
+
 export function normalizeReviewMethod(value, fallback = 'editorial-research') {
   const key = String(value || '').trim();
   const normalized = REVIEW_METHOD_ALIASES[key] || key || fallback;
@@ -47,6 +64,12 @@ export function normalizeMonetizationIntent(value, fallback = 'service') {
   const key = String(value || '').trim();
   const normalized = MONETIZATION_ALIASES[key] || key || fallback;
   return MONETIZATION_INTENTS.has(normalized) ? normalized : fallback;
+}
+
+export function normalizePostType(value, fallback = 'general') {
+  const key = String(value || '').trim();
+  const normalized = POST_TYPE_ALIASES[key] || key || fallback;
+  return POST_TYPES.has(normalized) ? normalized : fallback;
 }
 
 export function sanitizePublicDogCopy(text) {

@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/close-up-shot-of-a-toy-poodle-on-a
 imageSearchQuery: "Poodle (Toy) dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Poodle (Toy)s have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 4–6 lbs, regular exercise energy, infrequent shedding, and agile, intelligent, self-confident temperament.

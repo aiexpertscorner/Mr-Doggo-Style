@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/close-up-portrait-of-an-australian
 imageSearchQuery: "Miniature American Shepherd dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Miniature American Shepherds have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 20–40 lbs, energetic energy, frequent shedding, and good-natured, intelligent, devoted temperament.

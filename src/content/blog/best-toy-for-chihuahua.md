@@ -8,6 +8,7 @@ author: "The PupWiki Team"
 breedSlug: "chihuahua"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Chihuahuas have specific needs that generic "toy for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 6–6 lbs, regular exercise energy, occasional shedding, and charming, graceful, sassy temperament.

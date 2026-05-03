@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/playful-shetland-sheepdog-in-lush-
 imageSearchQuery: "Shetland Sheepdog dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Shetland Sheepdogs have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 15–25 lbs, regular exercise energy, seasonal shedding, and playful, energetic, bright temperament.

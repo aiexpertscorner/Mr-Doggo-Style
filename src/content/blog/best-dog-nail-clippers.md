@@ -16,6 +16,7 @@ imageCreditUrl: "https://www.pexels.com/photo/dog-groomer-at-work-19145893/"
 imageSearchQuery: "dog grooming"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Long nails are one of the most overlooked dog health issues. When nails are too long, they push against the ground with each step, forcing the paw into an unnatural position. Over time, this affects gait, posture, and puts strain on joints. Nails that curl under can embed in paw pads. Most dogs' nails should be trimmed every 3-4 weeks.

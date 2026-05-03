@@ -8,6 +8,7 @@ author: "The PupWiki Team"
 breedSlug: "boston-terrier"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Boston Terriers have specific needs that generic "toy for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 12–25 lbs, regular exercise energy, infrequent shedding, and friendly, bright, amusing temperament.

@@ -17,6 +17,7 @@ imageCreditUrl: "https://www.pexels.com/photo/a-dog-sitting-on-the-grass-9700107
 imageSearchQuery: "Pug dog eating healthy food"
 reviewMethod: "editorial-research"
 monetizationIntent: "none"
+postType: "general"
 ---
 
 Pugs have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 14–18 lbs, regular exercise energy, regularly shedding, and charming, mischievous, loving temperament.

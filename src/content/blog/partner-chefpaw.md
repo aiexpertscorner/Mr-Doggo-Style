@@ -8,7 +8,7 @@ updatedDate: 2026-05-03
 author: "The PupWiki Team"
 category: "PupWiki Partners"
 tags: ["brand-guide", "dog-food", "food", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "allergies", "care", "appliances"]
-postType: "review"
+postType: "comparison"
 contentTier: "money"
 indexInBlog: false
 generated: true
