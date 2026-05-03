@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "npm run hero:audit && npm run images:hero:ci && npm run content:refresh && npm run images:content:ci && npm run awin:sync:ci && npm run partners:generate && npm run amazon:sync && npm run content:inventory && npm run content:refresh && npm run content:inventory && npm run content:audit:public:ci && npm run images:enrich:ci && npm run sitemap:generate",
+    "prebuild": "npm run hero:audit && npm run images:hero:ci && npm run content:normalize && npm run content:refresh && npm run images:content:ci && npm run awin:sync:ci && npm run partners:generate && npm run content:normalize && npm run amazon:sync && npm run content:inventory && npm run content:refresh && npm run content:normalize && npm run content:inventory && npm run content:audit:public:ci && npm run images:enrich:ci && npm run sitemap:generate",
     "build": "astro build",
     "build:fast": "astro build",
     "build:prod": "npm run build",
@@ -26,6 +26,8 @@
     "amazon:audit": "node scripts/audit-amazon-products.mjs",
     "content:refresh": "node scripts/content/refresh-generated-posts.mjs --apply",
     "content:refresh:check": "node scripts/content/refresh-generated-posts.mjs",
+    "content:normalize": "node scripts/content/normalize-generated-frontmatter.mjs --apply",
+    "content:normalize:check": "node scripts/content/normalize-generated-frontmatter.mjs",
     "content:audit:pseo": "node scripts/content/audit-pseo-copy.mjs",
     "content:audit:public": "node scripts/content/audit-public-copy.mjs --strict",
     "content:audit:public:ci": "node scripts/content/audit-public-copy.mjs --ci",

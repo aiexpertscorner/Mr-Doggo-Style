@@ -36,36 +36,15 @@ indexInBlog: false
 ---
 
 Portuguese Podengo Pequenos are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
-
-**Lifespan:** 12–15 years | 
-
-
-
+**Lifespan:** 12–15 years |
 > **Important:** This guide is for informational purposes. Always consult your vet for diagnosis and treatment. Early vet intervention consistently produces better outcomes than home management alone.
-
 ---
-
-
-
-
 ## What to watch and discuss with your vet
-
 Portuguese Podengo Pequeno owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
-
 - Use breed-risk information as a planning tool, not as a diagnosis.
 - Track changes in appetite, movement, breathing, skin, stool, weight, and behavior so your vet has useful context.
 - Ask about screening, preventive care, insurance timing, and when symptoms should be treated as urgent.
-
-## What to watch and discuss with your vet
-
-Portuguese Podengo Pequeno owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
-
-- Use breed-risk information as a planning tool, not as a diagnosis.
-- Track changes in appetite, movement, breathing, skin, stool, weight, and behavior so your vet has useful context.
-- Ask about screening, preventive care, insurance timing, and when symptoms should be treated as urgent.
-
 ## Portuguese Podengo Pequeno Health Products at a Glance
-
 | Product | Availability | Protects Against |
 |---|---|---|
 | Embark Dog DNA Test Kit | Retailer page | genetic-health, breed-identification | 🥇 |
@@ -73,126 +52,66 @@ Portuguese Podengo Pequeno owners get the best results when they start with the 
 | Seresto Flea and Tick Collar for Dogs | Retailer page | parasite-prevention |  |
 | Vetericyn Plus All Animal Wound & Skin Care | Retailer page | wound-care, skin-health |  |
 | Zymox Ear Solution for Dogs and Cats | Retailer page | ear-health |  |
-
 ---
-
 ## Most Common Portuguese Podengo Pequeno Health Issues
-
 ### 1. Ear infections
-
 **Symptoms to watch:** Head shaking, scratching at ears, odour, discharge, redness
-
 **Prevention:** Check ears weekly, dry after swimming/bathing, use vet-recommended ear cleaner monthly.
-
 **When to see the vet:** When symptoms persist more than 48 hours or worsen rapidly.
-
 ### 2. Obesity
-
 **Symptoms to watch:** Cannot feel ribs, no visible waist, reduced activity, panting with light exercise
-
 **Prevention:** Measure all food (don't free-feed), account for treats in daily calorie budget, weigh monthly.
-
 **When to see the vet:** When symptoms persist more than 48 hours or worsen rapidly.
-
 ### 3. Bloat
-
 **Symptoms to watch:** Unproductive retching, distended abdomen, restlessness, collapse — EMERGENCY
-
 **Prevention:** Feed two smaller meals daily, avoid exercise 1 hour before and after eating, consider slow-feeder bowl. Know the emergency signs: unproductive retching, distended belly, restlessness.
-
 **When to see the vet:** Immediately — GDV is fatal within hours without surgery.
-
 ### 4. Intervertebral disc disease
-
 **Symptoms to watch:** Varies — any persistent change in behaviour or appearance warrants a vet visit
-
 **Prevention:** Regular vet checks and breed-specific screening tests are the most effective prevention.
-
 **When to see the vet:** When symptoms persist more than 48 hours or worsen rapidly.
-
 ### 5. Eye problems
-
 **Symptoms to watch:** Cloudiness, excessive tearing, squinting, discharge
-
 **Prevention:** Annual vet eye checks, wipe discharge daily, watch for cloudiness or increased tearing.
-
 **When to see the vet:** When symptoms persist more than 48 hours or worsen rapidly.
-
 ### 6. Dental disease (#1 issue)
-
 **Symptoms to watch:** Bad breath, yellow-brown tartar, bleeding gums, difficulty eating
-
 **Prevention:** Brush teeth 3× per week minimum, provide dental chews (VOHC-accepted), annual professional dental cleaning.
-
 **When to see the vet:** When symptoms persist more than 48 hours or worsen rapidly.
-
 ---
-
 ## Essential Health Products for Portuguese Podengo Pequenos
-
 ### DNA Testing — Know Before It Happens
-
 **Embark Dog DNA Test Kit** — $149.00 | ★★★★★ 4.5/5
-
 [View current Amazon availability](https://www.amazon.com/dp/B01N5JUYAO/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-
 Best DNA test overall — unmatched health screening depth
-
 Portuguese Podengo Pequenos from reputable breeders may have health clearances — DNA testing adds an additional layer of knowledge.
-
 ---
-
 ### Parasite Prevention — Year-Round Protection
-
 **Seresto Flea and Tick Collar for Dogs** — $59.98 | ★★★★★ 4.5/5
-
 [View current Amazon availability](https://www.amazon.com/dp/B004QIVHME/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-
 Most cost-effective long-term flea prevention — 8 months of coverage
-
 **Why it matters for Portuguese Podengo Pequenos:** Fleas cause allergic reactions and tapeworm transmission. Ticks transmit Lyme disease and other serious infections. Prevention is significantly cheaper than treatment.
-
 ---
-
 ### Dental Health — The Most Neglected Area
-
 **CET Enzymatic Dog Toothpaste** — $11.99 | ★★★★★ 4.6/5
-
 [View current Amazon availability](https://www.amazon.com/dp/B01G3GCXFY/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-
 Vet's top toothpaste — the enzymatic formula does the heavy lifting
-
 **The minimal effective dental routine:**
 1. Brush 3× per week with dog-specific toothpaste
 2. Provide VOHC-accepted dental chews daily
 3. Annual professional dental cleaning under anaesthesia (typically from age 2–3)
-
 ---
-
 ### Ear Care — Preventable Infections
-
 **Zymox Ear Solution for Dogs and Cats** — $22.99 | ★★★★★ 4.7/5
-
 [View current Amazon availability](https://www.amazon.com/dp/B005KDLVL0/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-
 Best OTC ear treatment — the enzymatic formula is genuinely effective
-
-
-
 ---
-
 ### First Aid — Every Owner Needs This
-
 **Vetericyn Plus All Animal Wound & Skin Care** — $19.99 | ★★★★★ 4.6/5
-
 [View current Amazon availability](https://www.amazon.com/dp/B003VT4NWI/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-
 Best first-aid spray for dogs — every dog owner should have this
-
 ---
-
 ## Portuguese Podengo Pequeno Preventive Health Calendar
-
 | Age | Key Health Actions |
 |---|---|
 | 8–16 weeks | Core vaccinations, parasite prevention, health check |
@@ -200,11 +119,8 @@ Best first-aid spray for dogs — every dog owner should have this
 | 12 months | Annual vaccines, comprehensive blood panel, dental check |
 | 1–7 years | Annual vet exam, continued parasite prevention, weight monitoring |
 | 11+ years | Biannual vet exams, joint assessment, bloodwork every 6 months |
-
 ---
-
 ## When to Go to the Vet Immediately
-
 Emergency signs in Portuguese Podengo Pequenos — don't wait:
 - **Unproductive retching with distended belly** → potential bloat/GDV
 - **Sudden collapse or inability to stand**
@@ -213,34 +129,22 @@ Emergency signs in Portuguese Podengo Pequenos — don't wait:
 - **Swallowed foreign object with distress signs**
 - **Deep cuts or wounds with persistent bleeding**
 - **Eye injury or sudden vision loss**
-
 ---
-
 ## Frequently Asked Questions
-
 **Q: How many times per year should my Portuguese Podengo Pequeno see a vet?**
 A: Once annually until age 12, then twice yearly. As Portuguese Podengo Pequenos enter their senior years, more frequent bloodwork and organ function tests become important.
-
 **Q: Is pet insurance worth it for Portuguese Podengo Pequenos?**
 A: For small breeds like the Portuguese Podengo Pequeno: generally yes. The lifetime health cost of a Portuguese Podengo Pequeno averages around $15,000–20,000. Insurance makes unexpected costs manageable.
-
 **Q: Should I get a DNA test if my Portuguese Podengo Pequeno comes from a reputable breeder?**
 A: Reputable breeders will have health clearances for common conditions. A DNA test still adds value for comprehensive health markers and lifetime monitoring.
-
 **Q: How do I know if my Portuguese Podengo Pequeno is at a healthy weight?**
 A: Feel the ribs — you should be able to feel them without pressing hard. View from above — there should be a visible waist. View from the side — abdomen should tuck up slightly behind the chest.
-
 **Q: What vaccinations does my Portuguese Podengo Pequeno need?**
 A: Core vaccines: distemper, parvovirus, adenovirus, rabies. Non-core (discuss with vet): Lyme disease (especially for outdoor-active breeds), leptospirosis, Bordetella. Annual boosters as recommended.
-
 ---
-
 ## Our Verdict
-
 Proactive health management for Portuguese Podengo Pequenos means: **DNA testing** to know genetic risks, **year-round parasite prevention** ([Seresto Flea and Tick Collar for Dogs](https://www.amazon.com/dp/B004QIVHME/?tag=aiexpertscorn-20){rel="nofollow sponsored"}), **consistent dental care**, and **regular vet monitoring**.
-
 The biggest payoff comes from early detection — most of the conditions Portuguese Podengo Pequenos are prone to are significantly more treatable when caught early.
-
 **More Portuguese Podengo Pequeno guides:**
 - [Best food for Portuguese Podengo Pequenos →](/blog/best-food-for-portuguese-podengo-pequeno)
 - [Best supplements for Portuguese Podengo Pequenos →](/blog/best-supplements-for-portuguese-podengo-pequeno)

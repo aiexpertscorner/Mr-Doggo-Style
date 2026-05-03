@@ -9,6 +9,11 @@
 
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
+import {
+  normalizeMonetizationIntent,
+  normalizeReviewMethod,
+  sanitizePublicDogCopy,
+} from '../lib/public-content-contract.mjs';
 
 const ROOT = process.cwd();
 const DATA_DIR = resolve(ROOT, 'src/data');
@@ -162,9 +167,9 @@ postType: "review"
 contentTier: "money"
 indexInBlog: false
 generated: true
-reviewMethod: "brand-resource-review"
+reviewMethod: ${quote(normalizeReviewMethod('brand-resource-review'))}
 claimSensitivity: ${quote(sensitive ? 'high' : 'medium')}
-monetizationIntent: "brand-review"
+monetizationIntent: ${quote(normalizeMonetizationIntent('brand-review'))}
 affiliateDisclosure: true
 medicalDisclaimer: ${sensitive ? 'true' : 'false'}
 heroImage: ${quote(logo)}
@@ -248,7 +253,7 @@ function main() {
     const creativeRows = bannerRows(program, banners);
     const slug = `partner-${program.key}`;
     const file = join(BLOG_DIR, `${slug}.md`);
-    const markdown = buildMarkdown(program, rows, creativeRows);
+    const markdown = sanitizePublicDogCopy(buildMarkdown(program, rows, creativeRows));
     if (APPLY) writeFileSync(file, markdown, 'utf8');
     written += 1;
     summary.push({

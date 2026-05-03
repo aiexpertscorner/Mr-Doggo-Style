@@ -11,6 +11,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  normalizeMonetizationIntent,
+  normalizeReviewMethod,
+  sanitizePublicDogCopy,
+} from '../lib/public-content-contract.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const BLOG_DIR = path.join(ROOT, 'src/content/blog');
@@ -55,7 +60,7 @@ function yamlList(values) {
   return `[${Array.from(new Set((values || []).filter(Boolean).map(String))).map(quote).join(', ')}]`;
 }
 function clean(value) {
-  return String(value || '').replace(/\s+/g, ' ').trim();
+  return sanitizePublicDogCopy(String(value || '')).replace(/\s+/g, ' ').trim();
 }
 function unique(values) {
   return Array.from(new Set(values.filter(Boolean)));
@@ -131,13 +136,16 @@ function matches(obj, rule) {
   return rule.tags.some((tag) => tags.includes(slugify(tag)) || blob.includes(String(tag).replace(/-/g, ' ')) || blob.includes(slugify(tag)));
 }
 function productLine(product) {
-  const price = Number(product.price) > 0 ? ` — listed at $${Number(product.price).toFixed(2)} when imported` : '';
-  return `- **${product.name}** from ${product.merchant || 'partner'}${price}. ${clean(product.description).slice(0, 150)}${product.url ? ` [View partner listing](${product.url})` : ''}`;
+  const price = Number(product.price) > 0 ? ` - listed at $${Number(product.price).toFixed(2)} when last checked` : '';
+  return sanitizePublicDogCopy(`- **${product.name}** from ${product.merchant || 'brand'}${price}. ${clean(product.description).slice(0, 150)}${product.url ? ` [Review current details](${product.url})` : ''}`);
 }
 function partnerLine(program) {
-  const kpi = program.kpi || {};
-  const bits = [commissionLabel(program), kpi.epc ? `EPC ${kpi.epc}` : '', kpi.conversionRate ? `${kpi.conversionRate}% conversion signal` : '', program.hasProductFeed ? 'feed available' : 'deeplink partner'].filter(Boolean).join(' · ');
-  return `- **${program.name}** — ${bits}. [Visit partner](${program.deeplink || program.clickThroughUrl})`;
+  const details = [
+    program.primarySector,
+    program.hasLogo ? 'clear brand information' : '',
+    program.hasProductFeed ? 'current product details available' : 'brand details available',
+  ].filter(Boolean).join(' - ');
+  return sanitizePublicDogCopy(`- **${program.name}** - ${details}. [Visit brand](${program.deeplink || program.clickThroughUrl})`);
 }
 function getClusters() {
   return RULES.map((rule) => {
@@ -221,9 +229,9 @@ amazonQueries: ${yamlList(cluster.amazonQueries)}
 internalLinkTargets: ${yamlList(cluster.internalLinkTargets)}
 generated: true
 indexInBlog: false
-reviewMethod: "awin-program-and-product-data-clustering"
+reviewMethod: ${quote(normalizeReviewMethod('product-data-comparison'))}
 claimSensitivity: ${quote(cluster.rule.sensitivity)}
-monetizationIntent: "partner-cluster"
+monetizationIntent: ${quote(normalizeMonetizationIntent(cluster.rule.tags[0] || 'service'))}
 affiliateDisclosure: true
 medicalDisclaimer: ${sensitive ? 'true' : 'false'}
 partnerProgramKeys: ${yamlList(cluster.programs.map((program) => program.key))}
@@ -275,9 +283,9 @@ amazonQueries: ${yamlList(item.amazonQueries)}
 internalLinkTargets: ${yamlList(item.internalLinkTargets)}
 generated: true
 indexInBlog: false
-reviewMethod: "awin-backed-pseo-opportunity"
+reviewMethod: ${quote(normalizeReviewMethod('product-data-comparison'))}
 claimSensitivity: ${quote(item.monetization?.claimSensitivity || 'medium')}
-monetizationIntent: ${quote(item.family)}
+monetizationIntent: ${quote(normalizeMonetizationIntent(item.family))}
 affiliateDisclosure: true
 medicalDisclaimer: ${item.monetization?.claimSensitivity === 'high' ? 'true' : 'false'}
 breedSlug: ${quote(breed.slug)}
@@ -303,7 +311,7 @@ const skipped = [];
 for (const item of selected) {
   try {
     const slug = item.suggestedSlug || item.slug;
-    const markdown = item.kind === 'breed' ? renderBreedPage(item) : renderCluster(item);
+    const markdown = sanitizePublicDogCopy(item.kind === 'breed' ? renderBreedPage(item) : renderCluster(item));
     if (APPLY) fs.writeFileSync(path.join(BLOG_DIR, `${slug}.md`), markdown, 'utf8');
     generated.push({ kind: item.kind || 'cluster', slug, path: `/blog/${slug}`, priorityScore: item.priorityScore, programmes: item.programs?.map((program) => program.name) || item.programmes || [] });
   } catch (error) {

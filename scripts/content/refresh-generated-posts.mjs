@@ -1,6 +1,11 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { buildPseoCopy, getPseoFamilyFromFilename } from '../lib/pseo-copy-engine.mjs';
+import {
+  normalizeMonetizationIntent,
+  normalizeReviewMethod,
+  sanitizePublicDogCopy,
+} from '../lib/public-content-contract.mjs';
 
 const ROOT = process.cwd();
 const BLOG_DIR = resolve(ROOT, 'src/content/blog');
@@ -63,6 +68,11 @@ function setYaml(raw, updates) {
   return output.join('\n');
 }
 
+function getYamlScalar(raw, key) {
+  const match = raw.match(new RegExp(`^${key}:\\s*(.*)$`, 'm'));
+  return match ? match[1].trim().replace(/^"|"$/g, '') : '';
+}
+
 function quote(value) {
   return `"${String(value ?? '').replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
 }
@@ -122,53 +132,7 @@ function softenBestTitle(text, familyKey, breed) {
 }
 
 function sanitizePublicCopy(text) {
-  return String(text || '')
-    .replace(/\bAWIN\b/gi, 'partner')
-    .replace(/affiliate programmes?/gi, 'partner relationships')
-    .replace(/affiliate programs?/gi, 'partner relationships')
-    .replace(/affiliate ecosystem/gi, 'reader-supported model')
-    .replace(/affiliate disclosure/gi, 'reader-support disclosure')
-    .replace(/affiliate links?/gi, 'reader-supported links')
-    .replace(/qualifying partner links?/gi, 'reader-supported links')
-    .replace(/current shopping modules?/gi, 'current shopping resources')
-    .replace(/shopping modules?/gi, 'shopping resources')
-    .replace(/amazon search modules?/gi, 'Amazon.com search shortcuts')
-    .replace(/product modules?/gi, 'product resources')
-    .replace(/partner placements?/gi, 'partner resources')
-    .replace(/placement rules?/gi, 'editorial fit notes')
-    .replace(/validated product links?/gi, 'reviewed product links')
-    .replace(/current active AWIN/gi, 'current partner')
-    .replace(/programme data/gi, 'partner information')
-    .replace(/program data/gi, 'partner information')
-    .replace(/partner programme/gi, 'partner resource')
-    .replace(/partner program/gi, 'partner resource')
-    .replace(/commerce cluster/gi, 'shopping topic')
-    .replace(/content inventory/gi, 'PupWiki guide library')
-    .replace(/backend/gi, 'site')
-    .replace(/PSEO/gi, 'PupWiki')
-    .replace(/generated guides?/gi, 'PupWiki guides')
-    .replace(/generated from current/gi, 'based on current')
-    .replace(/this page is generated/gi, 'this guide is maintained')
-    .replace(/how this page was refreshed/gi, 'how this guide is maintained')
-    .replace(/rich content plan/gi, 'guide plan')
-    .replace(/intent graph/gi, 'topic map')
-    .replace(/primary intents?/gi, 'reader needs')
-    .replace(/related clusters?/gi, 'related topics')
-    .replace(/feed rows?/gi, 'catalog details')
-    .replace(/product-feed rows?/gi, 'catalog details')
-    .replace(/creative\/banner rows?/gi, 'brand assets')
-    .replace(/imported creative/gi, 'brand asset')
-    .replace(/imported product/gi, 'catalog product')
-    .replace(/EPC:/gi, 'reader value signal:')
-    .replace(/conversion rate:/gi, 'availability signal:')
-    .replace(/approval percentage:/gi, 'partner quality signal:')
-    .replace(/validation days:/gi, 'review window:')
-    .replace(/deeplink and tracking/gi, 'partner link')
-    .replace(/primary partner link/gi, 'main partner link')
-    .replace(/template adds/gi, 'guide includes')
-    .replace(/why this appears here/gi, 'why readers may find this useful')
-    .replace(/breed size-fit recommendation box/gi, 'breed sizing notes')
-    .replace(/inline slots?/gi, 'inline resources');
+  return sanitizePublicDogCopy(text);
 }
 
 function sectionHeadingFor(copy, breed) {
@@ -206,6 +170,32 @@ function readerSection(copy, breed) {
   return [`## ${heading}`, '', `${breed.name} owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.`, '', ...bullets.map((item) => `- ${item}`), ''].join('\n');
 }
 
+function hasReaderSection(body, copy, breed) {
+  const headings = {
+    food: [`How to choose food for a ${breed.name}`, `${breed.name} feeding fit checklist`, `What matters most for ${breed.name} nutrition`],
+    toys: [`How to choose toys for a ${breed.name}`, `${breed.name} enrichment checklist`, `What matters most in ${breed.name} play`],
+    beds: [`How to choose a bed for a ${breed.name}`, `${breed.name} sleep and comfort checklist`, `What matters most in ${breed.name} bed fit`],
+    grooming: [`How to choose grooming tools for a ${breed.name}`, `${breed.name} coat-care checklist`, `What matters most in ${breed.name} grooming`],
+    supplements: [`Supplement questions for ${breed.name} owners`, `${breed.name} supplement safety checklist`, `What to review before buying supplements for a ${breed.name}`],
+    health: [`Health planning for ${breed.name} owners`, `${breed.name} vet-care checklist`, `What to watch and discuss with your vet`],
+    training: [`How to train a ${breed.name} with daily structure`, `${breed.name} training checklist`, `What matters most in ${breed.name} training`],
+  }[copy.familyKey] || [`How to compare options for a ${breed.name}`];
+  return headings.some((heading) => body.includes(`## ${heading}`));
+}
+
+function dedupeMarkdownSections(body) {
+  const parts = String(body || '').split(/(?=\n?## )/);
+  const seen = new Set();
+  const output = [];
+  for (const part of parts) {
+    const normalized = part.replace(/\s+/g, ' ').trim();
+    if (normalized.startsWith('## ') && seen.has(normalized)) continue;
+    if (normalized.startsWith('## ')) seen.add(normalized);
+    output.push(part);
+  }
+  return output.join('');
+}
+
 function removeInternalSections(body) {
   let next = body;
   const patterns = [/## How this page was refreshed[\s\S]*?(?=\n## |\n# |$)/gi, /## Rich content plan[\s\S]*?(?=\n## |\n# |$)/gi, /## Placement rules[\s\S]*?(?=\n## |\n# |$)/gi, /## Commerce modules[\s\S]*?(?=\n## |\n# |$)/gi];
@@ -232,10 +222,12 @@ function cleanBody(body, copy, breed) {
   next = next.replace(/## Why .+ Have Specific Nutrition Needs/g, `## ${copy.headings.why}`);
   next = next.replace(/## Why .+ Need Breed-Specific Toys/g, `## ${copy.headings.why}`);
   next = next.replace(/## Why .+ Need Specific Beds/g, `## ${copy.headings.why}`);
-  const guideSection = readerSection(copy, breed);
-  const firstHeading = next.search(/\n## /);
-  next = firstHeading > -1 ? `${next.slice(0, firstHeading)}\n\n${guideSection}\n${next.slice(firstHeading + 1)}` : `${guideSection}\n${next}`;
-  return sanitizePublicCopy(next).replace(/\n{4,}/g, '\n\n\n').trimStart();
+  if (!hasReaderSection(next, copy, breed)) {
+    const guideSection = readerSection(copy, breed);
+    const firstHeading = next.search(/\n## /);
+    next = firstHeading > -1 ? `${next.slice(0, firstHeading)}\n\n${guideSection}\n${next.slice(firstHeading + 1)}` : `${guideSection}\n${next}`;
+  }
+  return dedupeMarkdownSections(sanitizePublicCopy(next)).replace(/\n{2,}/g, '\n').trimStart();
 }
 
 function buildClusterTags(copy, breed) {
@@ -267,7 +259,7 @@ for (const filename of readdirSync(BLOG_DIR).filter((file) => file.endsWith('.md
     seoTitle: sanitizePublicCopy(softenBestTitle(rawCopy.seoTitle, match.familyKey, breed)),
     displayTitle: sanitizePublicCopy(softenBestTitle(rawCopy.displayTitle, match.familyKey, breed)),
     description: sanitizePublicCopy(rawCopy.description),
-    titlePattern: `reader-${rawCopy.titlePattern}`.replace(/best/gi, 'guide'),
+    titlePattern: rawCopy.titlePattern,
   };
   const clusterData = buildClusterTags(copy, breed);
   const updatedYaml = setYaml(parsed.raw, {
@@ -276,7 +268,7 @@ for (const filename of readdirSync(BLOG_DIR).filter((file) => file.endsWith('.md
     displayTitle: quote(copy.displayTitle),
     titlePattern: quote(copy.titlePattern),
     description: quote(copy.description),
-    updatedDate: TODAY,
+    updatedDate: getYamlScalar(parsed.raw, 'updatedDate') || TODAY,
     category: quote(copy.category),
     postType: quote(copy.postType),
     contentTier: quote(copy.contentTier),
@@ -287,9 +279,9 @@ for (const filename of readdirSync(BLOG_DIR).filter((file) => file.endsWith('.md
     internalLinkTargets: yamlList([`/breeds/${breed.slug}`, `/categories/${clusterData.cluster}`, '/cost-calculator', '/dog-names', '/categories/puppy', '/categories/senior-dogs', '/categories/insurance']),
     generated: 'true',
     indexInBlog: 'false',
-    reviewMethod: quote(copy.postType === 'product-roundup' ? 'editorial-product-comparison' : copy.reviewMethod),
+    reviewMethod: quote(normalizeReviewMethod(copy.reviewMethod)),
     claimSensitivity: quote(copy.claimSensitivity),
-    monetizationIntent: quote(copy.monetizationIntent),
+    monetizationIntent: quote(normalizeMonetizationIntent(copy.monetizationIntent)),
     affiliateDisclosure: 'true',
     medicalDisclaimer: copy.medicalDisclaimer ? 'true' : 'false',
   });
