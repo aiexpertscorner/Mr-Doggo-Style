@@ -735,6 +735,10 @@
   font-size: clamp(3rem, 16vw, 5rem);
 }
 
+.breed-directory-card__fallback.is-hidden {
+  display: none;
+}
+
 .breed-directory-card__type {
   position: absolute;
   top: var(--space-3);

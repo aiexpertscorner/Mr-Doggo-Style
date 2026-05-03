@@ -1,0 +1,74 @@
+---
+import { matchAmazonProducts, type AmazonPlacementContext } from '../../lib/amazon/matchAmazonProducts';
+import AmazonBadge from '../ui/AmazonBadge.astro';
+
+let allProducts: any[] = [];
+try {
+  const imported = await import('../../data/amazon-products.json');
+  allProducts = Array.isArray(imported.default) ? imported.default : [];
+} catch {}
+
+export interface Props extends AmazonPlacementContext {
+  headline?: string;
+  eyebrow?: string;
+  note?: string;
+  variant?: 'rail' | 'compact';
+}
+
+const {
+  headline = 'Useful Amazon.com searches for this guide',
+  eyebrow = 'Amazon.com',
+  note = 'Amazon links are affiliate links. Product details can change, so confirm fit and availability on Amazon before buying.',
+  variant = 'rail',
+  limit = variant === 'compact' ? 2 : 3,
+  ...context
+} = Astro.props;
+
+const products = matchAmazonProducts(allProducts, { ...context, limit });
+---
+
+{products.length > 0 && (
+  <section class:list={['amazon-slot', variant === 'compact' && 'amazon-slot--compact']} aria-label={headline}>
+    <div class="amazon-slot__header">
+      <p>{eyebrow}</p>
+      <h2>{headline}</h2>
+      <span>{note}</span>
+    </div>
+
+    <div class="amazon-slot__grid">
+      {products.map((product) => {
+        const isSearch = product.source === 'amazon-search-template';
+        const sourceLabel = isSearch ? 'Smart search link' : 'Validated product link';
+        const categoryLabel = product.categoryLabel || product.categoryGroup || 'Dog supplies';
+        const placement = product.recommendedPlacement || (isSearch ? `Search Amazon.com for ${product.name.toLowerCase()} matched to this PupWiki page.` : 'Matched from PupWiki Amazon product data for this page intent.');
+        return (
+          <article class:list={['amazon-slot__card', isSearch && 'amazon-slot__card--search']}>
+            <span class="amazon-slot__source">{sourceLabel}</span>
+
+            <div class="amazon-slot__meta">
+              <span>{categoryLabel}</span>
+              {product.brand && <strong>{product.brand}</strong>}
+            </div>
+
+            <h3>{product.name}</h3>
+            <p>{placement}</p>
+
+            {isSearch && product.amazonSearchQuery && (
+              <p><strong>Search query:</strong> {product.amazonSearchQuery}</p>
+            )}
+
+            {Array.isArray(product.topicTags) && product.topicTags.length > 0 && (
+              <div class="amazon-slot__tags" aria-label="Product fit tags">
+                {product.topicTags.slice(0, 4).map((tag) => <span>{String(tag).replace(/[-_]+/g, ' ')}</span>)}
+              </div>
+            )}
+
+            <div class="amazon-slot__actions">
+              <AmazonBadge href={product.amazonAffiliateUrl} size={variant === 'compact' ? 'sm' : 'md'} label={isSearch ? 'Search Amazon.com' : undefined} />
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+)}

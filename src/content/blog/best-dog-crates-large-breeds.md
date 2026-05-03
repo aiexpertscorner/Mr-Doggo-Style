@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Crates for Large Breeds 2026: Wire, Plastic & Heavy-Duty Compared"
 description: "We compared 8 large-breed dog crates across security, escape resistance, durability, and ease of setup. The best crate depends heavily on your dog's temperament."
 pubDate: 2026-03-05
@@ -8,7 +9,16 @@ author: "The PupWiki Team"
 postType: "product-roundup"
 readTime: 8
 schemaType: "Article"
+heroImage: "https://images.pexels.com/photos/9956387/pexels-photo-9956387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/9956387/pexels-photo-9956387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Belgian Malinois dog practices biting training with a trainer using a bite sleeve outdoors."
+imageAlt: "A Belgian Malinois dog practices biting training with a trainer using a bite sleeve outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by Anton Kudryashov on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-biting-person-hand-during-training-9956387/"
+imageSearchQuery: "dog training"
 ---
+
 
 A dog crate is simultaneously a training tool, a safety device, and — when introduced correctly — a place of genuine comfort and security for your dog. The right crate depends on your dog's size, temperament, chewing habits, and your specific use case (travel vs. home use, puppy vs. adult).
 

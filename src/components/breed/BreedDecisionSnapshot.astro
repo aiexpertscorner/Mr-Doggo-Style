@@ -1,0 +1,45 @@
+---
+/**
+ * BreedDecisionSnapshot.astro
+ * Compact owner-decision summary for breed pages.
+ */
+
+export interface SnapshotItem {
+  label: string;
+  value: string | number;
+  note?: string;
+  tone?: 'good' | 'warn' | 'neutral' | 'accent';
+}
+
+export interface Props {
+  title?: string;
+  description?: string;
+  items: SnapshotItem[];
+}
+
+const {
+  title = 'Quick decision snapshot',
+  description = 'Use these signals to decide whether this breed fits your home, routine, budget and experience level.',
+  items = [],
+} = Astro.props;
+---
+
+{items.length > 0 && (
+  <section class="breed-decision" aria-labelledby="breed-decision-title">
+    <div class="breed-decision__header">
+      <p class="breed-eyebrow">Owner fit snapshot</p>
+      <h2 id="breed-decision-title">{title}</h2>
+      <p>{description}</p>
+    </div>
+
+    <div class="breed-decision__grid">
+      {items.slice(0, 8).map((item) => (
+        <article class:list={['breed-decision-card', item.tone && `is-${item.tone}`]}>
+          <span>{item.label}</span>
+          <strong>{item.value}</strong>
+          {item.note && <p>{item.note}</p>}
+        </article>
+      ))}
+    </div>
+  </section>
+)}

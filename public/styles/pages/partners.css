@@ -1,0 +1,87 @@
+/* =============================================================
+   PAGE / PUPWIKI PARTNERS — AWIN partner directory and profiles
+   ============================================================= */
+
+.partner-card {
+  padding: var(--space-5);
+}
+
+.partner-card__top {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.partner-card__logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: #fff;
+  padding: 8px;
+  box-shadow: var(--shadow-xs);
+}
+
+.partner-card__title {
+  margin: 0;
+  color: var(--color-heading);
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.05;
+}
+
+.partner-card__meta {
+  margin: var(--space-3) 0 0;
+  color: var(--color-body-soft);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.partner-card__stats {
+  gap: var(--space-3);
+}
+
+.partner-card__stat {
+  margin: 0;
+}
+
+.partner-card__stat strong {
+  color: var(--color-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-black);
+}
+
+.partner-card__actions {
+  margin-top: auto;
+}
+
+.partner-rule-card {
+  padding: var(--space-5);
+}
+
+.partner-rule-card h3 {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+}
+
+.partner-rule-card p {
+  margin: 0;
+  color: var(--color-body-soft);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.partner-profile-logo {
+  max-width: 220px;
+  max-height: 100px;
+  object-fit: contain;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  background: #fff;
+  padding: var(--space-4);
+  box-shadow: var(--shadow-xs);
+}

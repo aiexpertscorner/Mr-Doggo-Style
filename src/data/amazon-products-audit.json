@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-05-01T02:33:12.933Z",
+  "totalProducts": 90,
+  "enabledProducts": 32,
+  "enabledWithAffiliateUrl": 32,
+  "liveEligible": 32,
+  "disabledProducts": 58,
+  "byCategoryGroup": {
+    "grooming_shedding": 10,
+    "toys_enrichment": 9,
+    "crates_gates_home": 6,
+    "food_bowls_feeding": 8,
+    "puppy_starter": 6,
+    "walking_harness_leash": 9,
+    "beds_comfort": 7,
+    "cleanup_odor": 7,
+    "travel_safety": 8,
+    "treats_training": 8,
+    "tech_tracking": 5,
+    "health_adjacent": 7
+  },
+  "liveByCategoryGroup": {
+    "grooming_shedding": 4,
+    "toys_enrichment": 4,
+    "crates_gates_home": 2,
+    "food_bowls_feeding": 2,
+    "puppy_starter": 3,
+    "walking_harness_leash": 3,
+    "beds_comfort": 2,
+    "cleanup_odor": 5,
+    "travel_safety": 1,
+    "treats_training": 4,
+    "tech_tracking": 1,
+    "health_adjacent": 1
+  },
+  "byComplianceRisk": {
+    "low": 81,
+    "medium": 9
+  },
+  "enabledMissingLink": []
+}

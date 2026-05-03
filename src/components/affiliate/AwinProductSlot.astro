@@ -39,6 +39,7 @@ export interface Props {
   productId?: string;
   variant?: 'card' | 'compact';
   headline?: string;
+  monetizationIntent?: 'high' | 'medium' | 'low' | string;
 }
 
 const {
@@ -52,6 +53,7 @@ const {
   productId,
   variant = 'card',
   headline,
+  monetizationIntent,
 } = Astro.props;
 
 let product: any = null;
@@ -68,6 +70,7 @@ if (productId) {
     breedTraining,
     excludeProductIds,
     limit: 1,
+    monetizationIntent,
   };
   product = matchTopProduct(allProducts, context);
 }

@@ -1,15 +1,7 @@
 ---
 /**
  * src/layouts/BaseLayout.astro
- * Enhanced global layout for PupWiki.
- * Handles:
- * - SEO meta
- * - canonical URLs
- * - Open Graph / Twitter
- * - JSON-LD
- * - accessibility skip link
- * - shared header/footer
- * - AdSense verification + optional script
+ * Global PupWiki layout: SEO, shared chrome, structured data and optional partner scripts.
  */
 
 import Header from '../components/ui/Header.astro';
@@ -25,14 +17,11 @@ import {
   SITE_LOCALE,
   SITE_LOGO_ABSOLUTE,
   SITE_DEFAULT_OG_IMAGE,
-  SITE_TAGLINE,
   ORGANIZATION_SAME_AS,
   SEARCH_PATH,
 } from '../lib/site-config';
 
-type StructuredData =
-  | Record<string, unknown>
-  | Array<Record<string, unknown>>;
+type StructuredData = Record<string, unknown> | Array<Record<string, unknown>>;
 
 export interface Props {
   title: string;
@@ -62,44 +51,21 @@ const {
   structuredData = [],
 } = Astro.props;
 
-/**
- * Google AdSense
- * Replace the masked values with your real full AdSense IDs.
- *
- * To temporarily disable AdSense script loading later:
- * set ENABLE_ADSENSE = false.
- */
-const ENABLE_ADSENSE = true;
+const ENABLE_ADSENSE = false;
 const ADSENSE_ACCOUNT = 'ca-pub-4011000703937954';
 const ADSENSE_CLIENT = 'ca-pub-4011000703937954';
+const ENABLE_AWIN_MASTERTAG = import.meta.env.PUBLIC_ENABLE_AWIN_MASTERTAG === 'true';
 
 const currentPath = `${Astro.url.pathname}${Astro.url.search}`;
-const resolvedCanonicalUrl =
-  canonicalUrl ?? new URL(currentPath || '/', SITE_URL).toString();
-
-const resolvedOgImage = ogImage.startsWith('http')
-  ? ogImage
-  : new URL(ogImage, SITE_URL).toString();
-
-const pageTitle = title.includes(SITE_NAME)
-  ? title
-  : `${title} | ${SITE_NAME}`;
-
-const robotsContent = noIndex
-  ? 'noindex, nofollow'
-  : 'index, follow, max-image-preview:large';
-
+const resolvedCanonicalUrl = canonicalUrl ?? new URL(currentPath || '/', SITE_URL).toString();
+const resolvedOgImage = ogImage.startsWith('http') ? ogImage : new URL(ogImage, SITE_URL).toString();
+const pageTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+const robotsContent = noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
 const isHomePage = Astro.url.pathname === '/';
-
 const ogType = pageType === 'article' ? 'article' : 'website';
-
-const normalizedStructuredData = Array.isArray(structuredData)
-  ? structuredData
-  : [structuredData];
-
-const searchTarget = SEARCH_PATH
-  ? new URL(`${SEARCH_PATH}?q={search_term_string}`, SITE_URL).toString()
-  : null;
+const normalizedStructuredData = Array.isArray(structuredData) ? structuredData : [structuredData];
+const searchTarget = SEARCH_PATH ? new URL(`${SEARCH_PATH}?q={search_term_string}`, SITE_URL).toString() : null;
+const finalBodyClass = ['pw-site', bodyClass].filter(Boolean).join(' ');
 
 const websiteJsonLd: Record<string, unknown> = {
   '@context': 'https://schema.org',
@@ -111,20 +77,14 @@ const websiteJsonLd: Record<string, unknown> = {
     '@type': 'Organization',
     name: SITE_ORG,
     url: SITE_URL,
-    logo: {
-      '@type': 'ImageObject',
-      url: SITE_LOGO_ABSOLUTE,
-    },
+    logo: { '@type': 'ImageObject', url: SITE_LOGO_ABSOLUTE },
   },
 };
 
 if (searchTarget) {
   websiteJsonLd.potentialAction = {
     '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: searchTarget,
-    },
+    target: { '@type': 'EntryPoint', urlTemplate: searchTarget },
     'query-input': 'required name=search_term_string',
   };
 }
@@ -136,15 +96,10 @@ const organizationJsonLd: Record<string, unknown> = {
   url: SITE_URL,
   email: SITE_EMAIL,
   description: SITE_DESCRIPTION,
-  logo: {
-    '@type': 'ImageObject',
-    url: SITE_LOGO_ABSOLUTE,
-  },
+  logo: { '@type': 'ImageObject', url: SITE_LOGO_ABSOLUTE },
 };
 
-if (ORGANIZATION_SAME_AS?.length) {
-  organizationJsonLd.sameAs = ORGANIZATION_SAME_AS;
-}
+if (ORGANIZATION_SAME_AS?.length) organizationJsonLd.sameAs = ORGANIZATION_SAME_AS;
 
 const pageSchemaTypeMap = {
   website: isHomePage ? 'WebPage' : 'WebPage',
@@ -162,39 +117,20 @@ const webPageJsonLd: Record<string, unknown> = {
   description,
   url: resolvedCanonicalUrl,
   inLanguage: SITE_LANGUAGE,
-  isPartOf: {
-    '@type': 'WebSite',
-    name: SITE_NAME,
-    url: SITE_URL,
-  },
+  isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
   publisher: {
     '@type': 'Organization',
     name: SITE_ORG,
     url: SITE_URL,
-    logo: {
-      '@type': 'ImageObject',
-      url: SITE_LOGO_ABSOLUTE,
-    },
+    logo: { '@type': 'ImageObject', url: SITE_LOGO_ABSOLUTE },
   },
-  author: {
-    '@type': 'Organization',
-    name: SITE_AUTHOR,
-  },
+  author: { '@type': 'Organization', name: SITE_AUTHOR },
 };
 
-if (pageType === 'article' && publishedTime) {
-  webPageJsonLd.datePublished = publishedTime;
-}
-if (pageType === 'article' && modifiedTime) {
-  webPageJsonLd.dateModified = modifiedTime;
-}
+if (pageType === 'article' && publishedTime) webPageJsonLd.datePublished = publishedTime;
+if (pageType === 'article' && modifiedTime) webPageJsonLd.dateModified = modifiedTime;
 
-const jsonLdScripts = [
-  organizationJsonLd,
-  websiteJsonLd,
-  webPageJsonLd,
-  ...normalizedStructuredData.filter(Boolean),
-];
+const jsonLdScripts = [organizationJsonLd, websiteJsonLd, webPageJsonLd, ...normalizedStructuredData.filter(Boolean)];
 ---
 
 <!DOCTYPE html>
@@ -208,17 +144,15 @@ const jsonLdScripts = [
     <meta name="robots" content={robotsContent} />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="theme-color" content="#0D9488" />
+    <meta name="theme-color" content="#15365f" />
 
     <title>{pageTitle}</title>
     <link rel="canonical" href={resolvedCanonicalUrl} />
-
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate" type="application/rss+xml" href="/rss.xml" title={SITE_NAME} />
     <link rel="alternate" hrefLang={SITE_LANGUAGE} href={resolvedCanonicalUrl} />
     <meta property="og:locale" content={SITE_LOCALE} />
 
-    <!-- Open Graph -->
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={pageTitle} />
@@ -226,91 +160,38 @@ const jsonLdScripts = [
     <meta property="og:url" content={resolvedCanonicalUrl} />
     <meta property="og:image" content={resolvedOgImage} />
     <meta property="og:image:alt" content={ogImageAlt} />
+    {pageType === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {pageType === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 
-    {pageType === 'article' && publishedTime && (
-      <meta property="article:published_time" content={publishedTime} />
-    )}
-    {pageType === 'article' && modifiedTime && (
-      <meta property="article:modified_time" content={modifiedTime} />
-    )}
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={resolvedOgImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
 
-    <!-- Partner verification -->
-    <meta
-      name="impact-site-verification"
-      content="7b2aaf8e-72cb-456b-a2a8-9176f838c637"
-    />
-
-    <!-- Google AdSense verification -->
+    <meta name="impact-site-verification" content="7b2aaf8e-72cb-456b-a2a8-9176f838c637" />
     <meta name="google-adsense-account" content={ADSENSE_ACCOUNT} />
 
-    <!-- Google AdSense script -->
     {ENABLE_ADSENSE && (
       <>
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          crossorigin="anonymous"
-        />
+        <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`} crossorigin="anonymous" />
       </>
     )}
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles/main.css" />
 
-    <style is:global>
-      .skip-link {
-        position: absolute;
-        left: -9999px;
-        top: 0;
-        z-index: 9999;
-        padding: 0.75rem 1rem;
-        background: #0f172a;
-        color: #ffffff;
-        border-radius: 0.75rem;
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      .skip-link:focus {
-        left: 1rem;
-        top: 1rem;
-      }
-    </style>
-
-    {jsonLdScripts.map((schema) => (
-      <script
-        type="application/ld+json"
-        set:html={JSON.stringify(schema)}
-      />
-    ))}
-
+    {jsonLdScripts.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}
     <slot name="head" />
 
-    <!-- GA4 -->
     {import.meta.env.PUBLIC_GA_MEASUREMENT_ID && (
       <>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}
-        />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`} />
         <script define:vars={{ gaId: import.meta.env.PUBLIC_GA_MEASUREMENT_ID }}>
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
@@ -321,19 +202,11 @@ const jsonLdScripts = [
     )}
   </head>
 
-  <body class={bodyClass} data-page-type={pageType}>
+  <body class={finalBodyClass} data-page-type={pageType}>
     <a class="skip-link" href="#main-content">Skip to content</a>
-
     <Header />
-
-    <main id="main-content" aria-label="Main content">
-      <slot />
-    </main>
-
+    <main id="main-content" aria-label="Main content"><slot /></main>
     <Footer />
-
-     <!-- Awin MasterTag -->
-  <script type="text/javascript" src="https://www.dwin2.com/pub.2861861.min.js"></script>
-  
+    {ENABLE_AWIN_MASTERTAG && <script type="text/javascript" src="https://www.dwin2.com/pub.2861861.min.js"></script>}
   </body>
 </html>

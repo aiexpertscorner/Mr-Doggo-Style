@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-05-03T01:52:31.606Z",
+  "source": "pexels",
+  "querySet": [
+    "happy dog owner golden retriever outdoors",
+    "family with dog at home lifestyle",
+    "puppy playing in bright home",
+    "senior dog owner outdoor portrait"
+  ],
+  "images": [
+    {
+      "id": "pexels-7932582",
+      "source": "pexels",
+      "query": "happy dog owner golden retriever outdoors",
+      "src": "https://images.pexels.com/photos/7932582/pexels-photo-7932582.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "mobileSrc": "https://images.pexels.com/photos/7932582/pexels-photo-7932582.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "alt": "From above of crop anonymous owner caressing Golden Retriever dog in cloth while standing on ground in nature on summer day",
+      "photographer": "Helena Lopes",
+      "photographerUrl": "https://www.pexels.com/@helenalopes",
+      "url": "https://www.pexels.com/photo/unrecognizable-owner-caressing-golden-retriever-7932582/",
+      "focal": "center"
+    },
+    {
+      "id": "pexels-4586632",
+      "source": "pexels",
+      "query": "family with dog at home lifestyle",
+      "src": "https://images.pexels.com/photos/4586632/pexels-photo-4586632.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "mobileSrc": "https://images.pexels.com/photos/4586632/pexels-photo-4586632.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "alt": "Family and dog enjoying quality time together on bed indoors.",
+      "photographer": "Anna Shvets",
+      "photographerUrl": "https://www.pexels.com/@shvetsa",
+      "url": "https://www.pexels.com/photo/a-family-on-the-bed-with-their-pet-dog-4586632/",
+      "focal": "center 42%"
+    },
+    {
+      "id": "pexels-5942484",
+      "source": "pexels",
+      "query": "puppy playing in bright home",
+      "src": "https://images.pexels.com/photos/5942484/pexels-photo-5942484.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "mobileSrc": "https://images.pexels.com/photos/5942484/pexels-photo-5942484.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "alt": "A small white and black dog biting a plush toy on a brown leather sofa indoors.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "url": "https://www.pexels.com/photo/dog-on-sofa-biting-fluffy-toy-5942484/",
+      "focal": "center"
+    },
+    {
+      "id": "pexels-31606203",
+      "source": "pexels",
+      "query": "senior dog owner outdoor portrait",
+      "src": "https://images.pexels.com/photos/31606203/pexels-photo-31606203.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "mobileSrc": "https://images.pexels.com/photos/31606203/pexels-photo-31606203.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "alt": "Senior man sitting outdoors with a fluffy dog on his lap, enjoying a sunny day.",
+      "photographer": "Juan manuel Perez",
+      "photographerUrl": "https://www.pexels.com/@juan-manuel-perez-290426532",
+      "url": "https://www.pexels.com/photo/senior-man-with-dog-relaxing-outdoors-31606203/",
+      "focal": "center"
+    }
+  ]
+}

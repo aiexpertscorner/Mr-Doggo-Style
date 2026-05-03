@@ -42,9 +42,9 @@ const url = `https://www.amazon.com/dp/${asin}/?tag=${tag}`;
     {note && <p style="font-size:.78rem;color:var(--color-muted);margin:.2rem 0 0">{note}</p>}
   </div>
   {ENABLE_AMAZON_BUTTONS ? (
-    <a href={url} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon"
+    <a href={url} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon.com"
       style="flex-shrink:0;display:inline-block;line-height:0">
-      <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto;display:block" />
+      <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon.com" height="36" loading="lazy" style="height:36px;width:auto;display:block" />
     </a>
   ) : (
     <a href={url} rel="nofollow sponsored" target="_blank" class="inline-cta-btn"

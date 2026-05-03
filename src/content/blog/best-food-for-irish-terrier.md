@@ -1,8 +1,8 @@
 ---
-title: "Best Dog Food for Irish Terriers 2026 — Vet-Guided Picks for Medium Breeds"
-description: "We tested 30+ formulas for medium regular breeds like the Irish Terrier. Top picks matched to their nutrition needs, joint health, and life stage — updated March 2026."
+title: "Irish Terrier Dog Food Checklist for Safer Buying"
+description: "Compare dog food options for Irish Terrier dogs using breed size, regular energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-03-22
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "irish-terrier"
@@ -19,6 +19,22 @@ topProduct:
   rating: 4.7
   image: "https://m.media-amazon.com/images/I/81Kp5Bah-tL._AC_SL500_.jpg"
 schemaType: "Article"
+contentTier: "money"
+generated: true
+reviewMethod: "product-data-comparison"
+claimSensitivity: "high"
+monetizationIntent: "food"
+affiliateDisclosure: true
+medicalDisclaimer: true
+seoTitle: "Irish Terrier Dog Food Checklist for Safer Buying"
+displayTitle: "Irish Terrier dog food buyer checklist"
+titlePattern: "food-buyer-checklist"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "irish-terrier", "Irish Terrier", "medium", "regular", "easy", "wiry", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/irish-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Irish Terrier well isn't as simple as grabbing the bag with the highest rating. Irish Terriers are medium dogs with regular energy, a Lifespan of 13–15 years, and nutritional vulnerabilities that change across their life stages.
@@ -27,24 +43,28 @@ Feeding a Irish Terrier well isn't as simple as grabbing the bag with the highes
 
 We spent time cross-referencing 30+ dog food formulas against the Irish Terrier's breed profile — size, energy output, shedding level, and known health risks — to give you concrete, honest picks for 2026.
 
-> **Disclosure:** We earn a small commission on qualifying Amazon purchases. This never changes our rankings.
 
 ---
 
-## Quick Comparison: Best Dog Foods for Irish Terriers
 
-| Formula | Price | Grain-Free | Vet-Recommended | Best For |
+## How this page was refreshed
+
+This guide now separates editorial guidance from shopping modules. The article explains fit, trade-offs, and breed context; the page template adds current AWIN and Amazon.com components from active data feeds where appropriate.
+
+## Shortlist for Irish Terrier owners
+
+| Formula | Availability | Grain-Free | Vet-Recommended | Best For |
 |---|---|---|---|---|
-| [Taste of the Wild High Prairie](https://www.amazon.com/dp/B000QFHZ6E/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | $52.99 | ✓ Yes | – | 🥇 Best overall |
-| [Merrick Grain Free Senior Real Chicken](https://www.amazon.com/dp/B00K1P9J2Q/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | $58.99 | ✓ Yes | – | 🥈 Runner-up |
-| [Royal Canin Digestive Care Adult](https://www.amazon.com/dp/B08LCBVP3D/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | $74.99 | ✗ No | ✓ | 💰 Best value |
-| [Hill's Science Diet Perfect Weight Adult](https://www.amazon.com/dp/B000ARFY8G/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | $64.99 | ✗ No | ✓ |  |
-| [The Farmer's Dog Fresh Dog Food](https://www.amazon.com/dp/SUBSCRIPTION/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | $3.00 | ✗ No | – |  |
-| [Open Farm Grass-Fed Beef & Ancient Grains](https://www.amazon.com/dp/B07F7C37MK/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | $74.99 | ✗ No | – |  |
+| [Taste of the Wild High Prairie](https://www.amazon.com/dp/B000QFHZ6E/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | Retailer page | ✓ Yes | – | 🥇 Best overall |
+| [Merrick Grain Free Senior Real Chicken](https://www.amazon.com/dp/B00K1P9J2Q/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | Retailer page | ✓ Yes | – | 🥈 Runner-up |
+| [Royal Canin Digestive Care Adult](https://www.amazon.com/dp/B08LCBVP3D/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | Retailer page | ✗ No | ✓ | 💰 Best value |
+| [Hill's Science Diet Perfect Weight Adult](https://www.amazon.com/dp/B000ARFY8G/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | Retailer page | ✗ No | ✓ |  |
+| [The Farmer's Dog Fresh Dog Food](https://www.amazon.com/dp/SUBSCRIPTION/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | Retailer page | ✗ No | – |  |
+| [Open Farm Grass-Fed Beef & Ancient Grains](https://www.amazon.com/dp/B07F7C37MK/?tag=aiexpertscorn-20){rel="nofollow sponsored"} | Retailer page | ✗ No | – |  |
 
 ---
 
-## Why Irish Terriers Have Specific Nutrition Needs
+## Why Irish Terrier nutrition needs its own checklist
 
 Irish Terriers have moderate energy needs — 24–28% protein is the sweet spot. Avoid overfeeding: regular-energy dogs gain weight easily when food isn't portion-controlled.
 
@@ -63,13 +83,11 @@ The most common feeding mistakes Irish Terrier owners make:
 
 ---
 
-## Top Picks for Irish Terriers
+## Irish Terrier food picks and trade-offs
 
 ### 1. Taste of the Wild High Prairie — Best Overall
 
-**$52.99 | ★★★★★ 4.7/5**
-
-[Check current price on Amazon →](https://www.amazon.com/dp/B000QFHZ6E/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
+[See current Amazon listing](https://www.amazon.com/dp/B000QFHZ6E/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 
 Best value grain-free option — great for active dogs
 
@@ -95,9 +113,7 @@ Best value grain-free option — great for active dogs
 
 ### 2. Royal Canin Digestive Care Adult — Best Premium Option
 
-**$74.99 | ★★★★★ 4.7/5**
-
-[Check current price on Amazon →](https://www.amazon.com/dp/B08LCBVP3D/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
+[See current Amazon listing](https://www.amazon.com/dp/B08LCBVP3D/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 
 Best for dogs with chronic digestive issues — vet-grade formula
 
@@ -119,8 +135,6 @@ Best for dogs with chronic digestive issues — vet-grade formula
 
 ### 3. The Farmer's Dog Fresh Dog Food — Best Value Pick
 
-**$3.00 | ★★★★★ 4.8/5**
-
 Check current price on Amazon →
 
 Best fresh dog food — human-grade ingredients with vet-designed personalized plans
@@ -134,9 +148,7 @@ Best fresh dog food — human-grade ingredients with vet-designed personalized p
 
 ### 4. Taste of the Wild High Prairie — Best Grain-Free Pick
 
-**$52.99 | ★★★★★ 4.7/5**
-
-[Check current price on Amazon →](https://www.amazon.com/dp/B000QFHZ6E/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
+[See current Amazon listing](https://www.amazon.com/dp/B000QFHZ6E/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 
 Best value grain-free option — great for active dogs
 

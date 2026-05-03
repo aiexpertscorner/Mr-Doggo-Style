@@ -1,11 +1,21 @@
 ---
+
 title: "Best Dog Dental Chews 2026: VOHC-Approved Options That Actually Work"
 description: "Most dog dental chews are marketing gimmicks. These 4 have the Veterinary Oral Health Council seal — meaning they're clinically proven to reduce tartar."
 pubDate: 2026-02-18
 category: "Supplements"
 tags: ["dental", "treats", "oral-health", "tartar", "breath"]
 author: "The PupWiki Team"
+heroImage: "https://images.pexels.com/photos/18764141/pexels-photo-18764141.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/18764141/pexels-photo-18764141.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Detailed shot of brown dog kibble, perfect for pet owners and animal nutrition visuals."
+imageAlt: "Detailed shot of brown dog kibble, perfect for pet owners and animal nutrition visuals."
+imageSource: "pexels"
+imageCredit: "Photo by Rafael Rodrigues on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-dog-food-18764141/"
+imageSearchQuery: "dog supplements"
 ---
+
 
 Dental disease affects over 80% of dogs over the age of three. Left untreated, periodontal disease causes chronic pain, tooth loss, and bacteria that can enter the bloodstream and damage the heart, kidneys, and liver. Regular brushing is the gold standard — but daily dental chews can provide meaningful supplemental benefit.
 

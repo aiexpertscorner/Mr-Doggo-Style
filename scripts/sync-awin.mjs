@@ -1,24 +1,30 @@
 #!/usr/bin/env node
 /**
  * sync-awin.mjs
- * AWIN Publisher API sync script — enhanced with:
- *   - Joined + pending programme status check
- *   - Creative materials fetch for feed-less programs
- *   - Feed product pagination (offset loop)
- *   - Per-program error isolation
+ *
+ * Safe AWIN Publisher sync for PupWiki.
  *
  * Outputs:
- *   src/data/awin-products.json    — enriched product catalog
- *   src/data/awin-programs.json    — live programme status & commission data
- *   src/data/affiliate-banners.json — creative banners (merged with manual entries)
+ * - src/data/awin-programs.json
+ * - src/data/awin-products.json
+ * - src/data/affiliate-banners.json
  *
- * Run: node scripts/sync-awin.mjs
- * Env: AWIN_OAUTH2_TOKEN  (required — set in GitHub secrets or .env)
+ * Required for live programme sync:
+ * - AWIN_OAUTH2_TOKEN
  *
- * Falls back to src/data/affiliate-products.json if API is unreachable.
+ * Required for live product feed enrichment:
+ * - AWIN_PRODUCT_FEED_API_KEY
+ *
+ * Optional:
+ * - AWIN_PUBLISHER_ID=2861861
+ * - AWIN_COUNTRY_CODE=US
+ * - AWIN_FETCH_CREATIVES=true
+ * - AWIN_PRODUCT_FEED_LIST_URL=<full feedList URL from Awin UI>
+ * - AWIN_SYNC_DISABLED=true
+ * - AWIN_ALLOW_FALLBACK_WRITE=true
  */
 
-import { readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -26,451 +32,944 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const DATA = join(ROOT, 'src', 'data');
 
-// ── Config ──────────────────────────────────────────────────────────────────
+loadLocalEnv();
 
-const AWIN_API     = 'https://api.awin.com';
-const PUBLISHER_ID = '2861861';
-const TOKEN        = process.env.AWIN_OAUTH2_TOKEN;
-const TIMEOUT_MS   = 15000;
-const PAGE_SIZE    = 100;
+const AWIN_API = 'https://api.awin.com';
+const PUBLISHER_ID = env('AWIN_PUBLISHER_ID', '2861861');
+const TOKEN = env('AWIN_OAUTH2_TOKEN', '');
+const PRODUCT_FEED_KEY = extractProductFeedKey(env('AWIN_PRODUCT_FEED_API_KEY', ''));
+const PRODUCT_FEED_LIST_URL = env('AWIN_PRODUCT_FEED_LIST_URL', '');
+const COUNTRY_CODE = env('AWIN_COUNTRY_CODE', 'US');
+const FETCH_CREATIVES = boolEnv('AWIN_FETCH_CREATIVES', false);
+const SYNC_DISABLED = boolEnv('AWIN_SYNC_DISABLED', false);
+const ALLOW_FALLBACK_WRITE = boolEnv('AWIN_ALLOW_FALLBACK_WRITE', false);
+const STRICT = process.argv.includes('--strict');
+const REQUIRE_PRODUCT_FEED_KEY = STRICT || boolEnv('AWIN_REQUIRE_PRODUCT_FEED_KEY', false);
+const REQUIRE_FEED_PRODUCTS = boolEnv('AWIN_REQUIRE_FEED_PRODUCTS', false);
+const TIMEOUT_MS = Number(env('AWIN_TIMEOUT_MS', '25000')) || 25000;
+const PAGE_SIZE = Number(env('AWIN_PRODUCT_PAGE_SIZE', '250')) || 250;
 
-/** Programs we're enrolled in — used for fallback + creative fetch */
-const KNOWN_PROGRAMS = {
-  chefpaw:     { merchantId: '63546', feedId: '93508',  label: 'ChefPaw',       deeplink: 'https://tidd.ly/41TPa44' },
-  jugbow:      { merchantId: '79708', feedId: null,     label: 'JugBow',         deeplink: 'https://tidd.ly/3QryFd6' },
-  crownandpaw: { merchantId: '57823', feedId: null,     label: 'Crown and Paw',  deeplink: 'https://tidd.ly/496jo7K' },
-  rawwild:     { merchantId: null,    feedId: null,     label: 'Raw Wild LLC',   deeplink: 'https://tidd.ly/4e36ta9' },
-};
-
-/** Topic tags per program — used for smart matching in AwinProductSlot */
-const PROGRAM_TOPICS = {
-  chefpaw:     ['food', 'nutrition', 'feeding', 'fresh-food', 'sensitive-stomach', 'care'],
-  jugbow:      ['training', 'behavior', 'obedience', 'leash', 'harness', 'active', 'gear'],
-  crownandpaw: ['gift', 'lifestyle', 'portrait', 'dog-names', 'apparel', 'custom'],
-  rawwild:     ['food', 'raw-food', 'freeze-dried', 'nutrition', 'sensitive-stomach'],
-};
-
-/** Preferred creative dimensions (best-fit order) */
-const PREFERRED_CREATIVE_SIZES = [
-  { w: 300, h: 250 },
-  { w: 728, h: 90  },
-  { w: 160, h: 600 },
-  { w: 468, h: 60  },
-  { w: 320, h: 50  },
+const PRODUCT_COLUMNS = [
+  'aw_product_id',
+  'merchant_product_id',
+  'product_name',
+  'description',
+  'search_price',
+  'currency',
+  'aw_deep_link',
+  'merchant_image_url',
+  'aw_image_url',
+  'merchant_name',
+  'category_name',
+  'merchant_id',
+  'in_stock',
+  'last_updated',
 ];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+const runtime = {
+  warnings: [],
+  errors: [],
+  fetches: [],
+  feedListEndpointUsed: '',
+  feedProductFetchFailures: 0,
+};
 
-function log(msg)  { console.log(`[sync-awin] ${msg}`); }
-function warn(msg) { console.warn(`[sync-awin] ⚠️  ${msg}`); }
-function ok(msg)   { console.log(`[sync-awin] ✓  ${msg}`); }
+function env(name, fallback = '') {
+  const value = process.env[name];
+  return value == null || value === '' ? fallback : value;
+}
 
-async function apiFetch(path, description = path) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
-  try {
-    const res = await fetch(`${AWIN_API}${path}`, {
-      headers: {
-        'Authorization': `Bearer ${TOKEN}`,
-        'Accept': 'application/json',
-      },
-      signal: controller.signal,
-    });
-    clearTimeout(timer);
-    if (!res.ok) {
-      warn(`${description} → HTTP ${res.status}`);
-      return null;
+function boolEnv(name, fallback = false) {
+  const value = process.env[name];
+  if (value == null || value === '') return fallback;
+  return ['1', 'true', 'yes', 'on'].includes(String(value).toLowerCase());
+}
+
+function loadLocalEnv() {
+  // Node scripts do not automatically load .env.local. This small loader keeps local runs simple
+  // without adding a dotenv dependency.
+  for (const fileName of ['.env', '.env.local']) {
+    const file = join(ROOT, fileName);
+    if (!existsSync(file)) continue;
+
+    const lines = readFileSync(file, 'utf8').split(/\r?\n/);
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const match = trimmed.match(/^([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$/);
+      if (!match) continue;
+      const [, key, rawValue] = match;
+      if (process.env[key] != null) continue;
+      process.env[key] = unquoteEnvValue(rawValue);
     }
-    return await res.json();
-  } catch (err) {
-    clearTimeout(timer);
-    warn(`${description} → ${err.message ?? err}`);
-    return null;
   }
 }
 
-function readJson(file) {
+function unquoteEnvValue(value) {
+  let output = String(value || '').trim();
+  if ((output.startsWith('"') && output.endsWith('"')) || (output.startsWith("'") && output.endsWith("'"))) {
+    output = output.slice(1, -1);
+  }
+  return output;
+}
+
+function extractProductFeedKey(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return '';
+
+  // Allows users to paste either the bare key or the full Darwin URL:
+  // https://ui.awin.com/productdata-darwin-download/publisher/2861861/<key>/1/feedList
+  try {
+    const url = new URL(raw);
+    const parts = url.pathname.split('/').filter(Boolean);
+    const publisherIndex = parts.indexOf('publisher');
+    if (publisherIndex !== -1 && parts[publisherIndex + 2]) return parts[publisherIndex + 2];
+    const apiKeyIndex = parts.indexOf('apikey');
+    if (apiKeyIndex !== -1 && parts[apiKeyIndex + 1]) return parts[apiKeyIndex + 1];
+  } catch {
+    // Not a URL. Treat as a bare API key.
+  }
+  return raw;
+}
+
+function log(msg) { console.log(`[sync-awin] ${msg}`); }
+function warn(msg) {
+  runtime.warnings.push(msg);
+  console.warn(`[sync-awin] WARN ${msg}`);
+}
+function error(msg) {
+  runtime.errors.push(msg);
+  console.error(`[sync-awin] ERROR ${msg}`);
+}
+function ok(msg) { console.log(`[sync-awin] OK ${msg}`); }
+
+function failOrWarn(msg) {
+  if (STRICT) {
+    error(msg);
+    process.exit(1);
+  }
+  warn(msg);
+}
+
+function readJson(file, fallback = null) {
   try { return JSON.parse(readFileSync(file, 'utf8')); }
-  catch { return null; }
+  catch { return fallback; }
 }
 
 function writeJson(file, data) {
   writeFileSync(file, JSON.stringify(data, null, 2), 'utf8');
 }
 
-function getProgramKey(merchantId, name) {
-  if (!merchantId && !name) return null;
-  const n = (name ?? '').toLowerCase();
-  if (merchantId === '63546' || n.includes('chefpaw') || n.includes('chef paw')) return 'chefpaw';
-  if (merchantId === '79708' || n.includes('jugbow') || n.includes('jug bow')) return 'jugbow';
-  if (merchantId === '57823' || n.includes('crown') && n.includes('paw')) return 'crownandpaw';
-  if (n.includes('raw wild')) return 'rawwild';
-  return null;
+function normalize(value) {
+  return String(value || '')
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
-function isActiveStatus(status) {
-  const s = (status ?? '').toLowerCase();
-  return s === 'joined' || s === 'active' || s === 'approved';
+function compact(value) {
+  return normalize(value).replace(/-/g, '');
 }
 
-// ── Programme sync (joined + pending) ────────────────────────────────────────
-
-async function fetchProgrammes() {
-  log('Fetching joined programmes…');
-  const joined = await apiFetch(
-    `/publishers/${PUBLISHER_ID}/programmes?relationship=joined&countryCode=US`,
-    'programmes/joined'
-  );
-
-  log('Fetching pending programmes…');
-  const pending = await apiFetch(
-    `/publishers/${PUBLISHER_ID}/programmes?relationship=pending&countryCode=US`,
-    'programmes/pending'
-  );
-
-  const joinedList  = Array.isArray(joined)  ? joined  : (joined?.programmes  ?? joined?.programs  ?? []);
-  const pendingList = Array.isArray(pending) ? pending : (pending?.programmes ?? pending?.programs ?? []);
-
-  ok(`Found ${joinedList.length} joined + ${pendingList.length} pending programme(s)`);
-  if (pendingList.length > 0) {
-    log(`  Pending: ${pendingList.map(p => p.name ?? p.id).join(', ')}`);
+function toArray(data, keys = []) {
+  if (Array.isArray(data)) return data;
+  for (const key of keys) {
+    if (Array.isArray(data?.[key])) return data[key];
   }
-
-  return { joined: joinedList, pending: pendingList, all: [...joinedList, ...pendingList] };
-}
-
-// ── Product feed sync with pagination ────────────────────────────────────────
-
-async function fetchProductFeeds() {
-  log('Fetching available product feeds…');
-  const data = await apiFetch(`/publishers/${PUBLISHER_ID}/feeds`, 'product-feeds');
-  if (!data) return [];
-  const list = Array.isArray(data) ? data : (data.feeds ?? []);
-  ok(`Found ${list.length} product feed(s)`);
-  return list;
-}
-
-async function fetchFeedProductsPaginated(feedId, label) {
-  log(`Fetching products from feed ${feedId} (${label}) with pagination…`);
-  const all = [];
-  let offset = 0;
-
-  while (true) {
-    const candidates = [
-      `/publishers/${PUBLISHER_ID}/product-feeds/${feedId}/products?limit=${PAGE_SIZE}&offset=${offset}`,
-      `/publishers/${PUBLISHER_ID}/feeds/${feedId}/products?limit=${PAGE_SIZE}&offset=${offset}`,
-    ];
-
-    let page = null;
-    for (const path of candidates) {
-      const data = await apiFetch(path, `feed-${feedId}@${offset}`);
-      if (data) {
-        const items = Array.isArray(data) ? data : (data.products ?? data.items ?? []);
-        if (items.length > 0) { page = items; break; }
-      }
-    }
-
-    if (!page || page.length === 0) break;
-    all.push(...page);
-    if (page.length < PAGE_SIZE) break; // last page
-    offset += PAGE_SIZE;
-  }
-
-  if (all.length > 0) {
-    ok(`  ${all.length} total products from feed ${feedId}`);
-    return all;
-  }
-
-  // Fall back to productdata.awin.com CSV/JSON download
-  try {
-    const feedUrl = [
-      `https://productdata.awin.com/datafeed/download/apikey/${TOKEN}`,
-      `language/en/fid/${feedId}`,
-      `columns/aw_product_id,merchant_product_id,product_name,description,search_price,aw_deep_link,merchant_image_url,aw_image_url,merchant_name,category_name`,
-      `format/json/limit/${PAGE_SIZE}`,
-    ].join('/');
-
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
-    const res = await fetch(feedUrl, { signal: controller.signal });
-    clearTimeout(timer);
-
-    if (res.ok) {
-      const text = await res.text();
-      try {
-        const json = JSON.parse(text);
-        const products = Array.isArray(json) ? json : (json.data ?? []);
-        if (products.length > 0) {
-          ok(`  ${products.length} products from productdata feed ${feedId}`);
-          return products;
-        }
-      } catch { /* not JSON */ }
-    }
-  } catch { /* ignore */ }
-
-  warn(`No product data retrieved for feed ${feedId}`);
   return [];
 }
 
-// ── Creative materials fetch ──────────────────────────────────────────────────
+function stripBom(text) {
+  return String(text || '').replace(/^\uFEFF/, '');
+}
 
-async function fetchCreativesForProgram(programmeId, programKey, label) {
-  if (!programmeId) {
-    warn(`No programmeId for ${label} — skipping creatives`);
+function splitDelimitedLine(line, delimiter) {
+  const cells = [];
+  let cell = '';
+  let quoted = false;
+
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    const next = line[i + 1];
+    if (char === '"' && quoted && next === '"') {
+      cell += '"';
+      i++;
+    } else if (char === '"') {
+      quoted = !quoted;
+    } else if (char === delimiter && !quoted) {
+      cells.push(cell);
+      cell = '';
+    } else {
+      cell += char;
+    }
+  }
+  cells.push(cell);
+  return cells;
+}
+
+function detectDelimiter(headerLine) {
+  const candidates = [',', '\t', ';', '|'];
+  return candidates
+    .map((delimiter) => ({ delimiter, count: splitDelimitedLine(headerLine, delimiter).length }))
+    .sort((a, b) => b.count - a.count)[0]?.delimiter || ',';
+}
+
+function parseDelimited(text) {
+  const normalizedText = stripBom(text).replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  const lines = [];
+  let current = '';
+  let quoted = false;
+
+  for (let i = 0; i < normalizedText.length; i++) {
+    const char = normalizedText[i];
+    const next = normalizedText[i + 1];
+    if (char === '"' && quoted && next === '"') {
+      current += '"';
+      i++;
+    } else if (char === '"') {
+      quoted = !quoted;
+      current += char;
+    } else if (char === '\n' && !quoted) {
+      if (current.trim()) lines.push(current);
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+  if (current.trim()) lines.push(current);
+  if (lines.length < 2) return [];
+
+  const delimiter = detectDelimiter(lines[0]);
+  const headers = splitDelimitedLine(lines[0], delimiter).map((header) => normalize(header).replace(/-/g, '_'));
+  return lines.slice(1).map((line) => {
+    const values = splitDelimitedLine(line, delimiter);
+    return Object.fromEntries(headers.map((header, index) => [header, values[index] || '']));
+  });
+}
+
+function parseMaybeJsonOrDelimited(text) {
+  const clean = stripBom(text).trim();
+  if (!clean) return [];
+  if (clean.startsWith('<')) {
+    warn('Received XML/HTML-like response where JSON/CSV/TSV was expected; skipping parse for this endpoint.');
     return [];
   }
 
-  log(`Fetching creatives for ${label} (programme ${programmeId})…`);
-  const data = await apiFetch(
-    `/publishers/${PUBLISHER_ID}/programmes/${programmeId}/creatives`,
-    `creatives/${programmeId}`
-  );
-
-  if (!data) return [];
-  const list = Array.isArray(data) ? data : (data.creatives ?? data.items ?? []);
-
-  // Filter for banner type only, with valid dimensions
-  const banners = list
-    .filter(c => {
-      const type = (c.type ?? c.creativeType ?? '').toLowerCase();
-      return type === 'banner' || type === 'image';
-    })
-    .map(c => ({
-      id:         `${programKey}-${c.id ?? c.creativeId ?? Math.random().toString(36).slice(2)}`,
-      programKey,
-      label,
-      creativeId: String(c.id ?? c.creativeId ?? ''),
-      title:      c.title ?? c.name ?? label,
-      url:        c.url ?? c.creativeUrl ?? c.clickUrl ?? KNOWN_PROGRAMS[programKey]?.deeplink ?? '',
-      imageUrl:   c.imageUrl ?? c.bannerUrl ?? c.src ?? '',
-      width:      Number(c.width  ?? 0),
-      height:     Number(c.height ?? 0),
-      deeplink:   KNOWN_PROGRAMS[programKey]?.deeplink ?? '',
-      topicTags:  PROGRAM_TOPICS[programKey] ?? [],
-      syncedAt:   new Date().toISOString(),
-      source:     'awin-api',
-    }))
-    .filter(c => c.url || c.deeplink);
-
-  ok(`  ${banners.length} banners for ${label}`);
-  return banners;
-}
-
-function scoreCreative(c) {
-  for (let i = 0; i < PREFERRED_CREATIVE_SIZES.length; i++) {
-    if (c.width === PREFERRED_CREATIVE_SIZES[i].w && c.height === PREFERRED_CREATIVE_SIZES[i].h) {
-      return PREFERRED_CREATIVE_SIZES.length - i;
-    }
+  try {
+    const json = JSON.parse(clean);
+    return toArray(json, ['data', 'feeds', 'feedList', 'products', 'items', 'productList', 'rows']);
+  } catch {
+    return parseDelimited(clean);
   }
-  return 0;
 }
 
-// ── Normalize a raw API product to our schema ─────────────────────────────────
+function getBannerRegistry(raw) {
+  const fallback = {
+    _meta: { version: '1.0.0', description: 'Central banner registry for PupWiki affiliate/partner banners.' },
+    globalDefaults: {
+      noteText: 'Advertisement / affiliate partner',
+      openInNewTab: true,
+      rel: 'sponsored noopener',
+      imageFit: 'cover',
+    },
+    banners: [],
+  };
 
-function normalizeProduct(raw, programKey, deeplink) {
-  const id          = raw.aw_product_id || raw.id || raw.merchantProductId || raw.merchant_product_id;
-  const name        = raw.product_name  || raw.productName  || raw.name        || '';
-  const description = raw.description   || raw.productDescription || '';
-  const price       = parseFloat(raw.search_price || raw.searchPrice || raw.price || '0') || 0;
-  const url         = raw.aw_deep_link  || raw.awDeepLink   || raw.deepLink || raw.url || deeplink;
-  const image       = raw.merchant_image_url || raw.aw_image_url || raw.merchantImageUrl || raw.image || '';
-  const merchant    = raw.merchant_name || raw.merchantName || raw.merchant || '';
-  const category    = raw.category_name || raw.categoryName || raw.category || '';
+  if (Array.isArray(raw)) return { ...fallback, banners: raw };
+  if (raw && typeof raw === 'object' && Array.isArray(raw.banners)) return raw;
+  return fallback;
+}
 
-  if (!id || !name) return null;
+function getStaticPrograms() {
+  const config = readJson(join(DATA, 'awin-program-config.json'), { programs: [] });
+  const map = new Map();
+  for (const program of config.programs || []) {
+    const key = program.id || normalize(program.label || program.merchantId);
+    if (!key) continue;
+    map.set(key, program);
+    if (program.merchantId) map.set(String(program.merchantId), program);
+    if (program.label) map.set(normalize(program.label), program);
+  }
+  return { config, map };
+}
+
+const { config: staticConfig, map: staticProgramMap } = getStaticPrograms();
+
+function inferTopicTags(program) {
+  const text = [
+    program.name,
+    program.description,
+    program.primarySector,
+    program.programmeInfo?.name,
+    program.programmeInfo?.description,
+    program.programmeInfo?.primarySector,
+  ].join(' ').toLowerCase();
+
+  const tags = new Set(['partner']);
+  if (/food|meal|nutrition|treat|raw|pawco|pupford|montana|broth/.test(text)) tags.add('food'), tags.add('nutrition');
+  if (/insurance|vet|health|wuffes|odie|dutch/.test(text)) tags.add('health');
+  if (/harness|leash|collar|training|crate|neewa|joyride|impact|fence/.test(text)) tags.add('training'), tags.add('gear');
+  if (/bed|foggy|blanket|home|petmate/.test(text)) tags.add('beds');
+  if (/gift|portrait|willow|crown|muse|bereave|license/.test(text)) tags.add('gift'), tags.add('lifestyle');
+  return [...tags];
+}
+
+function getProgramIdentity(program) {
+  const advertiserId = String(program.id ?? program.advertiserId ?? program.programmeInfo?.id ?? '');
+  const name = program.name || program.programmeInfo?.name || `AWIN programme ${advertiserId}`;
+  const staticMatch =
+    staticProgramMap.get(advertiserId) ||
+    staticProgramMap.get(normalize(name)) ||
+    null;
+  const key = staticMatch?.id || normalize(name || advertiserId);
 
   return {
-    id:         `${programKey}-${String(id).replace(/\W+/g, '-').toLowerCase()}`,
-    name:       name.trim(),
-    description:description.trim().slice(0, 300),
-    price,
-    currency:   'USD',
-    url:        url || deeplink,
-    image:      image || '',
-    merchant:   merchant.trim(),
-    category:   category.trim(),
-    programId:  programKey,
-    topicTags:  PROGRAM_TOPICS[programKey] ?? [],
-    syncedAt:   new Date().toISOString(),
-    source:     'awin-api',
+    key,
+    advertiserId,
+    name,
+    staticConfig: staticMatch,
   };
 }
 
-// ── Main ──────────────────────────────────────────────────────────────────────
+function isActiveStatus(status) {
+  const value = String(status || '').toLowerCase();
+  return ['joined', 'active', 'approved'].includes(value);
+}
+
+async function apiFetch(path, description = path) {
+  if (!TOKEN) return null;
+  const separator = path.includes('?') ? '&' : '?';
+  const url = `${AWIN_API}${path}${path.includes('accessToken=') ? '' : `${separator}accessToken=${encodeURIComponent(TOKEN)}`}`;
+  return jsonFetch(url, description, {
+    Authorization: `Bearer ${TOKEN}`,
+    Accept: 'application/json',
+  });
+}
+
+async function jsonFetch(url, description = url, headers = {}) {
+  const text = await rawFetch(url, description, headers);
+  if (!text) return null;
+  try { return JSON.parse(text); }
+  catch {
+    warn(`${description} returned a non-JSON response`);
+    return null;
+  }
+}
+
+async function rawFetch(url, description = url, headers = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  try {
+    const res = await fetch(url, { headers, signal: controller.signal });
+    clearTimeout(timer);
+    runtime.fetches.push({ description, ok: res.ok, status: res.status });
+    if (!res.ok) {
+      warn(`${description} -> HTTP ${res.status}`);
+      return null;
+    }
+    return await res.text();
+  } catch (err) {
+    clearTimeout(timer);
+    runtime.fetches.push({ description, ok: false, status: 'error' });
+    warn(`${description} -> ${err.message || err}`);
+    return null;
+  }
+}
+
+async function fetchProgrammes() {
+  log(`Fetching joined programmes (${COUNTRY_CODE})`);
+  const joined = await apiFetch(
+    `/publishers/${PUBLISHER_ID}/programmes?relationship=joined&countryCode=${COUNTRY_CODE}`,
+    'programmes/joined'
+  );
+
+  log(`Fetching pending programmes (${COUNTRY_CODE})`);
+  const pending = await apiFetch(
+    `/publishers/${PUBLISHER_ID}/programmes?relationship=pending&countryCode=${COUNTRY_CODE}`,
+    'programmes/pending'
+  );
+
+  const joinedList = toArray(joined, ['programmes', 'programs']);
+  const pendingList = toArray(pending, ['programmes', 'programs']);
+  ok(`Found ${joinedList.length} joined + ${pendingList.length} pending programme(s)`);
+  if (pendingList.length) log(`Pending: ${pendingList.map((p) => p.name || p.id).join(', ')}`);
+  return { joined: joinedList, pending: pendingList, all: [...joinedList, ...pendingList] };
+}
+
+async function fetchProgramDetails(advertiserId, relationship) {
+  if (!advertiserId) return null;
+  const data = await apiFetch(
+    `/publishers/${PUBLISHER_ID}/programmedetails?advertiserId=${advertiserId}&relationship=${relationship || 'any'}`,
+    `programmedetails/${advertiserId}`
+  );
+  return data || null;
+}
+
+function normalizeProgram(program, relationship, details = null) {
+  const merged = { ...program, ...(details?.programmeInfo || {}), programmeDetails: details };
+  const identity = getProgramIdentity(merged);
+  const staticMatch = identity.staticConfig || {};
+  const status = merged.membershipStatus || merged.status || merged.displayStatus || relationship;
+  const topicTags = staticMatch.topicTags || inferTopicTags(merged);
+
+  return {
+    key: identity.key,
+    advertiserId: identity.advertiserId,
+    name: identity.name,
+    relationship,
+    status,
+    isActive: relationship === 'joined' && isActiveStatus(status),
+    displayUrl: merged.displayUrl || merged.programmeInfo?.displayUrl || '',
+    clickThroughUrl: merged.clickThroughUrl || merged.programmeInfo?.clickThroughUrl || '',
+    deeplinkEnabled: Boolean(merged.deeplinkEnabled ?? merged.programmeInfo?.deeplinkEnabled),
+    logoUrl: merged.logoUrl || merged.programmeInfo?.logoUrl || '',
+    primarySector: merged.primarySector || merged.programmeInfo?.primarySector || '',
+    primaryRegion: merged.primaryRegion || merged.programmeInfo?.primaryRegion || null,
+    currencyCode: merged.currencyCode || merged.programmeInfo?.currencyCode || '',
+    validDomains: merged.validDomains || merged.programmeInfo?.validDomains || [],
+    commissionRange: details?.commissionRange || merged.commissionRange || merged.defaultCommission || null,
+    kpi: details?.kpi || merged.kpi || null,
+    linkStatus: merged.linkStatus || '',
+    staticProgramId: staticMatch.id || null,
+    feedId: staticMatch.feedId || null,
+    configuredDeeplink: staticMatch.deeplink || '',
+    deeplink: staticMatch.deeplink || merged.clickThroughUrl || merged.programmeInfo?.clickThroughUrl || '',
+    topicTags,
+    pageTypes: staticMatch.pageTypes || ['blog', 'breed', 'category'],
+    priority: staticMatch.priority || 50,
+  };
+}
+
+function productFeedListUrls() {
+  const urls = [];
+  if (PRODUCT_FEED_LIST_URL) urls.push(PRODUCT_FEED_LIST_URL.replace('<publisherId>', PUBLISHER_ID).replace('<apiKey>', PRODUCT_FEED_KEY));
+  if (PRODUCT_FEED_KEY) {
+    urls.push(`https://productdata.awin.com/datafeed/list/apikey/${encodeURIComponent(PRODUCT_FEED_KEY)}`);
+    urls.push(`https://ui.awin.com/productdata-darwin-download/publisher/${encodeURIComponent(PUBLISHER_ID)}/${encodeURIComponent(PRODUCT_FEED_KEY)}/1/feedList`);
+  }
+  return [...new Set(urls)];
+}
+
+async function fetchProductFeeds() {
+  if (!PRODUCT_FEED_KEY) {
+    warn('No AWIN_PRODUCT_FEED_API_KEY; skipping Product Feed List download');
+    return [];
+  }
+
+  for (const url of productFeedListUrls()) {
+    log(`Fetching Product Feed List via ${url.includes('darwin') ? 'Awin Darwin' : 'Awin productdata'} endpoint`);
+    const text = await rawFetch(url, url.includes('darwin') ? 'product-feed-list/darwin' : 'product-feed-list/productdata');
+    if (!text) continue;
+    const list = parseMaybeJsonOrDelimited(text);
+    if (list.length) {
+      runtime.feedListEndpointUsed = url.includes('darwin') ? 'darwin' : 'productdata';
+      ok(`Found ${list.length} product feed list row(s)`);
+      return list;
+    }
+    warn('Product Feed List endpoint returned no parseable rows; trying next endpoint if available.');
+  }
+
+  warn('No product feed list rows found. Static configured feed IDs will still be attempted.');
+  return [];
+}
+
+function valueFrom(raw, keys) {
+  for (const key of keys) {
+    const value = raw?.[key];
+    if (value != null && String(value).trim() !== '') return value;
+  }
+  return '';
+}
+
+function feedAdvertiserId(feed) {
+  return String(valueFrom(feed, [
+    'advertiser_id', 'advertiserid', 'advertiser', 'advertiserId',
+    'merchant_id', 'merchantid', 'merchant', 'merchantId',
+    'programme_id', 'programmeid', 'programmeId', 'program_id', 'programid', 'programId',
+    'mid', 'merchant_aw_id', 'aw_merchant_id',
+  ]));
+}
+
+function feedIdValue(feed) {
+  return String(valueFrom(feed, [
+    'feed_id', 'feedid', 'feedId', 'fid', 'id', 'datafeed_id', 'data_feed_id',
+    'product_feed_id', 'productfeedid', 'feed_reference',
+  ]));
+}
+
+function feedDownloadUrl(feed) {
+  return String(valueFrom(feed, [
+    'download_url', 'downloadurl', 'downloadUrl', 'url', 'feed_url', 'feedurl', 'feedUrl',
+    'product_feed_url', 'productfeedurl', 'location', 'href',
+  ]));
+}
+
+function buildFeedMap(feeds) {
+  const map = new Map();
+  for (const feed of feeds) {
+    const advertiserId = feedAdvertiserId(feed);
+    if (!advertiserId) continue;
+    if (!map.has(advertiserId)) map.set(advertiserId, []);
+    map.get(advertiserId).push(feed);
+  }
+
+  for (const program of staticConfig.programs || []) {
+    if (program.merchantId && program.feedId) {
+      if (!map.has(String(program.merchantId))) map.set(String(program.merchantId), []);
+      const existing = map.get(String(program.merchantId));
+      const hasFeed = existing.some((feed) => feedIdValue(feed) === String(program.feedId));
+      if (!hasFeed) {
+        existing.push({
+          id: program.feedId,
+          feed_id: program.feedId,
+          advertiser_id: program.merchantId,
+          merchant_id: program.merchantId,
+          name: program.label,
+          source: 'static-config',
+        });
+      }
+    }
+  }
+
+  return map;
+}
+
+function feedProductUrls(feedId, feed) {
+  const urls = [];
+  const directUrl = feedDownloadUrl(feed);
+  if (directUrl) urls.push(directUrl);
+
+  const columns = encodeURIComponent(PRODUCT_COLUMNS.join(','));
+  if (PRODUCT_FEED_KEY && feedId) {
+    urls.push([
+      `https://productdata.awin.com/datafeed/download/apikey/${encodeURIComponent(PRODUCT_FEED_KEY)}`,
+      `language/en/fid/${encodeURIComponent(feedId)}`,
+      `columns/${columns}`,
+      `format/json/limit/${PAGE_SIZE}`,
+    ].join('/'));
+
+    urls.push(`https://ui.awin.com/productdata-darwin-download/publisher/${encodeURIComponent(PUBLISHER_ID)}/${encodeURIComponent(PRODUCT_FEED_KEY)}/${encodeURIComponent(feedId)}/download?format=json&columns=${columns}&limit=${PAGE_SIZE}`);
+    urls.push(`https://ui.awin.com/productdata-darwin-download/publisher/${encodeURIComponent(PUBLISHER_ID)}/${encodeURIComponent(PRODUCT_FEED_KEY)}/${encodeURIComponent(feedId)}/download`);
+  }
+
+  return [...new Set(urls)];
+}
+
+async function fetchFeedProducts(feed, label) {
+  const feedId = feedIdValue(feed);
+  if (!PRODUCT_FEED_KEY || !feedId) return [];
+
+  log(`Fetching products from feed ${feedId} (${label})`);
+  for (const url of feedProductUrls(feedId, feed)) {
+    const text = await rawFetch(url, `feed/${feedId}`);
+    if (!text) {
+      runtime.feedProductFetchFailures++;
+      continue;
+    }
+    const products = parseMaybeJsonOrDelimited(text);
+    if (products.length) {
+      ok(`${products.length} product row(s) from feed ${feedId}`);
+      return products;
+    }
+    warn(`feed/${feedId} returned no parseable products from one endpoint; trying next endpoint if available.`);
+  }
+
+  warn(`No product rows could be imported from feed ${feedId} (${label})`);
+  return [];
+}
+
+async function fetchCreativesForProgram(program) {
+  if (!FETCH_CREATIVES) return [];
+  if (!program.advertiserId) return [];
+
+  log(`Fetching experimental creatives for ${program.name} (${program.advertiserId})`);
+  const data = await apiFetch(
+    `/publishers/${PUBLISHER_ID}/programmes/${program.advertiserId}/creatives`,
+    `creatives/${program.advertiserId}`
+  );
+  const list = toArray(data, ['creatives', 'items']);
+  return list.map((creative) => normalizeCreative(creative, program)).filter(Boolean);
+}
+
+function normalizeCreative(creative, program) {
+  const imageSrc = creative.imageUrl || creative.bannerUrl || creative.src || creative.image || '';
+  const href = creative.url || creative.creativeUrl || creative.clickUrl || program.deeplink || program.clickThroughUrl || '';
+  if (!href && !imageSrc) return null;
+
+  return {
+    id: `${program.key}-${creative.id || creative.creativeId || normalize(creative.title || creative.name || 'creative')}`,
+    programKey: program.key,
+    advertiserId: program.advertiserId,
+    advertiser: program.name,
+    network: 'awin',
+    enabled: true,
+    priority: program.priority || 50,
+    label: creative.title || creative.name || program.name,
+    type: 'image_link',
+    href,
+    imageSrc,
+    alt: creative.alt || creative.title || `${program.name} creative`,
+    width: Number(creative.width || 0),
+    height: Number(creative.height || 0),
+    placements: ['mid-content', 'pre-footer'],
+    pageTypes: program.pageTypes || ['blog', 'breed', 'category'],
+    topicTags: program.topicTags || [],
+    source: 'awin-api',
+    syncedAt: new Date().toISOString(),
+  };
+}
+
+function normalizeProduct(raw, program) {
+  const rawId = valueFrom(raw, [
+    'aw_product_id', 'awproductid', 'id', 'product_id', 'productid', 'merchant_product_id', 'merchantproductid', 'sku', 'ean', 'gtin',
+  ]);
+  const name = valueFrom(raw, ['product_name', 'productname', 'name', 'title', 'product_title', 'producttitle']);
+  if (!rawId || !name) return null;
+
+  const price = Number.parseFloat(String(valueFrom(raw, ['search_price', 'searchprice', 'price', 'current_price', 'currentprice', 'display_price'])).replace(/[^0-9.,-]/g, '').replace(',', '.')) || 0;
+  const merchant = valueFrom(raw, ['merchant_name', 'merchantname', 'merchant', 'advertiser_name', 'advertisername']) || program.name || '';
+  const category = valueFrom(raw, ['category_name', 'categoryname', 'category', 'merchant_category', 'merchantcategory']) || program.primarySector || '';
+  const image = valueFrom(raw, ['merchant_image_url', 'merchantimageurl', 'aw_image_url', 'awimageurl', 'image', 'image_url', 'imageurl', 'product_image', 'productimage']);
+  const url = valueFrom(raw, ['aw_deep_link', 'awdeeplink', 'deep_link', 'deeplink', 'aw_link', 'awlink', 'url', 'product_url', 'producturl']) || program.deeplink || program.clickThroughUrl || '';
+
+  return {
+    id: `${program.key}-${String(rawId).replace(/\W+/g, '-').toLowerCase()}`,
+    awProductId: String(valueFrom(raw, ['aw_product_id', 'awproductid', 'id']) || ''),
+    merchantProductId: String(valueFrom(raw, ['merchant_product_id', 'merchantproductid', 'sku']) || ''),
+    name: String(name).trim(),
+    description: String(valueFrom(raw, ['description', 'product_description', 'productdescription', 'short_description', 'shortdescription']) || '').trim().slice(0, 500),
+    price,
+    currency: valueFrom(raw, ['currency', 'currency_code', 'currencycode']) || program.currencyCode || 'USD',
+    url,
+    image,
+    merchant: String(merchant).trim(),
+    category: String(category).trim(),
+    advertiserId: program.advertiserId,
+    programId: program.key,
+    topicTags: program.topicTags || [],
+    availability: valueFrom(raw, ['in_stock', 'instock', 'availability', 'stock_status', 'stockstatus']) || '',
+    source: 'awin-product-feed',
+    syncedAt: new Date().toISOString(),
+  };
+}
+
+function enrichFallbackProducts(products) {
+  return products.map((product) => {
+    const merchant = String(product.merchant || '');
+    const staticMatch =
+      [...new Set(staticConfig.programs || [])].find((program) => {
+        const label = normalize(program.label);
+        const compactLabel = compact(program.label);
+        const productMerchant = normalize(merchant);
+        const compactMerchant = compact(merchant);
+        return label && (
+          productMerchant.includes(label) ||
+          label.includes(productMerchant) ||
+          compactMerchant.includes(compactLabel) ||
+          compactLabel.includes(compactMerchant)
+        );
+      }) || null;
+    return {
+      ...product,
+      advertiserId: staticMatch?.merchantId || product.advertiserId,
+      programId: staticMatch?.id || product.programId,
+      topicTags: staticMatch?.topicTags || product.topicTags || [],
+      source: product.source || 'manual-fallback',
+    };
+  });
+}
+
+function mergeProducts(apiProducts, fallbackProducts) {
+  const programsWithApiProducts = new Set(apiProducts.map((product) => product.programId).filter(Boolean));
+  const keptFallbacks = enrichFallbackProducts(fallbackProducts)
+    .filter((product) => !product.programId || !programsWithApiProducts.has(product.programId));
+  const merged = [...apiProducts, ...keptFallbacks];
+  const seen = new Set();
+  return merged.filter((product) => {
+    const key = product.id || `${product.programId}:${product.name}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function buildProgramOfferProducts(programs, apiProducts) {
+  const programsWithApiProducts = new Set(apiProducts.map((product) => product.programId).filter(Boolean));
+  return programs
+    .filter((program) => program.relationship === 'joined')
+    .filter((program) => !programsWithApiProducts.has(program.key))
+    .filter((program) => program.deeplink || program.clickThroughUrl)
+    .map((program) => ({
+      id: `${program.key}-partner-offer`,
+      name: `${program.name} partner offer`,
+      description: program.primarySector
+        ? `Visit ${program.name} for current ${program.primarySector.toLowerCase()} offers and availability.`
+        : `Visit ${program.name} for current offers and availability.`,
+      price: 0,
+      currency: program.currencyCode || 'USD',
+      url: program.deeplink || program.clickThroughUrl,
+      image: program.logoUrl || '',
+      merchant: program.name,
+      category: program.primarySector || 'Partner offer',
+      advertiserId: program.advertiserId,
+      programId: program.key,
+      topicTags: program.topicTags || [],
+      availability: '',
+      source: 'awin-program-fallback',
+      syncedAt: new Date().toISOString(),
+    }));
+}
+
+function buildLogoBanners(programs) {
+  return programs
+    .filter((program) => program.relationship === 'joined')
+    .filter((program) => program.logoUrl && (program.deeplink || program.clickThroughUrl))
+    .map((program) => ({
+      id: `${program.key}-brand-logo`,
+      programKey: program.key,
+      advertiserId: program.advertiserId,
+      advertiser: program.name,
+      network: 'awin',
+      enabled: false,
+      priority: Math.max(20, (program.priority || 50) - 20),
+      label: `${program.name} brand logo`,
+      type: 'image_link',
+      href: program.deeplink || program.clickThroughUrl,
+      imageSrc: program.logoUrl,
+      alt: `${program.name} logo`,
+      noteText: 'Advertisement / affiliate partner',
+      placements: ['brand-logo', 'pre-footer'],
+      pageTypes: program.pageTypes || ['blog', 'breed', 'category'],
+      topicTags: program.topicTags || [],
+      source: 'awin-program-logo',
+      syncedAt: new Date().toISOString(),
+      imageFit: 'contain',
+    }));
+}
+
+function scoreCreative(banner) {
+  const preferred = [[300, 250], [728, 90], [160, 600], [468, 60], [320, 50]];
+  const index = preferred.findIndex(([w, h]) => Number(banner.width) === w && Number(banner.height) === h);
+  return index === -1 ? 0 : preferred.length - index;
+}
+
+function mergeBanners(registry, apiBanners, logoBanners) {
+  const existing = Array.isArray(registry.banners) ? registry.banners : [];
+  const generatedPrograms = new Set([...apiBanners, ...logoBanners].map((banner) => banner.programKey).filter(Boolean));
+  const manual = existing.filter((banner) => {
+    if (banner.source === 'awin-api' || banner.source === 'awin-program-logo') return false;
+    return !banner.programKey || !generatedPrograms.has(banner.programKey);
+  });
+  const generated = [...apiBanners].sort((a, b) => scoreCreative(b) - scoreCreative(a));
+  const all = [...generated, ...logoBanners, ...manual];
+  const seen = new Set();
+  return {
+    ...registry,
+    banners: all.filter((banner) => {
+      if (!banner.id || seen.has(banner.id)) return false;
+      seen.add(banner.id);
+      return true;
+    }),
+  };
+}
+
+function writeFallbackData(fallbackProducts, bannerRegistry, note) {
+  writeJson(join(DATA, 'awin-products.json'), enrichFallbackProducts(fallbackProducts));
+  writeJson(join(DATA, 'awin-programs.json'), {
+    publisherId: PUBLISHER_ID,
+    countryCode: COUNTRY_CODE,
+    syncedAt: new Date().toISOString(),
+    note,
+    programs: [],
+    pendingPrograms: [],
+    summary: [],
+    stats: {
+      joined: 0,
+      pending: 0,
+      products: fallbackProducts.length,
+      apiProducts: 0,
+      banners: bannerRegistry.banners.length,
+      oauthTokenPresent: Boolean(TOKEN),
+      productFeedKeyPresent: Boolean(PRODUCT_FEED_KEY),
+      warnings: runtime.warnings,
+      errors: runtime.errors,
+    },
+  });
+  ok('Fallback data written');
+}
 
 async function main() {
-  log('─────────────────────────────────────');
-  log('PupWiki × AWIN sync starting');
-  log(`Publisher ID: ${PUBLISHER_ID}`);
-  log(`Token present: ${TOKEN ? 'yes' : 'NO — set AWIN_OAUTH2_TOKEN'}`);
-  log('─────────────────────────────────────');
-
-  const fallbackFile     = join(DATA, 'affiliate-products.json');
-  const fallbackBanners  = join(DATA, 'affiliate-banners.json');
-  const fallbackProducts = readJson(fallbackFile) ?? [];
-  const existingBanners  = readJson(fallbackBanners) ?? [];
-  log(`Fallback products loaded: ${fallbackProducts.length}`);
-  log(`Existing banners loaded: ${existingBanners.length}`);
-
-  if (!TOKEN) {
-    warn('No AWIN_OAUTH2_TOKEN — writing enriched fallback data only');
-    const enriched = fallbackProducts.map((p) => {
-      const key = getProgramKey(null, p.merchant);
-      return { ...p, programId: key ?? undefined, topicTags: key ? PROGRAM_TOPICS[key] : [], source: 'manual-fallback' };
-    });
-    writeJson(join(DATA, 'awin-products.json'), enriched);
-    writeJson(join(DATA, 'awin-programs.json'), {
-      programs: [], pendingPrograms: [], syncedAt: new Date().toISOString(), note: 'No token — using fallback',
-    });
-    ok('Fallback data written');
+  if (SYNC_DISABLED) {
+    log('AWIN sync disabled via AWIN_SYNC_DISABLED=true; preserving existing data files.');
     return;
   }
 
-  // ── Step 1: Fetch programmes (joined + pending) ──────────────────────────
-  const { joined: joinedList, pending: pendingList, all: allProgrammes } = await fetchProgrammes();
-  const programmeMap = {};
-  for (const prog of allProgrammes) {
-    const key = getProgramKey(String(prog.id ?? ''), prog.name);
-    if (key) programmeMap[key] = prog;
-  }
+  log('-------------------------------------');
+  log('PupWiki x AWIN sync starting');
+  log(`Publisher ID: ${PUBLISHER_ID}`);
+  log(`OAuth token present: ${TOKEN ? 'yes' : 'NO - set AWIN_OAUTH2_TOKEN'}`);
+  log(`Product feed key present: ${PRODUCT_FEED_KEY ? 'yes' : 'NO - set AWIN_PRODUCT_FEED_API_KEY for feeds'}`);
+  log(`Mode: ${STRICT ? 'strict' : 'safe'}`);
+  log('-------------------------------------');
 
-  const programData = {
-    syncedAt:        new Date().toISOString(),
-    publisherId:     PUBLISHER_ID,
-    programs:        joinedList,
-    pendingPrograms: pendingList,
-    summary: Object.entries(programmeMap).map(([key, prog]) => ({
-      key,
-      merchantId:   String(prog.id),
-      name:         prog.name,
-      status:       prog.displayStatus ?? prog.status ?? 'unknown',
-      isActive:     isActiveStatus(prog.displayStatus ?? prog.status),
-      cookiePeriod: prog.cookiePeriod  ?? prog.clickTtl,
-      commission:   prog.commissionRange ?? prog.defaultCommission ?? null,
-    })),
-  };
-  writeJson(join(DATA, 'awin-programs.json'), programData);
-  ok(`awin-programs.json written (${programData.summary.length} programs mapped)`);
+  const fallbackProducts = readJson(join(DATA, 'affiliate-products.json'), []);
+  const bannerRegistry = getBannerRegistry(readJson(join(DATA, 'affiliate-banners.json'), null));
+  log(`Fallback products loaded: ${fallbackProducts.length}`);
+  log(`Existing banners loaded: ${bannerRegistry.banners.length}`);
 
-  // ── Step 2: Fetch product feeds ──────────────────────────────────────────
-  const feeds = await fetchProductFeeds();
-  const feedMap = {};
-  for (const feed of feeds) {
-    const merchantId = String(feed.advertiserId ?? feed.merchantId ?? '');
-    const key = getProgramKey(merchantId, feed.name);
-    if (key) feedMap[key] = feed;
-  }
-
-  // Ensure known feeds are always included even if not in API response
-  for (const [key, prog] of Object.entries(KNOWN_PROGRAMS)) {
-    if (prog.feedId && !feedMap[key]) {
-      feedMap[key] = { id: prog.feedId, advertiserId: prog.merchantId, name: prog.label, source: 'hardcoded' };
+  if (!TOKEN) {
+    const message = 'No AWIN_OAUTH2_TOKEN; cannot run live programme sync.';
+    if (STRICT) failOrWarn(message);
+    if (ALLOW_FALLBACK_WRITE) {
+      warn(`${message} Writing fallback output because AWIN_ALLOW_FALLBACK_WRITE=true.`);
+      writeFallbackData(fallbackProducts, bannerRegistry, 'No AWIN OAuth token - using fallback product data');
+    } else {
+      warn(`${message} Existing AWIN data files were preserved to avoid overwriting live data with fallback data.`);
     }
+    return;
   }
 
-  // ── Step 3: Fetch products (paginated) + creatives per program ───────────
-  const apiProducts  = [];
-  const apiCreatives = [];
+  if (!PRODUCT_FEED_KEY && REQUIRE_PRODUCT_FEED_KEY) {
+    failOrWarn('No AWIN_PRODUCT_FEED_API_KEY; strict product feed sync cannot continue.');
+  }
+
+  const { joined, pending } = await fetchProgrammes();
+  const livePrograms = [];
+
+  for (const program of joined) {
+    const advertiserId = String(program.id || program.advertiserId || '');
+    const details = await fetchProgramDetails(advertiserId, 'joined');
+    livePrograms.push(normalizeProgram(program, 'joined', details));
+  }
+
+  for (const program of pending) {
+    const advertiserId = String(program.id || program.advertiserId || '');
+    const details = await fetchProgramDetails(advertiserId, 'pending');
+    livePrograms.push(normalizeProgram(program, 'pending', details));
+  }
+
+  const feeds = await fetchProductFeeds();
+  const feedMap = buildFeedMap(feeds);
+  const apiProducts = [];
+  const apiBanners = [];
   const perProgramStats = {};
 
-  for (const [programKey, prog] of Object.entries(KNOWN_PROGRAMS)) {
-    const deeplink = prog.deeplink ?? '';
-    const progInfo = programmeMap[programKey];
-    const progId   = progInfo ? String(progInfo.id) : prog.merchantId;
+  for (const program of livePrograms) {
+    const feedsForProgram = feedMap.get(program.advertiserId) || [];
+    perProgramStats[program.key] = {
+      advertiserId: program.advertiserId,
+      products: 0,
+      banners: 0,
+      hasProductFeed: feedsForProgram.length > 0,
+      feedIds: feedsForProgram.map(feedIdValue).filter(Boolean),
+      hasCreatives: false,
+      hasLogo: Boolean(program.logoUrl),
+    };
 
-    perProgramStats[programKey] = { products: 0, banners: 0, hasFeeds: false, hasCreatives: false };
-
-    // Products from feed (if available)
-    if (feedMap[programKey]) {
-      const feedId = feedMap[programKey].id ?? feedMap[programKey].feedId;
-      if (feedId) {
-        try {
-          const rawProducts = await fetchFeedProductsPaginated(feedId, prog.label);
-          perProgramStats[programKey].hasFeeds = true;
-          for (const raw of rawProducts) {
-            const normalized = normalizeProduct(raw, programKey, deeplink);
-            if (normalized) { apiProducts.push(normalized); perProgramStats[programKey].products++; }
+    if (program.relationship === 'joined') {
+      for (const feed of feedsForProgram.slice(0, 3)) {
+        const rows = await fetchFeedProducts(feed, program.name);
+        for (const row of rows) {
+          const normalized = normalizeProduct(row, program);
+          if (normalized) {
+            apiProducts.push(normalized);
+            perProgramStats[program.key].products++;
           }
-        } catch (err) {
-          warn(`Products fetch failed for ${prog.label}: ${err.message}`);
         }
       }
-    }
 
-    // Creatives for programs with or without feeds
-    try {
-      const creatives = await fetchCreativesForProgram(progId, programKey, prog.label);
-      if (creatives.length > 0) {
-        perProgramStats[programKey].hasCreatives = true;
-        perProgramStats[programKey].banners = creatives.length;
-        apiCreatives.push(...creatives);
+      const creatives = await fetchCreativesForProgram(program);
+      if (creatives.length) {
+        apiBanners.push(...creatives);
+        perProgramStats[program.key].banners += creatives.length;
+        perProgramStats[program.key].hasCreatives = true;
       }
-    } catch (err) {
-      warn(`Creatives fetch failed for ${prog.label}: ${err.message}`);
     }
   }
 
-  ok(`API products normalized: ${apiProducts.length}`);
-  ok(`API creatives fetched: ${apiCreatives.length}`);
-
-  // Log per-program summary
-  for (const [key, stats] of Object.entries(perProgramStats)) {
-    log(`  ${KNOWN_PROGRAMS[key].label}: ${stats.products} products, ${stats.banners} banners`);
+  if (REQUIRE_FEED_PRODUCTS && PRODUCT_FEED_KEY && apiProducts.length === 0) {
+    failOrWarn('AWIN product feed key is present, but no live product feed rows were imported.');
   }
 
-  // ── Step 4: Merge products (API wins over manual) ────────────────────────
-  const programsWithApiData = new Set(apiProducts.map(p => p.programId));
-  const kept = fallbackProducts
-    .map(p => {
-      const key = getProgramKey(null, p.merchant);
-      return key ? { ...p, programId: key, topicTags: PROGRAM_TOPICS[key] ?? [], source: p.source ?? 'manual' } : { ...p, source: 'manual' };
-    })
-    .filter(p => !programsWithApiData.has(p.programId));
+  const programOfferProducts = buildProgramOfferProducts(livePrograms, apiProducts);
+  const mergedProducts = mergeProducts([...apiProducts, ...programOfferProducts], fallbackProducts);
+  const logoBanners = buildLogoBanners(livePrograms);
+  const mergedBannerRegistry = mergeBanners(bannerRegistry, apiBanners, logoBanners);
 
-  const merged = [...apiProducts, ...kept];
-  const seen = new Set();
-  const deduped = merged.filter(p => { if (seen.has(p.id)) return false; seen.add(p.id); return true; });
+  writeJson(join(DATA, 'awin-products.json'), mergedProducts);
+  writeJson(join(DATA, 'affiliate-banners.json'), mergedBannerRegistry);
 
-  writeJson(join(DATA, 'awin-products.json'), deduped);
-  ok(`awin-products.json written: ${deduped.length} total products (${apiProducts.length} API, ${kept.length} manual)`);
+  const finalPrograms = livePrograms.map((program) => ({
+    ...program,
+    hasProductFeed: perProgramStats[program.key]?.hasProductFeed || false,
+    feedIds: perProgramStats[program.key]?.feedIds || [],
+    hasCreatives: perProgramStats[program.key]?.hasCreatives || false,
+    hasLogo: perProgramStats[program.key]?.hasLogo || false,
+    productCount: perProgramStats[program.key]?.products || 0,
+    bannerCount: perProgramStats[program.key]?.banners || 0,
+  }));
 
-  // ── Step 5: Merge creatives (API wins by creativeId + programKey) ────────
-  // Prefer API entries, keep manual entries for programs not returned by API
-  const programsWithApiCreatives = new Set(apiCreatives.map(c => c.programKey));
-  const manualBanners = existingBanners.filter(
-    b => b.source !== 'awin-api' && !programsWithApiCreatives.has(b.programKey)
-  );
-
-  // Sort each program's creatives by preference score, keep all (let consumers filter by size)
-  const sortedCreatives = [...apiCreatives].sort((a, b) => scoreCreative(b) - scoreCreative(a));
-  const allBanners = [...sortedCreatives, ...manualBanners];
-
-  // Deduplicate by id
-  const seenBanners = new Set();
-  const dedupedBanners = allBanners.filter(b => {
-    if (seenBanners.has(b.id)) return false;
-    seenBanners.add(b.id);
-    return true;
-  });
-
-  writeJson(join(DATA, 'affiliate-banners.json'), dedupedBanners);
-  ok(`affiliate-banners.json written: ${dedupedBanners.length} total banners (${sortedCreatives.length} API, ${manualBanners.length} manual)`);
-
-  // ── Step 6: Update awin-programs.json with full stats ───────────────────
-  const finalProgramData = {
-    ...programData,
-    summary: programData.summary.map(s => ({
-      ...s,
-      hasFeeds:       perProgramStats[s.key]?.hasFeeds     ?? false,
-      hasCreatives:   perProgramStats[s.key]?.hasCreatives  ?? false,
-      productCount:   perProgramStats[s.key]?.products      ?? 0,
-      bannerCount:    perProgramStats[s.key]?.banners       ?? 0,
+  const programData = {
+    publisherId: PUBLISHER_ID,
+    countryCode: COUNTRY_CODE,
+    syncedAt: new Date().toISOString(),
+    programs: finalPrograms.filter((program) => program.relationship === 'joined'),
+    pendingPrograms: finalPrograms.filter((program) => program.relationship === 'pending'),
+    summary: finalPrograms.map((program) => ({
+      key: program.key,
+      advertiserId: program.advertiserId,
+      name: program.name,
+      relationship: program.relationship,
+      status: program.status,
+      isActive: program.isActive,
+      hasProductFeed: program.hasProductFeed,
+      feedIds: program.feedIds,
+      hasCreatives: program.hasCreatives,
+      hasLogo: program.hasLogo,
+      productCount: program.productCount,
+      bannerCount: program.bannerCount,
+      deeplinkEnabled: program.deeplinkEnabled,
+      logoUrl: program.logoUrl,
+      clickThroughUrl: program.clickThroughUrl,
+      topicTags: program.topicTags,
     })),
+    stats: {
+      joined: joined.length,
+      pending: pending.length,
+      feeds: feeds.length,
+      apiProducts: apiProducts.length,
+      programOfferProducts: programOfferProducts.length,
+      totalProducts: mergedProducts.length,
+      apiBanners: apiBanners.length,
+      logoBanners: logoBanners.length,
+      totalBanners: mergedBannerRegistry.banners.length,
+      oauthTokenPresent: Boolean(TOKEN),
+      productFeedKeyPresent: Boolean(PRODUCT_FEED_KEY),
+      feedListEndpointUsed: runtime.feedListEndpointUsed || null,
+      feedProductFetchFailures: runtime.feedProductFetchFailures,
+      experimentalCreativesEnabled: FETCH_CREATIVES,
+      warnings: runtime.warnings,
+      errors: runtime.errors,
+    },
   };
-  writeJson(join(DATA, 'awin-programs.json'), finalProgramData);
 
-  log('─────────────────────────────────────');
-  log('Sync complete ✓');
+  writeJson(join(DATA, 'awin-programs.json'), programData);
+
+  ok(`awin-programs.json written: ${programData.programs.length} joined + ${programData.pendingPrograms.length} pending`);
+  ok(`awin-products.json written: ${mergedProducts.length} total (${apiProducts.length} feed, ${programOfferProducts.length} program fallback, ${mergedProducts.length - apiProducts.length - programOfferProducts.length} manual)`);
+  ok(`affiliate-banners.json written: ${mergedBannerRegistry.banners.length} total (${apiBanners.length} creative API, ${logoBanners.length} logo fallback)`);
+
+  for (const program of programData.summary) {
+    log(`${program.name}: relationship=${program.relationship}, products=${program.productCount}, feed=${program.hasProductFeed ? 'yes' : 'no'}, logo=${program.hasLogo ? 'yes' : 'no'}`);
+  }
+
+  if (runtime.warnings.length) {
+    log(`Completed with ${runtime.warnings.length} warning(s). Run npm run awin:audit for a structured report.`);
+  }
+  log('-------------------------------------');
+  log('Sync complete');
 }
 
 main().catch((err) => {

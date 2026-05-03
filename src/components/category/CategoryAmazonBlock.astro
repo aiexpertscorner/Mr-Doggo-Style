@@ -1,0 +1,25 @@
+---
+import AmazonProductSlot from '../affiliate/AmazonProductSlot.astro';
+import { getAmazonCategoryTags } from '../../lib/amazon/amazonConfig';
+import type { CategoryMeta } from '../../lib/categories/categoryConfig';
+
+export interface Props {
+  meta: CategoryMeta;
+  categorySlug: string;
+}
+
+const { meta, categorySlug } = Astro.props;
+const tags = getAmazonCategoryTags(categorySlug, [meta.theme, meta.shortTitle]);
+---
+
+<AmazonProductSlot
+  pageType="category"
+  category={categorySlug}
+  topicTags={tags}
+  limit={3}
+  columns={3}
+  eyebrow="Amazon shopping shortcut"
+  headline={`Useful ${meta.shortTitle.toLowerCase()} picks from Amazon`}
+  description={`Checked SiteStripe links from PupWiki’s Amazon seed list, matched to ${meta.title.toLowerCase()} intent. We do not show prices, ratings, Prime claims, or Amazon product images.`}
+  placement={`category-${categorySlug}`}
+/>

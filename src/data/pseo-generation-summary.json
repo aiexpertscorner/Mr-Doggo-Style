@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-05-03T01:10:22.341Z",
+  "apply": true,
+  "mode": "clusters",
+  "limit": 12,
+  "minPrograms": 1,
+  "activeProgramCount": 7,
+  "commerceClusterCount": 5,
+  "breedPageOpportunityCount": 573,
+  "generatedCount": 5,
+  "skippedCount": 0,
+  "generated": [
+    {
+      "kind": "cluster",
+      "slug": "dog-health-wellness-adjacent-partners",
+      "path": "/blog/dog-health-wellness-adjacent-partners",
+      "priorityScore": 779,
+      "programmes": [
+        "Chef Paw (US)",
+        "JUGBOW",
+        "MyPetDMV - The original Pet Drivers License",
+        "Raw Wild LLC",
+        "RadioFence.com",
+        "Brutus Broth"
+      ]
+    },
+    {
+      "kind": "cluster",
+      "slug": "dog-training-gear-safety-partners",
+      "path": "/blog/dog-training-gear-safety-partners",
+      "priorityScore": 392,
+      "programmes": [
+        "JUGBOW",
+        "MyPetDMV - The original Pet Drivers License",
+        "RadioFence.com"
+      ]
+    },
+    {
+      "kind": "cluster",
+      "slug": "dog-food-nutrition-partners",
+      "path": "/blog/dog-food-nutrition-partners",
+      "priorityScore": 387,
+      "programmes": [
+        "Chef Paw (US)",
+        "Raw Wild LLC",
+        "Brutus Broth"
+      ]
+    },
+    {
+      "kind": "cluster",
+      "slug": "personalized-dog-gifts-lifestyle-partners",
+      "path": "/blog/personalized-dog-gifts-lifestyle-partners",
+      "priorityScore": 281,
+      "programmes": [
+        "Crown and Paw",
+        "MyPetDMV - The original Pet Drivers License"
+      ]
+    },
+    {
+      "kind": "cluster",
+      "slug": "dog-beds-comfort-home-partners",
+      "path": "/blog/dog-beds-comfort-home-partners",
+      "priorityScore": 249,
+      "programmes": [
+        "JUGBOW",
+        "Brutus Broth"
+      ]
+    }
+  ],
+  "skipped": [],
+  "topClusters": [
+    {
+      "slug": "dog-health-wellness-adjacent-partners",
+      "score": 779,
+      "programmes": [
+        "Chef Paw (US)",
+        "JUGBOW",
+        "MyPetDMV - The original Pet Drivers License",
+        "Raw Wild LLC",
+        "RadioFence.com",
+        "Brutus Broth"
+      ],
+      "products": 8
+    },
+    {
+      "slug": "dog-training-gear-safety-partners",
+      "score": 392,
+      "programmes": [
+        "JUGBOW",
+        "MyPetDMV - The original Pet Drivers License",
+        "RadioFence.com"
+      ],
+      "products": 3
+    },
+    {
+      "slug": "dog-food-nutrition-partners",
+      "score": 387,
+      "programmes": [
+        "Chef Paw (US)",
+        "Raw Wild LLC",
+        "Brutus Broth"
+      ],
+      "products": 5
+    },
+    {
+      "slug": "personalized-dog-gifts-lifestyle-partners",
+      "score": 281,
+      "programmes": [
+        "Crown and Paw",
+        "MyPetDMV - The original Pet Drivers License"
+      ],
+      "products": 3
+    },
+    {
+      "slug": "dog-beds-comfort-home-partners",
+      "score": 249,
+      "programmes": [
+        "JUGBOW",
+        "Brutus Broth"
+      ],
+      "products": 2
+    }
+  ]
+}

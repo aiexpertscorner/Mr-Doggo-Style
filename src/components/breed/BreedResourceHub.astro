@@ -1,0 +1,64 @@
+---
+/**
+ * BreedResourceHub.astro
+ * High-intent internal linking module for breed detail pages.
+ */
+
+export interface ResourceItem {
+  href?: string;
+  icon?: string;
+  label: string;
+  description?: string;
+  badge?: string;
+  available?: boolean;
+  featured?: boolean;
+}
+
+export interface Props {
+  breedName: string;
+  items: ResourceItem[];
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+}
+
+const {
+  breedName,
+  items = [],
+  eyebrow = 'Breed resource hub',
+  title = `Plan life with a ${breedName}`,
+  description = 'Move from breed research to real decisions: costs, food, training, health context, names, lifecycle hubs and partner resources.',
+} = Astro.props;
+
+const visibleItems = items.filter((item) => item.href || item.available !== false).slice(0, 12);
+---
+
+{visibleItems.length > 0 && (
+  <section class="breed-resource-hub" aria-labelledby="breed-resource-hub-title">
+    <div class="breed-resource-hub__header">
+      <p class="breed-eyebrow">{eyebrow}</p>
+      <h2 id="breed-resource-hub-title">{title}</h2>
+      <p>{description}</p>
+    </div>
+
+    <div class="breed-resource-hub__grid">
+      {visibleItems.map((item) => {
+        const Tag = item.href ? 'a' : 'div';
+        return (
+          <Tag
+            href={item.href}
+            class:list={['breed-resource-card', item.featured && 'is-featured', !item.href && 'is-disabled']}
+          >
+            <span class="breed-resource-card__icon" aria-hidden="true">{item.icon || '🐾'}</span>
+            <span class="breed-resource-card__body">
+              <strong>{item.label}</strong>
+              {item.description && <em>{item.description}</em>}
+            </span>
+            {item.badge && <span class="breed-resource-card__badge">{item.badge}</span>}
+            {item.href && <span class="breed-resource-card__arrow" aria-hidden="true">→</span>}
+          </Tag>
+        );
+      })}
+    </div>
+  </section>
+)}

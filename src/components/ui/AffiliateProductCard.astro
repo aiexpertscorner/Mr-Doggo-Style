@@ -1,122 +1,90 @@
 ---
 /**
  * AffiliateProductCard.astro
- * Renders a single AWIN affiliate product card.
- * Data source: src/data/affiliate-products.json
+ * Renders a single AWIN affiliate product/partner card using global monetization styles.
  */
 
 export interface Props {
-  /** Product object from affiliate-products.json */
   product: {
     id: string;
     name: string;
-    description: string;
-    price: number;
-    currency: string;
+    description?: string;
+    price?: number;
+    currency?: string;
     url: string;
-    image: string;
-    merchant: string;
-    category: string;
+    image?: string;
+    merchant?: string;
+    category?: string;
+    source?: string;
+    topicTags?: string[];
+    availability?: string;
   };
-  /** Optional override headline above the card */
   headline?: string;
-  /** compact: slim horizontal layout; card (default): vertical */
   variant?: 'card' | 'compact';
 }
 
 const { product, headline, variant = 'card' } = Astro.props;
-const formattedPrice = product.price.toFixed(2);
+const numericPrice = Number(product.price);
+const hasPrice = Number.isFinite(numericPrice) && numericPrice > 0;
+const formattedPrice = hasPrice ? numericPrice.toFixed(2) : '';
+const merchant = product.merchant || 'Partner';
+const category = product.category || 'Dog care resource';
+const description = product.description || `Visit ${merchant} to review current products, services, offers, and availability.`;
+const eyebrow = `PupWiki partner · ${merchant}`;
+const tags = Array.isArray(product.topicTags) ? product.topicTags.slice(0, 4) : [];
+const fitText = `Review the partner page for current details, availability, shipping, sizing, and whether it fits your dog’s needs.`;
 ---
 
 {variant === 'card' ? (
-  <div class="rounded-2xl overflow-hidden" style="border:2px solid var(--color-border-strong);background:white">
-    {headline && (
-      <div class="px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider" style="background:var(--color-surface-warm);color:var(--color-accent-hover);border-bottom:1px solid var(--color-border-strong)">
-        {headline}
-      </div>
-    )}
+  <article class="affiliate-card">
+    {headline && <div class="affiliate-card__headline">{headline}</div>}
 
-    <!-- Product image -->
-    <div class="flex items-center justify-center p-4" style="background:var(--color-bg-soft);min-height:130px">
+    <div class="affiliate-card__media">
       {product.image ? (
-        <img
-          src={product.image}
-          alt={product.name}
-          width="120"
-          height="120"
-          loading="lazy"
-          class="object-contain max-h-28"
-          onerror="this.style.display='none';document.getElementById('img-fallback-{product.id}').style.display='block'"
-        />
+        <img src={product.image} alt={product.name} width="150" height="130" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
       ) : null}
-      <span id={`img-fallback-${product.id}`} style={product.image ? 'display:none;font-size:2.5rem' : 'font-size:2.5rem'}>🐾</span>
+      <span class="affiliate-card__fallback" style={product.image ? 'display:none' : ''}>🐾</span>
     </div>
 
-    <!-- Product details -->
-    <div class="p-4 flex flex-col gap-2">
-      <span class="font-sans text-xs font-bold uppercase tracking-wider" style="color:var(--color-accent)">
-        {product.merchant} · {product.category}
-      </span>
-      <h3 class="font-sans text-sm font-bold leading-snug" style="color:#1e293b">{product.name}</h3>
-      <p class="font-sans text-xs leading-relaxed" style="color:#64748b">
-        {product.description.slice(0, 100)}{product.description.length > 100 ? '…' : ''}
-      </p>
+    <div class="affiliate-card__body">
+      <span class="affiliate-card__eyebrow">{eyebrow}</span>
+      <h3 class="affiliate-card__title">{product.name}</h3>
+      <p class="affiliate-card__desc">{description.slice(0, 165)}{description.length > 165 ? '…' : ''}</p>
 
-      <div class="flex items-center justify-between pt-2 mt-auto" style="border-top:1px solid var(--color-surface-warm)">
-        <span class="font-sans font-black text-lg" style="color:#1e293b">
-          ${formattedPrice}
-        </span>
-        <a
-          href={product.url}
-          rel="nofollow sponsored"
-          target="_blank"
-          class="font-sans text-xs font-bold px-3 py-2 rounded-xl text-white"
-          style="background:linear-gradient(135deg,var(--color-accent),var(--color-accent-hover))"
-          data-affiliate-merchant={product.merchant}
-          data-affiliate-product={product.id}
-          data-affiliate-placement="card"
-        >
-          Shop now →
+      <div class="affiliate-card__fit">
+        <strong>Before you click</strong>
+        <span>{fitText}</span>
+      </div>
+
+      <div class="affiliate-card__chips" aria-label="Partner fit tags">
+        <span class="pw-chip pw-chip--accent">{category}</span>
+        {tags.map((tag) => <span class="pw-chip">{String(tag).replace(/[-_]+/g, ' ')}</span>)}
+      </div>
+
+      <div class="affiliate-card__footer">
+        <span class="affiliate-card__price">{hasPrice ? `$${formattedPrice}` : 'Partner site'}</span>
+        <a href={product.url} rel="nofollow sponsored noopener" target="_blank" class="affiliate-card__cta" data-affiliate-merchant={merchant} data-affiliate-product={product.id} data-affiliate-placement="card">
+          Visit partner site →
         </a>
       </div>
 
-      <p class="font-sans text-xs text-center" style="color:#94a3b8">
-        Affiliate link — no extra cost to you
-      </p>
+      <p class="affiliate-card__note">Affiliate link — PupWiki may earn from qualifying partner links at no extra cost to you.</p>
     </div>
-  </div>
+  </article>
 ) : (
-  <!-- Compact horizontal variant -->
-  <div class="flex items-center gap-3 rounded-xl p-3" style="border:1px solid var(--color-border-strong);background:white">
-    {product.image && (
-      <div class="flex-shrink-0 w-14 h-14 rounded-lg overflow-hidden flex items-center justify-center" style="background:var(--color-bg-soft)">
-        <img
-          src={product.image}
-          alt={product.name}
-          width="56"
-          height="56"
-          loading="lazy"
-          class="object-contain max-h-12"
-          onerror="this.style.display='none'"
-        />
-      </div>
-    )}
-    <div class="flex-1 min-w-0">
-      <p class="font-sans text-xs font-bold leading-snug truncate" style="color:#1e293b">{product.name}</p>
-      <p class="font-sans text-xs" style="color:#64748b">{product.merchant}</p>
-      <p class="font-sans font-black text-sm" style="color:var(--color-accent)">${formattedPrice}</p>
+  <article class="affiliate-card affiliate-card--compact">
+    <div class="affiliate-card__media">
+      {product.image ? <img src={product.image} alt={product.name} width="56" height="56" loading="lazy" decoding="async" onerror="this.style.display='none'" /> : <span class="affiliate-card__fallback">🐾</span>}
     </div>
-    <a
-      href={product.url}
-      rel="nofollow sponsored"
-      target="_blank"
-      class="flex-shrink-0 font-sans text-xs font-bold px-2.5 py-1.5 rounded-lg text-white"
-      style="background:linear-gradient(135deg,var(--color-accent),var(--color-accent-hover))"
-      data-affiliate-merchant={product.merchant}
-      data-affiliate-product={product.id}
-      data-affiliate-placement="compact"
-    >
-      Shop →
-    </a>
-  </div>
+
+    <div class="affiliate-card__body">
+      <span class="affiliate-card__eyebrow">PupWiki partner</span>
+      <h3 class="affiliate-card__title">{product.name}</h3>
+      <p class="affiliate-card__desc">{merchant}</p>
+    </div>
+
+    <div class="affiliate-card__footer">
+      <a href={product.url} rel="nofollow sponsored noopener" target="_blank" class="affiliate-card__cta" data-affiliate-merchant={merchant} data-affiliate-product={product.id} data-affiliate-placement="compact">Visit →</a>
+    </div>
+  </article>
 )}

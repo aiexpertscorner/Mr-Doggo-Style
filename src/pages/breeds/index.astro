@@ -481,7 +481,7 @@ function cardGuideChips(breed: NormalizedBreed) {
                         data-card-image
                       />
                     ) : null}
-                    <span class="breed-directory-card__fallback" data-card-fallback style={breed.primaryImage ? 'display:none' : ''} aria-hidden="true">
+                    <span class:list={['breed-directory-card__fallback', breed.primaryImage && 'is-hidden']} data-card-fallback aria-hidden="true">
                       {breed.fallbackEmoji}
                     </span>
                     <span class="breed-directory-card__type">{breed.type === 'mixed' ? 'Mixed' : 'Purebred'}</span>
@@ -930,7 +930,7 @@ function cardGuideChips(breed: NormalizedBreed) {
       image.addEventListener('error', () => {
         image.hidden = true;
         const fallback = image.closest('.breed-directory-card__image')?.querySelector('[data-card-fallback]');
-        if (fallback) fallback.style.display = 'grid';
+        fallback?.classList.remove('is-hidden');
       });
     });
 

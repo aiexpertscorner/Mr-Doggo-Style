@@ -4,18 +4,28 @@
  * Homepage AWIN partner section — features top AWIN products.
  * Positioned after breed discovery to catch owners ready to shop.
  */
+import awinProducts from '../../data/awin-products.json';
 import affiliateProducts from '../../data/affiliate-products.json';
 
-const products = Array.isArray(affiliateProducts) ? affiliateProducts : [];
+const liveProducts = Array.isArray(awinProducts) ? awinProducts : [];
+const fallbackProducts = Array.isArray(affiliateProducts) ? affiliateProducts : [];
+const products = liveProducts.length > 0 ? liveProducts : fallbackProducts;
 
 const featured = [
   products.find((p: any) => p.id === 'chefpaw-1'),
   products.find((p: any) => p.id === 'rawwild-elk'),
   products.find((p: any) => p.id === 'jugbow-training-harness'),
 ].filter(Boolean) as any[];
+
+const fallbackFeatured = products
+  .filter((p: any) => p?.url)
+  .sort((a: any, b: any) => Number(Boolean(b.image)) - Number(Boolean(a.image)))
+  .slice(0, 3);
+
+const spotlightProducts = featured.length >= 3 ? featured : fallbackFeatured;
 ---
 
-{featured.length > 0 && (
+{spotlightProducts.length > 0 && (
   <section class="py-12 sm:py-14 lg:py-16" style="background:var(--color-bg-soft)">
     <div class="mx-auto max-w-7xl px-4 sm:px-5 lg:px-6">
 
@@ -32,7 +42,7 @@ const featured = [
       </div>
 
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {featured.map((product: any) => (
+        {spotlightProducts.map((product: any) => (
           <div class="flex flex-col rounded-2xl border bg-white overflow-hidden shadow-sm" style="border-color:var(--color-border)">
 
             {/* Image area */}
@@ -66,7 +76,7 @@ const featured = [
 
               <div class="flex items-center justify-between pt-3 mt-auto" style="border-top:1px solid var(--color-border)">
                 <span class="font-black text-lg text-slate-900">
-                  ${Number(product.price).toFixed(2)}
+                  {Number(product.price) > 0 ? `$${Number(product.price).toFixed(2)}` : 'Partner site'}
                 </span>
                 <a
                   href={product.url}

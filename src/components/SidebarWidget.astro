@@ -41,7 +41,7 @@ const url = `https://www.amazon.com/dp/${asin}/?tag=${tag}`;
       {price && <span style="font-weight:700;color:var(--color-heading);font-size:.95rem">${price.toFixed(2)}</span>}
     </div>
     {ENABLE_AMAZON_BUTTONS ? (
-      <a href={url} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon"
+      <a href={url} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon.com"
         style="display:flex;justify-content:center;line-height:0;margin-bottom:.45rem">
         <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto;display:block" />
       </a>
