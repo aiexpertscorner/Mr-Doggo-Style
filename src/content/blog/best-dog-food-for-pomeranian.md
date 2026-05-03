@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Pomeranians 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Pomeranian's specific regular exercise energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["pomeranian", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "pomeranian"
+heroImage: "https://images.pexels.com/photos/8473449/pexels-photo-8473449.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/8473449/pexels-photo-8473449.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Fluffy Pomeranian puppy by a dog bowl on wooden floor indoors. Cute and furry pet in a home setting."
+imageAlt: "Fluffy Pomeranian puppy by a dog bowl on wooden floor indoors. Cute and furry pet in a home setting."
+imageSource: "pexels"
+imageCredit: "Photo by Cup of  Couple on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/brown-pomeranian-puppy-looking-at-camera-8473449/"
+imageSearchQuery: "Pomeranian dog eating healthy food"
 ---
+
 
 Pomeranians have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 3–7 lbs, regular exercise energy, seasonal shedding, and inquisitive, bold, lively temperament.
 

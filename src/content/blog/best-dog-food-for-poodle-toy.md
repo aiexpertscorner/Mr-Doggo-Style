@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Poodle (Toy)s 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Poodle (Toy)'s specific regular exercise energy level, and infrequent shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["poodle-toy", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "poodle-toy"
+heroImage: "https://images.pexels.com/photos/13550950/pexels-photo-13550950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/13550950/pexels-photo-13550950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A cute toy poodle lying on the grass with a chew toy. Perfect pet photography capturing playful moments."
+imageAlt: "A cute toy poodle lying on the grass with a chew toy. Perfect pet photography capturing playful moments."
+imageSource: "pexels"
+imageCredit: "Photo by o x on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-shot-of-a-toy-poodle-on-a-grassy-field-13550950/"
+imageSearchQuery: "Poodle (Toy) dog eating healthy food"
 ---
+
 
 Poodle (Toy)s have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 4–6 lbs, regular exercise energy, infrequent shedding, and agile, intelligent, self-confident temperament.
 

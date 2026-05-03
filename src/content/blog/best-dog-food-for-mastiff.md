@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Mastiffs 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Mastiff's specific large size, regular exercise energy level, and occasional shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["mastiff", "dog-food", "large-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "mastiff"
+heroImage: "https://images.pexels.com/photos/34315/bordeaux-mastiff-dog-animal.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/34315/bordeaux-mastiff-dog-animal.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A French Bulldog enjoying a spring day in a green grassy field."
+imageAlt: "A French Bulldog enjoying a spring day in a green grassy field."
+imageSource: "pexels"
+imageCredit: "Photo by Pixabay on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/brown-short-haired-dog-on-green-ground-cover-plants-during-daytime-34315/"
+imageSearchQuery: "Mastiff dog eating healthy food"
 ---
+
 
 Mastiffs have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 120–230 lbs, regular exercise energy, occasional shedding, and courageous, dignified, good-natured temperament.
 

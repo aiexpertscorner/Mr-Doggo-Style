@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for French Bulldogs 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the French Bulldog's specific calm energy level, and regularly shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["french-bulldog", "dog-food", "medium-breed", "calm"]
 author: "The PupWiki Team"
 breedSlug: "french-bulldog"
+heroImage: "https://images.pexels.com/photos/35692179/pexels-photo-35692179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35692179/pexels-photo-35692179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "French Bulldog resting on a sunny pavement, showcasing relaxed pet demeanor."
+imageAlt: "French Bulldog resting on a sunny pavement, showcasing relaxed pet demeanor."
+imageSource: "pexels"
+imageCredit: "Photo by Sóc Năng Động on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/relaxed-french-bulldog-on-pavement-outdoors-35692179/"
+imageSearchQuery: "French Bulldog dog eating healthy food"
 ---
+
 
 French Bulldogs have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 28–28 lbs, calm energy, regularly shedding, and adaptable, playful, smart temperament.
 

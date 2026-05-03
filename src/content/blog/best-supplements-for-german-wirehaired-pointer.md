@@ -44,9 +44,23 @@ This guide covers what works, what's marketing, and which products are worth the
 ---
 
 
-## How this page was refreshed
 
-This guide now separates editorial guidance from shopping modules. The article explains fit, trade-offs, and breed context; the page template adds current AWIN and Amazon.com components from active data feeds where appropriate.
+
+## What to review before buying supplements for a German Wirehaired Pointer
+
+German Wirehaired Pointer owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Treat supplements as optional support, not a replacement for diagnosis, diet, medication, or veterinary care.
+- Compare active ingredients, dose instructions, third-party quality cues, and whether the product fits your dog’s life stage.
+- Ask your veterinarian about interactions if your dog takes medication or has a known health condition.
+
+## What to review before buying supplements for a German Wirehaired Pointer
+
+German Wirehaired Pointer owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Treat supplements as optional support, not a replacement for diagnosis, diet, medication, or veterinary care.
+- Compare active ingredients, dose instructions, third-party quality cues, and whether the product fits your dog’s life stage.
+- Ask your veterinarian about interactions if your dog takes medication or has a known health condition.
 
 ## German Wirehaired Pointer Supplement Priority Matrix
 

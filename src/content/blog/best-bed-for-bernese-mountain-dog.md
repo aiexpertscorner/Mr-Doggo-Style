@@ -55,9 +55,23 @@ We selected the best beds for Bernese Mountain Dogs across four categories — o
 ---
 
 
-## How this page was refreshed
 
-This guide now separates editorial guidance from shopping modules. The article explains fit, trade-offs, and breed context; the page template adds current AWIN and Amazon.com components from active data feeds where appropriate.
+
+## Bernese Mountain Dog sleep and comfort checklist
+
+Bernese Mountain Dog owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Measure your dog from nose to tail base and add room for stretching, curling, and changing positions.
+- Prioritize washable covers, stable support, and non-slip placement for daily home use.
+- For senior dogs or dogs showing stiffness, compare supportive foam and discuss pain or mobility changes with your veterinarian.
+
+## Bernese Mountain Dog sleep and comfort checklist
+
+Bernese Mountain Dog owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Measure your dog from nose to tail base and add room for stretching, curling, and changing positions.
+- Prioritize washable covers, stable support, and non-slip placement for daily home use.
+- For senior dogs or dogs showing stiffness, compare supportive foam and discuss pain or mobility changes with your veterinarian.
 
 ## Bed shortlist for Bernese Mountain Dog owners
 

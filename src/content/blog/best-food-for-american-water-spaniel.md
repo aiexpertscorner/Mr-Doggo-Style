@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "american-water-span
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/american-water-spaniel", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/7323691/pexels-photo-7323691.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7323691/pexels-photo-7323691.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "American Cocker Spaniel wearing harness, walking on the wet beach sand with water reflection."
+imageAlt: "American Cocker Spaniel wearing harness, walking on the wet beach sand with water reflection."
+imageSource: "pexels"
+imageCredit: "Photo by Ray Bilcliff on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-walking-on-the-shore-7323691/"
+imageSearchQuery: "American Water Spaniel dog eating healthy food"
 ---
 
 Feeding a American Water Spaniel well isn't as simple as grabbing the bag with the highest rating. American Water Spaniels are medium dogs with regular energy, a Lifespan of 10–14 years, and nutritional vulnerabilities that change across their life stages.
@@ -47,9 +55,23 @@ We spent time cross-referencing 30+ dog food formulas against the American Water
 ---
 
 
-## How this page was refreshed
 
-This guide now separates editorial guidance from shopping modules. The article explains fit, trade-offs, and breed context; the page template adds current AWIN and Amazon.com components from active data feeds where appropriate.
+
+## What matters most for American Water Spaniel nutrition
+
+American Water Spaniel owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match calories and portions to a medium dog with regular energy rather than choosing by marketing claims alone.
+- Compare life-stage labels, protein source, digestibility notes, and whether the formula suits your dog’s current body condition.
+- For allergies, pancreatitis, kidney disease, prescription diets, or unexplained symptoms, involve your veterinarian before changing food.
+
+## What matters most for American Water Spaniel nutrition
+
+American Water Spaniel owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match calories and portions to a medium dog with regular energy rather than choosing by marketing claims alone.
+- Compare life-stage labels, protein source, digestibility notes, and whether the formula suits your dog’s current body condition.
+- For allergies, pancreatitis, kidney disease, prescription diets, or unexplained symptoms, involve your veterinarian before changing food.
 
 ## Shortlist for American Water Spaniel owners
 

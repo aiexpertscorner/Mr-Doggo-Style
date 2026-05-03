@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Bernese Mountain Dogs 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Bernese Mountain Dog's specific large size, energetic energy level, and frequent shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["bernese-mountain-dog", "dog-food", "large-breed", "energetic"]
 author: "The PupWiki Team"
 breedSlug: "bernese-mountain-dog"
+heroImage: "https://images.pexels.com/photos/10842583/pexels-photo-10842583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/10842583/pexels-photo-10842583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming Bernese Mountain Dog in a sunlit field of wildflowers, radiating joy."
+imageAlt: "Charming Bernese Mountain Dog in a sunlit field of wildflowers, radiating joy."
+imageSource: "pexels"
+imageCredit: "Photo by David  Floyd on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-close-up-shot-of-a-bernese-mountain-dog-10842583/"
+imageSearchQuery: "Bernese Mountain Dog dog eating healthy food"
 ---
+
 
 Bernese Mountain Dogs have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 70–115 lbs, energetic energy, frequent shedding, and good-natured, calm, strong temperament.
 

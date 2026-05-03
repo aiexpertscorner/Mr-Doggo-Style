@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for English Springer Spaniels 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the English Springer Spaniel's specific regular exercise energy level, and occasional shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["english-springer-spaniel", "dog-food", "medium-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "english-springer-spaniel"
+heroImage: "https://images.pexels.com/photos/24453850/pexels-photo-24453850.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/24453850/pexels-photo-24453850.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute Springer Spaniel dog lying on lush green grass enjoying a sunny day outdoors."
+imageAlt: "Cute Springer Spaniel dog lying on lush green grass enjoying a sunny day outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by Lorenzo Manera on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-lying-down-on-grass-24453850/"
+imageSearchQuery: "English Springer Spaniel dog eating healthy food"
 ---
+
 
 English Springer Spaniels have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 40–50 lbs, regular exercise energy, occasional shedding, and friendly, playful, obedient temperament.
 

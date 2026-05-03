@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Miniature Schnauzers 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Miniature Schnauzer's specific regular exercise energy level, and infrequent shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["miniature-schnauzer", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "miniature-schnauzer"
+heroImage: "https://images.pexels.com/photos/3655387/pexels-photo-3655387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/3655387/pexels-photo-3655387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Smiling Schnauzer dog laying on a soft rug, showcasing happiness indoors."
+imageAlt: "Smiling Schnauzer dog laying on a soft rug, showcasing happiness indoors."
+imageSource: "pexels"
+imageCredit: "Photo by Sebastian Coman Travel on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/photo-of-schnauzer-3655387/"
+imageSearchQuery: "Miniature Schnauzer dog eating healthy food"
 ---
+
 
 Miniature Schnauzers have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 11–20 lbs, regular exercise energy, infrequent shedding, and friendly, smart, obedient temperament.
 

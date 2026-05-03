@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "australian-kelpie",
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/australian-kelpie", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/5142688/pexels-photo-5142688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5142688/pexels-photo-5142688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up of a smiling Australian Kelpie dog sitting in a vibrant green garden."
+imageAlt: "Close-up of a smiling Australian Kelpie dog sitting in a vibrant green garden."
+imageSource: "pexels"
+imageCredit: "Photo by Ana Morais on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-photo-of-a-dog-5142688/"
+imageSearchQuery: "Australian Kelpie dog eating healthy food"
 ---
 
 Feeding a Australian Kelpie well isn't as simple as grabbing the bag with the highest rating. Australian Kelpies are medium dogs with active energy, a Lifespan of 10–13 years, and nutritional vulnerabilities that change across their life stages.
@@ -47,9 +55,23 @@ We spent time cross-referencing 30+ dog food formulas against the Australian Kel
 ---
 
 
-## How this page was refreshed
 
-This guide now separates editorial guidance from shopping modules. The article explains fit, trade-offs, and breed context; the page template adds current AWIN and Amazon.com components from active data feeds where appropriate.
+
+## What matters most for Australian Kelpie nutrition
+
+Australian Kelpie owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match calories and portions to a medium dog with active energy rather than choosing by marketing claims alone.
+- Compare life-stage labels, protein source, digestibility notes, and whether the formula suits your dog’s current body condition.
+- For allergies, pancreatitis, kidney disease, prescription diets, or unexplained symptoms, involve your veterinarian before changing food.
+
+## What matters most for Australian Kelpie nutrition
+
+Australian Kelpie owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match calories and portions to a medium dog with active energy rather than choosing by marketing claims alone.
+- Compare life-stage labels, protein source, digestibility notes, and whether the formula suits your dog’s current body condition.
+- For allergies, pancreatitis, kidney disease, prescription diets, or unexplained symptoms, involve your veterinarian before changing food.
 
 ## Shortlist for Australian Kelpie owners
 

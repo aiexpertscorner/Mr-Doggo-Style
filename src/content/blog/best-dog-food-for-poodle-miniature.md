@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Poodle (Miniature)s 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Poodle (Miniature)'s specific regular exercise energy level, and occasionally shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["poodle-miniature", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "poodle-miniature"
+heroImage: "https://images.pexels.com/photos/7296946/pexels-photo-7296946.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7296946/pexels-photo-7296946.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "White poodle dog happily playing on the grass, showcasing its fluffy fur in the sunlight."
+imageAlt: "White poodle dog happily playing on the grass, showcasing its fluffy fur in the sunlight."
+imageSource: "pexels"
+imageCredit: "Photo by Alexander Nadrilyanski on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-photo-of-a-white-poodle-on-the-grass-7296946/"
+imageSearchQuery: "Poodle (Miniature) dog eating healthy food"
 ---
+
 
 Poodle (Miniature)s have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 10–15 lbs, regular exercise energy, occasionally shedding, and active, proud, very smart temperament.
 

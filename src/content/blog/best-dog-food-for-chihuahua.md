@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Chihuahuas 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Chihuahua's specific regular exercise energy level, and occasional shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["chihuahua", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "chihuahua"
+heroImage: "https://images.pexels.com/photos/8434725/pexels-photo-8434725.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/8434725/pexels-photo-8434725.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A small brown dog enjoys a meal from its bowl indoors, showcasing cozy living."
+imageAlt: "A small brown dog enjoys a meal from its bowl indoors, showcasing cozy living."
+imageSource: "pexels"
+imageCredit: "Photo by MART  PRODUCTION on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-eating-on-a-bowl-8434725/"
+imageSearchQuery: "Chihuahua dog eating healthy food"
 ---
+
 
 Chihuahuas have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 6–6 lbs, regular exercise energy, occasional shedding, and charming, graceful, sassy temperament.
 

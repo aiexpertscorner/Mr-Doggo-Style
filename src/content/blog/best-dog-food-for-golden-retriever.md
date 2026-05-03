@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Golden Retrievers 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Golden Retriever's specific large size, needs lots of activity energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["golden-retriever", "dog-food", "large-breed", "needs-lots-of-activity"]
 author: "The PupWiki Team"
 breedSlug: "golden-retriever"
+heroImage: "https://images.pexels.com/photos/30810888/pexels-photo-30810888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/30810888/pexels-photo-30810888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up portrait of a Golden Retriever dog with soft focus outdoor backdrop."
+imageAlt: "Close-up portrait of a Golden Retriever dog with soft focus outdoor backdrop."
+imageSource: "pexels"
+imageCredit: "Photo by Masood Aslami on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/golden-retriever-portrait-in-natural-light-30810888/"
+imageSearchQuery: "Golden Retriever dog eating healthy food"
 ---
+
 
 Golden Retrievers have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 55–75 lbs, needs lots of activity energy, seasonal shedding, and friendly, intelligent, devoted temperament.
 

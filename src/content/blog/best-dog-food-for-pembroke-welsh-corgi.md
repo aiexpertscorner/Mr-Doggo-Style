@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Pembroke Welsh Corgis 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Pembroke Welsh Corgi's specific energetic energy level, and regularly shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["pembroke-welsh-corgi", "dog-food", "medium-breed", "energetic"]
 author: "The PupWiki Team"
 breedSlug: "pembroke-welsh-corgi"
+heroImage: "https://images.pexels.com/photos/4641850/pexels-photo-4641850.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/4641850/pexels-photo-4641850.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Corgi dog lying next to a glass of milk and flowers. Perfect for pet photography enthusiasts."
+imageAlt: "Corgi dog lying next to a glass of milk and flowers. Perfect for pet photography enthusiasts."
+imageSource: "pexels"
+imageCredit: "Photo by Nataliya Vaitkevich on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/brown-and-white-dog-in-close-up-shot-4641850/"
+imageSearchQuery: "Pembroke Welsh Corgi dog eating healthy food"
 ---
+
 
 Pembroke Welsh Corgis have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 28–30 lbs, energetic energy, regularly shedding, and affectionate, smart, alert temperament.
 

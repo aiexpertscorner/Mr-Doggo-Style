@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Boston Terriers 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Boston Terrier's specific regular exercise energy level, and infrequent shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["boston-terrier", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "boston-terrier"
+heroImage: "https://images.pexels.com/photos/27972919/pexels-photo-27972919.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/27972919/pexels-photo-27972919.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable Boston Terrier puppy playfully chewing a stick on grass."
+imageAlt: "Adorable Boston Terrier puppy playfully chewing a stick on grass."
+imageSource: "pexels"
+imageCredit: "Photo by Sean Brannon on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/boston-terrier-puppy-27972919/"
+imageSearchQuery: "Boston Terrier dog eating healthy food"
 ---
+
 
 Boston Terriers have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 12–25 lbs, regular exercise energy, infrequent shedding, and friendly, bright, amusing temperament.
 

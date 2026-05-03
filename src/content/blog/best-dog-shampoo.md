@@ -1,11 +1,21 @@
 ---
+
 title: "Best Dog Shampoo for Sensitive Skin 2026: Vet-Friendly Picks"
 description: "Itchy, flaky, or irritated skin? We evaluated 12 dog shampoos for sensitive skin — here are the ones that are actually gentle and effective."
 pubDate: 2026-02-01
 category: "Grooming"
 tags: ["shampoo", "grooming", "sensitive-skin", "natural"]
 author: "The PupWiki Team"
+heroImage: "https://images.pexels.com/photos/19145893/pexels-photo-19145893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/19145893/pexels-photo-19145893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A professional groomer styles a Shih Tzu while another dog awaits, showcasing expert pet grooming skills."
+imageAlt: "A professional groomer styles a Shih Tzu while another dog awaits, showcasing expert pet grooming skills."
+imageSource: "pexels"
+imageCredit: "Photo by Goochie Poochie Grooming on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-groomer-at-work-19145893/"
+imageSearchQuery: "dog grooming"
 ---
+
 
 Dogs with sensitive skin are a grooming challenge. The wrong shampoo strips natural oils, triggers flare-ups, and leaves your dog scratching for days after a bath. The right shampoo cleans effectively, maintains the skin barrier, and doesn't contain the fragrances or surfactants that irritate sensitive skin.
 

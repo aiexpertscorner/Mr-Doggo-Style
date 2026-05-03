@@ -1,11 +1,21 @@
 ---
+
 title: "Best Elevated Dog Beds for Summer 2026: Keep Your Dog Cool"
 description: "Elevated dog beds allow airflow underneath, keeping dogs dramatically cooler in summer. These 4 options balance durability, comfort, and price."
 pubDate: 2026-02-20
 category: "Beds"
 tags: ["beds", "elevated", "cooling", "summer", "outdoor"]
 author: "The PupWiki Team"
+heroImage: "https://images.pexels.com/photos/5938113/pexels-photo-5938113.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5938113/pexels-photo-5938113.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute French Bulldog sitting on a blue elevated bed indoors, displaying a joyful expression."
+imageAlt: "Cute French Bulldog sitting on a blue elevated bed indoors, displaying a joyful expression."
+imageSource: "pexels"
+imageCredit: "Photo by Aysun Kahraman Öktem on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/white-and-black-short-coated-dog-sitting-on-blue-elevated-bed-5938113/"
+imageSearchQuery: "dog bed"
 ---
+
 
 In summer months, a dog lying on a foam bed is lying on an insulating surface that traps body heat. Elevated beds solve this by lifting the dog off the floor entirely, allowing air to circulate underneath and dramatically reducing heat retention.
 

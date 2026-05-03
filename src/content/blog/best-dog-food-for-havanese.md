@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Havaneses 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Havanese's specific regular exercise energy level, and occasional shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["havanese", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "havanese"
+heroImage: "https://images.pexels.com/photos/31365340/pexels-photo-31365340.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/31365340/pexels-photo-31365340.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute fluffy dog sitting on a tranquil sandy beach, surrounded by coastal grass."
+imageAlt: "Cute fluffy dog sitting on a tranquil sandy beach, surrounded by coastal grass."
+imageSource: "pexels"
+imageCredit: "Photo by JacLou- DL on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-fluffy-dog-relaxing-on-sandy-beach-31365340/"
+imageSearchQuery: "Havanese dog eating healthy food"
 ---
+
 
 Havaneses have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 7–13 lbs, regular exercise energy, occasional shedding, and intelligent, outgoing, funny temperament.
 

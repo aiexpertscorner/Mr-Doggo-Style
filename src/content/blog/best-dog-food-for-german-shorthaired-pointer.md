@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for German Shorthaired Pointers 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the German Shorthaired Pointer's specific large size, needs lots of activity energy level, and regularly shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["german-shorthaired-pointer", "dog-food", "large-breed", "needs-lots-of-activity"]
 author: "The PupWiki Team"
 breedSlug: "german-shorthaired-pointer"
+heroImage: "https://images.pexels.com/photos/11269657/pexels-photo-11269657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/11269657/pexels-photo-11269657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A German Shorthaired Pointer dog rests on a sandy surface outdoors, showing its distinctive coat and relaxed posture."
+imageAlt: "A German Shorthaired Pointer dog rests on a sandy surface outdoors, showing its distinctive coat and relaxed posture."
+imageSource: "pexels"
+imageCredit: "Photo by gabesdotphotos photographer on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/photo-of-dog-lying-on-brown-sand-11269657/"
+imageSearchQuery: "German Shorthaired Pointer dog eating healthy food"
 ---
+
 
 German Shorthaired Pointers have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 45–70 lbs, needs lots of activity energy, regularly shedding, and friendly, smart, willing to please temperament.
 

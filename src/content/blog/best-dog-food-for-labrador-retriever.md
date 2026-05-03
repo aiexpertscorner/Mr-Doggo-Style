@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Labrador Retrievers 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Labrador Retriever's specific large size, needs lots of activity energy level, and regularly shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["labrador-retriever", "dog-food", "large-breed", "needs-lots-of-activity"]
 author: "The PupWiki Team"
 breedSlug: "labrador-retriever"
+heroImage: "https://images.pexels.com/photos/16465596/pexels-photo-16465596.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/16465596/pexels-photo-16465596.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A labrador retriever eating corn while being gently patted by a human hand."
+imageAlt: "A labrador retriever eating corn while being gently patted by a human hand."
+imageSource: "pexels"
+imageCredit: "Photo by Mia X on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/hand-patting-dog-16465596/"
+imageSearchQuery: "Labrador Retriever dog eating healthy food"
 ---
+
 
 Labrador Retrievers have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 55–80 lbs, needs lots of activity energy, regularly shedding, and friendly, active, outgoing temperament.
 

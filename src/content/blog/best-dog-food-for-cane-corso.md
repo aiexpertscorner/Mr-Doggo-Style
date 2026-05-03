@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Cane Corsos 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Cane Corso's specific energetic energy level, and occasional shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["cane-corso", "dog-food", "medium-breed", "energetic"]
 author: "The PupWiki Team"
 breedSlug: "cane-corso"
+heroImage: "https://images.pexels.com/photos/36260130/pexels-photo-36260130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/36260130/pexels-photo-36260130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A black dog stands in a serene snowy landscape surrounded by wintry trees, capturing the essence of winter."
+imageAlt: "A black dog stands in a serene snowy landscape surrounded by wintry trees, capturing the essence of winter."
+imageSource: "pexels"
+imageCredit: "Photo by Сергей ЮССтудия on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/black-dog-standing-in-snowy-winter-landscape-36260130/"
+imageSearchQuery: "Cane Corso dog eating healthy food"
 ---
+
 
 Cane Corsos have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — energetic energy, occasional shedding, and affectionate, intelligent, majestic temperament.
 

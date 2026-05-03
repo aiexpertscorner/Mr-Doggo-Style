@@ -1,11 +1,21 @@
 ---
+
 title: "Best Dog Grooming Tools 2026: Build Your Complete Home Kit"
 description: "Professional grooming visits cost $50-150 each. The right home kit pays for itself in two sessions. Here are the 8 tools every dog owner actually needs."
 pubDate: 2026-02-28
 category: "Grooming"
 tags: ["grooming", "brush", "tools", "coat-care", "home-grooming"]
 author: "The PupWiki Team"
+heroImage: "https://images.pexels.com/photos/19145893/pexels-photo-19145893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/19145893/pexels-photo-19145893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A professional groomer styles a Shih Tzu while another dog awaits, showcasing expert pet grooming skills."
+imageAlt: "A professional groomer styles a Shih Tzu while another dog awaits, showcasing expert pet grooming skills."
+imageSource: "pexels"
+imageCredit: "Photo by Goochie Poochie Grooming on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-groomer-at-work-19145893/"
+imageSearchQuery: "dog grooming"
 ---
+
 
 Professional grooming visits average $75-120 for a medium-large dog, $50-80 for smaller breeds. If you're going every 6-8 weeks, that's $750-1,500 per year. A well-chosen home grooming kit costs $80-120 total and pays for itself in two sessions.
 

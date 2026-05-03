@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Portuguese Water Dogs 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Portuguese Water Dog's specific energetic energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["portuguese-water-dog", "dog-food", "medium-breed", "energetic"]
 author: "The PupWiki Team"
 breedSlug: "portuguese-water-dog"
+heroImage: "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A close-up of a brown dog eating kibble from a white bowl indoors."
+imageAlt: "A close-up of a brown dog eating kibble from a white bowl indoors."
+imageSource: "pexels"
+imageCredit: "Photo by cottonbro studio on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/"
+imageSearchQuery: "Portuguese Water Dog dog eating healthy food"
 ---
+
 
 Portuguese Water Dogs have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 35–60 lbs, energetic energy, seasonal shedding, and affectionate, adventurous, athletic temperament.
 

@@ -1,4 +1,5 @@
 ---
+
 title: "ChefPaw Dog Food Maker: Honest Review After Real-World Use (2026)"
 description: "We put the ChefPaw through its paces as an everyday dog food appliance. Here's the straight answer on whether it earns its $640 price tag — and who it genuinely suits."
 pubDate: 2026-04-24
@@ -8,7 +9,16 @@ postType: "product-roundup"
 tags: ["dog-food", "fresh-food", "homemade", "chefpaw", "2026"]
 readTime: 9
 schemaType: "Article"
+heroImage: "https://images.pexels.com/photos/34952073/pexels-photo-34952073.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/34952073/pexels-photo-34952073.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A detailed close-up of brown dry dog food kibble in various shapes and sizes."
+imageAlt: "A detailed close-up of brown dry dog food kibble in various shapes and sizes."
+imageSource: "pexels"
+imageCredit: "Photo by Rafael Rodrigues on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-dry-dog-food-kibble-34952073/"
+imageSearchQuery: "dog food"
 ---
+
 
 My golden retriever started refusing her kibble at around age four. Not dramatically — she'd just eat half and walk away. The vet said she was healthy, probably just bored with the same formula. I tried rotating brands, adding toppers, warming the food. Nothing stuck for more than a week.
 

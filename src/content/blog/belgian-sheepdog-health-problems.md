@@ -54,9 +54,23 @@ Belgian Sheepdogs are generally robust, athletic dogs, but like every breed, the
 ---
 
 
-## How this page was refreshed
 
-This guide now separates editorial guidance from shopping modules. The article explains fit, trade-offs, and breed context; the page template adds current AWIN and Amazon.com components from active data feeds where appropriate.
+
+## Belgian Sheepdog vet-care checklist
+
+Belgian Sheepdog owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Use breed-risk information as a planning tool, not as a diagnosis.
+- Track changes in appetite, movement, breathing, skin, stool, weight, and behavior so your vet has useful context.
+- Ask about screening, preventive care, insurance timing, and when symptoms should be treated as urgent.
+
+## Belgian Sheepdog vet-care checklist
+
+Belgian Sheepdog owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Use breed-risk information as a planning tool, not as a diagnosis.
+- Track changes in appetite, movement, breathing, skin, stool, weight, and behavior so your vet has useful context.
+- Ask about screening, preventive care, insurance timing, and when symptoms should be treated as urgent.
 
 ## Belgian Sheepdog Health Products at a Glance
 

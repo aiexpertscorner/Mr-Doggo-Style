@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Poodle (Standard)s 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Poodle (Standard)'s specific large size, regular exercise energy level, and infrequent shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["poodle-standard", "dog-food", "large-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "poodle-standard"
+heroImage: "https://images.pexels.com/photos/4438308/pexels-photo-4438308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/4438308/pexels-photo-4438308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Elegant poodle with a dog collar, captured at sunset creating a warm glow."
+imageAlt: "Elegant poodle with a dog collar, captured at sunset creating a warm glow."
+imageSource: "pexels"
+imageCredit: "Photo by Sharon  Snider on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-poodle-wearing-a-dog-collar-4438308/"
+imageSearchQuery: "Poodle (Standard) dog eating healthy food"
 ---
+
 
 Poodle (Standard)s have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 40–70 lbs, regular exercise energy, infrequent shedding, and active, proud, very smart temperament.
 

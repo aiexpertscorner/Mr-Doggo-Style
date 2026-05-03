@@ -1,11 +1,21 @@
 ---
+
 title: "Best Flea & Tick Prevention for Dogs 2026: Vet-Approved Options"
 description: "Fleas and ticks transmit serious diseases. We break down the most effective prevention options — prescription vs OTC, topical vs oral vs collar — so you can choose wisely."
 pubDate: 2026-03-07
 category: "Supplements"
 tags: ["flea", "tick", "health", "prevention", "vet-recommended"]
 author: "The PupWiki Team"
+heroImage: "https://images.pexels.com/photos/18764141/pexels-photo-18764141.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/18764141/pexels-photo-18764141.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Detailed shot of brown dog kibble, perfect for pet owners and animal nutrition visuals."
+imageAlt: "Detailed shot of brown dog kibble, perfect for pet owners and animal nutrition visuals."
+imageSource: "pexels"
+imageCredit: "Photo by Rafael Rodrigues on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-dog-food-18764141/"
+imageSearchQuery: "dog supplements"
 ---
+
 
 Flea and tick prevention is one area of dog care where cutting corners has real health consequences — for your dog and for your family. Fleas cause flea allergy dermatitis (the most common canine skin condition), transmit tapeworms, and cause anemia in severe infestations. Ticks transmit Lyme disease, Rocky Mountain spotted fever, anaplasmosis, and ehrlichiosis — several of which can be fatal.
 

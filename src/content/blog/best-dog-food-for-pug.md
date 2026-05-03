@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Pugs 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Pug's specific regular exercise energy level, and regularly shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["pug", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "pug"
+heroImage: "https://images.pexels.com/photos/9700107/pexels-photo-9700107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/9700107/pexels-photo-9700107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute pug dog lying on lush green grass, enjoying the sunny outdoors."
+imageAlt: "Cute pug dog lying on lush green grass, enjoying the sunny outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by Steshka Croes on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-sitting-on-the-grass-9700107/"
+imageSearchQuery: "Pug dog eating healthy food"
 ---
+
 
 Pugs have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 14–18 lbs, regular exercise energy, regularly shedding, and charming, mischievous, loving temperament.
 

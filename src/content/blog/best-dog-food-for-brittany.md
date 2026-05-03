@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Brittanys 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Brittany's specific needs lots of activity energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["brittany", "dog-food", "medium-breed", "needs-lots-of-activity"]
 author: "The PupWiki Team"
 breedSlug: "brittany"
+heroImage: "https://images.pexels.com/photos/6578830/pexels-photo-6578830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/6578830/pexels-photo-6578830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Concentrated young African American couple with curly hairs in casual outfits eating takeaway salad and pizza while watching TV sitting on sofa near cute purebred dog"
+imageAlt: "Concentrated young African American couple with curly hairs in casual outfits eating takeaway salad and pizza while watching TV sitting on sofa near cute purebred dog"
+imageSource: "pexels"
+imageCredit: "Photo by Andres  Ayrton on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/focused-young-black-couple-having-lunch-and-watching-tv-on-couch-near-curious-dog-6578830/"
+imageSearchQuery: "Brittany dog eating healthy food"
 ---
+
 
 Brittanys have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 30–40 lbs, needs lots of activity energy, seasonal shedding, and bright, fun-loving, upbeat temperament.
 

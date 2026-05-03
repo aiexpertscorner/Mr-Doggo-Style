@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "australian-cattle-d
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/australian-cattle-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/35511909/pexels-photo-35511909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35511909/pexels-photo-35511909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Happy Australian Cattle Dog sitting on grass, looking playfully at the camera. Perfect for pet lovers."
+imageAlt: "Happy Australian Cattle Dog sitting on grass, looking playfully at the camera. Perfect for pet lovers."
+imageSource: "pexels"
+imageCredit: "Photo by Helena Lopes on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/australian-cattle-dog-smiling-in-grass-35511909/"
+imageSearchQuery: "Australian Cattle Dog dog eating healthy food"
 ---
 
 Feeding a Australian Cattle Dog well isn't as simple as grabbing the bag with the highest rating. Australian Cattle Dogs are medium dogs with active energy, a Average lifespan of 11.7 years, and nutritional vulnerabilities that change across their life stages.
@@ -47,9 +55,23 @@ We spent time cross-referencing 30+ dog food formulas against the Australian Cat
 ---
 
 
-## How this page was refreshed
 
-This guide now separates editorial guidance from shopping modules. The article explains fit, trade-offs, and breed context; the page template adds current AWIN and Amazon.com components from active data feeds where appropriate.
+
+## What matters most for Australian Cattle Dog nutrition
+
+Australian Cattle Dog owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match calories and portions to a medium dog with active energy rather than choosing by marketing claims alone.
+- Compare life-stage labels, protein source, digestibility notes, and whether the formula suits your dog’s current body condition.
+- For allergies, pancreatitis, kidney disease, prescription diets, or unexplained symptoms, involve your veterinarian before changing food.
+
+## What matters most for Australian Cattle Dog nutrition
+
+Australian Cattle Dog owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match calories and portions to a medium dog with active energy rather than choosing by marketing claims alone.
+- Compare life-stage labels, protein source, digestibility notes, and whether the formula suits your dog’s current body condition.
+- For allergies, pancreatitis, kidney disease, prescription diets, or unexplained symptoms, involve your veterinarian before changing food.
 
 ## Shortlist for Australian Cattle Dog owners
 

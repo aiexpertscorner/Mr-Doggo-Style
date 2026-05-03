@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Basset Hounds 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Basset Hound's specific couch potato energy level, and occasional shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["basset-hound", "dog-food", "medium-breed", "couch-potato"]
 author: "The PupWiki Team"
 breedSlug: "basset-hound"
+heroImage: "https://images.pexels.com/photos/33979390/pexels-photo-33979390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/33979390/pexels-photo-33979390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming basset hound dog with long ears lounging in a sunny garden in Serbia."
+imageAlt: "Charming basset hound dog with long ears lounging in a sunny garden in Serbia."
+imageSource: "pexels"
+imageCredit: "Photo by Andrea Sretenović on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-basset-hound-dog-in-summer-garden-33979390/"
+imageSearchQuery: "Basset Hound dog eating healthy food"
 ---
+
 
 Basset Hounds have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 40–65 lbs, couch potato energy, occasional shedding, and charming, patient, low-key temperament.
 

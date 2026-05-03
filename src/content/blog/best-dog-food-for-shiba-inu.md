@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Shiba Inus 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Shiba Inu's specific regular exercise energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["shiba-inu", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "shiba-inu"
+heroImage: "https://images.pexels.com/photos/31512418/pexels-photo-31512418.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/31512418/pexels-photo-31512418.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Shiba Inu dog standing beside a stroller outdoors, creating a cozy park scene."
+imageAlt: "Shiba Inu dog standing beside a stroller outdoors, creating a cozy park scene."
+imageSource: "pexels"
+imageCredit: "Photo by meinen ryu on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/charming-shiba-inu-outdoors-in-park-setting-31512418/"
+imageSearchQuery: "Shiba Inu dog eating healthy food"
 ---
+
 
 Shiba Inus have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 17–23 lbs, regular exercise energy, seasonal shedding, and alert, active, attentive temperament.
 

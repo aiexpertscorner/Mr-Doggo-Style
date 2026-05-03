@@ -1,11 +1,21 @@
 ---
+
 title: "Best Fetch Toys for High-Energy Dogs 2026: Built for Real Play"
 description: "After testing 12 fetch toys across Labradors, Border Collies, and Vizslas, these 5 earned top marks for durability, flight, and dog engagement."
 pubDate: 2026-02-24
 category: "Toys"
 tags: ["toys", "fetch", "outdoor", "active", "high-energy"]
 author: "The PupWiki Team"
+heroImage: "https://images.pexels.com/photos/20016125/pexels-photo-20016125.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/20016125/pexels-photo-20016125.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute dog lying on grass cuddling a black and white stuffed animal companion outdoors."
+imageAlt: "Cute dog lying on grass cuddling a black and white stuffed animal companion outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by Shar Kaminski on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-with-soft-toy-on-grass-20016125/"
+imageSearchQuery: "dog toys"
 ---
+
 
 Fetch is the single most efficient exercise activity for high-energy dogs. Ten minutes of fetch burns more energy than 30 minutes of walking — the sprinting, turning, and biting engage fast-twitch muscle groups that walking doesn't. For owners with Labradors, Border Collies, Vizslas, Weimaraners, or other high-drive breeds, a great fetch toy is essential equipment.
 

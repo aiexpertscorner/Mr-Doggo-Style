@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Yorkshire Terriers 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Yorkshire Terrier's specific regular exercise energy level, and infrequent shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["yorkshire-terrier", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "yorkshire-terrier"
+heroImage: "https://images.pexels.com/photos/34912310/pexels-photo-34912310.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/34912310/pexels-photo-34912310.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable Yorkshire Terrier dog with fluffy coat relaxing outdoors on a sunny day."
+imageAlt: "Adorable Yorkshire Terrier dog with fluffy coat relaxing outdoors on a sunny day."
+imageSource: "pexels"
+imageCredit: "Photo by Erwin Bosman on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/playful-yorkshire-terrier-relaxing-outdoors-34912310/"
+imageSearchQuery: "Yorkshire Terrier dog eating healthy food"
 ---
+
 
 Yorkshire Terriers have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 7–7 lbs, regular exercise energy, infrequent shedding, and affectionate, sprightly, tomboyish temperament.
 

@@ -42,7 +42,7 @@ This page is generated from current active AWIN programme data, product rows, to
 
 ## Product and service signals
 
-- **Crown and Paw partner offer** from Crown and Paw. Visit Crown and Paw for current gifts & flowers offers and availability. [View partner listing](https://tidd.ly/496jo7K)
+- **Crown and Paw partner offer** from Crown and Paw. Visit Crown and Paw for current Dog Gifts offers and availability. [View partner listing](https://tidd.ly/496jo7K)
 - **MyPetDMV - The original Pet Drivers License partner offer** from MyPetDMV - The original Pet Drivers License. Visit MyPetDMV - The original Pet Drivers License for current pets & pet care offers and availability. [View partner listing](https://www.awin1.com/awclick.php?mid=118951&id=2861861)
 - **Raw Wild Elk Freeze-Dried Raw Dog Food** from Raw Wild LLC — listed at $54.99 when imported. Single-protein elk formula for dogs with food sensitivities. Sourced from wild-harvested US elk. Naturally rich in iron and amino acids. [View partner listing](https://tidd.ly/4e36ta9)
 

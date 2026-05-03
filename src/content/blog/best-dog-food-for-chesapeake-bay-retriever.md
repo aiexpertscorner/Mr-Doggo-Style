@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Chesapeake Bay Retrievers 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Chesapeake Bay Retriever's specific large size, energetic energy level, and regularly shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["chesapeake-bay-retriever", "dog-food", "large-breed", "energetic"]
 author: "The PupWiki Team"
 breedSlug: "chesapeake-bay-retriever"
+heroImage: "https://images.pexels.com/photos/7421520/pexels-photo-7421520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7421520/pexels-photo-7421520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A dog sniffs pistachios on a white plate in an overhead, natural setting."
+imageAlt: "A dog sniffs pistachios on a white plate in an overhead, natural setting."
+imageSource: "pexels"
+imageCredit: "Photo by Vie Studio on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-smelling-the-pistachios-7421520/"
+imageSearchQuery: "Chesapeake Bay Retriever dog eating healthy food"
 ---
+
 
 Chesapeake Bay Retrievers have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 55–80 lbs, energetic energy, regularly shedding, and affectionate, bright, sensitive temperament.
 

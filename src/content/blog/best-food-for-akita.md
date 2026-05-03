@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "akita", "Akita", "l
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/akita", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/5745217/pexels-photo-5745217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5745217/pexels-photo-5745217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "From above of playful cute Akita dog lying on wooden floor and holding hand of unrecognizable bearded ethnic male owner eating yummy croissant"
+imageAlt: "From above of playful cute Akita dog lying on wooden floor and holding hand of unrecognizable bearded ethnic male owner eating yummy croissant"
+imageSource: "pexels"
+imageCredit: "Photo by Zen Chung on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/anonymous-black-man-and-purebred-dog-playing-together-and-eating-croissant-5745217/"
+imageSearchQuery: "Akita dog eating healthy food"
 ---
 
 Feeding a Akita well isn't as simple as grabbing the bag with the highest rating. Akitas are large dogs with active energy, a Average lifespan of 10.2 years, and nutritional vulnerabilities that change across their life stages.
@@ -47,9 +55,23 @@ We spent time cross-referencing 30+ dog food formulas against the Akita's breed 
 ---
 
 
-## How this page was refreshed
 
-This guide now separates editorial guidance from shopping modules. The article explains fit, trade-offs, and breed context; the page template adds current AWIN and Amazon.com components from active data feeds where appropriate.
+
+## What matters most for Akita nutrition
+
+Akita owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match calories and portions to a large dog with active energy rather than choosing by marketing claims alone.
+- Compare life-stage labels, protein source, digestibility notes, and whether the formula suits your dog’s current body condition.
+- For allergies, pancreatitis, kidney disease, prescription diets, or unexplained symptoms, involve your veterinarian before changing food.
+
+## What matters most for Akita nutrition
+
+Akita owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match calories and portions to a large dog with active energy rather than choosing by marketing claims alone.
+- Compare life-stage labels, protein source, digestibility notes, and whether the formula suits your dog’s current body condition.
+- For allergies, pancreatitis, kidney disease, prescription diets, or unexplained symptoms, involve your veterinarian before changing food.
 
 ## Shortlist for Akita owners
 

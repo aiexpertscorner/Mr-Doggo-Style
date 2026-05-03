@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Doberman Pinschers 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Doberman Pinscher's specific large size, needs lots of activity energy level, and regularly shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["doberman-pinscher", "dog-food", "large-breed", "needs-lots-of-activity"]
 author: "The PupWiki Team"
 breedSlug: "doberman-pinscher"
+heroImage: "https://images.pexels.com/photos/7516133/pexels-photo-7516133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7516133/pexels-photo-7516133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Side profile of a Doberman dog on a leash in a park setting, showcasing its strong features."
+imageAlt: "Side profile of a Doberman dog on a leash in a park setting, showcasing its strong features."
+imageSource: "pexels"
+imageCredit: "Photo by RDNE Stock project on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/black-dog-in-close-up-photography-7516133/"
+imageSearchQuery: "Doberman Pinscher dog eating healthy food"
 ---
+
 
 Doberman Pinschers have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 60–100 lbs, needs lots of activity energy, regularly shedding, and loyal, fearless, alert temperament.
 

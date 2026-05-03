@@ -43,9 +43,23 @@ The most common German Shorthaired Pointer grooming mistake: using the wrong too
 ---
 
 
-## How this page was refreshed
 
-This guide now separates editorial guidance from shopping modules. The article explains fit, trade-offs, and breed context; the page template adds current AWIN and Amazon.com components from active data feeds where appropriate.
+
+## German Shorthaired Pointer coat-care checklist
+
+German Shorthaired Pointer owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match brushes and combs to the short coat instead of buying a generic grooming kit.
+- Build a short routine around brushing, nail checks, ear checks, and bath timing.
+- Stop and ask a groomer or veterinarian if you see irritated skin, sores, persistent itching, or sudden coat changes.
+
+## German Shorthaired Pointer coat-care checklist
+
+German Shorthaired Pointer owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match brushes and combs to the short coat instead of buying a generic grooming kit.
+- Build a short routine around brushing, nail checks, ear checks, and bath timing.
+- Stop and ask a groomer or veterinarian if you see irritated skin, sores, persistent itching, or sudden coat changes.
 
 ## German Shorthaired Pointer Grooming at a Glance
 

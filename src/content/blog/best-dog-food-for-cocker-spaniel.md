@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Cocker Spaniels 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Cocker Spaniel's specific regular exercise energy level, and occasional shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["cocker-spaniel", "dog-food", "medium-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "cocker-spaniel"
+heroImage: "https://images.pexels.com/photos/35261898/pexels-photo-35261898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35261898/pexels-photo-35261898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable Cocker Spaniel dog peacefully resting on a white background."
+imageAlt: "Adorable Cocker Spaniel dog peacefully resting on a white background."
+imageSource: "pexels"
+imageCredit: "Photo by Christopher Welsch Leveroni on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/sleeping-cocker-spaniel-dog-portrait-35261898/"
+imageSearchQuery: "Cocker Spaniel dog eating healthy food"
 ---
+
 
 Cocker Spaniels have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 20–30 lbs, regular exercise energy, occasional shedding, and gentle, smart, happy temperament.
 

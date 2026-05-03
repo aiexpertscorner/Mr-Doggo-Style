@@ -43,9 +43,23 @@ The most common Papillon grooming mistake: using the wrong tool for the coat typ
 ---
 
 
-## How this page was refreshed
 
-This guide now separates editorial guidance from shopping modules. The article explains fit, trade-offs, and breed context; the page template adds current AWIN and Amazon.com components from active data feeds where appropriate.
+
+## What matters most in Papillon grooming
+
+Papillon owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match brushes and combs to the silky coat instead of buying a generic grooming kit.
+- Build a short routine around brushing, nail checks, ear checks, and bath timing.
+- Stop and ask a groomer or veterinarian if you see irritated skin, sores, persistent itching, or sudden coat changes.
+
+## What matters most in Papillon grooming
+
+Papillon owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.
+
+- Match brushes and combs to the silky coat instead of buying a generic grooming kit.
+- Build a short routine around brushing, nail checks, ear checks, and bath timing.
+- Stop and ask a groomer or veterinarian if you see irritated skin, sores, persistent itching, or sudden coat changes.
 
 ## Papillon Grooming at a Glance
 

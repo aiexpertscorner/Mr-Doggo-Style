@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Rhodesian Ridgebacks 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Rhodesian Ridgeback's specific large size, regular exercise energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["rhodesian-ridgeback", "dog-food", "large-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "rhodesian-ridgeback"
+heroImage: "https://images.pexels.com/photos/5389345/pexels-photo-5389345.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5389345/pexels-photo-5389345.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up of two Rhodesian Ridgeback dogs outdoors, showcasing their attentive expression."
+imageAlt: "Close-up of two Rhodesian Ridgeback dogs outdoors, showcasing their attentive expression."
+imageSource: "pexels"
+imageCredit: "Photo by Ilo Frey on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/brown-dogs-on-green-grass-field-5389345/"
+imageSearchQuery: "Rhodesian Ridgeback dog eating healthy food"
 ---
+
 
 Rhodesian Ridgebacks have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 70–85 lbs, regular exercise energy, seasonal shedding, and affectionate, dignified, even-tempered temperament.
 

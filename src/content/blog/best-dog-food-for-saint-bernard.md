@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Saint Bernards 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Saint Bernard's specific large size, regular exercise energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["saint-bernard", "dog-food", "large-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "saint-bernard"
+heroImage: "https://images.pexels.com/photos/6072009/pexels-photo-6072009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/6072009/pexels-photo-6072009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable Saint Bernard dog lying on frost-covered grass in a peaceful outdoor setting."
+imageAlt: "Adorable Saint Bernard dog lying on frost-covered grass in a peaceful outdoor setting."
+imageSource: "pexels"
+imageCredit: "Photo by Katerina on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/saint-bernard-lying-on-a-grassy-field-6072009/"
+imageSearchQuery: "Saint Bernard dog eating healthy food"
 ---
+
 
 Saint Bernards have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 120–180 lbs, regular exercise energy, seasonal shedding, and playful, charming, inquisitive temperament.
 

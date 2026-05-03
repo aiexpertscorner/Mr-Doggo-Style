@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Belgian Malinoiss 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Belgian Malinois's specific large size, energetic energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["belgian-malinois", "dog-food", "large-breed", "energetic"]
 author: "The PupWiki Team"
 breedSlug: "belgian-malinois"
+heroImage: "https://images.pexels.com/photos/13076152/pexels-photo-13076152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/13076152/pexels-photo-13076152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Belgian Malinois dog standing in a scenic, natural outdoor setting with grass and sky."
+imageAlt: "Belgian Malinois dog standing in a scenic, natural outdoor setting with grass and sky."
+imageSource: "pexels"
+imageCredit: "Photo by Laura Paredis on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/malinois-dog-standing-on-brown-field-under-blue-sky-13076152/"
+imageSearchQuery: "Belgian Malinois dog eating healthy food"
 ---
+
 
 Belgian Malinoiss have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 40–80 lbs, energetic energy, seasonal shedding, and confident, smart, hardworking temperament.
 

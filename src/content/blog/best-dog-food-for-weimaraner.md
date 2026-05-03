@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Weimaraners 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Weimaraner's specific large size, needs lots of activity energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["weimaraner", "dog-food", "large-breed", "needs-lots-of-activity"]
 author: "The PupWiki Team"
 breedSlug: "weimaraner"
+heroImage: "https://images.pexels.com/photos/5705627/pexels-photo-5705627.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5705627/pexels-photo-5705627.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up of a Weimaraner dog sniffing a human hand with autumn leaves behind."
+imageAlt: "Close-up of a Weimaraner dog sniffing a human hand with autumn leaves behind."
+imageSource: "pexels"
+imageCredit: "Photo by www.kaboompics.com on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-smelling-a-person-s-hand-5705627/"
+imageSearchQuery: "Weimaraner dog eating healthy food"
 ---
+
 
 Weimaraners have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 55–90 lbs, needs lots of activity energy, seasonal shedding, and friendly, fearless, obedient temperament.
 

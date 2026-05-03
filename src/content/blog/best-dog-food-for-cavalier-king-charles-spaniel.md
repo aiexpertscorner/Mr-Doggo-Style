@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Cavalier King Charles Spaniels 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Cavalier King Charles Spaniel's specific calm energy level, and occasional shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["cavalier-king-charles-spaniel", "dog-food", "small-breed", "calm"]
 author: "The PupWiki Team"
 breedSlug: "cavalier-king-charles-spaniel"
+heroImage: "https://images.pexels.com/photos/23427657/pexels-photo-23427657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/23427657/pexels-photo-23427657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A cute Cavalier King Charles Spaniel sleeping on a blue table during a dog show."
+imageAlt: "A cute Cavalier King Charles Spaniel sleeping on a blue table during a dog show."
+imageSource: "pexels"
+imageCredit: "Photo by Dmitry Ovsyannikov on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/king-charles-spaniel-sleeping-on-a-table-during-a-dog-show-23427657/"
+imageSearchQuery: "Cavalier King Charles Spaniel dog eating healthy food"
 ---
+
 
 Cavalier King Charles Spaniels have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 13–18 lbs, calm energy, occasional shedding, and affectionate, gentle, graceful temperament.
 

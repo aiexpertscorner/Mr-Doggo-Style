@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Australian Shepherds 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Australian Shepherd's specific energetic energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["australian-shepherd", "dog-food", "medium-breed", "energetic"]
 author: "The PupWiki Team"
 breedSlug: "australian-shepherd"
+heroImage: "https://images.pexels.com/photos/8094960/pexels-photo-8094960.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/8094960/pexels-photo-8094960.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A wet Australian Shepherd dog standing in a green river, creating reflections."
+imageAlt: "A wet Australian Shepherd dog standing in a green river, creating reflections."
+imageSource: "pexels"
+imageCredit: "Photo by Chris F on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-in-the-water-8094960/"
+imageSearchQuery: "Australian Shepherd dog eating healthy food"
 ---
+
 
 Australian Shepherds have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 40–65 lbs, energetic energy, seasonal shedding, and smart, work-oriented, exuberant temperament.
 

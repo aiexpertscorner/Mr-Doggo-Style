@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Akitas 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Akita's specific large size, energetic energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["akita", "dog-food", "large-breed", "energetic"]
 author: "The PupWiki Team"
 breedSlug: "akita"
+heroImage: "https://images.pexels.com/photos/5745217/pexels-photo-5745217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5745217/pexels-photo-5745217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "From above of playful cute Akita dog lying on wooden floor and holding hand of unrecognizable bearded ethnic male owner eating yummy croissant"
+imageAlt: "From above of playful cute Akita dog lying on wooden floor and holding hand of unrecognizable bearded ethnic male owner eating yummy croissant"
+imageSource: "pexels"
+imageCredit: "Photo by Zen Chung on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/anonymous-black-man-and-purebred-dog-playing-together-and-eating-croissant-5745217/"
+imageSearchQuery: "Akita dog eating healthy food"
 ---
+
 
 Akitas have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 70–130 lbs, energetic energy, seasonal shedding, and courageous, dignified, profoundly loyal temperament.
 

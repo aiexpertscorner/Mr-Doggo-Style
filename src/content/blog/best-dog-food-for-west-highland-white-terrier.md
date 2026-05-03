@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for West Highland White Terriers 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the West Highland White Terrier's specific regular exercise energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["west-highland-white-terrier", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "west-highland-white-terrier"
+heroImage: "https://images.pexels.com/photos/31163319/pexels-photo-31163319.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/31163319/pexels-photo-31163319.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Westie dog lying on a wooden floor, charming and fluffy."
+imageAlt: "Westie dog lying on a wooden floor, charming and fluffy."
+imageSource: "pexels"
+imageCredit: "Photo by Alan han on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-west-highland-white-terrier-indoors-31163319/"
+imageSearchQuery: "West Highland White Terrier dog eating healthy food"
 ---
+
 
 West Highland White Terriers have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 15–20 lbs, regular exercise energy, seasonal shedding, and loyal, happy, entertaining temperament.
 

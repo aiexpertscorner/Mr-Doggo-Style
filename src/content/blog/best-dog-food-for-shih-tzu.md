@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Shih Tzus 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Shih Tzu's specific regular exercise energy level, and infrequent shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["shih-tzu", "dog-food", "small-breed", "regular-exercise"]
 author: "The PupWiki Team"
 breedSlug: "shih-tzu"
+heroImage: "https://images.pexels.com/photos/27175968/pexels-photo-27175968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/27175968/pexels-photo-27175968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A woman in a casual outfit feeds her small dog indoors, creating a warm, cozy atmosphere."
+imageAlt: "A woman in a casual outfit feeds her small dog indoors, creating a warm, cozy atmosphere."
+imageSource: "pexels"
+imageCredit: "Photo by Helena Lopes on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/woman-feeding-dog-in-home-27175968/"
+imageSearchQuery: "Shih Tzu dog eating healthy food"
 ---
+
 
 Shih Tzus have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 9–16 lbs, regular exercise energy, infrequent shedding, and affectionate, playful, outgoing temperament.
 

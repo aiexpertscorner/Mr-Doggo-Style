@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Vizslas 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Vizsla's specific energetic energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["vizsla", "dog-food", "medium-breed", "energetic"]
 author: "The PupWiki Team"
 breedSlug: "vizsla"
+heroImage: "https://images.pexels.com/photos/36007541/pexels-photo-36007541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/36007541/pexels-photo-36007541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Two dogs standing on a sunny field, showcasing their joyful nature and playful spirit."
+imageAlt: "Two dogs standing on a sunny field, showcasing their joyful nature and playful spirit."
+imageSource: "pexels"
+imageCredit: "Photo by Nina Kvaltinova on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/two-dogs-enjoying-a-sunny-day-outdoors-36007541/"
+imageSearchQuery: "Vizsla dog eating healthy food"
 ---
+
 
 Vizslas have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 44–60 lbs, energetic energy, seasonal shedding, and affectionate, gentle, energetic temperament.
 

@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Miniature American Shepherds 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Miniature American Shepherd's specific energetic energy level, and frequent shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["miniature-american-shepherd", "dog-food", "medium-breed", "energetic"]
 author: "The PupWiki Team"
 breedSlug: "miniature-american-shepherd"
+heroImage: "https://images.pexels.com/photos/32854630/pexels-photo-32854630.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/32854630/pexels-photo-32854630.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Detailed close-up of an attentive Australian Shepherd dog outdoors."
+imageAlt: "Detailed close-up of an attentive Australian Shepherd dog outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by DΛVΞ GΛRCIΛ on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-portrait-of-an-australian-shepherd-dog-32854630/"
+imageSearchQuery: "Miniature American Shepherd dog eating healthy food"
 ---
+
 
 Miniature American Shepherds have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 20–40 lbs, energetic energy, frequent shedding, and good-natured, intelligent, devoted temperament.
 

@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Boxers 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Boxer's specific large size, energetic energy level, and occasional shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["boxer", "dog-food", "large-breed", "energetic"]
 author: "The PupWiki Team"
 breedSlug: "boxer"
+heroImage: "https://images.pexels.com/photos/32371133/pexels-photo-32371133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/32371133/pexels-photo-32371133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A detailed close-up of a Boxer dog resting on the floor indoors, expressing a tender and relaxed mood."
+imageAlt: "A detailed close-up of a Boxer dog resting on the floor indoors, expressing a tender and relaxed mood."
+imageSource: "pexels"
+imageCredit: "Photo by Laurence FUSCO on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-boxer-dog-lying-on-floor-indoors-32371133/"
+imageSearchQuery: "Boxer dog eating healthy food"
 ---
+
 
 Boxers have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 15–80 lbs, energetic energy, occasional shedding, and bright, fun-loving, active temperament.
 

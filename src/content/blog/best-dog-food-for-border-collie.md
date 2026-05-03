@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Food for Border Collies 2026: Expert-Matched Picks"
 description: "We matched the best dog food to the Border Collie's specific needs lots of activity energy level, and seasonal shedding profile. Here's what actually works."
 pubDate: 2026-03-16
@@ -6,7 +7,16 @@ category: "Dog food"
 tags: ["border-collie", "dog-food", "medium-breed", "needs-lots-of-activity"]
 author: "The PupWiki Team"
 breedSlug: "border-collie"
+heroImage: "https://images.pexels.com/photos/35815215/pexels-photo-35815215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35815215/pexels-photo-35815215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A beautiful Border Collie dog stands in a snowy landscape near Poprad, Slovakia."
+imageAlt: "A beautiful Border Collie dog stands in a snowy landscape near Poprad, Slovakia."
+imageSource: "pexels"
+imageCredit: "Photo by Michal Petráš on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/border-collie-in-snowy-landscape-slovakia-35815215/"
+imageSearchQuery: "Border Collie dog eating healthy food"
 ---
+
 
 Border Collies have specific needs that generic "dog food for all breeds" posts miss entirely. This guide matches recommendations to the exact characteristics of this breed — 30–55 lbs, needs lots of activity energy, seasonal shedding, and affectionate, smart, energetic temperament.
 
