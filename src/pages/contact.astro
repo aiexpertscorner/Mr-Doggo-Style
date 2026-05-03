@@ -1,5 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout  from '../layouts/BaseLayout.astro';
+import Breadcrumb  from '../components/primitives/Breadcrumb.astro';
 
 const CONTACT_EMAIL = 'hello@pupwiki.com';
 
@@ -61,11 +62,7 @@ const breadcrumbLd = JSON.stringify({
   <main class="contact-page">
     <section class="contact-hero" aria-labelledby="contact-title">
       <div class="contact-container">
-        <nav class="contact-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
-          <span aria-hidden="true">›</span>
-          <span>Contact</span>
-        </nav>
+        <Breadcrumb crumbs={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
 
         <p class="contact-eyebrow">Contact PupWiki</p>
 
@@ -121,13 +118,11 @@ const breadcrumbLd = JSON.stringify({
             <div class="contact-actions">
               <a
                 href={`mailto:${CONTACT_EMAIL}?subject=PupWiki%20contact%20request`}
-                class="contact-button contact-button--primary"
+                class="btn btn--primary"
               >
-                Email us
-                <span aria-hidden="true">→</span>
+                Email us →
               </a>
-
-              <a href="/disclosure" class="contact-button contact-button--secondary">
+              <a href="/disclosure" class="btn btn--outline">
                 Affiliate disclosure
               </a>
             </div>
@@ -225,29 +220,6 @@ const breadcrumbLd = JSON.stringify({
 
   .contact-hero .contact-container {
     padding-block: clamp(2.5rem, 7vw, 5.75rem);
-  }
-
-  .contact-breadcrumb {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    align-items: center;
-    margin-bottom: var(--space-5);
-    color: var(--color-muted);
-    font-family: var(--font-sans);
-    font-size: var(--text-sm);
-  }
-
-  .contact-breadcrumb a {
-    color: var(--color-primary);
-    font-weight: var(--weight-semi);
-    text-decoration: none;
-  }
-
-  .contact-breadcrumb a:hover {
-    color: var(--color-accent);
-    text-decoration: underline;
-    text-underline-offset: 3px;
   }
 
   .contact-eyebrow {
@@ -426,47 +398,6 @@ const breadcrumbLd = JSON.stringify({
     gap: var(--space-3);
   }
 
-  .contact-button {
-    display: inline-flex;
-    min-height: 3.1rem;
-    align-items: center;
-    justify-content: center;
-    gap: 0.55rem;
-    border-radius: var(--radius-xl);
-    padding: 0.9rem 1.1rem;
-    font-family: var(--font-sans);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-bold);
-    line-height: 1;
-    text-decoration: none;
-    transition: var(--transition-smooth);
-  }
-
-  .contact-button--primary {
-    background: var(--button-primary-bg);
-    color: var(--button-primary-text);
-    box-shadow: var(--shadow-cta);
-  }
-
-  .contact-button--primary:hover {
-    background: var(--button-primary-bg-hover);
-    transform: translateY(-2px);
-  }
-
-  .contact-button--secondary {
-    border: 1px solid var(--button-outline-border);
-    background: var(--button-outline-bg);
-    color: var(--button-outline-text);
-    box-shadow: var(--shadow-xs);
-  }
-
-  .contact-button--secondary:hover {
-    border-color: var(--color-border-primary);
-    background: var(--button-outline-bg-hover);
-    color: var(--color-primary-hover);
-    transform: translateY(-2px);
-  }
-
   .contact-note {
     margin-top: var(--space-4) !important;
     color: var(--color-muted) !important;
@@ -578,10 +509,6 @@ const breadcrumbLd = JSON.stringify({
       flex-direction: row;
       align-items: center;
     }
-
-    .contact-button {
-      width: auto;
-    }
   }
 
   @media (min-width: 768px) {
@@ -607,7 +534,6 @@ const breadcrumbLd = JSON.stringify({
 
   @media (prefers-reduced-motion: reduce) {
     .contact-copy-button,
-    .contact-button,
     .contact-related-nav a {
       transition: none;
       transform: none !important;

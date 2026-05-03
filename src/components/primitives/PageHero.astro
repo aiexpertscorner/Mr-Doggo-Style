@@ -1,0 +1,108 @@
+---
+/**
+ * PageHero — reusable hero for any page.
+ * Variants: 'split' (image+text), 'centered', 'compact'
+ * Composes the hero.css class system.
+ */
+
+export interface HeroCta {
+  label: string;
+  href: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  ariaLabel?: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title: string;
+  titleAccent?: string;
+  subtitle?: string;
+  ctas?: HeroCta[];
+  imageSrc?: string;
+  imageAlt?: string;
+  cardEyebrow?: string;
+  cardText?: string;
+  variant?: 'split' | 'centered' | 'compact';
+  trustItems?: string[];
+}
+
+const {
+  eyebrow,
+  title,
+  titleAccent,
+  subtitle,
+  ctas = [],
+  imageSrc,
+  imageAlt = '',
+  cardEyebrow,
+  cardText,
+  variant = imageSrc ? 'split' : 'compact',
+  trustItems = [],
+} = Astro.props;
+
+const heroClass = variant === 'split' ? 'hero hero--split' : 'hero hero--compact';
+---
+
+<section class={heroClass}>
+  <div class="container">
+    <div class={`hero__inner${variant === 'split' && imageSrc ? ' hero__inner--split' : ''}`}>
+
+      <div class="hero__content">
+        {eyebrow && (
+          <span class="hero__eyebrow">{eyebrow}</span>
+        )}
+
+        <h1 class="hero__title">
+          {title}
+          {titleAccent && <em class="hero__title-accent"> {titleAccent}</em>}
+        </h1>
+
+        {subtitle && <p class="hero__subtitle">{subtitle}</p>}
+
+        {ctas.length > 0 && (
+          <div class="hero__actions">
+            {ctas.map(cta => (
+              <a
+                href={cta.href}
+                class={`btn btn--${cta.variant ?? 'primary'}`}
+                aria-label={cta.ariaLabel}
+              >
+                {cta.label}
+              </a>
+            ))}
+          </div>
+        )}
+
+        {trustItems.length > 0 && (
+          <div class="hero__meta">
+            {trustItems.map(item => (
+              <span class="badge badge--primary">
+                <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+                {item}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {(imageSrc || cardText) && (
+        <div class="hero__media">
+          {imageSrc && (
+            <div class="hero__image-wrap">
+              <img src={imageSrc} alt={imageAlt} class="hero__image" loading="eager" decoding="async" />
+            </div>
+          )}
+          {cardText && (
+            <div class="hero__card">
+              {cardEyebrow && <p class="hero__card-eyebrow">{cardEyebrow}</p>}
+              <p class="hero__card-text">{cardText}</p>
+            </div>
+          )}
+        </div>
+      )}
+
+    </div>
+  </div>
+</section>

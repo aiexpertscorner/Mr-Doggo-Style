@@ -1,0 +1,159 @@
+---
+/**
+ * ComparisonPanel — side-by-side comparison of two options.
+ * Used in cost calculators, breed comparisons, product vs product.
+ */
+
+export interface CompareItem {
+  label: string;
+  value: string;
+  note?: string;
+  highlight?: boolean;
+}
+
+export interface CompareColumn {
+  title: string;
+  eyebrow?: string;
+  badge?: string;
+  items: CompareItem[];
+  ctaLabel?: string;
+  ctaHref?: string;
+  recommended?: boolean;
+}
+
+export interface Props {
+  columns: [CompareColumn, CompareColumn];
+  title?: string;
+}
+
+const { columns, title } = Astro.props;
+const [left, right] = columns;
+---
+
+{title && <h2 class="compare-panel__title">{title}</h2>}
+
+<div class="compare-panel">
+  {[left, right].map(col => (
+    <div class={`compare-col${col.recommended ? ' compare-col--recommended' : ''}`}>
+      <div class="compare-col__header">
+        {col.eyebrow && <span class="eyebrow">{col.eyebrow}</span>}
+        <h3 class="compare-col__title">{col.title}</h3>
+        {col.badge && <span class="badge badge--accent">{col.badge}</span>}
+      </div>
+
+      <dl class="compare-col__list">
+        {col.items.map(item => (
+          <div class={`compare-row${item.highlight ? ' compare-row--highlight' : ''}`}>
+            <dt class="compare-row__label">{item.label}</dt>
+            <dd class="compare-row__value">
+              {item.value}
+              {item.note && <span class="compare-row__note">{item.note}</span>}
+            </dd>
+          </div>
+        ))}
+      </dl>
+
+      {col.ctaLabel && col.ctaHref && (
+        <a href={col.ctaHref} class="btn btn--primary" style="width:100%;justify-content:center;margin-top:var(--space-4);">
+          {col.ctaLabel}
+        </a>
+      )}
+    </div>
+  ))}
+</div>
+
+<style>
+.compare-panel__title {
+  font-size: var(--text-h3);
+  color: var(--color-heading);
+  margin-bottom: var(--space-6);
+}
+
+.compare-panel {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .compare-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.compare-col {
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  background: var(--card-bg);
+  overflow: hidden;
+}
+
+.compare-col--recommended {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-accent);
+}
+
+.compare-col__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  background: var(--color-bg-muted);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.compare-col--recommended .compare-col__header {
+  background: var(--color-accent-subtle);
+  border-color: rgba(255, 122, 0, 0.15);
+}
+
+.compare-col__title {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-heading);
+}
+
+.compare-col__list {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2) var(--space-5);
+}
+
+.compare-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.compare-row:last-child {
+  border-bottom: none;
+}
+
+.compare-row--highlight {
+  background: var(--color-primary-subtle);
+  margin-inline: calc(var(--space-5) * -1);
+  padding-inline: var(--space-5);
+}
+
+.compare-row__label {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  font-weight: var(--weight-medium);
+}
+
+.compare-row__value {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-heading);
+  text-align: right;
+}
+
+.compare-row__note {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-normal);
+  color: var(--color-muted);
+}
+</style>
