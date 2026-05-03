@@ -24,3 +24,4 @@ yarn-error.log*
 # Cloudflare
 .wrangler/
 src/styles/tokens copy.css
+/.claude
