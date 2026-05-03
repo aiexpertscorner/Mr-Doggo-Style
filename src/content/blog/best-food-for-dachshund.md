@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "dachshund", "Dachsh
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/dachshund", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/28830810/pexels-photo-28830810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/28830810/pexels-photo-28830810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming dachshund dog with pink collar on a leash enjoying a walk in a park."
+imageAlt: "Charming dachshund dog with pink collar on a leash enjoying a walk in a park."
+imageSource: "pexels"
+imageCredit: "Photo by Vladimir Srajber on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-dachshund-on-leash-in-park-setting-28830810/"
+imageSearchQuery: "Dachshund dog eating healthy food"
 ---
 
 Feeding a Dachshund well isn't as simple as grabbing the bag with the highest rating. Dachshunds are medium dogs with regular energy, a Average lifespan of 12.6 years, and nutritional vulnerabilities that change across their life stages.

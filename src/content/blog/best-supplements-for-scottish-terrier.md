@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Scottish Terrier"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "scottish-terrier", "Scottish Terrier", "small", "regular", "difficult", "wiry"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "scottish-terrier", "Scottish Terrier", "small", "regular", "difficult", "wiry", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/scottish-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

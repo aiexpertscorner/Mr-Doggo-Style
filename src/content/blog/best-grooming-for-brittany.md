@@ -29,8 +29,8 @@ displayTitle: "Brittany grooming checklist for home care"
 titlePattern: "groom-owner-checklist"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "brittany", "Brittany", "medium", "active", "easy", "wavy"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "brittany", "Brittany", "medium", "active", "easy", "wavy", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/brittany", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

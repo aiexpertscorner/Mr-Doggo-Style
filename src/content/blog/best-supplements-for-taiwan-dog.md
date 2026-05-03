@@ -29,8 +29,8 @@ displayTitle: "Taiwan Dog supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "taiwan-dog", "Taiwan Dog", "medium", "active", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "taiwan-dog", "Taiwan Dog", "medium", "active", "easy", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/taiwan-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

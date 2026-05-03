@@ -29,8 +29,8 @@ displayTitle: "Saint Bernard supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "saint-bernard", "Saint Bernard", "large", "regular", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "saint-bernard", "Saint Bernard", "large", "regular", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/saint-bernard", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

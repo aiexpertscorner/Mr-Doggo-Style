@@ -29,8 +29,8 @@ displayTitle: "Hokkaido supplement safety and medication questions"
 titlePattern: "supp-medication"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "hokkaido", "Hokkaido", "large", "active", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "hokkaido", "Hokkaido", "large", "active", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/hokkaido", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

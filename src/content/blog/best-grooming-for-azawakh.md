@@ -29,8 +29,8 @@ displayTitle: "Azawakh grooming checklist for home care"
 titlePattern: "groom-owner-checklist"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "azawakh", "Azawakh", "medium", "regular", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "azawakh", "Azawakh", "medium", "regular", "difficult", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/azawakh", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

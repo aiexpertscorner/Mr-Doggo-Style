@@ -29,8 +29,8 @@ displayTitle: "Anatolian Shepherd Dog supplement shopping guide"
 titlePattern: "supp-shopping"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "anatolian-shepherd-dog", "Anatolian Shepherd Dog", "large", "regular", "difficult", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "anatolian-shepherd-dog", "Anatolian Shepherd Dog", "large", "regular", "difficult", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/anatolian-shepherd-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

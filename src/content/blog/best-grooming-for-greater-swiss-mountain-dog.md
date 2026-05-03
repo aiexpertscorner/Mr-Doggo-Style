@@ -29,8 +29,8 @@ displayTitle: "Greater Swiss Mountain Dog grooming checklist for home care"
 titlePattern: "groom-owner-checklist"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "greater-swiss-mountain-dog", "Greater Swiss Mountain Dog", "large", "active", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "greater-swiss-mountain-dog", "Greater Swiss Mountain Dog", "large", "active", "easy", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/greater-swiss-mountain-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

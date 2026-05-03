@@ -29,8 +29,8 @@ displayTitle: "Rafeiro do Alentejo supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "rafeiro-do-alentejo", "Rafeiro do Alentejo", "large", "calm", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "rafeiro-do-alentejo", "Rafeiro do Alentejo", "large", "calm", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/rafeiro-do-alentejo", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

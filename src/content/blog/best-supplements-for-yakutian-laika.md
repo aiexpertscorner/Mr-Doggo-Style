@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Yakutian Laika"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "yakutian-laika", "Yakutian Laika", "medium", "active", "moderate", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "yakutian-laika", "Yakutian Laika", "medium", "active", "moderate", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/yakutian-laika", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

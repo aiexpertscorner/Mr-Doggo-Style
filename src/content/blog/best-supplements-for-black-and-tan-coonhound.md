@@ -29,8 +29,8 @@ displayTitle: "Black and Tan Coonhound supplements for joints, skin, and gut hea
 titlePattern: "supp-joint-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "black-and-tan-coonhound", "Black and Tan Coonhound", "large", "regular", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "black-and-tan-coonhound", "Black and Tan Coonhound", "large", "regular", "difficult", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/black-and-tan-coonhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

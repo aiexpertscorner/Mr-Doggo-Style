@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "curly-coated-retrie
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/curly-coated-retriever", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/32104152/pexels-photo-32104152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/32104152/pexels-photo-32104152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Curly-coated dog standing near a bird bath in a lush garden in Athens, Alabama."
+imageAlt: "Curly-coated dog standing near a bird bath in a lush garden in Athens, Alabama."
+imageSource: "pexels"
+imageCredit: "Photo by A. G. Rosales on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/curly-coated-adult-dog-beside-bird-bath-32104152/"
+imageSearchQuery: "Curly-Coated Retriever dog eating healthy food"
 ---
 
 Feeding a Curly-Coated Retriever well isn't as simple as grabbing the bag with the highest rating. Curly-Coated Retrievers are large dogs with active energy, a Lifespan of 10–12 years, and nutritional vulnerabilities that change across their life stages.

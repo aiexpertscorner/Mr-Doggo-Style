@@ -29,8 +29,8 @@ displayTitle: "Golden Retriever supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "golden-retriever", "Golden Retriever", "large", "active", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "golden-retriever", "Golden Retriever", "large", "active", "easy", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/golden-retriever", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

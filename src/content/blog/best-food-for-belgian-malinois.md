@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "belgian-malinois", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/belgian-malinois", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/13076152/pexels-photo-13076152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/13076152/pexels-photo-13076152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Belgian Malinois dog standing in a scenic, natural outdoor setting with grass and sky."
+imageAlt: "Belgian Malinois dog standing in a scenic, natural outdoor setting with grass and sky."
+imageSource: "pexels"
+imageCredit: "Photo by Laura Paredis on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/malinois-dog-standing-on-brown-field-under-blue-sky-13076152/"
+imageSearchQuery: "Belgian Malinois dog eating healthy food"
 ---
 
 Feeding a Belgian Malinois well isn't as simple as grabbing the bag with the highest rating. Belgian Malinoiss are large dogs with active energy, a Lifespan of 14–16 years, and nutritional vulnerabilities that change across their life stages.

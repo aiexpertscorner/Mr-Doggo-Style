@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for Tibetan Spaniel"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "tibetan-spaniel", "Tibetan Spaniel", "small", "calm", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "tibetan-spaniel", "Tibetan Spaniel", "small", "calm", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/tibetan-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Curly-Coated Retriever Grooming Guide: tools for Curly-Coated Ret
 titlePattern: "groom-best-tools"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "curly-coated-retriever", "Curly-Coated Retriever", "large", "active", "difficult", "curly"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "curly-coated-retriever", "Curly-Coated Retriever", "large", "active", "difficult", "curly", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/curly-coated-retriever", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

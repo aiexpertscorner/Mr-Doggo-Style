@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "central-asian-sheph
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/central-asian-shepherd-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/33107951/pexels-photo-33107951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/33107951/pexels-photo-33107951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Portrait of a Central Asian Shepherd dog with its tongue out, captured outdoors in Tbilisi, Georgia."
+imageAlt: "Portrait of a Central Asian Shepherd dog with its tongue out, captured outdoors in Tbilisi, Georgia."
+imageSource: "pexels"
+imageCredit: "Photo by Genadi Yakovlev on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-central-asian-shepherd-dog-outdoors-33107951/"
+imageSearchQuery: "Central Asian Shepherd Dog dog eating healthy food"
 ---
 
 Feeding a Central Asian Shepherd Dog well isn't as simple as grabbing the bag with the highest rating. Central Asian Shepherd Dogs are large dogs with calm energy, a Lifespan of –12 years, and nutritional vulnerabilities that change across their life stages.

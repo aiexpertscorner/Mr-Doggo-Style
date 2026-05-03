@@ -31,6 +31,7 @@
     "content:audit:pseo": "node scripts/content/audit-pseo-copy.mjs",
     "content:audit:public": "node scripts/content/audit-public-copy.mjs --strict",
     "content:audit:public:ci": "node scripts/content/audit-public-copy.mjs --ci",
+    "design:audit:inline": "node scripts/audit-inline-design.mjs",
     "content:inventory": "node scripts/content/audit-content-inventory.mjs",
     "content:opportunities": "node scripts/content/audit-content-inventory.mjs",
     "content:generate:pseo:check": "node scripts/content/generate-pseo-opportunity-pages.mjs --mode=clusters --limit=10",

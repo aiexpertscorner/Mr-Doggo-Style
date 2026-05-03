@@ -29,8 +29,8 @@ displayTitle: "Joint supplements to ask your vet about for Lakeland Terrier"
 titlePattern: "supp-best-joint"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "lakeland-terrier", "Lakeland Terrier", "small", "regular", "easy", "wiry"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "lakeland-terrier", "Lakeland Terrier", "small", "regular", "easy", "wiry", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/lakeland-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

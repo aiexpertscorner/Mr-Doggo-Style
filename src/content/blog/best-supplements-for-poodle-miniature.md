@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for Poodle (Miniature)"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "poodle-miniature", "Poodle (Miniature)", "small", "regular", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "poodle-miniature", "Poodle (Miniature)", "small", "regular", "easy", "medium", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/poodle-miniature", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

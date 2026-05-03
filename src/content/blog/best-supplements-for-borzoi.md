@@ -29,8 +29,8 @@ displayTitle: "Borzoi supplement guide for active dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "borzoi", "Borzoi", "large", "active", "difficult", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "borzoi", "Borzoi", "large", "active", "difficult", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/borzoi", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

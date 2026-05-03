@@ -29,8 +29,8 @@ displayTitle: "Petit Basset Griffon Vendéen supplement checklist for safer buyi
 titlePattern: "supp-owner-checklist"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "petit-basset-griffon-venden", "Petit Basset Griffon Vendéen", "medium", "active", "difficult", "rough"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "petit-basset-griffon-venden", "Petit Basset Griffon Vendéen", "medium", "active", "difficult", "rough", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/petit-basset-griffon-venden", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

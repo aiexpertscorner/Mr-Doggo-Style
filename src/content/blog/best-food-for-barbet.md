@@ -1,6 +1,6 @@
 ---
 title: "Barbet Food Options for Weight and Digestion"
-description: "A practical Barbet food guide for medium dogs, with nutrition notes, joint-support context, and current shopping resources."
+description: "A practical Barbet food guide for medium dogs, with nutrition notes, joint-support context, and owner-friendly comparison checks."
 pubDate: 2026-03-22
 updatedDate: 2026-05-03
 category: "Dog Food"
@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "barbet", "Barbet", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/barbet", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/770363/pexels-photo-770363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/770363/pexels-photo-770363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Dalmatian dog sniffing tropical fruits on a platter, including figs and raspberries."
+imageAlt: "Dalmatian dog sniffing tropical fruits on a platter, including figs and raspberries."
+imageSource: "pexels"
+imageCredit: "Photo by Rarnie McCudden on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/black-and-white-dalmatian-dog-eating-fruits-770363/"
+imageSearchQuery: "Barbet dog eating healthy food"
 ---
 
 Feeding a Barbet well isn't as simple as grabbing the bag with the highest rating. Barbets are medium dogs with regular energy, a Lifespan of 12–14 years, and nutritional vulnerabilities that change across their life stages.

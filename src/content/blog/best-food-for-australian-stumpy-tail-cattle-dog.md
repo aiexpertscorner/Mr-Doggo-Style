@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "australian-stumpy-t
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/australian-stumpy-tail-cattle-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/35511909/pexels-photo-35511909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35511909/pexels-photo-35511909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Happy Australian Cattle Dog sitting on grass, looking playfully at the camera. Perfect for pet lovers."
+imageAlt: "Happy Australian Cattle Dog sitting on grass, looking playfully at the camera. Perfect for pet lovers."
+imageSource: "pexels"
+imageCredit: "Photo by Helena Lopes on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/australian-cattle-dog-smiling-in-grass-35511909/"
+imageSearchQuery: "Australian Stumpy Tail Cattle Dog dog eating healthy food"
 ---
 
 Feeding a Australian Stumpy Tail Cattle Dog well isn't as simple as grabbing the bag with the highest rating. Australian Stumpy Tail Cattle Dogs are medium dogs with active energy, a Lifespan of 12–15 years, and nutritional vulnerabilities that change across their life stages.

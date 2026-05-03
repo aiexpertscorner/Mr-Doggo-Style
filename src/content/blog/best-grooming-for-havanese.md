@@ -29,8 +29,8 @@ displayTitle: "Havanese grooming checklist for home care"
 titlePattern: "groom-owner-checklist"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "havanese", "Havanese", "small", "regular", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "havanese", "Havanese", "small", "regular", "easy", "long", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/havanese", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

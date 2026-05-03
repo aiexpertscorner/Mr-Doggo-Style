@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Portuguese Sheepdog"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "portuguese-sheepdog", "Portuguese Sheepdog", "medium", "active", "easy"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "portuguese-sheepdog", "Portuguese Sheepdog", "medium", "active", "easy", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/portuguese-sheepdog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

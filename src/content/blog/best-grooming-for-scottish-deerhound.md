@@ -29,8 +29,8 @@ displayTitle: "Scottish Deerhound grooming tools for rough coats"
 titlePattern: "groom-best-coat"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "scottish-deerhound", "Scottish Deerhound", "large", "regular", "difficult", "rough"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "scottish-deerhound", "Scottish Deerhound", "large", "regular", "difficult", "rough", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/scottish-deerhound", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

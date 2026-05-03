@@ -29,8 +29,8 @@ displayTitle: "Carolina Dog supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "carolina-dog", "Carolina Dog", "medium", "regular", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "carolina-dog", "Carolina Dog", "medium", "regular", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/carolina-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

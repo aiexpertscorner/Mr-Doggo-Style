@@ -29,8 +29,8 @@ displayTitle: "Cavalier King Charles Spaniel supplement guide for calm dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "cavalier-king-charles-spaniel", "Cavalier King Charles Spaniel", "small", "calm", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "cavalier-king-charles-spaniel", "Cavalier King Charles Spaniel", "small", "calm", "easy", "silky", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/cavalier-king-charles-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

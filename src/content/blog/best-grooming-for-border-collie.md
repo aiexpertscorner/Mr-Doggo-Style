@@ -29,8 +29,8 @@ displayTitle: "Brushes and shampoo to compare for Border Collie"
 titlePattern: "groom-best-brush"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "border-collie", "Border Collie", "medium", "active", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "border-collie", "Border Collie", "medium", "active", "easy", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/border-collie", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

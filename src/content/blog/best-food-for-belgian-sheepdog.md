@@ -1,6 +1,6 @@
 ---
 title: "Belgian Sheepdog Food Options for Weight and Digestion"
-description: "A practical Belgian Sheepdog food guide for large dogs, with nutrition notes, joint-support context, and current shopping resources."
+description: "A practical Belgian Sheepdog food guide for large dogs, with nutrition notes, joint-support context, and owner-friendly comparison checks."
 pubDate: 2026-03-22
 updatedDate: 2026-05-03
 category: "Dog Food"
@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "belgian-sheepdog", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/belgian-sheepdog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/7421520/pexels-photo-7421520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7421520/pexels-photo-7421520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A dog sniffs pistachios on a white plate in an overhead, natural setting."
+imageAlt: "A dog sniffs pistachios on a white plate in an overhead, natural setting."
+imageSource: "pexels"
+imageCredit: "Photo by Vie Studio on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-smelling-the-pistachios-7421520/"
+imageSearchQuery: "Belgian Sheepdog dog eating healthy food"
 ---
 
 Feeding a Belgian Sheepdog well isn't as simple as grabbing the bag with the highest rating. Belgian Sheepdogs are large dogs with active energy, a Lifespan of 12–14 years, and nutritional vulnerabilities that change across their life stages.

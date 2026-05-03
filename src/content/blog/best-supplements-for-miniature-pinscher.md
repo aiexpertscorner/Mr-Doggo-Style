@@ -29,8 +29,8 @@ displayTitle: "Supplement options to discuss for Miniature Pinscher"
 titlePattern: "supp-best-careful"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "miniature-pinscher", "Miniature Pinscher", "small", "regular", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "miniature-pinscher", "Miniature Pinscher", "small", "regular", "difficult", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/miniature-pinscher", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Wirehaired Vizsla coat care guide for wiry fur"
 titlePattern: "groom-coat-care"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "wirehaired-vizsla", "Wirehaired Vizsla", "medium", "active", "easy", "wiry"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "wirehaired-vizsla", "Wirehaired Vizsla", "medium", "active", "easy", "wiry", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/wirehaired-vizsla", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

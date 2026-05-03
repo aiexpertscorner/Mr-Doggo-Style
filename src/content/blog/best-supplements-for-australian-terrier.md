@@ -29,8 +29,8 @@ displayTitle: "Australian Terrier supplement safety and medication questions"
 titlePattern: "supp-medication"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "australian-terrier", "Australian Terrier", "small", "active", "easy", "rough"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "australian-terrier", "Australian Terrier", "small", "active", "easy", "rough", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/australian-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

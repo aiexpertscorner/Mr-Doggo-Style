@@ -29,8 +29,8 @@ displayTitle: "Wire Fox Terrier supplements: evidence, labels, and vet checks"
 titlePattern: "supp-evidence"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "wire-fox-terrier", "Wire Fox Terrier", "small", "regular", "easy", "wiry"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "wire-fox-terrier", "Wire Fox Terrier", "small", "regular", "easy", "wiry", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/wire-fox-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

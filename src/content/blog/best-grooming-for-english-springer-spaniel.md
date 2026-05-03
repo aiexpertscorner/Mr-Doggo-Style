@@ -29,8 +29,8 @@ displayTitle: "English Springer Spaniel grooming guide by coat type"
 titlePattern: "groom-guide"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "english-springer-spaniel", "English Springer Spaniel", "medium", "regular", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "english-springer-spaniel", "English Springer Spaniel", "medium", "regular", "easy", "silky", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/english-springer-spaniel", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "German Shorthaired Pointer vet questions for common health risks"
 titlePattern: "health-vet-questions"
 cluster: "health"
 productFamilies: ["health"]
-awinTopicTags: ["health", "Health", "german-shorthaired-pointer", "German Shorthaired Pointer", "large", "active", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["health", "Health", "german-shorthaired-pointer", "German Shorthaired Pointer", "large", "active", "easy", "short", "vet-care", "wellness", "care", "insurance", "health-adjacent", "dental-care", "first-aid"]
+amazonQueries: ["dog first aid kit", "dog dental care kit", "dog wellness supplies", "dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers"]
 internalLinkTargets: ["/breeds/german-shorthaired-pointer", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---
@@ -84,14 +84,14 @@ German Shorthaired Pointer owners get the best results when they start with the 
 ### DNA Testing — Know Before It Happens
 **Embark Dog DNA Test Kit** — $149.00 | ★★★★★ 4.5/5
 [View current Amazon availability](https://www.amazon.com/dp/B01N5JUYAO/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-Best DNA test overall — unmatched health screening depth
+DNA test option with broad breed and health-marker coverage
 Particularly relevant for German Shorthaired Pointers given their known genetic conditions.
 ---
 ### Parasite Prevention — Year-Round Protection
 **NexGard Chewables for Dogs (Flea & Tick)** — $68.99 | ★★★★★ 4.6/5
 [View current Amazon availability](https://www.amazon.com/dp/B00027353A/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 Best monthly flea and tick prevention — the easiest format for compliance
-**Why it matters for German Shorthaired Pointers:** Fleas cause allergic reactions and tapeworm transmission. Ticks transmit Lyme disease and other serious infections. Prevention is significantly cheaper than treatment.
+**Why it matters for German Shorthaired Pointers:** Fleas cause allergic reactions and tapeworm transmission. Ticks transmit Lyme disease and other serious infections. Preventive care is usually easier to plan than urgent care.
 ---
 ### Dental Health — The Most Neglected Area
 **NexGard Chewables for Dogs (Flea & Tick)** — $68.99 | ★★★★★ 4.6/5
@@ -105,9 +105,9 @@ Best monthly flea and tick prevention — the easiest format for compliance
 ### Ear Care — Preventable Infections
 **Zymox Ear Solution for Dogs and Cats** — $22.99 | ★★★★★ 4.7/5
 [View current Amazon availability](https://www.amazon.com/dp/B005KDLVL0/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-Best OTC ear treatment — the enzymatic formula is genuinely effective
+Ear-care product to discuss with your veterinarian when symptoms appear
 ---
-### First Aid — Every Owner Needs This
+### First-aid basics
 **Vetericyn Plus All Animal Wound & Skin Care** — $19.99 | ★★★★★ 4.6/5
 [View current Amazon availability](https://www.amazon.com/dp/B003VT4NWI/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 Best first-aid spray for dogs — every dog owner should have this

@@ -29,8 +29,8 @@ displayTitle: "Bouvier des Flandres grooming checklist for home care"
 titlePattern: "groom-owner-checklist"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "bouvier-des-flandres", "Bouvier des Flandres", "large", "active", "easy", "rough"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "bouvier-des-flandres", "Bouvier des Flandres", "large", "active", "easy", "rough", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/bouvier-des-flandres", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

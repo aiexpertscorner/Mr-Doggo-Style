@@ -29,8 +29,8 @@ displayTitle: "Supplement options to discuss for German Pinscher"
 titlePattern: "supp-best-careful"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "german-pinscher", "German Pinscher", "medium", "active", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "german-pinscher", "German Pinscher", "medium", "active", "easy", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/german-pinscher", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Lagotto Romagnolo"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "lagotto-romagnolo", "Lagotto Romagnolo", "medium", "regular", "easy", "curly"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "lagotto-romagnolo", "Lagotto Romagnolo", "medium", "regular", "easy", "curly", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/lagotto-romagnolo", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

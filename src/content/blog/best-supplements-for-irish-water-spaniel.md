@@ -29,8 +29,8 @@ displayTitle: "Irish Water Spaniel supplement shopping guide"
 titlePattern: "supp-shopping"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "irish-water-spaniel", "Irish Water Spaniel", "large", "active", "easy", "curly"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "irish-water-spaniel", "Irish Water Spaniel", "large", "active", "easy", "curly", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/irish-water-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for Russell Terrier"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "russell-terrier", "Russell Terrier", "small", "active", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "russell-terrier", "Russell Terrier", "small", "active", "easy", "medium", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/russell-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

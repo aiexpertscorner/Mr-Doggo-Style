@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Basset Fauve de Bretagne"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "basset-fauve-de-bretagne", "Basset Fauve de Bretagne", "medium", "regular", "moderate", "rough"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "basset-fauve-de-bretagne", "Basset Fauve de Bretagne", "medium", "regular", "moderate", "rough", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/basset-fauve-de-bretagne", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

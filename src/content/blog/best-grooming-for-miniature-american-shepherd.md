@@ -29,8 +29,8 @@ displayTitle: "Miniature American Shepherd bathing, brushing, and nail care guid
 titlePattern: "groom-bath"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "miniature-american-shepherd", "Miniature American Shepherd", "medium", "active", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "miniature-american-shepherd", "Miniature American Shepherd", "medium", "active", "easy", "long", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/miniature-american-shepherd", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

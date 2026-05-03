@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "cane-corso", "Cane 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/cane-corso", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/36260130/pexels-photo-36260130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/36260130/pexels-photo-36260130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A black dog stands in a serene snowy landscape surrounded by wintry trees, capturing the essence of winter."
+imageAlt: "A black dog stands in a serene snowy landscape surrounded by wintry trees, capturing the essence of winter."
+imageSource: "pexels"
+imageCredit: "Photo by Сергей ЮССтудия on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/black-dog-standing-in-snowy-winter-landscape-36260130/"
+imageSearchQuery: "Cane Corso dog eating healthy food"
 ---
 
 Feeding a Cane Corso well isn't as simple as grabbing the bag with the highest rating. Cane Corsos are medium dogs with active energy, a Lifespan of 9–12 years, and nutritional vulnerabilities that change across their life stages.

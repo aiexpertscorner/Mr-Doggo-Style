@@ -29,8 +29,8 @@ displayTitle: "Great Pyrenees supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "great-pyrenees", "Great Pyrenees", "large", "active", "difficult", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "great-pyrenees", "Great Pyrenees", "large", "active", "difficult", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/great-pyrenees", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

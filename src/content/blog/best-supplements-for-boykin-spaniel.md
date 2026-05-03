@@ -29,8 +29,8 @@ displayTitle: "Boykin Spaniel supplement guide for regular dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "boykin-spaniel", "Boykin Spaniel", "medium", "regular", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "boykin-spaniel", "Boykin Spaniel", "medium", "regular", "easy", "silky", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/boykin-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

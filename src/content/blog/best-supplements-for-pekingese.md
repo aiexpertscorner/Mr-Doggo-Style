@@ -29,8 +29,8 @@ displayTitle: "Pekingese supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "pekingese", "Pekingese", "small", "calm", "moderate", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "pekingese", "Pekingese", "small", "calm", "moderate", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/pekingese", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

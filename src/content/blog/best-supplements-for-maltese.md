@@ -29,8 +29,8 @@ displayTitle: "Supplement options to discuss for Maltese"
 titlePattern: "supp-best-careful"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "maltese", "Maltese", "small", "regular", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "maltese", "Maltese", "small", "regular", "easy", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/maltese", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

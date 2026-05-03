@@ -29,8 +29,8 @@ displayTitle: "Brushes and shampoo to compare for Bernese Mountain Dog"
 titlePattern: "groom-best-brush"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "bernese-mountain-dog", "Bernese Mountain Dog", "large", "active", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "bernese-mountain-dog", "Bernese Mountain Dog", "large", "active", "easy", "long", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/bernese-mountain-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Smooth Fox Terrier supplement shopping guide"
 titlePattern: "supp-shopping"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "smooth-fox-terrier", "Smooth Fox Terrier", "small", "active", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "smooth-fox-terrier", "Smooth Fox Terrier", "small", "active", "easy", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/smooth-fox-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

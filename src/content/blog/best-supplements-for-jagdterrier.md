@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Jagdterrier"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "jagdterrier", "Jagdterrier", "small", "regular", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "jagdterrier", "Jagdterrier", "small", "regular", "easy", "medium", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/jagdterrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

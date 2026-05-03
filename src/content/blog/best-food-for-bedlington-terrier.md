@@ -1,6 +1,6 @@
 ---
 title: "Bedlington Terrier Food Guide:"
-description: "A practical Bedlington Terrier food guide for small dogs, with nutrition notes, joint-support context, and current shopping resources."
+description: "A practical Bedlington Terrier food guide for small dogs, with nutrition notes, joint-support context, and owner-friendly comparison checks."
 pubDate: 2026-03-22
 updatedDate: 2026-05-03
 category: "Dog Food"
@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "bedlington-terrier"
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/bedlington-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/7765407/pexels-photo-7765407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7765407/pexels-photo-7765407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Bedlington Terrier dog sits indoors with a leather collar, exuding charm and warmth."
+imageAlt: "A Bedlington Terrier dog sits indoors with a leather collar, exuding charm and warmth."
+imageSource: "pexels"
+imageCredit: "Photo by Jean-Paul  Wright on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-furry-dog-with-a-collar-7765407/"
+imageSearchQuery: "Bedlington Terrier dog eating healthy food"
 ---
 
 Feeding a Bedlington Terrier well isn't as simple as grabbing the bag with the highest rating. Bedlington Terriers are small dogs with active energy, a Average lifespan of 13.5 years, and nutritional vulnerabilities that change across their life stages.

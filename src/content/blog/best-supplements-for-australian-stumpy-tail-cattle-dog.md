@@ -29,8 +29,8 @@ displayTitle: "Australian Stumpy Tail Cattle Dog supplement guide: what to ask y
 titlePattern: "supp-guide-vet"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "australian-stumpy-tail-cattle-dog", "Australian Stumpy Tail Cattle Dog", "medium", "active", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "australian-stumpy-tail-cattle-dog", "Australian Stumpy Tail Cattle Dog", "medium", "active", "easy", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/australian-stumpy-tail-cattle-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

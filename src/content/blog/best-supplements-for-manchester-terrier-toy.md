@@ -29,8 +29,8 @@ displayTitle: "Manchester Terrier (Toy) supplement guide for regular dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "manchester-terrier-toy", "Manchester Terrier (Toy)", "small", "regular", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "manchester-terrier-toy", "Manchester Terrier (Toy)", "small", "regular", "easy", "medium", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/manchester-terrier-toy", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

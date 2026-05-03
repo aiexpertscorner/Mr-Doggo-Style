@@ -29,8 +29,8 @@ displayTitle: "Cane Corso supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "cane-corso", "Cane Corso", "medium", "active", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "cane-corso", "Cane Corso", "medium", "active", "easy", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/cane-corso", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

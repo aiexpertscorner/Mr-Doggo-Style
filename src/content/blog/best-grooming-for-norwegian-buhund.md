@@ -29,8 +29,8 @@ displayTitle: "Brushes and shampoo to compare for Norwegian Buhund"
 titlePattern: "groom-best-brush"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "norwegian-buhund", "Norwegian Buhund", "medium", "active", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "norwegian-buhund", "Norwegian Buhund", "medium", "active", "easy", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/norwegian-buhund", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

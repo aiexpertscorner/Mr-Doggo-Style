@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "bernese-mountain-do
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/bernese-mountain-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/10842583/pexels-photo-10842583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/10842583/pexels-photo-10842583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming Bernese Mountain Dog in a sunlit field of wildflowers, radiating joy."
+imageAlt: "Charming Bernese Mountain Dog in a sunlit field of wildflowers, radiating joy."
+imageSource: "pexels"
+imageCredit: "Photo by David  Floyd on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-close-up-shot-of-a-bernese-mountain-dog-10842583/"
+imageSearchQuery: "Bernese Mountain Dog dog eating healthy food"
 ---
 
 Feeding a Bernese Mountain Dog well isn't as simple as grabbing the bag with the highest rating. Bernese Mountain Dogs are large dogs with active energy, a Average lifespan of 7.6 years, and nutritional vulnerabilities that change across their life stages.

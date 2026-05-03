@@ -29,8 +29,8 @@ displayTitle: "English Springer Spaniel supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "english-springer-spaniel", "English Springer Spaniel", "medium", "regular", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "english-springer-spaniel", "English Springer Spaniel", "medium", "regular", "easy", "silky", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/english-springer-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

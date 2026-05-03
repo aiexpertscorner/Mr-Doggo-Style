@@ -29,8 +29,8 @@ displayTitle: "Teddy Roosevelt Terrier supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "teddy-roosevelt-terrier", "Teddy Roosevelt Terrier", "small", "active", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "teddy-roosevelt-terrier", "Teddy Roosevelt Terrier", "small", "active", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/teddy-roosevelt-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

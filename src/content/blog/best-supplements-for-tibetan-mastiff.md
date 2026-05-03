@@ -29,8 +29,8 @@ displayTitle: "Joint supplements to ask your vet about for Tibetan Mastiff"
 titlePattern: "supp-best-joint"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "tibetan-mastiff", "Tibetan Mastiff", "large", "regular", "difficult", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "tibetan-mastiff", "Tibetan Mastiff", "large", "regular", "difficult", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/tibetan-mastiff", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

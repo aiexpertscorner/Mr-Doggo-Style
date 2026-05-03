@@ -29,8 +29,8 @@ displayTitle: "Joint supplements to ask your vet about for Treeing Tennessee Bri
 titlePattern: "supp-best-joint"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "treeing-tennessee-brindle", "Treeing Tennessee Brindle", "medium", "regular", "easy"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "treeing-tennessee-brindle", "Treeing Tennessee Brindle", "medium", "regular", "easy", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/treeing-tennessee-brindle", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

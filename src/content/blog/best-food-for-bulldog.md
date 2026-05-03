@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "bulldog", "Bulldog"
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/bulldog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/29082222/pexels-photo-29082222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/29082222/pexels-photo-29082222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming English bulldog running through a park in fall scenery."
+imageAlt: "Charming English bulldog running through a park in fall scenery."
+imageSource: "pexels"
+imageCredit: "Photo by Andreas Schnabl on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/english-bulldog-running-outdoors-in-autumn-29082222/"
+imageSearchQuery: "Bulldog dog eating healthy food"
 ---
 
 Feeding a Bulldog well isn't as simple as grabbing the bag with the highest rating. Bulldogs are medium dogs with regular energy, a Average lifespan of 6.3 years, and nutritional vulnerabilities that change across their life stages.

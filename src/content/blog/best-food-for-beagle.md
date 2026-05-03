@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "beagle", "Beagle", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/beagle", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/8706371/pexels-photo-8706371.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/8706371/pexels-photo-8706371.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A close-up portrait of a beagle dog showcasing its gentle and attentive expression."
+imageAlt: "A close-up portrait of a beagle dog showcasing its gentle and attentive expression."
+imageSource: "pexels"
+imageCredit: "Photo by Nastya Korenkova on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-close-up-shot-of-a-beagle-8706371/"
+imageSearchQuery: "Beagle dog eating healthy food"
 ---
 
 Feeding a Beagle well isn't as simple as grabbing the bag with the highest rating. Beagles are medium dogs with active energy, a Average lifespan of 1.2 years, and nutritional vulnerabilities that change across their life stages.

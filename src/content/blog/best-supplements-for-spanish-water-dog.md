@@ -29,8 +29,8 @@ displayTitle: "Spanish Water Dog supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "spanish-water-dog", "Spanish Water Dog", "medium", "active", "easy", "curly"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "spanish-water-dog", "Spanish Water Dog", "medium", "active", "easy", "curly", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/spanish-water-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Shetland Sheepdog supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "shetland-sheepdog", "Shetland Sheepdog", "small", "regular", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "shetland-sheepdog", "Shetland Sheepdog", "small", "regular", "easy", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/shetland-sheepdog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

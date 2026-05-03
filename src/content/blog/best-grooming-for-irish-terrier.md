@@ -29,8 +29,8 @@ displayTitle: "Irish Terrier grooming routine and tool shortlist"
 titlePattern: "groom-routine"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "irish-terrier", "Irish Terrier", "medium", "regular", "easy", "wiry"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "irish-terrier", "Irish Terrier", "medium", "regular", "easy", "wiry", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/irish-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "bullmastiff", "Bull
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/bullmastiff", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/16222914/pexels-photo-16222914.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/16222914/pexels-photo-16222914.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A bullmastiff dog lying on a wooden porch, gazing upward in a peaceful outdoor setting."
+imageAlt: "A bullmastiff dog lying on a wooden porch, gazing upward in a peaceful outdoor setting."
+imageSource: "pexels"
+imageCredit: "Photo by Lifestyle Farmer on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-lying-on-the-porch-16222914/"
+imageSearchQuery: "Bullmastiff dog eating healthy food"
 ---
 
 Feeding a Bullmastiff well isn't as simple as grabbing the bag with the highest rating. Bullmastiffs are large dogs with active energy, a Average lifespan of 7.6 years, and nutritional vulnerabilities that change across their life stages.

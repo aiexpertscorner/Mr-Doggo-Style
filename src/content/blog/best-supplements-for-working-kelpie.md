@@ -29,8 +29,8 @@ displayTitle: "Working Kelpie supplement safety and medication questions"
 titlePattern: "supp-medication"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "working-kelpie", "Working Kelpie", "medium", "active", "difficult", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "working-kelpie", "Working Kelpie", "medium", "active", "difficult", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/working-kelpie", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

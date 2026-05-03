@@ -29,8 +29,8 @@ displayTitle: "Parson Russell Terrier grooming tools for medium coats"
 titlePattern: "groom-best-coat"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "parson-russell-terrier", "Parson Russell Terrier", "small", "active", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "parson-russell-terrier", "Parson Russell Terrier", "small", "active", "easy", "medium", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/parson-russell-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

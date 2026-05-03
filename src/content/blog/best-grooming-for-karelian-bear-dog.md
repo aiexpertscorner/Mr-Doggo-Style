@@ -29,8 +29,8 @@ displayTitle: "Karelian Bear Dog grooming routine and tool shortlist"
 titlePattern: "groom-routine"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "karelian-bear-dog", "Karelian Bear Dog", "medium", "calm", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "karelian-bear-dog", "Karelian Bear Dog", "medium", "calm", "easy", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/karelian-bear-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

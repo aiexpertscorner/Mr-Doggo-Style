@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for Peruvian Inca Orchid"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "peruvian-inca-orchid", "Peruvian Inca Orchid", "medium", "active", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "peruvian-inca-orchid", "Peruvian Inca Orchid", "medium", "active", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/peruvian-inca-orchid", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

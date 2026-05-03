@@ -29,8 +29,8 @@ displayTitle: "Transylvanian Hound supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "transylvanian-hound", "Transylvanian Hound", "medium", "active", "moderate", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "transylvanian-hound", "Transylvanian Hound", "medium", "active", "moderate", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/transylvanian-hound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

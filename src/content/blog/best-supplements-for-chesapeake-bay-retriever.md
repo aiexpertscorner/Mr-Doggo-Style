@@ -29,8 +29,8 @@ displayTitle: "Chesapeake Bay Retriever supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "chesapeake-bay-retriever", "Chesapeake Bay Retriever", "large", "active", "easy", "wavy"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "chesapeake-bay-retriever", "Chesapeake Bay Retriever", "large", "active", "easy", "wavy", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/chesapeake-bay-retriever", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Supplement options to discuss for Karelian Bear Dog"
 titlePattern: "supp-best-careful"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "karelian-bear-dog", "Karelian Bear Dog", "medium", "calm", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "karelian-bear-dog", "Karelian Bear Dog", "medium", "calm", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/karelian-bear-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

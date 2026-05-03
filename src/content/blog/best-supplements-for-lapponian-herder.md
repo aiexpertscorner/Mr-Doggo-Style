@@ -29,8 +29,8 @@ displayTitle: "Supplement options to discuss for Lapponian Herder"
 titlePattern: "supp-best-careful"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "lapponian-herder", "Lapponian Herder", "large", "regular", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "lapponian-herder", "Lapponian Herder", "large", "regular", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/lapponian-herder", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

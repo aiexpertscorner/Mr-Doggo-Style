@@ -29,8 +29,8 @@ displayTitle: "Parson Russell Terrier supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "parson-russell-terrier", "Parson Russell Terrier", "small", "active", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "parson-russell-terrier", "Parson Russell Terrier", "small", "active", "easy", "medium", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/parson-russell-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

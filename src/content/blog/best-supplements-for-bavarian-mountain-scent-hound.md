@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Bavarian Mountain Scent Hound
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "bavarian-mountain-scent-hound", "Bavarian Mountain Scent Hound", "large", "regular", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "bavarian-mountain-scent-hound", "Bavarian Mountain Scent Hound", "large", "regular", "easy", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/bavarian-mountain-scent-hound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

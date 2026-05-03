@@ -29,8 +29,8 @@ displayTitle: "Appenzeller Sennenhund grooming routine and tool shortlist"
 titlePattern: "groom-routine"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "appenzeller-sennenhund", "Appenzeller Sennenhund", "large", "active", "moderate", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "appenzeller-sennenhund", "Appenzeller Sennenhund", "large", "active", "moderate", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/appenzeller-sennenhund", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

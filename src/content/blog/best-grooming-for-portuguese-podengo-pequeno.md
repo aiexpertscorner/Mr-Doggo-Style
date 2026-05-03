@@ -29,8 +29,8 @@ displayTitle: "Portuguese Podengo Pequeno grooming for shedding and sensitive sk
 titlePattern: "groom-sensitive-skin"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "portuguese-podengo-pequeno", "Portuguese Podengo Pequeno", "small", "active", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "portuguese-podengo-pequeno", "Portuguese Podengo Pequeno", "small", "active", "easy", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/portuguese-podengo-pequeno", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

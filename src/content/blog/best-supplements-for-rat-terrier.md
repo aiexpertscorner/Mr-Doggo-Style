@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Rat Terrier"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "rat-terrier", "Rat Terrier", "small", "regular", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "rat-terrier", "Rat Terrier", "small", "regular", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/rat-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Russell Terrier coat care guide for medium fur"
 titlePattern: "groom-coat-care"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "russell-terrier", "Russell Terrier", "small", "active", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "russell-terrier", "Russell Terrier", "small", "active", "easy", "medium", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/russell-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

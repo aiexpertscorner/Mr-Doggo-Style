@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "danish-swedish-farm
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/danish-swedish-farmdog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/25905568/pexels-photo-25905568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/25905568/pexels-photo-25905568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute dog lying on the ground eating outdoors, showcasing its natural behavior."
+imageAlt: "Cute dog lying on the ground eating outdoors, showcasing its natural behavior."
+imageSource: "pexels"
+imageCredit: "Photo by Михаил Крамор on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/puppy-smelling-food-25905568/"
+imageSearchQuery: "Danish-Swedish Farmdog dog eating healthy food"
 ---
 
 Feeding a Danish-Swedish Farmdog well isn't as simple as grabbing the bag with the highest rating. Danish-Swedish Farmdogs are small dogs with active energy, a Lifespan of 11–13 years, and nutritional vulnerabilities that change across their life stages.

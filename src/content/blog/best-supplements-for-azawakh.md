@@ -29,8 +29,8 @@ displayTitle: "Azawakh supplement guide for regular dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "azawakh", "Azawakh", "medium", "regular", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "azawakh", "Azawakh", "medium", "regular", "difficult", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/azawakh", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

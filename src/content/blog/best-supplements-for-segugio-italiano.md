@@ -29,8 +29,8 @@ displayTitle: "Segugio Italiano supplements: evidence, labels, and vet checks"
 titlePattern: "supp-evidence"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "segugio-italiano", "Segugio Italiano", "medium", "regular", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "segugio-italiano", "Segugio Italiano", "medium", "regular", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/segugio-italiano", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

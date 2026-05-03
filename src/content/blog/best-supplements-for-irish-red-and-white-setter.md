@@ -29,8 +29,8 @@ displayTitle: "Irish Red and White Setter supplements: evidence, labels, and vet
 titlePattern: "supp-evidence"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "irish-red-and-white-setter", "Irish Red and White Setter", "medium", "active", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "irish-red-and-white-setter", "Irish Red and White Setter", "medium", "active", "easy", "silky", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/irish-red-and-white-setter", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for Bolognese"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "bolognese", "Bolognese", "small", "calm", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "bolognese", "Bolognese", "small", "calm", "easy", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/bolognese", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

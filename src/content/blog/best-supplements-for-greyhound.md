@@ -29,8 +29,8 @@ displayTitle: "Greyhound supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "greyhound", "Greyhound", "large", "active", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "greyhound", "Greyhound", "large", "active", "difficult", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/greyhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

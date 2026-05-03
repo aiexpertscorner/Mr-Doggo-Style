@@ -29,8 +29,8 @@ displayTitle: "Portuguese Podengo supplement shopping guide"
 titlePattern: "supp-shopping"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "portuguese-podengo", "Portuguese Podengo", "large", "active", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "portuguese-podengo", "Portuguese Podengo", "large", "active", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/portuguese-podengo", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Kai Ken supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "kai-ken", "Kai Ken", "medium", "active", "difficult", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "kai-ken", "Kai Ken", "medium", "active", "difficult", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/kai-ken", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

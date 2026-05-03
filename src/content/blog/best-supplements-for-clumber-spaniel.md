@@ -29,8 +29,8 @@ displayTitle: "Supplement options to discuss for Clumber Spaniel"
 titlePattern: "supp-best-careful"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "clumber-spaniel", "Clumber Spaniel", "large", "regular", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "clumber-spaniel", "Clumber Spaniel", "large", "regular", "easy", "silky", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/clumber-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

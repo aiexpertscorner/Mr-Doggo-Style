@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Mudi"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "mudi", "Mudi", "medium", "active", "easy", "curly"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "mudi", "Mudi", "medium", "active", "easy", "curly", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/mudi", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

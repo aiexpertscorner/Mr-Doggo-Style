@@ -29,8 +29,8 @@ displayTitle: "American Bulldog grooming shopping guide"
 titlePattern: "groom-shopping"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "american-bulldog", "American Bulldog", "large", "active", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "american-bulldog", "American Bulldog", "large", "active", "easy", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/american-bulldog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

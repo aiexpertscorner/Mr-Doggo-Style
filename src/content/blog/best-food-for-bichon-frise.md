@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "bichon-frise", "Bic
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/bichon-frise", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/9428282/pexels-photo-9428282.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/9428282/pexels-photo-9428282.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Child in armchair enjoying pancakes with fluffy white dog nearby in a brick-walled room."
+imageAlt: "Child in armchair enjoying pancakes with fluffy white dog nearby in a brick-walled room."
+imageSource: "pexels"
+imageCredit: "Photo by Katya Wolf on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/woman-in-gray-and-black-stripe-shirt-sitting-on-brown-wooden-armchair-9428282/"
+imageSearchQuery: "Bichon Frise dog eating healthy food"
 ---
 
 Feeding a Bichon Frise well isn't as simple as grabbing the bag with the highest rating. Bichon Frises are small dogs with regular energy, a Average lifespan of 12.2 years, and nutritional vulnerabilities that change across their life stages.

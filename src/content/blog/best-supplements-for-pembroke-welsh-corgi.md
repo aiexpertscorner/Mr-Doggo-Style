@@ -29,8 +29,8 @@ displayTitle: "Pembroke Welsh Corgi supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "pembroke-welsh-corgi", "Pembroke Welsh Corgi", "medium", "active", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "pembroke-welsh-corgi", "Pembroke Welsh Corgi", "medium", "active", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/pembroke-welsh-corgi", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

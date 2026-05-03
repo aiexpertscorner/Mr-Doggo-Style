@@ -29,8 +29,8 @@ displayTitle: "Japanese Chin grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "japanese-chin", "Japanese Chin", "small", "regular", "difficult", "silky"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "japanese-chin", "Japanese Chin", "small", "regular", "difficult", "silky", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/japanese-chin", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

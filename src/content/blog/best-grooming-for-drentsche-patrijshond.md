@@ -29,8 +29,8 @@ displayTitle: "Drentsche Patrijshond grooming kit for coat, bath, and nails"
 titlePattern: "groom-kit"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "drentsche-patrijshond", "Drentsche Patrijshond", "large", "active", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "drentsche-patrijshond", "Drentsche Patrijshond", "large", "active", "easy", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/drentsche-patrijshond", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

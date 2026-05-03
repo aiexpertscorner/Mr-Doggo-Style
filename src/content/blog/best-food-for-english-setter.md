@@ -1,6 +1,6 @@
 ---
 title: "English Setter Formula Fit: Kibble, Protein, and Feeding Notes"
-description: "A practical English Setter food guide for large dogs, with nutrition notes, joint-support context, and current shopping resources."
+description: "A practical English Setter food guide for large dogs, with nutrition notes, joint-support context, and owner-friendly comparison checks."
 pubDate: 2026-03-22
 updatedDate: 2026-05-03
 category: "Dog Food"
@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "english-setter", "E
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/english-setter", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/18868925/pexels-photo-18868925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/18868925/pexels-photo-18868925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A black and white portrait of a dog in a park, showcasing its elegance and poise."
+imageAlt: "A black and white portrait of a dog in a park, showcasing its elegance and poise."
+imageSource: "pexels"
+imageCredit: "Photo by Altaf Shah on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/black-and-white-photo-of-a-dog-on-a-leash-18868925/"
+imageSearchQuery: "English Setter dog eating healthy food"
 ---
 
 Feeding a English Setter well isn't as simple as grabbing the bag with the highest rating. English Setters are large dogs with active energy, a Average lifespan of 11.6 years, and nutritional vulnerabilities that change across their life stages.

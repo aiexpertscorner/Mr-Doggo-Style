@@ -29,8 +29,8 @@ displayTitle: "Basset Hound supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "basset-hound", "Basset Hound", "medium", "calm", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "basset-hound", "Basset Hound", "medium", "calm", "difficult", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/basset-hound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

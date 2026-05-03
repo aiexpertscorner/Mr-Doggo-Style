@@ -29,8 +29,8 @@ displayTitle: "Irish Wolfhound grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "irish-wolfhound", "Irish Wolfhound", "large", "regular", "difficult", "rough"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "irish-wolfhound", "Irish Wolfhound", "large", "regular", "difficult", "rough", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/irish-wolfhound", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

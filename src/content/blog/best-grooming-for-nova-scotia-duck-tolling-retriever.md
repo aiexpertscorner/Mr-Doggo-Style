@@ -29,8 +29,8 @@ displayTitle: "Nova Scotia Duck Tolling Retriever bathing, brushing, and nail ca
 titlePattern: "groom-bath"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "nova-scotia-duck-tolling-retriever", "Nova Scotia Duck Tolling Retriever", "medium", "active", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "nova-scotia-duck-tolling-retriever", "Nova Scotia Duck Tolling Retriever", "medium", "active", "easy", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/nova-scotia-duck-tolling-retriever", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

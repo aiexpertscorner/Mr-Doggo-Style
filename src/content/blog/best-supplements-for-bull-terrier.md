@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Bull Terrier"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "bull-terrier", "Bull Terrier", "large", "active", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "bull-terrier", "Bull Terrier", "large", "active", "difficult", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/bull-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

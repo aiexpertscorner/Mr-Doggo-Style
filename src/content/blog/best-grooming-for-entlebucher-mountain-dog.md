@@ -29,8 +29,8 @@ displayTitle: "Entlebucher Mountain Dog grooming shopping guide"
 titlePattern: "groom-shopping"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "entlebucher-mountain-dog", "Entlebucher Mountain Dog", "medium", "active", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "entlebucher-mountain-dog", "Entlebucher Mountain Dog", "medium", "active", "difficult", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/entlebucher-mountain-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

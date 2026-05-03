@@ -1,6 +1,6 @@
 ---
 title: "Briard Food Options for Weight and Digestion"
-description: "A practical Briard food guide for large dogs, with nutrition notes, joint-support context, and current shopping resources."
+description: "A practical Briard food guide for large dogs, with nutrition notes, joint-support context, and owner-friendly comparison checks."
 pubDate: 2026-03-22
 updatedDate: 2026-05-03
 category: "Dog Food"
@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "briard", "Briard", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/briard", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/30162045/pexels-photo-30162045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/30162045/pexels-photo-30162045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Briard dog playful in snowy Sittard, Limburg, Netherlands, biting a stick."
+imageAlt: "A Briard dog playful in snowy Sittard, Limburg, Netherlands, biting a stick."
+imageSource: "pexels"
+imageCredit: "Photo by Lorna Pauli on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/playful-briard-dog-chewing-stick-in-snow-30162045/"
+imageSearchQuery: "Briard dog eating healthy food"
 ---
 
 Feeding a Briard well isn't as simple as grabbing the bag with the highest rating. Briards are large dogs with regular energy, a Average lifespan of 11.2 years, and nutritional vulnerabilities that change across their life stages.

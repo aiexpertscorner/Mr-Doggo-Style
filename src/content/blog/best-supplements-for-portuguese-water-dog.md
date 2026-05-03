@@ -29,8 +29,8 @@ displayTitle: "Portuguese Water Dog supplement safety and medication questions"
 titlePattern: "supp-medication"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "portuguese-water-dog", "Portuguese Water Dog", "medium", "active", "easy", "curly"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "portuguese-water-dog", "Portuguese Water Dog", "medium", "active", "easy", "curly", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/portuguese-water-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Tibetan Spaniel coat care guide for double fur"
 titlePattern: "groom-coat-care"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "tibetan-spaniel", "Tibetan Spaniel", "small", "calm", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "tibetan-spaniel", "Tibetan Spaniel", "small", "calm", "easy", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/tibetan-spaniel", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

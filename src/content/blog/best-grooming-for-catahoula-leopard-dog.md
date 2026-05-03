@@ -29,8 +29,8 @@ displayTitle: "Brushes and shampoo to compare for Catahoula Leopard Dog"
 titlePattern: "groom-best-brush"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "catahoula-leopard-dog", "Catahoula Leopard Dog", "large", "active", "difficult", "medium"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "catahoula-leopard-dog", "Catahoula Leopard Dog", "large", "active", "difficult", "medium", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/catahoula-leopard-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

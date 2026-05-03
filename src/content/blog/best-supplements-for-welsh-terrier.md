@@ -29,8 +29,8 @@ displayTitle: "Welsh Terrier supplements: evidence, labels, and vet checks"
 titlePattern: "supp-evidence"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "welsh-terrier", "Welsh Terrier", "small", "active", "easy", "wiry"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "welsh-terrier", "Welsh Terrier", "small", "active", "easy", "wiry", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/welsh-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

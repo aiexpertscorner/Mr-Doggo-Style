@@ -29,8 +29,8 @@ displayTitle: "Joint supplements to ask your vet about for Border Terrier"
 titlePattern: "supp-best-joint"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "border-terrier", "Border Terrier", "small", "regular", "easy", "wiry"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "border-terrier", "Border Terrier", "small", "regular", "easy", "wiry", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/border-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

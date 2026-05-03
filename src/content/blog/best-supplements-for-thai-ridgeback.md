@@ -29,8 +29,8 @@ displayTitle: "Thai Ridgeback supplement guide for active dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "thai-ridgeback", "Thai Ridgeback", "large", "active", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "thai-ridgeback", "Thai Ridgeback", "large", "active", "difficult", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/thai-ridgeback", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

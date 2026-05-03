@@ -1,7 +1,7 @@
 {
   "publisherId": "2861861",
   "countryCode": "US",
-  "syncedAt": "2026-05-03T19:59:40.936Z",
+  "syncedAt": "2026-05-03T21:56:50.913Z",
   "programs": [
     {
       "key": "brutus-broth",
@@ -78,7 +78,7 @@
       "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=57823&id=2861861",
       "deeplinkEnabled": true,
       "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/57823.png",
-      "primarySector": "Dog Gifts",
+      "primarySector": "Gifts & Flowers",
       "primaryRegion": {
         "name": "United States of America",
         "countryCode": "US"
@@ -485,7 +485,7 @@
       "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=52135&id=2861861",
       "deeplinkEnabled": true,
       "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/52135.png",
-      "primarySector": "Dog Gifts",
+      "primarySector": "Gifts & Flowers",
       "primaryRegion": {
         "name": "United States of America",
         "countryCode": "US"
@@ -2040,7 +2040,8 @@
       "programmedetails/119433 -> HTTP 429",
       "programmedetails/120007 -> HTTP 429",
       "programmedetails/120960 -> HTTP 429",
-      "programmedetails/122204 -> HTTP 429"
+      "programmedetails/122204 -> HTTP 429",
+      "feed/93508 returned no parseable products from one endpoint; trying next endpoint if available."
     ],
     "errors": []
   }

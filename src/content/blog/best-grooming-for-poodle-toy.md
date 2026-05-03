@@ -29,8 +29,8 @@ displayTitle: "Poodle (Toy) coat care guide for long fur"
 titlePattern: "groom-coat-care"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "poodle-toy", "Poodle (Toy)", "small", "regular", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "poodle-toy", "Poodle (Toy)", "small", "regular", "easy", "long", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/poodle-toy", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

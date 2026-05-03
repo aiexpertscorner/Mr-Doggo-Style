@@ -29,8 +29,8 @@ displayTitle: "French Spaniel grooming routine and tool shortlist"
 titlePattern: "groom-routine"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "french-spaniel", "French Spaniel", "medium", "regular", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "french-spaniel", "French Spaniel", "medium", "regular", "easy", "silky", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/french-spaniel", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

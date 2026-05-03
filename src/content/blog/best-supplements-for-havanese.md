@@ -29,8 +29,8 @@ displayTitle: "Havanese supplement guide for regular dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "havanese", "Havanese", "small", "regular", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "havanese", "Havanese", "small", "regular", "easy", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/havanese", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

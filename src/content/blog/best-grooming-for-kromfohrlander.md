@@ -29,8 +29,8 @@ displayTitle: "Kromfohrlander grooming guide by coat type"
 titlePattern: "groom-guide"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "kromfohrlander", "Kromfohrlander", "medium", "regular", "easy", "rough"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "kromfohrlander", "Kromfohrlander", "medium", "regular", "easy", "rough", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/kromfohrlander", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

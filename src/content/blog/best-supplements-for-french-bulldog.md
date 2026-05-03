@@ -29,8 +29,8 @@ displayTitle: "French Bulldog supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "french-bulldog", "French Bulldog", "medium", "calm", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "french-bulldog", "French Bulldog", "medium", "calm", "easy", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/french-bulldog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

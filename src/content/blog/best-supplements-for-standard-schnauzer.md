@@ -29,8 +29,8 @@ displayTitle: "Standard Schnauzer supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "standard-schnauzer", "Standard Schnauzer", "medium", "regular", "difficult", "wiry"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "standard-schnauzer", "Standard Schnauzer", "medium", "regular", "difficult", "wiry", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/standard-schnauzer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

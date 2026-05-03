@@ -29,8 +29,8 @@ displayTitle: "Cavalier King Charles Spaniel health notes for practical owners"
 titlePattern: "health-practical"
 cluster: "health"
 productFamilies: ["health"]
-awinTopicTags: ["health", "Health", "cavalier-king-charles-spaniel", "Cavalier King Charles Spaniel", "small", "calm", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["health", "Health", "cavalier-king-charles-spaniel", "Cavalier King Charles Spaniel", "small", "calm", "easy", "silky", "vet-care", "wellness", "care", "insurance", "health-adjacent", "dental-care", "first-aid"]
+amazonQueries: ["dog first aid kit", "dog dental care kit", "dog wellness supplies", "dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers"]
 internalLinkTargets: ["/breeds/cavalier-king-charles-spaniel", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---
@@ -84,14 +84,14 @@ Cavalier King Charles Spaniel owners get the best results when they start with t
 ### DNA Testing — Know Before It Happens
 **Embark Dog DNA Test Kit** — $149.00 | ★★★★★ 4.5/5
 [Check Amazon.com details](https://www.amazon.com/dp/B01N5JUYAO/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-Best DNA test overall — unmatched health screening depth
+DNA test option with broad breed and health-marker coverage
 Particularly relevant for Cavalier King Charles Spaniels given their known genetic conditions.
 ---
 ### Parasite Prevention — Year-Round Protection
 **Seresto Flea and Tick Collar for Dogs** — $59.98 | ★★★★★ 4.5/5
 [Check Amazon.com details](https://www.amazon.com/dp/B004QIVHME/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 Most cost-effective long-term flea prevention — 8 months of coverage
-**Why it matters for Cavalier King Charles Spaniels:** Fleas cause allergic reactions and tapeworm transmission. Ticks transmit Lyme disease and other serious infections. Prevention is significantly cheaper than treatment.
+**Why it matters for Cavalier King Charles Spaniels:** Fleas cause allergic reactions and tapeworm transmission. Ticks transmit Lyme disease and other serious infections. Preventive care is usually easier to plan than urgent care.
 ---
 ### Dental Health — The Most Neglected Area
 **CET Enzymatic Dog Toothpaste** — $11.99 | ★★★★★ 4.6/5
@@ -105,10 +105,10 @@ Vet's top toothpaste — the enzymatic formula does the heavy lifting
 ### Ear Care — Preventable Infections
 **Zymox Ear Solution for Dogs and Cats** — $22.99 | ★★★★★ 4.7/5
 [Check Amazon.com details](https://www.amazon.com/dp/B005KDLVL0/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-Best OTC ear treatment — the enzymatic formula is genuinely effective
+Ear-care product to discuss with your veterinarian when symptoms appear
 Cavalier King Charles Spaniels with longer ear hair are at elevated risk for ear infections — the hair traps moisture and debris.
 ---
-### First Aid — Every Owner Needs This
+### First-aid basics
 **Vetericyn Plus All Animal Wound & Skin Care** — $19.99 | ★★★★★ 4.6/5
 [Check Amazon.com details](https://www.amazon.com/dp/B003VT4NWI/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 Best first-aid spray for dogs — every dog owner should have this

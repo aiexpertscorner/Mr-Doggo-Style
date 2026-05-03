@@ -29,8 +29,8 @@ displayTitle: "Grooming picks for Yorkshire Terrier shedding"
 titlePattern: "groom-best-shedding"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "yorkshire-terrier", "Yorkshire Terrier", "small", "regular", "moderate", "silky"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "yorkshire-terrier", "Yorkshire Terrier", "small", "regular", "moderate", "silky", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/yorkshire-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

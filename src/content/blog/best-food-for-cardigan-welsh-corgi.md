@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "cardigan-welsh-corg
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/cardigan-welsh-corgi", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/5110846/pexels-photo-5110846.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5110846/pexels-photo-5110846.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute corgi dog sitting in a cozy room with decorated Christmas tree and gift box."
+imageAlt: "Cute corgi dog sitting in a cozy room with decorated Christmas tree and gift box."
+imageSource: "pexels"
+imageCredit: "Photo by Julia Volk on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-shot-of-a-corgi-dog-5110846/"
+imageSearchQuery: "Cardigan Welsh Corgi dog eating healthy food"
 ---
 
 Feeding a Cardigan Welsh Corgi well isn't as simple as grabbing the bag with the highest rating. Cardigan Welsh Corgis are medium dogs with active energy, a Lifespan of 12–15 years, and nutritional vulnerabilities that change across their life stages.

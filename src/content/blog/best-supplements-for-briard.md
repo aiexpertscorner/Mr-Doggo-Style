@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for Briard"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "briard", "Briard", "large", "regular", "difficult", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "briard", "Briard", "large", "regular", "difficult", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/briard", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

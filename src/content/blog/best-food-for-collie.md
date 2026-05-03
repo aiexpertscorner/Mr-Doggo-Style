@@ -1,6 +1,6 @@
 ---
 title: "Collie Owners: Dog Foods to Compare First"
-description: "A practical Collie food guide for large dogs, with nutrition notes, joint-support context, and current shopping resources."
+description: "A practical Collie food guide for large dogs, with nutrition notes, joint-support context, and owner-friendly comparison checks."
 pubDate: 2026-03-22
 updatedDate: 2026-05-03
 category: "Dog Food"
@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "collie", "Collie", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/collie", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/5957235/pexels-photo-5957235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5957235/pexels-photo-5957235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming Collie dog with fluffy coat and open mouth panting outdoors."
+imageAlt: "Charming Collie dog with fluffy coat and open mouth panting outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by Kanashi on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-close-up-shot-of-a-collie-dog-5957235/"
+imageSearchQuery: "Collie dog eating healthy food"
 ---
 
 Feeding a Collie well isn't as simple as grabbing the bag with the highest rating. Collies are large dogs with regular energy, a Lifespan of 12–14 years, and nutritional vulnerabilities that change across their life stages.

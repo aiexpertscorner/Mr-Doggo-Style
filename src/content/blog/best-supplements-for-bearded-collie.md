@@ -29,8 +29,8 @@ displayTitle: "Bearded Collie supplement shopping guide"
 titlePattern: "supp-shopping"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "bearded-collie", "Bearded Collie", "medium", "regular", "difficult", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "bearded-collie", "Bearded Collie", "medium", "regular", "difficult", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/bearded-collie", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

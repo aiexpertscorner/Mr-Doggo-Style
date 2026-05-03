@@ -29,8 +29,8 @@ displayTitle: "Supplement options to discuss for Kishu Ken"
 titlePattern: "supp-best-careful"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "kishu-ken", "Kishu Ken", "medium", "active", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "kishu-ken", "Kishu Ken", "medium", "active", "difficult", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/kishu-ken", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

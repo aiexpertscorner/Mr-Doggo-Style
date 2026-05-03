@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "border-terrier", "B
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/border-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/31730620/pexels-photo-31730620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/31730620/pexels-photo-31730620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Border Terrier dog stands alert in a lush green garden, showcasing its shaggy coat."
+imageAlt: "A Border Terrier dog stands alert in a lush green garden, showcasing its shaggy coat."
+imageSource: "pexels"
+imageCredit: "Photo by Jamie VI on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-a-border-terrier-in-a-garden-setting-31730620/"
+imageSearchQuery: "Border Terrier dog eating healthy food"
 ---
 
 Feeding a Border Terrier well isn't as simple as grabbing the bag with the highest rating. Border Terriers are small dogs with regular energy, a Average lifespan of 14 years, and nutritional vulnerabilities that change across their life stages.

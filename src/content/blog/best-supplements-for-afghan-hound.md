@@ -29,8 +29,8 @@ displayTitle: "Afghan Hound supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "afghan-hound", "Afghan Hound", "medium", "active", "moderate", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "afghan-hound", "Afghan Hound", "medium", "active", "moderate", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/afghan-hound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

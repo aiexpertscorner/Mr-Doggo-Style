@@ -29,8 +29,8 @@ displayTitle: "Estrela Mountain Dog Grooming Guide: tools for Estrela Mountain D
 titlePattern: "groom-best-tools"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "estrela-mountain-dog", "Estrela Mountain Dog", "large", "calm", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "estrela-mountain-dog", "Estrela Mountain Dog", "large", "calm", "easy", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/estrela-mountain-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

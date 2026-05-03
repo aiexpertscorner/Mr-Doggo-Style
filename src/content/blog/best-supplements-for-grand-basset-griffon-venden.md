@@ -29,8 +29,8 @@ displayTitle: "Grand Basset Griffon Vendéen supplement safety and medication qu
 titlePattern: "supp-medication"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "grand-basset-griffon-venden", "Grand Basset Griffon Vendéen", "medium", "active", "difficult", "rough"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "grand-basset-griffon-venden", "Grand Basset Griffon Vendéen", "medium", "active", "difficult", "rough", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/grand-basset-griffon-venden", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

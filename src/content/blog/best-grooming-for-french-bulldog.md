@@ -29,8 +29,8 @@ displayTitle: "French Bulldog grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "french-bulldog", "French Bulldog", "medium", "calm", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "french-bulldog", "French Bulldog", "medium", "calm", "easy", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/french-bulldog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

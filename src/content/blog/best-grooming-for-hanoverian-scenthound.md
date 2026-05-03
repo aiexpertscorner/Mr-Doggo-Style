@@ -29,8 +29,8 @@ displayTitle: "Brushes and shampoo to compare for Hanoverian Scenthound"
 titlePattern: "groom-best-brush"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "hanoverian-scenthound", "Hanoverian Scenthound", "large", "regular", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "hanoverian-scenthound", "Hanoverian Scenthound", "large", "regular", "difficult", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/hanoverian-scenthound", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

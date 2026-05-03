@@ -29,8 +29,8 @@ displayTitle: "Japanese Chin supplement safety and medication questions"
 titlePattern: "supp-medication"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "japanese-chin", "Japanese Chin", "small", "regular", "difficult", "silky"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "japanese-chin", "Japanese Chin", "small", "regular", "difficult", "silky", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/japanese-chin", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

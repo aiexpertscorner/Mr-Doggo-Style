@@ -29,8 +29,8 @@ displayTitle: "Staffordshire Bull Terrier grooming tools for short coats"
 titlePattern: "groom-best-coat"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "staffordshire-bull-terrier", "Staffordshire Bull Terrier", "medium", "active", "moderate", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "staffordshire-bull-terrier", "Staffordshire Bull Terrier", "medium", "active", "moderate", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/staffordshire-bull-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -13,9 +13,24 @@ const BREEDS_PATH = resolve(ROOT, 'src/data/master-breeds.json');
 const CLUSTERS_PATH = resolve(ROOT, 'src/lib/content/contentClusterConfig.ts');
 const TODAY = new Date().toISOString().slice(0, 10);
 const APPLY = process.argv.includes('--apply');
+const FAMILY_FILTER = getListArg('families');
+const SLUG_FILTER = getListArg('slugs');
+const LIMIT = Number(getArg('limit') || 0);
+const REPORT_CHANGES = process.argv.includes('--report');
 
 const breeds = existsSync(BREEDS_PATH) ? JSON.parse(readFileSync(BREEDS_PATH, 'utf8')) : [];
 const breedBySlug = new Map(breeds.map((breed) => [breed.slug, breed]));
+
+function getArg(name) {
+  const prefix = `--${name}=`;
+  const hit = process.argv.find((arg) => arg.startsWith(prefix));
+  return hit ? hit.slice(prefix.length).trim() : '';
+}
+
+function getListArg(name) {
+  const raw = getArg(name);
+  return new Set(raw.split(',').map((item) => item.trim()).filter(Boolean));
+}
 
 const FAMILY_TO_CLUSTER = {
   food: 'dog-food',
@@ -256,10 +271,15 @@ function buildClusterTags(copy, breed) {
 
 let scanned = 0;
 let changed = 0;
+let written = 0;
+const changeReport = [];
 
 for (const filename of readdirSync(BLOG_DIR).filter((file) => file.endsWith('.md'))) {
   const match = getPseoFamilyFromFilename(filename);
   if (!match) continue;
+  if (FAMILY_FILTER.size && !FAMILY_FILTER.has(match.familyKey)) continue;
+  if (SLUG_FILTER.size && !SLUG_FILTER.has(match.breedSlug) && !SLUG_FILTER.has(filename.replace(/\.md$/, ''))) continue;
+  if (LIMIT > 0 && scanned >= LIMIT) continue;
   const breed = breedBySlug.get(match.breedSlug);
   if (!breed) continue;
   scanned++;
@@ -303,9 +323,24 @@ for (const filename of readdirSync(BLOG_DIR).filter((file) => file.endsWith('.md
   const next = `---\n${updatedYaml}\n---\n\n${body}`;
   if (next !== original) {
     changed++;
-    if (APPLY) writeFileSync(path, next, 'utf8');
+    if (REPORT_CHANGES) changeReport.push({ file: filename, family: match.familyKey, breed: match.breedSlug });
+    if (APPLY) {
+      writeFileSync(path, next, 'utf8');
+      written++;
+    }
   }
 }
 
-console.log(JSON.stringify({ apply: APPLY, scanned, changed }, null, 2));
+console.log(JSON.stringify({
+  apply: APPLY,
+  scanned,
+  changed,
+  written,
+  filters: {
+    families: [...FAMILY_FILTER],
+    slugs: [...SLUG_FILTER],
+    limit: LIMIT || null,
+  },
+  changes: REPORT_CHANGES ? changeReport.slice(0, 250) : undefined,
+}, null, 2));
 

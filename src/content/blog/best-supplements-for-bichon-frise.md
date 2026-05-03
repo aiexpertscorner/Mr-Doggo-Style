@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Bichon Frise"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "bichon-frise", "Bichon Frise", "small", "regular", "easy", "curly"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "bichon-frise", "Bichon Frise", "small", "regular", "easy", "curly", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/bichon-frise", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

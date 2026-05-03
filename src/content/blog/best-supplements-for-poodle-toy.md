@@ -29,8 +29,8 @@ displayTitle: "Poodle (Toy) supplement safety and medication questions"
 titlePattern: "supp-medication"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "poodle-toy", "Poodle (Toy)", "small", "regular", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "poodle-toy", "Poodle (Toy)", "small", "regular", "easy", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/poodle-toy", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

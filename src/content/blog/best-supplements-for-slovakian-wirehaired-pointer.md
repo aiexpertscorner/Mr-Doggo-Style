@@ -29,8 +29,8 @@ displayTitle: "Slovakian Wirehaired Pointer supplements for joints, skin, and gu
 titlePattern: "supp-joint-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "slovakian-wirehaired-pointer", "Slovakian Wirehaired Pointer", "medium", "active", "difficult", "wiry"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "slovakian-wirehaired-pointer", "Slovakian Wirehaired Pointer", "medium", "active", "difficult", "wiry", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/slovakian-wirehaired-pointer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

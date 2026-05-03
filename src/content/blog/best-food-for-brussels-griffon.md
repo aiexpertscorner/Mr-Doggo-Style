@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "brussels-griffon", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/brussels-griffon", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/33719277/pexels-photo-33719277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/33719277/pexels-photo-33719277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable Brussels Griffon dog standing on wooden floor indoors, looking curious."
+imageAlt: "Adorable Brussels Griffon dog standing on wooden floor indoors, looking curious."
+imageSource: "pexels"
+imageCredit: "Photo by Tahir Xəlfə on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/brussels-griffon-dog-standing-indoors-33719277/"
+imageSearchQuery: "Brussels Griffon dog eating healthy food"
 ---
 
 Feeding a Brussels Griffon well isn't as simple as grabbing the bag with the highest rating. Brussels Griffons are small dogs with regular energy, a Average lifespan of 12 years, and nutritional vulnerabilities that change across their life stages.

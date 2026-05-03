@@ -29,8 +29,8 @@ displayTitle: "Czechoslovakian Vlcak supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "czechoslovakian-vlcak", "Czechoslovakian Vlcak", "medium", "active", "moderate", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "czechoslovakian-vlcak", "Czechoslovakian Vlcak", "medium", "active", "moderate", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/czechoslovakian-vlcak", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

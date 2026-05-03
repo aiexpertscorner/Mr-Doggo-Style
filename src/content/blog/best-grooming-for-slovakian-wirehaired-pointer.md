@@ -29,8 +29,8 @@ displayTitle: "Slovakian Wirehaired Pointer grooming kit for coat, bath, and nai
 titlePattern: "groom-kit"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "slovakian-wirehaired-pointer", "Slovakian Wirehaired Pointer", "medium", "active", "difficult", "wiry"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "slovakian-wirehaired-pointer", "Slovakian Wirehaired Pointer", "medium", "active", "difficult", "wiry", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/slovakian-wirehaired-pointer", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

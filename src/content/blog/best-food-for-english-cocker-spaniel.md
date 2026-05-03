@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "english-cocker-span
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/english-cocker-spaniel", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/35261898/pexels-photo-35261898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35261898/pexels-photo-35261898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable Cocker Spaniel dog peacefully resting on a white background."
+imageAlt: "Adorable Cocker Spaniel dog peacefully resting on a white background."
+imageSource: "pexels"
+imageCredit: "Photo by Christopher Welsch Leveroni on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/sleeping-cocker-spaniel-dog-portrait-35261898/"
+imageSearchQuery: "English Cocker Spaniel dog eating healthy food"
 ---
 
 Feeding a English Cocker Spaniel well isn't as simple as grabbing the bag with the highest rating. English Cocker Spaniels are medium dogs with regular energy, a Average lifespan of 11.7 years, and nutritional vulnerabilities that change across their life stages.

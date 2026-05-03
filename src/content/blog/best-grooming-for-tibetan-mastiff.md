@@ -29,8 +29,8 @@ displayTitle: "Tibetan Mastiff grooming shopping guide"
 titlePattern: "groom-shopping"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "tibetan-mastiff", "Tibetan Mastiff", "large", "regular", "difficult", "long"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "tibetan-mastiff", "Tibetan Mastiff", "large", "regular", "difficult", "long", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/tibetan-mastiff", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

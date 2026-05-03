@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "border-collie", "Bo
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/border-collie", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/35815215/pexels-photo-35815215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35815215/pexels-photo-35815215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A beautiful Border Collie dog stands in a snowy landscape near Poprad, Slovakia."
+imageAlt: "A beautiful Border Collie dog stands in a snowy landscape near Poprad, Slovakia."
+imageSource: "pexels"
+imageCredit: "Photo by Michal Petráš on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/border-collie-in-snowy-landscape-slovakia-35815215/"
+imageSearchQuery: "Border Collie dog eating healthy food"
 ---
 
 Feeding a Border Collie well isn't as simple as grabbing the bag with the highest rating. Border Collies are medium dogs with active energy, a Average lifespan of 12.5 years, and nutritional vulnerabilities that change across their life stages.

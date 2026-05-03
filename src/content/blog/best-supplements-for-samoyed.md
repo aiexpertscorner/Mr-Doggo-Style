@@ -29,8 +29,8 @@ displayTitle: "Samoyed supplement safety and medication questions"
 titlePattern: "supp-medication"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "samoyed", "Samoyed", "medium", "active", "difficult", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "samoyed", "Samoyed", "medium", "active", "difficult", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/samoyed", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

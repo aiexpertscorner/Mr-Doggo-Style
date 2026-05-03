@@ -29,8 +29,8 @@ displayTitle: "Rottweiler health problems: risks and screening"
 titlePattern: "health-problems"
 cluster: "health"
 productFamilies: ["health"]
-awinTopicTags: ["health", "Health", "rottweiler", "Rottweiler", "large", "regular", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["health", "Health", "rottweiler", "Rottweiler", "large", "regular", "easy", "short", "vet-care", "wellness", "care", "insurance", "health-adjacent", "dental-care", "first-aid"]
+amazonQueries: ["dog first aid kit", "dog dental care kit", "dog wellness supplies", "dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers"]
 internalLinkTargets: ["/breeds/rottweiler", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---
@@ -84,14 +84,14 @@ Rottweiler owners get the best results when they start with the dog in front of 
 ### DNA Testing — Know Before It Happens
 **Embark Dog DNA Test Kit** — $149.00 | ★★★★★ 4.5/5
 [See current Amazon listing](https://www.amazon.com/dp/B01N5JUYAO/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-Best DNA test overall — unmatched health screening depth
+DNA test option with broad breed and health-marker coverage
 Particularly relevant for Rottweilers given their known genetic conditions.
 ---
 ### Parasite Prevention — Year-Round Protection
 **NexGard Chewables for Dogs (Flea & Tick)** — $68.99 | ★★★★★ 4.6/5
 [See current Amazon listing](https://www.amazon.com/dp/B00027353A/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 Best monthly flea and tick prevention — the easiest format for compliance
-**Why it matters for Rottweilers:** Fleas cause allergic reactions and tapeworm transmission. Ticks transmit Lyme disease and other serious infections. Prevention is significantly cheaper than treatment.
+**Why it matters for Rottweilers:** Fleas cause allergic reactions and tapeworm transmission. Ticks transmit Lyme disease and other serious infections. Preventive care is usually easier to plan than urgent care.
 ---
 ### Dental Health — The Most Neglected Area
 **Wisdom Panel Essential Dog DNA Test** — $99.99 | ★★★★☆ 4.4/5
@@ -107,7 +107,7 @@ Best budget DNA test — 75% of Embark's value at 66% of the price
 [See current Amazon listing](https://www.amazon.com/dp/B00027353A/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 Best monthly flea and tick prevention — the easiest format for compliance
 ---
-### First Aid — Every Owner Needs This
+### First-aid basics
 **Vetericyn Plus All Animal Wound & Skin Care** — $19.99 | ★★★★★ 4.6/5
 [See current Amazon listing](https://www.amazon.com/dp/B003VT4NWI/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 Best first-aid spray for dogs — every dog owner should have this

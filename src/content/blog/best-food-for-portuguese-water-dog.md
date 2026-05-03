@@ -1,6 +1,6 @@
 ---
 title: "Portuguese Water Dog Food Guide:"
-description: "A practical Portuguese Water Dog food guide for medium dogs, with nutrition notes, joint-support context, and current shopping resources."
+description: "A practical Portuguese Water Dog food guide for medium dogs, with nutrition notes, joint-support context, and owner-friendly comparison checks."
 pubDate: 2026-03-22
 updatedDate: 2026-05-03
 category: "Dog Food"

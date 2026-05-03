@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-05-03T19:59:32.562Z",
+  "syncedAt": "2026-05-03T21:56:42.186Z",
   "images": {
     "affenpinscher-health-problems:Affenpinscher dog veterinarian wellness": {
       "url": "https://images.pexels.com/photos/6234980/pexels-photo-6234980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
@@ -3200,12 +3200,652 @@
       "photographerUrl": "https://www.pexels.com/@chris-f-38966",
       "pexelsUrl": "https://www.pexels.com/photo/a-dog-in-the-water-8094960/",
       "id": 8094960
+    },
+    "best-food-for-basset-fauve-de-bretagne:Basset Fauve de Bretagne dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6578830/pexels-photo-6578830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Concentrated young African American couple with curly hairs in casual outfits eating takeaway salad and pizza while watching TV sitting on sofa near cute purebred dog",
+      "photographer": "Andres  Ayrton",
+      "photographerUrl": "https://www.pexels.com/@andres-ayrton",
+      "pexelsUrl": "https://www.pexels.com/photo/focused-young-black-couple-having-lunch-and-watching-tv-on-couch-near-curious-dog-6578830/",
+      "id": 6578830
+    },
+    "best-food-for-basset-hound:Basset Hound dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/33979390/pexels-photo-33979390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Charming basset hound dog with long ears lounging in a sunny garden in Serbia.",
+      "photographer": "Andrea Sretenović",
+      "photographerUrl": "https://www.pexels.com/@andrea-sretenovic-2155974181",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-basset-hound-dog-in-summer-garden-33979390/",
+      "id": 33979390
+    },
+    "best-food-for-bavarian-mountain-scent-hound:Bavarian Mountain Scent Hound dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/36372836/pexels-photo-36372836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Profile view of a brown dog with alert expression, surrounded by lush greenery.",
+      "photographer": "Joaquin Reyes Ramos",
+      "photographerUrl": "https://www.pexels.com/@joaquinrr",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-of-a-brown-dog-outdoors-in-nature-36372836/",
+      "id": 36372836
+    },
+    "best-food-for-beagle:Beagle dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/8706371/pexels-photo-8706371.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up portrait of a beagle dog showcasing its gentle and attentive expression.",
+      "photographer": "Nastya Korenkova",
+      "photographerUrl": "https://www.pexels.com/@nastya-korenkova-72937441",
+      "pexelsUrl": "https://www.pexels.com/photo/a-close-up-shot-of-a-beagle-8706371/",
+      "id": 8706371
+    },
+    "best-food-for-bearded-collie:Bearded Collie dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/32952729/pexels-photo-32952729.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A joyful border collie dog with heterochromia standing in a field of wildflowers during the day.",
+      "photographer": "Michal Petráš",
+      "photographerUrl": "https://www.pexels.com/@michal-petras-2152077115",
+      "pexelsUrl": "https://www.pexels.com/photo/happy-border-collie-enjoying-a-sunny-day-outdoors-32952729/",
+      "id": 32952729
+    },
+    "best-food-for-beauceron:Beauceron dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-bedlington-terrier:Bedlington Terrier dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/7765407/pexels-photo-7765407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Bedlington Terrier dog sits indoors with a leather collar, exuding charm and warmth.",
+      "photographer": "Jean-Paul  Wright",
+      "photographerUrl": "https://www.pexels.com/@jean-paul-wright-39375669",
+      "pexelsUrl": "https://www.pexels.com/photo/a-furry-dog-with-a-collar-7765407/",
+      "id": 7765407
+    },
+    "best-food-for-belgian-laekenois:Belgian Laekenois dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-belgian-malinois:Belgian Malinois dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/13076152/pexels-photo-13076152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Belgian Malinois dog standing in a scenic, natural outdoor setting with grass and sky.",
+      "photographer": "Laura Paredis",
+      "photographerUrl": "https://www.pexels.com/@laura-paredis-1047081",
+      "pexelsUrl": "https://www.pexels.com/photo/malinois-dog-standing-on-brown-field-under-blue-sky-13076152/",
+      "id": 13076152
+    },
+    "best-food-for-belgian-sheepdog:Belgian Sheepdog dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/7421520/pexels-photo-7421520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A dog sniffs pistachios on a white plate in an overhead, natural setting.",
+      "photographer": "Vie Studio",
+      "photographerUrl": "https://www.pexels.com/@vie-studio",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-smelling-the-pistachios-7421520/",
+      "id": 7421520
+    },
+    "best-food-for-belgian-tervuren:Belgian Tervuren dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-bergamasco-sheepdog:Bergamasco Sheepdog dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/12910849/pexels-photo-12910849.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up of a Polish Lowland Sheepdog eagerly awaiting a treat in a vibrant green field.",
+      "photographer": "Denis Liendo ✅",
+      "photographerUrl": "https://www.pexels.com/@tonliendo",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-photo-of-a-dog-12910849/",
+      "id": 12910849
+    },
+    "best-food-for-berger-picard:Berger Picard dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-bernese-mountain-dog:Bernese Mountain Dog dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/10842583/pexels-photo-10842583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Charming Bernese Mountain Dog in a sunlit field of wildflowers, radiating joy.",
+      "photographer": "David  Floyd",
+      "photographerUrl": "https://www.pexels.com/@david-floyd-1825880",
+      "pexelsUrl": "https://www.pexels.com/photo/a-close-up-shot-of-a-bernese-mountain-dog-10842583/",
+      "id": 10842583
+    },
+    "best-food-for-bichon-frise:Bichon Frise dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/9428282/pexels-photo-9428282.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Child in armchair enjoying pancakes with fluffy white dog nearby in a brick-walled room.",
+      "photographer": "Katya Wolf",
+      "photographerUrl": "https://www.pexels.com/@katya-wolf",
+      "pexelsUrl": "https://www.pexels.com/photo/woman-in-gray-and-black-stripe-shirt-sitting-on-brown-wooden-armchair-9428282/",
+      "id": 9428282
+    },
+    "best-food-for-biewer-terrier:Biewer Terrier dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/34912310/pexels-photo-34912310.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Yorkshire Terrier dog with fluffy coat relaxing outdoors on a sunny day.",
+      "photographer": "Erwin Bosman",
+      "photographerUrl": "https://www.pexels.com/@erwin-bosman-118283",
+      "pexelsUrl": "https://www.pexels.com/photo/playful-yorkshire-terrier-relaxing-outdoors-34912310/",
+      "id": 34912310
+    },
+    "best-food-for-black-and-tan-coonhound:Black and Tan Coonhound dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/25905568/pexels-photo-25905568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog lying on the ground eating outdoors, showcasing its natural behavior.",
+      "photographer": "Михаил Крамор",
+      "photographerUrl": "https://www.pexels.com/@vantik93",
+      "pexelsUrl": "https://www.pexels.com/photo/puppy-smelling-food-25905568/",
+      "id": 25905568
+    },
+    "best-food-for-black-russian-terrier:Black Russian Terrier dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/8434725/pexels-photo-8434725.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A small brown dog enjoys a meal from its bowl indoors, showcasing cozy living.",
+      "photographer": "MART  PRODUCTION",
+      "photographerUrl": "https://www.pexels.com/@mart-production",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-eating-on-a-bowl-8434725/",
+      "id": 8434725
+    },
+    "best-food-for-bloodhound:Bloodhound dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-bluetick-coonhound:Bluetick Coonhound dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6578830/pexels-photo-6578830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Concentrated young African American couple with curly hairs in casual outfits eating takeaway salad and pizza while watching TV sitting on sofa near cute purebred dog",
+      "photographer": "Andres  Ayrton",
+      "photographerUrl": "https://www.pexels.com/@andres-ayrton",
+      "pexelsUrl": "https://www.pexels.com/photo/focused-young-black-couple-having-lunch-and-watching-tv-on-couch-near-curious-dog-6578830/",
+      "id": 6578830
+    },
+    "best-food-for-boerboel:Boerboel dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-bohemian-shepherd:Bohemian Shepherd dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/35089311/pexels-photo-35089311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "German Shepherd dog standing alert in a grassy field on a clear day.",
+      "photographer": "Dmytro Glazunov",
+      "photographerUrl": "https://www.pexels.com/@glazun0v",
+      "pexelsUrl": "https://www.pexels.com/photo/german-shepherd-standing-in-a-grassy-field-35089311/",
+      "id": 35089311
+    },
+    "best-food-for-bolognese:Bolognese dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/770363/pexels-photo-770363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Dalmatian dog sniffing tropical fruits on a platter, including figs and raspberries.",
+      "photographer": "Rarnie McCudden",
+      "photographerUrl": "https://www.pexels.com/@rarnie-mccudden",
+      "pexelsUrl": "https://www.pexels.com/photo/black-and-white-dalmatian-dog-eating-fruits-770363/",
+      "id": 770363
+    },
+    "best-food-for-border-collie:Border Collie dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/35815215/pexels-photo-35815215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A beautiful Border Collie dog stands in a snowy landscape near Poprad, Slovakia.",
+      "photographer": "Michal Petráš",
+      "photographerUrl": "https://www.pexels.com/@michal-petras-2152077115",
+      "pexelsUrl": "https://www.pexels.com/photo/border-collie-in-snowy-landscape-slovakia-35815215/",
+      "id": 35815215
+    },
+    "best-food-for-border-terrier:Border Terrier dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/31730620/pexels-photo-31730620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Border Terrier dog stands alert in a lush green garden, showcasing its shaggy coat.",
+      "photographer": "Jamie VI",
+      "photographerUrl": "https://www.pexels.com/@jamie-vi-2150613727",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-of-a-border-terrier-in-a-garden-setting-31730620/",
+      "id": 31730620
+    },
+    "best-food-for-borzoi:Borzoi dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/7421520/pexels-photo-7421520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A dog sniffs pistachios on a white plate in an overhead, natural setting.",
+      "photographer": "Vie Studio",
+      "photographerUrl": "https://www.pexels.com/@vie-studio",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-smelling-the-pistachios-7421520/",
+      "id": 7421520
+    },
+    "best-food-for-boston-terrier:Boston Terrier dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/27972919/pexels-photo-27972919.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Boston Terrier puppy playfully chewing a stick on grass.",
+      "photographer": "Sean Brannon",
+      "photographerUrl": "https://www.pexels.com/@sean-brannon-762373037",
+      "pexelsUrl": "https://www.pexels.com/photo/boston-terrier-puppy-27972919/",
+      "id": 27972919
+    },
+    "best-food-for-bouvier-des-flandres:Bouvier des Flandres dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-boxer:Boxer dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/32371133/pexels-photo-32371133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A detailed close-up of a Boxer dog resting on the floor indoors, expressing a tender and relaxed mood.",
+      "photographer": "Laurence FUSCO",
+      "photographerUrl": "https://www.pexels.com/@laurence-fusco-2149766614",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-of-boxer-dog-lying-on-floor-indoors-32371133/",
+      "id": 32371133
+    },
+    "best-food-for-boykin-spaniel:Boykin Spaniel dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/5837291/pexels-photo-5837291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog panting happily in a sunny field, captured outdoors.",
+      "photographer": "seppe machielsen",
+      "photographerUrl": "https://www.pexels.com/@semac",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-5837291/",
+      "id": 5837291
+    },
+    "best-food-for-bracco-italiano:Bracco Italiano dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/770363/pexels-photo-770363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Dalmatian dog sniffing tropical fruits on a platter, including figs and raspberries.",
+      "photographer": "Rarnie McCudden",
+      "photographerUrl": "https://www.pexels.com/@rarnie-mccudden",
+      "pexelsUrl": "https://www.pexels.com/photo/black-and-white-dalmatian-dog-eating-fruits-770363/",
+      "id": 770363
+    },
+    "best-food-for-braque-du-bourbonnais:Braque du Bourbonnais dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6578830/pexels-photo-6578830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Concentrated young African American couple with curly hairs in casual outfits eating takeaway salad and pizza while watching TV sitting on sofa near cute purebred dog",
+      "photographer": "Andres  Ayrton",
+      "photographerUrl": "https://www.pexels.com/@andres-ayrton",
+      "pexelsUrl": "https://www.pexels.com/photo/focused-young-black-couple-having-lunch-and-watching-tv-on-couch-near-curious-dog-6578830/",
+      "id": 6578830
+    },
+    "best-food-for-braque-francais-pyrenean:Braque Francais Pyrenean dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-briard:Briard dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/30162045/pexels-photo-30162045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Briard dog playful in snowy Sittard, Limburg, Netherlands, biting a stick.",
+      "photographer": "Lorna Pauli",
+      "photographerUrl": "https://www.pexels.com/@lorna-pauli-1320744316",
+      "pexelsUrl": "https://www.pexels.com/photo/playful-briard-dog-chewing-stick-in-snow-30162045/",
+      "id": 30162045
+    },
+    "best-food-for-brittany:Brittany dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6578830/pexels-photo-6578830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Concentrated young African American couple with curly hairs in casual outfits eating takeaway salad and pizza while watching TV sitting on sofa near cute purebred dog",
+      "photographer": "Andres  Ayrton",
+      "photographerUrl": "https://www.pexels.com/@andres-ayrton",
+      "pexelsUrl": "https://www.pexels.com/photo/focused-young-black-couple-having-lunch-and-watching-tv-on-couch-near-curious-dog-6578830/",
+      "id": 6578830
+    },
+    "best-food-for-broholmer:Broholmer dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-brussels-griffon:Brussels Griffon dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/33719277/pexels-photo-33719277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Brussels Griffon dog standing on wooden floor indoors, looking curious.",
+      "photographer": "Tahir Xəlfə",
+      "photographerUrl": "https://www.pexels.com/@tahir",
+      "pexelsUrl": "https://www.pexels.com/photo/brussels-griffon-dog-standing-indoors-33719277/",
+      "id": 33719277
+    },
+    "best-food-for-bull-terrier:Bull Terrier dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/15264143/pexels-photo-15264143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A bull terrier dog comfortably lounging on a blue folding camping chair in a sunny outdoor setting.",
+      "photographer": "Vitali Adutskevich",
+      "photographerUrl": "https://www.pexels.com/@vadutskevich",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-lying-in-a-chair-15264143/",
+      "id": 15264143
+    },
+    "best-food-for-bulldog:Bulldog dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/29082222/pexels-photo-29082222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Charming English bulldog running through a park in fall scenery.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/english-bulldog-running-outdoors-in-autumn-29082222/",
+      "id": 29082222
+    },
+    "best-food-for-bullmastiff:Bullmastiff dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/16222914/pexels-photo-16222914.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A bullmastiff dog lying on a wooden porch, gazing upward in a peaceful outdoor setting.",
+      "photographer": "Lifestyle Farmer",
+      "photographerUrl": "https://www.pexels.com/@lifestyle-farmer-507890371",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-lying-on-the-porch-16222914/",
+      "id": 16222914
+    },
+    "best-food-for-cairn-terrier:Cairn Terrier dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/5427923/pexels-photo-5427923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Crop anonymous pregnant woman in casual dress feeding Yorkshire terrier dogs while standing together with husband in contemporary kitchen in daylight",
+      "photographer": "Amina Filkins",
+      "photographerUrl": "https://www.pexels.com/@amina-filkins",
+      "pexelsUrl": "https://www.pexels.com/photo/woman-feeding-dogs-5427923/",
+      "id": 5427923
+    },
+    "best-food-for-canaan-dog:Canaan Dog dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-cane-corso:Cane Corso dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/36260130/pexels-photo-36260130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A black dog stands in a serene snowy landscape surrounded by wintry trees, capturing the essence of winter.",
+      "photographer": "Сергей ЮССтудия",
+      "photographerUrl": "https://www.pexels.com/@1317355004",
+      "pexelsUrl": "https://www.pexels.com/photo/black-dog-standing-in-snowy-winter-landscape-36260130/",
+      "id": 36260130
+    },
+    "best-food-for-cardigan-welsh-corgi:Cardigan Welsh Corgi dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/5110846/pexels-photo-5110846.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute corgi dog sitting in a cozy room with decorated Christmas tree and gift box.",
+      "photographer": "Julia Volk",
+      "photographerUrl": "https://www.pexels.com/@julia-volk",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-corgi-dog-5110846/",
+      "id": 5110846
+    },
+    "best-food-for-carolina-dog:Carolina Dog dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-catahoula-leopard-dog:Catahoula Leopard Dog dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-caucasian-shepherd-dog:Caucasian Shepherd Dog dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/17752810/pexels-photo-17752810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Caucasian Shepherd Dog rests on grass in Sakarya, Türkiye highlighting its majestic coat.",
+      "photographer": "Osman Sami Akman",
+      "photographerUrl": "https://www.pexels.com/@osman-sami-akman-649057821",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-of-a-shepherd-dog-17752810/",
+      "id": 17752810
+    },
+    "best-food-for-cavalier-king-charles-spaniel:Cavalier King Charles Spaniel dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/23427657/pexels-photo-23427657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A cute Cavalier King Charles Spaniel sleeping on a blue table during a dog show.",
+      "photographer": "Dmitry Ovsyannikov",
+      "photographerUrl": "https://www.pexels.com/@dmitry-ovsyannikov-271243380",
+      "pexelsUrl": "https://www.pexels.com/photo/king-charles-spaniel-sleeping-on-a-table-during-a-dog-show-23427657/",
+      "id": 23427657
+    },
+    "best-food-for-central-asian-shepherd-dog:Central Asian Shepherd Dog dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/33107951/pexels-photo-33107951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Portrait of a Central Asian Shepherd dog with its tongue out, captured outdoors in Tbilisi, Georgia.",
+      "photographer": "Genadi Yakovlev",
+      "photographerUrl": "https://www.pexels.com/@gy1610",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-of-central-asian-shepherd-dog-outdoors-33107951/",
+      "id": 33107951
+    },
+    "best-food-for-cesky-terrier:Cesky Terrier dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/8434725/pexels-photo-8434725.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A small brown dog enjoys a meal from its bowl indoors, showcasing cozy living.",
+      "photographer": "MART  PRODUCTION",
+      "photographerUrl": "https://www.pexels.com/@mart-production",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-eating-on-a-bowl-8434725/",
+      "id": 8434725
+    },
+    "best-food-for-chesapeake-bay-retriever:Chesapeake Bay Retriever dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/7421520/pexels-photo-7421520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A dog sniffs pistachios on a white plate in an overhead, natural setting.",
+      "photographer": "Vie Studio",
+      "photographerUrl": "https://www.pexels.com/@vie-studio",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-smelling-the-pistachios-7421520/",
+      "id": 7421520
+    },
+    "best-food-for-chihuahua:Chihuahua dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/8434725/pexels-photo-8434725.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A small brown dog enjoys a meal from its bowl indoors, showcasing cozy living.",
+      "photographer": "MART  PRODUCTION",
+      "photographerUrl": "https://www.pexels.com/@mart-production",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-eating-on-a-bowl-8434725/",
+      "id": 8434725
+    },
+    "best-food-for-chinese-crested:Chinese Crested dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/33063627/pexels-photo-33063627.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A lively Chinese Crested dog joyfully catching a tennis ball in a sunny outdoor garden setting.",
+      "photographer": "Veronika Andrews",
+      "photographerUrl": "https://www.pexels.com/@veronika-andrews-2153322013",
+      "pexelsUrl": "https://www.pexels.com/photo/playful-chinese-crested-dog-catching-ball-outdoors-33063627/",
+      "id": 33063627
+    },
+    "best-food-for-chinese-shar-pei:Chinese Shar-Pei dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/16024345/pexels-photo-16024345.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A lively Shar Pei dog joyfully runs across a lush green field, captured in action.",
+      "photographer": "Thierry Rossier",
+      "photographerUrl": "https://www.pexels.com/@thierry-rossier-204162274",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-running-on-grass-16024345/",
+      "id": 16024345
+    },
+    "best-food-for-chinook:Chinook dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/11515770/pexels-photo-11515770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up of a Chinook dog lying on the ground in Nazilli, Turkey. Warm tones emphasize its gentle nature.",
+      "photographer": "Tolga deniz Aran",
+      "photographerUrl": "https://www.pexels.com/@sanlad",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-photo-of-a-dog-11515770/",
+      "id": 11515770
+    },
+    "best-food-for-chow-chow:Chow Chow dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/8412357/pexels-photo-8412357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Chow Chow dog lounging indoors, surrounded by greenery.",
+      "photographer": "Lemuel",
+      "photographerUrl": "https://www.pexels.com/@lemuel-71368167",
+      "pexelsUrl": "https://www.pexels.com/photo/a-close-up-shot-of-a-chow-chow-8412357/",
+      "id": 8412357
+    },
+    "best-food-for-cirneco-delletna:Cirneco dell’Etna dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-clumber-spaniel:Clumber Spaniel dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/13568642/pexels-photo-13568642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A cute Cocker Spaniel dog standing on green grass, looking curiously.",
+      "photographer": "Olavi Anttila",
+      "photographerUrl": "https://www.pexels.com/@olavi-anttila-264846761",
+      "pexelsUrl": "https://www.pexels.com/photo/a-woman-standing-on-the-grass-13568642/",
+      "id": 13568642
+    },
+    "best-food-for-cocker-spaniel:Cocker Spaniel dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/35261898/pexels-photo-35261898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Cocker Spaniel dog peacefully resting on a white background.",
+      "photographer": "Christopher Welsch Leveroni",
+      "photographerUrl": "https://www.pexels.com/@christopher-welsch-leveroni-2150186467",
+      "pexelsUrl": "https://www.pexels.com/photo/sleeping-cocker-spaniel-dog-portrait-35261898/",
+      "id": 35261898
+    },
+    "best-food-for-collie:Collie dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/5957235/pexels-photo-5957235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Charming Collie dog with fluffy coat and open mouth panting outdoors.",
+      "photographer": "Kanashi",
+      "photographerUrl": "https://www.pexels.com/@kanashi-6228312",
+      "pexelsUrl": "https://www.pexels.com/photo/a-close-up-shot-of-a-collie-dog-5957235/",
+      "id": 5957235
+    },
+    "best-food-for-coton-de-tulear:Coton de Tulear dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/9428284/pexels-photo-9428284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A fluffy white dog sitting indoors next to food bowls on a patterned carpet.",
+      "photographer": "Katya Wolf",
+      "photographerUrl": "https://www.pexels.com/@katya-wolf",
+      "pexelsUrl": "https://www.pexels.com/photo/white-long-coat-small-dog-sitting-on-chair-9428284/",
+      "id": 9428284
+    },
+    "best-food-for-croatian-sheepdog:Croatian Sheepdog dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/15804375/pexels-photo-15804375.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A black Croatian sheepdog stands in a serene winter forest setting with snow.",
+      "photographer": "Adnana Kelic",
+      "photographerUrl": "https://www.pexels.com/@adnana-kelic-276310003",
+      "pexelsUrl": "https://www.pexels.com/photo/black-dog-in-forest-15804375/",
+      "id": 15804375
+    },
+    "best-food-for-curly-coated-retriever:Curly-Coated Retriever dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/32104152/pexels-photo-32104152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Curly-coated dog standing near a bird bath in a lush garden in Athens, Alabama.",
+      "photographer": "A. G. Rosales",
+      "photographerUrl": "https://www.pexels.com/@agrosales",
+      "pexelsUrl": "https://www.pexels.com/photo/curly-coated-adult-dog-beside-bird-bath-32104152/",
+      "id": 32104152
+    },
+    "best-food-for-czechoslovakian-vlcak:Czechoslovakian Vlcak dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-dachshund:Dachshund dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/28830810/pexels-photo-28830810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Charming dachshund dog with pink collar on a leash enjoying a walk in a park.",
+      "photographer": "Vladimir Srajber",
+      "photographerUrl": "https://www.pexels.com/@vladimirsrajber",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dachshund-on-leash-in-park-setting-28830810/",
+      "id": 28830810
+    },
+    "best-food-for-dalmatian:Dalmatian dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/770363/pexels-photo-770363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Dalmatian dog sniffing tropical fruits on a platter, including figs and raspberries.",
+      "photographer": "Rarnie McCudden",
+      "photographerUrl": "https://www.pexels.com/@rarnie-mccudden",
+      "pexelsUrl": "https://www.pexels.com/photo/black-and-white-dalmatian-dog-eating-fruits-770363/",
+      "id": 770363
+    },
+    "best-food-for-dandie-dinmont-terrier:Dandie Dinmont Terrier dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/8434725/pexels-photo-8434725.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A small brown dog enjoys a meal from its bowl indoors, showcasing cozy living.",
+      "photographer": "MART  PRODUCTION",
+      "photographerUrl": "https://www.pexels.com/@mart-production",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-eating-on-a-bowl-8434725/",
+      "id": 8434725
+    },
+    "best-food-for-danish-swedish-farmdog:Danish-Swedish Farmdog dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/25905568/pexels-photo-25905568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog lying on the ground eating outdoors, showcasing its natural behavior.",
+      "photographer": "Михаил Крамор",
+      "photographerUrl": "https://www.pexels.com/@vantik93",
+      "pexelsUrl": "https://www.pexels.com/photo/puppy-smelling-food-25905568/",
+      "id": 25905568
+    },
+    "best-food-for-deutscher-wachtelhund:Deutscher Wachtelhund dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-doberman-pinscher:Doberman Pinscher dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/7516133/pexels-photo-7516133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Side profile of a Doberman dog on a leash in a park setting, showcasing its strong features.",
+      "photographer": "RDNE Stock project",
+      "photographerUrl": "https://www.pexels.com/@rdne",
+      "pexelsUrl": "https://www.pexels.com/photo/black-dog-in-close-up-photography-7516133/",
+      "id": 7516133
+    },
+    "best-food-for-dogo-argentino:Dogo Argentino dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/15900274/pexels-photo-15900274.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Dogo Argentino dog enjoying sunlight with its tongue out, depicting relaxation and contentment.",
+      "photographer": "Laetitia Boumeraou",
+      "photographerUrl": "https://www.pexels.com/@laetitia-boumeraou-203568478",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-of-dog-head-15900274/",
+      "id": 15900274
+    },
+    "best-food-for-dogue-de-bordeaux:Dogue de Bordeaux dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/34315/bordeaux-mastiff-dog-animal.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A French Bulldog enjoying a spring day in a green grassy field.",
+      "photographer": "Pixabay",
+      "photographerUrl": "https://www.pexels.com/@pixabay",
+      "pexelsUrl": "https://www.pexels.com/photo/brown-short-haired-dog-on-green-ground-cover-plants-during-daytime-34315/",
+      "id": 34315
+    },
+    "best-food-for-drentsche-patrijshond:Drentsche Patrijshond dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-drever:Drever dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-dutch-shepherd:Dutch Shepherd dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/770363/pexels-photo-770363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Dalmatian dog sniffing tropical fruits on a platter, including figs and raspberries.",
+      "photographer": "Rarnie McCudden",
+      "photographerUrl": "https://www.pexels.com/@rarnie-mccudden",
+      "pexelsUrl": "https://www.pexels.com/photo/black-and-white-dalmatian-dog-eating-fruits-770363/",
+      "id": 770363
+    },
+    "best-food-for-english-cocker-spaniel:English Cocker Spaniel dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/35261898/pexels-photo-35261898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Cocker Spaniel dog peacefully resting on a white background.",
+      "photographer": "Christopher Welsch Leveroni",
+      "photographerUrl": "https://www.pexels.com/@christopher-welsch-leveroni-2150186467",
+      "pexelsUrl": "https://www.pexels.com/photo/sleeping-cocker-spaniel-dog-portrait-35261898/",
+      "id": 35261898
+    },
+    "best-food-for-english-foxhound:English Foxhound dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A close-up of a brown dog eating kibble from a white bowl indoors.",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/",
+      "id": 6568950
+    },
+    "best-food-for-english-setter:English Setter dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/18868925/pexels-photo-18868925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A black and white portrait of a dog in a park, showcasing its elegance and poise.",
+      "photographer": "Altaf Shah",
+      "photographerUrl": "https://www.pexels.com/@altaf-shah-3143825",
+      "pexelsUrl": "https://www.pexels.com/photo/black-and-white-photo-of-a-dog-on-a-leash-18868925/",
+      "id": 18868925
+    },
+    "best-food-for-english-springer-spaniel:English Springer Spaniel dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/24453850/pexels-photo-24453850.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute Springer Spaniel dog lying on lush green grass enjoying a sunny day outdoors.",
+      "photographer": "Lorenzo Manera",
+      "photographerUrl": "https://www.pexels.com/@lorenzo-manera-686693293",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-lying-down-on-grass-24453850/",
+      "id": 24453850
+    },
+    "best-food-for-english-toy-spaniel:English Toy Spaniel dog eating healthy food": {
+      "url": "https://images.pexels.com/photos/23427657/pexels-photo-23427657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A cute Cavalier King Charles Spaniel sleeping on a blue table during a dog show.",
+      "photographer": "Dmitry Ovsyannikov",
+      "photographerUrl": "https://www.pexels.com/@dmitry-ovsyannikov-271243380",
+      "pexelsUrl": "https://www.pexels.com/photo/king-charles-spaniel-sleeping-on-a-table-during-a-dog-show-23427657/",
+      "id": 23427657
     }
   },
   "stats": {
     "scanned": 80,
     "changed": 80,
-    "skipped": 320,
+    "skipped": 405,
     "failed": 0,
     "force": false,
     "dry": false

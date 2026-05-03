@@ -29,8 +29,8 @@ displayTitle: "Giant Schnauzer Grooming Guide: tools for Giant Schnauzer"
 titlePattern: "groom-best-tools"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "giant-schnauzer", "Giant Schnauzer", "large", "active", "easy", "wiry"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "giant-schnauzer", "Giant Schnauzer", "large", "active", "easy", "wiry", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/giant-schnauzer", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

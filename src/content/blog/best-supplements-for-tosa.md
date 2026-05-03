@@ -29,8 +29,8 @@ displayTitle: "Tosa supplements: evidence, labels, and vet checks"
 titlePattern: "supp-evidence"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "tosa", "Tosa", "large", "calm", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "tosa", "Tosa", "large", "calm", "easy", "medium", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/tosa", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for Pharaoh Hound"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "pharaoh-hound", "Pharaoh Hound", "medium", "active", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "pharaoh-hound", "Pharaoh Hound", "medium", "active", "difficult", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/pharaoh-hound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

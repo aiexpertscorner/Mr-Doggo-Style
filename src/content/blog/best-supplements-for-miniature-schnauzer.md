@@ -29,8 +29,8 @@ displayTitle: "Miniature Schnauzer supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "miniature-schnauzer", "Miniature Schnauzer", "small", "regular", "easy", "wiry"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "miniature-schnauzer", "Miniature Schnauzer", "small", "regular", "easy", "wiry", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/miniature-schnauzer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

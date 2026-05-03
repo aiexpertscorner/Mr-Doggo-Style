@@ -29,8 +29,8 @@ displayTitle: "Supplement options to discuss for English Cocker Spaniel"
 titlePattern: "supp-best-careful"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "english-cocker-spaniel", "English Cocker Spaniel", "medium", "regular", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "english-cocker-spaniel", "English Cocker Spaniel", "medium", "regular", "easy", "silky", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/english-cocker-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

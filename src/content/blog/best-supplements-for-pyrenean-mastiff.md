@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Pyrenean Mastiff"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "pyrenean-mastiff", "Pyrenean Mastiff", "large", "calm", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "pyrenean-mastiff", "Pyrenean Mastiff", "large", "calm", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/pyrenean-mastiff", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

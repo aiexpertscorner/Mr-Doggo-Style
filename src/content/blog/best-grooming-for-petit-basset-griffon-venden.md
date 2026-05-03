@@ -29,8 +29,8 @@ displayTitle: "Petit Basset Griffon Vendéen grooming tools for rough coats"
 titlePattern: "groom-best-coat"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "petit-basset-griffon-venden", "Petit Basset Griffon Vendéen", "medium", "active", "difficult", "rough"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "petit-basset-griffon-venden", "Petit Basset Griffon Vendéen", "medium", "active", "difficult", "rough", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/petit-basset-griffon-venden", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

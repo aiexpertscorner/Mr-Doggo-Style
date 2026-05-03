@@ -29,8 +29,8 @@ displayTitle: "Belgian Tervuren supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "belgian-tervuren", "Belgian Tervuren", "large", "active", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "belgian-tervuren", "Belgian Tervuren", "large", "active", "easy", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/belgian-tervuren", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

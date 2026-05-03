@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "bohemian-shepherd",
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/bohemian-shepherd", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/35089311/pexels-photo-35089311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35089311/pexels-photo-35089311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "German Shepherd dog standing alert in a grassy field on a clear day."
+imageAlt: "German Shepherd dog standing alert in a grassy field on a clear day."
+imageSource: "pexels"
+imageCredit: "Photo by Dmytro Glazunov on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/german-shepherd-standing-in-a-grassy-field-35089311/"
+imageSearchQuery: "Bohemian Shepherd dog eating healthy food"
 ---
 
 Feeding a Bohemian Shepherd well isn't as simple as grabbing the bag with the highest rating. Bohemian Shepherds are medium dogs with regular energy, a Lifespan of 12–15 years, and nutritional vulnerabilities that change across their life stages.

@@ -29,8 +29,8 @@ displayTitle: "Joint supplements to ask your vet about for Danish-Swedish Farmdo
 titlePattern: "supp-best-joint"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "danish-swedish-farmdog", "Danish-Swedish Farmdog", "small", "active", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "danish-swedish-farmdog", "Danish-Swedish Farmdog", "small", "active", "easy", "medium", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/danish-swedish-farmdog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

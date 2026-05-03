@@ -29,8 +29,8 @@ displayTitle: "Kerry Blue Terrier supplement shopping guide"
 titlePattern: "supp-shopping"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "kerry-blue-terrier", "Kerry Blue Terrier", "medium", "regular", "moderate", "wavy"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "kerry-blue-terrier", "Kerry Blue Terrier", "medium", "regular", "moderate", "wavy", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/kerry-blue-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

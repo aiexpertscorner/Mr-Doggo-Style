@@ -29,8 +29,8 @@ displayTitle: "Irish Red and White Setter Grooming Guide: tools for Irish Red an
 titlePattern: "groom-best-tools"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "irish-red-and-white-setter", "Irish Red and White Setter", "medium", "active", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "irish-red-and-white-setter", "Irish Red and White Setter", "medium", "active", "easy", "silky", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/irish-red-and-white-setter", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

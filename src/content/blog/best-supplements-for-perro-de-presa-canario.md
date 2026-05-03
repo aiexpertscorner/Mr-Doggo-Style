@@ -29,8 +29,8 @@ displayTitle: "Perro de Presa Canario supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "perro-de-presa-canario", "Perro de Presa Canario", "large", "calm", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "perro-de-presa-canario", "Perro de Presa Canario", "large", "calm", "easy", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/perro-de-presa-canario", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

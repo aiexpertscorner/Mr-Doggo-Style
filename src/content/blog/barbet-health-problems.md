@@ -37,8 +37,8 @@ imageCreditUrl: "https://www.pexels.com/photo/man-checking-on-a-dog-7468978/"
 imageSearchQuery: "Barbet dog veterinarian wellness"
 cluster: "health"
 productFamilies: ["health"]
-awinTopicTags: ["health", "Health", "barbet", "Barbet", "medium", "regular", "easy", "curly"]
-amazonQueries: []
+awinTopicTags: ["health", "Health", "barbet", "Barbet", "medium", "regular", "easy", "curly", "vet-care", "wellness", "care", "insurance", "health-adjacent", "dental-care", "first-aid"]
+amazonQueries: ["dog first aid kit", "dog dental care kit", "dog wellness supplies", "dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers"]
 internalLinkTargets: ["/breeds/barbet", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---
@@ -87,14 +87,14 @@ Barbet owners get the best results when they start with the dog in front of them
 ### DNA Testing — Know Before It Happens
 **Embark Dog DNA Test Kit** — $149.00 | ★★★★★ 4.5/5
 [View current Amazon availability](https://www.amazon.com/dp/B01N5JUYAO/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-Best DNA test overall — unmatched health screening depth
+DNA test option with broad breed and health-marker coverage
 Barbets from reputable breeders may have health clearances — DNA testing adds an additional layer of knowledge.
 ---
 ### Parasite Prevention — Year-Round Protection
 **NexGard Chewables for Dogs (Flea & Tick)** — $68.99 | ★★★★★ 4.6/5
 [View current Amazon availability](https://www.amazon.com/dp/B00027353A/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 Best monthly flea and tick prevention — the easiest format for compliance
-**Why it matters for Barbets:** Fleas cause allergic reactions and tapeworm transmission. Ticks transmit Lyme disease and other serious infections. Prevention is significantly cheaper than treatment.
+**Why it matters for Barbets:** Fleas cause allergic reactions and tapeworm transmission. Ticks transmit Lyme disease and other serious infections. Preventive care is usually easier to plan than urgent care.
 ---
 ### Dental Health — The Most Neglected Area
 **NexGard Chewables for Dogs (Flea & Tick)** — $68.99 | ★★★★★ 4.6/5
@@ -108,10 +108,10 @@ Best monthly flea and tick prevention — the easiest format for compliance
 ### Ear Care — Preventable Infections
 **Zymox Ear Solution for Dogs and Cats** — $22.99 | ★★★★★ 4.7/5
 [View current Amazon availability](https://www.amazon.com/dp/B005KDLVL0/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-Best OTC ear treatment — the enzymatic formula is genuinely effective
+Ear-care product to discuss with your veterinarian when symptoms appear
 Barbets with longer ear hair are at elevated risk for ear infections — the hair traps moisture and debris.
 ---
-### First Aid — Every Owner Needs This
+### First-aid basics
 **Vetericyn Plus All Animal Wound & Skin Care** — $19.99 | ★★★★★ 4.6/5
 [View current Amazon availability](https://www.amazon.com/dp/B003VT4NWI/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
 Best first-aid spray for dogs — every dog owner should have this

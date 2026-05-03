@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "basset-hound", "Bas
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/basset-hound", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/33979390/pexels-photo-33979390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/33979390/pexels-photo-33979390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming basset hound dog with long ears lounging in a sunny garden in Serbia."
+imageAlt: "Charming basset hound dog with long ears lounging in a sunny garden in Serbia."
+imageSource: "pexels"
+imageCredit: "Photo by Andrea Sretenović on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-basset-hound-dog-in-summer-garden-33979390/"
+imageSearchQuery: "Basset Hound dog eating healthy food"
 ---
 
 Feeding a Basset Hound well isn't as simple as grabbing the bag with the highest rating. Basset Hounds are medium dogs with calm energy, a Average lifespan of 11.4 years, and nutritional vulnerabilities that change across their life stages.

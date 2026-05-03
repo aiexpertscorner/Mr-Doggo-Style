@@ -29,8 +29,8 @@ displayTitle: "Golden Retriever grooming guide by coat type"
 titlePattern: "groom-guide"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "golden-retriever", "Golden Retriever", "large", "active", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "golden-retriever", "Golden Retriever", "large", "active", "easy", "long", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/golden-retriever", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

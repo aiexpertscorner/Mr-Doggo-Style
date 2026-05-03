@@ -29,8 +29,8 @@ displayTitle: "Joint supplements to ask your vet about for Silky Terrier"
 titlePattern: "supp-best-joint"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "silky-terrier", "Silky Terrier", "small", "regular", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "silky-terrier", "Silky Terrier", "small", "regular", "easy", "medium", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/silky-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

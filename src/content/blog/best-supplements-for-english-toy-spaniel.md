@@ -29,8 +29,8 @@ displayTitle: "English Toy Spaniel supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "english-toy-spaniel", "English Toy Spaniel", "small", "regular", "difficult", "silky"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "english-toy-spaniel", "English Toy Spaniel", "small", "regular", "difficult", "silky", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/english-toy-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

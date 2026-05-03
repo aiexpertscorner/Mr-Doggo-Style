@@ -29,8 +29,8 @@ displayTitle: "Mountain Cur supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "mountain-cur", "Mountain Cur", "medium", "active", "moderate", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "mountain-cur", "Mountain Cur", "medium", "active", "moderate", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/mountain-cur", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

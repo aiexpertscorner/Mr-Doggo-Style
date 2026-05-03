@@ -29,8 +29,8 @@ displayTitle: "Kai Ken grooming shopping guide"
 titlePattern: "groom-shopping"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "kai-ken", "Kai Ken", "medium", "active", "difficult", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "kai-ken", "Kai Ken", "medium", "active", "difficult", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/kai-ken", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

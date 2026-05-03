@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "chinese-shar-pei", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/chinese-shar-pei", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/16024345/pexels-photo-16024345.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/16024345/pexels-photo-16024345.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A lively Shar Pei dog joyfully runs across a lush green field, captured in action."
+imageAlt: "A lively Shar Pei dog joyfully runs across a lush green field, captured in action."
+imageSource: "pexels"
+imageCredit: "Photo by Thierry Rossier on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-running-on-grass-16024345/"
+imageSearchQuery: "Chinese Shar-Pei dog eating healthy food"
 ---
 
 Feeding a Chinese Shar-Pei well isn't as simple as grabbing the bag with the highest rating. Chinese Shar-Peis are medium dogs with regular energy, a Lifespan of 8–12 years, and nutritional vulnerabilities that change across their life stages.

@@ -20,18 +20,18 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-03T19:59:40.930Z"
+    "syncedAt": "2026-05-03T21:56:50.909Z"
   },
   {
     "id": "crownandpaw-partner-offer",
     "name": "Crown and Paw partner offer",
-    "description": "Visit Crown and Paw for current Dog Gifts offers and availability.",
+    "description": "Visit Crown and Paw for current gifts & flowers offers and availability.",
     "price": 0,
     "currency": "USD",
     "url": "https://tidd.ly/496jo7K",
     "image": "https://ui.awin.com/images/upload/merchant/profile/57823.png",
     "merchant": "Crown and Paw",
-    "category": "Dog Gifts",
+    "category": "Gifts & Flowers",
     "advertiserId": "57823",
     "programId": "crownandpaw",
     "topicTags": [
@@ -45,7 +45,7 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-03T19:59:40.931Z"
+    "syncedAt": "2026-05-03T21:56:50.910Z"
   },
   {
     "id": "chefpaw-partner-offer",
@@ -72,7 +72,7 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-03T19:59:40.931Z"
+    "syncedAt": "2026-05-03T21:56:50.910Z"
   },
   {
     "id": "jugbow-partner-offer",
@@ -99,7 +99,7 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-03T19:59:40.931Z"
+    "syncedAt": "2026-05-03T21:56:50.910Z"
   },
   {
     "id": "radiofence-com-partner-offer",
@@ -120,7 +120,7 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-03T19:59:40.931Z"
+    "syncedAt": "2026-05-03T21:56:50.910Z"
   },
   {
     "id": "raw-wild-llc-partner-offer",
@@ -141,7 +141,7 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-03T19:59:40.931Z"
+    "syncedAt": "2026-05-03T21:56:50.910Z"
   },
   {
     "id": "mypetdmv-the-original-pet-drivers-license-partner-offer",
@@ -164,7 +164,7 @@
     ],
     "availability": "",
     "source": "awin-program-fallback",
-    "syncedAt": "2026-05-03T19:59:40.931Z"
+    "syncedAt": "2026-05-03T21:56:50.910Z"
   },
   {
     "id": "rawwild-beef-chicken",

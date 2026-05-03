@@ -29,8 +29,8 @@ displayTitle: "Brushes and shampoo to compare for Manchester Terrier (Toy)"
 titlePattern: "groom-best-brush"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "manchester-terrier-toy", "Manchester Terrier (Toy)", "small", "regular", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "manchester-terrier-toy", "Manchester Terrier (Toy)", "small", "regular", "easy", "medium", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/manchester-terrier-toy", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

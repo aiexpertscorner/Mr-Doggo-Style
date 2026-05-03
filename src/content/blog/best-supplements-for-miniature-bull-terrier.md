@@ -29,8 +29,8 @@ displayTitle: "Miniature Bull Terrier supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "miniature-bull-terrier", "Miniature Bull Terrier", "medium", "active", "difficult"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "miniature-bull-terrier", "Miniature Bull Terrier", "medium", "active", "difficult", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/miniature-bull-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Bohemian Shepherd grooming kit for coat, bath, and nails"
 titlePattern: "groom-kit"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "bohemian-shepherd", "Bohemian Shepherd", "medium", "regular", "easy"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "bohemian-shepherd", "Bohemian Shepherd", "medium", "regular", "easy", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/bohemian-shepherd", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

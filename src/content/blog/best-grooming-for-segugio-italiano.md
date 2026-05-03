@@ -29,8 +29,8 @@ displayTitle: "Segugio Italiano Grooming Guide: tools for Segugio Italiano"
 titlePattern: "groom-best-tools"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "segugio-italiano", "Segugio Italiano", "medium", "regular", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "segugio-italiano", "Segugio Italiano", "medium", "regular", "easy", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/segugio-italiano", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

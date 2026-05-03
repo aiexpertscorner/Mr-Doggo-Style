@@ -29,8 +29,8 @@ displayTitle: "Saluki supplement guide for active dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "saluki", "Saluki", "medium", "active", "difficult", "silky"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "saluki", "Saluki", "medium", "active", "difficult", "silky", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/saluki", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

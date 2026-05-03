@@ -29,8 +29,8 @@ displayTitle: "Danish-Swedish Farmdog grooming tools for medium coats"
 titlePattern: "groom-best-coat"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "danish-swedish-farmdog", "Danish-Swedish Farmdog", "small", "active", "easy", "medium"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "danish-swedish-farmdog", "Danish-Swedish Farmdog", "small", "active", "easy", "medium", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/danish-swedish-farmdog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

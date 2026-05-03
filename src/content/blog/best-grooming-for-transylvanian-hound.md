@@ -29,8 +29,8 @@ displayTitle: "Transylvanian Hound Grooming Guide: tools for Transylvanian Hound
 titlePattern: "groom-best-tools"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "transylvanian-hound", "Transylvanian Hound", "medium", "active", "moderate", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "transylvanian-hound", "Transylvanian Hound", "medium", "active", "moderate", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/transylvanian-hound", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

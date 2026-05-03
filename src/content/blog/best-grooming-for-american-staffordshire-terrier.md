@@ -29,8 +29,8 @@ displayTitle: "Brushes and shampoo to compare for American Staffordshire Terrier
 titlePattern: "groom-best-brush"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "american-staffordshire-terrier", "American Staffordshire Terrier", "large", "regular", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "american-staffordshire-terrier", "American Staffordshire Terrier", "large", "regular", "easy", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/american-staffordshire-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

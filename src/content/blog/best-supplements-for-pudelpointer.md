@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Pudelpointer"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "pudelpointer", "Pudelpointer", "large", "regular", "easy", "wiry"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "pudelpointer", "Pudelpointer", "large", "regular", "easy", "wiry", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/pudelpointer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

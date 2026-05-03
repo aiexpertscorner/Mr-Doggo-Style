@@ -29,8 +29,8 @@ displayTitle: "Shiba Inu supplement shopping guide"
 titlePattern: "supp-shopping"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "shiba-inu", "Shiba Inu", "small", "regular", "difficult", "double"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "shiba-inu", "Shiba Inu", "small", "regular", "difficult", "double", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/shiba-inu", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

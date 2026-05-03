@@ -29,8 +29,8 @@ displayTitle: "Joint supplements to ask your vet about for Hovawart"
 titlePattern: "supp-best-joint"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "hovawart", "Hovawart", "large", "regular", "moderate", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "hovawart", "Hovawart", "large", "regular", "moderate", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/hovawart", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

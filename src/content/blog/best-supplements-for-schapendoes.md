@@ -29,8 +29,8 @@ displayTitle: "Schapendoes supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "schapendoes", "Schapendoes", "medium", "regular", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "schapendoes", "Schapendoes", "medium", "regular", "easy", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/schapendoes", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

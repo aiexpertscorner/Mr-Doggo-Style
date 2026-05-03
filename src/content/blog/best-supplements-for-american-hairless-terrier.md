@@ -29,8 +29,8 @@ displayTitle: "Joint supplements to ask your vet about for American Hairless Ter
 titlePattern: "supp-best-joint"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "american-hairless-terrier", "American Hairless Terrier", "small", "regular", "easy", "hairless"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "american-hairless-terrier", "American Hairless Terrier", "small", "regular", "easy", "hairless", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/american-hairless-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

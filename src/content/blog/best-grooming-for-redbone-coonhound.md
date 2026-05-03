@@ -29,8 +29,8 @@ displayTitle: "Redbone Coonhound bathing, brushing, and nail care guide"
 titlePattern: "groom-bath"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "redbone-coonhound", "Redbone Coonhound", "large", "regular", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "redbone-coonhound", "Redbone Coonhound", "large", "regular", "easy", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/redbone-coonhound", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

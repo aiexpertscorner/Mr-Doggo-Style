@@ -29,8 +29,8 @@ displayTitle: "Miniature American Shepherd supplements: evidence, labels, and ve
 titlePattern: "supp-evidence"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "miniature-american-shepherd", "Miniature American Shepherd", "medium", "active", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "miniature-american-shepherd", "Miniature American Shepherd", "medium", "active", "easy", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/miniature-american-shepherd", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

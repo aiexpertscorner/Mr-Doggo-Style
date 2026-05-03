@@ -29,8 +29,8 @@ displayTitle: "Deutscher Wachtelhund bathing, brushing, and nail care guide"
 titlePattern: "groom-bath"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "deutscher-wachtelhund", "Deutscher Wachtelhund", "medium", "regular", "easy"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "deutscher-wachtelhund", "Deutscher Wachtelhund", "medium", "regular", "easy", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/deutscher-wachtelhund", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

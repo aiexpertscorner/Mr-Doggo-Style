@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "doberman-pinscher",
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/doberman-pinscher", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/7516133/pexels-photo-7516133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7516133/pexels-photo-7516133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Side profile of a Doberman dog on a leash in a park setting, showcasing its strong features."
+imageAlt: "Side profile of a Doberman dog on a leash in a park setting, showcasing its strong features."
+imageSource: "pexels"
+imageCredit: "Photo by RDNE Stock project on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/black-dog-in-close-up-photography-7516133/"
+imageSearchQuery: "Doberman Pinscher dog eating healthy food"
 ---
 
 Feeding a Doberman Pinscher well isn't as simple as grabbing the bag with the highest rating. Doberman Pinschers are large dogs with active energy, a Average lifespan of 10.3 years, and nutritional vulnerabilities that change across their life stages.

@@ -43,9 +43,8 @@ internalLinkTargets: ["/breeds/australian-terrier", "/categories/beds", "/cost-c
 indexInBlog: false
 ---
 
-A dog spends 12–14 hours a day sleeping. For a Australian Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.
-Australian Terriers can develop hip and joint problems as they age. Starting with a quality orthopedic bed in middle age (around 7 years) prevents rather than reacts to joint issues.
-The estimated lifetime ownership cost of a Australian Terrier is around $17.892. A quality orthopedic bed is one of the highest-return health investments in that budget.
+Australian Terriers can develop hip and joint problems as they age. A supportive bed can be part of a comfort plan, especially for senior dogs or dogs that seem stiff after rest.
+The estimated lifetime ownership cost of a Australian Terrier is around $17.892. A quality orthopedic bed is a practical long-use comfort purchase in that budget.
 We selected the best beds for Australian Terriers across four categories — orthopedic, calming, elevated, and travel — based on size match, washability, durability, and long-term value.
 ---
 ## What matters most in Australian Terrier bed fit
@@ -75,15 +74,15 @@ An inner waterproof liner (under the removable cover) protects the foam from acc
 ## Our Top Picks
 ### 1. Casper Dog Bed — Best Orthopedic for Australian Terriers
 [Compare on Amazon.com](https://www.amazon.com/dp/B07P3J5QWZ/?tag=aiexpertscorn-20){rel="nofollow sponsored"}
-Best lifestyle orthopedic bed — Casper's mattress tech in a premium aesthetic package
+Comfort-focused supportive bed
 **Why it's right for Australian Terriers:**
-- Brand recognition drives gift purchases
-- Human mattress tech applied to dogs
+- Recognizable brand with broad availability
+- Supportive foam design made for dogs
 - Looks great in modern homes
 **Watch out for:**
 - Expensive for what you get vs Big Barker
 - Foam not as durable as Big Barker's warranty
-**Long-term value:** A quality orthopedic bed lasts 3–5 years and directly reduces vet bills associated with joint deterioration. The cost per day is typically under $0.20.
+**Long-term value:** A quality orthopedic bed lasts 3–5 years and may support daily comfort, but it is not a substitute for veterinary care. The cost per day is typically under $0.20.
 ---
 ### 2. Hurtta Cooling Wrap Dog Vest — Best for Anxious Australian Terriers
 [Compare on Amazon.com](https://www.amazon.com/dp/B01J5HURTT/?tag=aiexpertscorn-20){rel="nofollow sponsored"}

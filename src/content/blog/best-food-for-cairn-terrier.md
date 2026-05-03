@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "cairn-terrier", "Ca
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/cairn-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/5427923/pexels-photo-5427923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5427923/pexels-photo-5427923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Crop anonymous pregnant woman in casual dress feeding Yorkshire terrier dogs while standing together with husband in contemporary kitchen in daylight"
+imageAlt: "Crop anonymous pregnant woman in casual dress feeding Yorkshire terrier dogs while standing together with husband in contemporary kitchen in daylight"
+imageSource: "pexels"
+imageCredit: "Photo by Amina Filkins on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/woman-feeding-dogs-5427923/"
+imageSearchQuery: "Cairn Terrier dog eating healthy food"
 ---
 
 Feeding a Cairn Terrier well isn't as simple as grabbing the bag with the highest rating. Cairn Terriers are small dogs with regular energy, a Average lifespan of 13.8 years, and nutritional vulnerabilities that change across their life stages.

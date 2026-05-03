@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "english-foxhound", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/english-foxhound", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/6568950/pexels-photo-6568950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A close-up of a brown dog eating kibble from a white bowl indoors."
+imageAlt: "A close-up of a brown dog eating kibble from a white bowl indoors."
+imageSource: "pexels"
+imageCredit: "Photo by cottonbro studio on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-shot-of-a-dog-eating-6568950/"
+imageSearchQuery: "English Foxhound dog eating healthy food"
 ---
 
 Feeding a English Foxhound well isn't as simple as grabbing the bag with the highest rating. English Foxhounds are large dogs with active energy, a Lifespan of 10–13 years, and nutritional vulnerabilities that change across their life stages.

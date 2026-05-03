@@ -29,8 +29,8 @@ displayTitle: "Lhasa Apso Grooming Guide: tools for Lhasa Apso"
 titlePattern: "groom-best-tools"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "lhasa-apso", "Lhasa Apso", "small", "regular", "difficult", "long"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "lhasa-apso", "Lhasa Apso", "small", "regular", "difficult", "long", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/lhasa-apso", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

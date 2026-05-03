@@ -29,8 +29,8 @@ displayTitle: "American English Coonhound Grooming Guide: tools for American Eng
 titlePattern: "groom-best-tools"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "american-english-coonhound", "American English Coonhound", "medium", "active", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "american-english-coonhound", "American English Coonhound", "medium", "active", "easy", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/american-english-coonhound", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

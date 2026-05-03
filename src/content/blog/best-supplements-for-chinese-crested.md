@@ -29,8 +29,8 @@ displayTitle: "Joint supplements to ask your vet about for Chinese Crested"
 titlePattern: "supp-best-joint"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "chinese-crested", "Chinese Crested", "small", "regular", "easy", "hairless"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "chinese-crested", "Chinese Crested", "small", "regular", "easy", "hairless", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/chinese-crested", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

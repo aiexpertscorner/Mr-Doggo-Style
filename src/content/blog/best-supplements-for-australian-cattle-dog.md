@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for Australian Cattle Dog"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "australian-cattle-dog", "Australian Cattle Dog", "medium", "active", "moderate", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "australian-cattle-dog", "Australian Cattle Dog", "medium", "active", "moderate", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/australian-cattle-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

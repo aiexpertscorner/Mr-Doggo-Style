@@ -29,8 +29,8 @@ displayTitle: "Cirneco dell’Etna supplement guide for regular dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "cirneco-delletna", "Cirneco dell’Etna", "medium", "regular", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "cirneco-delletna", "Cirneco dell’Etna", "medium", "regular", "easy", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/cirneco-delletna", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

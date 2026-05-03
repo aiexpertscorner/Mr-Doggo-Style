@@ -29,8 +29,8 @@ displayTitle: "Grooming picks for Belgian Tervuren shedding"
 titlePattern: "groom-best-shedding"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "belgian-tervuren", "Belgian Tervuren", "large", "active", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "belgian-tervuren", "Belgian Tervuren", "large", "active", "easy", "long", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/belgian-tervuren", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

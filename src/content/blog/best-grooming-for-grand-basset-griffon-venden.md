@@ -29,8 +29,8 @@ displayTitle: "Grand Basset Griffon Vendéen coat care guide for rough fur"
 titlePattern: "groom-coat-care"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "grand-basset-griffon-venden", "Grand Basset Griffon Vendéen", "medium", "active", "difficult", "rough"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "grand-basset-griffon-venden", "Grand Basset Griffon Vendéen", "medium", "active", "difficult", "rough", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/grand-basset-griffon-venden", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

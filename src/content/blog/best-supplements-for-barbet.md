@@ -29,8 +29,8 @@ displayTitle: "Barbet supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "barbet", "Barbet", "medium", "regular", "easy", "curly"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "barbet", "Barbet", "medium", "regular", "easy", "curly", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/barbet", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

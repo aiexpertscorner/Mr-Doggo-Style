@@ -29,8 +29,8 @@ displayTitle: "Curly-Coated Retriever supplements for joints, skin, and gut heal
 titlePattern: "supp-joint-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "curly-coated-retriever", "Curly-Coated Retriever", "large", "active", "difficult", "curly"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "curly-coated-retriever", "Curly-Coated Retriever", "large", "active", "difficult", "curly", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/curly-coated-retriever", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

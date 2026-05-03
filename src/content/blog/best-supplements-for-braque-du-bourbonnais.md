@@ -29,8 +29,8 @@ displayTitle: "Braque du Bourbonnais supplements for joints, skin, and gut healt
 titlePattern: "supp-joint-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "braque-du-bourbonnais", "Braque du Bourbonnais", "medium", "regular", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "braque-du-bourbonnais", "Braque du Bourbonnais", "medium", "regular", "easy", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/braque-du-bourbonnais", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

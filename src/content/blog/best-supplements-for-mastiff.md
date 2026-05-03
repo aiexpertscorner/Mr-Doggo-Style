@@ -29,8 +29,8 @@ displayTitle: "Joint supplements to ask your vet about for Mastiff"
 titlePattern: "supp-best-joint"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "mastiff", "Mastiff", "large", "regular", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "mastiff", "Mastiff", "large", "regular", "easy", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/mastiff", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

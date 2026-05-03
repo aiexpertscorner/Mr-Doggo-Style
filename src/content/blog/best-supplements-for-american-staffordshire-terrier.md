@@ -29,8 +29,8 @@ displayTitle: "Supplement options to discuss for American Staffordshire Terrier"
 titlePattern: "supp-best-careful"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "american-staffordshire-terrier", "American Staffordshire Terrier", "large", "regular", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "american-staffordshire-terrier", "American Staffordshire Terrier", "large", "regular", "easy", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/american-staffordshire-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

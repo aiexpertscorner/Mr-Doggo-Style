@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "croatian-sheepdog",
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/croatian-sheepdog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/15804375/pexels-photo-15804375.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/15804375/pexels-photo-15804375.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A black Croatian sheepdog stands in a serene winter forest setting with snow."
+imageAlt: "A black Croatian sheepdog stands in a serene winter forest setting with snow."
+imageSource: "pexels"
+imageCredit: "Photo by Adnana Kelic on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/black-dog-in-forest-15804375/"
+imageSearchQuery: "Croatian Sheepdog dog eating healthy food"
 ---
 
 Feeding a Croatian Sheepdog well isn't as simple as grabbing the bag with the highest rating. Croatian Sheepdogs are medium dogs with active energy, a Lifespan of 13–14 years, and nutritional vulnerabilities that change across their life stages.

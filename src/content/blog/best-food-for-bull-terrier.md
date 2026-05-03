@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "bull-terrier", "Bul
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/bull-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/15264143/pexels-photo-15264143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/15264143/pexels-photo-15264143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A bull terrier dog comfortably lounging on a blue folding camping chair in a sunny outdoor setting."
+imageAlt: "A bull terrier dog comfortably lounging on a blue folding camping chair in a sunny outdoor setting."
+imageSource: "pexels"
+imageCredit: "Photo by Vitali Adutskevich on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-lying-in-a-chair-15264143/"
+imageSearchQuery: "Bull Terrier dog eating healthy food"
 ---
 
 Feeding a Bull Terrier well isn't as simple as grabbing the bag with the highest rating. Bull Terriers are large dogs with active energy, a Average lifespan of 10.2 years, and nutritional vulnerabilities that change across their life stages.

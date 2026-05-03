@@ -29,8 +29,8 @@ displayTitle: "Brushes and shampoo to compare for Kishu Ken"
 titlePattern: "groom-best-brush"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "kishu-ken", "Kishu Ken", "medium", "active", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "kishu-ken", "Kishu Ken", "medium", "active", "difficult", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/kishu-ken", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

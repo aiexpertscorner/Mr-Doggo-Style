@@ -29,8 +29,8 @@ displayTitle: "Nederlandse Kooikerhondje grooming for shedding and sensitive ski
 titlePattern: "groom-sensitive-skin"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "nederlandse-kooikerhondje", "Nederlandse Kooikerhondje", "medium", "regular", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "nederlandse-kooikerhondje", "Nederlandse Kooikerhondje", "medium", "regular", "easy", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/nederlandse-kooikerhondje", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

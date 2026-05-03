@@ -29,8 +29,8 @@ displayTitle: "Xoloitzcuintli Grooming Guide: tools for Xoloitzcuintli"
 titlePattern: "groom-best-tools"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "xoloitzcuintli", "Xoloitzcuintli", "medium", "active", "easy", "hairless"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "xoloitzcuintli", "Xoloitzcuintli", "medium", "active", "easy", "hairless", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/xoloitzcuintli", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Komondor bathing, brushing, and nail care guide"
 titlePattern: "groom-bath"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "komondor", "Komondor", "large", "regular", "difficult", "corded"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "komondor", "Komondor", "large", "regular", "difficult", "corded", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/komondor", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

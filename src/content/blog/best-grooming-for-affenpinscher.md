@@ -29,8 +29,8 @@ displayTitle: "Affenpinscher grooming tools for rough coats"
 titlePattern: "groom-best-coat"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "affenpinscher", "Affenpinscher", "small", "regular", "easy", "rough"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "affenpinscher", "Affenpinscher", "small", "regular", "easy", "rough", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/affenpinscher", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

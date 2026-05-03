@@ -29,8 +29,8 @@ displayTitle: "Skin and gut supplement options for West Highland White Terrier"
 titlePattern: "supp-best-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "west-highland-white-terrier", "West Highland White Terrier", "small", "regular", "easy", "rough"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "west-highland-white-terrier", "West Highland White Terrier", "small", "regular", "easy", "rough", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/west-highland-white-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "dogo-argentino", "D
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/dogo-argentino", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/15900274/pexels-photo-15900274.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/15900274/pexels-photo-15900274.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Dogo Argentino dog enjoying sunlight with its tongue out, depicting relaxation and contentment."
+imageAlt: "Dogo Argentino dog enjoying sunlight with its tongue out, depicting relaxation and contentment."
+imageSource: "pexels"
+imageCredit: "Photo by Laetitia Boumeraou on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-dog-head-15900274/"
+imageSearchQuery: "Dogo Argentino dog eating healthy food"
 ---
 
 Feeding a Dogo Argentino well isn't as simple as grabbing the bag with the highest rating. Dogo Argentinos are large dogs with active energy, a Lifespan of 9–15 years, and nutritional vulnerabilities that change across their life stages.

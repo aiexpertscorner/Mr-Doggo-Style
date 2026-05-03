@@ -1,6 +1,6 @@
 ---
 title: "Yorkshire Terrier Food Options for Weight and Digestion"
-description: "A practical Yorkshire Terrier food guide for small dogs, with nutrition notes, joint-support context, and current shopping resources."
+description: "A practical Yorkshire Terrier food guide for small dogs, with nutrition notes, joint-support context, and owner-friendly comparison checks."
 pubDate: 2026-03-22
 updatedDate: 2026-05-03
 category: "Dog Food"

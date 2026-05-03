@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for Irish Wolfhound"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "irish-wolfhound", "Irish Wolfhound", "large", "regular", "difficult", "rough"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "irish-wolfhound", "Irish Wolfhound", "large", "regular", "difficult", "rough", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/irish-wolfhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Boxer Formula Fit: Kibble, Protein, and Feeding Notes"
-description: "A practical Boxer food guide for large dogs, with nutrition notes, joint-support context, and current shopping resources."
+description: "A practical Boxer food guide for large dogs, with nutrition notes, joint-support context, and owner-friendly comparison checks."
 pubDate: 2026-03-22
 updatedDate: 2026-05-03
 category: "Dog Food"
@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "boxer", "Boxer", "l
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/boxer", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/32371133/pexels-photo-32371133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/32371133/pexels-photo-32371133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A detailed close-up of a Boxer dog resting on the floor indoors, expressing a tender and relaxed mood."
+imageAlt: "A detailed close-up of a Boxer dog resting on the floor indoors, expressing a tender and relaxed mood."
+imageSource: "pexels"
+imageCredit: "Photo by Laurence FUSCO on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-boxer-dog-lying-on-floor-indoors-32371133/"
+imageSearchQuery: "Boxer dog eating healthy food"
 ---
 
 Feeding a Boxer well isn't as simple as grabbing the bag with the highest rating. Boxers are large dogs with active energy, a Average lifespan of 8.8 years, and nutritional vulnerabilities that change across their life stages.

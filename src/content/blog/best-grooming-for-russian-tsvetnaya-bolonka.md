@@ -29,8 +29,8 @@ displayTitle: "Grooming picks for Russian Tsvetnaya Bolonka shedding"
 titlePattern: "groom-best-shedding"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "russian-tsvetnaya-bolonka", "Russian Tsvetnaya Bolonka", "small", "regular", "easy", "short"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "russian-tsvetnaya-bolonka", "Russian Tsvetnaya Bolonka", "small", "regular", "easy", "short", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/russian-tsvetnaya-bolonka", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

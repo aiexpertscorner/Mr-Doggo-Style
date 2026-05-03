@@ -29,8 +29,8 @@ displayTitle: "Supplement options to discuss for Brittany"
 titlePattern: "supp-best-careful"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "brittany", "Brittany", "medium", "active", "easy", "wavy"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "brittany", "Brittany", "medium", "active", "easy", "wavy", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/brittany", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Kromfohrlander supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "kromfohrlander", "Kromfohrlander", "medium", "regular", "easy", "rough"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "kromfohrlander", "Kromfohrlander", "medium", "regular", "easy", "rough", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/kromfohrlander", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

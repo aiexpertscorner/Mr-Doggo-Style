@@ -29,8 +29,8 @@ displayTitle: "Wetterhoun grooming kit for coat, bath, and nails"
 titlePattern: "groom-kit"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "wetterhoun", "Wetterhoun", "large", "regular", "moderate", "curly"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "wetterhoun", "Wetterhoun", "large", "regular", "moderate", "curly", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/wetterhoun", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Puli supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "puli", "Puli", "medium", "regular", "difficult", "corded"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "puli", "Puli", "medium", "regular", "difficult", "corded", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/puli", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

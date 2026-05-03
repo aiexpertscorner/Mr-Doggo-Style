@@ -43,8 +43,7 @@ internalLinkTargets: ["/breeds/bergamasco-sheepdog", "/categories/beds", "/cost-
 indexInBlog: false
 ---
 
-A dog spends 12–14 hours a day sleeping. For a Bergamasco Sheepdog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
-Bergamasco Sheepdogs can develop hip and joint problems as they age. Starting with a quality orthopedic bed in middle age (around 7 years) prevents rather than reacts to joint issues.
+Bergamasco Sheepdogs can develop hip and joint problems as they age. A supportive bed can be part of a comfort plan, especially for senior dogs or dogs that seem stiff after rest.
 We selected the best beds for Bergamasco Sheepdogs across four categories — orthopedic, calming, elevated, and travel — based on size match, washability, durability, and long-term value.
 ---
 ## What matters most in Bergamasco Sheepdog bed fit
@@ -82,7 +81,7 @@ The only dog bed backed by a clinical study — worth every cent for large breed
 **Watch out for:**
 - Very expensive upfront
 - Heavy and bulky
-**Long-term value:** A quality orthopedic bed lasts 3–5 years and directly reduces vet bills associated with joint deterioration. The cost per day is typically under $0.20.
+**Long-term value:** A quality orthopedic bed lasts 3–5 years and may support daily comfort, but it is not a substitute for veterinary care. The cost per day is typically under $0.20.
 ---
 ### 2. Friends Forever Orthopedic Dog Bed Lounge — Best for Anxious Bergamasco Sheepdogs
 [Compare on Amazon.com](https://www.amazon.com/dp/B07PYFZP5G/?tag=aiexpertscorn-20){rel="nofollow sponsored"}

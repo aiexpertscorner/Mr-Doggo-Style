@@ -1,6 +1,6 @@
 ---
 title: "English Toy Spaniel Food Guide:"
-description: "A practical English Toy Spaniel food guide for small dogs, with nutrition notes, joint-support context, and current shopping resources."
+description: "A practical English Toy Spaniel food guide for small dogs, with nutrition notes, joint-support context, and owner-friendly comparison checks."
 pubDate: 2026-03-22
 updatedDate: 2026-05-03
 category: "Dog Food"
@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "english-toy-spaniel
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/english-toy-spaniel", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/23427657/pexels-photo-23427657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/23427657/pexels-photo-23427657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A cute Cavalier King Charles Spaniel sleeping on a blue table during a dog show."
+imageAlt: "A cute Cavalier King Charles Spaniel sleeping on a blue table during a dog show."
+imageSource: "pexels"
+imageCredit: "Photo by Dmitry Ovsyannikov on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/king-charles-spaniel-sleeping-on-a-table-during-a-dog-show-23427657/"
+imageSearchQuery: "English Toy Spaniel dog eating healthy food"
 ---
 
 Feeding a English Toy Spaniel well isn't as simple as grabbing the bag with the highest rating. English Toy Spaniels are small dogs with regular energy, a Average lifespan of 1 years, and nutritional vulnerabilities that change across their life stages.

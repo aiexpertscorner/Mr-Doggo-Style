@@ -29,8 +29,8 @@ displayTitle: "Joint supplements to ask your vet about for Bloodhound"
 titlePattern: "supp-best-joint"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "bloodhound", "Bloodhound", "large", "regular", "difficult", "short"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "bloodhound", "Bloodhound", "large", "regular", "difficult", "short", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/bloodhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Bohemian Shepherd supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "bohemian-shepherd", "Bohemian Shepherd", "medium", "regular", "easy"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "bohemian-shepherd", "Bohemian Shepherd", "medium", "regular", "easy", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/bohemian-shepherd", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

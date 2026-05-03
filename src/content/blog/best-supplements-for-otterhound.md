@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for Otterhound"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "otterhound", "Otterhound", "large", "regular", "moderate", "rough"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "otterhound", "Otterhound", "large", "regular", "moderate", "rough", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/otterhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

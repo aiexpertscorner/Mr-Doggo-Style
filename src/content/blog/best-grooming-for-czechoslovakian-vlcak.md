@@ -29,8 +29,8 @@ displayTitle: "Czechoslovakian Vlcak grooming tools for double coats"
 titlePattern: "groom-best-coat"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "czechoslovakian-vlcak", "Czechoslovakian Vlcak", "medium", "active", "moderate", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "czechoslovakian-vlcak", "Czechoslovakian Vlcak", "medium", "active", "moderate", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/czechoslovakian-vlcak", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

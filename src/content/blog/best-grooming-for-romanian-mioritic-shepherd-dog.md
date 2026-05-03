@@ -29,8 +29,8 @@ displayTitle: "Romanian Mioritic Shepherd Dog grooming routine and tool shortlis
 titlePattern: "groom-routine"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "romanian-mioritic-shepherd-dog", "Romanian Mioritic Shepherd Dog", "large", "regular", "difficult", "medium"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "romanian-mioritic-shepherd-dog", "Romanian Mioritic Shepherd Dog", "large", "regular", "difficult", "medium", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/romanian-mioritic-shepherd-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

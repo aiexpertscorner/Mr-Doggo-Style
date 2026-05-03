@@ -29,8 +29,8 @@ displayTitle: "Romanian Mioritic Shepherd Dog supplement guide for regular dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "romanian-mioritic-shepherd-dog", "Romanian Mioritic Shepherd Dog", "large", "regular", "difficult", "medium"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "romanian-mioritic-shepherd-dog", "Romanian Mioritic Shepherd Dog", "large", "regular", "difficult", "medium", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/romanian-mioritic-shepherd-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

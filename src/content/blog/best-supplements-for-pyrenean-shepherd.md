@@ -29,8 +29,8 @@ displayTitle: "Pyrenean Shepherd supplement shopping guide"
 titlePattern: "supp-shopping"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "pyrenean-shepherd", "Pyrenean Shepherd", "medium", "active", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "pyrenean-shepherd", "Pyrenean Shepherd", "medium", "active", "easy", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/pyrenean-shepherd", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

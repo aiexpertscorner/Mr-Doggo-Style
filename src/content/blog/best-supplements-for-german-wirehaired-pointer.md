@@ -29,8 +29,8 @@ displayTitle: "German Wirehaired Pointer supplement guide for active dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "german-wirehaired-pointer", "German Wirehaired Pointer", "large", "active", "easy", "wiry"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "german-wirehaired-pointer", "German Wirehaired Pointer", "large", "active", "easy", "wiry", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/german-wirehaired-pointer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

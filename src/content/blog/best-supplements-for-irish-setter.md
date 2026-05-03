@@ -29,8 +29,8 @@ displayTitle: "Irish Setter supplement guide for active dogs"
 titlePattern: "supp-active"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "irish-setter", "Irish Setter", "large", "active", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "irish-setter", "Irish Setter", "large", "active", "easy", "silky", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/irish-setter", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

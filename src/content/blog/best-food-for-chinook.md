@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "chinook", "Chinook"
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/chinook", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/11515770/pexels-photo-11515770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/11515770/pexels-photo-11515770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up of a Chinook dog lying on the ground in Nazilli, Turkey. Warm tones emphasize its gentle nature."
+imageAlt: "Close-up of a Chinook dog lying on the ground in Nazilli, Turkey. Warm tones emphasize its gentle nature."
+imageSource: "pexels"
+imageCredit: "Photo by Tolga deniz Aran on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-photo-of-a-dog-11515770/"
+imageSearchQuery: "Chinook dog eating healthy food"
 ---
 
 Feeding a Chinook well isn't as simple as grabbing the bag with the highest rating. Chinooks are large dogs with active energy, a Lifespan of 12–15 years, and nutritional vulnerabilities that change across their life stages.

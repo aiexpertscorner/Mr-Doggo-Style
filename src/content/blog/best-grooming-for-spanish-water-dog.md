@@ -29,8 +29,8 @@ displayTitle: "Brushes and shampoo to compare for Spanish Water Dog"
 titlePattern: "groom-best-brush"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "spanish-water-dog", "Spanish Water Dog", "medium", "active", "easy", "curly"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "spanish-water-dog", "Spanish Water Dog", "medium", "active", "easy", "curly", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/spanish-water-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for Old English Sheepdog"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "old-english-sheepdog", "Old English Sheepdog", "large", "regular", "difficult", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "old-english-sheepdog", "Old English Sheepdog", "large", "regular", "difficult", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/old-english-sheepdog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

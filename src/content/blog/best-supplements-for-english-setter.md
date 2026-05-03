@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for English Setter"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "english-setter", "English Setter", "large", "active", "easy", "silky"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "english-setter", "English Setter", "large", "active", "easy", "silky", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/english-setter", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

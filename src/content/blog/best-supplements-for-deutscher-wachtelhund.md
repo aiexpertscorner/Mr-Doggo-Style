@@ -29,8 +29,8 @@ displayTitle: "Deutscher Wachtelhund supplements for joints, skin, and gut healt
 titlePattern: "supp-joint-skin-gut"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "deutscher-wachtelhund", "Deutscher Wachtelhund", "medium", "regular", "easy"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "deutscher-wachtelhund", "Deutscher Wachtelhund", "medium", "regular", "easy", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/deutscher-wachtelhund", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

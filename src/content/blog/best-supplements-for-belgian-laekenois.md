@@ -29,8 +29,8 @@ displayTitle: "Belgian Laekenois supplement shopping guide"
 titlePattern: "supp-shopping"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "belgian-laekenois", "Belgian Laekenois", "medium", "active", "easy", "rough"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "belgian-laekenois", "Belgian Laekenois", "medium", "active", "easy", "rough", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/belgian-laekenois", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

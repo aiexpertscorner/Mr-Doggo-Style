@@ -29,8 +29,8 @@ displayTitle: "Spanish Mastiff grooming routine and tool shortlist"
 titlePattern: "groom-routine"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "spanish-mastiff", "Spanish Mastiff", "large", "calm", "easy", "double"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "spanish-mastiff", "Spanish Mastiff", "large", "calm", "easy", "double", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/spanish-mastiff", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

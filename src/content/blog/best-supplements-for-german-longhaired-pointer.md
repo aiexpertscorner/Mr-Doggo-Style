@@ -29,8 +29,8 @@ displayTitle: "Senior supplement questions for German Longhaired Pointer"
 titlePattern: "supp-best-senior"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "german-longhaired-pointer", "German Longhaired Pointer", "large", "active", "easy", "long"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "german-longhaired-pointer", "German Longhaired Pointer", "large", "active", "easy", "long", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/german-longhaired-pointer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

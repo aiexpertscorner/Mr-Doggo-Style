@@ -29,8 +29,8 @@ displayTitle: "American Hairless Terrier grooming shopping guide"
 titlePattern: "groom-shopping"
 cluster: "grooming"
 productFamilies: ["grooming"]
-awinTopicTags: ["grooming", "Grooming", "american-hairless-terrier", "American Hairless Terrier", "small", "regular", "easy", "hairless"]
-amazonQueries: []
+awinTopicTags: ["grooming", "Grooming", "american-hairless-terrier", "American Hairless Terrier", "small", "regular", "easy", "hairless", "coat-care", "shampoo", "brush", "nail-care", "shedding"]
+amazonQueries: ["dog brush for shedding coat", "gentle dog shampoo", "dog nail grinder clippers", "dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/american-hairless-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---

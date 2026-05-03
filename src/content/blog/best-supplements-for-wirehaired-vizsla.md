@@ -29,8 +29,8 @@ displayTitle: "Wirehaired Vizsla supplement care plan questions"
 titlePattern: "supp-care-plan"
 cluster: "supplements"
 productFamilies: ["supplements"]
-awinTopicTags: ["supplements", "Supplements", "wirehaired-vizsla", "Wirehaired Vizsla", "medium", "active", "easy", "wiry"]
-amazonQueries: []
+awinTopicTags: ["supplements", "Supplements", "wirehaired-vizsla", "Wirehaired Vizsla", "medium", "active", "easy", "wiry", "wellness", "joint", "skin", "gut-health", "senior-dog", "probiotic"]
+amazonQueries: ["dog joint supplement", "dog probiotic supplement", "dog skin and coat supplement"]
 internalLinkTargets: ["/breeds/wirehaired-vizsla", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
 ---
