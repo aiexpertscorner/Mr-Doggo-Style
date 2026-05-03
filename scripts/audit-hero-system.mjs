@@ -1,7 +1,15 @@
 #!/usr/bin/env node
 /**
- * Verify the canonical homepage hero component and CSS stay in sync.
- * This catches the previous class mismatch between HomeHeroClean.astro and home.css.
+ * Verify the canonical homepage hero component stays in sync.
+ * HomeHeroClean.astro is the single source of truth — it owns its
+ * own scoped <style> block (pw-hero-v3 namespace). No separate global
+ * CSS file is required for these classes.
+ *
+ * Checks:
+ * 1. index.astro imports HomeHeroClean.astro as the hero
+ * 2. HomeHeroClean.astro contains all required pw-hero-v3 classes
+ * 3. HomeHeroClean.astro does not contain any banned legacy rotator classes
+ * 4. src/styles/components/hero.css has no old teal radial styling
  */
 
 import { existsSync, readFileSync } from 'node:fs';
@@ -11,36 +19,32 @@ const ROOT = process.cwd();
 const files = {
   index: resolve(ROOT, 'src/pages/index.astro'),
   clean: resolve(ROOT, 'src/components/home/HomeHeroClean.astro'),
-  legacy: resolve(ROOT, 'src/components/home/HomeHero.astro'),
-  css: resolve(ROOT, 'public/styles/pages/home.css'),
-  genericHeroCss: resolve(ROOT, 'public/styles/components/hero.css'),
+  genericHeroCss: resolve(ROOT, 'src/styles/components/hero.css'),
 };
 
-const required = Object.entries(files).filter(([, file]) => !existsSync(file));
-if (required.length) {
+const missing = Object.entries(files).filter(([, file]) => !existsSync(file));
+if (missing.length) {
   console.error('Hero audit failed: missing expected files.');
-  console.error(JSON.stringify(required.map(([name, file]) => ({ name, file })), null, 2));
+  console.error(JSON.stringify(missing.map(([name, file]) => ({ name, file })), null, 2));
   process.exit(1);
 }
 
 const index = readFileSync(files.index, 'utf8');
 const clean = readFileSync(files.clean, 'utf8');
-const legacy = readFileSync(files.legacy, 'utf8');
-const css = readFileSync(files.css, 'utf8');
 const genericHeroCss = readFileSync(files.genericHeroCss, 'utf8');
 
+// pw-hero-v3 namespace — all defined in HomeHeroClean.astro's own <style> block
 const requiredComponentClasses = [
-  'pw-hero',
-  'pw-hero__grid',
-  'pw-hero__content',
-  'pw-hero__visual',
-  'pw-hero__image-card',
-  'pw-hero__image-shade',
-  'pw-hero__insight-card',
-  'pw-hero__actions',
-  'pw-hero__quick-links',
-  'pw-hero__stats',
-  'pw-hero__features',
+  'pw-hero-v3',
+  'pw-hero-v3__grid',
+  'pw-hero-v3__content',
+  'pw-hero-v3__visual',
+  'pw-hero-v3__image-card',
+  'pw-hero-v3__insight-card',
+  'pw-hero-v3__actions',
+  'pw-hero-v3__quick-links',
+  'pw-hero-v3__stats',
+  'pw-hero-v3__features',
 ];
 
 const bannedLegacyClasses = [
@@ -57,26 +61,24 @@ const bannedLegacyClasses = [
 
 const failures = [];
 
-if (!index.includes("HomeHeroClean.astro")) {
+if (!index.includes('HomeHeroClean.astro')) {
   failures.push('src/pages/index.astro should import HomeHeroClean.astro as the canonical homepage hero.');
 }
 
-if (!legacy.includes("import HomeHeroClean from './HomeHeroClean.astro'")) {
-  failures.push('src/components/home/HomeHero.astro should remain a thin wrapper around HomeHeroClean.astro.');
-}
-
 for (const className of requiredComponentClasses) {
-  if (!clean.includes(className)) failures.push(`HomeHeroClean.astro is missing ${className}.`);
-  if (!css.includes(`.${className}`)) failures.push(`public/styles/pages/home.css is missing .${className}.`);
+  if (!clean.includes(className)) {
+    failures.push(`HomeHeroClean.astro is missing class: ${className}`);
+  }
 }
 
 for (const className of bannedLegacyClasses) {
-  if (clean.includes(className)) failures.push(`HomeHeroClean.astro still contains legacy rotator class ${className}.`);
-  if (css.includes(className)) failures.push(`public/styles/pages/home.css still contains legacy rotator class ${className}.`);
+  if (clean.includes(className)) {
+    failures.push(`HomeHeroClean.astro still contains legacy rotator class: ${className}`);
+  }
 }
 
-if (genericHeroCss.includes('rgba(13,148,136')) {
-  failures.push('Generic hero CSS still contains old teal radial styling.');
+if (genericHeroCss.includes('rgba(13,148,136') || genericHeroCss.includes('rgba(13, 148, 136')) {
+  failures.push('src/styles/components/hero.css still contains old teal radial styling.');
 }
 
 if (failures.length) {
