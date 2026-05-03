@@ -1,7 +1,7 @@
 ---
 /**
- * HomeHeroClean.astro — PupWiki modern responsive hero.
- * Mobile-first, no inline styles, no horizontal overflow, image data enriched by Pexels when available.
+ * HomeHeroClean.astro — Canonical PupWiki homepage hero.
+ * Static, mobile-first, no rotator, no layout shift, no duplicate hero implementation.
  */
 
 import heroImageData from '../../data/home-hero-images.json';
@@ -34,24 +34,28 @@ const {
   subtitle = 'PupWiki helps dog parents compare breeds and mixed breeds, understand care needs, plan costs, and make more confident ownership decisions.',
   primaryCta = { label: 'Explore Dog Breeds', href: '/breeds' },
   secondaryCta = { label: 'Plan Costs', href: '/cost-calculator' },
-  imageSrc = 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1400&q=82&fit=crop',
-  imageAlt = 'Happy dogs outdoors',
+  imageSrc = 'https://images.pexels.com/photos/4587996/pexels-photo-4587996.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop',
+  imageAlt = 'Happy dog resting at home with owner',
   heroCardEyebrow = 'Decision support for dog parents',
-  heroCardText = 'Breed guides, mixed-breed profiles, cost calculators, training paths, and practical care resources in one place.',
+  heroCardText = 'Breed profiles, mixed-breed guides, cost tools, care context and practical next steps for real households.',
   trustItems = [],
   features = [],
   stats = [],
 } = Astro.props;
 
 const enrichedImages = Array.isArray((heroImageData as any).images) ? (heroImageData as any).images : [];
-const mainImage = enrichedImages[0] || { src: imageSrc, mobileSrc: imageSrc, alt: imageAlt, focal: 'center' };
-const sideImages = enrichedImages.slice(1, 4);
+const mainImage = enrichedImages.find((image: any) => image?.src) || {
+  src: imageSrc,
+  mobileSrc: imageSrc,
+  alt: imageAlt,
+};
 const heroStats = stats.slice(0, 3);
 const heroFeatures = features.slice(0, 3);
 const quickLinks = [
+  { label: 'Breed finder', href: '/breeds', icon: '🐾' },
   { label: 'Puppy hub', href: '/categories/puppy', icon: '🐶' },
+  { label: 'Cost planner', href: '/cost-calculator', icon: '💰' },
   { label: 'Senior dogs', href: '/categories/senior-dogs', icon: '🐕‍🦺' },
-  { label: 'Dog food', href: '/categories/dog-food', icon: '🍖' },
 ];
 ---
 
@@ -89,11 +93,19 @@ const quickLinks = [
         </nav>
       </div>
 
-      <div class="pw-hero__visual" aria-label="Dog care and breed research visuals">
-        <figure class="pw-hero__image-card pw-hero__image-card--main">
+      <div class="pw-hero__visual" aria-label="Dog care and breed research visual">
+        <figure class="pw-hero__image-card">
           <picture>
             <source srcset={mainImage.mobileSrc || mainImage.src} media="(max-width: 640px)" />
-            <img src={mainImage.src || imageSrc} alt={mainImage.alt || imageAlt} width="760" height="620" loading="eager" decoding="async" fetchpriority="high" />
+            <img
+              src={mainImage.src || imageSrc}
+              alt={mainImage.alt || imageAlt}
+              width="960"
+              height="760"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
           </picture>
           <div class="pw-hero__image-shade" aria-hidden="true"></div>
           <figcaption class="pw-hero__insight-card">
@@ -101,14 +113,6 @@ const quickLinks = [
             <strong>{heroCardText}</strong>
           </figcaption>
         </figure>
-
-        {sideImages.length > 0 && (
-          <div class="pw-hero__mini-strip" aria-hidden="true">
-            {sideImages.map((image) => (
-              <img src={image.mobileSrc || image.src} alt="" width="132" height="104" loading="lazy" decoding="async" />
-            ))}
-          </div>
-        )}
 
         {heroStats.length > 0 && (
           <div class="pw-hero__stats" aria-label="PupWiki statistics">
