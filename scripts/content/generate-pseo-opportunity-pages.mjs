@@ -65,12 +65,6 @@ function clean(value) {
 function unique(values) {
   return Array.from(new Set(values.filter(Boolean)));
 }
-function commissionLabel(program) {
-  const pct = (Array.isArray(program.commissionRange) ? program.commissionRange : []).find((item) => item?.type === 'percentage');
-  if (!pct) return 'AWIN commission terms';
-  return Number(pct.min) === Number(pct.max) ? `${pct.max}% commission` : `${pct.min}%â€“${pct.max}% commission`;
-}
-
 const awin = readJson('src/data/awin-programs.json', { programs: [] });
 const products = readJson('src/data/awin-products.json', []);
 const backlog = readJson('src/data/pseo-opportunity-backlog.json', { items: [] });
@@ -117,7 +111,7 @@ const RULES = [
     internalTargets: ['/categories/beds', '/categories/senior-dogs', '/categories/puppy', '/breeds'],
     intent: 'cost',
     sensitivity: 'medium',
-    intro: 'Use this guide to compare beds, crate comfort, washable covers, senior comfort, cooling, travel rest and household setup by the dogâ€™s size and sleep style.',
+    intro: 'Use this guide to compare beds, crate comfort, washable covers, senior comfort, cooling, travel rest and household setup by the dog\'s size and sleep style.',
   },
   {
     slug: 'dog-health-wellness-adjacent-partners',
@@ -193,7 +187,7 @@ function getBreedPages(clusters) {
 function renderCluster(cluster) {
   const tags = unique([cluster.slug, ...cluster.rule.tags, ...cluster.programs.flatMap((program) => program.topicTags || []), ...cluster.products.flatMap((product) => product.topicTags || [])]).map(slugify);
   const sensitive = cluster.rule.sensitivity === 'high';
-  const relatedLinks = cluster.internalLinkTargets.map((href) => `- [${titleCase(href.replace(/^\//, '').replace(/\//g, ' â€º '))}](${href})`).join('\n');
+  const relatedLinks = cluster.internalLinkTargets.map((href) => `- [${titleCase(href.replace(/^\//, '').replace(/\//g, ' > '))}](${href})`).join('\n');
   const amazonCoverage = cluster.amazonQueries.length ? cluster.amazonQueries.map((query) => `- ${query}`).join('\n') : '- This journey is mainly service-led, so compare provider details, booking terms, coverage, reviews and dog fit before choosing.';
   const body = `> **Reader-support note:** PupWiki may earn from qualifying partner links. Brand availability, offers, products and terms can change.
 ${sensitive ? '\n> **Health-sensitive note:** This page is for comparison and planning only. It does not provide veterinary, medical, insurance, or financial advice.\n' : ''}
@@ -213,7 +207,7 @@ ${cluster.products.length ? cluster.products.slice(0, 8).map(productLine).join('
 
 ## How to compare these options
 
-- Match the product or service to the dogâ€™s life stage, size, activity level and owner goal.
+- Match the product or service to the dog's life stage, size, activity level and owner goal.
 - Confirm shipping, availability, formula, sizing, subscription terms, return policy or service terms on the partner site.
 - If you are still choosing a dog, use these options to understand the real care, time and budget commitments behind ownership.
 - Treat price and availability as dynamic; do not rely on older imported data.
@@ -259,31 +253,31 @@ ${body}`;
 }
 function renderBreedPage(item) {
   const breed = breeds.find((breedItem) => breedItem.slug === item.breedSlug);
-  const title = `${breed.name} ${titleCase(item.family)} Partner and Product Planning Guide`;
+  const title = `${breed.name} ${titleCase(item.family)} Dog-Care Decision Guide`;
   const tags = unique([item.family, item.cluster, item.commerceCluster, breed.slug, breed.name, ...item.programmes, ...item.amazonQueries]).map(slugify);
-  const body = `> **Affiliate disclosure:** PupWiki may earn from qualifying partner links.
+  const body = `> **Reader-support note:** PupWiki may earn from qualifying partner links.
 
-## Why this guide is linked to current partner data
+## Why this guide exists
 
-This page exists because PupWiki has active partner or product coverage for **${item.commerceClusterTitle}** and the content inventory identified a relevant gap for **${breed.name}**.
+This page helps ${breed.name} people compare useful brands, products and services for a real care decision. It is also useful if you are still deciding whether a ${breed.name} fits your home, budget and routine.
 
-Relevant partner programmes:
+Dog brands and services to review:
 
 ${item.programmes.map((name) => `- ${name}`).join('\n')}
 
-## Product/service signals to compare
+## Products and service details to compare
 
-${item.products.length ? item.products.map(productLine).join('\n') : '- Partner product rows are limited, so the page relies on active partner topic tags and deeplinks for now.'}
+${item.products.length ? item.products.map(productLine).join('\n') : '- Start with provider fit, service terms, availability, reviews and dog-care purpose. Product-level details may vary by brand and location.'}
 
-## Related PupWiki paths
+## Related PupWiki guides
 
-${item.internalLinkTargets.map((href) => `- [${titleCase(href.replace(/^\//, '').replace(/\//g, ' â€º '))}](${href})`).join('\n')}
+${item.internalLinkTargets.map((href) => `- [${titleCase(href.replace(/^\//, '').replace(/\//g, ' > '))}](${href})`).join('\n')}
 `;
   return `---
 title: ${quote(title)}
 seoTitle: ${quote(title)}
-displayTitle: ${quote(`${breed.name} ${titleCase(item.family)} planning guide`)}
-description: ${quote(`A PupWiki planning guide for ${breed.name} owners, generated from current partner coverage, product signals, internal links and commerce cluster data.`)}
+displayTitle: ${quote(`${breed.name} ${titleCase(item.family)} decision guide`)}
+description: ${quote(`A PupWiki guide for current and future ${breed.name} people comparing dog-care brands, products, services and practical next steps.`)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 author: "The PupWiki Team"
