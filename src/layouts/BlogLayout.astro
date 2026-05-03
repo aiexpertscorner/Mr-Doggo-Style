@@ -75,6 +75,7 @@ const categoryConfig: Record<string, { label: string; icon: string; className: s
   gear: { label: 'Training & Gear', icon: '🦮', className: 'is-training' },
   'smart tech': { label: 'Smart Tech', icon: '📡', className: 'is-tech' },
   lifestyle: { label: 'Lifestyle', icon: '🎁', className: 'is-lifestyle' },
+  'pupwiki partners': { label: 'Dog Brand Guides', icon: '🐾', className: 'is-lifestyle' },
 };
 
 const categoryKey = String(category || 'Guide').toLowerCase();
@@ -85,7 +86,7 @@ const publishedIso = new Date(pubDate).toISOString();
 const updatedIso = updatedDate ? new Date(updatedDate).toISOString() : undefined;
 const isHealthSensitive = ['health', 'supplements', 'food', 'dog food'].includes(categoryKey) || ['health', 'supplements', 'product-roundup'].includes(String(postType || '').toLowerCase());
 
-const awinTopicTags = [categoryKey, postType, breedSlug, breedName, breedSize, breedEnergy, breedCoat, ...tags]
+const partnerTopicTags = [categoryKey, postType, breedSlug, breedName, breedSize, breedEnergy, breedCoat, ...tags]
   .filter(Boolean)
   .map((item) => String(item).toLowerCase());
 
@@ -157,8 +158,8 @@ const breadcrumbLd = {
         <p class="article-hero__subtitle">{description}</p>
 
         <div class="article-trust-row" aria-label="Article trust notes">
-          <span>Updated guide</span>
-          <span>Affiliate links disclosed</span>
+          <span>Updated dog guide</span>
+          <span>Reader-first recommendations</span>
           {isHealthSensitive && <span>General information, not veterinary advice</span>}
         </div>
 
@@ -174,10 +175,10 @@ const breadcrumbLd = {
       <div class="article-container">
         <div class="article-disclosure-card">
           <div>
-            <strong>Affiliate disclosure</strong>
-            <p>PupWiki may earn a commission from qualifying partner links at no extra cost to you. Recommendations and links should be clearly disclosed and selected for reader relevance.</p>
+            <strong>How PupWiki chooses resources</strong>
+            <p>We prioritize dog relevance, practical fit, clear safety notes, and up-to-date product or service details. Always confirm current terms on the brand or retailer site before buying.</p>
           </div>
-          <a href="/disclosure">Full policy →</a>
+          <a href="/how-we-test">Research method →</a>
         </div>
 
         {isHealthSensitive && (
@@ -234,9 +235,9 @@ const breadcrumbLd = {
                 </dl>
               </section>
 
-              <AwinProductSlot topicTags={awinTopicTags} pageType="blog" category={categoryKey} breedSize={breedSize} breedEnergy={breedEnergy} headline="Relevant partner resources" variant="compact" />
+              <AwinProductSlot topicTags={partnerTopicTags} pageType="blog" category={categoryKey} breedSize={breedSize} breedEnergy={breedEnergy} headline="Helpful dog resources" variant="compact" />
 
-              {!isHealthSensitive && <PageBannerSlot pageType="blog" placement="sidebar" topic={categoryKey} topicTags={awinTopicTags} compact={true} />}
+              {!isHealthSensitive && <PageBannerSlot pageType="blog" placement="sidebar" topic={categoryKey} topicTags={partnerTopicTags} compact={true} />}
 
               <section class="article-sidebar-card">
                 <h2>Explore next</h2>
@@ -250,9 +251,9 @@ const breadcrumbLd = {
 
               <section class="article-sidebar-card article-sidebar-card--warm">
                 <h2>Transparency</h2>
-                <p>PupWiki uses affiliate links on some guides. Health-sensitive content is general information and should not replace veterinary advice.</p>
+                <p>PupWiki may earn from some product and brand links. Health-sensitive content is general information and should not replace veterinary advice.</p>
                 <div class="article-sidebar-links">
-                  <a href="/disclosure">Affiliate disclosure →</a>
+                  <a href="/disclosure">Full disclosure →</a>
                   <a href="/privacy">Privacy policy →</a>
                   <a href="/contact">Contact →</a>
                 </div>
