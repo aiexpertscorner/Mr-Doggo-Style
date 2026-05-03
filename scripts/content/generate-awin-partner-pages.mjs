@@ -1,20 +1,13 @@
 #!/usr/bin/env node
 /**
- * Generate one rich PupWiki partner profile page per joined + active AWIN programme.
+ * Generate one user-facing PupWiki money page per joined + active partner programme.
  *
- * Reads:
- * - src/data/awin-programs.json
- * - src/data/awin-products.json
- * - src/data/affiliate-banners.json
- *
- * Writes:
- * - src/content/blog/partner-<program-key>.md
- * - src/data/pupwiki-partners-summary.json
- *
- * Pages are intentionally excluded from the editorial blog feed via indexInBlog=false.
+ * These pages must read like public brand/product guides for dog owners.
+ * Never expose backend terminology, tracking mechanics, programme KPIs, feed metadata,
+ * internal placement rules, or generator notes in the rendered article body.
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
 const ROOT = process.cwd();
@@ -40,78 +33,148 @@ function slugify(value) {
 function titleCase(value) {
   return String(value || '').replace(/[-_]+/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
 }
-function percentRange(range) {
-  const items = Array.isArray(range) ? range : [];
-  const pct = items.find((item) => item?.type === 'percentage');
-  if (!pct) return 'Commission terms available through AWIN';
-  if (Number(pct.min) === Number(pct.max)) return `${pct.max}% commission`;
-  return `${pct.min}%–${pct.max}% commission`;
-}
-function normalizeTopic(value) { return String(value || '').toLowerCase().replace(/[-_]+/g, ' '); }
-function inferPartnerCluster(program) {
-  const blob = [program.name, program.primarySector, ...(program.topicTags || [])].join(' ').toLowerCase();
-  if (/food|nutrition|broth|fresh|raw|feeding/.test(blob)) return { slug: 'dog-food', label: 'Food & nutrition', icon: '🍖' };
-  if (/training|leash|harness|collar|fence|obedience|gear/.test(blob)) return { slug: 'training', label: 'Training & gear', icon: '🦮' };
-  if (/gift|portrait|memorial|license|lifestyle|apparel|accessor/.test(blob)) return { slug: 'lifestyle', label: 'Lifestyle & gifts', icon: '🎁' };
-  if (/bed|sleep|comfort|home/.test(blob)) return { slug: 'beds', label: 'Beds & comfort', icon: '🛏️' };
-  if (/health|insurance|vet|wellness|supplement/.test(blob)) return { slug: 'health', label: 'Health & wellness', icon: '🩺' };
-  return { slug: 'pupwiki-partners', label: 'PupWiki Partners', icon: '🤝' };
+function yamlList(values) {
+  return `[${Array.from(new Set(values.filter(Boolean))).map((value) => quote(value)).join(', ')}]`;
 }
 function cleanDomain(program) {
   const domain = program.validDomains?.[0]?.domain || program.displayUrl || '';
   return String(domain).replace(/^https?:\/\//, '').replace(/^\*\./, '').replace(/\/$/, '');
 }
 function productRows(program, products) {
-  return products.filter((product) => String(product.advertiserId || '') === String(program.advertiserId || '') || String(product.programId || '') === String(program.key || '')).slice(0, 8);
+  return products
+    .filter((product) => String(product.advertiserId || '') === String(program.advertiserId || '') || String(product.programId || '') === String(program.key || ''))
+    .slice(0, 8);
 }
 function bannerRows(program, bannerRegistry) {
   const banners = Array.isArray(bannerRegistry) ? bannerRegistry : bannerRegistry?.banners || [];
-  return banners.filter((banner) => String(banner.advertiserId || '') === String(program.advertiserId || '') || String(banner.programKey || '') === String(program.key || '')).slice(0, 6);
+  return banners
+    .filter((banner) => String(banner.advertiserId || '') === String(program.advertiserId || '') || String(banner.programKey || '') === String(program.key || ''))
+    .slice(0, 6);
 }
-function yamlList(values) {
-  return `[${values.map((value) => quote(value)).join(', ')}]`;
+function inferPartnerCluster(program) {
+  const blob = [program.name, program.primarySector, ...(program.topicTags || [])].join(' ').toLowerCase();
+  if (/broth|food|nutrition|fresh|raw|feeding|meal/.test(blob)) {
+    return {
+      slug: 'dog-food',
+      label: 'Food & nutrition',
+      icon: '🍖',
+      audience: 'dog owners comparing food, toppers, feeding support, and nutrition-focused products',
+      buyerUse: 'feeding routines, meal variety, picky eaters, hydration support, and everyday nutrition planning',
+      caution: 'For medical diets, allergies, pancreatitis, kidney disease, or other health concerns, ask your veterinarian before changing food or toppers.',
+    };
+  }
+  if (/training|leash|harness|collar|fence|obedience|gear|recall/.test(blob)) {
+    return {
+      slug: 'training',
+      label: 'Training & gear',
+      icon: '🦮',
+      audience: 'dog owners looking for training support, walking gear, containment, or safer everyday routines',
+      buyerUse: 'leash manners, recall practice, home setup, activity planning, and practical training sessions',
+      caution: 'Training tools work best with patient, reward-based routines. For aggression, fear, or serious behavior concerns, work with a qualified professional.',
+    };
+  }
+  if (/gift|portrait|memorial|license|lifestyle|apparel|accessor/.test(blob)) {
+    return {
+      slug: 'lifestyle',
+      label: 'Lifestyle & gifts',
+      icon: '🎁',
+      audience: 'dog lovers looking for personalized gifts, keepsakes, identification items, or owner-focused products',
+      buyerUse: 'gift ideas, memorial pieces, custom portraits, everyday accessories, and dog-parent lifestyle products',
+      caution: 'Check personalization details, production time, return policies, and shipping windows before ordering.',
+    };
+  }
+  if (/bed|sleep|comfort|home|orthopedic/.test(blob)) {
+    return {
+      slug: 'beds',
+      label: 'Beds & comfort',
+      icon: '🛏️',
+      audience: 'dog owners comparing beds, comfort products, home setup, washable covers, and senior-friendly sleep options',
+      buyerUse: 'sleep comfort, crate setup, washable home products, joint-friendly rest, and dog-room planning',
+      caution: 'Measure your dog and compare size charts carefully. For pain, stiffness, or mobility changes, ask your veterinarian.',
+    };
+  }
+  if (/health|insurance|vet|wellness|supplement|care/.test(blob)) {
+    return {
+      slug: 'health',
+      label: 'Health & wellness',
+      icon: '🩺',
+      audience: 'dog owners researching wellness, care planning, vet-adjacent products, or long-term ownership costs',
+      buyerUse: 'care planning, wellness routines, cost planning, and questions to discuss with your veterinarian',
+      caution: 'This page is informational only and does not replace veterinary advice, diagnosis, treatment, legal advice, or financial advice.',
+    };
+  }
+  return {
+    slug: 'pupwiki-partners',
+    label: 'Dog owner resources',
+    icon: '🤝',
+    audience: 'dog owners comparing practical products or services for everyday dog care',
+    buyerUse: 'researching options, comparing fit, and finding useful dog-owner resources',
+    caution: 'Check the partner site for current terms, availability, shipping, returns, and product details.',
+  };
+}
+function readableTags(program, cluster) {
+  return Array.from(new Set([cluster.slug, ...(program.topicTags || [])]
+    .map((tag) => String(tag || '').replace(/[-_]+/g, ' ').trim())
+    .filter(Boolean)))
+    .slice(0, 8);
+}
+function buildProductList(products, safeName, deeplink) {
+  if (!products.length) {
+    return [
+      `- Visit ${safeName} to review its current products, bundles, offers, shipping options, and availability.`,
+      `- Compare product details on the brand site before buying, especially size, ingredients, materials, subscription terms, and return policy.`,
+    ].join('\n');
+  }
+
+  return products.map((product) => {
+    const name = product.name || `${safeName} product`;
+    const category = product.category || product.categoryLabel || 'Dog product';
+    const desc = product.description ? ` — ${String(product.description).replace(/\s+/g, ' ').trim().slice(0, 145)}${String(product.description).length > 145 ? '…' : ''}` : '';
+    const url = product.url || deeplink;
+    return `- **${name}** (${category})${desc}${url ? ` — [review on ${safeName}](${url})` : ''}`;
+  }).join('\n');
+}
+function buildIntro(program, safeName, cluster) {
+  const description = String(program.description || '').replace(/\s+/g, ' ').trim();
+  if (description && description.length > 40) {
+    return `${safeName} is a ${cluster.label.toLowerCase()} brand that may be useful for ${cluster.audience}. ${description.slice(0, 260)}${description.length > 260 ? '…' : ''}`;
+  }
+  return `${safeName} is a ${cluster.label.toLowerCase()} resource for ${cluster.audience}. This PupWiki guide explains what the brand offers, when it may be worth considering, and what to check before you buy.`;
 }
 function buildMarkdown(program, products, banners) {
   const cluster = inferPartnerCluster(program);
   const pageSlug = `partner-${program.key}`;
-  const tags = Array.from(new Set(['partner', 'awin', cluster.slug, ...(program.topicTags || [])].map(slugify).filter(Boolean))).slice(0, 14);
-  const kpi = program.kpi || {};
-  const commission = percentRange(program.commissionRange);
-  const domain = cleanDomain(program);
+  const tags = Array.from(new Set(['partner', cluster.slug, ...(program.topicTags || [])].map(slugify).filter(Boolean))).slice(0, 14);
   const safeName = program.name || titleCase(program.key);
   const logo = program.logoUrl || '';
   const deeplink = program.deeplink || program.configuredDeeplink || program.clickThroughUrl || '';
-  const productCount = products.length;
-  const bannerCount = banners.length;
-  const productList = productCount
-    ? products.map((product) => `- **${product.name || 'Partner product'}** — ${product.category || product.categoryLabel || 'Partner offer'}${product.url ? ` ([view partner listing](${product.url}))` : ''}`).join('\n')
-    : '- This partner currently uses a brand/profile deeplink on PupWiki. Product-feed rows can be added automatically when AWIN exposes usable feed data.';
-  const creativeList = bannerCount
-    ? banners.map((banner) => `- ${banner.label || banner.alt || 'Partner creative'} — source: ${banner.source || 'AWIN'}`).join('\n')
-    : '- No dedicated creative assets were imported yet. The profile logo and AWIN partner deeplink are used as the safe fallback.';
-  const topicLine = tags.slice(0, 8).map(normalizeTopic).join(', ');
+  const domain = cleanDomain(program);
+  const topics = readableTags(program, cluster);
+  const productList = buildProductList(products, safeName, deeplink);
+  const intro = buildIntro(program, safeName, cluster);
+  const heroAlt = logo ? `${safeName} logo` : `${safeName} dog owner resource`;
 
   return `---
-title: ${quote(`${safeName} Partner Profile — PupWiki AWIN Resource`)}
-seoTitle: ${quote(`${safeName} Partner Profile — Products, Deeplinks & PupWiki Fit`)}
-displayTitle: ${quote(`${safeName} partner profile`)}
-description: ${quote(`PupWiki partner profile for ${safeName}, including product or service focus, AWIN deeplink, topic fit, commercial notes and safe disclosure context.`)}
+title: ${quote(`${safeName} Review for Dog Owners — Products, Fit & Buying Notes`)}
+seoTitle: ${quote(`${safeName} Review for Dog Owners — PupWiki Partner Guide`)}
+displayTitle: ${quote(`${safeName} review for dog owners`)}
+description: ${quote(`A PupWiki guide to ${safeName}: what the brand offers, when dog owners may consider it, product/service fit, buying notes, and affiliate disclosure.`)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 author: "The PupWiki Team"
 category: "PupWiki Partners"
 tags: ${yamlList(tags)}
-postType: "general"
+postType: "review"
 contentTier: "money"
 indexInBlog: false
 generated: true
-reviewMethod: "product-data-comparison"
-claimSensitivity: "low"
-monetizationIntent: "service"
+reviewMethod: "partner-resource-review"
+claimSensitivity: ${quote(cluster.slug === 'health' || cluster.slug === 'dog-food' ? 'high' : 'medium')}
+monetizationIntent: "partner-review"
 affiliateDisclosure: true
-medicalDisclaimer: false
+medicalDisclaimer: ${cluster.slug === 'health' || cluster.slug === 'dog-food' ? 'true' : 'false'}
 heroImage: ${quote(logo)}
-heroImageAlt: ${quote(`${safeName} logo`)}
+heroImageAlt: ${quote(heroAlt)}
 readTime: 5
 partnerKey: ${quote(program.key)}
 partnerAdvertiserId: ${quote(program.advertiserId)}
@@ -120,70 +183,56 @@ partnerDeeplink: ${quote(deeplink)}
 canonicalUrl: ${quote(`https://pupwiki.com/blog/${pageSlug}`)}
 ---
 
-> **Affiliate disclosure:** ${safeName} is listed through PupWiki's AWIN partner data. PupWiki may earn a commission from qualifying partner links at no extra cost to you.
+> **Affiliate disclosure:** PupWiki may earn from qualifying partner links on this page. This does not change the price you pay and does not replace your own product research.
 
-## What is ${safeName}?
+## About ${safeName}
 
-${safeName} is an AWIN partner currently mapped to PupWiki's **${cluster.label}** cluster. This profile helps readers understand where the partner may fit in the PupWiki ecosystem, which pages it can support, and which deeplinks or creative assets are available for responsible affiliate placement.
+${intro}
 
-- **Partner category:** ${cluster.icon} ${cluster.label}
-- **Website/domain:** ${domain || 'Available through AWIN tracking link'}
-- **AWIN relationship:** ${program.relationship || 'joined'} / ${program.status || 'active'}
-- **Primary sector:** ${program.primarySector || 'Pet and dog-owner products/services'}
-- **Commission signal:** ${commission}
-- **Topic fit:** ${topicLine || 'partner, dog owner resources'}
+${domain ? `${safeName}'s website is **${domain}**. Use the brand site to confirm current products, pricing, availability, subscription terms, shipping, and return policy.` : `Use the brand site to confirm current products, pricing, availability, subscription terms, shipping, and return policy.`}
 
-## PupWiki fit and page placement
+## What ${safeName} may be useful for
 
-${safeName} can be considered for pages that match these intent tags: **${topicLine || 'partner resources'}**. The engine should prefer placements where the product or service naturally supports the reader's current task.
+${cluster.icon} **${cluster.label}** resources can help with ${cluster.buyerUse}.
 
-Recommended placement rules:
+Common reasons dog owners may compare ${safeName}:
 
-1. Use this partner on pages that match the same product/service cluster.
-2. Avoid health or emergency contexts unless the partner is specifically relevant and the page wording remains conservative.
-3. Keep partner links clearly disclosed and avoid hardcoded pricing or unsupported claims.
-4. Prefer direct AWIN deeplinks or product-feed URLs when available.
+- They want a brand or product that fits a specific dog-care need.
+- They are comparing quality, ingredients, materials, size, service terms, or convenience.
+- They want to understand whether the offer fits their dog’s age, size, routine, and budget.
+- They prefer reviewing a brand page before making a purchase decision.
 
-## Deeplink and tracking
-
-Primary partner link:
-
-[Visit ${safeName}](${deeplink})
-
-Use this as the default PupWiki partner CTA unless a more specific product-feed link or creative deeplink is available.
-
-## Product and feed data
-
-Imported product rows for this partner: **${productCount}**.
+## Products or services to review
 
 ${productList}
 
-## Creative assets and logos
+## Is ${safeName} right for your dog?
 
-Imported creative/banner rows for this partner: **${bannerCount}**.
+${safeName} may be worth considering if it matches your dog’s life stage, size, routine, and owner priorities. Before buying, compare the product or service against your actual use case rather than choosing only by brand name.
 
-${creativeList}
+Questions to ask before you click:
 
-${logo ? `![${safeName} logo](${logo})` : ''}
+- Does the product or service fit your dog’s age, size, activity level, and health context?
+- Are ingredients, sizing, materials, subscription terms, or service terms clearly explained?
+- Are shipping, returns, cancellation terms, and customer support easy to understand?
+- Does the brand provide enough detail for you to compare it with other options?
 
-## Performance and commercial notes
+${cluster.caution ? `> **Care note:** ${cluster.caution}` : ''}
 
-Available AWIN KPI fields from the latest sync:
+## PupWiki buying notes
 
-- **EPC:** ${kpi.epc ?? 'n/a'}
-- **Conversion rate:** ${kpi.conversionRate ?? 'n/a'}
-- **Approval percentage:** ${kpi.approvalPercentage ?? 'n/a'}
-- **Average payment time:** ${kpi.averagePaymentTime ?? 'n/a'} days
-- **Validation days:** ${kpi.validationDays ?? 'n/a'}
+- We avoid showing unsupported price, rating, or availability claims because these can change.
+- Check the partner website for current details before buying.
+- For health, food, supplements, insurance, or vet-adjacent decisions, use this page as a starting point and get professional advice when needed.
 
-These figures are directional signals from AWIN data and can change. They should inform placement priority, not replace editorial relevance.
+${deeplink ? `[Visit ${safeName}](${deeplink})` : ''}
 
-## Related PupWiki paths
+## Related PupWiki guides
 
-- [PupWiki Partners](/categories/pupwiki-partners)
 - [${cluster.label}](/categories/${cluster.slug})
+- [Dog breeds](/breeds)
+- [Dog cost calculator](/cost-calculator)
 - [Affiliate disclosure](/disclosure)
-- [How PupWiki researches guides](/how-we-test)
 `;
 }
 
@@ -194,7 +243,7 @@ function main() {
   const banners = readJson(BANNERS_PATH, { banners: [] });
 
   if (!awinData || !Array.isArray(awinData.programs)) {
-    warn('No awin-programs.json programs array found. Skipping partner page generation.');
+    warn('No partner programmes found. Skipping partner page generation.');
     return;
   }
 
@@ -229,7 +278,7 @@ function main() {
     writeFileSync(SUMMARY_PATH, `${JSON.stringify({ generatedAt: new Date().toISOString(), totalPartners: summary.length, partners: summary }, null, 2)}\n`, 'utf8');
   }
 
-  log(`${APPLY ? 'Generated' : 'Checked'} ${written} partner profile page(s).`);
+  log(`${APPLY ? 'Generated' : 'Checked'} ${written} user-facing partner page(s).`);
 }
 
 main();
