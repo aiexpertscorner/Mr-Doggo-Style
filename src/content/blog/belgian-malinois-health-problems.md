@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Belgian Malinois Preventive Care and Warning Signs"
 displayTitle: "Belgian Malinois preventive care and warning signs"
 titlePattern: "health-prevention"
+heroImage: "https://images.pexels.com/photos/13076152/pexels-photo-13076152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/13076152/pexels-photo-13076152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Belgian Malinois dog standing in a scenic, natural outdoor setting with grass and sky."
+imageAlt: "Belgian Malinois dog standing in a scenic, natural outdoor setting with grass and sky."
+imageSource: "pexels"
+imageCredit: "Photo by Laura Paredis on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/malinois-dog-standing-on-brown-field-under-blue-sky-13076152/"
+imageSearchQuery: "Belgian Malinois dog veterinarian wellness"
 ---
+
 
 Belgian Malinoiss are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

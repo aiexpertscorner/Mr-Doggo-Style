@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "American Water Spaniel Health Risks for Medium Dogs"
 displayTitle: "American Water Spaniel health risks for medium dogs"
 titlePattern: "health-size-risk"
+heroImage: "https://images.pexels.com/photos/36739473/pexels-photo-36739473.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/36739473/pexels-photo-36739473.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A cheerful brown and white dog sits in a vibrant green field, enjoying the sunshine."
+imageAlt: "A cheerful brown and white dog sits in a vibrant green field, enjoying the sunshine."
+imageSource: "pexels"
+imageCredit: "Photo by KB Photography on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/happy-dog-sitting-in-sunlit-field-36739473/"
+imageSearchQuery: "American Water Spaniel dog veterinarian wellness"
 ---
+
 
 American Water Spaniels are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "American English Coonhound Beds for Cooling, Comfort, and Cleanup"
 displayTitle: "American English Coonhound beds for cooling, comfort, and cleanup"
 titlePattern: "beds-cooling"
+heroImage: "https://images.pexels.com/photos/2102839/pexels-photo-2102839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/2102839/pexels-photo-2102839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable Jack Russell Terrier dog sleeping peacefully on a bed indoors."
+imageAlt: "Adorable Jack Russell Terrier dog sleeping peacefully on a bed indoors."
+imageSource: "pexels"
+imageCredit: "Photo by Lisa from Pexels on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adult-dog-on-white-bed-2102839/"
+imageSearchQuery: "American English Coonhound dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a American English Coonhound, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Basset Fauve de Bretagne Preventive Care and Warning Signs"
 displayTitle: "Basset Fauve de Bretagne preventive care and warning signs"
 titlePattern: "health-prevention"
+heroImage: "https://images.pexels.com/photos/7468978/pexels-photo-7468978.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7468978/pexels-photo-7468978.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A professional veterinarian in mask examines a dog indoors during a checkup."
+imageAlt: "A professional veterinarian in mask examines a dog indoors during a checkup."
+imageSource: "pexels"
+imageCredit: "Photo by Mikhail Nilov on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/man-checking-on-a-dog-7468978/"
+imageSearchQuery: "Basset Fauve de Bretagne dog veterinarian wellness"
 ---
+
 
 Basset Fauve de Bretagnes are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

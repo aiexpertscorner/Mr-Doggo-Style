@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "American Staffordshire Terrier Bed Guide: Sleep, Joints, and Cleanup"
 displayTitle: "American Staffordshire Terrier bed guide for sleep, joints, and cleanup"
 titlePattern: "beds-guide-sleep"
+heroImage: "https://images.pexels.com/photos/5330031/pexels-photo-5330031.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5330031/pexels-photo-5330031.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute purebred white dog with closed eyes napping on comfortable bed while embracing toy at home"
+imageAlt: "Cute purebred white dog with closed eyes napping on comfortable bed while embracing toy at home"
+imageSource: "pexels"
+imageCredit: "Photo by K on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-american-bulldog-sleeping-with-toy-on-bed-5330031/"
+imageSearchQuery: "American Staffordshire Terrier dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a American Staffordshire Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

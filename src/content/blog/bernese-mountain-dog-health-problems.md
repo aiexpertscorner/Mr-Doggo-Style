@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Bernese Mountain Dog Health Notes for Practical Owners"
 displayTitle: "Bernese Mountain Dog health notes for practical owners"
 titlePattern: "health-practical"
+heroImage: "https://images.pexels.com/photos/10842583/pexels-photo-10842583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/10842583/pexels-photo-10842583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming Bernese Mountain Dog in a sunlit field of wildflowers, radiating joy."
+imageAlt: "Charming Bernese Mountain Dog in a sunlit field of wildflowers, radiating joy."
+imageSource: "pexels"
+imageCredit: "Photo by David  Floyd on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-close-up-shot-of-a-bernese-mountain-dog-10842583/"
+imageSearchQuery: "Bernese Mountain Dog dog veterinarian wellness"
 ---
+
 
 Bernese Mountain Dogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

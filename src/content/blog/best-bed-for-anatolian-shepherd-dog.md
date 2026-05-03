@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Best Washable Beds for Anatolian Shepherd Dog"
 displayTitle: "Washable beds worth comparing for Anatolian Shepherd Dog"
 titlePattern: "beds-best-washable"
+heroImage: "https://images.pexels.com/photos/21928868/pexels-photo-21928868.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/21928868/pexels-photo-21928868.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Calm stray dog sleeping against a brick wall in Bornova, İzmir, Türkiye."
+imageAlt: "Calm stray dog sleeping against a brick wall in Bornova, İzmir, Türkiye."
+imageSource: "pexels"
+imageCredit: "Photo by Doğan Alpaslan  Demir on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/stray-dog-lying-down-and-sleeping-21928868/"
+imageSearchQuery: "Anatolian Shepherd Dog dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Anatolian Shepherd Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

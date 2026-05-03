@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Belgian Malinois Bed Sizing Guide for Large Dogs"
 displayTitle: "Belgian Malinois bed sizing guide for large dogs"
 titlePattern: "beds-sizing"
+heroImage: "https://images.pexels.com/photos/13076152/pexels-photo-13076152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/13076152/pexels-photo-13076152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Belgian Malinois dog standing in a scenic, natural outdoor setting with grass and sky."
+imageAlt: "Belgian Malinois dog standing in a scenic, natural outdoor setting with grass and sky."
+imageSource: "pexels"
+imageCredit: "Photo by Laura Paredis on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/malinois-dog-standing-on-brown-field-under-blue-sky-13076152/"
+imageSearchQuery: "Belgian Malinois dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Belgian Malinois, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

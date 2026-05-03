@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Australian Kelpie Health Risks for Medium Dogs"
 displayTitle: "Australian Kelpie health risks for medium dogs"
 titlePattern: "health-size-risk"
+heroImage: "https://images.pexels.com/photos/5142688/pexels-photo-5142688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5142688/pexels-photo-5142688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up of a smiling Australian Kelpie dog sitting in a vibrant green garden."
+imageAlt: "Close-up of a smiling Australian Kelpie dog sitting in a vibrant green garden."
+imageSource: "pexels"
+imageCredit: "Photo by Ana Morais on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-photo-of-a-dog-5142688/"
+imageSearchQuery: "Australian Kelpie dog veterinarian wellness"
 ---
+
 
 Australian Kelpies are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

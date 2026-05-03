@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Best Orthopedic Beds for Alaskan Malamute"
 displayTitle: "Orthopedic beds to compare for Alaskan Malamute"
 titlePattern: "beds-best-ortho"
+heroImage: "https://images.pexels.com/photos/8734661/pexels-photo-8734661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/8734661/pexels-photo-8734661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A serene husky dog sleeping on the snow during a sunny winter day."
+imageAlt: "A serene husky dog sleeping on the snow during a sunny winter day."
+imageSource: "pexels"
+imageCredit: "Photo by Павел Гавриков on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-sleeping-on-the-snow-ground-8734661/"
+imageSearchQuery: "Alaskan Malamute dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Alaskan Malamute, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

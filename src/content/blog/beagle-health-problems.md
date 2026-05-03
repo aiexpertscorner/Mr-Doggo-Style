@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Beagle Health Guide: Common Issues to Watch"
 displayTitle: "Beagle health guide: common issues to watch"
 titlePattern: "health-guide"
+heroImage: "https://images.pexels.com/photos/31086486/pexels-photo-31086486.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/31086486/pexels-photo-31086486.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A detailed close-up portrait of a beagle dog showing its expressive eyes and features."
+imageAlt: "A detailed close-up portrait of a beagle dog showing its expressive eyes and features."
+imageSource: "pexels"
+imageCredit: "Photo by A D R I A N A on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-portrait-of-a-beagle-dog-face-31086486/"
+imageSearchQuery: "Beagle dog veterinarian wellness"
 ---
+
 
 Beagles are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

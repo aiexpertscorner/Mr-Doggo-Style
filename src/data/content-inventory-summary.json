@@ -1,0 +1,283 @@
+{
+  "generatedAt": "2026-05-02T23:30:43.624Z",
+  "totals": {
+    "breeds": 277,
+    "crossbreeds": 75,
+    "blogPosts": 2370,
+    "astroPages": 25,
+    "clusters": 8,
+    "awinJoinedPrograms": 7,
+    "partnerProfilesGenerated": 7,
+    "opportunities": 1000
+  },
+  "familyStats": [
+    {
+      "family": "food",
+      "existing": 277,
+      "missing": 75,
+      "total": 352
+    },
+    {
+      "family": "toys",
+      "existing": 277,
+      "missing": 75,
+      "total": 352
+    },
+    {
+      "family": "beds",
+      "existing": 277,
+      "missing": 75,
+      "total": 352
+    },
+    {
+      "family": "grooming",
+      "existing": 277,
+      "missing": 75,
+      "total": 352
+    },
+    {
+      "family": "health",
+      "existing": 277,
+      "missing": 75,
+      "total": 352
+    },
+    {
+      "family": "supplements",
+      "existing": 277,
+      "missing": 75,
+      "total": 352
+    },
+    {
+      "family": "training",
+      "existing": 277,
+      "missing": 75,
+      "total": 352
+    },
+    {
+      "family": "puppy",
+      "existing": 0,
+      "missing": 352,
+      "total": 352
+    },
+    {
+      "family": "senior-dogs",
+      "existing": 0,
+      "missing": 352,
+      "total": 352
+    },
+    {
+      "family": "insurance",
+      "existing": 0,
+      "missing": 352,
+      "total": 352
+    }
+  ],
+  "clusterCoverage": [
+    {
+      "id": "cluster:puppy",
+      "type": "cluster-hub",
+      "priorityScore": 53,
+      "cluster": "puppy",
+      "suggestedPath": "/categories/puppy",
+      "exists": true,
+      "reason": "Cluster hub exists; improve internal links, modules and sitemap priority.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.85,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [],
+        "amazonValidatedSeedLikely": true,
+        "amazonSearchFallback": true
+      }
+    },
+    {
+      "id": "cluster:senior-dogs",
+      "type": "cluster-hub",
+      "priorityScore": 48,
+      "cluster": "senior-dogs",
+      "suggestedPath": "/categories/senior-dogs",
+      "exists": true,
+      "reason": "Cluster hub exists; improve internal links, modules and sitemap priority.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.85,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [],
+        "amazonValidatedSeedLikely": false,
+        "amazonSearchFallback": true
+      }
+    },
+    {
+      "id": "cluster:dog-food",
+      "type": "cluster-hub",
+      "priorityScore": 90,
+      "cluster": "dog-food",
+      "suggestedPath": "/categories/dog-food",
+      "exists": false,
+      "reason": "Missing cluster hub for dog-food.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.7,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [],
+        "amazonValidatedSeedLikely": false,
+        "amazonSearchFallback": true
+      }
+    },
+    {
+      "id": "cluster:training",
+      "type": "cluster-hub",
+      "priorityScore": 105,
+      "cluster": "training",
+      "suggestedPath": "/categories/training",
+      "exists": false,
+      "reason": "Missing cluster hub for training.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.7,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [
+          "JUGBOW",
+          "RadioFence.com",
+          "MyPetDMV - The original Pet Drivers License"
+        ],
+        "amazonValidatedSeedLikely": true,
+        "amazonSearchFallback": true
+      }
+    },
+    {
+      "id": "cluster:beds",
+      "type": "cluster-hub",
+      "priorityScore": 105,
+      "cluster": "beds",
+      "suggestedPath": "/categories/beds",
+      "exists": false,
+      "reason": "Missing cluster hub for beds.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.7,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [
+          "Brutus Broth"
+        ],
+        "amazonValidatedSeedLikely": true,
+        "amazonSearchFallback": true
+      }
+    },
+    {
+      "id": "cluster:toys",
+      "type": "cluster-hub",
+      "priorityScore": 95,
+      "cluster": "toys",
+      "suggestedPath": "/categories/toys",
+      "exists": false,
+      "reason": "Missing cluster hub for toys.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.7,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [],
+        "amazonValidatedSeedLikely": true,
+        "amazonSearchFallback": true
+      }
+    },
+    {
+      "id": "cluster:pupwiki-partners",
+      "type": "cluster-hub",
+      "priorityScore": 40,
+      "cluster": "pupwiki-partners",
+      "suggestedPath": "/categories/pupwiki-partners",
+      "exists": true,
+      "reason": "Cluster hub exists; improve internal links, modules and sitemap priority.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog",
+        "/disclosure"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.85,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [],
+        "amazonValidatedSeedLikely": false,
+        "amazonSearchFallback": false
+      }
+    },
+    {
+      "id": "cluster:insurance",
+      "type": "cluster-hub",
+      "priorityScore": 40,
+      "cluster": "insurance",
+      "suggestedPath": "/categories/insurance",
+      "exists": true,
+      "reason": "Cluster hub exists; improve internal links, modules and sitemap priority.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.85,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [],
+        "amazonValidatedSeedLikely": false,
+        "amazonSearchFallback": false
+      }
+    }
+  ],
+  "sitemapInputs": {
+    "staticPageCount": 25,
+    "dynamicBlogCount": 2370,
+    "dynamicBreedCount": 352,
+    "clusterSlugs": [
+      "puppy",
+      "senior-dogs",
+      "dog-food",
+      "training",
+      "beds",
+      "toys",
+      "pupwiki-partners",
+      "insurance"
+    ]
+  }
+}

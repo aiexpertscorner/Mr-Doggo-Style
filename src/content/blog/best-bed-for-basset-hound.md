@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Basset Hound Bed Sizing Guide for Medium Dogs"
 displayTitle: "Basset Hound bed sizing guide for medium dogs"
 titlePattern: "beds-sizing"
+heroImage: "https://images.pexels.com/photos/33979390/pexels-photo-33979390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/33979390/pexels-photo-33979390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming basset hound dog with long ears lounging in a sunny garden in Serbia."
+imageAlt: "Charming basset hound dog with long ears lounging in a sunny garden in Serbia."
+imageSource: "pexels"
+imageCredit: "Photo by Andrea Sretenović on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-basset-hound-dog-in-summer-garden-33979390/"
+imageSearchQuery: "Basset Hound dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Basset Hound, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

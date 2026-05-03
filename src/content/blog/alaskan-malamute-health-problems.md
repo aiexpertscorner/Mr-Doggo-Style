@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Alaskan Malamute Vet Questions for Common Health Risks"
 displayTitle: "Alaskan Malamute vet questions for common health risks"
 titlePattern: "health-vet-questions"
+heroImage: "https://images.pexels.com/photos/27062468/pexels-photo-27062468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/27062468/pexels-photo-27062468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up of an Alaskan Malamute dog's profile outdoors, focusing on its expressive face."
+imageAlt: "Close-up of an Alaskan Malamute dog's profile outdoors, focusing on its expressive face."
+imageSource: "pexels"
+imageCredit: "Photo by Mohan Nannapaneni on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/alaskan-malamute-dog-27062468/"
+imageSearchQuery: "Alaskan Malamute dog veterinarian wellness"
 ---
+
 
 Alaskan Malamutes are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

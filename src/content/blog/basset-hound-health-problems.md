@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Basset Hound Screening and Prevention Checklist"
 displayTitle: "Basset Hound screening and prevention checklist"
 titlePattern: "health-screening"
+heroImage: "https://images.pexels.com/photos/33979390/pexels-photo-33979390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/33979390/pexels-photo-33979390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming basset hound dog with long ears lounging in a sunny garden in Serbia."
+imageAlt: "Charming basset hound dog with long ears lounging in a sunny garden in Serbia."
+imageSource: "pexels"
+imageCredit: "Photo by Andrea Sretenović on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-basset-hound-dog-in-summer-garden-33979390/"
+imageSearchQuery: "Basset Hound dog veterinarian wellness"
 ---
+
 
 Basset Hounds are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

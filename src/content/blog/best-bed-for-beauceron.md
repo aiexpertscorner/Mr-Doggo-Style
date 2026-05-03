@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Dog Beds for Beauceron: Home, Crate, and Travel"
 displayTitle: "Dog beds for Beauceron: home, crate, and travel"
 titlePattern: "beds-home"
+heroImage: "https://images.pexels.com/photos/36198590/pexels-photo-36198590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/36198590/pexels-photo-36198590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up of a black and white dog sleeping peacefully on a bed in a cozy setting."
+imageAlt: "Close-up of a black and white dog sleeping peacefully on a bed in a cozy setting."
+imageSource: "pexels"
+imageCredit: "Photo by Magda Ehlers on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/sleeping-dog-on-bed-with-relaxing-atmosphere-36198590/"
+imageSearchQuery: "Beauceron dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Beauceron, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

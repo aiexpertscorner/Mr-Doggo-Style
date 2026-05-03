@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Afghan Hound Common Conditions and Care Planning"
 displayTitle: "Afghan Hound common conditions and care planning"
 titlePattern: "health-conditions"
+heroImage: "https://images.pexels.com/photos/6234980/pexels-photo-6234980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/6234980/pexels-photo-6234980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A veterinarian examining a Pomeranian dog using an ultrasound machine in a clinic setting."
+imageAlt: "A veterinarian examining a Pomeranian dog using an ultrasound machine in a clinic setting."
+imageSource: "pexels"
+imageCredit: "Photo by Tima Miroshnichenko on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-woman-in-white-long-sleeves-holding-brown-pomeranian-6234980/"
+imageSearchQuery: "Afghan Hound dog veterinarian wellness"
 ---
+
 
 Afghan Hounds are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

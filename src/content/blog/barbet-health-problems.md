@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Barbet Vet Questions for Common Health Risks"
 displayTitle: "Barbet vet questions for common health risks"
 titlePattern: "health-vet-questions"
+heroImage: "https://images.pexels.com/photos/7468978/pexels-photo-7468978.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7468978/pexels-photo-7468978.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A professional veterinarian in mask examines a dog indoors during a checkup."
+imageAlt: "A professional veterinarian in mask examines a dog indoors during a checkup."
+imageSource: "pexels"
+imageCredit: "Photo by Mikhail Nilov on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/man-checking-on-a-dog-7468978/"
+imageSearchQuery: "Barbet dog veterinarian wellness"
 ---
+
 
 Barbets are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

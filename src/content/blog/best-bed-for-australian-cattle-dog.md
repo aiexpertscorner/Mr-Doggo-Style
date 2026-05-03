@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Australian Cattle Dog Beds for Cooling, Comfort, and Cleanup"
 displayTitle: "Australian Cattle Dog beds for cooling, comfort, and cleanup"
 titlePattern: "beds-cooling"
+heroImage: "https://images.pexels.com/photos/35511903/pexels-photo-35511903.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35511903/pexels-photo-35511903.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "An Australian Cattle Dog sitting on lush green grass, showing a friendly expression."
+imageAlt: "An Australian Cattle Dog sitting on lush green grass, showing a friendly expression."
+imageSource: "pexels"
+imageCredit: "Photo by Helena Lopes on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/australian-cattle-dog-sitting-on-green-grass-35511903/"
+imageSearchQuery: "Australian Cattle Dog dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Australian Cattle Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

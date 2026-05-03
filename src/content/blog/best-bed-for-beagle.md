@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Beagle Dog Bed Shopping Guide"
 displayTitle: "Beagle dog bed shopping guide"
 titlePattern: "beds-shopping"
+heroImage: "https://images.pexels.com/photos/5109227/pexels-photo-5109227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5109227/pexels-photo-5109227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming beagle dog lying on a cozy bed indoors, showcasing its expressive eyes in a close-up shot."
+imageAlt: "Charming beagle dog lying on a cozy bed indoors, showcasing its expressive eyes in a close-up shot."
+imageSource: "pexels"
+imageCredit: "Photo by Brett Jordan on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-shot-of-a-beagle-5109227/"
+imageSearchQuery: "Beagle dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Beagle, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

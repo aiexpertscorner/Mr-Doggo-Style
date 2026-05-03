@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "American Water Spaniel Dog Bed Durability Checklist"
 displayTitle: "American Water Spaniel dog bed durability checklist"
 titlePattern: "beds-durable"
+heroImage: "https://images.pexels.com/photos/20744921/pexels-photo-20744921.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/20744921/pexels-photo-20744921.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A black and white dog sleeping on a paved sidewalk next to a car tire."
+imageAlt: "A black and white dog sleeping on a paved sidewalk next to a car tire."
+imageSource: "pexels"
+imageCredit: "Photo by Muhammed Tubtemur on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-sleeping-on-sidewalk-20744921/"
+imageSearchQuery: "American Water Spaniel dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a American Water Spaniel, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

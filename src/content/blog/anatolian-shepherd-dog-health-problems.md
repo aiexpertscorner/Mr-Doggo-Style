@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Anatolian Shepherd Dog Health Clearances to Ask Breeders About"
 displayTitle: "Anatolian Shepherd Dog health clearances to ask breeders about"
 titlePattern: "health-breeder"
+heroImage: "https://images.pexels.com/photos/9810628/pexels-photo-9810628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/9810628/pexels-photo-9810628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute Anatolian Shepherd dog enjoying outside on a sunny day."
+imageAlt: "Cute Anatolian Shepherd dog enjoying outside on a sunny day."
+imageSource: "pexels"
+imageCredit: "Photo by Plato Terentev on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/photo-of-a-cute-dog-with-brown-fur-9810628/"
+imageSearchQuery: "Anatolian Shepherd Dog dog veterinarian wellness"
 ---
+
 
 Anatolian Shepherd Dogs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

@@ -1,5 +1,108 @@
 {
-  "generatedAt": null,
-  "totalPartners": 0,
-  "partners": []
+  "generatedAt": "2026-05-02T23:30:43.098Z",
+  "totalPartners": 7,
+  "partners": [
+    {
+      "key": "brutus-broth",
+      "advertiserId": "55927",
+      "name": "Brutus Broth",
+      "slug": "partner-brutus-broth",
+      "href": "/blog/partner-brutus-broth",
+      "cluster": "dog-food",
+      "productRows": 1,
+      "creativeRows": 1,
+      "hasLogo": true,
+      "hasDeeplink": true,
+      "feedIds": [
+        "105633"
+      ]
+    },
+    {
+      "key": "crownandpaw",
+      "advertiserId": "57823",
+      "name": "Crown and Paw",
+      "slug": "partner-crownandpaw",
+      "href": "/blog/partner-crownandpaw",
+      "cluster": "lifestyle",
+      "productRows": 1,
+      "creativeRows": 1,
+      "hasLogo": true,
+      "hasDeeplink": true,
+      "feedIds": [
+        "103192"
+      ]
+    },
+    {
+      "key": "chefpaw",
+      "advertiserId": "63546",
+      "name": "Chef Paw (US)",
+      "slug": "partner-chefpaw",
+      "href": "/blog/partner-chefpaw",
+      "cluster": "dog-food",
+      "productRows": 1,
+      "creativeRows": 1,
+      "hasLogo": true,
+      "hasDeeplink": true,
+      "feedIds": [
+        "88241",
+        "93508"
+      ]
+    },
+    {
+      "key": "jugbow",
+      "advertiserId": "79708",
+      "name": "JUGBOW",
+      "slug": "partner-jugbow",
+      "href": "/blog/partner-jugbow",
+      "cluster": "training",
+      "productRows": 1,
+      "creativeRows": 1,
+      "hasLogo": true,
+      "hasDeeplink": true,
+      "feedIds": [
+        "108549"
+      ]
+    },
+    {
+      "key": "radiofence-com",
+      "advertiserId": "87999",
+      "name": "RadioFence.com",
+      "slug": "partner-radiofence-com",
+      "href": "/blog/partner-radiofence-com",
+      "cluster": "training",
+      "productRows": 1,
+      "creativeRows": 1,
+      "hasLogo": true,
+      "hasDeeplink": true,
+      "feedIds": [
+        "105980"
+      ]
+    },
+    {
+      "key": "raw-wild-llc",
+      "advertiserId": "89689",
+      "name": "Raw Wild LLC",
+      "slug": "partner-raw-wild-llc",
+      "href": "/blog/partner-raw-wild-llc",
+      "cluster": "dog-food",
+      "productRows": 1,
+      "creativeRows": 1,
+      "hasLogo": true,
+      "hasDeeplink": true,
+      "feedIds": []
+    },
+    {
+      "key": "mypetdmv-the-original-pet-drivers-license",
+      "advertiserId": "118951",
+      "name": "MyPetDMV - The original Pet Drivers License",
+      "slug": "partner-mypetdmv-the-original-pet-drivers-license",
+      "href": "/blog/partner-mypetdmv-the-original-pet-drivers-license",
+      "cluster": "training",
+      "productRows": 1,
+      "creativeRows": 1,
+      "hasLogo": true,
+      "hasDeeplink": true,
+      "feedIds": []
+    }
+  ]
 }

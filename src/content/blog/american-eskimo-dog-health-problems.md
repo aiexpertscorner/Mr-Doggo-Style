@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "American Eskimo Dog Lifespan, Health Risks, and Vet Care"
 displayTitle: "American Eskimo Dog lifespan, health risks, and vet care"
 titlePattern: "health-lifespan"
+heroImage: "https://images.pexels.com/photos/6235655/pexels-photo-6235655.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/6235655/pexels-photo-6235655.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Pomeranian dog being examined by veterinarians. Black and white image captures a detailed check-up scene."
+imageAlt: "Pomeranian dog being examined by veterinarians. Black and white image captures a detailed check-up scene."
+imageSource: "pexels"
+imageCredit: "Photo by Tima Miroshnichenko on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-getting-a-check-up-6235655/"
+imageSearchQuery: "American Eskimo Dog dog veterinarian wellness"
 ---
+
 
 American Eskimo Dogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

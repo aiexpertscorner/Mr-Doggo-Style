@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Australian Cattle Dog Health Problems: Risks and Screening"
 displayTitle: "Australian Cattle Dog health problems: risks and screening"
 titlePattern: "health-problems"
+heroImage: "https://images.pexels.com/photos/35511903/pexels-photo-35511903.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35511903/pexels-photo-35511903.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "An Australian Cattle Dog sitting on lush green grass, showing a friendly expression."
+imageAlt: "An Australian Cattle Dog sitting on lush green grass, showing a friendly expression."
+imageSource: "pexels"
+imageCredit: "Photo by Helena Lopes on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/australian-cattle-dog-sitting-on-green-grass-35511903/"
+imageSearchQuery: "Australian Cattle Dog dog veterinarian wellness"
 ---
+
 
 Australian Cattle Dogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

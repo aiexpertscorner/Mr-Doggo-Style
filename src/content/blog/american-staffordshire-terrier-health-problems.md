@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Health Concerns in American Staffordshire Terrier: Owner Notes"
 displayTitle: "Health concerns in American Staffordshire Terrier: owner notes"
 titlePattern: "health-owner-notes"
+heroImage: "https://images.pexels.com/photos/35611837/pexels-photo-35611837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35611837/pexels-photo-35611837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Lively brown pit bull dog lying on grass with a toy, enjoying a sunny day outdoors."
+imageAlt: "Lively brown pit bull dog lying on grass with a toy, enjoying a sunny day outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by Joshua B on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/playful-brown-pit-bull-with-toy-in-sunshine-35611837/"
+imageSearchQuery: "American Staffordshire Terrier dog veterinarian wellness"
 ---
+
 
 American Staffordshire Terriers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

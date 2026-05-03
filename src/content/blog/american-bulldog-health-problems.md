@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "American Bulldog Health Clearances to Ask Breeders About"
 displayTitle: "American Bulldog health clearances to ask breeders about"
 titlePattern: "health-breeder"
+heroImage: "https://images.pexels.com/photos/6738222/pexels-photo-6738222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/6738222/pexels-photo-6738222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "An American Bulldog bites a log outdoors in a grassy area, showcasing playfulness."
+imageAlt: "An American Bulldog bites a log outdoors in a grassy area, showcasing playfulness."
+imageSource: "pexels"
+imageCredit: "Photo by GODMODE INTRUST on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-shot-of-an-american-bulldog-biting-a-tree-log-6738222/"
+imageSearchQuery: "American Bulldog dog veterinarian wellness"
 ---
+
 
 American Bulldogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

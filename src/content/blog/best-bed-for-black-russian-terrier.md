@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Black Russian Terrier Bed Sizing Guide for Large Dogs"
 displayTitle: "Black Russian Terrier bed sizing guide for large dogs"
 titlePattern: "beds-sizing"
+heroImage: "https://images.pexels.com/photos/5255155/pexels-photo-5255155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5255155/pexels-photo-5255155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "From above of crop unrecognizable barefooted female lying on comfortable bed near cute loyal dog looking at camera"
+imageAlt: "From above of crop unrecognizable barefooted female lying on comfortable bed near cute loyal dog looking at camera"
+imageSource: "pexels"
+imageCredit: "Photo by Samson Katt on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-lying-on-bed-near-faceless-young-female-owner-5255155/"
+imageSearchQuery: "Black Russian Terrier dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Black Russian Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

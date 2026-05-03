@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Bavarian Mountain Scent Hound Preventive Care and Warning Signs"
 displayTitle: "Bavarian Mountain Scent Hound preventive care and warning signs"
 titlePattern: "health-prevention"
+heroImage: "https://images.pexels.com/photos/6234622/pexels-photo-6234622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/6234622/pexels-photo-6234622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A veterinarian examines a dog's teeth, showcasing pet healthcare and dental check-up in a clinic setting."
+imageAlt: "A veterinarian examines a dog's teeth, showcasing pet healthcare and dental check-up in a clinic setting."
+imageSource: "pexels"
+imageCredit: "Photo by Tima Miroshnichenko on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-veterinarian-checking-a-dog-6234622/"
+imageSearchQuery: "Bavarian Mountain Scent Hound dog veterinarian wellness"
 ---
+
 
 Bavarian Mountain Scent Hounds are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

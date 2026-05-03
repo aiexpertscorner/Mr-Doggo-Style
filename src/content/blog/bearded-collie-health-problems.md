@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Bearded Collie Health Clearances to Ask Breeders About"
 displayTitle: "Bearded Collie health clearances to ask breeders about"
 titlePattern: "health-breeder"
+heroImage: "https://images.pexels.com/photos/7468978/pexels-photo-7468978.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7468978/pexels-photo-7468978.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A professional veterinarian in mask examines a dog indoors during a checkup."
+imageAlt: "A professional veterinarian in mask examines a dog indoors during a checkup."
+imageSource: "pexels"
+imageCredit: "Photo by Mikhail Nilov on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/man-checking-on-a-dog-7468978/"
+imageSearchQuery: "Bearded Collie dog veterinarian wellness"
 ---
+
 
 Bearded Collies are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Bavarian Mountain Scent Hound Beds for Cooling, Comfort, and Cleanup"
 displayTitle: "Bavarian Mountain Scent Hound beds for cooling, comfort, and cleanup"
 titlePattern: "beds-cooling"
+heroImage: "https://images.pexels.com/photos/19027991/pexels-photo-19027991.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/19027991/pexels-photo-19027991.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Weimaraner dog peacefully sleeping on a fluffy dog bed in a cozy living room."
+imageAlt: "A Weimaraner dog peacefully sleeping on a fluffy dog bed in a cozy living room."
+imageSource: "pexels"
+imageCredit: "Photo by Olivier Leysen on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-sleeping-in-a-dog-bed-next-to-a-sofa-19027991/"
+imageSearchQuery: "Bavarian Mountain Scent Hound dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Bavarian Mountain Scent Hound, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

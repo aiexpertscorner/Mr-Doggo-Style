@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Australian Stumpy Tail Cattle Dog Dog Bed Durability Checklist"
 displayTitle: "Australian Stumpy Tail Cattle Dog dog bed durability checklist"
 titlePattern: "beds-durable"
+heroImage: "https://images.pexels.com/photos/9869907/pexels-photo-9869907.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/9869907/pexels-photo-9869907.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Australian Cattle Dog standing on a rock in a scenic mountain setting, surrounded by tall grass."
+imageAlt: "Australian Cattle Dog standing on a rock in a scenic mountain setting, surrounded by tall grass."
+imageSource: "pexels"
+imageCredit: "Photo by Alexander  Savchuk on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-standing-on-a-rock-9869907/"
+imageSearchQuery: "Australian Stumpy Tail Cattle Dog dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Australian Stumpy Tail Cattle Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

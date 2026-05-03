@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "American Eskimo Dog Owners: Beds to Compare Before Buying"
 displayTitle: "Beds American Eskimo Dog owners should compare before buying"
 titlePattern: "beds-owner-compare"
+heroImage: "https://images.pexels.com/photos/7237824/pexels-photo-7237824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7237824/pexels-photo-7237824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute American Eskimo dog lying on vibrant green grass, looking playfully at the camera."
+imageAlt: "Cute American Eskimo dog lying on vibrant green grass, looking playfully at the camera."
+imageSource: "pexels"
+imageCredit: "Photo by Mohan Nannapaneni on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/photo-of-a-white-american-eskimo-dog-on-green-grass-7237824/"
+imageSearchQuery: "American Eskimo Dog dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a American Eskimo Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

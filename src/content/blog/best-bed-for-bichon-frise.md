@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Bichon Frise Beds for Cooling, Comfort, and Cleanup"
 displayTitle: "Bichon Frise beds for cooling, comfort, and cleanup"
 titlePattern: "beds-cooling"
+heroImage: "https://images.pexels.com/photos/34432221/pexels-photo-34432221.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/34432221/pexels-photo-34432221.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A cute white dog comfortably rests on a soft bed, displaying a calm and relaxed demeanor."
+imageAlt: "A cute white dog comfortably rests on a soft bed, displaying a calm and relaxed demeanor."
+imageSource: "pexels"
+imageCredit: "Photo by Jay Brand on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-white-dog-resting-on-cozy-bed-indoors-34432221/"
+imageSearchQuery: "Bichon Frise dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Bichon Frise, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.
 

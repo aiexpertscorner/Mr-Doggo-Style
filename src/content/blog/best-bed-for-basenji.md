@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Best Washable Beds for Basenji"
 displayTitle: "Washable beds worth comparing for Basenji"
 titlePattern: "beds-best-washable"
+heroImage: "https://images.pexels.com/photos/19176926/pexels-photo-19176926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/19176926/pexels-photo-19176926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Shiba Inu dog peacefully sleeping curled up on a fluffy pet bed with warm sunlight."
+imageAlt: "A Shiba Inu dog peacefully sleeping curled up on a fluffy pet bed with warm sunlight."
+imageSource: "pexels"
+imageCredit: "Photo by Stephen on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/red-dog-sleeping-curled-up-in-a-fuzzy-pet-bed-19176926/"
+imageSearchQuery: "Basenji dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Basenji, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.
 

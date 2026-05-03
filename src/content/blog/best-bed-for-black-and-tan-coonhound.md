@@ -27,7 +27,16 @@ medicalDisclaimer: false
 seoTitle: "Black and Tan Coonhound Beds for Cooling, Comfort, and Cleanup"
 displayTitle: "Black and Tan Coonhound beds for cooling, comfort, and cleanup"
 titlePattern: "beds-cooling"
+heroImage: "https://images.pexels.com/photos/20348444/pexels-photo-20348444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/20348444/pexels-photo-20348444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable dog peacefully sleeping with a colorful toy indoors, creating a cozy and loving scene."
+imageAlt: "Adorable dog peacefully sleeping with a colorful toy indoors, creating a cozy and loving scene."
+imageSource: "pexels"
+imageCredit: "Photo by Sonny Vermeer on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/little-brown-dog-enjoys-the-sun-with-her-toy-20348444/"
+imageSearchQuery: "Black and Tan Coonhound dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Black and Tan Coonhound, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

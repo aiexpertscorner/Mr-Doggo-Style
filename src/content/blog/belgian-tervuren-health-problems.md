@@ -27,7 +27,16 @@ medicalDisclaimer: true
 seoTitle: "Belgian Tervuren Common Conditions and Care Planning"
 displayTitle: "Belgian Tervuren common conditions and care planning"
 titlePattern: "health-conditions"
+heroImage: "https://images.pexels.com/photos/6235124/pexels-photo-6235124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/6235124/pexels-photo-6235124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Veterinarian consulting with dog owner in a clinic while holding a Pomeranian."
+imageAlt: "Veterinarian consulting with dog owner in a clinic while holding a Pomeranian."
+imageSource: "pexels"
+imageCredit: "Photo by Tima Miroshnichenko on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/man-holding-dog-while-talking-to-a-woman-6235124/"
+imageSearchQuery: "Belgian Tervuren dog veterinarian wellness"
 ---
+
 
 Belgian Tervurens are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 
