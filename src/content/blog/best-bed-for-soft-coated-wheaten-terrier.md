@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "soft-coated-wheaten-terrier", "Soft Coated Whea
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/soft-coated-wheaten-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/5255147/pexels-photo-5255147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5255147/pexels-photo-5255147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "From above of adorable obedient dog sitting on soft bed near crop unrecognizable sleeping female owner"
+imageAlt: "From above of adorable obedient dog sitting on soft bed near crop unrecognizable sleeping female owner"
+imageSource: "pexels"
+imageCredit: "Photo by Samson Katt on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/cut-dog-sitting-near-anonymous-woman-lying-on-bed-5255147/"
+imageSearchQuery: "Soft Coated Wheaten Terrier dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Soft Coated Wheaten Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

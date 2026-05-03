@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "shetland-sheepdog", "Shetland Sheepdog", "small
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/shetland-sheepdog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/29955884/pexels-photo-29955884.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/29955884/pexels-photo-29955884.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Captivating close-up portrait of a Shetland Sheepdog with luscious fur in a natural setting."
+imageAlt: "Captivating close-up portrait of a Shetland Sheepdog with luscious fur in a natural setting."
+imageSource: "pexels"
+imageCredit: "Photo by JacLou- DL on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-portrait-of-a-shetland-sheepdog-outdoors-29955884/"
+imageSearchQuery: "Shetland Sheepdog dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Shetland Sheepdog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

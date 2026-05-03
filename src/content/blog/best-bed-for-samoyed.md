@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "samoyed", "Samoyed", "medium", "active", "diffi
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/samoyed", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/36605789/pexels-photo-36605789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/36605789/pexels-photo-36605789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Young boy and fluffy Samoyed dog sitting on a bed, sharing a playful moment indoors."
+imageAlt: "Young boy and fluffy Samoyed dog sitting on a bed, sharing a playful moment indoors."
+imageSource: "pexels"
+imageCredit: "Photo by Helena Lopes on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/child-and-samoyed-dog-relaxing-indoors-36605789/"
+imageSearchQuery: "Samoyed dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Samoyed, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

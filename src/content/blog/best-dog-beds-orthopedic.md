@@ -1,4 +1,5 @@
 ---
+
 title: "Best Orthopedic Dog Beds for Large Dogs (2026): Tested & Ranked"
 description: "Not all orthopedic dog beds actually support aging joints. We dug into foam quality, durability, and washability to find the beds that truly deliver."
 pubDate: 2026-01-22
@@ -9,7 +10,16 @@ author: "The PupWiki Team"
 postType: "product-roundup"
 readTime: 8
 schemaType: "Article"
+heroImage: "https://images.pexels.com/photos/5938113/pexels-photo-5938113.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5938113/pexels-photo-5938113.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute French Bulldog sitting on a blue elevated bed indoors, displaying a joyful expression."
+imageAlt: "Cute French Bulldog sitting on a blue elevated bed indoors, displaying a joyful expression."
+imageSource: "pexels"
+imageCredit: "Photo by Aysun Kahraman Öktem on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/white-and-black-short-coated-dog-sitting-on-blue-elevated-bed-5938113/"
+imageSearchQuery: "dog bed"
 ---
+
 
 The word "orthopedic" is used on dog bed packaging more than almost any other marketing term — and it means almost nothing without qualification. Any manufacturer can print "orthopedic foam" on a box. The question is whether the foam is dense enough, thick enough, and durable enough to actually support a 70-100+ lb dog's joints over years of use.
 

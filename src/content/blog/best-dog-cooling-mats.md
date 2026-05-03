@@ -1,4 +1,5 @@
 ---
+
 title: "Best Dog Cooling Mats 2026: Beat the Heat Without the Vet Bill"
 description: "Heatstroke kills dogs every summer. A quality cooling mat can drop your dog's body temperature by 5-9°F. We tested 6 and ranked the best."
 pubDate: 2026-03-01
@@ -9,7 +10,16 @@ author: "The PupWiki Team"
 postType: "product-roundup"
 readTime: 7
 schemaType: "Article"
+heroImage: "https://images.pexels.com/photos/5938113/pexels-photo-5938113.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5938113/pexels-photo-5938113.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute French Bulldog sitting on a blue elevated bed indoors, displaying a joyful expression."
+imageAlt: "Cute French Bulldog sitting on a blue elevated bed indoors, displaying a joyful expression."
+imageSource: "pexels"
+imageCredit: "Photo by Aysun Kahraman Öktem on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/white-and-black-short-coated-dog-sitting-on-blue-elevated-bed-5938113/"
+imageSearchQuery: "dog bed"
 ---
+
 
 Heatstroke kills thousands of dogs every summer. It doesn't require a hot car — on an 85°F day, a dog lying on a hot patio, in direct sun, or in a poorly ventilated room can overheat in as little as 15-20 minutes. Flat-faced breeds (Bulldogs, Frenchies, Pugs), heavy-coated breeds (Huskies, Malamutes, Bernese Mountain Dogs), elderly dogs, and overweight dogs are all at elevated risk.
 

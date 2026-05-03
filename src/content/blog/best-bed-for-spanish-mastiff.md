@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "spanish-mastiff", "Spanish Mastiff", "large", "
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/spanish-mastiff", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/18174961/pexels-photo-18174961.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/18174961/pexels-photo-18174961.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A relaxed dog sleeping by a rustic door in Leh, India, showcasing tranquility and warmth."
+imageAlt: "A relaxed dog sleeping by a rustic door in Leh, India, showcasing tranquility and warmth."
+imageSource: "pexels"
+imageCredit: "Photo by Anay Chitre on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/ginger-dog-sleeping-by-house-entrance-18174961/"
+imageSearchQuery: "Spanish Mastiff dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Spanish Mastiff, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

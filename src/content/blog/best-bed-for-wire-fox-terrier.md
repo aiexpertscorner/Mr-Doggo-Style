@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "wire-fox-terrier", "Wire Fox Terrier", "small",
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/wire-fox-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A calm small dog sleeping soundly on a soft bed, showcasing relaxation."
+imageAlt: "A calm small dog sleeping soundly on a soft bed, showcasing relaxation."
+imageSource: "pexels"
+imageCredit: "Photo by www.kaboompics.com on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-on-bed-5420821/"
+imageSearchQuery: "Wire Fox Terrier dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Wire Fox Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

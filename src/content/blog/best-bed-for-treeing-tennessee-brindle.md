@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "treeing-tennessee-brindle", "Treeing Tennessee 
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/treeing-tennessee-brindle", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/27237342/pexels-photo-27237342.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/27237342/pexels-photo-27237342.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A brown brindle stray dog peacefully sleeping on a city street with cars in the background."
+imageAlt: "A brown brindle stray dog peacefully sleeping on a city street with cars in the background."
+imageSource: "pexels"
+imageCredit: "Photo by Eudes cs on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-large-dog-laying-on-the-sidewalk-with-its-head-down-27237342/"
+imageSearchQuery: "Treeing Tennessee Brindle dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Treeing Tennessee Brindle, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

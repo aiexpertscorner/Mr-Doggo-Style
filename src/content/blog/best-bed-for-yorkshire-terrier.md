@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "yorkshire-terrier", "Yorkshire Terrier", "small
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/yorkshire-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/34927548/pexels-photo-34927548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/34927548/pexels-photo-34927548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A cute Yorkshire Terrier puppy relaxing comfortably on a blue dog bed outdoors."
+imageAlt: "A cute Yorkshire Terrier puppy relaxing comfortably on a blue dog bed outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by Erwin Bosman on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-yorkshire-terrier-relaxing-on-dog-bed-34927548/"
+imageSearchQuery: "Yorkshire Terrier dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Yorkshire Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

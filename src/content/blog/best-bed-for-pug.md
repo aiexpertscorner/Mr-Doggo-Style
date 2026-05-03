@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "pug", "Pug", "small", "regular", "easy", "short
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/pug", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/4921933/pexels-photo-4921933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/4921933/pexels-photo-4921933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A cute pug dog peacefully sleeping on a light-colored couch indoors."
+imageAlt: "A cute pug dog peacefully sleeping on a light-colored couch indoors."
+imageSource: "pexels"
+imageCredit: "Photo by phloge on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-pug-on-a-couch-4921933/"
+imageSearchQuery: "Pug dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Pug, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

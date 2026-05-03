@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "staffordshire-bull-terrier", "Staffordshire Bul
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/staffordshire-bull-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/3880818/pexels-photo-3880818.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/3880818/pexels-photo-3880818.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A brown and white dog sitting comfortably on a bed in an indoor setting."
+imageAlt: "A brown and white dog sitting comfortably on a bed in an indoor setting."
+imageSource: "pexels"
+imageCredit: "Photo by Viktoria B. on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-sitting-on-the-bed-3880818/"
+imageSearchQuery: "Staffordshire Bull Terrier dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Staffordshire Bull Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

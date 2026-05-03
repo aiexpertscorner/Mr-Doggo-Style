@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "transylvanian-hound", "Transylvanian Hound", "m
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/transylvanian-hound", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/3703787/pexels-photo-3703787.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/3703787/pexels-photo-3703787.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A tranquil brown dog sleeping peacefully outdoors in Alanya, Turkey."
+imageAlt: "A tranquil brown dog sleeping peacefully outdoors in Alanya, Turkey."
+imageSource: "pexels"
+imageCredit: "Photo by Anna Kapustina on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-photo-of-sleeping-dog-3703787/"
+imageSearchQuery: "Transylvanian Hound dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Transylvanian Hound, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

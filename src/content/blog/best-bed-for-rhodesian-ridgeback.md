@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "rhodesian-ridgeback", "Rhodesian Ridgeback", "l
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/rhodesian-ridgeback", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/35706794/pexels-photo-35706794.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35706794/pexels-photo-35706794.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Rhodesian Ridgeback dog rests comfortably indoors, capturing a serene moment."
+imageAlt: "A Rhodesian Ridgeback dog rests comfortably indoors, capturing a serene moment."
+imageSource: "pexels"
+imageCredit: "Photo by Charlene Du Toit on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/rhodesian-ridgeback-relaxing-indoors-35706794/"
+imageSearchQuery: "Rhodesian Ridgeback dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Rhodesian Ridgeback, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
