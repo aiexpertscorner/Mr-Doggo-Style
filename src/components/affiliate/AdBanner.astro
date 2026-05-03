@@ -13,7 +13,7 @@ const { banner, className = '', compact = false, noteText, hideMeta = false } = 
 
 const rel = banner.rel || 'sponsored noopener';
 const target = banner.openInNewTab === false ? undefined : '_blank';
-const note = noteText || banner.noteText || 'Advertisement / affiliate partner';
+const note = noteText || banner.noteText || 'Brand resource for dog owners';
 
 const hasStructuredImage =
   banner.type === 'image_link' &&
@@ -72,7 +72,7 @@ const hasStructuredImage =
 
   {!hideMeta && (
     <div class="affiliate-banner__meta">
-      <span class="affiliate-banner__label">Advertisement</span>
+      <span class="affiliate-banner__label">Sponsored resource</span>
       <p class="affiliate-banner__note">{note}</p>
     </div>
   )}

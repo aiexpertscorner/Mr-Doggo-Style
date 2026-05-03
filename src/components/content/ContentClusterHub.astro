@@ -11,6 +11,7 @@ export interface Props {
 const { cluster } = Astro.props;
 const SITE = 'https://pupwiki.com';
 const canonicalUrl = `${SITE}/categories/${cluster.slug}`;
+const keywordCount = [...cluster.primaryKeywords, ...cluster.secondaryKeywords].filter(Boolean).length;
 const structuredData = [
   {
     '@context': 'https://schema.org',
@@ -23,7 +24,7 @@ const structuredData = [
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: `${cluster.title} topic plan`,
+    name: `${cluster.title} dog-care topics`,
     itemListElement: [...cluster.primaryKeywords, ...cluster.secondaryKeywords].slice(0, 10).map((name, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -32,12 +33,12 @@ const structuredData = [
   },
 ];
 
-const showCommerce = cluster.monetizationAllowed;
+const showResources = cluster.monetizationAllowed;
 const isSensitive = cluster.claimSensitivity === 'high';
 ---
 
 <BaseLayout
-  title={`${cluster.title} — PupWiki Guides, Products & Planning`}
+  title={`${cluster.title} — PupWiki Dog Guides & Resources`}
   description={cluster.description}
   canonicalUrl={canonicalUrl}
   pageType="collection"
@@ -52,15 +53,15 @@ const isSensitive = cluster.claimSensitivity === 'high';
         </nav>
 
         <div class="pw-page-header pw-stack">
-          <p class="pw-eyebrow">{cluster.icon} {cluster.type} cluster</p>
+          <p class="pw-eyebrow">{cluster.icon} Dog care guide</p>
           <h1 class="pw-title-xl">{cluster.title}</h1>
           <p class="pw-lede">{cluster.description}</p>
         </div>
 
         <div class="pw-grid pw-grid--3">
-          <article class="pw-stat-card"><strong>{cluster.primaryKeywords.length}</strong><span>Primary intents</span></article>
-          <article class="pw-stat-card"><strong>{cluster.amazonSearches.length}</strong><span>Amazon search modules</span></article>
-          <article class="pw-stat-card"><strong>{cluster.relatedClusters.length}</strong><span>Related clusters</span></article>
+          <article class="pw-stat-card"><strong>{keywordCount}</strong><span>Dog-care topics</span></article>
+          <article class="pw-stat-card"><strong>{cluster.relatedClusters.length}</strong><span>Related guide areas</span></article>
+          <article class="pw-stat-card"><strong>{isSensitive ? 'Vet-aware' : 'Practical'}</strong><span>Reader-first advice</span></article>
         </div>
       </div>
     </section>
@@ -68,21 +69,21 @@ const isSensitive = cluster.claimSensitivity === 'high';
     <section class="pw-section">
       <div class="pw-container pw-stack pw-stack--lg">
         <div class="pw-section-head">
-          <p class="pw-eyebrow">Rich content plan</p>
-          <h2 class="pw-title-md">What this hub should cover</h2>
-          <p>This page is powered by PupWiki’s central intent graph. It can support generated guides, product modules, partner placements and internal links without hardcoding every page manually.</p>
+          <p class="pw-eyebrow">Start here</p>
+          <h2 class="pw-title-md">What to compare before you choose</h2>
+          <p>Use this hub to compare dog-care needs, product fit, safety questions, costs, routines, and related PupWiki guides before making a purchase or care decision.</p>
         </div>
 
         <div class="pw-grid pw-grid--2">
           <article class="pw-card pw-stack partner-rule-card">
-            <span class="pw-chip pw-chip--accent">Primary keywords</span>
+            <span class="pw-chip pw-chip--accent">Top questions</span>
             <div class="pw-cluster">
               {cluster.primaryKeywords.map((keyword) => <span class="pw-chip">{keyword}</span>)}
             </div>
           </article>
 
           <article class="pw-card pw-stack partner-rule-card">
-            <span class="pw-chip pw-chip--primary">Secondary keywords</span>
+            <span class="pw-chip pw-chip--primary">Helpful subtopics</span>
             <div class="pw-cluster">
               {cluster.secondaryKeywords.slice(0, 10).map((keyword) => <span class="pw-chip">{keyword}</span>)}
             </div>
@@ -91,19 +92,19 @@ const isSensitive = cluster.claimSensitivity === 'high';
 
         {isSensitive && (
           <aside class="pw-commercial-safe-note">
-            <strong>Health-sensitive content note:</strong> this hub can include product and service resources, but copy should stay conservative. Use planning, comparison and “questions to ask your vet” language rather than treatment claims.
+            <strong>Health note:</strong> product and service resources can be useful for planning, but health, diet, supplement, insurance, and vet-related decisions should stay conservative and be discussed with a qualified professional when needed.
           </aside>
         )}
       </div>
     </section>
 
-    {showCommerce && (
+    {showResources && (
       <section class="pw-section pw-section--muted pw-section--bordered">
         <div class="pw-container pw-stack pw-stack--lg">
           <div class="pw-section-head">
-            <p class="pw-eyebrow">Commerce modules</p>
-            <h2 class="pw-title-md">Relevant partner and Amazon.com resources</h2>
-            <p>Validated product links are preferred when available. If no validated product matches, PupWiki can safely show Amazon.com search deeplinks with the site tracking tag and clear affiliate disclosure.</p>
+            <p class="pw-eyebrow">Helpful resources</p>
+            <h2 class="pw-title-md">Dog products and brand resources to review</h2>
+            <p>These resources are selected for topic fit. Confirm current details, ingredients, sizing, materials, shipping, subscription terms, and availability on the brand or retailer site before buying.</p>
           </div>
 
           <div class="pw-money-grid pw-money-grid--wide">
@@ -111,7 +112,7 @@ const isSensitive = cluster.claimSensitivity === 'high';
               topicTags={cluster.awinTopicTags}
               pageType="category"
               category={cluster.slug}
-              headline={`AWIN partner resources for ${cluster.shortTitle.toLowerCase()}`}
+              headline={`Dog resources for ${cluster.shortTitle.toLowerCase()}`}
             />
 
             <AmazonProductSlot
@@ -120,7 +121,7 @@ const isSensitive = cluster.claimSensitivity === 'high';
               pageSlug={`/categories/${cluster.slug}`}
               category={cluster.slug}
               breedLifeStage={cluster.type === 'lifecycle' ? cluster.slug : undefined}
-              headline={`Amazon.com searches for ${cluster.shortTitle.toLowerCase()}`}
+              headline={`Amazon.com resources for ${cluster.shortTitle.toLowerCase()}`}
               limit={3}
             />
           </div>
@@ -131,8 +132,8 @@ const isSensitive = cluster.claimSensitivity === 'high';
     <section class="pw-section">
       <div class="pw-container pw-stack pw-stack--lg">
         <div class="pw-section-head">
-          <p class="pw-eyebrow">Internal linking</p>
-          <h2 class="pw-title-md">Related PupWiki clusters</h2>
+          <p class="pw-eyebrow">Keep exploring</p>
+          <h2 class="pw-title-md">Related PupWiki guides</h2>
         </div>
 
         <div class="pw-grid pw-grid--3">
@@ -140,7 +141,7 @@ const isSensitive = cluster.claimSensitivity === 'high';
             <a class="pw-card pw-card--interactive pw-stack partner-rule-card" href={`/categories/${slug}`}>
               <span class="pw-chip pw-chip--accent">Related</span>
               <h3>{slug.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase())}</h3>
-              <p>Continue the journey with a related PupWiki topic cluster.</p>
+              <p>Continue with another dog-care guide that connects to this topic.</p>
             </a>
           ))}
         </div>

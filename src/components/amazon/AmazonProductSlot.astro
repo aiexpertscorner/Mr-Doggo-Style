@@ -16,9 +16,9 @@ export interface Props extends AmazonPlacementContext {
 }
 
 const {
-  headline = 'Useful Amazon.com searches for this guide',
+  headline = 'Useful Amazon.com resources for this guide',
   eyebrow = 'Amazon.com',
-  note = 'Amazon links are affiliate links. Product details can change, so confirm fit and availability on Amazon before buying.',
+  note = 'Product details can change. Confirm fit, availability, shipping, sizing, ingredients or materials on Amazon before buying.',
   variant = 'rail',
   limit = variant === 'compact' ? 2 : 3,
   ...context
@@ -38,9 +38,9 @@ const products = matchAmazonProducts(allProducts, { ...context, limit });
     <div class="amazon-slot__grid">
       {products.map((product) => {
         const isSearch = product.source === 'amazon-search-template';
-        const sourceLabel = isSearch ? 'Smart search link' : 'Validated product link';
+        const sourceLabel = isSearch ? 'Search shortcut' : 'Product resource';
         const categoryLabel = product.categoryLabel || product.categoryGroup || 'Dog supplies';
-        const placement = product.recommendedPlacement || (isSearch ? `Search Amazon.com for ${product.name.toLowerCase()} matched to this PupWiki page.` : 'Matched from PupWiki Amazon product data for this page intent.');
+        const placement = product.recommendedPlacement || (isSearch ? `Search Amazon.com for ${product.name.toLowerCase()} and compare current options.` : 'Selected for this dog-care topic. Confirm current details before buying.');
         return (
           <article class:list={['amazon-slot__card', isSearch && 'amazon-slot__card--search']}>
             <span class="amazon-slot__source">{sourceLabel}</span>
@@ -54,7 +54,7 @@ const products = matchAmazonProducts(allProducts, { ...context, limit });
             <p>{placement}</p>
 
             {isSearch && product.amazonSearchQuery && (
-              <p><strong>Search query:</strong> {product.amazonSearchQuery}</p>
+              <p><strong>Search phrase:</strong> {product.amazonSearchQuery}</p>
             )}
 
             {Array.isArray(product.topicTags) && product.topicTags.length > 0 && (

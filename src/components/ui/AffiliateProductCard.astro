@@ -1,7 +1,9 @@
 ---
 /**
  * AffiliateProductCard.astro
- * Renders a single AWIN affiliate product/partner card using global monetization styles.
+ * Renders a single partner product/resource card using global monetization styles.
+ * Visible copy must stay dog-related and reader-facing. Network/tracking language
+ * belongs in data/code only, not in rendered page copy.
  */
 
 export interface Props {
@@ -27,12 +29,12 @@ const { product, headline, variant = 'card' } = Astro.props;
 const numericPrice = Number(product.price);
 const hasPrice = Number.isFinite(numericPrice) && numericPrice > 0;
 const formattedPrice = hasPrice ? numericPrice.toFixed(2) : '';
-const merchant = product.merchant || 'Partner';
+const merchant = product.merchant || 'Brand';
 const category = product.category || 'Dog care resource';
 const description = product.description || `Visit ${merchant} to review current products, services, offers, and availability.`;
-const eyebrow = `PupWiki partner · ${merchant}`;
+const eyebrow = `Dog resource · ${merchant}`;
 const tags = Array.isArray(product.topicTags) ? product.topicTags.slice(0, 4) : [];
-const fitText = `Review the partner page for current details, availability, shipping, sizing, and whether it fits your dog’s needs.`;
+const fitText = `Review current details, availability, shipping, sizing, ingredients or materials, and whether it fits your dog’s needs.`;
 ---
 
 {variant === 'card' ? (
@@ -56,19 +58,19 @@ const fitText = `Review the partner page for current details, availability, ship
         <span>{fitText}</span>
       </div>
 
-      <div class="affiliate-card__chips" aria-label="Partner fit tags">
+      <div class="affiliate-card__chips" aria-label="Resource fit tags">
         <span class="pw-chip pw-chip--accent">{category}</span>
         {tags.map((tag) => <span class="pw-chip">{String(tag).replace(/[-_]+/g, ' ')}</span>)}
       </div>
 
       <div class="affiliate-card__footer">
-        <span class="affiliate-card__price">{hasPrice ? `$${formattedPrice}` : 'Partner site'}</span>
-        <a href={product.url} rel="nofollow sponsored noopener" target="_blank" class="affiliate-card__cta" data-affiliate-merchant={merchant} data-affiliate-product={product.id} data-affiliate-placement="card">
-          Visit partner site →
+        <span class="affiliate-card__price">{hasPrice ? `$${formattedPrice}` : 'Brand site'}</span>
+        <a href={product.url} rel="nofollow sponsored noopener" target="_blank" class="affiliate-card__cta" data-partner-merchant={merchant} data-partner-product={product.id} data-partner-placement="card">
+          Review on brand site →
         </a>
       </div>
 
-      <p class="affiliate-card__note">Affiliate link — PupWiki may earn from qualifying partner links at no extra cost to you.</p>
+      <p class="affiliate-card__note">PupWiki may earn from some product and brand links at no extra cost to you.</p>
     </div>
   </article>
 ) : (
@@ -78,13 +80,13 @@ const fitText = `Review the partner page for current details, availability, ship
     </div>
 
     <div class="affiliate-card__body">
-      <span class="affiliate-card__eyebrow">PupWiki partner</span>
+      <span class="affiliate-card__eyebrow">Dog resource</span>
       <h3 class="affiliate-card__title">{product.name}</h3>
       <p class="affiliate-card__desc">{merchant}</p>
     </div>
 
     <div class="affiliate-card__footer">
-      <a href={product.url} rel="nofollow sponsored noopener" target="_blank" class="affiliate-card__cta" data-affiliate-merchant={merchant} data-affiliate-product={product.id} data-affiliate-placement="compact">Visit →</a>
+      <a href={product.url} rel="nofollow sponsored noopener" target="_blank" class="affiliate-card__cta" data-partner-merchant={merchant} data-partner-product={product.id} data-partner-placement="compact">Review →</a>
     </div>
   </article>
 )}
