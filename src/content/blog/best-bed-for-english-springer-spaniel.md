@@ -43,7 +43,6 @@ imageCreditUrl: "https://www.pexels.com/photo/dog-sleeping-on-sidewalk-20744921/
 imageSearchQuery: "English Springer Spaniel dog sleeping bed"
 ---
 
-
 A dog spends 12–14 hours a day sleeping. For a English Springer Spaniel, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 
 English Springer Spaniels can develop hip and joint problems as they age. Starting with a quality orthopedic bed in middle age (around 7 years) prevents rather than reacts to joint issues.

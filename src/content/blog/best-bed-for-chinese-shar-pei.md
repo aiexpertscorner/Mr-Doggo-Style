@@ -43,7 +43,6 @@ imageCreditUrl: "https://www.pexels.com/photo/dog-lying-down-and-sleeping-159604
 imageSearchQuery: "Chinese Shar-Pei dog sleeping bed"
 ---
 
-
 A dog spends 12–14 hours a day sleeping. For a Chinese Shar-Pei, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 
 Chinese Shar-Peis can develop hip and joint problems as they age. Starting with a quality orthopedic bed in middle age (around 6 years) prevents rather than reacts to joint issues.

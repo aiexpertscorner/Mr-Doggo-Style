@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-03T00:27:22.223Z",
-  "total": 2370,
+  "generatedAt": "2026-05-03T01:10:24.036Z",
+  "total": 2375,
   "items": [
     {
       "sourcePath": "/blog/affenpinscher-health-problems",
@@ -18807,6 +18807,45 @@
       ]
     },
     {
+      "sourcePath": "/blog/dog-beds-comfort-home-partners",
+      "recommendedTargets": [
+        "/breeds",
+        "/cost-calculator",
+        "/categories/pupwiki-partners",
+        "/categories/puppy",
+        "/categories/senior-dogs"
+      ]
+    },
+    {
+      "sourcePath": "/blog/dog-food-nutrition-partners",
+      "recommendedTargets": [
+        "/breeds",
+        "/cost-calculator",
+        "/categories/pupwiki-partners",
+        "/categories/puppy",
+        "/categories/senior-dogs"
+      ]
+    },
+    {
+      "sourcePath": "/blog/dog-health-wellness-adjacent-partners",
+      "recommendedTargets": [
+        "/breeds",
+        "/cost-calculator",
+        "/categories/pupwiki-partners",
+        "/categories/senior-dogs",
+        "/categories/insurance"
+      ]
+    },
+    {
+      "sourcePath": "/blog/dog-training-gear-safety-partners",
+      "recommendedTargets": [
+        "/breeds",
+        "/cost-calculator",
+        "/categories/pupwiki-partners",
+        "/categories/puppy"
+      ]
+    },
+    {
       "sourcePath": "/blog/dogo-argentino-health-problems",
       "recommendedTargets": [
         "/breeds",
@@ -22850,6 +22889,14 @@
         "/categories/senior-dogs",
         "/categories/insurance",
         "/breeds/perro-de-presa-canario"
+      ]
+    },
+    {
+      "sourcePath": "/blog/personalized-dog-gifts-lifestyle-partners",
+      "recommendedTargets": [
+        "/breeds",
+        "/cost-calculator",
+        "/categories/pupwiki-partners"
       ]
     },
     {

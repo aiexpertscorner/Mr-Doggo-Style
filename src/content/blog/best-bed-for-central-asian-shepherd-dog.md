@@ -43,7 +43,6 @@ imageCreditUrl: "https://www.pexels.com/photo/stray-dog-lying-down-and-sleeping-
 imageSearchQuery: "Central Asian Shepherd Dog dog sleeping bed"
 ---
 
-
 A dog spends 12–14 hours a day sleeping. For a Central Asian Shepherd Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 
 Central Asian Shepherd Dogs can develop hip and joint problems as they age. Starting with a quality orthopedic bed in middle age (around 6 years) prevents rather than reacts to joint issues.

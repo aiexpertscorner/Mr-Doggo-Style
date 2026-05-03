@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "miniature-schnauzer", "Miniature Schnauzer", "s
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/miniature-schnauzer", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/3655387/pexels-photo-3655387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/3655387/pexels-photo-3655387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Smiling Schnauzer dog laying on a soft rug, showcasing happiness indoors."
+imageAlt: "Smiling Schnauzer dog laying on a soft rug, showcasing happiness indoors."
+imageSource: "pexels"
+imageCredit: "Photo by Sebastian Coman Travel on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/photo-of-schnauzer-3655387/"
+imageSearchQuery: "Miniature Schnauzer dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Miniature Schnauzer, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "labrador-retriever", "Labrador Retriever", "lar
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/labrador-retriever", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/544269/pexels-photo-544269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/544269/pexels-photo-544269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A chocolate Labrador dog lounging on a cozy rug with a dark background."
+imageAlt: "A chocolate Labrador dog lounging on a cozy rug with a dark background."
+imageSource: "pexels"
+imageCredit: "Photo by Binyamin Mellish on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adult-chocolate-labrador-retriever-lying-on-brown-and-white-striped-textile-544269/"
+imageSearchQuery: "Labrador Retriever dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Labrador Retriever, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

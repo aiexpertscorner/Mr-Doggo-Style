@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "pomeranian", "Pomeranian", "small", "regular", 
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/pomeranian", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/8473258/pexels-photo-8473258.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/8473258/pexels-photo-8473258.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable Pomeranian dog sitting on a cozy bed with fluffy fur and a curious look."
+imageAlt: "Adorable Pomeranian dog sitting on a cozy bed with fluffy fur and a curious look."
+imageSource: "pexels"
+imageCredit: "Photo by Cup of  Couple on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-sitting-on-the-bed-8473258/"
+imageSearchQuery: "Pomeranian dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Pomeranian, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

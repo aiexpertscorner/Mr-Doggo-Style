@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "japanese-spitz", "Japanese Spitz", "small", "re
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/japanese-spitz", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/37105501/pexels-photo-37105501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/37105501/pexels-photo-37105501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming fluffy white dog lounging on a comfortable brown leather couch with soft natural lighting."
+imageAlt: "Charming fluffy white dog lounging on a comfortable brown leather couch with soft natural lighting."
+imageSource: "pexels"
+imageCredit: "Photo by Tomal Bhattacharjee on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/fluffy-white-dog-relaxing-on-a-leather-couch-37105501/"
+imageSearchQuery: "Japanese Spitz dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Japanese Spitz, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "miniature-pinscher", "Miniature Pinscher", "sma
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/miniature-pinscher", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/23224802/pexels-photo-23224802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/23224802/pexels-photo-23224802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable brown dog lying on a plush bed with a relaxed expression, perfect pet moment."
+imageAlt: "Adorable brown dog lying on a plush bed with a relaxed expression, perfect pet moment."
+imageSource: "pexels"
+imageCredit: "Photo by thiago japyassu on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/puppy-lying-down-23224802/"
+imageSearchQuery: "Miniature Pinscher dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Miniature Pinscher, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

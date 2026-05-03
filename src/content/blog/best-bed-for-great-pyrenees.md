@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "great-pyrenees", "Great Pyrenees", "large", "ac
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/great-pyrenees", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/7461420/pexels-photo-7461420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7461420/pexels-photo-7461420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming portrait of a Great Pyrenees dog outdoors against an autumn forest backdrop."
+imageAlt: "Charming portrait of a Great Pyrenees dog outdoors against an autumn forest backdrop."
+imageSource: "pexels"
+imageCredit: "Photo by Tychon Krug on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/white-long-coated-dog-in-close-up-shot-7461420/"
+imageSearchQuery: "Great Pyrenees dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Great Pyrenees, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

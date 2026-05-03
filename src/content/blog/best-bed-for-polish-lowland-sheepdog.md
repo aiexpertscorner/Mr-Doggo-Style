@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "polish-lowland-sheepdog", "Polish Lowland Sheep
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/polish-lowland-sheepdog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/12073098/pexels-photo-12073098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/12073098/pexels-photo-12073098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming Polish Lowland Sheepdog being walked in Warsaw's urban setting."
+imageAlt: "Charming Polish Lowland Sheepdog being walked in Warsaw's urban setting."
+imageSource: "pexels"
+imageCredit: "Photo by John M on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-waling-with-a-leash-12073098/"
+imageSearchQuery: "Polish Lowland Sheepdog dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Polish Lowland Sheepdog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

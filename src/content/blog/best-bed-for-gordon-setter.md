@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "gordon-setter", "Gordon Setter", "large", "acti
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/gordon-setter", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/35964766/pexels-photo-35964766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35964766/pexels-photo-35964766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A black and tan dog with a harness sits on a snowy terrain, enjoying a sunny winter day."
+imageAlt: "A black and tan dog with a harness sits on a snowy terrain, enjoying a sunny winter day."
+imageSource: "pexels"
+imageCredit: "Photo by Jesús Esteban San José on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/black-and-tan-dog-sitting-in-snow-outdoors-35964766/"
+imageSearchQuery: "Gordon Setter dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Gordon Setter, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

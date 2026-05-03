@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-05-03T00:27:13.514Z",
+  "syncedAt": "2026-05-03T01:10:11.910Z",
   "images": {
     "affenpinscher-health-problems:Affenpinscher dog veterinarian wellness": {
       "url": "https://images.pexels.com/photos/6234980/pexels-photo-6234980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
@@ -1280,12 +1280,652 @@
       "photographerUrl": "https://www.pexels.com/@enrique",
       "pexelsUrl": "https://www.pexels.com/photo/photo-of-brown-dog-lying-on-throw-pillow-4458433/",
       "id": 4458433
+    },
+    "best-bed-for-gordon-setter:Gordon Setter dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/35964766/pexels-photo-35964766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A black and tan dog with a harness sits on a snowy terrain, enjoying a sunny winter day.",
+      "photographer": "Jesús Esteban San José",
+      "photographerUrl": "https://www.pexels.com/@jesus-esteban-san-jose-11194232",
+      "pexelsUrl": "https://www.pexels.com/photo/black-and-tan-dog-sitting-in-snow-outdoors-35964766/",
+      "id": 35964766
+    },
+    "best-bed-for-grand-basset-griffon-venden:Grand Basset Griffon Vendéen dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-great-dane:Great Dane dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/2102839/pexels-photo-2102839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Jack Russell Terrier dog sleeping peacefully on a bed indoors.",
+      "photographer": "Lisa from Pexels",
+      "photographerUrl": "https://www.pexels.com/@fotios-photos",
+      "pexelsUrl": "https://www.pexels.com/photo/adult-dog-on-white-bed-2102839/",
+      "id": 2102839
+    },
+    "best-bed-for-great-pyrenees:Great Pyrenees dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/7461420/pexels-photo-7461420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Charming portrait of a Great Pyrenees dog outdoors against an autumn forest backdrop.",
+      "photographer": "Tychon Krug",
+      "photographerUrl": "https://www.pexels.com/@tychon",
+      "pexelsUrl": "https://www.pexels.com/photo/white-long-coated-dog-in-close-up-shot-7461420/",
+      "id": 7461420
+    },
+    "best-bed-for-greater-swiss-mountain-dog:Greater Swiss Mountain Dog dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/28860748/pexels-photo-28860748.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Happy Bernese Mountain Dog relaxing on a comfortable dog bed indoors with sunlight streaming in.",
+      "photographer": "Impact Dog Crates",
+      "photographerUrl": "https://www.pexels.com/@impact-dog-crates-1789722873",
+      "pexelsUrl": "https://www.pexels.com/photo/bernese-mountain-dog-relaxing-on-dog-bed-indoors-28860748/",
+      "id": 28860748
+    },
+    "best-bed-for-greyhound:Greyhound dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/14832500/pexels-photo-14832500.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A greyhound dog peacefully sleeping on a bed with a geometric patterned cover, viewed from above.",
+      "photographer": "Alina Skazka",
+      "photographerUrl": "https://www.pexels.com/@alinaskazka",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-lying-in-bed-14832500/",
+      "id": 14832500
+    },
+    "best-bed-for-hamiltonstovare:Hamiltonstovare dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/2102839/pexels-photo-2102839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Jack Russell Terrier dog sleeping peacefully on a bed indoors.",
+      "photographer": "Lisa from Pexels",
+      "photographerUrl": "https://www.pexels.com/@fotios-photos",
+      "pexelsUrl": "https://www.pexels.com/photo/adult-dog-on-white-bed-2102839/",
+      "id": 2102839
+    },
+    "best-bed-for-hanoverian-scenthound:Hanoverian Scenthound dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-harrier:Harrier dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/2102839/pexels-photo-2102839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Jack Russell Terrier dog sleeping peacefully on a bed indoors.",
+      "photographer": "Lisa from Pexels",
+      "photographerUrl": "https://www.pexels.com/@fotios-photos",
+      "pexelsUrl": "https://www.pexels.com/photo/adult-dog-on-white-bed-2102839/",
+      "id": 2102839
+    },
+    "best-bed-for-havanese:Havanese dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-hokkaido:Hokkaido dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19176926/pexels-photo-19176926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Shiba Inu dog peacefully sleeping curled up on a fluffy pet bed with warm sunlight.",
+      "photographer": "Stephen",
+      "photographerUrl": "https://www.pexels.com/@stephenam",
+      "pexelsUrl": "https://www.pexels.com/photo/red-dog-sleeping-curled-up-in-a-fuzzy-pet-bed-19176926/",
+      "id": 19176926
+    },
+    "best-bed-for-hovawart:Hovawart dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-ibizan-hound:Ibizan Hound dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19027991/pexels-photo-19027991.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Weimaraner dog peacefully sleeping on a fluffy dog bed in a cozy living room.",
+      "photographer": "Olivier Leysen",
+      "photographerUrl": "https://www.pexels.com/@olivier-leysen-753068473",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-sleeping-in-a-dog-bed-next-to-a-sofa-19027991/",
+      "id": 19027991
+    },
+    "best-bed-for-icelandic-sheepdog:Icelandic Sheepdog dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19176926/pexels-photo-19176926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Shiba Inu dog peacefully sleeping curled up on a fluffy pet bed with warm sunlight.",
+      "photographer": "Stephen",
+      "photographerUrl": "https://www.pexels.com/@stephenam",
+      "pexelsUrl": "https://www.pexels.com/photo/red-dog-sleeping-curled-up-in-a-fuzzy-pet-bed-19176926/",
+      "id": 19176926
+    },
+    "best-bed-for-irish-red-and-white-setter:Irish Red and White Setter dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/6510333/pexels-photo-6510333.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable dog with brown fur lying on sandy coast near calm lake in sunny nature against cloudy sky and hilly terrain",
+      "photographer": "Lachlan  Ross",
+      "photographerUrl": "https://www.pexels.com/@lachlan-ross",
+      "pexelsUrl": "https://www.pexels.com/photo/cute-irish-setter-on-shore-6510333/",
+      "id": 6510333
+    },
+    "best-bed-for-irish-setter:Irish Setter dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-irish-terrier:Irish Terrier dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-irish-water-spaniel:Irish Water Spaniel dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/20744921/pexels-photo-20744921.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A black and white dog sleeping on a paved sidewalk next to a car tire.",
+      "photographer": "Muhammed Tubtemur",
+      "photographerUrl": "https://www.pexels.com/@muhammedtubtemur",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-sleeping-on-sidewalk-20744921/",
+      "id": 20744921
+    },
+    "best-bed-for-irish-wolfhound:Irish Wolfhound dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-italian-greyhound:Italian Greyhound dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/14832500/pexels-photo-14832500.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A greyhound dog peacefully sleeping on a bed with a geometric patterned cover, viewed from above.",
+      "photographer": "Alina Skazka",
+      "photographerUrl": "https://www.pexels.com/@alinaskazka",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-lying-in-bed-14832500/",
+      "id": 14832500
+    },
+    "best-bed-for-jagdterrier:Jagdterrier dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/36198590/pexels-photo-36198590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up of a black and white dog sleeping peacefully on a bed in a cozy setting.",
+      "photographer": "Magda Ehlers",
+      "photographerUrl": "https://www.pexels.com/@magda-ehlers-pexels",
+      "pexelsUrl": "https://www.pexels.com/photo/sleeping-dog-on-bed-with-relaxing-atmosphere-36198590/",
+      "id": 36198590
+    },
+    "best-bed-for-japanese-chin:Japanese Chin dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-japanese-spitz:Japanese Spitz dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/37105501/pexels-photo-37105501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Charming fluffy white dog lounging on a comfortable brown leather couch with soft natural lighting.",
+      "photographer": "Tomal Bhattacharjee",
+      "photographerUrl": "https://www.pexels.com/@tomalbhattacharjee",
+      "pexelsUrl": "https://www.pexels.com/photo/fluffy-white-dog-relaxing-on-a-leather-couch-37105501/",
+      "id": 37105501
+    },
+    "best-bed-for-jindo:Jindo dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19176926/pexels-photo-19176926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Shiba Inu dog peacefully sleeping curled up on a fluffy pet bed with warm sunlight.",
+      "photographer": "Stephen",
+      "photographerUrl": "https://www.pexels.com/@stephenam",
+      "pexelsUrl": "https://www.pexels.com/photo/red-dog-sleeping-curled-up-in-a-fuzzy-pet-bed-19176926/",
+      "id": 19176926
+    },
+    "best-bed-for-kai-ken:Kai Ken dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19176926/pexels-photo-19176926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Shiba Inu dog peacefully sleeping curled up on a fluffy pet bed with warm sunlight.",
+      "photographer": "Stephen",
+      "photographerUrl": "https://www.pexels.com/@stephenam",
+      "pexelsUrl": "https://www.pexels.com/photo/red-dog-sleeping-curled-up-in-a-fuzzy-pet-bed-19176926/",
+      "id": 19176926
+    },
+    "best-bed-for-karelian-bear-dog:Karelian Bear Dog dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/36198590/pexels-photo-36198590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up of a black and white dog sleeping peacefully on a bed in a cozy setting.",
+      "photographer": "Magda Ehlers",
+      "photographerUrl": "https://www.pexels.com/@magda-ehlers-pexels",
+      "pexelsUrl": "https://www.pexels.com/photo/sleeping-dog-on-bed-with-relaxing-atmosphere-36198590/",
+      "id": 36198590
+    },
+    "best-bed-for-keeshond:Keeshond dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19176926/pexels-photo-19176926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Shiba Inu dog peacefully sleeping curled up on a fluffy pet bed with warm sunlight.",
+      "photographer": "Stephen",
+      "photographerUrl": "https://www.pexels.com/@stephenam",
+      "pexelsUrl": "https://www.pexels.com/photo/red-dog-sleeping-curled-up-in-a-fuzzy-pet-bed-19176926/",
+      "id": 19176926
+    },
+    "best-bed-for-kerry-blue-terrier:Kerry Blue Terrier dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-kishu-ken:Kishu Ken dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19176926/pexels-photo-19176926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Shiba Inu dog peacefully sleeping curled up on a fluffy pet bed with warm sunlight.",
+      "photographer": "Stephen",
+      "photographerUrl": "https://www.pexels.com/@stephenam",
+      "pexelsUrl": "https://www.pexels.com/photo/red-dog-sleeping-curled-up-in-a-fuzzy-pet-bed-19176926/",
+      "id": 19176926
+    },
+    "best-bed-for-komondor:Komondor dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-kromfohrlander:Kromfohrlander dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/2102839/pexels-photo-2102839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Jack Russell Terrier dog sleeping peacefully on a bed indoors.",
+      "photographer": "Lisa from Pexels",
+      "photographerUrl": "https://www.pexels.com/@fotios-photos",
+      "pexelsUrl": "https://www.pexels.com/photo/adult-dog-on-white-bed-2102839/",
+      "id": 2102839
+    },
+    "best-bed-for-kuvasz:Kuvasz dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-labrador-retriever:Labrador Retriever dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/544269/pexels-photo-544269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A chocolate Labrador dog lounging on a cozy rug with a dark background.",
+      "photographer": "Binyamin Mellish",
+      "photographerUrl": "https://www.pexels.com/@binyaminmellish",
+      "pexelsUrl": "https://www.pexels.com/photo/adult-chocolate-labrador-retriever-lying-on-brown-and-white-striped-textile-544269/",
+      "id": 544269
+    },
+    "best-bed-for-lagotto-romagnolo:Lagotto Romagnolo dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-lakeland-terrier:Lakeland Terrier dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-lancashire-heeler:Lancashire Heeler dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/36198590/pexels-photo-36198590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up of a black and white dog sleeping peacefully on a bed in a cozy setting.",
+      "photographer": "Magda Ehlers",
+      "photographerUrl": "https://www.pexels.com/@magda-ehlers-pexels",
+      "pexelsUrl": "https://www.pexels.com/photo/sleeping-dog-on-bed-with-relaxing-atmosphere-36198590/",
+      "id": 36198590
+    },
+    "best-bed-for-lapponian-herder:Lapponian Herder dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/36198590/pexels-photo-36198590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up of a black and white dog sleeping peacefully on a bed in a cozy setting.",
+      "photographer": "Magda Ehlers",
+      "photographerUrl": "https://www.pexels.com/@magda-ehlers-pexels",
+      "pexelsUrl": "https://www.pexels.com/photo/sleeping-dog-on-bed-with-relaxing-atmosphere-36198590/",
+      "id": 36198590
+    },
+    "best-bed-for-leonberger:Leonberger dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-lhasa-apso:Lhasa Apso dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/27105001/pexels-photo-27105001.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Charming Shih Tzu dog peacefully sleeping on a stylish red lips chair in a studio setting.",
+      "photographer": "the  cinematic",
+      "photographerUrl": "https://www.pexels.com/@the-cinematic-878171",
+      "pexelsUrl": "https://www.pexels.com/photo/a-small-dog-is-sleeping-on-a-red-chair-27105001/",
+      "id": 27105001
+    },
+    "best-bed-for-lwchen:Löwchen dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-maltese:Maltese dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-manchester-terrier-standard:Manchester Terrier (Standard) dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-manchester-terrier-toy:Manchester Terrier (Toy) dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-mastiff:Mastiff dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/32329256/pexels-photo-32329256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Dogue de Bordeaux puppy sleeping on a wooden floor outdoors in sunlight.",
+      "photographer": "Marcelo Gonzalez",
+      "photographerUrl": "https://www.pexels.com/@marcelo-gonzalez-1141370437",
+      "pexelsUrl": "https://www.pexels.com/photo/cute-dogue-de-bordeaux-puppy-sleeping-peacefully-32329256/",
+      "id": 32329256
+    },
+    "best-bed-for-miniature-american-shepherd:Miniature American Shepherd dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-miniature-bull-terrier:Miniature Bull Terrier dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-miniature-pinscher:Miniature Pinscher dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/23224802/pexels-photo-23224802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable brown dog lying on a plush bed with a relaxed expression, perfect pet moment.",
+      "photographer": "thiago japyassu",
+      "photographerUrl": "https://www.pexels.com/@japy",
+      "pexelsUrl": "https://www.pexels.com/photo/puppy-lying-down-23224802/",
+      "id": 23224802
+    },
+    "best-bed-for-miniature-schnauzer:Miniature Schnauzer dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/3655387/pexels-photo-3655387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Smiling Schnauzer dog laying on a soft rug, showcasing happiness indoors.",
+      "photographer": "Sebastian Coman Travel",
+      "photographerUrl": "https://www.pexels.com/@sebcomantravel",
+      "pexelsUrl": "https://www.pexels.com/photo/photo-of-schnauzer-3655387/",
+      "id": 3655387
+    },
+    "best-bed-for-mountain-cur:Mountain Cur dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/2102839/pexels-photo-2102839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Jack Russell Terrier dog sleeping peacefully on a bed indoors.",
+      "photographer": "Lisa from Pexels",
+      "photographerUrl": "https://www.pexels.com/@fotios-photos",
+      "pexelsUrl": "https://www.pexels.com/photo/adult-dog-on-white-bed-2102839/",
+      "id": 2102839
+    },
+    "best-bed-for-mudi:Mudi dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-neapolitan-mastiff:Neapolitan Mastiff dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/32329256/pexels-photo-32329256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Dogue de Bordeaux puppy sleeping on a wooden floor outdoors in sunlight.",
+      "photographer": "Marcelo Gonzalez",
+      "photographerUrl": "https://www.pexels.com/@marcelo-gonzalez-1141370437",
+      "pexelsUrl": "https://www.pexels.com/photo/cute-dogue-de-bordeaux-puppy-sleeping-peacefully-32329256/",
+      "id": 32329256
+    },
+    "best-bed-for-nederlandse-kooikerhondje:Nederlandse Kooikerhondje dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-newfoundland:Newfoundland dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-norfolk-terrier:Norfolk Terrier dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-norrbottenspets:Norrbottenspets dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/36198590/pexels-photo-36198590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up of a black and white dog sleeping peacefully on a bed in a cozy setting.",
+      "photographer": "Magda Ehlers",
+      "photographerUrl": "https://www.pexels.com/@magda-ehlers-pexels",
+      "pexelsUrl": "https://www.pexels.com/photo/sleeping-dog-on-bed-with-relaxing-atmosphere-36198590/",
+      "id": 36198590
+    },
+    "best-bed-for-norwegian-buhund:Norwegian Buhund dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19176926/pexels-photo-19176926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Shiba Inu dog peacefully sleeping curled up on a fluffy pet bed with warm sunlight.",
+      "photographer": "Stephen",
+      "photographerUrl": "https://www.pexels.com/@stephenam",
+      "pexelsUrl": "https://www.pexels.com/photo/red-dog-sleeping-curled-up-in-a-fuzzy-pet-bed-19176926/",
+      "id": 19176926
+    },
+    "best-bed-for-norwegian-elkhound:Norwegian Elkhound dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/36198590/pexels-photo-36198590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up of a black and white dog sleeping peacefully on a bed in a cozy setting.",
+      "photographer": "Magda Ehlers",
+      "photographerUrl": "https://www.pexels.com/@magda-ehlers-pexels",
+      "pexelsUrl": "https://www.pexels.com/photo/sleeping-dog-on-bed-with-relaxing-atmosphere-36198590/",
+      "id": 36198590
+    },
+    "best-bed-for-norwegian-lundehund:Norwegian Lundehund dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/36198590/pexels-photo-36198590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up of a black and white dog sleeping peacefully on a bed in a cozy setting.",
+      "photographer": "Magda Ehlers",
+      "photographerUrl": "https://www.pexels.com/@magda-ehlers-pexels",
+      "pexelsUrl": "https://www.pexels.com/photo/sleeping-dog-on-bed-with-relaxing-atmosphere-36198590/",
+      "id": 36198590
+    },
+    "best-bed-for-norwich-terrier:Norwich Terrier dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-nova-scotia-duck-tolling-retriever:Nova Scotia Duck Tolling Retriever dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-old-english-sheepdog:Old English Sheepdog dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/16622613/pexels-photo-16622613.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up portrait of a sheepdog against a vibrant yellow background in Mexico City.",
+      "photographer": "Miguel González",
+      "photographerUrl": "https://www.pexels.com/@mikegles",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-yellow-background-16622613/",
+      "id": 16622613
+    },
+    "best-bed-for-otterhound:Otterhound dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-papillon:Papillon dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-parson-russell-terrier:Parson Russell Terrier dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/1753144/pexels-photo-1753144.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A peaceful dog sleeping on a warm couch, capturing a moment of relaxation.",
+      "photographer": "Lisa from Pexels",
+      "photographerUrl": "https://www.pexels.com/@fotios-photos",
+      "pexelsUrl": "https://www.pexels.com/photo/sleeping-dog-1753144/",
+      "id": 1753144
+    },
+    "best-bed-for-pekingese:Pekingese dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/11060037/pexels-photo-11060037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up of a cute brown dog peacefully sleeping on a plaid pillow, showcasing tranquility and comfort.",
+      "photographer": "Alexas Fotos",
+      "photographerUrl": "https://www.pexels.com/@alexasfotos",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-sleeping-dog-11060037/",
+      "id": 11060037
+    },
+    "best-bed-for-pembroke-welsh-corgi:Pembroke Welsh Corgi dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19823543/pexels-photo-19823543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable corgi dog wrapped in a blue blanket peacefully resting on a grey sofa indoors.",
+      "photographer": "Marina Zvada",
+      "photographerUrl": "https://www.pexels.com/@marina-zvada-844583049",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-under-blanket-lying-on-sofa-19823543/",
+      "id": 19823543
+    },
+    "best-bed-for-perro-de-presa-canario:Perro de Presa Canario dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/2102839/pexels-photo-2102839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Jack Russell Terrier dog sleeping peacefully on a bed indoors.",
+      "photographer": "Lisa from Pexels",
+      "photographerUrl": "https://www.pexels.com/@fotios-photos",
+      "pexelsUrl": "https://www.pexels.com/photo/adult-dog-on-white-bed-2102839/",
+      "id": 2102839
+    },
+    "best-bed-for-peruvian-inca-orchid:Peruvian Inca Orchid dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/20348444/pexels-photo-20348444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable dog peacefully sleeping with a colorful toy indoors, creating a cozy and loving scene.",
+      "photographer": "Sonny Vermeer",
+      "photographerUrl": "https://www.pexels.com/@sonny-vermeer-505472791",
+      "pexelsUrl": "https://www.pexels.com/photo/little-brown-dog-enjoys-the-sun-with-her-toy-20348444/",
+      "id": 20348444
+    },
+    "best-bed-for-petit-basset-griffon-venden:Petit Basset Griffon Vendéen dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-pharaoh-hound:Pharaoh Hound dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19027991/pexels-photo-19027991.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Weimaraner dog peacefully sleeping on a fluffy dog bed in a cozy living room.",
+      "photographer": "Olivier Leysen",
+      "photographerUrl": "https://www.pexels.com/@olivier-leysen-753068473",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-sleeping-in-a-dog-bed-next-to-a-sofa-19027991/",
+      "id": 19027991
+    },
+    "best-bed-for-plott-hound:Plott Hound dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19027991/pexels-photo-19027991.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A Weimaraner dog peacefully sleeping on a fluffy dog bed in a cozy living room.",
+      "photographer": "Olivier Leysen",
+      "photographerUrl": "https://www.pexels.com/@olivier-leysen-753068473",
+      "pexelsUrl": "https://www.pexels.com/photo/a-dog-sleeping-in-a-dog-bed-next-to-a-sofa-19027991/",
+      "id": 19027991
+    },
+    "best-bed-for-pointer:Pointer dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-polish-lowland-sheepdog:Polish Lowland Sheepdog dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/12073098/pexels-photo-12073098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Charming Polish Lowland Sheepdog being walked in Warsaw's urban setting.",
+      "photographer": "John M",
+      "photographerUrl": "https://www.pexels.com/@temnaya",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-waling-with-a-leash-12073098/",
+      "id": 12073098
+    },
+    "best-bed-for-pomeranian:Pomeranian dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/8473258/pexels-photo-8473258.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable Pomeranian dog sitting on a cozy bed with fluffy fur and a curious look.",
+      "photographer": "Cup of  Couple",
+      "photographerUrl": "https://www.pexels.com/@cup-of-couple",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-sitting-on-the-bed-8473258/",
+      "id": 8473258
+    },
+    "best-bed-for-poodle-miniature:Poodle (Miniature) dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/19902451/pexels-photo-19902451.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Adorable white dog peacefully sleeping on the ground outdoors in Skikda, Algeria.",
+      "photographer": "Mallem Amir",
+      "photographerUrl": "https://www.pexels.com/@mallem-amir-255081612",
+      "pexelsUrl": "https://www.pexels.com/photo/close-up-of-a-domestic-dog-sleeping-on-the-ground-19902451/",
+      "id": 19902451
+    },
+    "best-bed-for-poodle-standard:Poodle (Standard) dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/35932746/pexels-photo-35932746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A brown Labradoodle dog lying comfortably on a couch, enjoying a peaceful nap indoors.",
+      "photographer": "Akshay  Nayak",
+      "photographerUrl": "https://www.pexels.com/@dagdraumar",
+      "pexelsUrl": "https://www.pexels.com/photo/cozy-brown-labradoodle-relaxing-at-home-35932746/",
+      "id": 35932746
+    },
+    "best-bed-for-poodle-toy:Poodle (Toy) dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-porcelaine:Porcelaine dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
+    },
+    "best-bed-for-portuguese-podengo-pequeno:Portuguese Podengo Pequeno dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/5420821/pexels-photo-5420821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A calm small dog sleeping soundly on a soft bed, showcasing relaxation.",
+      "photographer": "www.kaboompics.com",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "pexelsUrl": "https://www.pexels.com/photo/dog-on-bed-5420821/",
+      "id": 5420821
+    },
+    "best-bed-for-portuguese-podengo:Portuguese Podengo dog sleeping bed": {
+      "url": "https://images.pexels.com/photos/33288452/pexels-photo-33288452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Cute dog comfortably sleeping in bed with floral sheets and pillows.",
+      "photographer": "Andreas Schnabl",
+      "photographerUrl": "https://www.pexels.com/@andreas-schnabl-1775843",
+      "pexelsUrl": "https://www.pexels.com/photo/adorable-dog-sleeping-cozy-in-bed-33288452/",
+      "id": 33288452
     }
   },
   "stats": {
     "scanned": 80,
     "changed": 80,
-    "skipped": 80,
+    "skipped": 160,
     "failed": 0,
     "force": false,
     "dry": false

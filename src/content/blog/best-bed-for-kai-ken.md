@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "kai-ken", "Kai Ken", "medium", "active", "diffi
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/kai-ken", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/19176926/pexels-photo-19176926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/19176926/pexels-photo-19176926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Shiba Inu dog peacefully sleeping curled up on a fluffy pet bed with warm sunlight."
+imageAlt: "A Shiba Inu dog peacefully sleeping curled up on a fluffy pet bed with warm sunlight."
+imageSource: "pexels"
+imageCredit: "Photo by Stephen on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/red-dog-sleeping-curled-up-in-a-fuzzy-pet-bed-19176926/"
+imageSearchQuery: "Kai Ken dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Kai Ken, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

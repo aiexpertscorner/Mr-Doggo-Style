@@ -43,7 +43,6 @@ imageCreditUrl: "https://www.pexels.com/photo/adorable-boston-terrier-napping-in
 imageSearchQuery: "Boston Terrier dog sleeping bed"
 ---
 
-
 A dog spends 12–14 hours a day sleeping. For a Boston Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.
 
 Boston Terriers can develop hip and joint problems as they age. Starting with a quality orthopedic bed in middle age (around 6 years) prevents rather than reacts to joint issues.

@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "irish-water-spaniel", "Irish Water Spaniel", "l
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/irish-water-spaniel", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/20744921/pexels-photo-20744921.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/20744921/pexels-photo-20744921.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A black and white dog sleeping on a paved sidewalk next to a car tire."
+imageAlt: "A black and white dog sleeping on a paved sidewalk next to a car tire."
+imageSource: "pexels"
+imageCredit: "Photo by Muhammed Tubtemur on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-sleeping-on-sidewalk-20744921/"
+imageSearchQuery: "Irish Water Spaniel dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Irish Water Spaniel, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "lhasa-apso", "Lhasa Apso", "small", "regular", 
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/lhasa-apso", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/27105001/pexels-photo-27105001.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/27105001/pexels-photo-27105001.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Charming Shih Tzu dog peacefully sleeping on a stylish red lips chair in a studio setting."
+imageAlt: "Charming Shih Tzu dog peacefully sleeping on a stylish red lips chair in a studio setting."
+imageSource: "pexels"
+imageCredit: "Photo by the  cinematic on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-small-dog-is-sleeping-on-a-red-chair-27105001/"
+imageSearchQuery: "Lhasa Apso dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Lhasa Apso, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

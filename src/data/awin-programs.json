@@ -1,7 +1,7 @@
 {
   "publisherId": "2861861",
   "countryCode": "US",
-  "syncedAt": "2026-05-03T00:27:20.716Z",
+  "syncedAt": "2026-05-03T01:10:19.337Z",
   "programs": [
     {
       "key": "brutus-broth",
@@ -367,13 +367,13 @@
       "commissionRange": [
         {
           "min": 0,
-          "max": 0,
-          "type": "amount"
+          "max": 8,
+          "type": "percentage"
         },
         {
           "min": 0,
-          "max": 8,
-          "type": "percentage"
+          "max": 0,
+          "type": "amount"
         }
       ],
       "kpi": {

@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "poodle-miniature", "Poodle (Miniature)", "small
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/poodle-miniature", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/19902451/pexels-photo-19902451.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/19902451/pexels-photo-19902451.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable white dog peacefully sleeping on the ground outdoors in Skikda, Algeria."
+imageAlt: "Adorable white dog peacefully sleeping on the ground outdoors in Skikda, Algeria."
+imageSource: "pexels"
+imageCredit: "Photo by Mallem Amir on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-a-domestic-dog-sleeping-on-the-ground-19902451/"
+imageSearchQuery: "Poodle (Miniature) dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Poodle (Miniature), the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

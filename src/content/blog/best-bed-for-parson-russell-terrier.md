@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "parson-russell-terrier", "Parson Russell Terrie
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/parson-russell-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/1753144/pexels-photo-1753144.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/1753144/pexels-photo-1753144.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A peaceful dog sleeping on a warm couch, capturing a moment of relaxation."
+imageAlt: "A peaceful dog sleeping on a warm couch, capturing a moment of relaxation."
+imageSource: "pexels"
+imageCredit: "Photo by Lisa from Pexels on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/sleeping-dog-1753144/"
+imageSearchQuery: "Parson Russell Terrier dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Parson Russell Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

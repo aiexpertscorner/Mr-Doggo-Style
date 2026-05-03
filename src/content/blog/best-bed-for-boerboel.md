@@ -43,7 +43,6 @@ imageCreditUrl: "https://www.pexels.com/photo/adult-dog-on-white-bed-2102839/"
 imageSearchQuery: "Boerboel dog sleeping bed"
 ---
 
-
 A dog spends 12–14 hours a day sleeping. For a Boerboel, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 
 With an average lifespan of 11 years, joint issues often appear earlier in Boerboels than in longer-lived breeds. Investing in a quality orthopedic bed from adulthood — not just when problems appear — is the right approach.

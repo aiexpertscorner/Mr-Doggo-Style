@@ -43,7 +43,6 @@ imageCreditUrl: "https://www.pexels.com/photo/paws-of-dog-lying-down-25078644/"
 imageSearchQuery: "Flat-Coated Retriever dog sleeping bed"
 ---
 
-
 A dog spends 12–14 hours a day sleeping. For a Flat-Coated Retriever, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 
 With an average lifespan of 10 years, joint issues often appear earlier in Flat-Coated Retrievers than in longer-lived breeds. Investing in a quality orthopedic bed from adulthood — not just when problems appear — is the right approach.

@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "pekingese", "Pekingese", "small", "calm", "mode
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/pekingese", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/11060037/pexels-photo-11060037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/11060037/pexels-photo-11060037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up of a cute brown dog peacefully sleeping on a plaid pillow, showcasing tranquility and comfort."
+imageAlt: "Close-up of a cute brown dog peacefully sleeping on a plaid pillow, showcasing tranquility and comfort."
+imageSource: "pexels"
+imageCredit: "Photo by Alexas Fotos on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-shot-of-a-sleeping-dog-11060037/"
+imageSearchQuery: "Pekingese dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Pekingese, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

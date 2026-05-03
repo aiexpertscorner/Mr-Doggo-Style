@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "poodle-standard", "Poodle (Standard)", "large",
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/poodle-standard", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/35932746/pexels-photo-35932746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35932746/pexels-photo-35932746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A brown Labradoodle dog lying comfortably on a couch, enjoying a peaceful nap indoors."
+imageAlt: "A brown Labradoodle dog lying comfortably on a couch, enjoying a peaceful nap indoors."
+imageSource: "pexels"
+imageCredit: "Photo by Akshay  Nayak on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/cozy-brown-labradoodle-relaxing-at-home-35932746/"
+imageSearchQuery: "Poodle (Standard) dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Poodle (Standard), the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

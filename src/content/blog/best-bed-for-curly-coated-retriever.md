@@ -43,7 +43,6 @@ imageCreditUrl: "https://www.pexels.com/photo/paws-of-dog-lying-down-25078644/"
 imageSearchQuery: "Curly-Coated Retriever dog sleeping bed"
 ---
 
-
 A dog spends 12–14 hours a day sleeping. For a Curly-Coated Retriever, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 
 Curly-Coated Retrievers can develop hip and joint problems as they age. Starting with a quality orthopedic bed in middle age (around 6 years) prevents rather than reacts to joint issues.

@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "pharaoh-hound", "Pharaoh Hound", "medium", "act
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/pharaoh-hound", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/19027991/pexels-photo-19027991.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/19027991/pexels-photo-19027991.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Weimaraner dog peacefully sleeping on a fluffy dog bed in a cozy living room."
+imageAlt: "A Weimaraner dog peacefully sleeping on a fluffy dog bed in a cozy living room."
+imageSource: "pexels"
+imageCredit: "Photo by Olivier Leysen on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/a-dog-sleeping-in-a-dog-bed-next-to-a-sofa-19027991/"
+imageSearchQuery: "Pharaoh Hound dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Pharaoh Hound, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

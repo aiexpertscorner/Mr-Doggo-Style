@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "pembroke-welsh-corgi", "Pembroke Welsh Corgi", 
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/pembroke-welsh-corgi", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/19823543/pexels-photo-19823543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/19823543/pexels-photo-19823543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable corgi dog wrapped in a blue blanket peacefully resting on a grey sofa indoors."
+imageAlt: "Adorable corgi dog wrapped in a blue blanket peacefully resting on a grey sofa indoors."
+imageSource: "pexels"
+imageCredit: "Photo by Marina Zvada on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-under-blanket-lying-on-sofa-19823543/"
+imageSearchQuery: "Pembroke Welsh Corgi dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Pembroke Welsh Corgi, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

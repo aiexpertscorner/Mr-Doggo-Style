@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "greater-swiss-mountain-dog", "Greater Swiss Mou
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/greater-swiss-mountain-dog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/28860748/pexels-photo-28860748.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/28860748/pexels-photo-28860748.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Happy Bernese Mountain Dog relaxing on a comfortable dog bed indoors with sunlight streaming in."
+imageAlt: "Happy Bernese Mountain Dog relaxing on a comfortable dog bed indoors with sunlight streaming in."
+imageSource: "pexels"
+imageCredit: "Photo by Impact Dog Crates on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/bernese-mountain-dog-relaxing-on-dog-bed-indoors-28860748/"
+imageSearchQuery: "Greater Swiss Mountain Dog dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Greater Swiss Mountain Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

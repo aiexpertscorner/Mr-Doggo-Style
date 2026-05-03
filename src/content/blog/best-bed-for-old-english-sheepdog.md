@@ -33,6 +33,14 @@ awinTopicTags: ["beds", "Beds", "old-english-sheepdog", "Old English Sheepdog", 
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/old-english-sheepdog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/16622613/pexels-photo-16622613.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/16622613/pexels-photo-16622613.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up portrait of a sheepdog against a vibrant yellow background in Mexico City."
+imageAlt: "Close-up portrait of a sheepdog against a vibrant yellow background in Mexico City."
+imageSource: "pexels"
+imageCredit: "Photo by Miguel González on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-on-yellow-background-16622613/"
+imageSearchQuery: "Old English Sheepdog dog sleeping bed"
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Old English Sheepdog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
