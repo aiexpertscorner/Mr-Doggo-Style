@@ -2,7 +2,7 @@
 title: "Finnish Spitz Toy Safety and Enrichment Checklist"
 description: "A breed-aware Finnish Spitz toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "finnish-spitz"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Finnish Spitz Toy Safety and Enrichment Checklist"
 displayTitle: "Finnish Spitz toy safety and enrichment checklist"
 titlePattern: "toys-safe-play"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "finnish-spitz", "Finnish Spitz", "medium", "active", "easy", "double", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/finnish-spitz", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Finnish Spitz means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

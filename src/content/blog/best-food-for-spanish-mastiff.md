@@ -2,7 +2,7 @@
 title: "Spanish Mastiff Food Guide for Calm Energy Levels"
 description: "Compare dog food options for Spanish Mastiff dogs using breed size, calm energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "spanish-mastiff"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Spanish Mastiff Food Guide for Calm Energy Levels"
 displayTitle: "Spanish Mastiff food guidance for calm energy levels"
 titlePattern: "food-active-calm"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "spanish-mastiff", "Spanish Mastiff", "large", "calm", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/spanish-mastiff", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Spanish Mastiff well isn't as simple as grabbing the bag with the highest rating. Spanish Mastiffs are large dogs with calm energy, a Lifespan of 10–12 years, and nutritional vulnerabilities that change across their life stages.

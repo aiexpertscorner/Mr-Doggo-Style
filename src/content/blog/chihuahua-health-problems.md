@@ -2,7 +2,7 @@
 title: "Chihuahua Common Conditions and Care Planning"
 description: "Health-sensitive Chihuahua guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "chihuahua"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Chihuahua Common Conditions and Care Planning"
 displayTitle: "Chihuahua common conditions and care planning"
 titlePattern: "health-conditions"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "chihuahua", "Chihuahua", "small", "regular", "difficult", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/chihuahua", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Chihuahuas are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

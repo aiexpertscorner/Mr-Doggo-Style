@@ -2,7 +2,7 @@
 title: "Health Concerns in Bulldog: Owner Notes"
 description: "A practical overview of Bulldog health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "bulldog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Health Concerns in Bulldog: Owner Notes"
 displayTitle: "Health concerns in Bulldog: owner notes"
 titlePattern: "health-owner-notes"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "bulldog", "Bulldog", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bulldog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Bulldogs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

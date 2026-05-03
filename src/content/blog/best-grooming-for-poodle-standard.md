@@ -2,7 +2,7 @@
 title: "Best Brushes and Shampoo for Poodle (Standard)"
 description: "Shortlist Poodle (Standard) grooming products with coat care, long fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "poodle-standard"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Brushes and Shampoo for Poodle (Standard)"
 displayTitle: "Brushes and shampoo to compare for Poodle (Standard)"
 titlePattern: "groom-best-brush"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "poodle-standard", "Poodle (Standard)", "large", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/poodle-standard", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Poodle (Standard)s have a **long coat** that requires specialty/professional. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

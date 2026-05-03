@@ -2,7 +2,7 @@
 title: "Wirehaired Pointing Griffon Supplement Guide: What to Ask Your Vet"
 description: "A careful Wirehaired Pointing Griffon supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "wirehaired-pointing-griffon"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Wirehaired Pointing Griffon Supplement Guide: What to Ask Your Vet"
 displayTitle: "Wirehaired Pointing Griffon supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "wirehaired-pointing-griffon", "Wirehaired Pointing Griffon", "large", "active", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/wirehaired-pointing-griffon", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Wirehaired Pointing Griffons, as a large breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

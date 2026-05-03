@@ -2,7 +2,7 @@
 title: "Coton de Tulear Grooming Kit: Brushes, Shampoo, Nail Tools"
 description: "A breed-aware Coton de Tulear grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "coton-de-tulear"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Coton de Tulear Grooming Kit: Brushes, Shampoo, Nail Tools"
 displayTitle: "Coton de Tulear grooming kit for coat, bath, and nails"
 titlePattern: "groom-kit"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "coton-de-tulear", "Coton de Tulear", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/coton-de-tulear", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Coton de Tulears have a **long coat** that requires daily brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

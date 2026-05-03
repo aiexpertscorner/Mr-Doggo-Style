@@ -3,8 +3,8 @@ title: "Chef Paw (US) Partner Profile — PupWiki AWIN Resource"
 seoTitle: "Chef Paw (US) Partner Profile — Products, Deeplinks & PupWiki Fit"
 displayTitle: "Chef Paw (US) partner profile"
 description: "PupWiki partner profile for Chef Paw (US), including product or service focus, AWIN deeplink, topic fit, commercial notes and safe disclosure context."
-pubDate: 2026-05-02
-updatedDate: 2026-05-02
+pubDate: 2026-05-03
+updatedDate: 2026-05-03
 author: "The PupWiki Team"
 category: "PupWiki Partners"
 tags: ["partner", "awin", "dog-food", "food", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "allergies", "care", "appliances"]

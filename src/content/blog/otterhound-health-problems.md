@@ -2,7 +2,7 @@
 title: "Otterhound Lifespan, Health Risks, and Vet Care"
 description: "A practical overview of Otterhound health risks, large-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "otterhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Otterhound Lifespan, Health Risks, and Vet Care"
 displayTitle: "Otterhound lifespan, health risks, and vet care"
 titlePattern: "health-lifespan"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "otterhound", "Otterhound", "large", "regular", "moderate", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/otterhound", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Otterhounds are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

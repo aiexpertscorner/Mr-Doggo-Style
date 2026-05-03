@@ -2,7 +2,7 @@
 title: "Plott Hound Supplement Safety and Medication Questions"
 description: "Health-sensitive supplement guidance for Plott Hound owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "plott-hound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Plott Hound Supplement Safety and Medication Questions"
 displayTitle: "Plott Hound supplement safety and medication questions"
 titlePattern: "supp-medication"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "plott-hound", "Plott Hound", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/plott-hound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Plott Hounds, as a medium breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

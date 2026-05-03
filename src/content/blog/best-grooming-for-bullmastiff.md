@@ -2,7 +2,7 @@
 title: "Bullmastiff Grooming Kit: Brushes, Shampoo, Nail Tools"
 description: "Compare grooming tools for Bullmastiff dogs by short coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "bullmastiff"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Bullmastiff Grooming Kit: Brushes, Shampoo, Nail Tools"
 displayTitle: "Bullmastiff grooming kit for coat, bath, and nails"
 titlePattern: "groom-kit"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "bullmastiff", "Bullmastiff", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bullmastiff", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Bullmastiffs have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

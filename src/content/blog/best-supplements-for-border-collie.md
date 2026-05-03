@@ -2,7 +2,7 @@
 title: "Border Collie Supplement Guide for Active Dogs"
 description: "A careful Border Collie supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "border-collie"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Border Collie Supplement Guide for Active Dogs"
 displayTitle: "Border Collie supplement guide for active dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "border-collie", "Border Collie", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/border-collie", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Border Collies, as a medium breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about. Border Collies have known genetic health concerns including eye problems, deafness — targeted supplements address these directly.

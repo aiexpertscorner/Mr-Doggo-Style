@@ -2,7 +2,7 @@
 title: "Shiba Inu Health Guide: Common Issues to Watch"
 description: "A practical overview of Shiba Inu health risks, small-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "shiba-inu"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Shiba Inu Health Guide: Common Issues to Watch"
 displayTitle: "Shiba Inu health guide: common issues to watch"
 titlePattern: "health-guide"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "shiba-inu", "Shiba Inu", "small", "regular", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/shiba-inu", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Shiba Inus are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

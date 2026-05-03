@@ -2,7 +2,7 @@
 title: "Best Dog Food for American Water Spaniel: Medium Breed Picks"
 description: "Compare dog food options for American Water Spaniel dogs using breed size, regular energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "american-water-spaniel"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Dog Food for American Water Spaniel: Medium Breed Picks"
 displayTitle: "Best dog food for American Water Spaniel by life stage and size"
 titlePattern: "food-best-size"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "american-water-spaniel", "American Water Spaniel", "medium", "regular", "easy", "curly", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/american-water-spaniel", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a American Water Spaniel well isn't as simple as grabbing the bag with the highest rating. American Water Spaniels are medium dogs with regular energy, a Lifespan of 10–14 years, and nutritional vulnerabilities that change across their life stages.

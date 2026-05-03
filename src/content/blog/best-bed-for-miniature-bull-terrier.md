@@ -2,7 +2,7 @@
 title: "Miniature Bull Terrier Dog Bed Shopping Guide"
 description: "A practical Miniature Bull Terrier bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "miniature-bull-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Miniature Bull Terrier Dog Bed Shopping Guide"
 displayTitle: "Miniature Bull Terrier dog bed shopping guide"
 titlePattern: "beds-shopping"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "miniature-bull-terrier", "Miniature Bull Terrier", "medium", "active", "difficult", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/miniature-bull-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Miniature Bull Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

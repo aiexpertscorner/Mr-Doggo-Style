@@ -2,7 +2,7 @@
 title: "Finnish Lapphund Training by Temperament and Drive"
 description: "Build a Finnish Lapphund training routine around regular energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "finnish-lapphund"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Finnish Lapphund Training by Temperament and Drive"
 displayTitle: "Finnish Lapphund training by temperament and drive"
 titlePattern: "training-temperament"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "finnish-lapphund", "Finnish Lapphund", "medium", "regular", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/finnish-lapphund", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Finnish Lapphunds are easy-to-train dogs that respond best to positive reinforcement.

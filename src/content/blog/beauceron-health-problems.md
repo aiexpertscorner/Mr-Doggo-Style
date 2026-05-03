@@ -2,7 +2,7 @@
 title: "Beauceron Lifespan, Health Risks, and Vet Care"
 description: "Health-sensitive Beauceron guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "beauceron"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Mikhail Nilov on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/man-checking-on-a-dog-7468978/"
 imageSearchQuery: "Beauceron dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "beauceron", "Beauceron", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/beauceron", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Beaucerons are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

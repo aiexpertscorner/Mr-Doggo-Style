@@ -2,7 +2,7 @@
 title: "Australian Cattle Dog Beds for Cooling, Comfort, and Cleanup"
 description: "Shortlist dog beds for Australian Cattle Dog owners with joint comfort, crate fit, travel use, and cover care in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "australian-cattle-dog"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Helena Lopes on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/australian-cattle-dog-sitting-on-green-grass-35511903/"
 imageSearchQuery: "Australian Cattle Dog dog sleeping bed"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "australian-cattle-dog", "Australian Cattle Dog", "medium", "active", "moderate", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/australian-cattle-dog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 A dog spends 12–14 hours a day sleeping. For a Australian Cattle Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

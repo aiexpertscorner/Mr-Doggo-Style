@@ -2,7 +2,7 @@
 title: "Soft Coated Wheaten Terrier Supplement Shopping Guide"
 description: "A careful Soft Coated Wheaten Terrier supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "soft-coated-wheaten-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Soft Coated Wheaten Terrier Supplement Shopping Guide"
 displayTitle: "Soft Coated Wheaten Terrier supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "soft-coated-wheaten-terrier", "Soft Coated Wheaten Terrier", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/soft-coated-wheaten-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Soft Coated Wheaten Terriers, as a medium breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

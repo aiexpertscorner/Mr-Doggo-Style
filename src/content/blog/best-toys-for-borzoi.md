@@ -2,7 +2,7 @@
 title: "Borzoi Owners: Toys to Compare First"
 description: "A breed-aware Borzoi toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "borzoi"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Borzoi Owners: Toys to Compare First"
 displayTitle: "Toys Borzoi owners should compare first"
 titlePattern: "toys-owner-compare"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "borzoi", "Borzoi", "large", "active", "difficult", "long", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/borzoi", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Borzoi means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

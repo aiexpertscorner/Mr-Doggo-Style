@@ -2,7 +2,7 @@
 title: "Briard Grooming for Shedding and Sensitive Skin"
 description: "A breed-aware Briard grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "briard"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Briard Grooming for Shedding and Sensitive Skin"
 displayTitle: "Briard grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "briard", "Briard", "large", "regular", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/briard", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Briards have a **long coat** that requires daily brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

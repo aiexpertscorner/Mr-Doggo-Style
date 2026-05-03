@@ -2,7 +2,7 @@
 title: "Australian Stumpy Tail Cattle Dog Health Risks for Medium Dogs"
 description: "Health-sensitive Australian Stumpy Tail Cattle Dog guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "australian-stumpy-tail-cattle-dog"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Magda Ehlers on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/australian-cattle-dog-puppy-exploring-outdoors-34182536/"
 imageSearchQuery: "Australian Stumpy Tail Cattle Dog dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "australian-stumpy-tail-cattle-dog", "Australian Stumpy Tail Cattle Dog", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/australian-stumpy-tail-cattle-dog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Australian Stumpy Tail Cattle Dogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

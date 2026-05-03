@@ -2,7 +2,7 @@
 title: "Kerry Blue Terrier Grooming Guide by Coat Type"
 description: "A breed-aware Kerry Blue Terrier grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "kerry-blue-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Kerry Blue Terrier Grooming Guide by Coat Type"
 displayTitle: "Kerry Blue Terrier grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "kerry-blue-terrier", "Kerry Blue Terrier", "medium", "regular", "moderate", "wavy"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/kerry-blue-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Kerry Blue Terriers have a **wavy coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

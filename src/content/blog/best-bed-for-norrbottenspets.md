@@ -2,7 +2,7 @@
 title: "Best Orthopedic Beds for Norrbottenspets"
 description: "A practical Norrbottenspets bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "norrbottenspets"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Orthopedic Beds for Norrbottenspets"
 displayTitle: "Orthopedic beds to compare for Norrbottenspets"
 titlePattern: "beds-best-ortho"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "norrbottenspets", "Norrbottenspets", "medium", "active", "easy", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/norrbottenspets", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Norrbottenspets, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

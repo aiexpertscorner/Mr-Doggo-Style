@@ -2,7 +2,7 @@
 title: "Afghan Hound Common Conditions and Care Planning"
 description: "Review Afghan Hound health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "afghan-hound"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Tima Miroshnichenko on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/a-woman-in-white-long-sleeves-holding-brown-pomeranian-6234980/"
 imageSearchQuery: "Afghan Hound dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "afghan-hound", "Afghan Hound", "medium", "active", "moderate", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/afghan-hound", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Afghan Hounds are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

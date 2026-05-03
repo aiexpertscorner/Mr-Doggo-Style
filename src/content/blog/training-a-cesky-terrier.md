@@ -2,7 +2,7 @@
 title: "Cesky Terrier Daily Training Routine"
 description: "Train a Cesky Terrier with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "cesky-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Cesky Terrier Daily Training Routine"
 displayTitle: "Cesky Terrier daily training routine"
 titlePattern: "training-routine"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "cesky-terrier", "Cesky Terrier", "small", "regular", "easy", "silky", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/cesky-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Cesky Terriers are easy-to-train dogs that respond best to positive reinforcement.

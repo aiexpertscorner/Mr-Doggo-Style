@@ -2,7 +2,7 @@
 title: "Smooth Fox Terrier Health Clearances to Ask Breeders About"
 description: "A practical overview of Smooth Fox Terrier health risks, small-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "smooth-fox-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Smooth Fox Terrier Health Clearances to Ask Breeders About"
 displayTitle: "Smooth Fox Terrier health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "smooth-fox-terrier", "Smooth Fox Terrier", "small", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/smooth-fox-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Smooth Fox Terriers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

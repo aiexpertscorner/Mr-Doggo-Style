@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Small Munsterlander Pointer"
 description: "Health-sensitive supplement guidance for Small Munsterlander Pointer owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "small-munsterlander-pointer"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Small Munsterlander Pointer"
 displayTitle: "Joint supplements to ask your vet about for Small Munsterlander Pointer"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "small-munsterlander-pointer", "Small Munsterlander Pointer", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/small-munsterlander-pointer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Small Munsterlander Pointers, as a medium breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

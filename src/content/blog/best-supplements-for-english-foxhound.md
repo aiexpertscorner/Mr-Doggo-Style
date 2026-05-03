@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for English Foxhound"
 description: "A careful English Foxhound supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "english-foxhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for English Foxhound"
 displayTitle: "Joint supplements to ask your vet about for English Foxhound"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "english-foxhound", "English Foxhound", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/english-foxhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but English Foxhounds, as a large breed with active energy and a lifespan of 10–13 years, have specific supplementation needs worth knowing about.

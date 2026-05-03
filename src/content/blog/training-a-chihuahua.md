@@ -2,7 +2,7 @@
 title: "Chihuahua Puppy Training Checklist"
 description: "Train a Chihuahua with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "chihuahua"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Chihuahua Puppy Training Checklist"
 displayTitle: "Chihuahua puppy training checklist"
 titlePattern: "training-puppy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "chihuahua", "Chihuahua", "small", "regular", "difficult", "medium", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/chihuahua", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Chihuahuas rank **#67** in canine intelligence (Fair).

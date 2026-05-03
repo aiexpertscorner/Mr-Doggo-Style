@@ -2,7 +2,7 @@
 title: "Best Washable Beds for Chinese Crested"
 description: "Compare bed options for Chinese Crested dogs by small sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "chinese-crested"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Washable Beds for Chinese Crested"
 displayTitle: "Washable beds worth comparing for Chinese Crested"
 titlePattern: "beds-best-washable"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "chinese-crested", "Chinese Crested", "small", "regular", "easy", "hairless", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/chinese-crested", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Chinese Crested, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

@@ -2,7 +2,7 @@
 title: "Standard Schnauzer Health Risks for Medium Dogs"
 description: "Health-sensitive Standard Schnauzer guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "standard-schnauzer"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Standard Schnauzer Health Risks for Medium Dogs"
 displayTitle: "Standard Schnauzer health risks for medium dogs"
 titlePattern: "health-size-risk"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "standard-schnauzer", "Standard Schnauzer", "medium", "regular", "difficult", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/standard-schnauzer", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Standard Schnauzers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

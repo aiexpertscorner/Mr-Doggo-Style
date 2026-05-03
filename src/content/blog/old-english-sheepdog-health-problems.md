@@ -2,7 +2,7 @@
 title: "Old English Sheepdog Lifespan, Health Risks, and Vet Care"
 description: "Review Old English Sheepdog health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "old-english-sheepdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Old English Sheepdog Lifespan, Health Risks, and Vet Care"
 displayTitle: "Old English Sheepdog lifespan, health risks, and vet care"
 titlePattern: "health-lifespan"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "old-english-sheepdog", "Old English Sheepdog", "large", "regular", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/old-english-sheepdog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Old English Sheepdogs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

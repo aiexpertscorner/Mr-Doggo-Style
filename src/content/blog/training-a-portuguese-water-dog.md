@@ -2,7 +2,7 @@
 title: "Portuguese Water Dog Puppy Training Checklist"
 description: "A practical Portuguese Water Dog training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "portuguese-water-dog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Portuguese Water Dog Puppy Training Checklist"
 displayTitle: "Portuguese Water Dog puppy training checklist"
 titlePattern: "training-puppy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "portuguese-water-dog", "Portuguese Water Dog", "medium", "active", "easy", "curly", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/portuguese-water-dog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Portuguese Water Dogs are easy-to-train dogs that respond best to positive reinforcement.

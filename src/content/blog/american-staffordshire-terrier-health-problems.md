@@ -2,7 +2,7 @@
 title: "Health Concerns in American Staffordshire Terrier: Owner Notes"
 description: "Health-sensitive American Staffordshire Terrier guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "american-staffordshire-terrier"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Joshua B on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/playful-brown-pit-bull-with-toy-in-sunshine-35611837/"
 imageSearchQuery: "American Staffordshire Terrier dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "american-staffordshire-terrier", "American Staffordshire Terrier", "large", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/american-staffordshire-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 American Staffordshire Terriers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

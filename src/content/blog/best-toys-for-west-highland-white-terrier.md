@@ -2,7 +2,7 @@
 title: "West Highland White Terrier Boredom Toys Worth Comparing"
 description: "Shortlist practical toys for West Highland White Terrier owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "west-highland-white-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "West Highland White Terrier Boredom Toys Worth Comparing"
 displayTitle: "West Highland White Terrier boredom toys worth comparing"
 titlePattern: "toys-boredom"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "west-highland-white-terrier", "West Highland White Terrier", "small", "regular", "easy", "rough", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/west-highland-white-terrier", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a West Highland White Terrier means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

@@ -2,7 +2,7 @@
 title: "Black Russian Terrier Dog Food for Large Breed Needs"
 description: "Breed-aware food guidance for Black Russian Terrier owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "black-russian-terrier"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Black Russian Terrier Dog Food for Large Breed Needs"
 displayTitle: "Black Russian Terrier dog food matched to large breed needs"
 titlePattern: "food-large-breed"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "black-russian-terrier", "Black Russian Terrier", "large", "active", "easy", "wiry", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/black-russian-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Black Russian Terrier well isn't as simple as grabbing the bag with the highest rating. Black Russian Terriers are large dogs with active energy, a Lifespan of 10–12 years, and nutritional vulnerabilities that change across their life stages.

@@ -2,7 +2,7 @@
 title: "Best Brushes and Shampoo for Clumber Spaniel"
 description: "Shortlist Clumber Spaniel grooming products with coat care, silky fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "clumber-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Brushes and Shampoo for Clumber Spaniel"
 displayTitle: "Brushes and shampoo to compare for Clumber Spaniel"
 titlePattern: "groom-best-brush"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "clumber-spaniel", "Clumber Spaniel", "large", "regular", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/clumber-spaniel", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Clumber Spaniels have a **silky coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

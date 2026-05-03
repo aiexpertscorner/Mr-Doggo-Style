@@ -2,7 +2,7 @@
 title: "Durable Toys for Yakutian Laika: Chew and Play Shortlist"
 description: "Compare toys for Yakutian Laika dogs by active energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "yakutian-laika"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Durable Toys for Yakutian Laika: Chew and Play Shortlist"
 displayTitle: "Durable toys to compare for Yakutian Laika"
 titlePattern: "toys-durable"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "yakutian-laika", "Yakutian Laika", "medium", "active", "moderate", "double", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/yakutian-laika", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Yakutian Laika means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

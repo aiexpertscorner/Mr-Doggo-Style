@@ -2,7 +2,7 @@
 title: "Belgian Tervuren Supplement Care Plan Questions"
 description: "A careful Belgian Tervuren supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "belgian-tervuren"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Belgian Tervuren Supplement Care Plan Questions"
 displayTitle: "Belgian Tervuren supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "belgian-tervuren", "Belgian Tervuren", "large", "active", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/belgian-tervuren", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Belgian Tervurens, as a large breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about. Belgian Tervurens have known genetic health concerns including epilepsy, eye problems — targeted supplements address these directly.

@@ -2,7 +2,7 @@
 title: "Best Miniature Bull Terrier Grooming Tools for Medium Coats"
 description: "Shortlist Miniature Bull Terrier grooming products with coat care, medium fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "miniature-bull-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Miniature Bull Terrier Grooming Tools for Medium Coats"
 displayTitle: "Miniature Bull Terrier grooming tools for medium coats"
 titlePattern: "groom-best-coat"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "miniature-bull-terrier", "Miniature Bull Terrier", "medium", "active", "difficult"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/miniature-bull-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Miniature Bull Terriers have a **medium coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

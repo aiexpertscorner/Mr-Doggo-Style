@@ -2,7 +2,7 @@
 title: "Kromfohrlander Training Plan for Regular Dogs"
 description: "Train a Kromfohrlander with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "kromfohrlander"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Kromfohrlander Training Plan for Regular Dogs"
 displayTitle: "Kromfohrlander training plan for regular dogs"
 titlePattern: "training-energy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "kromfohrlander", "Kromfohrlander", "medium", "regular", "easy", "rough", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/kromfohrlander", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Kromfohrlanders are easy-to-train dogs that respond best to positive reinforcement.

@@ -2,7 +2,7 @@
 title: "Bergamasco Sheepdog Puppy Training Checklist"
 description: "Train a Bergamasco Sheepdog with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "bergamasco-sheepdog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Bergamasco Sheepdog Puppy Training Checklist"
 displayTitle: "Bergamasco Sheepdog puppy training checklist"
 titlePattern: "training-puppy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "bergamasco-sheepdog", "Bergamasco Sheepdog", "large", "calm", "easy", "corded", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/bergamasco-sheepdog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Bergamasco Sheepdogs are easy-to-train dogs that respond best to positive reinforcement.

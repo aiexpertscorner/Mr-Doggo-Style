@@ -2,7 +2,7 @@
 title: "Black and Tan Coonhound Supplements for Joints, Skin, and Gut Health"
 description: "Health-sensitive supplement guidance for Black and Tan Coonhound owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "black-and-tan-coonhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Black and Tan Coonhound Supplements for Joints, Skin, and Gut Health"
 displayTitle: "Black and Tan Coonhound supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "black-and-tan-coonhound", "Black and Tan Coonhound", "large", "regular", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/black-and-tan-coonhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Black and Tan Coonhounds, as a large breed with regular energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

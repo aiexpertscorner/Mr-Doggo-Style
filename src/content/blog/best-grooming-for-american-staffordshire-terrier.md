@@ -2,7 +2,7 @@
 title: "Best Brushes and Shampoo for American Staffordshire Terrier"
 description: "Shortlist American Staffordshire Terrier grooming products with coat care, short fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "american-staffordshire-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Brushes and Shampoo for American Staffordshire Terrier"
 displayTitle: "Brushes and shampoo to compare for American Staffordshire Terrier"
 titlePattern: "groom-best-brush"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "american-staffordshire-terrier", "American Staffordshire Terrier", "large", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/american-staffordshire-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 American Staffordshire Terriers have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

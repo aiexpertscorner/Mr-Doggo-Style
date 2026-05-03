@@ -2,7 +2,7 @@
 title: "Spanish Water Dog Toys for Indoor Play, Fetch, and Chewing"
 description: "A breed-aware Spanish Water Dog toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "spanish-water-dog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Spanish Water Dog Toys for Indoor Play, Fetch, and Chewing"
 displayTitle: "Spanish Water Dog toys for indoor play, fetch, and chewing"
 titlePattern: "toys-indoor-outdoor"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "spanish-water-dog", "Spanish Water Dog", "medium", "active", "easy", "curly", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/spanish-water-dog", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Spanish Water Dog means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

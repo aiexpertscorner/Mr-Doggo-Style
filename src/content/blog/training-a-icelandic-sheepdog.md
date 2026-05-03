@@ -2,7 +2,7 @@
 title: "Icelandic Sheepdog Training Mistakes and Better Fixes"
 description: "A practical Icelandic Sheepdog training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "icelandic-sheepdog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Icelandic Sheepdog Training Mistakes and Better Fixes"
 displayTitle: "Icelandic Sheepdog training mistakes and better fixes"
 titlePattern: "training-mistakes"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "icelandic-sheepdog", "Icelandic Sheepdog", "medium", "active", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/icelandic-sheepdog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Icelandic Sheepdogs are easy-to-train dogs that respond best to positive reinforcement.

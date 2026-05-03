@@ -2,7 +2,7 @@
 title: "Tibetan Terrier Supplement Guide: What to Ask Your Vet"
 description: "Compare supplement categories for Tibetan Terrier dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "tibetan-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Tibetan Terrier Supplement Guide: What to Ask Your Vet"
 displayTitle: "Tibetan Terrier supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "tibetan-terrier", "Tibetan Terrier", "medium", "active", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/tibetan-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Tibetan Terriers, as a medium breed with active energy and a lifespan of 15–16 years, have specific supplementation needs worth knowing about.

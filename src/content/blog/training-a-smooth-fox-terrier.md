@@ -2,7 +2,7 @@
 title: "Smooth Fox Terrier Training Plan for Active Dogs"
 description: "Build a Smooth Fox Terrier training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "smooth-fox-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Smooth Fox Terrier Training Plan for Active Dogs"
 displayTitle: "Smooth Fox Terrier training plan for active dogs"
 titlePattern: "training-energy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "smooth-fox-terrier", "Smooth Fox Terrier", "small", "active", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/smooth-fox-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Smooth Fox Terriers are easy-to-train dogs that respond best to positive reinforcement.

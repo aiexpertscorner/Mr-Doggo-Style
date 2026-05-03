@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Affenpinscher"
 description: "A careful Affenpinscher supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "affenpinscher"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Affenpinscher"
 displayTitle: "Joint supplements to ask your vet about for Affenpinscher"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "affenpinscher", "Affenpinscher", "small", "regular", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/affenpinscher", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Affenpinschers, as a small breed with regular energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

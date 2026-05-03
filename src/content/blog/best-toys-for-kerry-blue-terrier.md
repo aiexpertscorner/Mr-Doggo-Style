@@ -2,7 +2,7 @@
 title: "Kerry Blue Terrier Puzzle Toy and Chew Guide"
 description: "A breed-aware Kerry Blue Terrier toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "kerry-blue-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Kerry Blue Terrier Puzzle Toy and Chew Guide"
 displayTitle: "Kerry Blue Terrier puzzle toy and chew guide"
 titlePattern: "toys-puzzle"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "kerry-blue-terrier", "Kerry Blue Terrier", "medium", "regular", "moderate", "wavy", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/kerry-blue-terrier", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Kerry Blue Terrier means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

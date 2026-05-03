@@ -2,7 +2,7 @@
 title: "Rafeiro do Alentejo Leash Training and Recall Guide"
 description: "Train a Rafeiro do Alentejo with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "rafeiro-do-alentejo"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Rafeiro do Alentejo Leash Training and Recall Guide"
 displayTitle: "Rafeiro do Alentejo leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "rafeiro-do-alentejo", "Rafeiro do Alentejo", "large", "calm", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/rafeiro-do-alentejo", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Rafeiro do Alentejos are easy-to-train dogs that respond best to positive reinforcement.

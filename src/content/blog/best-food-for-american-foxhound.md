@@ -2,7 +2,7 @@
 title: "Best American Foxhound Food for Puppy, Adult, and Senior Dogs"
 description: "Review American Foxhound dog food choices by life stage, weight control, digestion, and large-breed needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "american-foxhound"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best American Foxhound Food for Puppy, Adult, and Senior Dogs"
 displayTitle: "American Foxhound food guide for puppy, adult, and senior stages"
 titlePattern: "food-best-puppy-adult"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "american-foxhound", "American Foxhound", "large", "active", "difficult", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/american-foxhound", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a American Foxhound well isn't as simple as grabbing the bag with the highest rating. American Foxhounds are large dogs with active energy, a Lifespan of 11–13 years, and nutritional vulnerabilities that change across their life stages.

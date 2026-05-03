@@ -2,7 +2,7 @@
 title: "Welsh Springer Spaniel Supplement Guide: What to Ask Your Vet"
 description: "Health-sensitive supplement guidance for Welsh Springer Spaniel owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "welsh-springer-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Welsh Springer Spaniel Supplement Guide: What to Ask Your Vet"
 displayTitle: "Welsh Springer Spaniel supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "welsh-springer-spaniel", "Welsh Springer Spaniel", "medium", "active", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/welsh-springer-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Welsh Springer Spaniels, as a medium breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about. Welsh Springer Spaniels have known genetic health concerns including hip problems — targeted supplements address these directly.

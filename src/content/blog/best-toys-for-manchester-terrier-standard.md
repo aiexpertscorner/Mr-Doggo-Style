@@ -2,7 +2,7 @@
 title: "Best Manchester Terrier (Standard) Toys for Regular Energy Dogs"
 description: "Compare toys for Manchester Terrier (Standard) dogs by regular energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "manchester-terrier-standard"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Best Manchester Terrier (Standard) Toys for Regular Energy Dogs"
 displayTitle: "Toy picks for regular Manchester Terrier (Standard) dogs"
 titlePattern: "toys-best-active"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "manchester-terrier-standard", "Manchester Terrier (Standard)", "small", "regular", "easy", "medium", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/manchester-terrier-standard", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Manchester Terrier (Standard) means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

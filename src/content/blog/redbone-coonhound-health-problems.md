@@ -2,7 +2,7 @@
 title: "Redbone Coonhound Screening and Prevention Checklist"
 description: "A practical overview of Redbone Coonhound health risks, large-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "redbone-coonhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Redbone Coonhound Screening and Prevention Checklist"
 displayTitle: "Redbone Coonhound screening and prevention checklist"
 titlePattern: "health-screening"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "redbone-coonhound", "Redbone Coonhound", "large", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/redbone-coonhound", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Redbone Coonhounds are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

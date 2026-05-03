@@ -2,7 +2,7 @@
 title: "Health Concerns in Braque Francais Pyrenean: Owner Notes"
 description: "Health-sensitive Braque Francais Pyrenean guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "braque-francais-pyrenean"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Health Concerns in Braque Francais Pyrenean: Owner Notes"
 displayTitle: "Health concerns in Braque Francais Pyrenean: owner notes"
 titlePattern: "health-owner-notes"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "braque-francais-pyrenean", "Braque Francais Pyrenean", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/braque-francais-pyrenean", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Braque Francais Pyreneans are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

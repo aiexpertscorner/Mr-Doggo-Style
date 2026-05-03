@@ -2,7 +2,7 @@
 title: "Braque du Bourbonnais Beds for Cooling, Comfort, and Cleanup"
 description: "Compare bed options for Braque du Bourbonnais dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "braque-du-bourbonnais"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Braque du Bourbonnais Beds for Cooling, Comfort, and Cleanup"
 displayTitle: "Braque du Bourbonnais beds for cooling, comfort, and cleanup"
 titlePattern: "beds-cooling"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "braque-du-bourbonnais", "Braque du Bourbonnais", "medium", "regular", "easy", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/braque-du-bourbonnais", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Braque du Bourbonnais, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

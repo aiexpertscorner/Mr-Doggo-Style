@@ -2,7 +2,7 @@
 title: "Training a Clumber Spaniel: Foundation Plan"
 description: "Build a Clumber Spaniel training routine around regular energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "clumber-spaniel"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Training a Clumber Spaniel: Foundation Plan"
 displayTitle: "Training a Clumber Spaniel: foundation plan"
 titlePattern: "training-foundation"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "clumber-spaniel", "Clumber Spaniel", "large", "regular", "easy", "silky", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/clumber-spaniel", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Clumber Spaniels rank **#37** in canine intelligence (Above average).

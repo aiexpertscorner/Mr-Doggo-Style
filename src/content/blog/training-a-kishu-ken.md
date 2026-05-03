@@ -2,7 +2,7 @@
 title: "Kishu Ken Daily Training Routine"
 description: "Build a Kishu Ken training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "kishu-ken"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Kishu Ken Daily Training Routine"
 displayTitle: "Kishu Ken daily training routine"
 titlePattern: "training-routine"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "kishu-ken", "Kishu Ken", "medium", "active", "difficult", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/kishu-ken", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Kishu Kens are difficult-to-train dogs that respond best to positive reinforcement.

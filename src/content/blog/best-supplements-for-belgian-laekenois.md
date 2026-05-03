@@ -2,7 +2,7 @@
 title: "Belgian Laekenois Supplement Shopping Guide"
 description: "Health-sensitive supplement guidance for Belgian Laekenois owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "belgian-laekenois"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Belgian Laekenois Supplement Shopping Guide"
 displayTitle: "Belgian Laekenois supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "belgian-laekenois", "Belgian Laekenois", "medium", "active", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/belgian-laekenois", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Belgian Laekenoiss, as a medium breed with active energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

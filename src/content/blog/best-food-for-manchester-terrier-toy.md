@@ -2,7 +2,7 @@
 title: "Manchester Terrier (Toy) Food Guide: Formulas by Life Stage"
 description: "Compare dog food options for Manchester Terrier (Toy) dogs using breed size, regular energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "manchester-terrier-toy"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Manchester Terrier (Toy) Food Guide: Formulas by Life Stage"
 displayTitle: "Manchester Terrier (Toy) nutrition guide by life stage"
 titlePattern: "food-guide-life-stage"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "manchester-terrier-toy", "Manchester Terrier (Toy)", "small", "regular", "easy", "medium", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/manchester-terrier-toy", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Manchester Terrier (Toy) well isn't as simple as grabbing the bag with the highest rating. Manchester Terrier (Toy)s are small dogs with regular energy, a Lifespan of 15–17 years, and nutritional vulnerabilities that change across their life stages.

@@ -2,7 +2,7 @@
 title: "Cane Corso Supplement Checklist for Safer Buying"
 description: "A careful Cane Corso supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "cane-corso"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Cane Corso Supplement Checklist for Safer Buying"
 displayTitle: "Cane Corso supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "cane-corso", "Cane Corso", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/cane-corso", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Cane Corsos, as a medium breed with active energy and a lifespan of 9–12 years, have specific supplementation needs worth knowing about.

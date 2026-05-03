@@ -2,7 +2,7 @@
 title: "English Foxhound Grooming Guide by Coat Type"
 description: "Shortlist English Foxhound grooming products with coat care, short fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "english-foxhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "English Foxhound Grooming Guide by Coat Type"
 displayTitle: "English Foxhound grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "english-foxhound", "English Foxhound", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/english-foxhound", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 English Foxhounds have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

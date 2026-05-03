@@ -2,7 +2,7 @@
 title: "Vizsla Health Problems: Risks and Screening"
 description: "Review Vizsla health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "vizsla"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Vizsla Health Problems: Risks and Screening"
 displayTitle: "Vizsla health problems: risks and screening"
 titlePattern: "health-problems"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "vizsla", "Vizsla", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/vizsla", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Vizslas are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

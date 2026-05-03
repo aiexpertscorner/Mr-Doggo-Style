@@ -2,7 +2,7 @@
 title: "Greater Swiss Mountain Dog Supplement Guide for Active Dogs"
 description: "Health-sensitive supplement guidance for Greater Swiss Mountain Dog owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "greater-swiss-mountain-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Greater Swiss Mountain Dog Supplement Guide for Active Dogs"
 displayTitle: "Greater Swiss Mountain Dog supplement guide for active dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "greater-swiss-mountain-dog", "Greater Swiss Mountain Dog", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/greater-swiss-mountain-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Greater Swiss Mountain Dogs, as a large breed with active energy and a lifespan of 8–11 years, have specific supplementation needs worth knowing about.

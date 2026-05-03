@@ -2,7 +2,7 @@
 title: "Portuguese Podengo Pequeno Supplement Care Plan Questions"
 description: "Health-sensitive supplement guidance for Portuguese Podengo Pequeno owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "portuguese-podengo-pequeno"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Portuguese Podengo Pequeno Supplement Care Plan Questions"
 displayTitle: "Portuguese Podengo Pequeno supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "portuguese-podengo-pequeno", "Portuguese Podengo Pequeno", "small", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/portuguese-podengo-pequeno", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Portuguese Podengo Pequenos, as a small breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

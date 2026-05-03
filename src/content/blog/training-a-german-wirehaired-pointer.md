@@ -2,7 +2,7 @@
 title: "German Wirehaired Pointer Owner Training Checklist"
 description: "A practical German Wirehaired Pointer training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "german-wirehaired-pointer"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "German Wirehaired Pointer Owner Training Checklist"
 displayTitle: "German Wirehaired Pointer owner training checklist"
 titlePattern: "training-owner"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "german-wirehaired-pointer", "German Wirehaired Pointer", "large", "active", "easy", "wiry", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/german-wirehaired-pointer", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 German Wirehaired Pointers are easy-to-train dogs that respond best to positive reinforcement.

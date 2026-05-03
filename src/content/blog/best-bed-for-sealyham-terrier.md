@@ -2,7 +2,7 @@
 title: "Best Washable Beds for Sealyham Terrier"
 description: "Compare bed options for Sealyham Terrier dogs by small sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "sealyham-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Washable Beds for Sealyham Terrier"
 displayTitle: "Washable beds worth comparing for Sealyham Terrier"
 titlePattern: "beds-best-washable"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "sealyham-terrier", "Sealyham Terrier", "small", "regular", "difficult", "wiry", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/sealyham-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Sealyham Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

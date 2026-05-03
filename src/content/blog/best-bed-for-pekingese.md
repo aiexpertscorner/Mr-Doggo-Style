@@ -2,7 +2,7 @@
 title: "Best Dog Beds for Small Pekingese Dogs"
 description: "Shortlist dog beds for Pekingese owners with joint comfort, crate fit, travel use, and cover care in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "pekingese"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Dog Beds for Small Pekingese Dogs"
 displayTitle: "Dog beds for small Pekingese dogs"
 titlePattern: "beds-best-large-small"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "pekingese", "Pekingese", "small", "calm", "moderate", "long", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/pekingese", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Pekingese, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

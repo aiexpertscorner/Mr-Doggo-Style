@@ -2,7 +2,7 @@
 title: "Silky Terrier Grooming Guide by Coat Type"
 description: "A breed-aware Silky Terrier grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "silky-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Silky Terrier Grooming Guide by Coat Type"
 displayTitle: "Silky Terrier grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "silky-terrier", "Silky Terrier", "small", "regular", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/silky-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Silky Terriers have a **medium coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

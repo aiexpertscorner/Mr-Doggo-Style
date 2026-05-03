@@ -2,7 +2,7 @@
 title: "Kishu Ken Health Notes for Practical Owners"
 description: "Review Kishu Ken health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "kishu-ken"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Kishu Ken Health Notes for Practical Owners"
 displayTitle: "Kishu Ken health notes for practical owners"
 titlePattern: "health-practical"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "kishu-ken", "Kishu Ken", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/kishu-ken", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Kishu Kens are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

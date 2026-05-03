@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Cardigan Welsh Corgi"
 description: "Health-sensitive supplement guidance for Cardigan Welsh Corgi owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "cardigan-welsh-corgi"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Cardigan Welsh Corgi"
 displayTitle: "Joint supplements to ask your vet about for Cardigan Welsh Corgi"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "cardigan-welsh-corgi", "Cardigan Welsh Corgi", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/cardigan-welsh-corgi", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Cardigan Welsh Corgis, as a medium breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "German Shorthaired Pointer Toy Guide for Daily Enrichment"
 description: "Compare toys for German Shorthaired Pointer dogs by active energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "german-shorthaired-pointer"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "German Shorthaired Pointer Toy Guide for Daily Enrichment"
 displayTitle: "German Shorthaired Pointer toy guide for daily enrichment"
 titlePattern: "toys-guide-daily"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "german-shorthaired-pointer", "German Shorthaired Pointer", "large", "active", "easy", "short", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/german-shorthaired-pointer", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a German Shorthaired Pointer means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

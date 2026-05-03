@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Redbone Coonhound"
 description: "Health-sensitive supplement guidance for Redbone Coonhound owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "redbone-coonhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Redbone Coonhound"
 displayTitle: "Skin and gut supplement options for Redbone Coonhound"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "redbone-coonhound", "Redbone Coonhound", "large", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/redbone-coonhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Redbone Coonhounds, as a large breed with regular energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

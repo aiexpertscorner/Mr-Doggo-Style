@@ -2,7 +2,7 @@
 title: "Sloughi Preventive Care and Warning Signs"
 description: "Review Sloughi health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "sloughi"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Sloughi Preventive Care and Warning Signs"
 displayTitle: "Sloughi preventive care and warning signs"
 titlePattern: "health-prevention"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "sloughi", "Sloughi", "medium", "regular", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/sloughi", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Sloughis are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

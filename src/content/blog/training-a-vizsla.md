@@ -2,7 +2,7 @@
 title: "Vizsla Training Gear and First Skills"
 description: "A practical Vizsla training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "vizsla"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Vizsla Training Gear and First Skills"
 displayTitle: "Vizsla training gear and first skills"
 titlePattern: "training-gear"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "vizsla", "Vizsla", "medium", "active", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/vizsla", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Vizslas are easy-to-train dogs that respond best to positive reinforcement.

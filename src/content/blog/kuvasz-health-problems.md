@@ -2,7 +2,7 @@
 title: "Kuvasz Vet Questions for Common Health Risks"
 description: "Health-sensitive Kuvasz guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "kuvasz"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Kuvasz Vet Questions for Common Health Risks"
 displayTitle: "Kuvasz vet questions for common health risks"
 titlePattern: "health-vet-questions"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "kuvasz", "Kuvasz", "large", "regular", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/kuvasz", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Kuvaszs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

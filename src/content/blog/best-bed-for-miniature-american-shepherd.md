@@ -2,7 +2,7 @@
 title: "Miniature American Shepherd Beds for Cooling, Comfort, and Cleanup"
 description: "Compare bed options for Miniature American Shepherd dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "miniature-american-shepherd"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Miniature American Shepherd Beds for Cooling, Comfort, and Cleanup"
 displayTitle: "Miniature American Shepherd beds for cooling, comfort, and cleanup"
 titlePattern: "beds-cooling"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "miniature-american-shepherd", "Miniature American Shepherd", "medium", "active", "easy", "long", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/miniature-american-shepherd", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Miniature American Shepherd, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

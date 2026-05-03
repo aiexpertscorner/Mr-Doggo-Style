@@ -2,7 +2,7 @@
 title: "Soft Coated Wheaten Terrier Training Guide: Recall, Leash, and Manners"
 description: "A practical Soft Coated Wheaten Terrier training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "soft-coated-wheaten-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Soft Coated Wheaten Terrier Training Guide: Recall, Leash, and Manners"
 displayTitle: "Soft Coated Wheaten Terrier training guide for recall, leash, and manners"
 titlePattern: "training-guide"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "soft-coated-wheaten-terrier", "Soft Coated Wheaten Terrier", "medium", "active", "difficult", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/soft-coated-wheaten-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Soft Coated Wheaten Terriers are difficult-to-train dogs that respond best to positive reinforcement.

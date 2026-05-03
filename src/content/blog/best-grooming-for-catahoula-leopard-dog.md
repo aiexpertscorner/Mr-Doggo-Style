@@ -2,7 +2,7 @@
 title: "Best Brushes and Shampoo for Catahoula Leopard Dog"
 description: "A breed-aware Catahoula Leopard Dog grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "catahoula-leopard-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Brushes and Shampoo for Catahoula Leopard Dog"
 displayTitle: "Brushes and shampoo to compare for Catahoula Leopard Dog"
 titlePattern: "groom-best-brush"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "catahoula-leopard-dog", "Catahoula Leopard Dog", "large", "active", "difficult", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/catahoula-leopard-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Catahoula Leopard Dogs have a **medium coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

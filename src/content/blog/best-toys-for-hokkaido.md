@@ -2,7 +2,7 @@
 title: "Hokkaido Toy Guide for Daily Enrichment"
 description: "A breed-aware Hokkaido toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "hokkaido"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Hokkaido Toy Guide for Daily Enrichment"
 displayTitle: "Hokkaido toy guide for daily enrichment"
 titlePattern: "toys-guide-daily"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "hokkaido", "Hokkaido", "large", "active", "easy", "double", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/hokkaido", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Hokkaido means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

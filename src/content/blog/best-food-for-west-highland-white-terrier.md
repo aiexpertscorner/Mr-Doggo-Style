@@ -2,7 +2,7 @@
 title: "West Highland White Terrier Dog Food for Small Breed Needs"
 description: "Breed-aware food guidance for West Highland White Terrier owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "west-highland-white-terrier"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "West Highland White Terrier Dog Food for Small Breed Needs"
 displayTitle: "West Highland White Terrier dog food matched to small breed needs"
 titlePattern: "food-large-breed"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "west-highland-white-terrier", "West Highland White Terrier", "small", "regular", "easy", "rough", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/west-highland-white-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a West Highland White Terrier well isn't as simple as grabbing the bag with the highest rating. West Highland White Terriers are small dogs with regular energy, a Average lifespan of 1.3 years, and nutritional vulnerabilities that change across their life stages.

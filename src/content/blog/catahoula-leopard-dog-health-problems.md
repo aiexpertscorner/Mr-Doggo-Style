@@ -2,7 +2,7 @@
 title: "Catahoula Leopard Dog Health Risks for Large Dogs"
 description: "Health-sensitive Catahoula Leopard Dog guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "catahoula-leopard-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Catahoula Leopard Dog Health Risks for Large Dogs"
 displayTitle: "Catahoula Leopard Dog health risks for large dogs"
 titlePattern: "health-size-risk"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "catahoula-leopard-dog", "Catahoula Leopard Dog", "large", "active", "difficult", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/catahoula-leopard-dog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Catahoula Leopard Dogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

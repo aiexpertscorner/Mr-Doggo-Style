@@ -2,7 +2,7 @@
 title: "Puli Supplement Care Plan Questions"
 description: "A careful Puli supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "puli"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Puli Supplement Care Plan Questions"
 displayTitle: "Puli supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "puli", "Puli", "medium", "regular", "difficult", "corded"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/puli", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Pulis, as a medium breed with regular energy and a lifespan of 10–15 years, have specific supplementation needs worth knowing about.

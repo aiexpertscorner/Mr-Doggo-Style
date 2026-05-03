@@ -2,7 +2,7 @@
 title: "Samoyed Supplement Safety and Medication Questions"
 description: "Health-sensitive supplement guidance for Samoyed owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "samoyed"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Samoyed Supplement Safety and Medication Questions"
 displayTitle: "Samoyed supplement safety and medication questions"
 titlePattern: "supp-medication"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "samoyed", "Samoyed", "medium", "active", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/samoyed", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Samoyeds, as a medium breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about. Samoyeds have known genetic health concerns including hip problems — targeted supplements address these directly.

@@ -2,7 +2,7 @@
 title: "Cavalier King Charles Spaniel Health Notes for Practical Owners"
 description: "A practical overview of Cavalier King Charles Spaniel health risks, small-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "cavalier-king-charles-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Cavalier King Charles Spaniel Health Notes for Practical Owners"
 displayTitle: "Cavalier King Charles Spaniel health notes for practical owners"
 titlePattern: "health-practical"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "cavalier-king-charles-spaniel", "Cavalier King Charles Spaniel", "small", "calm", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/cavalier-king-charles-spaniel", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Cavalier King Charles Spaniels are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

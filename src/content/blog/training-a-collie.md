@@ -2,7 +2,7 @@
 title: "Collie Socialisation and Obedience Guide"
 description: "A practical Collie training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "collie"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Collie Socialisation and Obedience Guide"
 displayTitle: "Collie socialisation and obedience guide"
 titlePattern: "training-social"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "collie", "Collie", "large", "regular", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/collie", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Collies are easy-to-train dogs that respond best to positive reinforcement.

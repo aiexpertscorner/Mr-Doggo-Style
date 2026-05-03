@@ -2,7 +2,7 @@
 title: "How to Train a Greyhound: Practical Roadmap"
 description: "Train a Greyhound with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "greyhound"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "How to Train a Greyhound: Practical Roadmap"
 displayTitle: "How to train a Greyhound: practical roadmap"
 titlePattern: "training-how-to"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "greyhound", "Greyhound", "large", "active", "difficult", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/greyhound", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Greyhounds rank **#46** in canine intelligence (Average).

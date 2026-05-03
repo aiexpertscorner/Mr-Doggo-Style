@@ -2,7 +2,7 @@
 title: "West Highland White Terrier Screening and Prevention Checklist"
 description: "Health-sensitive West Highland White Terrier guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "west-highland-white-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "West Highland White Terrier Screening and Prevention Checklist"
 displayTitle: "West Highland White Terrier screening and prevention checklist"
 titlePattern: "health-screening"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "west-highland-white-terrier", "West Highland White Terrier", "small", "regular", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/west-highland-white-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 West Highland White Terriers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

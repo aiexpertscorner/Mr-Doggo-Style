@@ -2,7 +2,7 @@
 title: "Bolognese Grooming for Shedding and Sensitive Skin"
 description: "A breed-aware Bolognese grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "bolognese"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Bolognese Grooming for Shedding and Sensitive Skin"
 displayTitle: "Bolognese grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "bolognese", "Bolognese", "small", "calm", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bolognese", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Bologneses have a **long coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

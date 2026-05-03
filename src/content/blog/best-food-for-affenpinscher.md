@@ -2,7 +2,7 @@
 title: "Affenpinscher Nutrition Shortlist for Everyday Feeding"
 description: "Review Affenpinscher dog food choices by life stage, weight control, digestion, and small-breed needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "affenpinscher"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Affenpinscher Nutrition Shortlist for Everyday Feeding"
 displayTitle: "Affenpinscher nutrition shortlist for everyday feeding"
 titlePattern: "food-nutrition-shortlist"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "affenpinscher", "Affenpinscher", "small", "regular", "easy", "rough", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/affenpinscher", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Affenpinscher well isn't as simple as grabbing the bag with the highest rating. Affenpinschers are small dogs with regular energy, a Average lifespan of 11.4 years, and nutritional vulnerabilities that change across their life stages.

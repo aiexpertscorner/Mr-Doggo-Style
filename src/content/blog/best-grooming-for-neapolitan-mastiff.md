@@ -2,7 +2,7 @@
 title: "Neapolitan Mastiff Coat Care Guide for Short Fur"
 description: "Compare grooming tools for Neapolitan Mastiff dogs by short coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "neapolitan-mastiff"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Neapolitan Mastiff Coat Care Guide for Short Fur"
 displayTitle: "Neapolitan Mastiff coat care guide for short fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "neapolitan-mastiff", "Neapolitan Mastiff", "large", "regular", "moderate", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/neapolitan-mastiff", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Neapolitan Mastiffs have a **short coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

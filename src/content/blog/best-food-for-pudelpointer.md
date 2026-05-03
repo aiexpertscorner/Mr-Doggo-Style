@@ -2,7 +2,7 @@
 title: "Pudelpointer Nutrition Guide for Large Regular Dogs"
 description: "Breed-aware food guidance for Pudelpointer owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "pudelpointer"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Pudelpointer Nutrition Guide for Large Regular Dogs"
 displayTitle: "Nutrition notes for large regular Pudelpointer dogs"
 titlePattern: "food-size-energy"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "pudelpointer", "Pudelpointer", "large", "regular", "easy", "wiry", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/pudelpointer", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Pudelpointer well isn't as simple as grabbing the bag with the highest rating. Pudelpointers are large dogs with regular energy, a Lifespan of 14–14 years, and nutritional vulnerabilities that change across their life stages.

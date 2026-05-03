@@ -2,7 +2,7 @@
 title: "Braque Francais Pyrenean Bed Guide: Sleep, Joints, and Cleanup"
 description: "A practical Braque Francais Pyrenean bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "braque-francais-pyrenean"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Braque Francais Pyrenean Bed Guide: Sleep, Joints, and Cleanup"
 displayTitle: "Braque Francais Pyrenean bed guide for sleep, joints, and cleanup"
 titlePattern: "beds-guide-sleep"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "braque-francais-pyrenean", "Braque Francais Pyrenean", "medium", "active", "easy", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/braque-francais-pyrenean", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Braque Francais Pyrenean, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

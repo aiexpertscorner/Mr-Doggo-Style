@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Basset Fauve de Bretagne"
 description: "A careful Basset Fauve de Bretagne supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "basset-fauve-de-bretagne"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Basset Fauve de Bretagne"
 displayTitle: "Skin and gut supplement options for Basset Fauve de Bretagne"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "basset-fauve-de-bretagne", "Basset Fauve de Bretagne", "medium", "regular", "moderate", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/basset-fauve-de-bretagne", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Basset Fauve de Bretagnes, as a medium breed with regular energy and a lifespan of 12–12 years, have specific supplementation needs worth knowing about.

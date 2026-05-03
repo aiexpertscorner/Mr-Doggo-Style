@@ -2,7 +2,7 @@
 title: "Boykin Spaniel Health Notes for Practical Owners"
 description: "A practical overview of Boykin Spaniel health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "boykin-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Boykin Spaniel Health Notes for Practical Owners"
 displayTitle: "Boykin Spaniel health notes for practical owners"
 titlePattern: "health-practical"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "boykin-spaniel", "Boykin Spaniel", "medium", "regular", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/boykin-spaniel", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Boykin Spaniels are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

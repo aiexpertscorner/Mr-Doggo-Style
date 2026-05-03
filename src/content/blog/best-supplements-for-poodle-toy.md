@@ -2,7 +2,7 @@
 title: "Poodle (Toy) Supplement Safety and Medication Questions"
 description: "A careful Poodle (Toy) supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "poodle-toy"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Poodle (Toy) Supplement Safety and Medication Questions"
 displayTitle: "Poodle (Toy) supplement safety and medication questions"
 titlePattern: "supp-medication"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "poodle-toy", "Poodle (Toy)", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/poodle-toy", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Poodle (Toy)s, as a small breed with regular energy and a lifespan of 10–18 years, have specific supplementation needs worth knowing about.

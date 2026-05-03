@@ -2,7 +2,7 @@
 title: "Irish Water Spaniel Training Guide: Recall, Leash, and Manners"
 description: "Train a Irish Water Spaniel with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "irish-water-spaniel"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Irish Water Spaniel Training Guide: Recall, Leash, and Manners"
 displayTitle: "Irish Water Spaniel training guide for recall, leash, and manners"
 titlePattern: "training-guide"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "irish-water-spaniel", "Irish Water Spaniel", "large", "active", "easy", "curly", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/irish-water-spaniel", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Irish Water Spaniels are easy-to-train dogs that respond best to positive reinforcement.

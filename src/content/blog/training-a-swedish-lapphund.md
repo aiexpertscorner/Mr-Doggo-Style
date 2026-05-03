@@ -2,7 +2,7 @@
 title: "Swedish Lapphund Training Guide: Recall, Leash, and Manners"
 description: "Train a Swedish Lapphund with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "swedish-lapphund"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Swedish Lapphund Training Guide: Recall, Leash, and Manners"
 displayTitle: "Swedish Lapphund training guide for recall, leash, and manners"
 titlePattern: "training-guide"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "swedish-lapphund", "Swedish Lapphund", "medium", "regular", "moderate", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/swedish-lapphund", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Swedish Lapphunds are moderate-to-train dogs that respond best to positive reinforcement.

@@ -2,7 +2,7 @@
 title: "Hanoverian Scenthound Supplement Guide: What to Ask Your Vet"
 description: "A careful Hanoverian Scenthound supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "hanoverian-scenthound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Hanoverian Scenthound Supplement Guide: What to Ask Your Vet"
 displayTitle: "Hanoverian Scenthound supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "hanoverian-scenthound", "Hanoverian Scenthound", "large", "regular", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/hanoverian-scenthound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Hanoverian Scenthounds, as a large breed with regular energy and a lifespan of 10–14 years, have specific supplementation needs worth knowing about.

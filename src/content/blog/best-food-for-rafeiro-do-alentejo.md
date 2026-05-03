@@ -2,7 +2,7 @@
 title: "Best Dog Food for Rafeiro do Alentejo Sensitive Stomachs"
 description: "Breed-aware food guidance for Rafeiro do Alentejo owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "rafeiro-do-alentejo"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Dog Food for Rafeiro do Alentejo Sensitive Stomachs"
 displayTitle: "Food options to compare for Rafeiro do Alentejo sensitive stomachs"
 titlePattern: "food-best-sensitive"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "rafeiro-do-alentejo", "Rafeiro do Alentejo", "large", "calm", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/rafeiro-do-alentejo", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Rafeiro do Alentejo well isn't as simple as grabbing the bag with the highest rating. Rafeiro do Alentejos are large dogs with calm energy, a Lifespan of 12–14 years, and nutritional vulnerabilities that change across their life stages.

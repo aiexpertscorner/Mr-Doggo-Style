@@ -2,7 +2,7 @@
 title: "Best Basenji Toys for Active Energy Dogs"
 description: "Compare toys for Basenji dogs by active energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "basenji"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Best Basenji Toys for Active Energy Dogs"
 displayTitle: "Toy picks for active Basenji dogs"
 titlePattern: "toys-best-active"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "basenji", "Basenji", "small", "active", "difficult", "short", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/basenji", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Basenji means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

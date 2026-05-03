@@ -2,7 +2,7 @@
 title: "Treeing Walker Coonhound Supplement Guide: What to Ask Your Vet"
 description: "Compare supplement categories for Treeing Walker Coonhound dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "treeing-walker-coonhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Treeing Walker Coonhound Supplement Guide: What to Ask Your Vet"
 displayTitle: "Treeing Walker Coonhound supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "treeing-walker-coonhound", "Treeing Walker Coonhound", "large", "regular", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/treeing-walker-coonhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Treeing Walker Coonhounds, as a large breed with regular energy and a lifespan of 12–13 years, have specific supplementation needs worth knowing about.

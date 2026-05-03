@@ -2,7 +2,7 @@
 title: "Slovakian Wirehaired Pointer Bed Sizing Guide for Medium Dogs"
 description: "Compare bed options for Slovakian Wirehaired Pointer dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "slovakian-wirehaired-pointer"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Slovakian Wirehaired Pointer Bed Sizing Guide for Medium Dogs"
 displayTitle: "Slovakian Wirehaired Pointer bed sizing guide for medium dogs"
 titlePattern: "beds-sizing"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "slovakian-wirehaired-pointer", "Slovakian Wirehaired Pointer", "medium", "active", "difficult", "wiry", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/slovakian-wirehaired-pointer", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Slovakian Wirehaired Pointer, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

@@ -2,7 +2,7 @@
 title: "Best Lancashire Heeler Grooming Tools for Double Coats"
 description: "A breed-aware Lancashire Heeler grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "lancashire-heeler"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Lancashire Heeler Grooming Tools for Double Coats"
 displayTitle: "Lancashire Heeler grooming tools for double coats"
 titlePattern: "groom-best-coat"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "lancashire-heeler", "Lancashire Heeler", "small", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/lancashire-heeler", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Lancashire Heelers have a **double coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

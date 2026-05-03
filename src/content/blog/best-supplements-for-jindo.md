@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Jindo"
 description: "A careful Jindo supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "jindo"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Jindo"
 displayTitle: "Joint supplements to ask your vet about for Jindo"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "jindo", "Jindo", "medium", "active", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/jindo", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Jindos, as a medium breed with active energy and a lifespan of 14–14 years, have specific supplementation needs worth knowing about.

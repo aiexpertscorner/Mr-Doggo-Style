@@ -2,7 +2,7 @@
 title: "Azawakh Grooming Checklist for Home Care"
 description: "A breed-aware Azawakh grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "azawakh"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Azawakh Grooming Checklist for Home Care"
 displayTitle: "Azawakh grooming checklist for home care"
 titlePattern: "groom-owner-checklist"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "azawakh", "Azawakh", "medium", "regular", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/azawakh", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Azawakhs have a **short coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

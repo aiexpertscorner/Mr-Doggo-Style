@@ -2,7 +2,7 @@
 title: "Teddy Roosevelt Terrier Owners: Dog Foods to Compare First"
 description: "A practical Teddy Roosevelt Terrier food guide for small dogs, with nutrition notes, joint-support context, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "teddy-roosevelt-terrier"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Teddy Roosevelt Terrier Owners: Dog Foods to Compare First"
 displayTitle: "Dog foods Teddy Roosevelt Terrier owners should compare first"
 titlePattern: "food-owner-shortlist"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "teddy-roosevelt-terrier", "Teddy Roosevelt Terrier", "small", "active", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/teddy-roosevelt-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Teddy Roosevelt Terrier well isn't as simple as grabbing the bag with the highest rating. Teddy Roosevelt Terriers are small dogs with active energy, a Lifespan of 14–16 years, and nutritional vulnerabilities that change across their life stages.

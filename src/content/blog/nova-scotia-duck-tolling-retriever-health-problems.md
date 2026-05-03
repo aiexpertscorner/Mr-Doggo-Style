@@ -2,7 +2,7 @@
 title: "Nova Scotia Duck Tolling Retriever Health Problems: Risks and Screening"
 description: "Health-sensitive Nova Scotia Duck Tolling Retriever guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "nova-scotia-duck-tolling-retriever"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Nova Scotia Duck Tolling Retriever Health Problems: Risks and Screening"
 displayTitle: "Nova Scotia Duck Tolling Retriever health problems: risks and screening"
 titlePattern: "health-problems"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "nova-scotia-duck-tolling-retriever", "Nova Scotia Duck Tolling Retriever", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/nova-scotia-duck-tolling-retriever", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Nova Scotia Duck Tolling Retrievers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

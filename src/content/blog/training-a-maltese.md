@@ -2,7 +2,7 @@
 title: "Maltese Daily Training Routine"
 description: "A practical Maltese training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "maltese"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Maltese Daily Training Routine"
 displayTitle: "Maltese daily training routine"
 titlePattern: "training-routine"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "maltese", "Maltese", "small", "regular", "easy", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/maltese", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Malteses rank **#59** in canine intelligence (Fair).

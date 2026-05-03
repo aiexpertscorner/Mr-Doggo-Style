@@ -2,7 +2,7 @@
 title: "Boykin Spaniel Supplement Guide for Regular Dogs"
 description: "A careful Boykin Spaniel supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "boykin-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Boykin Spaniel Supplement Guide for Regular Dogs"
 displayTitle: "Boykin Spaniel supplement guide for regular dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "boykin-spaniel", "Boykin Spaniel", "medium", "regular", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/boykin-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Boykin Spaniels, as a medium breed with regular energy and a lifespan of 10–15 years, have specific supplementation needs worth knowing about.

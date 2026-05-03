@@ -2,7 +2,7 @@
 title: "Drever Grooming Guide by Coat Type"
 description: "Shortlist Drever grooming products with coat care, short fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "drever"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Drever Grooming Guide by Coat Type"
 displayTitle: "Drever grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "drever", "Drever", "medium", "regular", "moderate", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/drever", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Drevers have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

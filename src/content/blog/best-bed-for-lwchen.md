@@ -2,7 +2,7 @@
 title: "Löwchen Beds for Cooling, Comfort, and Cleanup"
 description: "Shortlist dog beds for Löwchen owners with joint comfort, crate fit, travel use, and cover care in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "lwchen"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Löwchen Beds for Cooling, Comfort, and Cleanup"
 displayTitle: "Löwchen beds for cooling, comfort, and cleanup"
 titlePattern: "beds-cooling"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "lwchen", "Löwchen", "small", "regular", "easy", "long", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/lwchen", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Löwchen, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

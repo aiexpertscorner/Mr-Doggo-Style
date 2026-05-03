@@ -2,7 +2,7 @@
 title: "German Spitz Health Notes for Practical Owners"
 description: "Health-sensitive German Spitz guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "german-spitz"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "German Spitz Health Notes for Practical Owners"
 displayTitle: "German Spitz health notes for practical owners"
 titlePattern: "health-practical"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "german-spitz", "German Spitz", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/german-spitz", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 German Spitzs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

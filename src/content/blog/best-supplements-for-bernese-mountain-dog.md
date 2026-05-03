@@ -2,7 +2,7 @@
 title: "Bernese Mountain Dog Supplement Guide: What to Ask Your Vet"
 description: "Compare supplement categories for Bernese Mountain Dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "bernese-mountain-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Bernese Mountain Dog Supplement Guide: What to Ask Your Vet"
 displayTitle: "Bernese Mountain Dog supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "bernese-mountain-dog", "Bernese Mountain Dog", "large", "active", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bernese-mountain-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Bernese Mountain Dogs, as a large breed with active energy and a lifespan of 7–10 years, have specific supplementation needs worth knowing about. Bernese Mountain Dogs have known genetic health concerns including meningitis, elbow + hip problems, complex immune disorder — targeted supplements address these directly.

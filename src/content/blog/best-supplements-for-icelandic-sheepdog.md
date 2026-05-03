@@ -2,7 +2,7 @@
 title: "Icelandic Sheepdog Supplement Checklist for Safer Buying"
 description: "A careful Icelandic Sheepdog supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "icelandic-sheepdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Icelandic Sheepdog Supplement Checklist for Safer Buying"
 displayTitle: "Icelandic Sheepdog supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "icelandic-sheepdog", "Icelandic Sheepdog", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/icelandic-sheepdog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Icelandic Sheepdogs, as a medium breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

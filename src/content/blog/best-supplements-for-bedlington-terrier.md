@@ -2,7 +2,7 @@
 title: "Bedlington Terrier Supplement Care Plan Questions"
 description: "Health-sensitive supplement guidance for Bedlington Terrier owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "bedlington-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Bedlington Terrier Supplement Care Plan Questions"
 displayTitle: "Bedlington Terrier supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "bedlington-terrier", "Bedlington Terrier", "small", "active", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bedlington-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Bedlington Terriers, as a small breed with active energy and a lifespan of 11–16 years, have specific supplementation needs worth knowing about. Bedlington Terriers have known genetic health concerns including liver, eye problems — targeted supplements address these directly.

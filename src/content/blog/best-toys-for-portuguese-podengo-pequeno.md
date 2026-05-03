@@ -2,7 +2,7 @@
 title: "Portuguese Podengo Pequeno Toy Safety and Enrichment Checklist"
 description: "Shortlist practical toys for Portuguese Podengo Pequeno owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "portuguese-podengo-pequeno"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Portuguese Podengo Pequeno Toy Safety and Enrichment Checklist"
 displayTitle: "Portuguese Podengo Pequeno toy safety and enrichment checklist"
 titlePattern: "toys-safe-play"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "portuguese-podengo-pequeno", "Portuguese Podengo Pequeno", "small", "active", "easy", "double", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/portuguese-podengo-pequeno", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Portuguese Podengo Pequeno means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

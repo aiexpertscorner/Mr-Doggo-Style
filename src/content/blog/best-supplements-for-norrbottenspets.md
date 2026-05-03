@@ -2,7 +2,7 @@
 title: "Norrbottenspets Supplement Care Plan Questions"
 description: "A careful Norrbottenspets supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "norrbottenspets"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Norrbottenspets Supplement Care Plan Questions"
 displayTitle: "Norrbottenspets supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "norrbottenspets", "Norrbottenspets", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/norrbottenspets", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Norrbottenspetss, as a medium breed with active energy and a lifespan of 14–17 years, have specific supplementation needs worth knowing about.

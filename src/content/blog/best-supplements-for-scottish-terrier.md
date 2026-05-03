@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Scottish Terrier"
 description: "A careful Scottish Terrier supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "scottish-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Scottish Terrier"
 displayTitle: "Skin and gut supplement options for Scottish Terrier"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "scottish-terrier", "Scottish Terrier", "small", "regular", "difficult", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/scottish-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Scottish Terriers, as a small breed with regular energy and a lifespan of 12–12 years, have specific supplementation needs worth knowing about. Scottish Terriers have known genetic health concerns including blood clotting disorder — targeted supplements address these directly.

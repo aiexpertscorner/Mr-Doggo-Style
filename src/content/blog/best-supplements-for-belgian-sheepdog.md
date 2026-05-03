@@ -2,7 +2,7 @@
 title: "Belgian Sheepdog Supplement Safety and Medication Questions"
 description: "Health-sensitive supplement guidance for Belgian Sheepdog owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "belgian-sheepdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Belgian Sheepdog Supplement Safety and Medication Questions"
 displayTitle: "Belgian Sheepdog supplement safety and medication questions"
 titlePattern: "supp-medication"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "belgian-sheepdog", "Belgian Sheepdog", "large", "active", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/belgian-sheepdog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Belgian Sheepdogs, as a large breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

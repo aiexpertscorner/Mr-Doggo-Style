@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Drentsche Patrijshond"
 description: "Compare supplement categories for Drentsche Patrijshond dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "drentsche-patrijshond"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Drentsche Patrijshond"
 displayTitle: "Skin and gut supplement options for Drentsche Patrijshond"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "drentsche-patrijshond", "Drentsche Patrijshond", "large", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/drentsche-patrijshond", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Drentsche Patrijshonds, as a large breed with active energy and a lifespan of 11–14 years, have specific supplementation needs worth knowing about.

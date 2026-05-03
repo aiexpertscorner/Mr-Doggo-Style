@@ -2,7 +2,7 @@
 title: "Old English Sheepdog Coat Care Guide for Long Fur"
 description: "A breed-aware Old English Sheepdog grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "old-english-sheepdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Old English Sheepdog Coat Care Guide for Long Fur"
 displayTitle: "Old English Sheepdog coat care guide for long fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "old-english-sheepdog", "Old English Sheepdog", "large", "regular", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/old-english-sheepdog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Old English Sheepdogs have a **long coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

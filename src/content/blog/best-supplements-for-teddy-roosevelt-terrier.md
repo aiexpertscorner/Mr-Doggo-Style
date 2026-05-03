@@ -2,7 +2,7 @@
 title: "Teddy Roosevelt Terrier Supplement Care Plan Questions"
 description: "Compare supplement categories for Teddy Roosevelt Terrier dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "teddy-roosevelt-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Teddy Roosevelt Terrier Supplement Care Plan Questions"
 displayTitle: "Teddy Roosevelt Terrier supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "teddy-roosevelt-terrier", "Teddy Roosevelt Terrier", "small", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/teddy-roosevelt-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Teddy Roosevelt Terriers, as a small breed with active energy and a lifespan of 14–16 years, have specific supplementation needs worth knowing about.

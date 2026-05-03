@@ -2,7 +2,7 @@
 title: "Mountain Cur Supplement Care Plan Questions"
 description: "A careful Mountain Cur supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "mountain-cur"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Mountain Cur Supplement Care Plan Questions"
 displayTitle: "Mountain Cur supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "mountain-cur", "Mountain Cur", "medium", "active", "moderate", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/mountain-cur", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Mountain Curs, as a medium breed with active energy and a lifespan of 10–13 years, have specific supplementation needs worth knowing about.

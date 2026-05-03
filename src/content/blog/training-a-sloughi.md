@@ -2,7 +2,7 @@
 title: "Sloughi Leash Training and Recall Guide"
 description: "Train a Sloughi with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "sloughi"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Sloughi Leash Training and Recall Guide"
 displayTitle: "Sloughi leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "sloughi", "Sloughi", "medium", "regular", "difficult", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/sloughi", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Sloughis are difficult-to-train dogs that respond best to positive reinforcement.

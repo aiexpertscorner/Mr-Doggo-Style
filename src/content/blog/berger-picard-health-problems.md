@@ -2,7 +2,7 @@
 title: "Berger Picard Health Risks for Large Dogs"
 description: "Review Berger Picard health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "berger-picard"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Mikhail Nilov on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/man-checking-on-a-dog-7468978/"
 imageSearchQuery: "Berger Picard dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "berger-picard", "Berger Picard", "large", "active", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/berger-picard", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Berger Picards are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

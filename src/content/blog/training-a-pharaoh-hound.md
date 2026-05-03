@@ -2,7 +2,7 @@
 title: "Pharaoh Hound Socialisation and Obedience Guide"
 description: "Build a Pharaoh Hound training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "pharaoh-hound"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Pharaoh Hound Socialisation and Obedience Guide"
 displayTitle: "Pharaoh Hound socialisation and obedience guide"
 titlePattern: "training-social"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "pharaoh-hound", "Pharaoh Hound", "medium", "active", "difficult", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/pharaoh-hound", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pharaoh Hounds rank **#37** in canine intelligence (Above average).

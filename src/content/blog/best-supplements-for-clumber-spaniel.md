@@ -2,7 +2,7 @@
 title: "Best Supplements for Clumber Spaniel: Careful Buyer Shortlist"
 description: "Health-sensitive supplement guidance for Clumber Spaniel owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "clumber-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for Clumber Spaniel: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for Clumber Spaniel"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "clumber-spaniel", "Clumber Spaniel", "large", "regular", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/clumber-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Clumber Spaniels, as a large breed with regular energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

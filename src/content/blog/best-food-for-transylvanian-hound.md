@@ -2,7 +2,7 @@
 title: "Transylvanian Hound Nutrition Guide for Medium Active Dogs"
 description: "Breed-aware food guidance for Transylvanian Hound owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "transylvanian-hound"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Transylvanian Hound Nutrition Guide for Medium Active Dogs"
 displayTitle: "Nutrition notes for medium active Transylvanian Hound dogs"
 titlePattern: "food-size-energy"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "transylvanian-hound", "Transylvanian Hound", "medium", "active", "moderate", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/transylvanian-hound", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Transylvanian Hound well isn't as simple as grabbing the bag with the highest rating. Transylvanian Hounds are medium dogs with active energy, a Lifespan of 10–14 years, and nutritional vulnerabilities that change across their life stages.

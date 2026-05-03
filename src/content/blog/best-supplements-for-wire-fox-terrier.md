@@ -2,7 +2,7 @@
 title: "Wire Fox Terrier Supplements: Evidence, Labels, and Vet Checks"
 description: "Health-sensitive supplement guidance for Wire Fox Terrier owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "wire-fox-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Wire Fox Terrier Supplements: Evidence, Labels, and Vet Checks"
 displayTitle: "Wire Fox Terrier supplements: evidence, labels, and vet checks"
 titlePattern: "supp-evidence"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "wire-fox-terrier", "Wire Fox Terrier", "small", "regular", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/wire-fox-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Wire Fox Terriers, as a small breed with regular energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

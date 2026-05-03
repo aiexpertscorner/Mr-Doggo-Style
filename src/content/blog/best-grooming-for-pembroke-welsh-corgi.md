@@ -2,7 +2,7 @@
 title: "Pembroke Welsh Corgi Coat Care Guide for Double Fur"
 description: "Shortlist Pembroke Welsh Corgi grooming products with coat care, double fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "pembroke-welsh-corgi"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Pembroke Welsh Corgi Coat Care Guide for Double Fur"
 displayTitle: "Pembroke Welsh Corgi coat care guide for double fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "pembroke-welsh-corgi", "Pembroke Welsh Corgi", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pembroke-welsh-corgi", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pembroke Welsh Corgis have a **double coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "Kuvasz Toy Safety and Enrichment Checklist"
 description: "A breed-aware Kuvasz toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "kuvasz"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Kuvasz Toy Safety and Enrichment Checklist"
 displayTitle: "Kuvasz toy safety and enrichment checklist"
 titlePattern: "toys-safe-play"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "kuvasz", "Kuvasz", "large", "regular", "difficult", "double", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/kuvasz", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Kuvasz means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

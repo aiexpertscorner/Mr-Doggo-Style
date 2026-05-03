@@ -2,7 +2,7 @@
 title: "How to Train a Irish Red and White Setter: Practical Roadmap"
 description: "Train a Irish Red and White Setter with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "irish-red-and-white-setter"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "How to Train a Irish Red and White Setter: Practical Roadmap"
 displayTitle: "How to train a Irish Red and White Setter: practical roadmap"
 titlePattern: "training-how-to"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "irish-red-and-white-setter", "Irish Red and White Setter", "medium", "active", "easy", "silky", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/irish-red-and-white-setter", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Irish Red and White Setters are easy-to-train dogs that respond best to positive reinforcement.

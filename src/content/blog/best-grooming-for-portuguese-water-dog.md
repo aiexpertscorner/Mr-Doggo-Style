@@ -2,7 +2,7 @@
 title: "Portuguese Water Dog Grooming for Shedding and Sensitive Skin"
 description: "Compare grooming tools for Portuguese Water Dogs by curly coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "portuguese-water-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Portuguese Water Dog Grooming for Shedding and Sensitive Skin"
 displayTitle: "Portuguese Water Dog grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "portuguese-water-dog", "Portuguese Water Dog", "medium", "active", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/portuguese-water-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Portuguese Water Dogs have a **curly coat** that requires daily brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

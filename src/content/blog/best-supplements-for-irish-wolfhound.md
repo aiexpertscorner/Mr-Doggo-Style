@@ -2,7 +2,7 @@
 title: "Best Senior Supplements for Irish Wolfhound"
 description: "A careful Irish Wolfhound supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "irish-wolfhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Senior Supplements for Irish Wolfhound"
 displayTitle: "Senior supplement questions for Irish Wolfhound"
 titlePattern: "supp-best-senior"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "irish-wolfhound", "Irish Wolfhound", "large", "regular", "difficult", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/irish-wolfhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Irish Wolfhounds, as a large breed with regular energy and a lifespan of 6–8 years, have specific supplementation needs worth knowing about. Irish Wolfhounds have known genetic health concerns including heart, liver, hips — targeted supplements address these directly.

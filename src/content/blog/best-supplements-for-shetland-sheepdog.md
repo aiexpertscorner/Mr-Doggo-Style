@@ -2,7 +2,7 @@
 title: "Shetland Sheepdog Supplement Guide: What to Ask Your Vet"
 description: "Health-sensitive supplement guidance for Shetland Sheepdog owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "shetland-sheepdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Shetland Sheepdog Supplement Guide: What to Ask Your Vet"
 displayTitle: "Shetland Sheepdog supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "shetland-sheepdog", "Shetland Sheepdog", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/shetland-sheepdog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Shetland Sheepdogs, as a small breed with regular energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about. Shetland Sheepdogs have known genetic health concerns including eye problems, deafness, skin + heart problems, blood clotting disorders — targeted supplements address these directly.

@@ -2,7 +2,7 @@
 title: "Coton de Tulear Supplements for Joints, Skin, and Gut Health"
 description: "Health-sensitive supplement guidance for Coton de Tulear owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "coton-de-tulear"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Coton de Tulear Supplements for Joints, Skin, and Gut Health"
 displayTitle: "Coton de Tulear supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "coton-de-tulear", "Coton de Tulear", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/coton-de-tulear", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Coton de Tulears, as a small breed with regular energy and a lifespan of 15–19 years, have specific supplementation needs worth knowing about.

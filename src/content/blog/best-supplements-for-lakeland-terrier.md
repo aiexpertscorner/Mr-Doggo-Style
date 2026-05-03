@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Lakeland Terrier"
 description: "A careful Lakeland Terrier supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "lakeland-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Lakeland Terrier"
 displayTitle: "Joint supplements to ask your vet about for Lakeland Terrier"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "lakeland-terrier", "Lakeland Terrier", "small", "regular", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/lakeland-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Lakeland Terriers, as a small breed with regular energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

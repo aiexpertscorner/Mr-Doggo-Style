@@ -2,7 +2,7 @@
 title: "Beauceron Food Options for Weight and Digestion"
 description: "A practical Beauceron food guide for large dogs, with nutrition notes, joint-support context, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "beauceron"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Beauceron Food Options for Weight and Digestion"
 displayTitle: "Food options for Beauceron weight control and digestion"
 titlePattern: "food-weight-control"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "beauceron", "Beauceron", "large", "active", "easy", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/beauceron", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Beauceron well isn't as simple as grabbing the bag with the highest rating. Beaucerons are large dogs with active energy, a Lifespan of 10–12 years, and nutritional vulnerabilities that change across their life stages.

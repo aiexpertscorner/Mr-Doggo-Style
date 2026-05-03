@@ -2,7 +2,7 @@
 title: "Best Food for Bedlington Terrier Joint and Weight Support"
 description: "A practical Bedlington Terrier food guide for small dogs, with nutrition notes, joint-support context, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "bedlington-terrier"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Food for Bedlington Terrier Joint and Weight Support"
 displayTitle: "Bedlington Terrier food picks for joint support and steady weight"
 titlePattern: "food-best-joint"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "bedlington-terrier", "Bedlington Terrier", "small", "active", "easy", "curly", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/bedlington-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Bedlington Terrier well isn't as simple as grabbing the bag with the highest rating. Bedlington Terriers are small dogs with active energy, a Average lifespan of 13.5 years, and nutritional vulnerabilities that change across their life stages.

@@ -2,7 +2,7 @@
 title: "Schapendoes Health Notes for Practical Owners"
 description: "Review Schapendoes health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "schapendoes"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Schapendoes Health Notes for Practical Owners"
 displayTitle: "Schapendoes health notes for practical owners"
 titlePattern: "health-practical"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "schapendoes", "Schapendoes", "medium", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/schapendoes", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Schapendoess are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

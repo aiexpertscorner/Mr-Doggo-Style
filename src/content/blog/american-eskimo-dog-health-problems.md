@@ -2,7 +2,7 @@
 title: "American Eskimo Dog Lifespan, Health Risks, and Vet Care"
 description: "A practical overview of American Eskimo Dog health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "american-eskimo-dog"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Tima Miroshnichenko on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/dog-getting-a-check-up-6235655/"
 imageSearchQuery: "American Eskimo Dog dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "american-eskimo-dog", "American Eskimo Dog", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/american-eskimo-dog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 American Eskimo Dogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

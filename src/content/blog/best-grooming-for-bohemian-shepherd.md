@@ -2,7 +2,7 @@
 title: "Bohemian Shepherd Grooming Kit: Brushes, Shampoo, Nail Tools"
 description: "A breed-aware Bohemian Shepherd grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "bohemian-shepherd"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Bohemian Shepherd Grooming Kit: Brushes, Shampoo, Nail Tools"
 displayTitle: "Bohemian Shepherd grooming kit for coat, bath, and nails"
 titlePattern: "groom-kit"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "bohemian-shepherd", "Bohemian Shepherd", "medium", "regular", "easy"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bohemian-shepherd", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Bohemian Shepherds have a **medium coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

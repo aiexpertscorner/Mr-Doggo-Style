@@ -2,7 +2,7 @@
 title: "Braque Francais Pyrenean Toys for Indoor Play, Fetch, and Chewing"
 description: "Shortlist practical toys for Braque Francais Pyrenean owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "braque-francais-pyrenean"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Braque Francais Pyrenean Toys for Indoor Play, Fetch, and Chewing"
 displayTitle: "Braque Francais Pyrenean toys for indoor play, fetch, and chewing"
 titlePattern: "toys-indoor-outdoor"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "braque-francais-pyrenean", "Braque Francais Pyrenean", "medium", "active", "easy", "short", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/braque-francais-pyrenean", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Braque Francais Pyrenean means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

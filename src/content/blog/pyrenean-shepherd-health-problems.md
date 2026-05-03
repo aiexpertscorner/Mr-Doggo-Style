@@ -2,7 +2,7 @@
 title: "Pyrenean Shepherd Health Risks and Insurance Timing"
 description: "Review Pyrenean Shepherd health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "pyrenean-shepherd"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Pyrenean Shepherd Health Risks and Insurance Timing"
 displayTitle: "Pyrenean Shepherd health risks and insurance timing"
 titlePattern: "health-insurance"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "pyrenean-shepherd", "Pyrenean Shepherd", "medium", "active", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pyrenean-shepherd", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pyrenean Shepherds are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

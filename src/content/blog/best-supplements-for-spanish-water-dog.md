@@ -2,7 +2,7 @@
 title: "Spanish Water Dog Supplement Guide: What to Ask Your Vet"
 description: "Health-sensitive supplement guidance for Spanish Water Dog owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "spanish-water-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Spanish Water Dog Supplement Guide: What to Ask Your Vet"
 displayTitle: "Spanish Water Dog supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "spanish-water-dog", "Spanish Water Dog", "medium", "active", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/spanish-water-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Spanish Water Dogs, as a medium breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

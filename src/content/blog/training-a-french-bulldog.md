@@ -2,7 +2,7 @@
 title: "French Bulldog Puppy Training Checklist"
 description: "Train a French Bulldog with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "french-bulldog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "French Bulldog Puppy Training Checklist"
 displayTitle: "French Bulldog puppy training checklist"
 titlePattern: "training-puppy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "french-bulldog", "French Bulldog", "medium", "calm", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/french-bulldog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 French Bulldogs rank **#58** in canine intelligence (Fair).

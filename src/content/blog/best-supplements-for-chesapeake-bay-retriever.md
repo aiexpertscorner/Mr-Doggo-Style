@@ -2,7 +2,7 @@
 title: "Chesapeake Bay Retriever Supplement Checklist for Safer Buying"
 description: "A careful Chesapeake Bay Retriever supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "chesapeake-bay-retriever"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Chesapeake Bay Retriever Supplement Checklist for Safer Buying"
 displayTitle: "Chesapeake Bay Retriever supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "chesapeake-bay-retriever", "Chesapeake Bay Retriever", "large", "active", "easy", "wavy"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/chesapeake-bay-retriever", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Chesapeake Bay Retrievers, as a large breed with active energy and a lifespan of 10–13 years, have specific supplementation needs worth knowing about. Chesapeake Bay Retrievers have known genetic health concerns including hip problems — targeted supplements address these directly.

@@ -2,7 +2,7 @@
 title: "Best Shih Tzu Food for Puppy, Adult, and Senior Dogs"
 description: "Review Shih Tzu dog food choices by life stage, weight control, digestion, and small-breed needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "shih-tzu"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Shih Tzu Food for Puppy, Adult, and Senior Dogs"
 displayTitle: "Shih Tzu food guide for puppy, adult, and senior stages"
 titlePattern: "food-best-puppy-adult"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "shih-tzu", "Shih Tzu", "small", "regular", "easy", "long", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/shih-tzu", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Shih Tzu well isn't as simple as grabbing the bag with the highest rating. Shih Tzus are small dogs with regular energy, a Average lifespan of 1.3 years, and nutritional vulnerabilities that change across their life stages.

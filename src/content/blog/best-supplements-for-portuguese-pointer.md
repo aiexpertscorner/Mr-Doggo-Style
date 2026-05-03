@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Portuguese Pointer"
 description: "Compare supplement categories for Portuguese Pointer dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "portuguese-pointer"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Portuguese Pointer"
 displayTitle: "Skin and gut supplement options for Portuguese Pointer"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "portuguese-pointer", "Portuguese Pointer", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/portuguese-pointer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Portuguese Pointers, as a medium breed with active energy and a lifespan of 14–14 years, have specific supplementation needs worth knowing about.

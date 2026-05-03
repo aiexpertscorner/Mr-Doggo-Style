@@ -2,7 +2,7 @@
 title: "Training a Manchester Terrier (Toy): Foundation Plan"
 description: "Train a Manchester Terrier (Toy) with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "manchester-terrier-toy"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Training a Manchester Terrier (Toy): Foundation Plan"
 displayTitle: "Training a Manchester Terrier (Toy): foundation plan"
 titlePattern: "training-foundation"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "manchester-terrier-toy", "Manchester Terrier (Toy)", "small", "regular", "easy", "medium", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/manchester-terrier-toy", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Manchester Terrier (Toy)s are easy-to-train dogs that respond best to positive reinforcement.

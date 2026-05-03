@@ -2,7 +2,7 @@
 title: "Dogo Argentino Nutrition Guide for Large Active Dogs"
 description: "Breed-aware food guidance for Dogo Argentino owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "dogo-argentino"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Dogo Argentino Nutrition Guide for Large Active Dogs"
 displayTitle: "Nutrition notes for large active Dogo Argentino dogs"
 titlePattern: "food-size-energy"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "dogo-argentino", "Dogo Argentino", "large", "active", "easy", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/dogo-argentino", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Dogo Argentino well isn't as simple as grabbing the bag with the highest rating. Dogo Argentinos are large dogs with active energy, a Lifespan of 9–15 years, and nutritional vulnerabilities that change across their life stages.

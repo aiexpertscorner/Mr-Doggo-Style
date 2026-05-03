@@ -2,7 +2,7 @@
 title: "Afghan Hound Formula Fit: Kibble, Protein, and Feeding Notes"
 description: "A practical Afghan Hound food guide for medium dogs, with nutrition notes, joint-support context, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "afghan-hound"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Afghan Hound Formula Fit: Kibble, Protein, and Feeding Notes"
 displayTitle: "Afghan Hound formula fit: kibble, protein, and feeding notes"
 titlePattern: "food-formula-fit"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "afghan-hound", "Afghan Hound", "medium", "active", "moderate", "long", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/afghan-hound", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Afghan Hound well isn't as simple as grabbing the bag with the highest rating. Afghan Hounds are medium dogs with active energy, a Average lifespan of 11.9 years, and nutritional vulnerabilities that change across their life stages.

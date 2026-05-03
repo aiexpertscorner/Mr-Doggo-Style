@@ -2,7 +2,7 @@
 title: "Pekingese Training Gear and First Skills"
 description: "Build a Pekingese training routine around calm energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "pekingese"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Pekingese Training Gear and First Skills"
 displayTitle: "Pekingese training gear and first skills"
 titlePattern: "training-gear"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "pekingese", "Pekingese", "small", "calm", "moderate", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/pekingese", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pekingeses rank **#74** in canine intelligence (Lowest).

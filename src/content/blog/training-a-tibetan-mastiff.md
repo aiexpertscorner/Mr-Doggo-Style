@@ -2,7 +2,7 @@
 title: "Tibetan Mastiff Training Guide: Recall, Leash, and Manners"
 description: "Build a Tibetan Mastiff training routine around regular energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "tibetan-mastiff"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Tibetan Mastiff Training Guide: Recall, Leash, and Manners"
 displayTitle: "Tibetan Mastiff training guide for recall, leash, and manners"
 titlePattern: "training-guide"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "tibetan-mastiff", "Tibetan Mastiff", "large", "regular", "difficult", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/tibetan-mastiff", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Tibetan Mastiffs are difficult-to-train dogs that respond best to positive reinforcement.

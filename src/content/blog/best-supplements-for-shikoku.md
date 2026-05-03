@@ -2,7 +2,7 @@
 title: "Shikoku Supplement Shopping Guide"
 description: "A careful Shikoku supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "shikoku"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Shikoku Supplement Shopping Guide"
 displayTitle: "Shikoku supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "shikoku", "Shikoku", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/shikoku", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Shikokus, as a medium breed with regular energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

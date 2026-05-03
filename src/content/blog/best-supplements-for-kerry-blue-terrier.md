@@ -2,7 +2,7 @@
 title: "Kerry Blue Terrier Supplement Shopping Guide"
 description: "Compare supplement categories for Kerry Blue Terrier dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "kerry-blue-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Kerry Blue Terrier Supplement Shopping Guide"
 displayTitle: "Kerry Blue Terrier supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "kerry-blue-terrier", "Kerry Blue Terrier", "medium", "regular", "moderate", "wavy"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/kerry-blue-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Kerry Blue Terriers, as a medium breed with regular energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about. Kerry Blue Terriers have known genetic health concerns including heart problems — targeted supplements address these directly.

@@ -2,7 +2,7 @@
 title: "Cocker Spaniel Coat Care Guide for Long Fur"
 description: "A breed-aware Cocker Spaniel grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "cocker-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Cocker Spaniel Coat Care Guide for Long Fur"
 displayTitle: "Cocker Spaniel coat care guide for long fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "cocker-spaniel", "Cocker Spaniel", "medium", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/cocker-spaniel", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Cocker Spaniels have a **long coat** that requires daily brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

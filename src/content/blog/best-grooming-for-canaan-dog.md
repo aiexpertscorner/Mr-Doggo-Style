@@ -2,7 +2,7 @@
 title: "Canaan Dog Grooming Kit: Brushes, Shampoo, Nail Tools"
 description: "A breed-aware Canaan Dog grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "canaan-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Canaan Dog Grooming Kit: Brushes, Shampoo, Nail Tools"
 displayTitle: "Canaan Dog grooming kit for coat, bath, and nails"
 titlePattern: "groom-kit"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "canaan-dog", "Canaan Dog", "medium", "regular", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/canaan-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Canaan Dogs have a **short coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

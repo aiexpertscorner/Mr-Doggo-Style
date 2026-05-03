@@ -2,7 +2,7 @@
 title: "Best Toys for Leonberger Chewers and Puzzle Play"
 description: "Compare toys for Leonberger dogs by regular energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "leonberger"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Best Toys for Leonberger Chewers and Puzzle Play"
 displayTitle: "Leonberger toys for chewing, puzzle play, and downtime"
 titlePattern: "toys-best-chewers"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "leonberger", "Leonberger", "large", "regular", "easy", "long", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/leonberger", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Leonberger means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

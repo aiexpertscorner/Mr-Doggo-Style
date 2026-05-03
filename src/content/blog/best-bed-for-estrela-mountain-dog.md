@@ -2,7 +2,7 @@
 title: "Best Dog Beds for Large Estrela Mountain Dogs"
 description: "A practical Estrela Mountain Dog bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "estrela-mountain-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Dog Beds for Large Estrela Mountain Dogs"
 displayTitle: "Dog beds for large Estrela Mountain Dogs"
 titlePattern: "beds-best-large-small"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "estrela-mountain-dog", "Estrela Mountain Dog", "large", "calm", "easy", "double", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/estrela-mountain-dog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Estrela Mountain Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

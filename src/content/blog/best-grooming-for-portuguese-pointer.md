@@ -2,7 +2,7 @@
 title: "Portuguese Pointer Bathing, Brushing, and Nail Care Guide"
 description: "Shortlist Portuguese Pointer grooming products with coat care, short fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "portuguese-pointer"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Portuguese Pointer Bathing, Brushing, and Nail Care Guide"
 displayTitle: "Portuguese Pointer bathing, brushing, and nail care guide"
 titlePattern: "groom-bath"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "portuguese-pointer", "Portuguese Pointer", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/portuguese-pointer", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Portuguese Pointers have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "Pekingese Bathing, Brushing, and Nail Care Guide"
 description: "Compare grooming tools for Pekingese dogs by long coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "pekingese"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Pekingese Bathing, Brushing, and Nail Care Guide"
 displayTitle: "Pekingese bathing, brushing, and nail care guide"
 titlePattern: "groom-bath"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "pekingese", "Pekingese", "small", "calm", "moderate", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pekingese", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pekingeses have a **long coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

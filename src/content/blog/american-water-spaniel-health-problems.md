@@ -2,7 +2,7 @@
 title: "American Water Spaniel Health Risks for Medium Dogs"
 description: "Review American Water Spaniel health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "american-water-spaniel"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by KB Photography on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/happy-dog-sitting-in-sunlit-field-36739473/"
 imageSearchQuery: "American Water Spaniel dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "american-water-spaniel", "American Water Spaniel", "medium", "regular", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/american-water-spaniel", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 American Water Spaniels are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

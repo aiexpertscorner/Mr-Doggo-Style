@@ -2,7 +2,7 @@
 title: "Best Supplements for French Spaniel: Careful Buyer Shortlist"
 description: "A careful French Spaniel supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "french-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for French Spaniel: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for French Spaniel"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "french-spaniel", "French Spaniel", "medium", "regular", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/french-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but French Spaniels, as a medium breed with regular energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

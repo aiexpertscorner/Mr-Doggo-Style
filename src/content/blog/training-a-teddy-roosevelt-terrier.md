@@ -2,7 +2,7 @@
 title: "Teddy Roosevelt Terrier Training by Temperament and Drive"
 description: "A practical Teddy Roosevelt Terrier training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "teddy-roosevelt-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Teddy Roosevelt Terrier Training by Temperament and Drive"
 displayTitle: "Teddy Roosevelt Terrier training by temperament and drive"
 titlePattern: "training-temperament"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "teddy-roosevelt-terrier", "Teddy Roosevelt Terrier", "small", "active", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/teddy-roosevelt-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Teddy Roosevelt Terriers are easy-to-train dogs that respond best to positive reinforcement.

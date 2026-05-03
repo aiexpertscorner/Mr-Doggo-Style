@@ -2,7 +2,7 @@
 title: "Best Washable Beds for Smooth Fox Terrier"
 description: "A practical Smooth Fox Terrier bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "smooth-fox-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Washable Beds for Smooth Fox Terrier"
 displayTitle: "Washable beds worth comparing for Smooth Fox Terrier"
 titlePattern: "beds-best-washable"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "smooth-fox-terrier", "Smooth Fox Terrier", "small", "active", "easy", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/smooth-fox-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Smooth Fox Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

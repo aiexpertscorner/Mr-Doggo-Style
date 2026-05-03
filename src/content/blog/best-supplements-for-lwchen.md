@@ -2,7 +2,7 @@
 title: "Löwchen Supplements for Joints, Skin, and Gut Health"
 description: "Compare supplement categories for Löwchen dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "lwchen"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Löwchen Supplements for Joints, Skin, and Gut Health"
 displayTitle: "Löwchen supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "lwchen", "Löwchen", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/lwchen", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Löwchens, as a small breed with regular energy and a lifespan of 15–15 years, have specific supplementation needs worth knowing about.

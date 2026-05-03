@@ -2,7 +2,7 @@
 title: "Chow Chow Supplement Guide: What to Ask Your Vet"
 description: "Compare supplement categories for Chow Chow dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "chow-chow"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Chow Chow Supplement Guide: What to Ask Your Vet"
 displayTitle: "Chow Chow supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "chow-chow", "Chow Chow", "large", "regular", "moderate", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/chow-chow", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Chow Chows, as a large breed with regular energy and a lifespan of 8–12 years, have specific supplementation needs worth knowing about. Chow Chows have known genetic health concerns including eye, hip problems — targeted supplements address these directly.

@@ -2,7 +2,7 @@
 title: "Australian Shepherd Supplement Checklist for Safer Buying"
 description: "Health-sensitive supplement guidance for Australian Shepherd owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "australian-shepherd"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Australian Shepherd Supplement Checklist for Safer Buying"
 displayTitle: "Australian Shepherd supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "australian-shepherd", "Australian Shepherd", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/australian-shepherd", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Australian Shepherds, as a medium breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about. Australian Shepherds have known genetic health concerns including deafness, hip problems — targeted supplements address these directly.

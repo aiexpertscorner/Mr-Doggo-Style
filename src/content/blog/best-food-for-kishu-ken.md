@@ -2,7 +2,7 @@
 title: "Kishu Ken Dog Food Checklist for Safer Buying"
 description: "Compare dog food options for Kishu Ken dogs using breed size, active energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "kishu-ken"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Kishu Ken Dog Food Checklist for Safer Buying"
 displayTitle: "Kishu Ken dog food buyer checklist"
 titlePattern: "food-buyer-checklist"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "kishu-ken", "Kishu Ken", "medium", "active", "difficult", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/kishu-ken", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Kishu Ken well isn't as simple as grabbing the bag with the highest rating. Kishu Kens are medium dogs with active energy, a Lifespan of 11–13 years, and nutritional vulnerabilities that change across their life stages.

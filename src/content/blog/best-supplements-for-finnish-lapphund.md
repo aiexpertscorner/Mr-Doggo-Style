@@ -2,7 +2,7 @@
 title: "Finnish Lapphund Supplement Safety and Medication Questions"
 description: "Compare supplement categories for Finnish Lapphund dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "finnish-lapphund"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Finnish Lapphund Supplement Safety and Medication Questions"
 displayTitle: "Finnish Lapphund supplement safety and medication questions"
 titlePattern: "supp-medication"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "finnish-lapphund", "Finnish Lapphund", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/finnish-lapphund", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Finnish Lapphunds, as a medium breed with regular energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

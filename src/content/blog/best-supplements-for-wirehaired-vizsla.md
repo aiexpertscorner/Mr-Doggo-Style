@@ -2,7 +2,7 @@
 title: "Wirehaired Vizsla Supplement Care Plan Questions"
 description: "A careful Wirehaired Vizsla supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "wirehaired-vizsla"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Wirehaired Vizsla Supplement Care Plan Questions"
 displayTitle: "Wirehaired Vizsla supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "wirehaired-vizsla", "Wirehaired Vizsla", "medium", "active", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/wirehaired-vizsla", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Wirehaired Vizslas, as a medium breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

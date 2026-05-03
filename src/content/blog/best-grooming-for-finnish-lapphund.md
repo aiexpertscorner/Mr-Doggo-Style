@@ -2,7 +2,7 @@
 title: "Finnish Lapphund Grooming for Shedding and Sensitive Skin"
 description: "Compare grooming tools for Finnish Lapphund dogs by double coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "finnish-lapphund"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Finnish Lapphund Grooming for Shedding and Sensitive Skin"
 displayTitle: "Finnish Lapphund grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "finnish-lapphund", "Finnish Lapphund", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/finnish-lapphund", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Finnish Lapphunds have a **double coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

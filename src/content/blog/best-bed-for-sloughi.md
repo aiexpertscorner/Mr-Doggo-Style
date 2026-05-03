@@ -2,7 +2,7 @@
 title: "Sloughi Bed Sizing Guide for Medium Dogs"
 description: "Shortlist dog beds for Sloughi owners with joint comfort, crate fit, travel use, and cover care in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "sloughi"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Sloughi Bed Sizing Guide for Medium Dogs"
 displayTitle: "Sloughi bed sizing guide for medium dogs"
 titlePattern: "beds-sizing"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "sloughi", "Sloughi", "medium", "regular", "difficult", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/sloughi", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Sloughi, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

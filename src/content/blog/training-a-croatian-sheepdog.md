@@ -2,7 +2,7 @@
 title: "Croatian Sheepdog Training Gear and First Skills"
 description: "Build a Croatian Sheepdog training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "croatian-sheepdog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Croatian Sheepdog Training Gear and First Skills"
 displayTitle: "Croatian Sheepdog training gear and first skills"
 titlePattern: "training-gear"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "croatian-sheepdog", "Croatian Sheepdog", "medium", "active", "easy", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/croatian-sheepdog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Croatian Sheepdogs are easy-to-train dogs that respond best to positive reinforcement.

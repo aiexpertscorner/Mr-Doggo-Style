@@ -2,7 +2,7 @@
 title: "Thai Ridgeback Bed Guide: Sleep, Joints, and Cleanup"
 description: "A practical Thai Ridgeback bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "thai-ridgeback"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Thai Ridgeback Bed Guide: Sleep, Joints, and Cleanup"
 displayTitle: "Thai Ridgeback bed guide for sleep, joints, and cleanup"
 titlePattern: "beds-guide-sleep"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "thai-ridgeback", "Thai Ridgeback", "large", "active", "difficult", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/thai-ridgeback", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Thai Ridgeback, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

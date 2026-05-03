@@ -2,7 +2,7 @@
 title: "Best Senior Supplements for Old English Sheepdog"
 description: "Health-sensitive supplement guidance for Old English Sheepdog owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "old-english-sheepdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Senior Supplements for Old English Sheepdog"
 displayTitle: "Senior supplement questions for Old English Sheepdog"
 titlePattern: "supp-best-senior"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "old-english-sheepdog", "Old English Sheepdog", "large", "regular", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/old-english-sheepdog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Old English Sheepdogs, as a large breed with regular energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about. Old English Sheepdogs have known genetic health concerns including hip problems — targeted supplements address these directly.

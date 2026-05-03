@@ -2,7 +2,7 @@
 title: "Best Toys for Irish Terrier Chewers and Puzzle Play"
 description: "Shortlist practical toys for Irish Terrier owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "irish-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Best Toys for Irish Terrier Chewers and Puzzle Play"
 displayTitle: "Irish Terrier toys for chewing, puzzle play, and downtime"
 titlePattern: "toys-best-chewers"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "irish-terrier", "Irish Terrier", "medium", "regular", "easy", "wiry", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/irish-terrier", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Irish Terrier means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

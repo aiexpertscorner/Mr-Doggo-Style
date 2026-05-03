@@ -2,7 +2,7 @@
 title: "Dogo Argentino Preventive Care and Warning Signs"
 description: "A practical overview of Dogo Argentino health risks, large-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "dogo-argentino"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Dogo Argentino Preventive Care and Warning Signs"
 displayTitle: "Dogo Argentino preventive care and warning signs"
 titlePattern: "health-prevention"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "dogo-argentino", "Dogo Argentino", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/dogo-argentino", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Dogo Argentinos are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

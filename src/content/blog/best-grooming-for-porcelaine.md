@@ -2,7 +2,7 @@
 title: "Best Grooming Picks for Porcelaine Shedding"
 description: "A breed-aware Porcelaine grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "porcelaine"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Grooming Picks for Porcelaine Shedding"
 displayTitle: "Grooming picks for Porcelaine shedding"
 titlePattern: "groom-best-shedding"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "porcelaine", "Porcelaine", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/porcelaine", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Porcelaines have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

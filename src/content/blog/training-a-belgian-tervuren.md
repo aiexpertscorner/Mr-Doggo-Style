@@ -2,7 +2,7 @@
 title: "Belgian Tervuren Socialisation and Obedience Guide"
 description: "Build a Belgian Tervuren training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "belgian-tervuren"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Belgian Tervuren Socialisation and Obedience Guide"
 displayTitle: "Belgian Tervuren socialisation and obedience guide"
 titlePattern: "training-social"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "belgian-tervuren", "Belgian Tervuren", "large", "active", "easy", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/belgian-tervuren", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Belgian Tervurens rank **#14** in canine intelligence (Excellent).

@@ -2,7 +2,7 @@
 title: "American Eskimo Dog Formula Fit: Kibble, Protein, and Feeding Notes"
 description: "A practical American Eskimo Dog food guide for medium dogs, with nutrition notes, joint-support context, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "american-eskimo-dog"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "American Eskimo Dog Formula Fit: Kibble, Protein, and Feeding Notes"
 displayTitle: "American Eskimo Dog formula fit: kibble, protein, and feeding notes"
 titlePattern: "food-formula-fit"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "american-eskimo-dog", "American Eskimo Dog", "medium", "active", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/american-eskimo-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a American Eskimo Dog well isn't as simple as grabbing the bag with the highest rating. American Eskimo Dogs are medium dogs with active energy, a Lifespan of 13–15 years, and nutritional vulnerabilities that change across their life stages.

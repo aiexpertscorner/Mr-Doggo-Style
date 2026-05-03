@@ -2,7 +2,7 @@
 title: "Dog Beds for Beauceron: Home, Crate, and Travel"
 description: "A practical Beauceron bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "beauceron"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Magda Ehlers on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/sleeping-dog-on-bed-with-relaxing-atmosphere-36198590/"
 imageSearchQuery: "Beauceron dog sleeping bed"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "beauceron", "Beauceron", "large", "active", "easy", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/beauceron", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 A dog spends 12–14 hours a day sleeping. For a Beauceron, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

@@ -2,7 +2,7 @@
 title: "Norwegian Lundehund Training Mistakes and Better Fixes"
 description: "Build a Norwegian Lundehund training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "norwegian-lundehund"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Norwegian Lundehund Training Mistakes and Better Fixes"
 displayTitle: "Norwegian Lundehund training mistakes and better fixes"
 titlePattern: "training-mistakes"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "norwegian-lundehund", "Norwegian Lundehund", "medium", "active", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/norwegian-lundehund", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Norwegian Lundehunds are easy-to-train dogs that respond best to positive reinforcement.

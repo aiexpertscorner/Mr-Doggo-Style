@@ -2,7 +2,7 @@
 title: "Irish Red and White Setter Beds for Cooling, Comfort, and Cleanup"
 description: "Compare bed options for Irish Red and White Setter dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "irish-red-and-white-setter"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Irish Red and White Setter Beds for Cooling, Comfort, and Cleanup"
 displayTitle: "Irish Red and White Setter beds for cooling, comfort, and cleanup"
 titlePattern: "beds-cooling"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "irish-red-and-white-setter", "Irish Red and White Setter", "medium", "active", "easy", "silky", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/irish-red-and-white-setter", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Irish Red and White Setter, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

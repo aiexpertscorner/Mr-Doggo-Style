@@ -2,7 +2,7 @@
 title: "Bergamasco Sheepdog Owners: Dog Foods to Compare First"
 description: "A practical Bergamasco Sheepdog food guide for large dogs, with nutrition notes, joint-support context, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "bergamasco-sheepdog"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Bergamasco Sheepdog Owners: Dog Foods to Compare First"
 displayTitle: "Dog foods Bergamasco Sheepdog owners should compare first"
 titlePattern: "food-owner-shortlist"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "bergamasco-sheepdog", "Bergamasco Sheepdog", "large", "calm", "easy", "corded", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/bergamasco-sheepdog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Bergamasco Sheepdog well isn't as simple as grabbing the bag with the highest rating. Bergamasco Sheepdogs are large dogs with calm energy, a Lifespan of 13–15 years, and nutritional vulnerabilities that change across their life stages.

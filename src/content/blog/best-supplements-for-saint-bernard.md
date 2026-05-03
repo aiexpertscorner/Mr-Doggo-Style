@@ -2,7 +2,7 @@
 title: "Saint Bernard Supplement Care Plan Questions"
 description: "A careful Saint Bernard supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "saint-bernard"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Saint Bernard Supplement Care Plan Questions"
 displayTitle: "Saint Bernard supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "saint-bernard", "Saint Bernard", "large", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/saint-bernard", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Saint Bernards, as a large breed with regular energy and a lifespan of 8–10 years, have specific supplementation needs worth knowing about. Saint Bernards have known genetic health concerns including heart, hip disorders, fatal stomach bloat — targeted supplements address these directly.

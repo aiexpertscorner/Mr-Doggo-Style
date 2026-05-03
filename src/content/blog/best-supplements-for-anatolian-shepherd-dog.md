@@ -2,7 +2,7 @@
 title: "Anatolian Shepherd Dog Supplement Shopping Guide"
 description: "A careful Anatolian Shepherd Dog supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "anatolian-shepherd-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Anatolian Shepherd Dog Supplement Shopping Guide"
 displayTitle: "Anatolian Shepherd Dog supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "anatolian-shepherd-dog", "Anatolian Shepherd Dog", "large", "regular", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/anatolian-shepherd-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Anatolian Shepherd Dogs, as a large breed with regular energy and a lifespan of 11–13 years, have specific supplementation needs worth knowing about.

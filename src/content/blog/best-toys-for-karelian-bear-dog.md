@@ -2,7 +2,7 @@
 title: "Karelian Bear Dog Owners: Toys to Compare First"
 description: "A breed-aware Karelian Bear Dog toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "karelian-bear-dog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Karelian Bear Dog Owners: Toys to Compare First"
 displayTitle: "Toys Karelian Bear Dog owners should compare first"
 titlePattern: "toys-owner-compare"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "karelian-bear-dog", "Karelian Bear Dog", "medium", "calm", "easy", "double", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/karelian-bear-dog", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Karelian Bear Dog means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

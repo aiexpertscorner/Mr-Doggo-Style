@@ -2,7 +2,7 @@
 title: "Tibetan Terrier Daily Training Routine"
 description: "A practical Tibetan Terrier training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "tibetan-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Tibetan Terrier Daily Training Routine"
 displayTitle: "Tibetan Terrier daily training routine"
 titlePattern: "training-routine"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "tibetan-terrier", "Tibetan Terrier", "medium", "active", "difficult", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/tibetan-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Tibetan Terriers rank **#62** in canine intelligence (Fair).

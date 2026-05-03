@@ -2,7 +2,7 @@
 title: "Soft Coated Wheaten Terrier Health Guide: Common Issues to Watch"
 description: "Health-sensitive Soft Coated Wheaten Terrier guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "soft-coated-wheaten-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Soft Coated Wheaten Terrier Health Guide: Common Issues to Watch"
 displayTitle: "Soft Coated Wheaten Terrier health guide: common issues to watch"
 titlePattern: "health-guide"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "soft-coated-wheaten-terrier", "Soft Coated Wheaten Terrier", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/soft-coated-wheaten-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Soft Coated Wheaten Terriers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

@@ -2,7 +2,7 @@
 title: "Irish Red and White Setter Supplements: Evidence, Labels, and Vet Checks"
 description: "Health-sensitive supplement guidance for Irish Red and White Setter owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "irish-red-and-white-setter"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Irish Red and White Setter Supplements: Evidence, Labels, and Vet Checks"
 displayTitle: "Irish Red and White Setter supplements: evidence, labels, and vet checks"
 titlePattern: "supp-evidence"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "irish-red-and-white-setter", "Irish Red and White Setter", "medium", "active", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/irish-red-and-white-setter", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Irish Red and White Setters, as a medium breed with active energy and a lifespan of 11–15 years, have specific supplementation needs worth knowing about.

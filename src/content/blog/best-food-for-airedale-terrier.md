@@ -2,7 +2,7 @@
 title: "Airedale Terrier Dog Food Checklist for Safer Buying"
 description: "Compare dog food options for Airedale Terrier dogs using breed size, regular energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "airedale-terrier"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Airedale Terrier Dog Food Checklist for Safer Buying"
 displayTitle: "Airedale Terrier dog food buyer checklist"
 titlePattern: "food-buyer-checklist"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "airedale-terrier", "Airedale Terrier", "large", "regular", "easy", "wiry", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/airedale-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Airedale Terrier well isn't as simple as grabbing the bag with the highest rating. Airedale Terriers are large dogs with regular energy, a Lifespan of 11–14 years, and nutritional vulnerabilities that change across their life stages.

@@ -2,7 +2,7 @@
 title: "Health Concerns in Norwegian Elkhound: Owner Notes"
 description: "Review Norwegian Elkhound health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "norwegian-elkhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Health Concerns in Norwegian Elkhound: Owner Notes"
 displayTitle: "Health concerns in Norwegian Elkhound: owner notes"
 titlePattern: "health-owner-notes"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "norwegian-elkhound", "Norwegian Elkhound", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/norwegian-elkhound", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Norwegian Elkhounds are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

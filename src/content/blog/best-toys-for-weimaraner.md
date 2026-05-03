@@ -2,7 +2,7 @@
 title: "Weimaraner Boredom Toys Worth Comparing"
 description: "Compare toys for Weimaraner dogs by active energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "weimaraner"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Weimaraner Boredom Toys Worth Comparing"
 displayTitle: "Weimaraner boredom toys worth comparing"
 titlePattern: "toys-boredom"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "weimaraner", "Weimaraner", "large", "active", "easy", "short", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/weimaraner", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Weimaraner means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

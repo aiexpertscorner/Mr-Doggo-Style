@@ -2,7 +2,7 @@
 title: "Best Grooming Picks for Barbet Shedding"
 description: "Shortlist Barbet grooming products with coat care, curly fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "barbet"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Grooming Picks for Barbet Shedding"
 displayTitle: "Grooming picks for Barbet shedding"
 titlePattern: "groom-best-shedding"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "barbet", "Barbet", "medium", "regular", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/barbet", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Barbets have a **curly coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

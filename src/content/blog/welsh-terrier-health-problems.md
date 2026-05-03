@@ -2,7 +2,7 @@
 title: "Welsh Terrier Screening and Prevention Checklist"
 description: "A practical overview of Welsh Terrier health risks, small-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "welsh-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Welsh Terrier Screening and Prevention Checklist"
 displayTitle: "Welsh Terrier screening and prevention checklist"
 titlePattern: "health-screening"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "welsh-terrier", "Welsh Terrier", "small", "active", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/welsh-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Welsh Terriers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

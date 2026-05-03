@@ -2,7 +2,7 @@
 title: "Wetterhoun Supplements: Evidence, Labels, and Vet Checks"
 description: "A careful Wetterhoun supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "wetterhoun"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Wetterhoun Supplements: Evidence, Labels, and Vet Checks"
 displayTitle: "Wetterhoun supplements: evidence, labels, and vet checks"
 titlePattern: "supp-evidence"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "wetterhoun", "Wetterhoun", "large", "regular", "moderate", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/wetterhoun", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Wetterhouns, as a large breed with regular energy and a lifespan of 13–13 years, have specific supplementation needs worth knowing about.

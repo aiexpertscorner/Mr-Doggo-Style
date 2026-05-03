@@ -2,7 +2,7 @@
 title: "Slovakian Wirehaired Pointer Preventive Care and Warning Signs"
 description: "Health-sensitive Slovakian Wirehaired Pointer guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "slovakian-wirehaired-pointer"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Slovakian Wirehaired Pointer Preventive Care and Warning Signs"
 displayTitle: "Slovakian Wirehaired Pointer preventive care and warning signs"
 titlePattern: "health-prevention"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "slovakian-wirehaired-pointer", "Slovakian Wirehaired Pointer", "medium", "active", "difficult", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/slovakian-wirehaired-pointer", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Slovakian Wirehaired Pointers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

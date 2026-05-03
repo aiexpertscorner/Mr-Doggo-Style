@@ -2,7 +2,7 @@
 title: "Best Brushes and Shampoo for Braque Francais Pyrenean"
 description: "A breed-aware Braque Francais Pyrenean grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "braque-francais-pyrenean"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Brushes and Shampoo for Braque Francais Pyrenean"
 displayTitle: "Brushes and shampoo to compare for Braque Francais Pyrenean"
 titlePattern: "groom-best-brush"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "braque-francais-pyrenean", "Braque Francais Pyrenean", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/braque-francais-pyrenean", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Braque Francais Pyreneans have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "Brittany Owner Training Checklist"
 description: "Build a Brittany training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "brittany"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Brittany Owner Training Checklist"
 displayTitle: "Brittany owner training checklist"
 titlePattern: "training-owner"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "brittany", "Brittany", "medium", "active", "easy", "wavy", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/brittany", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Brittanys rank **#19** in canine intelligence (Excellent).

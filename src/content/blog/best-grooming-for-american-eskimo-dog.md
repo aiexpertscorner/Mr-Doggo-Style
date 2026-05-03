@@ -2,7 +2,7 @@
 title: "American Eskimo Dog Grooming for Shedding and Sensitive Skin"
 description: "Shortlist American Eskimo Dog grooming products with coat care, double fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "american-eskimo-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "American Eskimo Dog Grooming for Shedding and Sensitive Skin"
 displayTitle: "American Eskimo Dog grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "american-eskimo-dog", "American Eskimo Dog", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/american-eskimo-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 American Eskimo Dogs have a **double coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

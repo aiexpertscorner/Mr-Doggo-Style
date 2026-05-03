@@ -2,7 +2,7 @@
 title: "Central Asian Shepherd Dog Supplement Guide: What to Ask Your Vet"
 description: "A careful Central Asian Shepherd Dog supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "central-asian-shepherd-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Central Asian Shepherd Dog Supplement Guide: What to Ask Your Vet"
 displayTitle: "Central Asian Shepherd Dog supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "central-asian-shepherd-dog", "Central Asian Shepherd Dog", "large", "calm", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/central-asian-shepherd-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Central Asian Shepherd Dogs, as a large breed with calm energy and a lifespan of –12 years, have specific supplementation needs worth knowing about.

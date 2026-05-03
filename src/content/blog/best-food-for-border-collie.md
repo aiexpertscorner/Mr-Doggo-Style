@@ -2,7 +2,7 @@
 title: "Border Collie Food Guide for Active Energy Levels"
 description: "Compare dog food options for Border Collie dogs using breed size, active energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "border-collie"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Border Collie Food Guide for Active Energy Levels"
 displayTitle: "Border Collie food guidance for active energy levels"
 titlePattern: "food-active-calm"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "border-collie", "Border Collie", "medium", "active", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/border-collie", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Border Collie well isn't as simple as grabbing the bag with the highest rating. Border Collies are medium dogs with active energy, a Average lifespan of 12.5 years, and nutritional vulnerabilities that change across their life stages.

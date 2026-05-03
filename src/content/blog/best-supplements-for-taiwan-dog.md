@@ -2,7 +2,7 @@
 title: "Taiwan Dog Supplement Guide: What to Ask Your Vet"
 description: "Compare supplement categories for Taiwan Dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "taiwan-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Taiwan Dog Supplement Guide: What to Ask Your Vet"
 displayTitle: "Taiwan Dog supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "taiwan-dog", "Taiwan Dog", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/taiwan-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Taiwan Dogs, as a medium breed with active energy and a lifespan of 9–13 years, have specific supplementation needs worth knowing about.

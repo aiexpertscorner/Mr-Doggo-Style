@@ -2,7 +2,7 @@
 title: "Best Beds for Australian Kelpie: Support and Size Picks"
 description: "A practical Australian Kelpie bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "australian-kelpie"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Magda Ehlers on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/sleeping-dog-on-bed-with-relaxing-atmosphere-36198590/"
 imageSearchQuery: "Australian Kelpie dog sleeping bed"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "australian-kelpie", "Australian Kelpie", "medium", "active", "easy", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/australian-kelpie", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 A dog spends 12–14 hours a day sleeping. For a Australian Kelpie, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

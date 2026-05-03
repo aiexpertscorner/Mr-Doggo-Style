@@ -2,7 +2,7 @@
 title: "Kerry Blue Terrier Dog Bed Shopping Guide"
 description: "Shortlist dog beds for Kerry Blue Terrier owners with joint comfort, crate fit, travel use, and cover care in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "kerry-blue-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Kerry Blue Terrier Dog Bed Shopping Guide"
 displayTitle: "Kerry Blue Terrier dog bed shopping guide"
 titlePattern: "beds-shopping"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "kerry-blue-terrier", "Kerry Blue Terrier", "medium", "regular", "moderate", "wavy", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/kerry-blue-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Kerry Blue Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

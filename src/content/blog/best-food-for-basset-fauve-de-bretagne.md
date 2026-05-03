@@ -2,7 +2,7 @@
 title: "Basset Fauve de Bretagne Nutrition Guide for Medium Regular Dogs"
 description: "Breed-aware food guidance for Basset Fauve de Bretagne owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "basset-fauve-de-bretagne"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Basset Fauve de Bretagne Nutrition Guide for Medium Regular Dogs"
 displayTitle: "Nutrition notes for medium regular Basset Fauve de Bretagne dogs"
 titlePattern: "food-size-energy"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "basset-fauve-de-bretagne", "Basset Fauve de Bretagne", "medium", "regular", "moderate", "rough", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/basset-fauve-de-bretagne", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Basset Fauve de Bretagne well isn't as simple as grabbing the bag with the highest rating. Basset Fauve de Bretagnes are medium dogs with regular energy, a Lifespan of 12–12 years, and nutritional vulnerabilities that change across their life stages.

@@ -2,7 +2,7 @@
 title: "English Toy Spaniel Training by Temperament and Drive"
 description: "A practical English Toy Spaniel training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "english-toy-spaniel"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "English Toy Spaniel Training by Temperament and Drive"
 displayTitle: "English Toy Spaniel training by temperament and drive"
 titlePattern: "training-temperament"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "english-toy-spaniel", "English Toy Spaniel", "small", "regular", "difficult", "silky", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/english-toy-spaniel", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 English Toy Spaniels rank **#45** in canine intelligence (Average).

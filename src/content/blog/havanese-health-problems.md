@@ -2,7 +2,7 @@
 title: "Health Concerns in Havanese: Owner Notes"
 description: "Health-sensitive Havanese guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "havanese"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Health Concerns in Havanese: Owner Notes"
 displayTitle: "Health concerns in Havanese: owner notes"
 titlePattern: "health-owner-notes"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "havanese", "Havanese", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/havanese", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Havaneses are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

@@ -2,7 +2,7 @@
 title: "Slovensky Cuvac Dog Food Checklist for Safer Buying"
 description: "Compare dog food options for Slovensky Cuvac dogs using breed size, calm energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "slovensky-cuvac"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Slovensky Cuvac Dog Food Checklist for Safer Buying"
 displayTitle: "Slovensky Cuvac dog food buyer checklist"
 titlePattern: "food-buyer-checklist"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "slovensky-cuvac", "Slovensky Cuvac", "large", "calm", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/slovensky-cuvac", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Slovensky Cuvac well isn't as simple as grabbing the bag with the highest rating. Slovensky Cuvacs are large dogs with calm energy, a Lifespan of 11–13 years, and nutritional vulnerabilities that change across their life stages.

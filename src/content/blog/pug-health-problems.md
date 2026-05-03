@@ -2,7 +2,7 @@
 title: "Pug Health Guide: Common Issues to Watch"
 description: "Health-sensitive Pug guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "pug"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Pug Health Guide: Common Issues to Watch"
 displayTitle: "Pug health guide: common issues to watch"
 titlePattern: "health-guide"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "pug", "Pug", "small", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pug", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pugs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

@@ -2,7 +2,7 @@
 title: "Airedale Terrier Daily Training Routine"
 description: "A practical Airedale Terrier training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "airedale-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Airedale Terrier Daily Training Routine"
 displayTitle: "Airedale Terrier daily training routine"
 titlePattern: "training-routine"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "airedale-terrier", "Airedale Terrier", "large", "regular", "easy", "wiry", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/airedale-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Airedale Terriers are easy-to-train dogs that respond best to positive reinforcement.

@@ -2,7 +2,7 @@
 title: "Russian Tsvetnaya Bolonka Supplement Care Plan Questions"
 description: "A careful Russian Tsvetnaya Bolonka supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "russian-tsvetnaya-bolonka"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Russian Tsvetnaya Bolonka Supplement Care Plan Questions"
 displayTitle: "Russian Tsvetnaya Bolonka supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "russian-tsvetnaya-bolonka", "Russian Tsvetnaya Bolonka", "small", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/russian-tsvetnaya-bolonka", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Russian Tsvetnaya Bolonkas, as a small breed with regular energy and a lifespan of 12–16 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "Best Danish-Swedish Farmdog Grooming Tools for Medium Coats"
 description: "Shortlist Danish-Swedish Farmdog grooming products with coat care, medium fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "danish-swedish-farmdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Danish-Swedish Farmdog Grooming Tools for Medium Coats"
 displayTitle: "Danish-Swedish Farmdog grooming tools for medium coats"
 titlePattern: "groom-best-coat"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "danish-swedish-farmdog", "Danish-Swedish Farmdog", "small", "active", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/danish-swedish-farmdog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Danish-Swedish Farmdogs have a **medium coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

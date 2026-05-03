@@ -2,7 +2,7 @@
 title: "Saluki Health Notes for Practical Owners"
 description: "A practical overview of Saluki health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "saluki"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Saluki Health Notes for Practical Owners"
 displayTitle: "Saluki health notes for practical owners"
 titlePattern: "health-practical"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "saluki", "Saluki", "medium", "active", "difficult", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/saluki", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Salukis are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

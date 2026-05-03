@@ -2,7 +2,7 @@
 title: "Pyrenean Mastiff Health Problems: Risks and Screening"
 description: "Review Pyrenean Mastiff health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "pyrenean-mastiff"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Pyrenean Mastiff Health Problems: Risks and Screening"
 displayTitle: "Pyrenean Mastiff health problems: risks and screening"
 titlePattern: "health-problems"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "pyrenean-mastiff", "Pyrenean Mastiff", "large", "calm", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pyrenean-mastiff", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pyrenean Mastiffs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

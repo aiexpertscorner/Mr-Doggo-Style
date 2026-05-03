@@ -2,7 +2,7 @@
 title: "English Cocker Spaniel Food Guide: Formulas by Life Stage"
 description: "Compare dog food options for English Cocker Spaniel dogs using breed size, regular energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "english-cocker-spaniel"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "English Cocker Spaniel Food Guide: Formulas by Life Stage"
 displayTitle: "English Cocker Spaniel nutrition guide by life stage"
 titlePattern: "food-guide-life-stage"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "english-cocker-spaniel", "English Cocker Spaniel", "medium", "regular", "easy", "silky", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/english-cocker-spaniel", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a English Cocker Spaniel well isn't as simple as grabbing the bag with the highest rating. English Cocker Spaniels are medium dogs with regular energy, a Average lifespan of 11.7 years, and nutritional vulnerabilities that change across their life stages.

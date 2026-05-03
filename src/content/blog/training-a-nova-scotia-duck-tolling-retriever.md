@@ -2,7 +2,7 @@
 title: "Nova Scotia Duck Tolling Retriever Leash Training and Recall Guide"
 description: "Train a Nova Scotia Duck Tolling Retriever with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "nova-scotia-duck-tolling-retriever"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Nova Scotia Duck Tolling Retriever Leash Training and Recall Guide"
 displayTitle: "Nova Scotia Duck Tolling Retriever leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "nova-scotia-duck-tolling-retriever", "Nova Scotia Duck Tolling Retriever", "medium", "active", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/nova-scotia-duck-tolling-retriever", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Nova Scotia Duck Tolling Retrievers are easy-to-train dogs that respond best to positive reinforcement.

@@ -2,7 +2,7 @@
 title: "Norfolk Terrier Daily Training Routine"
 description: "Train a Norfolk Terrier with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "norfolk-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Norfolk Terrier Daily Training Routine"
 displayTitle: "Norfolk Terrier daily training routine"
 titlePattern: "training-routine"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "norfolk-terrier", "Norfolk Terrier", "small", "regular", "easy", "wiry", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/norfolk-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Norfolk Terriers rank **#56** in canine intelligence (Fair).

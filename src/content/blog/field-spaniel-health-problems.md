@@ -2,7 +2,7 @@
 title: "Field Spaniel Health Problems: Risks and Screening"
 description: "Review Field Spaniel health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "field-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Field Spaniel Health Problems: Risks and Screening"
 displayTitle: "Field Spaniel health problems: risks and screening"
 titlePattern: "health-problems"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "field-spaniel", "Field Spaniel", "medium", "regular", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/field-spaniel", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Field Spaniels are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

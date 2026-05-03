@@ -2,7 +2,7 @@
 title: "Best Supplements for Braque Francais Pyrenean: Careful Buyer Shortlist"
 description: "Compare supplement categories for Braque Francais Pyrenean dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "braque-francais-pyrenean"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for Braque Francais Pyrenean: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for Braque Francais Pyrenean"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "braque-francais-pyrenean", "Braque Francais Pyrenean", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/braque-francais-pyrenean", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Braque Francais Pyreneans, as a medium breed with active energy and a lifespan of –12 years, have specific supplementation needs worth knowing about.

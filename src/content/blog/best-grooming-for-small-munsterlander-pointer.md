@@ -2,7 +2,7 @@
 title: "Small Munsterlander Pointer Grooming Guide by Coat Type"
 description: "Compare grooming tools for Small Munsterlander Pointer dogs by double coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "small-munsterlander-pointer"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Small Munsterlander Pointer Grooming Guide by Coat Type"
 displayTitle: "Small Munsterlander Pointer grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "small-munsterlander-pointer", "Small Munsterlander Pointer", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/small-munsterlander-pointer", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Small Munsterlander Pointers have a **double coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

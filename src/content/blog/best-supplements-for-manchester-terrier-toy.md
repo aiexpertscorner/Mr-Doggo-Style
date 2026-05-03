@@ -2,7 +2,7 @@
 title: "Manchester Terrier (Toy) Supplement Guide for Regular Dogs"
 description: "Compare supplement categories for Manchester Terrier (Toy) dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "manchester-terrier-toy"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Manchester Terrier (Toy) Supplement Guide for Regular Dogs"
 displayTitle: "Manchester Terrier (Toy) supplement guide for regular dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "manchester-terrier-toy", "Manchester Terrier (Toy)", "small", "regular", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/manchester-terrier-toy", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Manchester Terrier (Toy)s, as a small breed with regular energy and a lifespan of 15–17 years, have specific supplementation needs worth knowing about.

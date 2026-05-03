@@ -2,7 +2,7 @@
 title: "English Setter Owners: Beds to Compare Before Buying"
 description: "Compare bed options for English Setter dogs by large sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "english-setter"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "English Setter Owners: Beds to Compare Before Buying"
 displayTitle: "Beds English Setter owners should compare before buying"
 titlePattern: "beds-owner-compare"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "english-setter", "English Setter", "large", "active", "easy", "silky", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/english-setter", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a English Setter, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

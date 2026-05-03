@@ -2,7 +2,7 @@
 title: "French Bulldog Toy Guide for Daily Enrichment"
 description: "Compare toys for French Bulldog dogs by calm energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "french-bulldog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "French Bulldog Toy Guide for Daily Enrichment"
 displayTitle: "French Bulldog toy guide for daily enrichment"
 titlePattern: "toys-guide-daily"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "french-bulldog", "French Bulldog", "medium", "calm", "easy", "short", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/french-bulldog", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a French Bulldog means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

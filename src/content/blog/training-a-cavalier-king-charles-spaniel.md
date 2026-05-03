@@ -2,7 +2,7 @@
 title: "Cavalier King Charles Spaniel Daily Training Routine"
 description: "Train a Cavalier King Charles Spaniel with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "cavalier-king-charles-spaniel"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Cavalier King Charles Spaniel Daily Training Routine"
 displayTitle: "Cavalier King Charles Spaniel daily training routine"
 titlePattern: "training-routine"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "cavalier-king-charles-spaniel", "Cavalier King Charles Spaniel", "small", "calm", "easy", "silky", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/cavalier-king-charles-spaniel", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Cavalier King Charles Spaniels rank **#44** in canine intelligence (Average).

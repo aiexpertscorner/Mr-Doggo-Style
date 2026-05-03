@@ -2,7 +2,7 @@
 title: "Best Senior Supplements for Tibetan Spaniel"
 description: "Health-sensitive supplement guidance for Tibetan Spaniel owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "tibetan-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Senior Supplements for Tibetan Spaniel"
 displayTitle: "Senior supplement questions for Tibetan Spaniel"
 titlePattern: "supp-best-senior"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "tibetan-spaniel", "Tibetan Spaniel", "small", "calm", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/tibetan-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Tibetan Spaniels, as a small breed with calm energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

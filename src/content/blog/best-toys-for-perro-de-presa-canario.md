@@ -2,7 +2,7 @@
 title: "Perro de Presa Canario Toy Guide for Daily Enrichment"
 description: "A breed-aware Perro de Presa Canario toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "perro-de-presa-canario"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Perro de Presa Canario Toy Guide for Daily Enrichment"
 displayTitle: "Perro de Presa Canario toy guide for daily enrichment"
 titlePattern: "toys-guide-daily"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "perro-de-presa-canario", "Perro de Presa Canario", "large", "calm", "easy", "double", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/perro-de-presa-canario", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Perro de Presa Canario means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

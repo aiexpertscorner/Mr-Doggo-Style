@@ -2,7 +2,7 @@
 title: "Great Dane Supplement Checklist for Safer Buying"
 description: "Compare supplement categories for Great Dane dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "great-dane"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Great Dane Supplement Checklist for Safer Buying"
 displayTitle: "Great Dane supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "great-dane", "Great Dane", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/great-dane", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Great Danes, as a large breed with active energy and a lifespan of 7–10 years, have specific supplementation needs worth knowing about. Great Danes have known genetic health concerns including heart, spinal, hip problems, fatal stomach bloat — targeted supplements address these directly.

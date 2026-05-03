@@ -2,7 +2,7 @@
 title: "Sealyham Terrier Health Risks and Insurance Timing"
 description: "A practical overview of Sealyham Terrier health risks, small-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "sealyham-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Sealyham Terrier Health Risks and Insurance Timing"
 displayTitle: "Sealyham Terrier health risks and insurance timing"
 titlePattern: "health-insurance"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "sealyham-terrier", "Sealyham Terrier", "small", "regular", "difficult", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/sealyham-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Sealyham Terriers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

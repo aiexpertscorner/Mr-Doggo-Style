@@ -2,7 +2,7 @@
 title: "Best Dog Food for Clumber Spaniel: Large Breed Picks"
 description: "Compare dog food options for Clumber Spaniel dogs using breed size, regular energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "clumber-spaniel"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Dog Food for Clumber Spaniel: Large Breed Picks"
 displayTitle: "Best dog food for Clumber Spaniel by life stage and size"
 titlePattern: "food-best-size"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "clumber-spaniel", "Clumber Spaniel", "large", "regular", "easy", "silky", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/clumber-spaniel", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Clumber Spaniel well isn't as simple as grabbing the bag with the highest rating. Clumber Spaniels are large dogs with regular energy, a Average lifespan of 10 years, and nutritional vulnerabilities that change across their life stages.

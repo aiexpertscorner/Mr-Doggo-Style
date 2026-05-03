@@ -2,7 +2,7 @@
 title: "Dog Beds for Tibetan Spaniel: Home, Crate, and Travel"
 description: "Compare bed options for Tibetan Spaniel dogs by small sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "tibetan-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Dog Beds for Tibetan Spaniel: Home, Crate, and Travel"
 displayTitle: "Dog beds for Tibetan Spaniel: home, crate, and travel"
 titlePattern: "beds-home"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "tibetan-spaniel", "Tibetan Spaniel", "small", "calm", "easy", "double", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/tibetan-spaniel", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Tibetan Spaniel, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

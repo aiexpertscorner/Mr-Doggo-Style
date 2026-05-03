@@ -2,7 +2,7 @@
 title: "Poodle (Standard) Health Risks for Large Dogs"
 description: "A practical overview of Poodle (Standard) health risks, large-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "poodle-standard"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Poodle (Standard) Health Risks for Large Dogs"
 displayTitle: "Poodle (Standard) health risks for large dogs"
 titlePattern: "health-size-risk"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "poodle-standard", "Poodle (Standard)", "large", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/poodle-standard", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Poodle (Standard)s are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

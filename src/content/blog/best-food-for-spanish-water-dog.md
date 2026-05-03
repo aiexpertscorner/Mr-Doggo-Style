@@ -2,7 +2,7 @@
 title: "Spanish Water Dog Food Guide for Active Energy Levels"
 description: "Compare dog food options for Spanish Water Dogs using breed size, active energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "spanish-water-dog"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Spanish Water Dog Food Guide for Active Energy Levels"
 displayTitle: "Spanish Water Dog food guidance for active energy levels"
 titlePattern: "food-active-calm"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "spanish-water-dog", "Spanish Water Dog", "medium", "active", "easy", "curly", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/spanish-water-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Spanish Water Dog well isn't as simple as grabbing the bag with the highest rating. Spanish Water Dogs are medium dogs with active energy, a Lifespan of 12–14 years, and nutritional vulnerabilities that change across their life stages.

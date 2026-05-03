@@ -2,7 +2,7 @@
 title: "Flat-Coated Retriever Bathing, Brushing, and Nail Care Guide"
 description: "A breed-aware Flat-Coated Retriever grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "flat-coated-retriever"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Flat-Coated Retriever Bathing, Brushing, and Nail Care Guide"
 displayTitle: "Flat-Coated Retriever bathing, brushing, and nail care guide"
 titlePattern: "groom-bath"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "flat-coated-retriever", "Flat-Coated Retriever", "large", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/flat-coated-retriever", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Flat-Coated Retrievers have a **double coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

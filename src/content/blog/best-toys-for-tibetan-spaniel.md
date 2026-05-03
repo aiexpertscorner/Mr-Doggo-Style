@@ -2,7 +2,7 @@
 title: "Tibetan Spaniel Toy Safety and Enrichment Checklist"
 description: "Compare toys for Tibetan Spaniel dogs by calm energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "tibetan-spaniel"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Tibetan Spaniel Toy Safety and Enrichment Checklist"
 displayTitle: "Tibetan Spaniel toy safety and enrichment checklist"
 titlePattern: "toys-safe-play"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "tibetan-spaniel", "Tibetan Spaniel", "small", "calm", "easy", "double", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/tibetan-spaniel", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Tibetan Spaniel means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

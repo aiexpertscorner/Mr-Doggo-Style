@@ -2,7 +2,7 @@
 title: "Dachshund Supplement Checklist for Safer Buying"
 description: "Compare supplement categories for Dachshund dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "dachshund"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Dachshund Supplement Checklist for Safer Buying"
 displayTitle: "Dachshund supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "dachshund", "Dachshund", "medium", "regular", "easy"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/dachshund", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Dachshunds, as a medium breed with regular energy and a lifespan of 12–16 years, have specific supplementation needs worth knowing about. Dachshunds have known genetic health concerns including skin, spinal problems — targeted supplements address these directly.

@@ -2,7 +2,7 @@
 title: "What to Feed a Sealyham Terrier: Practical Food Picks"
 description: "Review Sealyham Terrier dog food choices by life stage, weight control, digestion, and small-breed needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "sealyham-terrier"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "What to Feed a Sealyham Terrier: Practical Food Picks"
 displayTitle: "What to feed a Sealyham Terrier: practical food picks"
 titlePattern: "food-feeding-routine"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "sealyham-terrier", "Sealyham Terrier", "small", "regular", "difficult", "wiry", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/sealyham-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Sealyham Terrier well isn't as simple as grabbing the bag with the highest rating. Sealyham Terriers are small dogs with regular energy, a Lifespan of 12–14 years, and nutritional vulnerabilities that change across their life stages.

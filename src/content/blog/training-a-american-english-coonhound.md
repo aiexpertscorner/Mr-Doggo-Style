@@ -2,7 +2,7 @@
 title: "American English Coonhound Leash Training and Recall Guide"
 description: "A practical American English Coonhound training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "american-english-coonhound"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "American English Coonhound Leash Training and Recall Guide"
 displayTitle: "American English Coonhound leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "american-english-coonhound", "American English Coonhound", "medium", "active", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/american-english-coonhound", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 American English Coonhounds are easy-to-train dogs that respond best to positive reinforcement.

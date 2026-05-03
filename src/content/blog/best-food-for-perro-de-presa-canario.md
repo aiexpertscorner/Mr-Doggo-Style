@@ -2,7 +2,7 @@
 title: "Best Food for Perro de Presa Canario Joint and Weight Support"
 description: "A practical Perro de Presa Canario food guide for large dogs, with nutrition notes, joint-support context, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "perro-de-presa-canario"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Food for Perro de Presa Canario Joint and Weight Support"
 displayTitle: "Perro de Presa Canario food picks for joint support and steady weight"
 titlePattern: "food-best-joint"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "perro-de-presa-canario", "Perro de Presa Canario", "large", "calm", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/perro-de-presa-canario", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Perro de Presa Canario well isn't as simple as grabbing the bag with the highest rating. Perro de Presa Canarios are large dogs with calm energy, a Lifespan of 9–11 years, and nutritional vulnerabilities that change across their life stages.

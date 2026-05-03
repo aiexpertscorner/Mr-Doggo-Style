@@ -2,7 +2,7 @@
 title: "Keeshond Grooming Routine and Tool Shortlist"
 description: "A breed-aware Keeshond grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "keeshond"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Keeshond Grooming Routine and Tool Shortlist"
 displayTitle: "Keeshond grooming routine and tool shortlist"
 titlePattern: "groom-routine"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "keeshond", "Keeshond", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/keeshond", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Keeshonds have a **double coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

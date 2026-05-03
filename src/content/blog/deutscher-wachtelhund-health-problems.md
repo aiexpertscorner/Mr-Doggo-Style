@@ -2,7 +2,7 @@
 title: "Deutscher Wachtelhund Preventive Care and Warning Signs"
 description: "A practical overview of Deutscher Wachtelhund health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "deutscher-wachtelhund"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Deutscher Wachtelhund Preventive Care and Warning Signs"
 displayTitle: "Deutscher Wachtelhund preventive care and warning signs"
 titlePattern: "health-prevention"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "deutscher-wachtelhund", "Deutscher Wachtelhund", "medium", "regular", "easy"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/deutscher-wachtelhund", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Deutscher Wachtelhunds are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

@@ -2,7 +2,7 @@
 title: "Kromfohrlander Supplement Checklist for Safer Buying"
 description: "A careful Kromfohrlander supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "kromfohrlander"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Kromfohrlander Supplement Checklist for Safer Buying"
 displayTitle: "Kromfohrlander supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "kromfohrlander", "Kromfohrlander", "medium", "regular", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/kromfohrlander", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Kromfohrlanders, as a medium breed with regular energy and a lifespan of 13–15 years, have specific supplementation needs worth knowing about.

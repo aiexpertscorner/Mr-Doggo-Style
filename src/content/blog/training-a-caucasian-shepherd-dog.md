@@ -2,7 +2,7 @@
 title: "Caucasian Shepherd Dog Daily Training Routine"
 description: "A practical Caucasian Shepherd Dog training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "caucasian-shepherd-dog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Caucasian Shepherd Dog Daily Training Routine"
 displayTitle: "Caucasian Shepherd Dog daily training routine"
 titlePattern: "training-routine"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "caucasian-shepherd-dog", "Caucasian Shepherd Dog", "large", "calm", "difficult", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/caucasian-shepherd-dog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Caucasian Shepherd Dogs are difficult-to-train dogs that respond best to positive reinforcement.

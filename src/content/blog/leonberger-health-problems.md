@@ -2,7 +2,7 @@
 title: "Leonberger Health Notes for Practical Owners"
 description: "Health-sensitive Leonberger guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "leonberger"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Leonberger Health Notes for Practical Owners"
 displayTitle: "Leonberger health notes for practical owners"
 titlePattern: "health-practical"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "leonberger", "Leonberger", "large", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/leonberger", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Leonbergers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

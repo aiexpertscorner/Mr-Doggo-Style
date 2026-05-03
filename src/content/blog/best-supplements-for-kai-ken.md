@@ -2,7 +2,7 @@
 title: "Kai Ken Supplement Checklist for Safer Buying"
 description: "A careful Kai Ken supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "kai-ken"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Kai Ken Supplement Checklist for Safer Buying"
 displayTitle: "Kai Ken supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "kai-ken", "Kai Ken", "medium", "active", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/kai-ken", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Kai Kens, as a medium breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "Danish-Swedish Farmdog Health Guide: Common Issues to Watch"
 description: "Review Danish-Swedish Farmdog health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "danish-swedish-farmdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Danish-Swedish Farmdog Health Guide: Common Issues to Watch"
 displayTitle: "Danish-Swedish Farmdog health guide: common issues to watch"
 titlePattern: "health-guide"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "danish-swedish-farmdog", "Danish-Swedish Farmdog", "small", "active", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/danish-swedish-farmdog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Danish-Swedish Farmdogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

@@ -2,7 +2,7 @@
 title: "Parson Russell Terrier Training Plan for Active Dogs"
 description: "Train a Parson Russell Terrier with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "parson-russell-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Parson Russell Terrier Training Plan for Active Dogs"
 displayTitle: "Parson Russell Terrier training plan for active dogs"
 titlePattern: "training-energy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "parson-russell-terrier", "Parson Russell Terrier", "small", "active", "easy", "medium", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/parson-russell-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Parson Russell Terriers are easy-to-train dogs that respond best to positive reinforcement.

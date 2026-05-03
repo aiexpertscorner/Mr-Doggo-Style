@@ -2,7 +2,7 @@
 title: "Norrbottenspets Formula Fit: Kibble, Protein, and Feeding Notes"
 description: "A practical Norrbottenspets food guide for medium dogs, with nutrition notes, joint-support context, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "norrbottenspets"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Norrbottenspets Formula Fit: Kibble, Protein, and Feeding Notes"
 displayTitle: "Norrbottenspets formula fit: kibble, protein, and feeding notes"
 titlePattern: "food-formula-fit"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "norrbottenspets", "Norrbottenspets", "medium", "active", "easy", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/norrbottenspets", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Norrbottenspets well isn't as simple as grabbing the bag with the highest rating. Norrbottenspetss are medium dogs with active energy, a Lifespan of 14–17 years, and nutritional vulnerabilities that change across their life stages.

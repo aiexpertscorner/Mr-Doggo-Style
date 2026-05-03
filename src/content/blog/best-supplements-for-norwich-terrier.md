@@ -2,7 +2,7 @@
 title: "Norwich Terrier Supplement Shopping Guide"
 description: "Health-sensitive supplement guidance for Norwich Terrier owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "norwich-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Norwich Terrier Supplement Shopping Guide"
 displayTitle: "Norwich Terrier supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "norwich-terrier", "Norwich Terrier", "small", "active", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/norwich-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Norwich Terriers, as a small breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "Tibetan Mastiff Training Toy Shortlist"
 description: "Shortlist practical toys for Tibetan Mastiff owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "tibetan-mastiff"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Tibetan Mastiff Training Toy Shortlist"
 displayTitle: "Tibetan Mastiff training toy shortlist"
 titlePattern: "toys-training"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "tibetan-mastiff", "Tibetan Mastiff", "large", "regular", "difficult", "long", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/tibetan-mastiff", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Tibetan Mastiff means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

@@ -2,7 +2,7 @@
 title: "Australian Shepherd Health Clearances to Ask Breeders About"
 description: "Review Australian Shepherd health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "australian-shepherd"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by DΛVΞ GΛRCIΛ on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/close-up-portrait-of-an-australian-shepherd-dog-32854630/"
 imageSearchQuery: "Australian Shepherd dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "australian-shepherd", "Australian Shepherd", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/australian-shepherd", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Australian Shepherds are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

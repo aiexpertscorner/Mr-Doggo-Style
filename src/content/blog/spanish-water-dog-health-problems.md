@@ -2,7 +2,7 @@
 title: "Spanish Water Dog Health Risks for Medium Dogs"
 description: "A practical overview of Spanish Water Dog health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "spanish-water-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Spanish Water Dog Health Risks for Medium Dogs"
 displayTitle: "Spanish Water Dog health risks for medium dogs"
 titlePattern: "health-size-risk"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "spanish-water-dog", "Spanish Water Dog", "medium", "active", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/spanish-water-dog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Spanish Water Dogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

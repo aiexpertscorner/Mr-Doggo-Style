@@ -2,7 +2,7 @@
 title: "Shih Tzu Training Mistakes and Better Fixes"
 description: "A practical Shih Tzu training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "shih-tzu"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Shih Tzu Training Mistakes and Better Fixes"
 displayTitle: "Shih Tzu training mistakes and better fixes"
 titlePattern: "training-mistakes"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "shih-tzu", "Shih Tzu", "small", "regular", "easy", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/shih-tzu", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Shih Tzus rank **#70** in canine intelligence (Lowest).

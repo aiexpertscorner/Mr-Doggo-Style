@@ -2,7 +2,7 @@
 title: "Australian Kelpie Supplement Guide for Active Dogs"
 description: "A careful Australian Kelpie supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "australian-kelpie"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Australian Kelpie Supplement Guide for Active Dogs"
 displayTitle: "Australian Kelpie supplement guide for active dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "australian-kelpie", "Australian Kelpie", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/australian-kelpie", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Australian Kelpies, as a medium breed with active energy and a lifespan of 10–13 years, have specific supplementation needs worth knowing about.

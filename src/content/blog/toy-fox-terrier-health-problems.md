@@ -2,7 +2,7 @@
 title: "Toy Fox Terrier Health Guide: Common Issues to Watch"
 description: "Review Toy Fox Terrier health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "toy-fox-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Toy Fox Terrier Health Guide: Common Issues to Watch"
 displayTitle: "Toy Fox Terrier health guide: common issues to watch"
 titlePattern: "health-guide"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "toy-fox-terrier", "Toy Fox Terrier", "small", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/toy-fox-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Toy Fox Terriers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

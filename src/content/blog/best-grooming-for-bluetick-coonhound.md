@@ -2,7 +2,7 @@
 title: "Bluetick Coonhound Grooming Checklist for Home Care"
 description: "Shortlist Bluetick Coonhound grooming products with coat care, short fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "bluetick-coonhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Bluetick Coonhound Grooming Checklist for Home Care"
 displayTitle: "Bluetick Coonhound grooming checklist for home care"
 titlePattern: "groom-owner-checklist"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "bluetick-coonhound", "Bluetick Coonhound", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bluetick-coonhound", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Bluetick Coonhounds have a **short coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

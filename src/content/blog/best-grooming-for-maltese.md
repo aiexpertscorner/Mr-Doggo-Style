@@ -2,7 +2,7 @@
 title: "Maltese Grooming Checklist for Home Care"
 description: "Shortlist Maltese grooming products with coat care, long fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "maltese"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Maltese Grooming Checklist for Home Care"
 displayTitle: "Maltese grooming checklist for home care"
 titlePattern: "groom-owner-checklist"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "maltese", "Maltese", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/maltese", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Malteses have a **long coat** that requires daily brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

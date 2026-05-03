@@ -2,7 +2,7 @@
 title: "Pumi Bathing, Brushing, and Nail Care Guide"
 description: "Compare grooming tools for Pumi dogs by curly coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "pumi"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Pumi Bathing, Brushing, and Nail Care Guide"
 displayTitle: "Pumi bathing, brushing, and nail care guide"
 titlePattern: "groom-bath"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "pumi", "Pumi", "medium", "active", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pumi", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pumis have a **curly coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "Pug Training Plan for Regular Dogs"
 description: "A practical Pug training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "pug"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Pug Training Plan for Regular Dogs"
 displayTitle: "Pug training plan for regular dogs"
 titlePattern: "training-energy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "pug", "Pug", "small", "regular", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/pug", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pugs rank **#57** in canine intelligence (Fair).

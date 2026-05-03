@@ -2,7 +2,7 @@
 title: "Best Brushes and Shampoo for Kishu Ken"
 description: "A breed-aware Kishu Ken grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "kishu-ken"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Brushes and Shampoo for Kishu Ken"
 displayTitle: "Brushes and shampoo to compare for Kishu Ken"
 titlePattern: "groom-best-brush"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "kishu-ken", "Kishu Ken", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/kishu-ken", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Kishu Kens have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

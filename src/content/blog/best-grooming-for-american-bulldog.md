@@ -2,7 +2,7 @@
 title: "American Bulldog Grooming Shopping Guide"
 description: "Compare grooming tools for American Bulldog dogs by short coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "american-bulldog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "American Bulldog Grooming Shopping Guide"
 displayTitle: "American Bulldog grooming shopping guide"
 titlePattern: "groom-shopping"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "american-bulldog", "American Bulldog", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/american-bulldog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 American Bulldogs have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

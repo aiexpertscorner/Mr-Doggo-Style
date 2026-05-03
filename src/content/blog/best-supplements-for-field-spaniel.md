@@ -2,7 +2,7 @@
 title: "Field Spaniel Supplements for Joints, Skin, and Gut Health"
 description: "Compare supplement categories for Field Spaniel dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "field-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Field Spaniel Supplements for Joints, Skin, and Gut Health"
 displayTitle: "Field Spaniel supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "field-spaniel", "Field Spaniel", "medium", "regular", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/field-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Field Spaniels, as a medium breed with regular energy and a lifespan of 12–13 years, have specific supplementation needs worth knowing about.

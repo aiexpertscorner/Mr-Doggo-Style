@@ -2,7 +2,7 @@
 title: "Perro de Presa Canario Coat Care Guide for Double Fur"
 description: "Shortlist Perro de Presa Canario grooming products with coat care, double fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "perro-de-presa-canario"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Perro de Presa Canario Coat Care Guide for Double Fur"
 displayTitle: "Perro de Presa Canario coat care guide for double fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "perro-de-presa-canario", "Perro de Presa Canario", "large", "calm", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/perro-de-presa-canario", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Perro de Presa Canarios have a **double coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

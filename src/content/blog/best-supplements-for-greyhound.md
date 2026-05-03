@@ -2,7 +2,7 @@
 title: "Greyhound Supplements for Joints, Skin, and Gut Health"
 description: "A careful Greyhound supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "greyhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Greyhound Supplements for Joints, Skin, and Gut Health"
 displayTitle: "Greyhound supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "greyhound", "Greyhound", "large", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/greyhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Greyhounds, as a large breed with active energy and a lifespan of 10–13 years, have specific supplementation needs worth knowing about. Greyhounds have known genetic health concerns including blood vessel disorders — targeted supplements address these directly.

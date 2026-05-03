@@ -2,7 +2,7 @@
 title: "Icelandic Sheepdog Beds for Senior Comfort and Joint Support"
 description: "Compare bed options for Icelandic Sheepdog dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "icelandic-sheepdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Icelandic Sheepdog Beds for Senior Comfort and Joint Support"
 displayTitle: "Icelandic Sheepdog beds for senior comfort and joint support"
 titlePattern: "beds-senior"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "icelandic-sheepdog", "Icelandic Sheepdog", "medium", "active", "easy", "double", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/icelandic-sheepdog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Icelandic Sheepdog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

@@ -2,7 +2,7 @@
 title: "Weimaraner Dog Food Shopping Guide"
 description: "Breed-aware food guidance for Weimaraner owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "weimaraner"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Weimaraner Dog Food Shopping Guide"
 displayTitle: "Weimaraner dog food shopping guide"
 titlePattern: "food-shopping"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "weimaraner", "Weimaraner", "large", "active", "easy", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/weimaraner", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Weimaraner well isn't as simple as grabbing the bag with the highest rating. Weimaraners are large dogs with active energy, a Lifespan of 10–13 years, and nutritional vulnerabilities that change across their life stages.

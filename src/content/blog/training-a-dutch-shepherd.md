@@ -2,7 +2,7 @@
 title: "Dutch Shepherd Training Guide: Recall, Leash, and Manners"
 description: "Train a Dutch Shepherd with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "dutch-shepherd"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Dutch Shepherd Training Guide: Recall, Leash, and Manners"
 displayTitle: "Dutch Shepherd training guide for recall, leash, and manners"
 titlePattern: "training-guide"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "dutch-shepherd", "Dutch Shepherd", "large", "active", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/dutch-shepherd", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Dutch Shepherds are easy-to-train dogs that respond best to positive reinforcement.

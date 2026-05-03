@@ -2,7 +2,7 @@
 title: "Australian Stumpy Tail Cattle Dog Owner Training Checklist"
 description: "Build a Australian Stumpy Tail Cattle Dog training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "australian-stumpy-tail-cattle-dog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Australian Stumpy Tail Cattle Dog Owner Training Checklist"
 displayTitle: "Australian Stumpy Tail Cattle Dog owner training checklist"
 titlePattern: "training-owner"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "australian-stumpy-tail-cattle-dog", "Australian Stumpy Tail Cattle Dog", "medium", "active", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/australian-stumpy-tail-cattle-dog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Australian Stumpy Tail Cattle Dogs are easy-to-train dogs that respond best to positive reinforcement.

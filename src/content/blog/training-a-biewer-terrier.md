@@ -2,7 +2,7 @@
 title: "Biewer Terrier Training Plan for Calm Dogs"
 description: "Train a Biewer Terrier with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "biewer-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Biewer Terrier Training Plan for Calm Dogs"
 displayTitle: "Biewer Terrier training plan for calm dogs"
 titlePattern: "training-energy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "biewer-terrier", "Biewer Terrier", "small", "calm", "easy", "silky", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/biewer-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Biewer Terriers are easy-to-train dogs that respond best to positive reinforcement.

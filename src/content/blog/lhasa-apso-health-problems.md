@@ -2,7 +2,7 @@
 title: "Lhasa Apso Screening and Prevention Checklist"
 description: "Review Lhasa Apso health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "lhasa-apso"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Lhasa Apso Screening and Prevention Checklist"
 displayTitle: "Lhasa Apso screening and prevention checklist"
 titlePattern: "health-screening"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "lhasa-apso", "Lhasa Apso", "small", "regular", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/lhasa-apso", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Lhasa Apsos are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

@@ -2,7 +2,7 @@
 title: "Glen of Imaal Terrier Dog Food for Medium Breed Needs"
 description: "Breed-aware food guidance for Glen of Imaal Terrier owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "glen-of-imaal-terrier"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Glen of Imaal Terrier Dog Food for Medium Breed Needs"
 displayTitle: "Glen of Imaal Terrier dog food matched to medium breed needs"
 titlePattern: "food-large-breed"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "glen-of-imaal-terrier", "Glen of Imaal Terrier", "medium", "regular", "difficult", "rough", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/glen-of-imaal-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Glen of Imaal Terrier well isn't as simple as grabbing the bag with the highest rating. Glen of Imaal Terriers are medium dogs with regular energy, a Lifespan of 10–15 years, and nutritional vulnerabilities that change across their life stages.

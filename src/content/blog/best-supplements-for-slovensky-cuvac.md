@@ -2,7 +2,7 @@
 title: "Slovensky Cuvac Supplement Guide: What to Ask Your Vet"
 description: "Health-sensitive supplement guidance for Slovensky Cuvac owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "slovensky-cuvac"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Slovensky Cuvac Supplement Guide: What to Ask Your Vet"
 displayTitle: "Slovensky Cuvac supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "slovensky-cuvac", "Slovensky Cuvac", "large", "calm", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/slovensky-cuvac", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Slovensky Cuvacs, as a large breed with calm energy and a lifespan of 11–13 years, have specific supplementation needs worth knowing about.

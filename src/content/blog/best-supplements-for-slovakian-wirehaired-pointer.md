@@ -2,7 +2,7 @@
 title: "Slovakian Wirehaired Pointer Supplements for Joints, Skin, and Gut Health"
 description: "Compare supplement categories for Slovakian Wirehaired Pointer dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "slovakian-wirehaired-pointer"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Slovakian Wirehaired Pointer Supplements for Joints, Skin, and Gut Health"
 displayTitle: "Slovakian Wirehaired Pointer supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "slovakian-wirehaired-pointer", "Slovakian Wirehaired Pointer", "medium", "active", "difficult", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/slovakian-wirehaired-pointer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Slovakian Wirehaired Pointers, as a medium breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

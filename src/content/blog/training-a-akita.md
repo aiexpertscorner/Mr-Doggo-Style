@@ -2,7 +2,7 @@
 title: "Akita Training Plan for Active Dogs"
 description: "Train a Akita with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "akita"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Akita Training Plan for Active Dogs"
 displayTitle: "Akita training plan for active dogs"
 titlePattern: "training-energy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "akita", "Akita", "large", "active", "easy", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/akita", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Akitas rank **#54** in canine intelligence (Average).

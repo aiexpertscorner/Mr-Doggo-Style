@@ -2,7 +2,7 @@
 title: "American Foxhound Supplement Shopping Guide"
 description: "Health-sensitive supplement guidance for American Foxhound owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "american-foxhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "American Foxhound Supplement Shopping Guide"
 displayTitle: "American Foxhound supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "american-foxhound", "American Foxhound", "large", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/american-foxhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but American Foxhounds, as a large breed with active energy and a lifespan of 11–13 years, have specific supplementation needs worth knowing about.

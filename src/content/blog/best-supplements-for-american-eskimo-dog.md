@@ -2,7 +2,7 @@
 title: "American Eskimo Dog Supplement Safety and Medication Questions"
 description: "Health-sensitive supplement guidance for American Eskimo Dog owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "american-eskimo-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "American Eskimo Dog Supplement Safety and Medication Questions"
 displayTitle: "American Eskimo Dog supplement safety and medication questions"
 titlePattern: "supp-medication"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "american-eskimo-dog", "American Eskimo Dog", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/american-eskimo-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but American Eskimo Dogs, as a medium breed with active energy and a lifespan of 13–15 years, have specific supplementation needs worth knowing about.

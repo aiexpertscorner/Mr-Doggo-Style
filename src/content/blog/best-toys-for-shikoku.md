@@ -2,7 +2,7 @@
 title: "Best Shikoku Toys for Regular Energy Dogs"
 description: "Shortlist practical toys for Shikoku owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "shikoku"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Best Shikoku Toys for Regular Energy Dogs"
 displayTitle: "Toy picks for regular Shikoku dogs"
 titlePattern: "toys-best-active"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "shikoku", "Shikoku", "medium", "regular", "easy", "double", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/shikoku", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Shikoku means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

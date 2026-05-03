@@ -2,7 +2,7 @@
 title: "Russell Terrier Coat Care Guide for Medium Fur"
 description: "A breed-aware Russell Terrier grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "russell-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Russell Terrier Coat Care Guide for Medium Fur"
 displayTitle: "Russell Terrier coat care guide for medium fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "russell-terrier", "Russell Terrier", "small", "active", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/russell-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Russell Terriers have a **medium coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

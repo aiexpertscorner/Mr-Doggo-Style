@@ -2,7 +2,7 @@
 title: "Best Beds for Cirneco dell’Etna: Support and Size Picks"
 description: "Compare bed options for Cirneco dell’Etna dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "cirneco-delletna"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Beds for Cirneco dell’Etna: Support and Size Picks"
 displayTitle: "Best beds for Cirneco dell’Etna support and sizing"
 titlePattern: "beds-best-support"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "cirneco-delletna", "Cirneco dell’Etna", "medium", "regular", "easy", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/cirneco-delletna", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Cirneco dell’Etna, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

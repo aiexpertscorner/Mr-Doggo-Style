@@ -2,7 +2,7 @@
 title: "Best Grooming Picks for Yorkshire Terrier Shedding"
 description: "Compare grooming tools for Yorkshire Terrier dogs by silky coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "yorkshire-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Grooming Picks for Yorkshire Terrier Shedding"
 displayTitle: "Grooming picks for Yorkshire Terrier shedding"
 titlePattern: "groom-best-shedding"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "yorkshire-terrier", "Yorkshire Terrier", "small", "regular", "moderate", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/yorkshire-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Yorkshire Terriers have a **silky coat** that requires specialty/professional. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

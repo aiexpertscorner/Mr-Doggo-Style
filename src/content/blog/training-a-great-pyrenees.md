@@ -2,7 +2,7 @@
 title: "Great Pyrenees Owner Training Checklist"
 description: "Build a Great Pyrenees training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "great-pyrenees"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Great Pyrenees Owner Training Checklist"
 displayTitle: "Great Pyrenees owner training checklist"
 titlePattern: "training-owner"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "great-pyrenees", "Great Pyrenees", "large", "active", "difficult", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/great-pyrenees", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Great Pyreneess are difficult-to-train dogs that respond best to positive reinforcement.

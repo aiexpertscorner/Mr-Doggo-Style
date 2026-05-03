@@ -2,7 +2,7 @@
 title: "German Shorthaired Pointer Grooming for Shedding and Sensitive Skin"
 description: "A breed-aware German Shorthaired Pointer grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "german-shorthaired-pointer"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "German Shorthaired Pointer Grooming for Shedding and Sensitive Skin"
 displayTitle: "German Shorthaired Pointer grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "german-shorthaired-pointer", "German Shorthaired Pointer", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/german-shorthaired-pointer", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 German Shorthaired Pointers have a **short coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

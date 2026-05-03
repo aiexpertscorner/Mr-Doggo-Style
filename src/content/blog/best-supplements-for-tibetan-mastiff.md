@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Tibetan Mastiff"
 description: "Health-sensitive supplement guidance for Tibetan Mastiff owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "tibetan-mastiff"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Tibetan Mastiff"
 displayTitle: "Joint supplements to ask your vet about for Tibetan Mastiff"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "tibetan-mastiff", "Tibetan Mastiff", "large", "regular", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/tibetan-mastiff", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Tibetan Mastiffs, as a large breed with regular energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

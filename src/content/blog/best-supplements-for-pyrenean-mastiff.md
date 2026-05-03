@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Pyrenean Mastiff"
 description: "A careful Pyrenean Mastiff supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "pyrenean-mastiff"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Pyrenean Mastiff"
 displayTitle: "Skin and gut supplement options for Pyrenean Mastiff"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "pyrenean-mastiff", "Pyrenean Mastiff", "large", "calm", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pyrenean-mastiff", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Pyrenean Mastiffs, as a large breed with calm energy and a lifespan of 10–13 years, have specific supplementation needs worth knowing about.

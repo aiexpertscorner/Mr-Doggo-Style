@@ -2,7 +2,7 @@
 title: "Nova Scotia Duck Tolling Retriever Dog Food Shopping Guide"
 description: "Breed-aware food guidance for Nova Scotia Duck Tolling Retriever owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "nova-scotia-duck-tolling-retriever"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Nova Scotia Duck Tolling Retriever Dog Food Shopping Guide"
 displayTitle: "Nova Scotia Duck Tolling Retriever dog food shopping guide"
 titlePattern: "food-shopping"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "nova-scotia-duck-tolling-retriever", "Nova Scotia Duck Tolling Retriever", "medium", "active", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/nova-scotia-duck-tolling-retriever", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Nova Scotia Duck Tolling Retriever well isn't as simple as grabbing the bag with the highest rating. Nova Scotia Duck Tolling Retrievers are medium dogs with active energy, a Lifespan of 12–14 years, and nutritional vulnerabilities that change across their life stages.

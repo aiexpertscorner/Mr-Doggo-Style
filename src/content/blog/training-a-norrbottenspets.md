@@ -2,7 +2,7 @@
 title: "Norrbottenspets Training by Temperament and Drive"
 description: "A practical Norrbottenspets training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "norrbottenspets"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Norrbottenspets Training by Temperament and Drive"
 displayTitle: "Norrbottenspets training by temperament and drive"
 titlePattern: "training-temperament"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "norrbottenspets", "Norrbottenspets", "medium", "active", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/norrbottenspets", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Norrbottenspetss are easy-to-train dogs that respond best to positive reinforcement.

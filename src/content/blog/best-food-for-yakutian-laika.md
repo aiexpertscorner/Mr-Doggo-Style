@@ -2,7 +2,7 @@
 title: "Best Dog Food for Yakutian Laika Sensitive Stomachs"
 description: "Breed-aware food guidance for Yakutian Laika owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "yakutian-laika"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Dog Food for Yakutian Laika Sensitive Stomachs"
 displayTitle: "Food options to compare for Yakutian Laika sensitive stomachs"
 titlePattern: "food-best-sensitive"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "yakutian-laika", "Yakutian Laika", "medium", "active", "moderate", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/yakutian-laika", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Yakutian Laika well isn't as simple as grabbing the bag with the highest rating. Yakutian Laikas are medium dogs with active energy, a Lifespan of 10–12 years, and nutritional vulnerabilities that change across their life stages.

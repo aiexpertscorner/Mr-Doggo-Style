@@ -2,7 +2,7 @@
 title: "Small Munsterlander Pointer Training Mistakes and Better Fixes"
 description: "Build a Small Munsterlander Pointer training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "small-munsterlander-pointer"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Small Munsterlander Pointer Training Mistakes and Better Fixes"
 displayTitle: "Small Munsterlander Pointer training mistakes and better fixes"
 titlePattern: "training-mistakes"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "small-munsterlander-pointer", "Small Munsterlander Pointer", "medium", "active", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/small-munsterlander-pointer", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Small Munsterlander Pointers are easy-to-train dogs that respond best to positive reinforcement.

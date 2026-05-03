@@ -2,7 +2,7 @@
 title: "Best Toys for Azawakh Chewers and Puzzle Play"
 description: "A breed-aware Azawakh toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "azawakh"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Best Toys for Azawakh Chewers and Puzzle Play"
 displayTitle: "Azawakh toys for chewing, puzzle play, and downtime"
 titlePattern: "toys-best-chewers"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "azawakh", "Azawakh", "medium", "regular", "difficult", "short", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/azawakh", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Azawakh means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

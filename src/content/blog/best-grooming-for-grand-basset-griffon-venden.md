@@ -2,7 +2,7 @@
 title: "Grand Basset Griffon Vendéen Coat Care Guide for Rough Fur"
 description: "A breed-aware Grand Basset Griffon Vendéen grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "grand-basset-griffon-venden"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Grand Basset Griffon Vendéen Coat Care Guide for Rough Fur"
 displayTitle: "Grand Basset Griffon Vendéen coat care guide for rough fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "grand-basset-griffon-venden", "Grand Basset Griffon Vendéen", "medium", "active", "difficult", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/grand-basset-griffon-venden", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Grand Basset Griffon Vendéens have a **rough coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "Russian Toy Health Clearances to Ask Breeders About"
 description: "A practical overview of Russian Toy health risks, small-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "russian-toy"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Russian Toy Health Clearances to Ask Breeders About"
 displayTitle: "Russian Toy health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "russian-toy", "Russian Toy", "small", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/russian-toy", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Russian Toys are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

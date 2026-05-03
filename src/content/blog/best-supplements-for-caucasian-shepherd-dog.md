@@ -2,7 +2,7 @@
 title: "Caucasian Shepherd Dog Supplement Guide: What to Ask Your Vet"
 description: "Compare supplement categories for Caucasian Shepherd Dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "caucasian-shepherd-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Caucasian Shepherd Dog Supplement Guide: What to Ask Your Vet"
 displayTitle: "Caucasian Shepherd Dog supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "caucasian-shepherd-dog", "Caucasian Shepherd Dog", "large", "calm", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/caucasian-shepherd-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Caucasian Shepherd Dogs, as a large breed with calm energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

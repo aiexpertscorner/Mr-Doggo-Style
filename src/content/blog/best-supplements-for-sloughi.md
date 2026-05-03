@@ -2,7 +2,7 @@
 title: "Sloughi Supplements: Evidence, Labels, and Vet Checks"
 description: "A careful Sloughi supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "sloughi"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Sloughi Supplements: Evidence, Labels, and Vet Checks"
 displayTitle: "Sloughi supplements: evidence, labels, and vet checks"
 titlePattern: "supp-evidence"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "sloughi", "Sloughi", "medium", "regular", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/sloughi", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Sloughis, as a medium breed with regular energy and a lifespan of 10–15 years, have specific supplementation needs worth knowing about.

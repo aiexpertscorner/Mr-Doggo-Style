@@ -2,7 +2,7 @@
 title: "Wirehaired Pointing Griffon Health Risks for Large Dogs"
 description: "Health-sensitive Wirehaired Pointing Griffon guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "wirehaired-pointing-griffon"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Wirehaired Pointing Griffon Health Risks for Large Dogs"
 displayTitle: "Wirehaired Pointing Griffon health risks for large dogs"
 titlePattern: "health-size-risk"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "wirehaired-pointing-griffon", "Wirehaired Pointing Griffon", "large", "active", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/wirehaired-pointing-griffon", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Wirehaired Pointing Griffons are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

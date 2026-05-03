@@ -2,7 +2,7 @@
 title: "Miniature Bull Terrier Supplement Checklist for Safer Buying"
 description: "Compare supplement categories for Miniature Bull Terrier dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "miniature-bull-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Miniature Bull Terrier Supplement Checklist for Safer Buying"
 displayTitle: "Miniature Bull Terrier supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "miniature-bull-terrier", "Miniature Bull Terrier", "medium", "active", "difficult"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/miniature-bull-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Miniature Bull Terriers, as a medium breed with active energy and a lifespan of 11–13 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "Training a Thai Ridgeback: Foundation Plan"
 description: "Train a Thai Ridgeback with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "thai-ridgeback"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Training a Thai Ridgeback: Foundation Plan"
 displayTitle: "Training a Thai Ridgeback: foundation plan"
 titlePattern: "training-foundation"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "thai-ridgeback", "Thai Ridgeback", "large", "active", "difficult", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/thai-ridgeback", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Thai Ridgebacks are difficult-to-train dogs that respond best to positive reinforcement.

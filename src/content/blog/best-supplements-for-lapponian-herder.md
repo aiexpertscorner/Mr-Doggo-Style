@@ -2,7 +2,7 @@
 title: "Best Supplements for Lapponian Herder: Careful Buyer Shortlist"
 description: "Health-sensitive supplement guidance for Lapponian Herder owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "lapponian-herder"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for Lapponian Herder: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for Lapponian Herder"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "lapponian-herder", "Lapponian Herder", "large", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/lapponian-herder", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Lapponian Herders, as a large breed with regular energy and a lifespan of 10–14 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "Best Senior Supplements for Sussex Spaniel"
 description: "Health-sensitive supplement guidance for Sussex Spaniel owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "sussex-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Senior Supplements for Sussex Spaniel"
 displayTitle: "Senior supplement questions for Sussex Spaniel"
 titlePattern: "supp-best-senior"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "sussex-spaniel", "Sussex Spaniel", "medium", "regular", "difficult", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/sussex-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Sussex Spaniels, as a medium breed with regular energy and a lifespan of 13–15 years, have specific supplementation needs worth knowing about.

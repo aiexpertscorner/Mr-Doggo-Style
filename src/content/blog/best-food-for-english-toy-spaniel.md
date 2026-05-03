@@ -2,7 +2,7 @@
 title: "Best Food for English Toy Spaniel Joint and Weight Support"
 description: "A practical English Toy Spaniel food guide for small dogs, with nutrition notes, joint-support context, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "english-toy-spaniel"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Food for English Toy Spaniel Joint and Weight Support"
 displayTitle: "English Toy Spaniel food picks for joint support and steady weight"
 titlePattern: "food-best-joint"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "english-toy-spaniel", "English Toy Spaniel", "small", "regular", "difficult", "silky", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/english-toy-spaniel", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a English Toy Spaniel well isn't as simple as grabbing the bag with the highest rating. English Toy Spaniels are small dogs with regular energy, a Average lifespan of 1 years, and nutritional vulnerabilities that change across their life stages.

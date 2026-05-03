@@ -2,7 +2,7 @@
 title: "Dalmatian Nutrition Guide for Large Active Dogs"
 description: "Breed-aware food guidance for Dalmatian owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "dalmatian"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Dalmatian Nutrition Guide for Large Active Dogs"
 displayTitle: "Nutrition notes for large active Dalmatian dogs"
 titlePattern: "food-size-energy"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "dalmatian", "Dalmatian", "large", "active", "easy", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/dalmatian", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Dalmatian well isn't as simple as grabbing the bag with the highest rating. Dalmatians are large dogs with active energy, a Average lifespan of 11.3 years, and nutritional vulnerabilities that change across their life stages.

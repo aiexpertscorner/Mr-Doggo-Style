@@ -2,7 +2,7 @@
 title: "Samoyed Coat Care Guide for Double Fur"
 description: "A breed-aware Samoyed grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "samoyed"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Samoyed Coat Care Guide for Double Fur"
 displayTitle: "Samoyed coat care guide for double fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "samoyed", "Samoyed", "medium", "active", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/samoyed", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Samoyeds have a **double coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "French Spaniel Food Guide for Regular Energy Levels"
 description: "Compare dog food options for French Spaniel dogs using breed size, regular energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "french-spaniel"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "French Spaniel Food Guide for Regular Energy Levels"
 displayTitle: "French Spaniel food guidance for regular energy levels"
 titlePattern: "food-active-calm"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "french-spaniel", "French Spaniel", "medium", "regular", "easy", "silky", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/french-spaniel", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a French Spaniel well isn't as simple as grabbing the bag with the highest rating. French Spaniels are medium dogs with regular energy, a Lifespan of 10–12 years, and nutritional vulnerabilities that change across their life stages.

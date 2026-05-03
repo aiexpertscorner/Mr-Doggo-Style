@@ -2,7 +2,7 @@
 title: "Miniature Schnauzer Puppy Training Checklist"
 description: "Build a Miniature Schnauzer training routine around regular energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "miniature-schnauzer"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Miniature Schnauzer Puppy Training Checklist"
 displayTitle: "Miniature Schnauzer puppy training checklist"
 titlePattern: "training-puppy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "miniature-schnauzer", "Miniature Schnauzer", "small", "regular", "easy", "wiry", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/miniature-schnauzer", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Miniature Schnauzers rank **#12** in canine intelligence (Excellent).

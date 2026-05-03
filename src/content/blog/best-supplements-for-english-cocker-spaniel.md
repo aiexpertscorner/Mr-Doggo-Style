@@ -2,7 +2,7 @@
 title: "Best Supplements for English Cocker Spaniel: Careful Buyer Shortlist"
 description: "Health-sensitive supplement guidance for English Cocker Spaniel owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "english-cocker-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for English Cocker Spaniel: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for English Cocker Spaniel"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "english-cocker-spaniel", "English Cocker Spaniel", "medium", "regular", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/english-cocker-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but English Cocker Spaniels, as a medium breed with regular energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

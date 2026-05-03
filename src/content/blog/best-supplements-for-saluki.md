@@ -2,7 +2,7 @@
 title: "Saluki Supplement Guide for Active Dogs"
 description: "Health-sensitive supplement guidance for Saluki owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "saluki"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Saluki Supplement Guide for Active Dogs"
 displayTitle: "Saluki supplement guide for active dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "saluki", "Saluki", "medium", "active", "difficult", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/saluki", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Salukis, as a medium breed with active energy and a lifespan of 10–17 years, have specific supplementation needs worth knowing about.

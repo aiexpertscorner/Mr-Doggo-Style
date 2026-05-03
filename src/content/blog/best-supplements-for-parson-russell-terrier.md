@@ -2,7 +2,7 @@
 title: "Parson Russell Terrier Supplement Checklist for Safer Buying"
 description: "Health-sensitive supplement guidance for Parson Russell Terrier owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "parson-russell-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Parson Russell Terrier Supplement Checklist for Safer Buying"
 displayTitle: "Parson Russell Terrier supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "parson-russell-terrier", "Parson Russell Terrier", "small", "active", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/parson-russell-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Parson Russell Terriers, as a small breed with active energy and a lifespan of 13–15 years, have specific supplementation needs worth knowing about.

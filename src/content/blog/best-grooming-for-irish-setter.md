@@ -2,7 +2,7 @@
 title: "Irish Setter Grooming Routine and Tool Shortlist"
 description: "A breed-aware Irish Setter grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "irish-setter"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Irish Setter Grooming Routine and Tool Shortlist"
 displayTitle: "Irish Setter grooming routine and tool shortlist"
 titlePattern: "groom-routine"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "irish-setter", "Irish Setter", "large", "active", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/irish-setter", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Irish Setters have a **silky coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

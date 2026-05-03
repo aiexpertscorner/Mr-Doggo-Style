@@ -2,7 +2,7 @@
 title: "Bedlington Terrier Grooming for Shedding and Sensitive Skin"
 description: "Compare grooming tools for Bedlington Terrier dogs by curly coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "bedlington-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Bedlington Terrier Grooming for Shedding and Sensitive Skin"
 displayTitle: "Bedlington Terrier grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "bedlington-terrier", "Bedlington Terrier", "small", "active", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bedlington-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Bedlington Terriers have a **curly coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "Saint Bernard Coat Care Guide for Double Fur"
 description: "Shortlist Saint Bernard grooming products with coat care, double fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "saint-bernard"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Saint Bernard Coat Care Guide for Double Fur"
 displayTitle: "Saint Bernard coat care guide for double fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "saint-bernard", "Saint Bernard", "large", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/saint-bernard", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Saint Bernards have a **double coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "Health Concerns in Central Asian Shepherd Dog: Owner Notes"
 description: "A practical overview of Central Asian Shepherd Dog health risks, large-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "central-asian-shepherd-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Health Concerns in Central Asian Shepherd Dog: Owner Notes"
 displayTitle: "Health concerns in Central Asian Shepherd Dog: owner notes"
 titlePattern: "health-owner-notes"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "central-asian-shepherd-dog", "Central Asian Shepherd Dog", "large", "calm", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/central-asian-shepherd-dog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Central Asian Shepherd Dogs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

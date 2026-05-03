@@ -2,7 +2,7 @@
 title: "Training a Appenzeller Sennenhund: Foundation Plan"
 description: "Train a Appenzeller Sennenhund with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "appenzeller-sennenhund"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Training a Appenzeller Sennenhund: Foundation Plan"
 displayTitle: "Training a Appenzeller Sennenhund: foundation plan"
 titlePattern: "training-foundation"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "appenzeller-sennenhund", "Appenzeller Sennenhund", "large", "active", "moderate", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/appenzeller-sennenhund", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Appenzeller Sennenhunds are moderate-to-train dogs that respond best to positive reinforcement.

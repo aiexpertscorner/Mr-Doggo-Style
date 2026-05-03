@@ -2,7 +2,7 @@
 title: "Best Supplements for American Staffordshire Terrier: Careful Buyer Shortlist"
 description: "Compare supplement categories for American Staffordshire Terrier dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "american-staffordshire-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for American Staffordshire Terrier: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for American Staffordshire Terrier"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "american-staffordshire-terrier", "American Staffordshire Terrier", "large", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/american-staffordshire-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but American Staffordshire Terriers, as a large breed with regular energy and a lifespan of 12–16 years, have specific supplementation needs worth knowing about.

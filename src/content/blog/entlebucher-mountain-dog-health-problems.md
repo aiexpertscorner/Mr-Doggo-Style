@@ -2,7 +2,7 @@
 title: "Entlebucher Mountain Dog Health Clearances to Ask Breeders About"
 description: "Review Entlebucher Mountain Dog health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "entlebucher-mountain-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Entlebucher Mountain Dog Health Clearances to Ask Breeders About"
 displayTitle: "Entlebucher Mountain Dog health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "entlebucher-mountain-dog", "Entlebucher Mountain Dog", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/entlebucher-mountain-dog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Entlebucher Mountain Dogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

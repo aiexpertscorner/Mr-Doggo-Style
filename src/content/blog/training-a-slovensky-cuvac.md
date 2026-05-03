@@ -2,7 +2,7 @@
 title: "Slovensky Cuvac Daily Training Routine"
 description: "Build a Slovensky Cuvac training routine around calm energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "slovensky-cuvac"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Slovensky Cuvac Daily Training Routine"
 displayTitle: "Slovensky Cuvac daily training routine"
 titlePattern: "training-routine"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "slovensky-cuvac", "Slovensky Cuvac", "large", "calm", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/slovensky-cuvac", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Slovensky Cuvacs are easy-to-train dogs that respond best to positive reinforcement.

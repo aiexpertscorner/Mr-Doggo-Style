@@ -2,7 +2,7 @@
 title: "Shiba Inu Supplement Shopping Guide"
 description: "A careful Shiba Inu supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "shiba-inu"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Shiba Inu Supplement Shopping Guide"
 displayTitle: "Shiba Inu supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "shiba-inu", "Shiba Inu", "small", "regular", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/shiba-inu", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Shiba Inus, as a small breed with regular energy and a lifespan of 13–16 years, have specific supplementation needs worth knowing about.

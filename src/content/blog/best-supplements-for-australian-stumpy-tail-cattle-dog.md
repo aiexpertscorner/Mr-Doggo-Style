@@ -2,7 +2,7 @@
 title: "Australian Stumpy Tail Cattle Dog Supplement Guide: What to Ask Your Vet"
 description: "Health-sensitive supplement guidance for Australian Stumpy Tail Cattle Dog owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "australian-stumpy-tail-cattle-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Australian Stumpy Tail Cattle Dog Supplement Guide: What to Ask Your Vet"
 displayTitle: "Australian Stumpy Tail Cattle Dog supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "australian-stumpy-tail-cattle-dog", "Australian Stumpy Tail Cattle Dog", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/australian-stumpy-tail-cattle-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Australian Stumpy Tail Cattle Dogs, as a medium breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

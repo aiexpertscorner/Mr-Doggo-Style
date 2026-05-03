@@ -2,7 +2,7 @@
 title: "Bichon Frise Nutrition Guide for Small Regular Dogs"
 description: "Breed-aware food guidance for Bichon Frise owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "bichon-frise"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Bichon Frise Nutrition Guide for Small Regular Dogs"
 displayTitle: "Nutrition notes for small regular Bichon Frise dogs"
 titlePattern: "food-size-energy"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "bichon-frise", "Bichon Frise", "small", "regular", "easy", "curly", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/bichon-frise", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Bichon Frise well isn't as simple as grabbing the bag with the highest rating. Bichon Frises are small dogs with regular energy, a Average lifespan of 12.2 years, and nutritional vulnerabilities that change across their life stages.

@@ -2,7 +2,7 @@
 title: "Russian Toy Training Mistakes and Better Fixes"
 description: "Train a Russian Toy with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "russian-toy"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Russian Toy Training Mistakes and Better Fixes"
 displayTitle: "Russian Toy training mistakes and better fixes"
 titlePattern: "training-mistakes"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "russian-toy", "Russian Toy", "small", "regular", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/russian-toy", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Russian Toys are easy-to-train dogs that respond best to positive reinforcement.

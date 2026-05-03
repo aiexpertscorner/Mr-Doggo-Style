@@ -2,7 +2,7 @@
 title: "Small Munsterlander Pointer Puzzle Toy and Chew Guide"
 description: "Shortlist practical toys for Small Munsterlander Pointer owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "small-munsterlander-pointer"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Small Munsterlander Pointer Puzzle Toy and Chew Guide"
 displayTitle: "Small Munsterlander Pointer puzzle toy and chew guide"
 titlePattern: "toys-puzzle"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "small-munsterlander-pointer", "Small Munsterlander Pointer", "medium", "active", "easy", "double", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/small-munsterlander-pointer", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Small Munsterlander Pointer means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

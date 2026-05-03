@@ -2,7 +2,7 @@
 title: "Health Concerns in Irish Setter: Owner Notes"
 description: "Review Irish Setter health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "irish-setter"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Health Concerns in Irish Setter: Owner Notes"
 displayTitle: "Health concerns in Irish Setter: owner notes"
 titlePattern: "health-owner-notes"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "irish-setter", "Irish Setter", "large", "active", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/irish-setter", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Irish Setters are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

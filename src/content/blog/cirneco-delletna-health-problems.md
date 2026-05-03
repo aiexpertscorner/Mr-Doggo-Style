@@ -2,7 +2,7 @@
 title: "Cirneco dell’Etna Health Risks for Medium Dogs"
 description: "Review Cirneco dell’Etna health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "cirneco-delletna"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Cirneco dell’Etna Health Risks for Medium Dogs"
 displayTitle: "Cirneco dell’Etna health risks for medium dogs"
 titlePattern: "health-size-risk"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "cirneco-delletna", "Cirneco dell’Etna", "medium", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/cirneco-delletna", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Cirneco dell’Etnas are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

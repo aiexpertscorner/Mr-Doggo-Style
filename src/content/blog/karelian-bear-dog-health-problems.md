@@ -2,7 +2,7 @@
 title: "Karelian Bear Dog Health Risks for Medium Dogs"
 description: "A practical overview of Karelian Bear Dog health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "karelian-bear-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Karelian Bear Dog Health Risks for Medium Dogs"
 displayTitle: "Karelian Bear Dog health risks for medium dogs"
 titlePattern: "health-size-risk"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "karelian-bear-dog", "Karelian Bear Dog", "medium", "calm", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/karelian-bear-dog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Karelian Bear Dogs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

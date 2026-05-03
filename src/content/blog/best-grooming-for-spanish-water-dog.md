@@ -2,7 +2,7 @@
 title: "Best Brushes and Shampoo for Spanish Water Dog"
 description: "A breed-aware Spanish Water Dog grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "spanish-water-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Brushes and Shampoo for Spanish Water Dog"
 displayTitle: "Brushes and shampoo to compare for Spanish Water Dog"
 titlePattern: "groom-best-brush"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "spanish-water-dog", "Spanish Water Dog", "medium", "active", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/spanish-water-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Spanish Water Dogs have a **curly coat** that requires specialty/professional. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

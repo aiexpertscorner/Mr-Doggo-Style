@@ -2,7 +2,7 @@
 title: "Best Brushes and Shampoo for Manchester Terrier (Toy)"
 description: "Compare grooming tools for Manchester Terrier (Toy) dogs by medium coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "manchester-terrier-toy"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Brushes and Shampoo for Manchester Terrier (Toy)"
 displayTitle: "Brushes and shampoo to compare for Manchester Terrier (Toy)"
 titlePattern: "groom-best-brush"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "manchester-terrier-toy", "Manchester Terrier (Toy)", "small", "regular", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/manchester-terrier-toy", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Manchester Terrier (Toy)s have a **medium coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

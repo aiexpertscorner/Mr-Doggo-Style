@@ -2,7 +2,7 @@
 title: "Bull Terrier Screening and Prevention Checklist"
 description: "Review Bull Terrier health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "bull-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Bull Terrier Screening and Prevention Checklist"
 displayTitle: "Bull Terrier screening and prevention checklist"
 titlePattern: "health-screening"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "bull-terrier", "Bull Terrier", "large", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bull-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Bull Terriers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

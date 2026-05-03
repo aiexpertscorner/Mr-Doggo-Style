@@ -2,7 +2,7 @@
 title: "Boston Terrier Bathing, Brushing, and Nail Care Guide"
 description: "Shortlist Boston Terrier grooming products with coat care, short fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "boston-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Boston Terrier Bathing, Brushing, and Nail Care Guide"
 displayTitle: "Boston Terrier bathing, brushing, and nail care guide"
 titlePattern: "groom-bath"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "boston-terrier", "Boston Terrier", "small", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/boston-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Boston Terriers have a **short coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "Borzoi Owner Training Checklist"
 description: "Build a Borzoi training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "borzoi"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Borzoi Owner Training Checklist"
 displayTitle: "Borzoi owner training checklist"
 titlePattern: "training-owner"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "borzoi", "Borzoi", "large", "active", "difficult", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/borzoi", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Borzois rank **#76** in canine intelligence (Lowest).

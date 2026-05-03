@@ -2,7 +2,7 @@
 title: "Glen of Imaal Terrier Beds for Cooling, Comfort, and Cleanup"
 description: "A practical Glen of Imaal Terrier bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "glen-of-imaal-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Glen of Imaal Terrier Beds for Cooling, Comfort, and Cleanup"
 displayTitle: "Glen of Imaal Terrier beds for cooling, comfort, and cleanup"
 titlePattern: "beds-cooling"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "glen-of-imaal-terrier", "Glen of Imaal Terrier", "medium", "regular", "difficult", "rough", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/glen-of-imaal-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Glen of Imaal Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

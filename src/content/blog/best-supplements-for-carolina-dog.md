@@ -2,7 +2,7 @@
 title: "Carolina Dog Supplement Checklist for Safer Buying"
 description: "Compare supplement categories for Carolina Dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "carolina-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Carolina Dog Supplement Checklist for Safer Buying"
 displayTitle: "Carolina Dog supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "carolina-dog", "Carolina Dog", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/carolina-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Carolina Dogs, as a medium breed with regular energy and a lifespan of –12 years, have specific supplementation needs worth knowing about.

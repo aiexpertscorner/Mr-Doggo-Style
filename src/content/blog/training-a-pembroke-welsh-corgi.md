@@ -2,7 +2,7 @@
 title: "Pembroke Welsh Corgi Socialisation and Obedience Guide"
 description: "Build a Pembroke Welsh Corgi training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "pembroke-welsh-corgi"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Pembroke Welsh Corgi Socialisation and Obedience Guide"
 displayTitle: "Pembroke Welsh Corgi socialisation and obedience guide"
 titlePattern: "training-social"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "pembroke-welsh-corgi", "Pembroke Welsh Corgi", "medium", "active", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/pembroke-welsh-corgi", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pembroke Welsh Corgis rank **#11** in canine intelligence (Excellent).

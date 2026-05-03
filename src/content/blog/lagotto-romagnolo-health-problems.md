@@ -2,7 +2,7 @@
 title: "Lagotto Romagnolo Health Problems: Risks and Screening"
 description: "Health-sensitive Lagotto Romagnolo guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "lagotto-romagnolo"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Lagotto Romagnolo Health Problems: Risks and Screening"
 displayTitle: "Lagotto Romagnolo health problems: risks and screening"
 titlePattern: "health-problems"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "lagotto-romagnolo", "Lagotto Romagnolo", "medium", "regular", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/lagotto-romagnolo", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Lagotto Romagnolos are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

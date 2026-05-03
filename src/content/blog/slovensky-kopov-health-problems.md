@@ -2,7 +2,7 @@
 title: "Slovensky Kopov Health Risks and Insurance Timing"
 description: "A practical overview of Slovensky Kopov health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "slovensky-kopov"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Slovensky Kopov Health Risks and Insurance Timing"
 displayTitle: "Slovensky Kopov health risks and insurance timing"
 titlePattern: "health-insurance"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "slovensky-kopov", "Slovensky Kopov", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/slovensky-kopov", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Slovensky Kopovs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

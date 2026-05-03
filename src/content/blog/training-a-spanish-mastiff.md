@@ -2,7 +2,7 @@
 title: "Training a Spanish Mastiff: Foundation Plan"
 description: "Train a Spanish Mastiff with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "spanish-mastiff"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Training a Spanish Mastiff: Foundation Plan"
 displayTitle: "Training a Spanish Mastiff: foundation plan"
 titlePattern: "training-foundation"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "spanish-mastiff", "Spanish Mastiff", "large", "calm", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/spanish-mastiff", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Spanish Mastiffs are easy-to-train dogs that respond best to positive reinforcement.

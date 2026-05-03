@@ -2,7 +2,7 @@
 title: "Best Beds for Clumber Spaniel: Support and Size Picks"
 description: "A practical Clumber Spaniel bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "clumber-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Beds for Clumber Spaniel: Support and Size Picks"
 displayTitle: "Best beds for Clumber Spaniel support and sizing"
 titlePattern: "beds-best-support"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "clumber-spaniel", "Clumber Spaniel", "large", "regular", "easy", "silky", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/clumber-spaniel", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Clumber Spaniel, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

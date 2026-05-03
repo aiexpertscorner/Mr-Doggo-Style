@@ -2,7 +2,7 @@
 title: "American Hairless Terrier Health Risks and Insurance Timing"
 description: "Review American Hairless Terrier health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "american-hairless-terrier"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Erwin Bosman on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/active-hairless-and-terrier-dogs-walking-outdoors-35548226/"
 imageSearchQuery: "American Hairless Terrier dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "american-hairless-terrier", "American Hairless Terrier", "small", "regular", "easy", "hairless"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/american-hairless-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 American Hairless Terriers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

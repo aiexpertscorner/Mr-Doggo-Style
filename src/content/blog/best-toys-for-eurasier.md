@@ -2,7 +2,7 @@
 title: "Best Toys for Eurasier: Enrichment and Chew Picks"
 description: "A breed-aware Eurasier toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "eurasier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Best Toys for Eurasier: Enrichment and Chew Picks"
 displayTitle: "Best toys for Eurasier enrichment and play"
 titlePattern: "toys-best-enrichment"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "eurasier", "Eurasier", "large", "regular", "easy", "double", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/eurasier", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Eurasier means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

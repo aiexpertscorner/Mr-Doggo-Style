@@ -3,8 +3,8 @@ title: "Brutus Broth Partner Profile — PupWiki AWIN Resource"
 seoTitle: "Brutus Broth Partner Profile — Products, Deeplinks & PupWiki Fit"
 displayTitle: "Brutus Broth partner profile"
 description: "PupWiki partner profile for Brutus Broth, including product or service focus, AWIN deeplink, topic fit, commercial notes and safe disclosure context."
-pubDate: 2026-05-02
-updatedDate: 2026-05-02
+pubDate: 2026-05-03
+updatedDate: 2026-05-03
 author: "The PupWiki Team"
 category: "PupWiki Partners"
 tags: ["partner", "awin", "dog-food", "food", "nutrition", "health", "beds"]

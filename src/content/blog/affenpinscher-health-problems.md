@@ -2,7 +2,7 @@
 title: "Affenpinscher Health Clearances to Ask Breeders About"
 description: "Health-sensitive Affenpinscher guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "affenpinscher"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Tima Miroshnichenko on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/a-woman-in-white-long-sleeves-holding-brown-pomeranian-6234980/"
 imageSearchQuery: "Affenpinscher dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "affenpinscher", "Affenpinscher", "small", "regular", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/affenpinscher", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Affenpinschers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

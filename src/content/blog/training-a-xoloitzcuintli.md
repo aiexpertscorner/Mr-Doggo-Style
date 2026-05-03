@@ -2,7 +2,7 @@
 title: "Xoloitzcuintli Leash Training and Recall Guide"
 description: "Build a Xoloitzcuintli training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "xoloitzcuintli"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Xoloitzcuintli Leash Training and Recall Guide"
 displayTitle: "Xoloitzcuintli leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "xoloitzcuintli", "Xoloitzcuintli", "medium", "active", "easy", "hairless", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/xoloitzcuintli", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Xoloitzcuintlis are easy-to-train dogs that respond best to positive reinforcement.

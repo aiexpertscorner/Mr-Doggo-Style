@@ -2,7 +2,7 @@
 title: "Basset Hound Screening and Prevention Checklist"
 description: "A practical overview of Basset Hound health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "basset-hound"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Andrea Sretenović on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/adorable-basset-hound-dog-in-summer-garden-33979390/"
 imageSearchQuery: "Basset Hound dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "basset-hound", "Basset Hound", "medium", "calm", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/basset-hound", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Basset Hounds are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

@@ -2,7 +2,7 @@
 title: "Gordon Setter Supplements: Evidence, Labels, and Vet Checks"
 description: "Compare supplement categories for Gordon Setter dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "gordon-setter"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Gordon Setter Supplements: Evidence, Labels, and Vet Checks"
 displayTitle: "Gordon Setter supplements: evidence, labels, and vet checks"
 titlePattern: "supp-evidence"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "gordon-setter", "Gordon Setter", "large", "active", "difficult", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/gordon-setter", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Gordon Setters, as a large breed with active energy and a lifespan of 12–13 years, have specific supplementation needs worth knowing about. Gordon Setters have known genetic health concerns including no data — targeted supplements address these directly.

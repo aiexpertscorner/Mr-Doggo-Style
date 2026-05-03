@@ -2,7 +2,7 @@
 title: "Bearded Collie Supplement Shopping Guide"
 description: "Health-sensitive supplement guidance for Bearded Collie owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "bearded-collie"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Bearded Collie Supplement Shopping Guide"
 displayTitle: "Bearded Collie supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "bearded-collie", "Bearded Collie", "medium", "regular", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bearded-collie", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Bearded Collies, as a medium breed with regular energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

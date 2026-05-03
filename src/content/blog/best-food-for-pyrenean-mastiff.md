@@ -2,7 +2,7 @@
 title: "Best Dog Food for Pyrenean Mastiff Sensitive Stomachs"
 description: "Breed-aware food guidance for Pyrenean Mastiff owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "pyrenean-mastiff"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Dog Food for Pyrenean Mastiff Sensitive Stomachs"
 displayTitle: "Food options to compare for Pyrenean Mastiff sensitive stomachs"
 titlePattern: "food-best-sensitive"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "pyrenean-mastiff", "Pyrenean Mastiff", "large", "calm", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/pyrenean-mastiff", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Pyrenean Mastiff well isn't as simple as grabbing the bag with the highest rating. Pyrenean Mastiffs are large dogs with calm energy, a Lifespan of 10–13 years, and nutritional vulnerabilities that change across their life stages.

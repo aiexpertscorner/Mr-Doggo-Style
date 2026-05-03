@@ -2,7 +2,7 @@
 title: "Dog Beds for Cocker Spaniel: Home, Crate, and Travel"
 description: "A practical Cocker Spaniel bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "cocker-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Dog Beds for Cocker Spaniel: Home, Crate, and Travel"
 displayTitle: "Dog beds for Cocker Spaniel: home, crate, and travel"
 titlePattern: "beds-home"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "cocker-spaniel", "Cocker Spaniel", "medium", "regular", "easy", "long", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/cocker-spaniel", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Cocker Spaniel, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

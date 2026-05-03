@@ -2,7 +2,7 @@
 title: "Wire Fox Terrier Grooming Kit: Brushes, Shampoo, Nail Tools"
 description: "Compare grooming tools for Wire Fox Terrier dogs by wiry coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "wire-fox-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Wire Fox Terrier Grooming Kit: Brushes, Shampoo, Nail Tools"
 displayTitle: "Wire Fox Terrier grooming kit for coat, bath, and nails"
 titlePattern: "groom-kit"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "wire-fox-terrier", "Wire Fox Terrier", "small", "regular", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/wire-fox-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Wire Fox Terriers have a **wiry coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

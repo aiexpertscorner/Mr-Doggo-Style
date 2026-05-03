@@ -2,7 +2,7 @@
 title: "Dachshund Health Risks and Insurance Timing"
 description: "Health-sensitive Dachshund guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "dachshund"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Dachshund Health Risks and Insurance Timing"
 displayTitle: "Dachshund health risks and insurance timing"
 titlePattern: "health-insurance"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "dachshund", "Dachshund", "medium", "regular", "easy"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/dachshund", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Dachshunds are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

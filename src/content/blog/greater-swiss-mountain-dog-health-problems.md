@@ -2,7 +2,7 @@
 title: "Greater Swiss Mountain Dog Health Risks for Large Dogs"
 description: "Review Greater Swiss Mountain Dog health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "greater-swiss-mountain-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Greater Swiss Mountain Dog Health Risks for Large Dogs"
 displayTitle: "Greater Swiss Mountain Dog health risks for large dogs"
 titlePattern: "health-size-risk"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "greater-swiss-mountain-dog", "Greater Swiss Mountain Dog", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/greater-swiss-mountain-dog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Greater Swiss Mountain Dogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

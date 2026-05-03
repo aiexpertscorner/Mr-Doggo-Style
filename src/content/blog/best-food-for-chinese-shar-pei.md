@@ -2,7 +2,7 @@
 title: "Chinese Shar-Pei Dog Food Shopping Guide"
 description: "Breed-aware food guidance for Chinese Shar-Pei owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "chinese-shar-pei"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Chinese Shar-Pei Dog Food Shopping Guide"
 displayTitle: "Chinese Shar-Pei dog food shopping guide"
 titlePattern: "food-shopping"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "chinese-shar-pei", "Chinese Shar-Pei", "medium", "regular", "moderate", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/chinese-shar-pei", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Chinese Shar-Pei well isn't as simple as grabbing the bag with the highest rating. Chinese Shar-Peis are medium dogs with regular energy, a Lifespan of 8–12 years, and nutritional vulnerabilities that change across their life stages.

@@ -2,7 +2,7 @@
 title: "Cirneco dell’Etna Supplement Guide for Regular Dogs"
 description: "Health-sensitive supplement guidance for Cirneco dell’Etna owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "cirneco-delletna"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Cirneco dell’Etna Supplement Guide for Regular Dogs"
 displayTitle: "Cirneco dell’Etna supplement guide for regular dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "cirneco-delletna", "Cirneco dell’Etna", "medium", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/cirneco-delletna", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Cirneco dell’Etnas, as a medium breed with regular energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

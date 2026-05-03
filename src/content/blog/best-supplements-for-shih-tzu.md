@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Shih Tzu"
 description: "Health-sensitive supplement guidance for Shih Tzu owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "shih-tzu"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Shih Tzu"
 displayTitle: "Joint supplements to ask your vet about for Shih Tzu"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "shih-tzu", "Shih Tzu", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/shih-tzu", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Shih Tzus, as a small breed with regular energy and a lifespan of 10–18 years, have specific supplementation needs worth knowing about. Shih Tzus have known genetic health concerns including eye problems — targeted supplements address these directly.

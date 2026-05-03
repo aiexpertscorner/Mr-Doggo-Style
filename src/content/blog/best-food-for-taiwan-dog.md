@@ -2,7 +2,7 @@
 title: "Best Dog Food for Taiwan Dog: Medium Breed Picks"
 description: "Compare dog food options for Taiwan Dogs using breed size, active energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "taiwan-dog"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Dog Food for Taiwan Dog: Medium Breed Picks"
 displayTitle: "Best dog food for Taiwan Dog by life stage and size"
 titlePattern: "food-best-size"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "taiwan-dog", "Taiwan Dog", "medium", "active", "easy", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/taiwan-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Taiwan Dog well isn't as simple as grabbing the bag with the highest rating. Taiwan Dogs are medium dogs with active energy, a Lifespan of 9–13 years, and nutritional vulnerabilities that change across their life stages.

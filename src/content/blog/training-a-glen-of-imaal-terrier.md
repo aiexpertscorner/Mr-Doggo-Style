@@ -2,7 +2,7 @@
 title: "Glen of Imaal Terrier Leash Training and Recall Guide"
 description: "Train a Glen of Imaal Terrier with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "glen-of-imaal-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Glen of Imaal Terrier Leash Training and Recall Guide"
 displayTitle: "Glen of Imaal Terrier leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "glen-of-imaal-terrier", "Glen of Imaal Terrier", "medium", "regular", "difficult", "rough", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/glen-of-imaal-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Glen of Imaal Terriers are difficult-to-train dogs that respond best to positive reinforcement.

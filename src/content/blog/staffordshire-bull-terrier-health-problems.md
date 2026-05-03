@@ -2,7 +2,7 @@
 title: "Staffordshire Bull Terrier Health Risks and Insurance Timing"
 description: "A practical overview of Staffordshire Bull Terrier health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "staffordshire-bull-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Staffordshire Bull Terrier Health Risks and Insurance Timing"
 displayTitle: "Staffordshire Bull Terrier health risks and insurance timing"
 titlePattern: "health-insurance"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "staffordshire-bull-terrier", "Staffordshire Bull Terrier", "medium", "active", "moderate", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/staffordshire-bull-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Staffordshire Bull Terriers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

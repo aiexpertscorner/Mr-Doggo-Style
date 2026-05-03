@@ -2,7 +2,7 @@
 title: "Basenji Grooming Guide by Coat Type"
 description: "Shortlist Basenji grooming products with coat care, short fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "basenji"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Basenji Grooming Guide by Coat Type"
 displayTitle: "Basenji grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "basenji", "Basenji", "small", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/basenji", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Basenjis have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

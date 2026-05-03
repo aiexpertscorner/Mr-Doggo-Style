@@ -2,7 +2,7 @@
 title: "Poodle (Toy) Coat Care Guide for Long Fur"
 description: "Shortlist Poodle (Toy) grooming products with coat care, long fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "poodle-toy"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Poodle (Toy) Coat Care Guide for Long Fur"
 displayTitle: "Poodle (Toy) coat care guide for long fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "poodle-toy", "Poodle (Toy)", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/poodle-toy", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Poodle (Toy)s have a **long coat** that requires specialty/professional. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

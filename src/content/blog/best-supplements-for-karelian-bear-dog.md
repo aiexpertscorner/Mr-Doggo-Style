@@ -2,7 +2,7 @@
 title: "Best Supplements for Karelian Bear Dog: Careful Buyer Shortlist"
 description: "Health-sensitive supplement guidance for Karelian Bear Dog owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "karelian-bear-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for Karelian Bear Dog: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for Karelian Bear Dog"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "karelian-bear-dog", "Karelian Bear Dog", "medium", "calm", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/karelian-bear-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Karelian Bear Dogs, as a medium breed with calm energy and a lifespan of 11–13 years, have specific supplementation needs worth knowing about.

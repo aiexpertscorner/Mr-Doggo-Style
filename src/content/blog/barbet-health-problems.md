@@ -2,7 +2,7 @@
 title: "Barbet Vet Questions for Common Health Risks"
 description: "A practical overview of Barbet health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "barbet"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Mikhail Nilov on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/man-checking-on-a-dog-7468978/"
 imageSearchQuery: "Barbet dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "barbet", "Barbet", "medium", "regular", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/barbet", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Barbets are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

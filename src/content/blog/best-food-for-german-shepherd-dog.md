@@ -2,7 +2,7 @@
 title: "German Shepherd Dog Food Guide for Regular Energy Levels"
 description: "Compare dog food options for German Shepherd Dogs using breed size, regular energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "german-shepherd-dog"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "German Shepherd Dog Food Guide for Regular Energy Levels"
 displayTitle: "German Shepherd Dog food guidance for regular energy levels"
 titlePattern: "food-active-calm"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "german-shepherd-dog", "German Shepherd Dog", "large", "regular", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/german-shepherd-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a German Shepherd Dog well isn't as simple as grabbing the bag with the highest rating. German Shepherd Dogs are large dogs with regular energy, a Average lifespan of 9.7 years, and nutritional vulnerabilities that change across their life stages.

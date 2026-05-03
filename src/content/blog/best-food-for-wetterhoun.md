@@ -2,7 +2,7 @@
 title: "Wetterhoun Nutrition Guide for Large Regular Dogs"
 description: "Breed-aware food guidance for Wetterhoun owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "wetterhoun"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Wetterhoun Nutrition Guide for Large Regular Dogs"
 displayTitle: "Nutrition notes for large regular Wetterhoun dogs"
 titlePattern: "food-size-energy"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "wetterhoun", "Wetterhoun", "large", "regular", "moderate", "curly", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/wetterhoun", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Wetterhoun well isn't as simple as grabbing the bag with the highest rating. Wetterhouns are large dogs with regular energy, a Lifespan of 13–13 years, and nutritional vulnerabilities that change across their life stages.

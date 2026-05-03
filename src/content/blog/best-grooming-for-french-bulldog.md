@@ -2,7 +2,7 @@
 title: "French Bulldog Grooming for Shedding and Sensitive Skin"
 description: "Compare grooming tools for French Bulldog dogs by short coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "french-bulldog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "French Bulldog Grooming for Shedding and Sensitive Skin"
 displayTitle: "French Bulldog grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "french-bulldog", "French Bulldog", "medium", "calm", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/french-bulldog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 French Bulldogs have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

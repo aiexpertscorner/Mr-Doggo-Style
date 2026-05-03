@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Schipperke"
 description: "Compare supplement categories for Schipperke dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "schipperke"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Schipperke"
 displayTitle: "Joint supplements to ask your vet about for Schipperke"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "schipperke", "Schipperke", "small", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/schipperke", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Schipperkes, as a small breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

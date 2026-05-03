@@ -2,7 +2,7 @@
 title: "Bearded Collie Puzzle Toy and Chew Guide"
 description: "Compare toys for Bearded Collie dogs by regular energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "bearded-collie"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Bearded Collie Puzzle Toy and Chew Guide"
 displayTitle: "Bearded Collie puzzle toy and chew guide"
 titlePattern: "toys-puzzle"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "bearded-collie", "Bearded Collie", "medium", "regular", "difficult", "long", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/bearded-collie", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Bearded Collie means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

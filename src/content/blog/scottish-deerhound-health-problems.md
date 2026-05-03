@@ -2,7 +2,7 @@
 title: "Scottish Deerhound Health Clearances to Ask Breeders About"
 description: "Health-sensitive Scottish Deerhound guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "scottish-deerhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Scottish Deerhound Health Clearances to Ask Breeders About"
 displayTitle: "Scottish Deerhound health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "scottish-deerhound", "Scottish Deerhound", "large", "regular", "difficult", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/scottish-deerhound", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Scottish Deerhounds are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

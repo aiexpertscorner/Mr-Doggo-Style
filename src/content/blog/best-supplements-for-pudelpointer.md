@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Pudelpointer"
 description: "A careful Pudelpointer supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "pudelpointer"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Pudelpointer"
 displayTitle: "Skin and gut supplement options for Pudelpointer"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "pudelpointer", "Pudelpointer", "large", "regular", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pudelpointer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Pudelpointers, as a large breed with regular energy and a lifespan of 14–14 years, have specific supplementation needs worth knowing about.

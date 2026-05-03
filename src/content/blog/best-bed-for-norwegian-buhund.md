@@ -2,7 +2,7 @@
 title: "Norwegian Buhund Dog Bed Durability Checklist"
 description: "A practical Norwegian Buhund bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "norwegian-buhund"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Norwegian Buhund Dog Bed Durability Checklist"
 displayTitle: "Norwegian Buhund dog bed durability checklist"
 titlePattern: "beds-durable"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "norwegian-buhund", "Norwegian Buhund", "medium", "active", "easy", "double", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/norwegian-buhund", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Norwegian Buhund, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

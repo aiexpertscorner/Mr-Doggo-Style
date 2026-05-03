@@ -2,7 +2,7 @@
 title: "Cavalier King Charles Spaniel Toys for Indoor Play, Fetch, and Chewing"
 description: "A breed-aware Cavalier King Charles Spaniel toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "cavalier-king-charles-spaniel"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Cavalier King Charles Spaniel Toys for Indoor Play, Fetch, and Chewing"
 displayTitle: "Cavalier King Charles Spaniel toys for indoor play, fetch, and chewing"
 titlePattern: "toys-indoor-outdoor"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "cavalier-king-charles-spaniel", "Cavalier King Charles Spaniel", "small", "calm", "easy", "silky", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/cavalier-king-charles-spaniel", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Cavalier King Charles Spaniel means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

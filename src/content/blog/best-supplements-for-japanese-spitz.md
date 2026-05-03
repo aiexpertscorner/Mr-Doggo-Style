@@ -2,7 +2,7 @@
 title: "Japanese Spitz Supplement Shopping Guide"
 description: "A careful Japanese Spitz supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "japanese-spitz"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Japanese Spitz Supplement Shopping Guide"
 displayTitle: "Japanese Spitz supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "japanese-spitz", "Japanese Spitz", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/japanese-spitz", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Japanese Spitzs, as a small breed with regular energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

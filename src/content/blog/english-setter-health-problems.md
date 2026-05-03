@@ -2,7 +2,7 @@
 title: "English Setter Vet Questions for Common Health Risks"
 description: "A practical overview of English Setter health risks, large-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "english-setter"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "English Setter Vet Questions for Common Health Risks"
 displayTitle: "English Setter vet questions for common health risks"
 titlePattern: "health-vet-questions"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "english-setter", "English Setter", "large", "active", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/english-setter", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 English Setters are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

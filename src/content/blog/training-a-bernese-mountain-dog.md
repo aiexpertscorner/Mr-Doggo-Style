@@ -2,7 +2,7 @@
 title: "Training a Bernese Mountain Dog: Foundation Plan"
 description: "Train a Bernese Mountain Dog with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "bernese-mountain-dog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Training a Bernese Mountain Dog: Foundation Plan"
 displayTitle: "Training a Bernese Mountain Dog: foundation plan"
 titlePattern: "training-foundation"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "bernese-mountain-dog", "Bernese Mountain Dog", "large", "active", "easy", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/bernese-mountain-dog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Bernese Mountain Dogs rank **#22** in canine intelligence (Excellent).

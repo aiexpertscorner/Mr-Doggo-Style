@@ -2,7 +2,7 @@
 title: "Japanese Spitz Health Clearances to Ask Breeders About"
 description: "Health-sensitive Japanese Spitz guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "japanese-spitz"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Japanese Spitz Health Clearances to Ask Breeders About"
 displayTitle: "Japanese Spitz health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "japanese-spitz", "Japanese Spitz", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/japanese-spitz", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Japanese Spitzs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

@@ -2,7 +2,7 @@
 title: "Danish-Swedish Farmdog Training Mistakes and Better Fixes"
 description: "Build a Danish-Swedish Farmdog training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "danish-swedish-farmdog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Danish-Swedish Farmdog Training Mistakes and Better Fixes"
 displayTitle: "Danish-Swedish Farmdog training mistakes and better fixes"
 titlePattern: "training-mistakes"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "danish-swedish-farmdog", "Danish-Swedish Farmdog", "small", "active", "easy", "medium", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/danish-swedish-farmdog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Danish-Swedish Farmdogs are easy-to-train dogs that respond best to positive reinforcement.

@@ -2,7 +2,7 @@
 title: "Best Senior Supplements for Skye Terrier"
 description: "Health-sensitive supplement guidance for Skye Terrier owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "skye-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Senior Supplements for Skye Terrier"
 displayTitle: "Senior supplement questions for Skye Terrier"
 titlePattern: "supp-best-senior"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "skye-terrier", "Skye Terrier", "medium", "regular", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/skye-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Skye Terriers, as a medium breed with regular energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "Best Irish Water Spaniel Grooming Tools for Curly Coats"
 description: "A breed-aware Irish Water Spaniel grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "irish-water-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Irish Water Spaniel Grooming Tools for Curly Coats"
 displayTitle: "Irish Water Spaniel grooming tools for curly coats"
 titlePattern: "groom-best-coat"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "irish-water-spaniel", "Irish Water Spaniel", "large", "active", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/irish-water-spaniel", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Irish Water Spaniels have a **curly coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

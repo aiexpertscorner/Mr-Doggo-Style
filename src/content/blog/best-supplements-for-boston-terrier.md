@@ -2,7 +2,7 @@
 title: "Boston Terrier Supplements: Evidence, Labels, and Vet Checks"
 description: "Compare supplement categories for Boston Terrier dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "boston-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Boston Terrier Supplements: Evidence, Labels, and Vet Checks"
 displayTitle: "Boston Terrier supplements: evidence, labels, and vet checks"
 titlePattern: "supp-evidence"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "boston-terrier", "Boston Terrier", "small", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/boston-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Boston Terriers, as a small breed with regular energy and a lifespan of 11–13 years, have specific supplementation needs worth knowing about. Boston Terriers have known genetic health concerns including breathing problems — targeted supplements address these directly.

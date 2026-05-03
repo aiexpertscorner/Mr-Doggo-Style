@@ -2,7 +2,7 @@
 title: "Best Mastiff Grooming Tools for Short Coats"
 description: "Shortlist Mastiff grooming products with coat care, short fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "mastiff"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Mastiff Grooming Tools for Short Coats"
 displayTitle: "Mastiff grooming tools for short coats"
 titlePattern: "groom-best-coat"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "mastiff", "Mastiff", "large", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/mastiff", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Mastiffs have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

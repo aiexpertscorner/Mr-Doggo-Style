@@ -2,7 +2,7 @@
 title: "Best Dog Food for Bernese Mountain Dog: Large Breed Picks"
 description: "Compare dog food options for Bernese Mountain Dogs using breed size, active energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "bernese-mountain-dog"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Dog Food for Bernese Mountain Dog: Large Breed Picks"
 displayTitle: "Best dog food for Bernese Mountain Dog by life stage and size"
 titlePattern: "food-best-size"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "bernese-mountain-dog", "Bernese Mountain Dog", "large", "active", "easy", "long", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/bernese-mountain-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Bernese Mountain Dog well isn't as simple as grabbing the bag with the highest rating. Bernese Mountain Dogs are large dogs with active energy, a Average lifespan of 7.6 years, and nutritional vulnerabilities that change across their life stages.

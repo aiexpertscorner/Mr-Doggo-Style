@@ -2,7 +2,7 @@
 title: "Glen of Imaal Terrier Screening and Prevention Checklist"
 description: "A practical overview of Glen of Imaal Terrier health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "glen-of-imaal-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Glen of Imaal Terrier Screening and Prevention Checklist"
 displayTitle: "Glen of Imaal Terrier screening and prevention checklist"
 titlePattern: "health-screening"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "glen-of-imaal-terrier", "Glen of Imaal Terrier", "medium", "regular", "difficult", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/glen-of-imaal-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Glen of Imaal Terriers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

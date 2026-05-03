@@ -2,7 +2,7 @@
 title: "Belgian Malinois Supplements: Evidence, Labels, and Vet Checks"
 description: "Compare supplement categories for Belgian Malinois dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "belgian-malinois"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Belgian Malinois Supplements: Evidence, Labels, and Vet Checks"
 displayTitle: "Belgian Malinois supplements: evidence, labels, and vet checks"
 titlePattern: "supp-evidence"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "belgian-malinois", "Belgian Malinois", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/belgian-malinois", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Belgian Malinoiss, as a large breed with active energy and a lifespan of 14–16 years, have specific supplementation needs worth knowing about.

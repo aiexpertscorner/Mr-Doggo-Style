@@ -2,7 +2,7 @@
 title: "Pharaoh Hound Lifespan, Health Risks, and Vet Care"
 description: "Review Pharaoh Hound health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "pharaoh-hound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Pharaoh Hound Lifespan, Health Risks, and Vet Care"
 displayTitle: "Pharaoh Hound lifespan, health risks, and vet care"
 titlePattern: "health-lifespan"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "pharaoh-hound", "Pharaoh Hound", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pharaoh-hound", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pharaoh Hounds are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

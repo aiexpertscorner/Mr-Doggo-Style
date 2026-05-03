@@ -2,7 +2,7 @@
 title: "Petit Basset Griffon Vendéen Training Toy Shortlist"
 description: "A breed-aware Petit Basset Griffon Vendéen toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "petit-basset-griffon-venden"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Petit Basset Griffon Vendéen Training Toy Shortlist"
 displayTitle: "Petit Basset Griffon Vendéen training toy shortlist"
 titlePattern: "toys-training"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "petit-basset-griffon-venden", "Petit Basset Griffon Vendéen", "medium", "active", "difficult", "rough", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/petit-basset-griffon-venden", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Petit Basset Griffon Vendéen means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

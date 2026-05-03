@@ -2,7 +2,7 @@
 title: "Cairn Terrier Supplements for Joints, Skin, and Gut Health"
 description: "A careful Cairn Terrier supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "cairn-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Cairn Terrier Supplements for Joints, Skin, and Gut Health"
 displayTitle: "Cairn Terrier supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "cairn-terrier", "Cairn Terrier", "small", "regular", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/cairn-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Cairn Terriers, as a small breed with regular energy and a lifespan of 13–15 years, have specific supplementation needs worth knowing about. Cairn Terriers have known genetic health concerns including 'lion jaw', heart problems — targeted supplements address these directly.

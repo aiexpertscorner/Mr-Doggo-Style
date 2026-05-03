@@ -2,7 +2,7 @@
 title: "Perro de Presa Canario Vet Questions for Common Health Risks"
 description: "Health-sensitive Perro de Presa Canario guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "perro-de-presa-canario"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Perro de Presa Canario Vet Questions for Common Health Risks"
 displayTitle: "Perro de Presa Canario vet questions for common health risks"
 titlePattern: "health-vet-questions"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "perro-de-presa-canario", "Perro de Presa Canario", "large", "calm", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/perro-de-presa-canario", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Perro de Presa Canarios are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

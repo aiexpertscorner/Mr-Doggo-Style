@@ -2,7 +2,7 @@
 title: "Shih Tzu Grooming Shopping Guide"
 description: "Compare grooming tools for Shih Tzu dogs by long coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "shih-tzu"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Shih Tzu Grooming Shopping Guide"
 displayTitle: "Shih Tzu grooming shopping guide"
 titlePattern: "groom-shopping"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "shih-tzu", "Shih Tzu", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/shih-tzu", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Shih Tzus have a **long coat** that requires daily brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

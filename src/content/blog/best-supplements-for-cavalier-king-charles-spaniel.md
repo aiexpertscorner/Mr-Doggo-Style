@@ -2,7 +2,7 @@
 title: "Cavalier King Charles Spaniel Supplement Guide for Calm Dogs"
 description: "Compare supplement categories for Cavalier King Charles Spaniel dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "cavalier-king-charles-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Cavalier King Charles Spaniel Supplement Guide for Calm Dogs"
 displayTitle: "Cavalier King Charles Spaniel supplement guide for calm dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "cavalier-king-charles-spaniel", "Cavalier King Charles Spaniel", "small", "calm", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/cavalier-king-charles-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Cavalier King Charles Spaniels, as a small breed with calm energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about. Cavalier King Charles Spaniels have known genetic health concerns including heart, spinal problems — targeted supplements address these directly.

@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for West Highland White Terrier"
 description: "Health-sensitive supplement guidance for West Highland White Terrier owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "west-highland-white-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for West Highland White Terrier"
 displayTitle: "Skin and gut supplement options for West Highland White Terrier"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "west-highland-white-terrier", "West Highland White Terrier", "small", "regular", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/west-highland-white-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but West Highland White Terriers, as a small breed with regular energy and a lifespan of 13–15 years, have specific supplementation needs worth knowing about. West Highland White Terriers have known genetic health concerns including 'lion jaw', 'dry eye', skin problems — targeted supplements address these directly.

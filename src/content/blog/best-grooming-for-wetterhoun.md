@@ -2,7 +2,7 @@
 title: "Wetterhoun Grooming Kit: Brushes, Shampoo, Nail Tools"
 description: "A breed-aware Wetterhoun grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "wetterhoun"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Wetterhoun Grooming Kit: Brushes, Shampoo, Nail Tools"
 displayTitle: "Wetterhoun grooming kit for coat, bath, and nails"
 titlePattern: "groom-kit"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "wetterhoun", "Wetterhoun", "large", "regular", "moderate", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/wetterhoun", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Wetterhouns have a **curly coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

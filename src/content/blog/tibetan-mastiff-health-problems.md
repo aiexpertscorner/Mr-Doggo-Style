@@ -2,7 +2,7 @@
 title: "Tibetan Mastiff Health Clearances to Ask Breeders About"
 description: "A practical overview of Tibetan Mastiff health risks, large-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "tibetan-mastiff"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Tibetan Mastiff Health Clearances to Ask Breeders About"
 displayTitle: "Tibetan Mastiff health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "tibetan-mastiff", "Tibetan Mastiff", "large", "regular", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/tibetan-mastiff", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Tibetan Mastiffs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

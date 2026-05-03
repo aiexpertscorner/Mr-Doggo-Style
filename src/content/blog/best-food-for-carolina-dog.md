@@ -2,7 +2,7 @@
 title: "Carolina Dog Food Questions to Ask Your Vet"
 description: "Review Carolina Dog dog food choices by life stage, weight control, digestion, and medium-breed needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "carolina-dog"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Carolina Dog Food Questions to Ask Your Vet"
 displayTitle: "Food questions Carolina Dog owners should ask their vet"
 titlePattern: "food-vet-questions"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "carolina-dog", "Carolina Dog", "medium", "regular", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/carolina-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Carolina Dog well isn't as simple as grabbing the bag with the highest rating. Carolina Dogs are medium dogs with regular energy, a Lifespan of –12 years, and nutritional vulnerabilities that change across their life stages.

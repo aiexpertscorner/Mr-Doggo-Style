@@ -2,7 +2,7 @@
 title: "Dutch Shepherd Grooming Shopping Guide"
 description: "Shortlist Dutch Shepherd grooming products with coat care, double fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "dutch-shepherd"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Dutch Shepherd Grooming Shopping Guide"
 displayTitle: "Dutch Shepherd grooming shopping guide"
 titlePattern: "groom-shopping"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "dutch-shepherd", "Dutch Shepherd", "large", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/dutch-shepherd", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Dutch Shepherds have a **double coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

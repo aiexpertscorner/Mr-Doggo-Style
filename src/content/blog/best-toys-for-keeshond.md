@@ -2,7 +2,7 @@
 title: "Keeshond Toys for Indoor Play, Fetch, and Chewing"
 description: "Compare toys for Keeshond dogs by regular energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "keeshond"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Keeshond Toys for Indoor Play, Fetch, and Chewing"
 displayTitle: "Keeshond toys for indoor play, fetch, and chewing"
 titlePattern: "toys-indoor-outdoor"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "keeshond", "Keeshond", "medium", "regular", "easy", "double", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/keeshond", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Keeshond means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

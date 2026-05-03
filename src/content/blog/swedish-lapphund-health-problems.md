@@ -2,7 +2,7 @@
 title: "Swedish Lapphund Health Clearances to Ask Breeders About"
 description: "Review Swedish Lapphund health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "swedish-lapphund"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Swedish Lapphund Health Clearances to Ask Breeders About"
 displayTitle: "Swedish Lapphund health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "swedish-lapphund", "Swedish Lapphund", "medium", "regular", "moderate", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/swedish-lapphund", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Swedish Lapphunds are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

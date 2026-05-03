@@ -2,7 +2,7 @@
 title: "Staffordshire Bull Terrier Supplement Shopping Guide"
 description: "Health-sensitive supplement guidance for Staffordshire Bull Terrier owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "staffordshire-bull-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Staffordshire Bull Terrier Supplement Shopping Guide"
 displayTitle: "Staffordshire Bull Terrier supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "staffordshire-bull-terrier", "Staffordshire Bull Terrier", "medium", "active", "moderate", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/staffordshire-bull-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Staffordshire Bull Terriers, as a medium breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about. Staffordshire Bull Terriers have known genetic health concerns including hip problems — targeted supplements address these directly.

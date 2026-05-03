@@ -2,7 +2,7 @@
 title: "Health Concerns in Manchester Terrier (Toy): Owner Notes"
 description: "A practical overview of Manchester Terrier (Toy) health risks, small-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "manchester-terrier-toy"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Health Concerns in Manchester Terrier (Toy): Owner Notes"
 displayTitle: "Health concerns in Manchester Terrier (Toy): owner notes"
 titlePattern: "health-owner-notes"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "manchester-terrier-toy", "Manchester Terrier (Toy)", "small", "regular", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/manchester-terrier-toy", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Manchester Terrier (Toy)s are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

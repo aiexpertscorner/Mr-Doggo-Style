@@ -2,7 +2,7 @@
 title: "German Spitz Owner Training Checklist"
 description: "Build a German Spitz training routine around regular energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "german-spitz"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "German Spitz Owner Training Checklist"
 displayTitle: "German Spitz owner training checklist"
 titlePattern: "training-owner"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "german-spitz", "German Spitz", "medium", "regular", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/german-spitz", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 German Spitzs are easy-to-train dogs that respond best to positive reinforcement.

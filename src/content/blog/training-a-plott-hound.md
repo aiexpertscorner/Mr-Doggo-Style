@@ -2,7 +2,7 @@
 title: "Plott Hound Puppy Training Checklist"
 description: "A practical Plott Hound training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "plott-hound"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Plott Hound Puppy Training Checklist"
 displayTitle: "Plott Hound puppy training checklist"
 titlePattern: "training-puppy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "plott-hound", "Plott Hound", "medium", "active", "difficult", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/plott-hound", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Plott Hounds are difficult-to-train dogs that respond best to positive reinforcement.

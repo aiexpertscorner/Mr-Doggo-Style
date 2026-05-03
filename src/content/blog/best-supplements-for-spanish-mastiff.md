@@ -2,7 +2,7 @@
 title: "Best Supplements for Spanish Mastiff: Careful Buyer Shortlist"
 description: "A careful Spanish Mastiff supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "spanish-mastiff"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for Spanish Mastiff: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for Spanish Mastiff"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "spanish-mastiff", "Spanish Mastiff", "large", "calm", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/spanish-mastiff", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Spanish Mastiffs, as a large breed with calm energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

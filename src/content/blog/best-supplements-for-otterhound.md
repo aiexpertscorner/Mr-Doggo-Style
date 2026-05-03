@@ -2,7 +2,7 @@
 title: "Best Senior Supplements for Otterhound"
 description: "A careful Otterhound supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "otterhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Senior Supplements for Otterhound"
 displayTitle: "Senior supplement questions for Otterhound"
 titlePattern: "supp-best-senior"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "otterhound", "Otterhound", "large", "regular", "moderate", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/otterhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Otterhounds, as a large breed with regular energy and a lifespan of 10–13 years, have specific supplementation needs worth knowing about.

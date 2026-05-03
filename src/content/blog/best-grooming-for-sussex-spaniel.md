@@ -2,7 +2,7 @@
 title: "Best Grooming Picks for Sussex Spaniel Shedding"
 description: "Shortlist Sussex Spaniel grooming products with coat care, silky fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "sussex-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Grooming Picks for Sussex Spaniel Shedding"
 displayTitle: "Grooming picks for Sussex Spaniel shedding"
 titlePattern: "groom-best-shedding"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "sussex-spaniel", "Sussex Spaniel", "medium", "regular", "difficult", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/sussex-spaniel", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Sussex Spaniels have a **silky coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

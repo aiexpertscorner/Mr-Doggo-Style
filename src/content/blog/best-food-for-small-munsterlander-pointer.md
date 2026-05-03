@@ -2,7 +2,7 @@
 title: "Small Munsterlander Pointer Nutrition Shortlist for Everyday Feeding"
 description: "Review Small Munsterlander Pointer dog food choices by life stage, weight control, digestion, and medium-breed needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "small-munsterlander-pointer"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Small Munsterlander Pointer Nutrition Shortlist for Everyday Feeding"
 displayTitle: "Small Munsterlander Pointer nutrition shortlist for everyday feeding"
 titlePattern: "food-nutrition-shortlist"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "small-munsterlander-pointer", "Small Munsterlander Pointer", "medium", "active", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/small-munsterlander-pointer", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Small Munsterlander Pointer well isn't as simple as grabbing the bag with the highest rating. Small Munsterlander Pointers are medium dogs with active energy, a Lifespan of 12–14 years, and nutritional vulnerabilities that change across their life stages.

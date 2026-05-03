@@ -2,7 +2,7 @@
 title: "Clumber Spaniel Health Notes for Practical Owners"
 description: "Health-sensitive Clumber Spaniel guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "clumber-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Clumber Spaniel Health Notes for Practical Owners"
 displayTitle: "Clumber Spaniel health notes for practical owners"
 titlePattern: "health-practical"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "clumber-spaniel", "Clumber Spaniel", "large", "regular", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/clumber-spaniel", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Clumber Spaniels are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

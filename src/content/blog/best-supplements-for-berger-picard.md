@@ -2,7 +2,7 @@
 title: "Berger Picard Supplement Guide for Active Dogs"
 description: "Compare supplement categories for Berger Picard dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "berger-picard"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Berger Picard Supplement Guide for Active Dogs"
 displayTitle: "Berger Picard supplement guide for active dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "berger-picard", "Berger Picard", "large", "active", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/berger-picard", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Berger Picards, as a large breed with active energy and a lifespan of 12–13 years, have specific supplementation needs worth knowing about.

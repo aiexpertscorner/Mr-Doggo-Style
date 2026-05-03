@@ -2,7 +2,7 @@
 title: "Shetland Sheepdog Health Risks for Small Dogs"
 description: "A practical overview of Shetland Sheepdog health risks, small-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "shetland-sheepdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Shetland Sheepdog Health Risks for Small Dogs"
 displayTitle: "Shetland Sheepdog health risks for small dogs"
 titlePattern: "health-size-risk"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "shetland-sheepdog", "Shetland Sheepdog", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/shetland-sheepdog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Shetland Sheepdogs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

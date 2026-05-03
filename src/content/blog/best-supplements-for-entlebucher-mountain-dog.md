@@ -2,7 +2,7 @@
 title: "Entlebucher Mountain Dog Supplement Shopping Guide"
 description: "Compare supplement categories for Entlebucher Mountain Dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "entlebucher-mountain-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Entlebucher Mountain Dog Supplement Shopping Guide"
 displayTitle: "Entlebucher Mountain Dog supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "entlebucher-mountain-dog", "Entlebucher Mountain Dog", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/entlebucher-mountain-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Entlebucher Mountain Dogs, as a medium breed with active energy and a lifespan of 11–13 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "American English Coonhound Beds for Cooling, Comfort, and Cleanup"
 description: "Compare bed options for American English Coonhound dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "american-english-coonhound"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Lisa from Pexels on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/adult-dog-on-white-bed-2102839/"
 imageSearchQuery: "American English Coonhound dog sleeping bed"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "american-english-coonhound", "American English Coonhound", "medium", "active", "easy", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/american-english-coonhound", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 A dog spends 12–14 hours a day sleeping. For a American English Coonhound, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

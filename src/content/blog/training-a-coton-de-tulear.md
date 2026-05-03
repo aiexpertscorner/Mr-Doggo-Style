@@ -2,7 +2,7 @@
 title: "Coton de Tulear Leash Training and Recall Guide"
 description: "Build a Coton de Tulear training routine around regular energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "coton-de-tulear"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Coton de Tulear Leash Training and Recall Guide"
 displayTitle: "Coton de Tulear leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "coton-de-tulear", "Coton de Tulear", "small", "regular", "easy", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/coton-de-tulear", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Coton de Tulears are easy-to-train dogs that respond best to positive reinforcement.

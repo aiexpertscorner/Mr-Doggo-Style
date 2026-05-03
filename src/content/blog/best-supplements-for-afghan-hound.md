@@ -2,7 +2,7 @@
 title: "Afghan Hound Supplement Care Plan Questions"
 description: "A careful Afghan Hound supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "afghan-hound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Afghan Hound Supplement Care Plan Questions"
 displayTitle: "Afghan Hound supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "afghan-hound", "Afghan Hound", "medium", "active", "moderate", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/afghan-hound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Afghan Hounds, as a medium breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

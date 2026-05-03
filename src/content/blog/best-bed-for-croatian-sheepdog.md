@@ -2,7 +2,7 @@
 title: "Croatian Sheepdog Bed Sizing Guide for Medium Dogs"
 description: "Compare bed options for Croatian Sheepdog dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "croatian-sheepdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Croatian Sheepdog Bed Sizing Guide for Medium Dogs"
 displayTitle: "Croatian Sheepdog bed sizing guide for medium dogs"
 titlePattern: "beds-sizing"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "croatian-sheepdog", "Croatian Sheepdog", "medium", "active", "easy", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/croatian-sheepdog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Croatian Sheepdog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

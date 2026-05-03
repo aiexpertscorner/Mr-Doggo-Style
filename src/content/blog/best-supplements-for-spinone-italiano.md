@@ -2,7 +2,7 @@
 title: "Spinone Italiano Supplement Shopping Guide"
 description: "A careful Spinone Italiano supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "spinone-italiano"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Spinone Italiano Supplement Shopping Guide"
 displayTitle: "Spinone Italiano supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "spinone-italiano", "Spinone Italiano", "medium", "active", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/spinone-italiano", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Spinone Italianos, as a medium breed with active energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

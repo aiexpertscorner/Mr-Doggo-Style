@@ -2,7 +2,7 @@
 title: "Portuguese Podengo Supplement Shopping Guide"
 description: "Compare supplement categories for Portuguese Podengo dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "portuguese-podengo"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Portuguese Podengo Supplement Shopping Guide"
 displayTitle: "Portuguese Podengo supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "portuguese-podengo", "Portuguese Podengo", "large", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/portuguese-podengo", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Portuguese Podengos, as a large breed with active energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

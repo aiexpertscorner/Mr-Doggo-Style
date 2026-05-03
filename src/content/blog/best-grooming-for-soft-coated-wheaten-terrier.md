@@ -2,7 +2,7 @@
 title: "Soft Coated Wheaten Terrier Grooming Guide by Coat Type"
 description: "Compare grooming tools for Soft Coated Wheaten Terrier dogs by short coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "soft-coated-wheaten-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Soft Coated Wheaten Terrier Grooming Guide by Coat Type"
 displayTitle: "Soft Coated Wheaten Terrier grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "soft-coated-wheaten-terrier", "Soft Coated Wheaten Terrier", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/soft-coated-wheaten-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Soft Coated Wheaten Terriers have a **short coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

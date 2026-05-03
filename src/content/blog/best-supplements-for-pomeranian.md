@@ -2,7 +2,7 @@
 title: "Pomeranian Supplement Care Plan Questions"
 description: "A careful Pomeranian supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "pomeranian"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Pomeranian Supplement Care Plan Questions"
 displayTitle: "Pomeranian supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "pomeranian", "Pomeranian", "small", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pomeranian", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Pomeranians, as a small breed with regular energy and a lifespan of 12–16 years, have specific supplementation needs worth knowing about. Pomeranians have known genetic health concerns including heart problems — targeted supplements address these directly.

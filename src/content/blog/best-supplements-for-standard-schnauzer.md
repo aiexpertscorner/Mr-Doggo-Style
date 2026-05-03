@@ -2,7 +2,7 @@
 title: "Standard Schnauzer Supplement Guide: What to Ask Your Vet"
 description: "A careful Standard Schnauzer supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "standard-schnauzer"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Standard Schnauzer Supplement Guide: What to Ask Your Vet"
 displayTitle: "Standard Schnauzer supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "standard-schnauzer", "Standard Schnauzer", "medium", "regular", "difficult", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/standard-schnauzer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Standard Schnauzers, as a medium breed with regular energy and a lifespan of 13–16 years, have specific supplementation needs worth knowing about.

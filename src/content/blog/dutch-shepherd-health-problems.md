@@ -2,7 +2,7 @@
 title: "Dutch Shepherd Health Guide: Common Issues to Watch"
 description: "Health-sensitive Dutch Shepherd guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "dutch-shepherd"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Dutch Shepherd Health Guide: Common Issues to Watch"
 displayTitle: "Dutch Shepherd health guide: common issues to watch"
 titlePattern: "health-guide"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "dutch-shepherd", "Dutch Shepherd", "large", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/dutch-shepherd", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Dutch Shepherds are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

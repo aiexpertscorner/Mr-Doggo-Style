@@ -2,7 +2,7 @@
 title: "Standard Schnauzer Food Guide for Regular Energy Levels"
 description: "Compare dog food options for Standard Schnauzer dogs using breed size, regular energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "standard-schnauzer"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Standard Schnauzer Food Guide for Regular Energy Levels"
 displayTitle: "Standard Schnauzer food guidance for regular energy levels"
 titlePattern: "food-active-calm"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "standard-schnauzer", "Standard Schnauzer", "medium", "regular", "difficult", "wiry", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/standard-schnauzer", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Standard Schnauzer well isn't as simple as grabbing the bag with the highest rating. Standard Schnauzers are medium dogs with regular energy, a Lifespan of 13–16 years, and nutritional vulnerabilities that change across their life stages.

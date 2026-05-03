@@ -2,7 +2,7 @@
 title: "Shetland Sheepdog Owner Training Checklist"
 description: "Train a Shetland Sheepdog with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "shetland-sheepdog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Shetland Sheepdog Owner Training Checklist"
 displayTitle: "Shetland Sheepdog owner training checklist"
 titlePattern: "training-owner"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "shetland-sheepdog", "Shetland Sheepdog", "small", "regular", "easy", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/shetland-sheepdog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Shetland Sheepdogs rank **#6** in canine intelligence (Brightest).

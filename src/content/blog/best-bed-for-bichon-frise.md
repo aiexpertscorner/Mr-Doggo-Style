@@ -2,7 +2,7 @@
 title: "Bichon Frise Beds for Cooling, Comfort, and Cleanup"
 description: "A practical Bichon Frise bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "bichon-frise"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Jay Brand on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/adorable-white-dog-resting-on-cozy-bed-indoors-34432221/"
 imageSearchQuery: "Bichon Frise dog sleeping bed"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "bichon-frise", "Bichon Frise", "small", "regular", "easy", "curly", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/bichon-frise", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 A dog spends 12–14 hours a day sleeping. For a Bichon Frise, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.
 

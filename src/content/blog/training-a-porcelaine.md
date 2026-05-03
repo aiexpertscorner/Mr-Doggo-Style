@@ -2,7 +2,7 @@
 title: "Porcelaine Socialisation and Obedience Guide"
 description: "Build a Porcelaine training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "porcelaine"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Porcelaine Socialisation and Obedience Guide"
 displayTitle: "Porcelaine socialisation and obedience guide"
 titlePattern: "training-social"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "porcelaine", "Porcelaine", "medium", "active", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/porcelaine", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Porcelaines are easy-to-train dogs that respond best to positive reinforcement.

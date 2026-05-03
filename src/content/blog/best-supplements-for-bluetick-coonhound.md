@@ -2,7 +2,7 @@
 title: "Best Supplements for Bluetick Coonhound: Careful Buyer Shortlist"
 description: "A careful Bluetick Coonhound supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "bluetick-coonhound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for Bluetick Coonhound: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for Bluetick Coonhound"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "bluetick-coonhound", "Bluetick Coonhound", "large", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bluetick-coonhound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Bluetick Coonhounds, as a large breed with active energy and a lifespan of 11–12 years, have specific supplementation needs worth knowing about.

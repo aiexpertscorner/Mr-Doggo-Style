@@ -2,7 +2,7 @@
 title: "Tibetan Mastiff Grooming Shopping Guide"
 description: "Shortlist Tibetan Mastiff grooming products with coat care, long fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "tibetan-mastiff"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Tibetan Mastiff Grooming Shopping Guide"
 displayTitle: "Tibetan Mastiff grooming shopping guide"
 titlePattern: "groom-shopping"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "tibetan-mastiff", "Tibetan Mastiff", "large", "regular", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/tibetan-mastiff", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Tibetan Mastiffs have a **long coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

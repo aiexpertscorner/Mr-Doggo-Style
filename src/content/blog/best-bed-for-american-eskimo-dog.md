@@ -2,7 +2,7 @@
 title: "American Eskimo Dog Owners: Beds to Compare Before Buying"
 description: "Compare bed options for American Eskimo Dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "american-eskimo-dog"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Mohan Nannapaneni on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/photo-of-a-white-american-eskimo-dog-on-green-grass-7237824/"
 imageSearchQuery: "American Eskimo Dog dog sleeping bed"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "american-eskimo-dog", "American Eskimo Dog", "medium", "active", "easy", "double", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/american-eskimo-dog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 A dog spends 12–14 hours a day sleeping. For a American Eskimo Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

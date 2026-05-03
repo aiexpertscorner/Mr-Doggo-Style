@@ -2,7 +2,7 @@
 title: "Norrbottenspets Coat Care Guide for Short Fur"
 description: "Compare grooming tools for Norrbottenspets dogs by short coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "norrbottenspets"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Norrbottenspets Coat Care Guide for Short Fur"
 displayTitle: "Norrbottenspets coat care guide for short fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "norrbottenspets", "Norrbottenspets", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/norrbottenspets", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Norrbottenspetss have a **short coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

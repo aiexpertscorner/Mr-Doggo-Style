@@ -2,7 +2,7 @@
 title: "Best Supplements for German Spitz: Careful Buyer Shortlist"
 description: "A careful German Spitz supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "german-spitz"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for German Spitz: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for German Spitz"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "german-spitz", "German Spitz", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/german-spitz", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but German Spitzs, as a medium breed with regular energy and a lifespan of 13–15 years, have specific supplementation needs worth knowing about.

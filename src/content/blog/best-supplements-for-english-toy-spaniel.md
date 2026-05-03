@@ -2,7 +2,7 @@
 title: "English Toy Spaniel Supplement Care Plan Questions"
 description: "Compare supplement categories for English Toy Spaniel dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "english-toy-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "English Toy Spaniel Supplement Care Plan Questions"
 displayTitle: "English Toy Spaniel supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "english-toy-spaniel", "English Toy Spaniel", "small", "regular", "difficult", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/english-toy-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but English Toy Spaniels, as a small breed with regular energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

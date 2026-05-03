@@ -2,7 +2,7 @@
 title: "Finnish Lapphund Vet Questions for Common Health Risks"
 description: "Review Finnish Lapphund health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "finnish-lapphund"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Finnish Lapphund Vet Questions for Common Health Risks"
 displayTitle: "Finnish Lapphund vet questions for common health risks"
 titlePattern: "health-vet-questions"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "finnish-lapphund", "Finnish Lapphund", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/finnish-lapphund", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Finnish Lapphunds are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

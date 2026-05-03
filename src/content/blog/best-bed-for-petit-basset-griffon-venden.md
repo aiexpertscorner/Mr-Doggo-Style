@@ -2,7 +2,7 @@
 title: "Petit Basset Griffon Vendéen Dog Bed Shopping Guide"
 description: "A practical Petit Basset Griffon Vendéen bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "petit-basset-griffon-venden"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Petit Basset Griffon Vendéen Dog Bed Shopping Guide"
 displayTitle: "Petit Basset Griffon Vendéen dog bed shopping guide"
 titlePattern: "beds-shopping"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "petit-basset-griffon-venden", "Petit Basset Griffon Vendéen", "medium", "active", "difficult", "rough", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/petit-basset-griffon-venden", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Petit Basset Griffon Vendéen, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

@@ -2,7 +2,7 @@
 title: "Basset Fauve de Bretagne Preventive Care and Warning Signs"
 description: "Review Basset Fauve de Bretagne health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "basset-fauve-de-bretagne"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Mikhail Nilov on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/man-checking-on-a-dog-7468978/"
 imageSearchQuery: "Basset Fauve de Bretagne dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "basset-fauve-de-bretagne", "Basset Fauve de Bretagne", "medium", "regular", "moderate", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/basset-fauve-de-bretagne", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Basset Fauve de Bretagnes are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

@@ -2,7 +2,7 @@
 title: "Best Supplements for Maltese: Careful Buyer Shortlist"
 description: "A careful Maltese supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "maltese"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for Maltese: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for Maltese"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "maltese", "Maltese", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/maltese", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Malteses, as a small breed with regular energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about. Malteses have known genetic health concerns including heart problem — targeted supplements address these directly.

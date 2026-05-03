@@ -2,7 +2,7 @@
 title: "Collie Coat Care Guide for Double Fur"
 description: "Compare grooming tools for Collie dogs by double coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "collie"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Collie Coat Care Guide for Double Fur"
 displayTitle: "Collie coat care guide for double fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "collie", "Collie", "large", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/collie", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Collies have a **double coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

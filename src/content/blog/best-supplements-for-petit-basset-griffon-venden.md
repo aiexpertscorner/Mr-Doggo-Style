@@ -2,7 +2,7 @@
 title: "Petit Basset Griffon Vendéen Supplement Checklist for Safer Buying"
 description: "Health-sensitive supplement guidance for Petit Basset Griffon Vendéen owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "petit-basset-griffon-venden"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Petit Basset Griffon Vendéen Supplement Checklist for Safer Buying"
 displayTitle: "Petit Basset Griffon Vendéen supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "petit-basset-griffon-venden", "Petit Basset Griffon Vendéen", "medium", "active", "difficult", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/petit-basset-griffon-venden", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Petit Basset Griffon Vendéens, as a medium breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

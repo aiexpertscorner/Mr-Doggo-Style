@@ -2,7 +2,7 @@
 title: "Irish Terrier Owner Training Checklist"
 description: "Build a Irish Terrier training routine around regular energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "irish-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Irish Terrier Owner Training Checklist"
 displayTitle: "Irish Terrier owner training checklist"
 titlePattern: "training-owner"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "irish-terrier", "Irish Terrier", "medium", "regular", "easy", "wiry", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/irish-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Irish Terriers are easy-to-train dogs that respond best to positive reinforcement.

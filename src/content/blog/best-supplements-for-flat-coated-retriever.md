@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Flat-Coated Retriever"
 description: "Health-sensitive supplement guidance for Flat-Coated Retriever owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "flat-coated-retriever"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Flat-Coated Retriever"
 displayTitle: "Skin and gut supplement options for Flat-Coated Retriever"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "flat-coated-retriever", "Flat-Coated Retriever", "large", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/flat-coated-retriever", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Flat-Coated Retrievers, as a large breed with active energy and a lifespan of 8–10 years, have specific supplementation needs worth knowing about.

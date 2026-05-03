@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Glen of Imaal Terrier"
 description: "A careful Glen of Imaal Terrier supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "glen-of-imaal-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Glen of Imaal Terrier"
 displayTitle: "Skin and gut supplement options for Glen of Imaal Terrier"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "glen-of-imaal-terrier", "Glen of Imaal Terrier", "medium", "regular", "difficult", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/glen-of-imaal-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Glen of Imaal Terriers, as a medium breed with regular energy and a lifespan of 10–15 years, have specific supplementation needs worth knowing about.

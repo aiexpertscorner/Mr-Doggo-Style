@@ -2,7 +2,7 @@
 title: "Working Kelpie Supplement Safety and Medication Questions"
 description: "Compare supplement categories for Working Kelpie dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "working-kelpie"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Working Kelpie Supplement Safety and Medication Questions"
 displayTitle: "Working Kelpie supplement safety and medication questions"
 titlePattern: "supp-medication"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "working-kelpie", "Working Kelpie", "medium", "active", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/working-kelpie", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Working Kelpies, as a medium breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

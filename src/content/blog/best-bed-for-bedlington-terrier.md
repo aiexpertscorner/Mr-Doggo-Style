@@ -2,7 +2,7 @@
 title: "Bedlington Terrier Owners: Beds to Compare Before Buying"
 description: "A practical Bedlington Terrier bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "bedlington-terrier"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by www.kaboompics.com on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/dog-on-bed-5420821/"
 imageSearchQuery: "Bedlington Terrier dog sleeping bed"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "bedlington-terrier", "Bedlington Terrier", "small", "active", "easy", "curly", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/bedlington-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 A dog spends 12–14 hours a day sleeping. For a Bedlington Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.
 

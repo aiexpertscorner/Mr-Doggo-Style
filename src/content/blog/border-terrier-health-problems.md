@@ -2,7 +2,7 @@
 title: "Border Terrier Health Guide: Common Issues to Watch"
 description: "Review Border Terrier health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "border-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Border Terrier Health Guide: Common Issues to Watch"
 displayTitle: "Border Terrier health guide: common issues to watch"
 titlePattern: "health-guide"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "border-terrier", "Border Terrier", "small", "regular", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/border-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Border Terriers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

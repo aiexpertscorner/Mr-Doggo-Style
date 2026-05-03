@@ -2,7 +2,7 @@
 title: "Irish Red and White Setter Health Problems: Risks and Screening"
 description: "Review Irish Red and White Setter health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "irish-red-and-white-setter"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Irish Red and White Setter Health Problems: Risks and Screening"
 displayTitle: "Irish Red and White Setter health problems: risks and screening"
 titlePattern: "health-problems"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "irish-red-and-white-setter", "Irish Red and White Setter", "medium", "active", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/irish-red-and-white-setter", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Irish Red and White Setters are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

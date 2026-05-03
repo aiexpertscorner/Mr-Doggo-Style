@@ -2,7 +2,7 @@
 title: "Training a Greater Swiss Mountain Dog: Foundation Plan"
 description: "Train a Greater Swiss Mountain Dog with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "greater-swiss-mountain-dog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Training a Greater Swiss Mountain Dog: Foundation Plan"
 displayTitle: "Training a Greater Swiss Mountain Dog: foundation plan"
 titlePattern: "training-foundation"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "greater-swiss-mountain-dog", "Greater Swiss Mountain Dog", "large", "active", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/greater-swiss-mountain-dog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Greater Swiss Mountain Dogs are easy-to-train dogs that respond best to positive reinforcement.

@@ -2,7 +2,7 @@
 title: "Peruvian Inca Orchid Grooming for Shedding and Sensitive Skin"
 description: "A breed-aware Peruvian Inca Orchid grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "peruvian-inca-orchid"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Peruvian Inca Orchid Grooming for Shedding and Sensitive Skin"
 displayTitle: "Peruvian Inca Orchid grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "peruvian-inca-orchid", "Peruvian Inca Orchid", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/peruvian-inca-orchid", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Peruvian Inca Orchids have a **double coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

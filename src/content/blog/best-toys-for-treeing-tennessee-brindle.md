@@ -2,7 +2,7 @@
 title: "Treeing Tennessee Brindle Puzzle Toy and Chew Guide"
 description: "A breed-aware Treeing Tennessee Brindle toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "treeing-tennessee-brindle"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Treeing Tennessee Brindle Puzzle Toy and Chew Guide"
 displayTitle: "Treeing Tennessee Brindle puzzle toy and chew guide"
 titlePattern: "toys-puzzle"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "treeing-tennessee-brindle", "Treeing Tennessee Brindle", "medium", "regular", "easy", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/treeing-tennessee-brindle", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Treeing Tennessee Brindle means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

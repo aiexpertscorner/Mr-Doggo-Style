@@ -2,7 +2,7 @@
 title: "Portuguese Water Dog Common Conditions and Care Planning"
 description: "A practical overview of Portuguese Water Dog health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "portuguese-water-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Portuguese Water Dog Common Conditions and Care Planning"
 displayTitle: "Portuguese Water Dog common conditions and care planning"
 titlePattern: "health-conditions"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "portuguese-water-dog", "Portuguese Water Dog", "medium", "active", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/portuguese-water-dog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Portuguese Water Dogs are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

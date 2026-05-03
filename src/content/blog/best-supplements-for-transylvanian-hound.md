@@ -2,7 +2,7 @@
 title: "Transylvanian Hound Supplements for Joints, Skin, and Gut Health"
 description: "Compare supplement categories for Transylvanian Hound dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "transylvanian-hound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Transylvanian Hound Supplements for Joints, Skin, and Gut Health"
 displayTitle: "Transylvanian Hound supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "transylvanian-hound", "Transylvanian Hound", "medium", "active", "moderate", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/transylvanian-hound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Transylvanian Hounds, as a medium breed with active energy and a lifespan of 10–14 years, have specific supplementation needs worth knowing about.

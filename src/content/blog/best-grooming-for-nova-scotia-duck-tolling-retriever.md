@@ -2,7 +2,7 @@
 title: "Nova Scotia Duck Tolling Retriever Bathing, Brushing, and Nail Care Guide"
 description: "Compare grooming tools for Nova Scotia Duck Tolling Retriever dogs by double coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "nova-scotia-duck-tolling-retriever"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Nova Scotia Duck Tolling Retriever Bathing, Brushing, and Nail Care Guide"
 displayTitle: "Nova Scotia Duck Tolling Retriever bathing, brushing, and nail care guide"
 titlePattern: "groom-bath"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "nova-scotia-duck-tolling-retriever", "Nova Scotia Duck Tolling Retriever", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/nova-scotia-duck-tolling-retriever", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Nova Scotia Duck Tolling Retrievers have a **double coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

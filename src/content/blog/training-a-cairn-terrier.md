@@ -2,7 +2,7 @@
 title: "Cairn Terrier Leash Training and Recall Guide"
 description: "Build a Cairn Terrier training routine around regular energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "cairn-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Cairn Terrier Leash Training and Recall Guide"
 displayTitle: "Cairn Terrier leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "cairn-terrier", "Cairn Terrier", "small", "regular", "easy", "rough", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/cairn-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Cairn Terriers rank **#35** in canine intelligence (Above average).

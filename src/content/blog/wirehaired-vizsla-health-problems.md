@@ -2,7 +2,7 @@
 title: "Wirehaired Vizsla Vet Questions for Common Health Risks"
 description: "Review Wirehaired Vizsla health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "wirehaired-vizsla"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Wirehaired Vizsla Vet Questions for Common Health Risks"
 displayTitle: "Wirehaired Vizsla vet questions for common health risks"
 titlePattern: "health-vet-questions"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "wirehaired-vizsla", "Wirehaired Vizsla", "medium", "active", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/wirehaired-vizsla", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Wirehaired Vizslas are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

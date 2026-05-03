@@ -2,7 +2,7 @@
 title: "Jindo Training Guide: Recall, Leash, and Manners"
 description: "A practical Jindo training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "jindo"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Jindo Training Guide: Recall, Leash, and Manners"
 displayTitle: "Jindo training guide for recall, leash, and manners"
 titlePattern: "training-guide"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "jindo", "Jindo", "medium", "active", "difficult", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/jindo", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Jindos are difficult-to-train dogs that respond best to positive reinforcement.

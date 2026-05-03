@@ -2,7 +2,7 @@
 title: "Rhodesian Ridgeback Supplement Care Plan Questions"
 description: "Compare supplement categories for Rhodesian Ridgeback dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "rhodesian-ridgeback"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Rhodesian Ridgeback Supplement Care Plan Questions"
 displayTitle: "Rhodesian Ridgeback supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "rhodesian-ridgeback", "Rhodesian Ridgeback", "large", "regular", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/rhodesian-ridgeback", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Rhodesian Ridgebacks, as a large breed with regular energy and a lifespan of 10–10 years, have specific supplementation needs worth knowing about. Rhodesian Ridgebacks have known genetic health concerns including birth defects, hip problems — targeted supplements address these directly.

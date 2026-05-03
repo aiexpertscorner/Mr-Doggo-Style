@@ -2,7 +2,7 @@
 title: "Field Spaniel Leash Training and Recall Guide"
 description: "Build a Field Spaniel training routine around regular energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "field-spaniel"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Field Spaniel Leash Training and Recall Guide"
 displayTitle: "Field Spaniel leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "field-spaniel", "Field Spaniel", "medium", "regular", "easy", "silky", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/field-spaniel", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Field Spaniels are easy-to-train dogs that respond best to positive reinforcement.

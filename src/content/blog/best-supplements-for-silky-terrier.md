@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Silky Terrier"
 description: "Compare supplement categories for Silky Terrier dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "silky-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Silky Terrier"
 displayTitle: "Joint supplements to ask your vet about for Silky Terrier"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "silky-terrier", "Silky Terrier", "small", "regular", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/silky-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Silky Terriers, as a small breed with regular energy and a lifespan of 13–15 years, have specific supplementation needs worth knowing about.

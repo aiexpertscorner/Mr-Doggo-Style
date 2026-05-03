@@ -2,7 +2,7 @@
 title: "Australian Shepherd Grooming Guide by Coat Type"
 description: "Shortlist Australian Shepherd grooming products with coat care, double fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "australian-shepherd"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Australian Shepherd Grooming Guide by Coat Type"
 displayTitle: "Australian Shepherd grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "australian-shepherd", "Australian Shepherd", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/australian-shepherd", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Australian Shepherds have a **double coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

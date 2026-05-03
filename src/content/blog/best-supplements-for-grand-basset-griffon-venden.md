@@ -2,7 +2,7 @@
 title: "Grand Basset Griffon Vendéen Supplement Safety and Medication Questions"
 description: "Health-sensitive supplement guidance for Grand Basset Griffon Vendéen owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "grand-basset-griffon-venden"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Grand Basset Griffon Vendéen Supplement Safety and Medication Questions"
 displayTitle: "Grand Basset Griffon Vendéen supplement safety and medication questions"
 titlePattern: "supp-medication"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "grand-basset-griffon-venden", "Grand Basset Griffon Vendéen", "medium", "active", "difficult", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/grand-basset-griffon-venden", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Grand Basset Griffon Vendéens, as a medium breed with active energy and a lifespan of 13–15 years, have specific supplementation needs worth knowing about.

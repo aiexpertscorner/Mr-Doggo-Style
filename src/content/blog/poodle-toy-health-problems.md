@@ -2,7 +2,7 @@
 title: "Poodle (Toy) Common Conditions and Care Planning"
 description: "Review Poodle (Toy) health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "poodle-toy"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Poodle (Toy) Common Conditions and Care Planning"
 displayTitle: "Poodle (Toy) common conditions and care planning"
 titlePattern: "health-conditions"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "poodle-toy", "Poodle (Toy)", "small", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/poodle-toy", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Poodle (Toy)s are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

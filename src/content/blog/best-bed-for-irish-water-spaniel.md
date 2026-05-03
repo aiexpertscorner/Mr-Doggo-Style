@@ -2,7 +2,7 @@
 title: "Irish Water Spaniel Dog Bed Shopping Guide"
 description: "Shortlist dog beds for Irish Water Spaniel owners with joint comfort, crate fit, travel use, and cover care in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "irish-water-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Irish Water Spaniel Dog Bed Shopping Guide"
 displayTitle: "Irish Water Spaniel dog bed shopping guide"
 titlePattern: "beds-shopping"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "irish-water-spaniel", "Irish Water Spaniel", "large", "active", "easy", "curly", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/irish-water-spaniel", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Irish Water Spaniel, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

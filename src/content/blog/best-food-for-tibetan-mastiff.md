@@ -2,7 +2,7 @@
 title: "Tibetan Mastiff Food Questions to Ask Your Vet"
 description: "Review Tibetan Mastiff dog food choices by life stage, weight control, digestion, and large-breed needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "tibetan-mastiff"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Tibetan Mastiff Food Questions to Ask Your Vet"
 displayTitle: "Food questions Tibetan Mastiff owners should ask their vet"
 titlePattern: "food-vet-questions"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "tibetan-mastiff", "Tibetan Mastiff", "large", "regular", "difficult", "long", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/tibetan-mastiff", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Tibetan Mastiff well isn't as simple as grabbing the bag with the highest rating. Tibetan Mastiffs are large dogs with regular energy, a Lifespan of 10–12 years, and nutritional vulnerabilities that change across their life stages.

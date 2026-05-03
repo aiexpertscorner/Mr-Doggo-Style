@@ -2,7 +2,7 @@
 title: "English Cocker Spaniel Owner Training Checklist"
 description: "Train a English Cocker Spaniel with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "english-cocker-spaniel"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "English Cocker Spaniel Owner Training Checklist"
 displayTitle: "English Cocker Spaniel owner training checklist"
 titlePattern: "training-owner"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "english-cocker-spaniel", "English Cocker Spaniel", "medium", "regular", "easy", "silky", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/english-cocker-spaniel", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 English Cocker Spaniels rank **#18** in canine intelligence (Excellent).

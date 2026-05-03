@@ -2,7 +2,7 @@
 title: "Dalmatian Training Gear and First Skills"
 description: "Train a Dalmatian with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "dalmatian"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Dalmatian Training Gear and First Skills"
 displayTitle: "Dalmatian training gear and first skills"
 titlePattern: "training-gear"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "dalmatian", "Dalmatian", "large", "active", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/dalmatian", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Dalmatians rank **#39** in canine intelligence (Above average).

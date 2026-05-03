@@ -2,7 +2,7 @@
 title: "Dogue de Bordeaux Grooming Checklist for Home Care"
 description: "Compare grooming tools for Dogue de Bordeaux dogs by short coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "dogue-de-bordeaux"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Dogue de Bordeaux Grooming Checklist for Home Care"
 displayTitle: "Dogue de Bordeaux grooming checklist for home care"
 titlePattern: "groom-owner-checklist"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "dogue-de-bordeaux", "Dogue de Bordeaux", "large", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/dogue-de-bordeaux", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Dogue de Bordeauxs have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

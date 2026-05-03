@@ -2,7 +2,7 @@
 title: "Miniature Schnauzer Supplement Care Plan Questions"
 description: "A careful Miniature Schnauzer supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "miniature-schnauzer"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Miniature Schnauzer Supplement Care Plan Questions"
 displayTitle: "Miniature Schnauzer supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "miniature-schnauzer", "Miniature Schnauzer", "small", "regular", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/miniature-schnauzer", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Miniature Schnauzers, as a small breed with regular energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about. Miniature Schnauzers have known genetic health concerns including liver, sinus problems — targeted supplements address these directly.

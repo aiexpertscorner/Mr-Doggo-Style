@@ -2,7 +2,7 @@
 title: "German Longhaired Pointer Training by Temperament and Drive"
 description: "Build a German Longhaired Pointer training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "german-longhaired-pointer"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "German Longhaired Pointer Training by Temperament and Drive"
 displayTitle: "German Longhaired Pointer training by temperament and drive"
 titlePattern: "training-temperament"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "german-longhaired-pointer", "German Longhaired Pointer", "large", "active", "easy", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/german-longhaired-pointer", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 German Longhaired Pointers are easy-to-train dogs that respond best to positive reinforcement.

@@ -2,7 +2,7 @@
 title: "Tibetan Terrier Grooming Routine and Tool Shortlist"
 description: "Shortlist Tibetan Terrier grooming products with coat care, long fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "tibetan-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Tibetan Terrier Grooming Routine and Tool Shortlist"
 displayTitle: "Tibetan Terrier grooming routine and tool shortlist"
 titlePattern: "groom-routine"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "tibetan-terrier", "Tibetan Terrier", "medium", "active", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/tibetan-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Tibetan Terriers have a **long coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

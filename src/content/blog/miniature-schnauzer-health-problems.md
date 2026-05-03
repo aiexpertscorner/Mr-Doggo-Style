@@ -2,7 +2,7 @@
 title: "Miniature Schnauzer Lifespan, Health Risks, and Vet Care"
 description: "A practical overview of Miniature Schnauzer health risks, small-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "miniature-schnauzer"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Miniature Schnauzer Lifespan, Health Risks, and Vet Care"
 displayTitle: "Miniature Schnauzer lifespan, health risks, and vet care"
 titlePattern: "health-lifespan"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "miniature-schnauzer", "Miniature Schnauzer", "small", "regular", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/miniature-schnauzer", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Miniature Schnauzers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

@@ -2,7 +2,7 @@
 title: "Ibizan Hound Training by Temperament and Drive"
 description: "Train a Ibizan Hound with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "ibizan-hound"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Ibizan Hound Training by Temperament and Drive"
 displayTitle: "Ibizan Hound training by temperament and drive"
 titlePattern: "training-temperament"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "ibizan-hound", "Ibizan Hound", "medium", "active", "difficult", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/ibizan-hound", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Ibizan Hounds are difficult-to-train dogs that respond best to positive reinforcement.

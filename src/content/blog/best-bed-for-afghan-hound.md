@@ -2,7 +2,7 @@
 title: "Dog Beds for Afghan Hound: Home, Crate, and Travel"
 description: "Compare bed options for Afghan Hound dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "afghan-hound"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Olivier Leysen on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/a-dog-sleeping-in-a-dog-bed-next-to-a-sofa-19027991/"
 imageSearchQuery: "Afghan Hound dog sleeping bed"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "afghan-hound", "Afghan Hound", "medium", "active", "moderate", "long", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/afghan-hound", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 A dog spends 12–14 hours a day sleeping. For a Afghan Hound, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

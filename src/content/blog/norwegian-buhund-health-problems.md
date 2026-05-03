@@ -2,7 +2,7 @@
 title: "Health Concerns in Norwegian Buhund: Owner Notes"
 description: "Review Norwegian Buhund health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "norwegian-buhund"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Health Concerns in Norwegian Buhund: Owner Notes"
 displayTitle: "Health concerns in Norwegian Buhund: owner notes"
 titlePattern: "health-owner-notes"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "norwegian-buhund", "Norwegian Buhund", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/norwegian-buhund", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Norwegian Buhunds are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

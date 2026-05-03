@@ -2,7 +2,7 @@
 title: "Hokkaido Socialisation and Obedience Guide"
 description: "Train a Hokkaido with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "hokkaido"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Hokkaido Socialisation and Obedience Guide"
 displayTitle: "Hokkaido socialisation and obedience guide"
 titlePattern: "training-social"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "hokkaido", "Hokkaido", "large", "active", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/hokkaido", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Hokkaidos are easy-to-train dogs that respond best to positive reinforcement.

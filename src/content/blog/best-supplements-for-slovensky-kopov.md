@@ -2,7 +2,7 @@
 title: "Slovensky Kopov Supplement Checklist for Safer Buying"
 description: "A careful Slovensky Kopov supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "slovensky-kopov"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Slovensky Kopov Supplement Checklist for Safer Buying"
 displayTitle: "Slovensky Kopov supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "slovensky-kopov", "Slovensky Kopov", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/slovensky-kopov", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Slovensky Kopovs, as a medium breed with regular energy and a lifespan of 12–13 years, have specific supplementation needs worth knowing about.

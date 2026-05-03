@@ -2,7 +2,7 @@
 title: "Alaskan Malamute Supplement Safety and Medication Questions"
 description: "Compare supplement categories for Alaskan Malamute dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "alaskan-malamute"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Alaskan Malamute Supplement Safety and Medication Questions"
 displayTitle: "Alaskan Malamute supplement safety and medication questions"
 titlePattern: "supp-medication"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "alaskan-malamute", "Alaskan Malamute", "large", "active", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/alaskan-malamute", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Alaskan Malamutes, as a large breed with active energy and a lifespan of 10–14 years, have specific supplementation needs worth knowing about. Alaskan Malamutes have known genetic health concerns including hip problems, dwarfism — targeted supplements address these directly.

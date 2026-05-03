@@ -2,7 +2,7 @@
 title: "Kerry Blue Terrier Health Clearances to Ask Breeders About"
 description: "A practical overview of Kerry Blue Terrier health risks, medium-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "kerry-blue-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Kerry Blue Terrier Health Clearances to Ask Breeders About"
 displayTitle: "Kerry Blue Terrier health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "kerry-blue-terrier", "Kerry Blue Terrier", "medium", "regular", "moderate", "wavy"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/kerry-blue-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Kerry Blue Terriers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

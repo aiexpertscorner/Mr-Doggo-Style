@@ -2,7 +2,7 @@
 title: "Portuguese Podengo Pequeno Owners: Beds to Compare Before Buying"
 description: "A practical Portuguese Podengo Pequeno bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "portuguese-podengo-pequeno"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Portuguese Podengo Pequeno Owners: Beds to Compare Before Buying"
 displayTitle: "Beds Portuguese Podengo Pequeno owners should compare before buying"
 titlePattern: "beds-owner-compare"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "portuguese-podengo-pequeno", "Portuguese Podengo Pequeno", "small", "active", "easy", "double", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/portuguese-podengo-pequeno", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Portuguese Podengo Pequeno, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.

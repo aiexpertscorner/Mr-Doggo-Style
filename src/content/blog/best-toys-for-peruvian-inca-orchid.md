@@ -2,7 +2,7 @@
 title: "Peruvian Inca Orchid Toy Guide for Daily Enrichment"
 description: "A breed-aware Peruvian Inca Orchid toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "peruvian-inca-orchid"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Peruvian Inca Orchid Toy Guide for Daily Enrichment"
 displayTitle: "Peruvian Inca Orchid toy guide for daily enrichment"
 titlePattern: "toys-guide-daily"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "peruvian-inca-orchid", "Peruvian Inca Orchid", "medium", "active", "easy", "double", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/peruvian-inca-orchid", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Peruvian Inca Orchid means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

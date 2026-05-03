@@ -2,7 +2,7 @@
 title: "Broholmer Grooming Guide by Coat Type"
 description: "A breed-aware Broholmer grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "broholmer"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Broholmer Grooming Guide by Coat Type"
 displayTitle: "Broholmer grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "broholmer", "Broholmer", "large", "calm", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/broholmer", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Broholmers have a **short coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

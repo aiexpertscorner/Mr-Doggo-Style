@@ -2,7 +2,7 @@
 title: "Norrbottenspets Common Conditions and Care Planning"
 description: "Health-sensitive Norrbottenspets guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "norrbottenspets"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Norrbottenspets Common Conditions and Care Planning"
 displayTitle: "Norrbottenspets common conditions and care planning"
 titlePattern: "health-conditions"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "norrbottenspets", "Norrbottenspets", "medium", "active", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/norrbottenspets", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Norrbottenspetss are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

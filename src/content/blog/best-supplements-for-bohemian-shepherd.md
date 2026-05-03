@@ -2,7 +2,7 @@
 title: "Bohemian Shepherd Supplements for Joints, Skin, and Gut Health"
 description: "Health-sensitive supplement guidance for Bohemian Shepherd owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "bohemian-shepherd"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Bohemian Shepherd Supplements for Joints, Skin, and Gut Health"
 displayTitle: "Bohemian Shepherd supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "bohemian-shepherd", "Bohemian Shepherd", "medium", "regular", "easy"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bohemian-shepherd", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Bohemian Shepherds, as a medium breed with regular energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

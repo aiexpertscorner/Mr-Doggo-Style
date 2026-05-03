@@ -2,7 +2,7 @@
 title: "How to Train a Lhasa Apso: Practical Roadmap"
 description: "A practical Lhasa Apso training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "lhasa-apso"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "How to Train a Lhasa Apso: Practical Roadmap"
 displayTitle: "How to train a Lhasa Apso: practical roadmap"
 titlePattern: "training-how-to"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "lhasa-apso", "Lhasa Apso", "small", "regular", "difficult", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/lhasa-apso", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Lhasa Apsos rank **#68** in canine intelligence (Fair).

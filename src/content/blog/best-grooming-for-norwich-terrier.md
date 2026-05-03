@@ -2,7 +2,7 @@
 title: "Norwich Terrier Grooming Guide by Coat Type"
 description: "A breed-aware Norwich Terrier grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "norwich-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Norwich Terrier Grooming Guide by Coat Type"
 displayTitle: "Norwich Terrier grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "norwich-terrier", "Norwich Terrier", "small", "active", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/norwich-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Norwich Terriers have a **wiry coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

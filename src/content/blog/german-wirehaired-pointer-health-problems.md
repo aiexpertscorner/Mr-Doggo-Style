@@ -2,7 +2,7 @@
 title: "German Wirehaired Pointer Health Risks for Large Dogs"
 description: "Review German Wirehaired Pointer health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "german-wirehaired-pointer"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "German Wirehaired Pointer Health Risks for Large Dogs"
 displayTitle: "German Wirehaired Pointer health risks for large dogs"
 titlePattern: "health-size-risk"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "german-wirehaired-pointer", "German Wirehaired Pointer", "large", "active", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/german-wirehaired-pointer", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 German Wirehaired Pointers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

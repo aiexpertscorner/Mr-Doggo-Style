@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Yakutian Laika"
 description: "Health-sensitive supplement guidance for Yakutian Laika owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "yakutian-laika"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Yakutian Laika"
 displayTitle: "Skin and gut supplement options for Yakutian Laika"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "yakutian-laika", "Yakutian Laika", "medium", "active", "moderate", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/yakutian-laika", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Yakutian Laikas, as a medium breed with active energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

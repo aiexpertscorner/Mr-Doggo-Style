@@ -2,7 +2,7 @@
 title: "Schipperke Health Clearances to Ask Breeders About"
 description: "A practical overview of Schipperke health risks, small-breed concerns, prevention habits, and when to ask a vet."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "schipperke"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Schipperke Health Clearances to Ask Breeders About"
 displayTitle: "Schipperke health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "schipperke", "Schipperke", "small", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/schipperke", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Schipperkes are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

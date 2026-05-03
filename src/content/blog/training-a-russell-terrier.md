@@ -2,7 +2,7 @@
 title: "Russell Terrier Training by Temperament and Drive"
 description: "Build a Russell Terrier training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "russell-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Russell Terrier Training by Temperament and Drive"
 displayTitle: "Russell Terrier training by temperament and drive"
 titlePattern: "training-temperament"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "russell-terrier", "Russell Terrier", "small", "active", "easy", "medium", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/russell-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Russell Terriers are easy-to-train dogs that respond best to positive reinforcement.

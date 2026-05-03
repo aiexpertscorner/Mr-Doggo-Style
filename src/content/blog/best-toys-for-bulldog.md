@@ -2,7 +2,7 @@
 title: "Bulldog Owners: Toys to Compare First"
 description: "A breed-aware Bulldog toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "bulldog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Bulldog Owners: Toys to Compare First"
 displayTitle: "Toys Bulldog owners should compare first"
 titlePattern: "toys-owner-compare"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "bulldog", "Bulldog", "medium", "regular", "easy", "double", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/bulldog", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Bulldog means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

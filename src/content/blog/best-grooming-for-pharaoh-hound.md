@@ -2,7 +2,7 @@
 title: "Pharaoh Hound Grooming for Shedding and Sensitive Skin"
 description: "Compare grooming tools for Pharaoh Hound dogs by short coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "pharaoh-hound"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Pharaoh Hound Grooming for Shedding and Sensitive Skin"
 displayTitle: "Pharaoh Hound grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "pharaoh-hound", "Pharaoh Hound", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pharaoh-hound", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Pharaoh Hounds have a **short coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

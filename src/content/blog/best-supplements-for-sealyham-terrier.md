@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Sealyham Terrier"
 description: "Compare supplement categories for Sealyham Terrier dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "sealyham-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Sealyham Terrier"
 displayTitle: "Joint supplements to ask your vet about for Sealyham Terrier"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "sealyham-terrier", "Sealyham Terrier", "small", "regular", "difficult", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/sealyham-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Sealyham Terriers, as a small breed with regular energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

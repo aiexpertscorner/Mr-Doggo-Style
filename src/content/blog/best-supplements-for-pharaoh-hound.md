@@ -2,7 +2,7 @@
 title: "Best Senior Supplements for Pharaoh Hound"
 description: "Compare supplement categories for Pharaoh Hound dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "pharaoh-hound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Senior Supplements for Pharaoh Hound"
 displayTitle: "Senior supplement questions for Pharaoh Hound"
 titlePattern: "supp-best-senior"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "pharaoh-hound", "Pharaoh Hound", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pharaoh-hound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Pharaoh Hounds, as a medium breed with active energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

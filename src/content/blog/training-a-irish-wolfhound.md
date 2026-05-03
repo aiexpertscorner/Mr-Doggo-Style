@@ -2,7 +2,7 @@
 title: "Irish Wolfhound Training by Temperament and Drive"
 description: "A practical Irish Wolfhound training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "irish-wolfhound"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Irish Wolfhound Training by Temperament and Drive"
 displayTitle: "Irish Wolfhound training by temperament and drive"
 titlePattern: "training-temperament"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "irish-wolfhound", "Irish Wolfhound", "large", "regular", "difficult", "rough", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/irish-wolfhound", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Irish Wolfhounds rank **#41** in canine intelligence (Average).

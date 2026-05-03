@@ -2,7 +2,7 @@
 title: "Black Russian Terrier Bed Sizing Guide for Large Dogs"
 description: "Shortlist dog beds for Black Russian Terrier owners with joint comfort, crate fit, travel use, and cover care in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "black-russian-terrier"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Samson Katt on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/dog-lying-on-bed-near-faceless-young-female-owner-5255155/"
 imageSearchQuery: "Black Russian Terrier dog sleeping bed"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "black-russian-terrier", "Black Russian Terrier", "large", "active", "easy", "wiry", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/black-russian-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 A dog spends 12–14 hours a day sleeping. For a Black Russian Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

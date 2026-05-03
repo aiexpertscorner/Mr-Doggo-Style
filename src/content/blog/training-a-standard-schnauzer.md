@@ -2,7 +2,7 @@
 title: "Training a Standard Schnauzer: Foundation Plan"
 description: "Train a Standard Schnauzer with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "standard-schnauzer"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Training a Standard Schnauzer: Foundation Plan"
 displayTitle: "Training a Standard Schnauzer: foundation plan"
 titlePattern: "training-foundation"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "standard-schnauzer", "Standard Schnauzer", "medium", "regular", "difficult", "wiry", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/standard-schnauzer", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Standard Schnauzers are difficult-to-train dogs that respond best to positive reinforcement.

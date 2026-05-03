@@ -2,7 +2,7 @@
 title: "Biewer Terrier Health Clearances to Ask Breeders About"
 description: "Health-sensitive Biewer Terrier guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "biewer-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Biewer Terrier Health Clearances to Ask Breeders About"
 displayTitle: "Biewer Terrier health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "biewer-terrier", "Biewer Terrier", "small", "calm", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/biewer-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Biewer Terriers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

@@ -2,7 +2,7 @@
 title: "Airedale Terrier Supplement Guide: What to Ask Your Vet"
 description: "A careful Airedale Terrier supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "airedale-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Airedale Terrier Supplement Guide: What to Ask Your Vet"
 displayTitle: "Airedale Terrier supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "airedale-terrier", "Airedale Terrier", "large", "regular", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/airedale-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Airedale Terriers, as a large breed with regular energy and a lifespan of 11–14 years, have specific supplementation needs worth knowing about.

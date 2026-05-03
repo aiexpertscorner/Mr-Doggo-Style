@@ -2,7 +2,7 @@
 title: "Best Supplements for Kishu Ken: Careful Buyer Shortlist"
 description: "A careful Kishu Ken supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "kishu-ken"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Supplements for Kishu Ken: Careful Buyer Shortlist"
 displayTitle: "Supplement options to discuss for Kishu Ken"
 titlePattern: "supp-best-careful"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "kishu-ken", "Kishu Ken", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/kishu-ken", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Kishu Kens, as a medium breed with active energy and a lifespan of 11–13 years, have specific supplementation needs worth knowing about.

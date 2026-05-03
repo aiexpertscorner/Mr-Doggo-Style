@@ -2,7 +2,7 @@
 title: "Best Manchester Terrier (Standard) Food for Puppy, Adult, and Senior Dogs"
 description: "Review Manchester Terrier (Standard) dog food choices by life stage, weight control, digestion, and small-breed needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "manchester-terrier-standard"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Manchester Terrier (Standard) Food for Puppy, Adult, and Senior Dogs"
 displayTitle: "Manchester Terrier (Standard) food guide for puppy, adult, and senior stages"
 titlePattern: "food-best-puppy-adult"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "manchester-terrier-standard", "Manchester Terrier (Standard)", "small", "regular", "easy", "medium", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/manchester-terrier-standard", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Manchester Terrier (Standard) well isn't as simple as grabbing the bag with the highest rating. Manchester Terrier (Standard)s are small dogs with regular energy, a Lifespan of 15–17 years, and nutritional vulnerabilities that change across their life stages.

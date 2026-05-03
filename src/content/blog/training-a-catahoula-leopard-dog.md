@@ -2,7 +2,7 @@
 title: "Catahoula Leopard Dog Owner Training Checklist"
 description: "Build a Catahoula Leopard Dog training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "catahoula-leopard-dog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Catahoula Leopard Dog Owner Training Checklist"
 displayTitle: "Catahoula Leopard Dog owner training checklist"
 titlePattern: "training-owner"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "catahoula-leopard-dog", "Catahoula Leopard Dog", "large", "active", "difficult", "medium", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/catahoula-leopard-dog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Catahoula Leopard Dogs are difficult-to-train dogs that respond best to positive reinforcement.

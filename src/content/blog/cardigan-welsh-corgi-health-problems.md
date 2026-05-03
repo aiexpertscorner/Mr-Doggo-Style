@@ -2,7 +2,7 @@
 title: "Cardigan Welsh Corgi Health Clearances to Ask Breeders About"
 description: "Health-sensitive Cardigan Welsh Corgi guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "cardigan-welsh-corgi"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Cardigan Welsh Corgi Health Clearances to Ask Breeders About"
 displayTitle: "Cardigan Welsh Corgi health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "cardigan-welsh-corgi", "Cardigan Welsh Corgi", "medium", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/cardigan-welsh-corgi", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Cardigan Welsh Corgis are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

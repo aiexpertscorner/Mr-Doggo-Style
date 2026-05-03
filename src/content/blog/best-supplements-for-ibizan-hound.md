@@ -2,7 +2,7 @@
 title: "Best Senior Supplements for Ibizan Hound"
 description: "A careful Ibizan Hound supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "ibizan-hound"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Senior Supplements for Ibizan Hound"
 displayTitle: "Senior supplement questions for Ibizan Hound"
 titlePattern: "supp-best-senior"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "ibizan-hound", "Ibizan Hound", "medium", "active", "difficult", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/ibizan-hound", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Ibizan Hounds, as a medium breed with active energy and a lifespan of 11–14 years, have specific supplementation needs worth knowing about.

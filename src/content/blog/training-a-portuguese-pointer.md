@@ -2,7 +2,7 @@
 title: "Portuguese Pointer Leash Training and Recall Guide"
 description: "A practical Portuguese Pointer training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "portuguese-pointer"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Portuguese Pointer Leash Training and Recall Guide"
 displayTitle: "Portuguese Pointer leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "portuguese-pointer", "Portuguese Pointer", "medium", "active", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/portuguese-pointer", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Portuguese Pointers are easy-to-train dogs that respond best to positive reinforcement.

@@ -2,7 +2,7 @@
 title: "Cirneco dell’Etna Toys for Indoor Play, Fetch, and Chewing"
 description: "Shortlist practical toys for Cirneco dell’Etna owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "cirneco-delletna"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Cirneco dell’Etna Toys for Indoor Play, Fetch, and Chewing"
 displayTitle: "Cirneco dell’Etna toys for indoor play, fetch, and chewing"
 titlePattern: "toys-indoor-outdoor"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "cirneco-delletna", "Cirneco dell’Etna", "medium", "regular", "easy", "short", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/cirneco-delletna", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Cirneco dell’Etna means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

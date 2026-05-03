@@ -2,7 +2,7 @@
 title: "Cairn Terrier Boredom Toys Worth Comparing"
 description: "A breed-aware Cairn Terrier toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "cairn-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Cairn Terrier Boredom Toys Worth Comparing"
 displayTitle: "Cairn Terrier boredom toys worth comparing"
 titlePattern: "toys-boredom"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "cairn-terrier", "Cairn Terrier", "small", "regular", "easy", "rough", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/cairn-terrier", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Cairn Terrier means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

@@ -2,7 +2,7 @@
 title: "Spanish Mastiff Owners: Toys to Compare First"
 description: "Compare toys for Spanish Mastiff dogs by calm energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "spanish-mastiff"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Spanish Mastiff Owners: Toys to Compare First"
 displayTitle: "Toys Spanish Mastiff owners should compare first"
 titlePattern: "toys-owner-compare"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "spanish-mastiff", "Spanish Mastiff", "large", "calm", "easy", "double", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/spanish-mastiff", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Spanish Mastiff means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

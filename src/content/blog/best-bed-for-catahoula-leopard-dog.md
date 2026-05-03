@@ -2,7 +2,7 @@
 title: "Best Beds for Catahoula Leopard Dog: Support and Size Picks"
 description: "Compare bed options for Catahoula Leopard Dogs by large sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "catahoula-leopard-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Beds for Catahoula Leopard Dog: Support and Size Picks"
 displayTitle: "Best beds for Catahoula Leopard Dog support and sizing"
 titlePattern: "beds-best-support"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "catahoula-leopard-dog", "Catahoula Leopard Dog", "large", "active", "difficult", "medium", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/catahoula-leopard-dog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Catahoula Leopard Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

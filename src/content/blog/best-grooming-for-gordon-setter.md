@@ -2,7 +2,7 @@
 title: "Gordon Setter Grooming Kit: Brushes, Shampoo, Nail Tools"
 description: "Shortlist Gordon Setter grooming products with coat care, silky fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "gordon-setter"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Gordon Setter Grooming Kit: Brushes, Shampoo, Nail Tools"
 displayTitle: "Gordon Setter grooming kit for coat, bath, and nails"
 titlePattern: "groom-kit"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "gordon-setter", "Gordon Setter", "large", "active", "difficult", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/gordon-setter", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Gordon Setters have a **silky coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

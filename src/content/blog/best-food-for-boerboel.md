@@ -2,7 +2,7 @@
 title: "Boerboel Food Questions to Ask Your Vet"
 description: "Review Boerboel dog food choices by life stage, weight control, digestion, and large-breed needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "boerboel"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Boerboel Food Questions to Ask Your Vet"
 displayTitle: "Food questions Boerboel owners should ask their vet"
 titlePattern: "food-vet-questions"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "boerboel", "Boerboel", "large", "calm", "easy", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/boerboel", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Boerboel well isn't as simple as grabbing the bag with the highest rating. Boerboels are large dogs with calm energy, a Lifespan of 9–11 years, and nutritional vulnerabilities that change across their life stages.

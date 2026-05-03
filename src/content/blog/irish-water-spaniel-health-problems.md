@@ -2,7 +2,7 @@
 title: "Irish Water Spaniel Health Clearances to Ask Breeders About"
 description: "Health-sensitive Irish Water Spaniel guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "irish-water-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Irish Water Spaniel Health Clearances to Ask Breeders About"
 displayTitle: "Irish Water Spaniel health clearances to ask breeders about"
 titlePattern: "health-breeder"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "irish-water-spaniel", "Irish Water Spaniel", "large", "active", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/irish-water-spaniel", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Irish Water Spaniels are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

@@ -2,7 +2,7 @@
 title: "Dogue de Bordeaux Health Risks for Large Dogs"
 description: "Review Dogue de Bordeaux health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "dogue-de-bordeaux"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Dogue de Bordeaux Health Risks for Large Dogs"
 displayTitle: "Dogue de Bordeaux health risks for large dogs"
 titlePattern: "health-size-risk"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "dogue-de-bordeaux", "Dogue de Bordeaux", "large", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/dogue-de-bordeaux", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Dogue de Bordeauxs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

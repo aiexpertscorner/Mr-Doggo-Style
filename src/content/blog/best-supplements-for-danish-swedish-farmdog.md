@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Danish-Swedish Farmdog"
 description: "Health-sensitive supplement guidance for Danish-Swedish Farmdog owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "danish-swedish-farmdog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Danish-Swedish Farmdog"
 displayTitle: "Joint supplements to ask your vet about for Danish-Swedish Farmdog"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "danish-swedish-farmdog", "Danish-Swedish Farmdog", "small", "active", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/danish-swedish-farmdog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Danish-Swedish Farmdogs, as a small breed with active energy and a lifespan of 11–13 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "Bulldog Supplement Guide: What to Ask Your Vet"
 description: "Health-sensitive supplement guidance for Bulldog owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "bulldog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Bulldog Supplement Guide: What to Ask Your Vet"
 displayTitle: "Bulldog supplement guide: what to ask your vet"
 titlePattern: "supp-guide-vet"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "bulldog", "Bulldog", "medium", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bulldog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Bulldogs, as a medium breed with regular energy and a lifespan of 8–10 years, have specific supplementation needs worth knowing about. Bulldogs have known genetic health concerns including breathing, hip, heart problems, 'dry eye' — targeted supplements address these directly.

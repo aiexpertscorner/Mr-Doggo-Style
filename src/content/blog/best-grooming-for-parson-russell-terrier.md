@@ -2,7 +2,7 @@
 title: "Best Parson Russell Terrier Grooming Tools for Medium Coats"
 description: "A breed-aware Parson Russell Terrier grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "parson-russell-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Parson Russell Terrier Grooming Tools for Medium Coats"
 displayTitle: "Parson Russell Terrier grooming tools for medium coats"
 titlePattern: "groom-best-coat"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "parson-russell-terrier", "Parson Russell Terrier", "small", "active", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/parson-russell-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Parson Russell Terriers have a **medium coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "Great Pyrenees Grooming Checklist for Home Care"
 description: "Shortlist Great Pyrenees grooming products with coat care, long fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "great-pyrenees"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Great Pyrenees Grooming Checklist for Home Care"
 displayTitle: "Great Pyrenees grooming checklist for home care"
 titlePattern: "groom-owner-checklist"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "great-pyrenees", "Great Pyrenees", "large", "active", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/great-pyrenees", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Great Pyreneess have a **long coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

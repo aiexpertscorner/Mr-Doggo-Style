@@ -2,7 +2,7 @@
 title: "Siberian Husky Training Plan for Active Dogs"
 description: "Train a Siberian Husky with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "siberian-husky"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Siberian Husky Training Plan for Active Dogs"
 displayTitle: "Siberian Husky training plan for active dogs"
 titlePattern: "training-energy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "siberian-husky", "Siberian Husky", "medium", "active", "difficult", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/siberian-husky", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Siberian Huskys rank **#45** in canine intelligence (Average).

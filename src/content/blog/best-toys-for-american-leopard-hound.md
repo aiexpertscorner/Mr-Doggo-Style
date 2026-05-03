@@ -2,7 +2,7 @@
 title: "American Leopard Hound Boredom Toys Worth Comparing"
 description: "Compare toys for American Leopard Hound dogs by active energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "american-leopard-hound"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "American Leopard Hound Boredom Toys Worth Comparing"
 displayTitle: "American Leopard Hound boredom toys worth comparing"
 titlePattern: "toys-boredom"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "american-leopard-hound", "American Leopard Hound", "large", "active", "easy", "short", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/american-leopard-hound", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a American Leopard Hound means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

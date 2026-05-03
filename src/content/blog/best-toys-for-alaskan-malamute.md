@@ -2,7 +2,7 @@
 title: "Alaskan Malamute Toy Safety and Enrichment Checklist"
 description: "Compare toys for Alaskan Malamute dogs by active energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "alaskan-malamute"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Alaskan Malamute Toy Safety and Enrichment Checklist"
 displayTitle: "Alaskan Malamute toy safety and enrichment checklist"
 titlePattern: "toys-safe-play"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "alaskan-malamute", "Alaskan Malamute", "large", "active", "difficult", "double", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/alaskan-malamute", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Alaskan Malamute means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

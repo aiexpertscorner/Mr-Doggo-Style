@@ -2,7 +2,7 @@
 title: "American Water Spaniel Dog Bed Durability Checklist"
 description: "Shortlist dog beds for American Water Spaniel owners with joint comfort, crate fit, travel use, and cover care in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "american-water-spaniel"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Muhammed Tubtemur on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/dog-sleeping-on-sidewalk-20744921/"
 imageSearchQuery: "American Water Spaniel dog sleeping bed"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "american-water-spaniel", "American Water Spaniel", "medium", "regular", "easy", "curly", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/american-water-spaniel", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 A dog spends 12–14 hours a day sleeping. For a American Water Spaniel, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

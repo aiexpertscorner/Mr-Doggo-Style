@@ -2,7 +2,7 @@
 title: "Poodle (Standard) Supplement Guide for Regular Dogs"
 description: "A careful Poodle (Standard) supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "poodle-standard"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Poodle (Standard) Supplement Guide for Regular Dogs"
 displayTitle: "Poodle (Standard) supplement guide for regular dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "poodle-standard", "Poodle (Standard)", "large", "regular", "easy", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/poodle-standard", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Poodle (Standard)s, as a large breed with regular energy and a lifespan of 10–18 years, have specific supplementation needs worth knowing about.

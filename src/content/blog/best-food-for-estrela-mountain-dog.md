@@ -2,7 +2,7 @@
 title: "Best Dog Food for Estrela Mountain Dog Sensitive Stomachs"
 description: "Breed-aware food guidance for Estrela Mountain Dog owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "estrela-mountain-dog"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Dog Food for Estrela Mountain Dog Sensitive Stomachs"
 displayTitle: "Food options to compare for Estrela Mountain Dog sensitive stomachs"
 titlePattern: "food-best-sensitive"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "estrela-mountain-dog", "Estrela Mountain Dog", "large", "calm", "easy", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/estrela-mountain-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Estrela Mountain Dog well isn't as simple as grabbing the bag with the highest rating. Estrela Mountain Dogs are large dogs with calm energy, a Lifespan of 10–14 years, and nutritional vulnerabilities that change across their life stages.

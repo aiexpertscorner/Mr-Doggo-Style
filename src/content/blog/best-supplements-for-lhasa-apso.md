@@ -2,7 +2,7 @@
 title: "Lhasa Apso Supplements for Joints, Skin, and Gut Health"
 description: "Health-sensitive supplement guidance for Lhasa Apso owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "lhasa-apso"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Lhasa Apso Supplements for Joints, Skin, and Gut Health"
 displayTitle: "Lhasa Apso supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "lhasa-apso", "Lhasa Apso", "small", "regular", "difficult", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/lhasa-apso", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Lhasa Apsos, as a small breed with regular energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about. Lhasa Apsos have known genetic health concerns including dry eye — targeted supplements address these directly.

@@ -2,7 +2,7 @@
 title: "Lakeland Terrier Grooming Shopping Guide"
 description: "A breed-aware Lakeland Terrier grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "lakeland-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Lakeland Terrier Grooming Shopping Guide"
 displayTitle: "Lakeland Terrier grooming shopping guide"
 titlePattern: "groom-shopping"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "lakeland-terrier", "Lakeland Terrier", "small", "regular", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/lakeland-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Lakeland Terriers have a **wiry coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

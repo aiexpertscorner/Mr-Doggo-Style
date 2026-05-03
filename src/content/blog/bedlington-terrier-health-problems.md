@@ -2,7 +2,7 @@
 title: "Bedlington Terrier Lifespan, Health Risks, and Vet Care"
 description: "Review Bedlington Terrier health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "bedlington-terrier"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Tima Miroshnichenko on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/dog-getting-a-check-up-6235655/"
 imageSearchQuery: "Bedlington Terrier dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "bedlington-terrier", "Bedlington Terrier", "small", "active", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bedlington-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Bedlington Terriers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

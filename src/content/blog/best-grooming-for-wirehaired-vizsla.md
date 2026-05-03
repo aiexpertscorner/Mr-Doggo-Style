@@ -2,7 +2,7 @@
 title: "Wirehaired Vizsla Coat Care Guide for Wiry Fur"
 description: "A breed-aware Wirehaired Vizsla grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "wirehaired-vizsla"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Wirehaired Vizsla Coat Care Guide for Wiry Fur"
 displayTitle: "Wirehaired Vizsla coat care guide for wiry fur"
 titlePattern: "groom-coat-care"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "wirehaired-vizsla", "Wirehaired Vizsla", "medium", "active", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/wirehaired-vizsla", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Wirehaired Vizslas have a **wiry coat** that requires occasional bath/brush. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

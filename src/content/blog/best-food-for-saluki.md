@@ -2,7 +2,7 @@
 title: "Saluki Food Guide: Formulas by Life Stage"
 description: "Compare dog food options for Saluki dogs using breed size, active energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "saluki"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Saluki Food Guide: Formulas by Life Stage"
 displayTitle: "Saluki nutrition guide by life stage"
 titlePattern: "food-guide-life-stage"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "saluki", "Saluki", "medium", "active", "difficult", "silky", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/saluki", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Saluki well isn't as simple as grabbing the bag with the highest rating. Salukis are medium dogs with active energy, a Average lifespan of 12 years, and nutritional vulnerabilities that change across their life stages.

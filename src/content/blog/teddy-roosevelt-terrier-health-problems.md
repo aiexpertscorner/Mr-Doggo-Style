@@ -2,7 +2,7 @@
 title: "Teddy Roosevelt Terrier Lifespan, Health Risks, and Vet Care"
 description: "Health-sensitive Teddy Roosevelt Terrier guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "teddy-roosevelt-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Teddy Roosevelt Terrier Lifespan, Health Risks, and Vet Care"
 displayTitle: "Teddy Roosevelt Terrier lifespan, health risks, and vet care"
 titlePattern: "health-lifespan"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "teddy-roosevelt-terrier", "Teddy Roosevelt Terrier", "small", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/teddy-roosevelt-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Teddy Roosevelt Terriers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

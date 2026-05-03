@@ -2,7 +2,7 @@
 title: "Curly-Coated Retriever Leash Training and Recall Guide"
 description: "Train a Curly-Coated Retriever with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "curly-coated-retriever"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Curly-Coated Retriever Leash Training and Recall Guide"
 displayTitle: "Curly-Coated Retriever leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "curly-coated-retriever", "Curly-Coated Retriever", "large", "active", "difficult", "curly", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/curly-coated-retriever", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Curly-Coated Retrievers are difficult-to-train dogs that respond best to positive reinforcement.

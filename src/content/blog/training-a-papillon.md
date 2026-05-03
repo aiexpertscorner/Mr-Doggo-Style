@@ -2,7 +2,7 @@
 title: "Papillon Training Gear and First Skills"
 description: "Train a Papillon with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "papillon"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Papillon Training Gear and First Skills"
 displayTitle: "Papillon training gear and first skills"
 titlePattern: "training-gear"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "papillon", "Papillon", "small", "regular", "easy", "silky", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/papillon", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Papillons rank **#8** in canine intelligence (Brightest).

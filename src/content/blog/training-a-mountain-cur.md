@@ -2,7 +2,7 @@
 title: "Mountain Cur Training by Temperament and Drive"
 description: "Build a Mountain Cur training routine around active energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "mountain-cur"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Mountain Cur Training by Temperament and Drive"
 displayTitle: "Mountain Cur training by temperament and drive"
 titlePattern: "training-temperament"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "mountain-cur", "Mountain Cur", "medium", "active", "moderate", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/mountain-cur", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Mountain Curs are moderate-to-train dogs that respond best to positive reinforcement.

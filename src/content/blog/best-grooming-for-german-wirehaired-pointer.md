@@ -2,7 +2,7 @@
 title: "Best Brushes and Shampoo for German Wirehaired Pointer"
 description: "Compare grooming tools for German Wirehaired Pointer dogs by wiry coat type, shedding, bath routine, and nail-care needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "german-wirehaired-pointer"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Brushes and Shampoo for German Wirehaired Pointer"
 displayTitle: "Brushes and shampoo to compare for German Wirehaired Pointer"
 titlePattern: "groom-best-brush"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "german-wirehaired-pointer", "German Wirehaired Pointer", "large", "active", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/german-wirehaired-pointer", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 German Wirehaired Pointers have a **wiry coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

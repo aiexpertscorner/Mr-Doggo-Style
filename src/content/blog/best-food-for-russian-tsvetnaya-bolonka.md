@@ -2,7 +2,7 @@
 title: "Russian Tsvetnaya Bolonka Owners: Dog Foods to Compare First"
 description: "A practical Russian Tsvetnaya Bolonka food guide for small dogs, with nutrition notes, joint-support context, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "russian-tsvetnaya-bolonka"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Russian Tsvetnaya Bolonka Owners: Dog Foods to Compare First"
 displayTitle: "Dog foods Russian Tsvetnaya Bolonka owners should compare first"
 titlePattern: "food-owner-shortlist"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "russian-tsvetnaya-bolonka", "Russian Tsvetnaya Bolonka", "small", "regular", "easy", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/russian-tsvetnaya-bolonka", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Russian Tsvetnaya Bolonka well isn't as simple as grabbing the bag with the highest rating. Russian Tsvetnaya Bolonkas are small dogs with regular energy, a Lifespan of 12–16 years, and nutritional vulnerabilities that change across their life stages.

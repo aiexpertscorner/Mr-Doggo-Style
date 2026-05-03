@@ -2,7 +2,7 @@
 title: "Australian Kelpie Food Guide: Formulas by Life Stage"
 description: "Compare dog food options for Australian Kelpie dogs using breed size, active energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "australian-kelpie"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Australian Kelpie Food Guide: Formulas by Life Stage"
 displayTitle: "Australian Kelpie nutrition guide by life stage"
 titlePattern: "food-guide-life-stage"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "australian-kelpie", "Australian Kelpie", "medium", "active", "easy", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/australian-kelpie", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Australian Kelpie well isn't as simple as grabbing the bag with the highest rating. Australian Kelpies are medium dogs with active energy, a Lifespan of 10–13 years, and nutritional vulnerabilities that change across their life stages.

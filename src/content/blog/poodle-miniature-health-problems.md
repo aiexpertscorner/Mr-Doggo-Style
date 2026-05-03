@@ -2,7 +2,7 @@
 title: "Poodle (Miniature) Vet Questions for Common Health Risks"
 description: "Review Poodle (Miniature) health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "poodle-miniature"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Poodle (Miniature) Vet Questions for Common Health Risks"
 displayTitle: "Poodle (Miniature) vet questions for common health risks"
 titlePattern: "health-vet-questions"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "poodle-miniature", "Poodle (Miniature)", "small", "regular", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/poodle-miniature", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Poodle (Miniature)s are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

@@ -2,7 +2,7 @@
 title: "Basset Fauve de Bretagne Leash Training and Recall Guide"
 description: "Build a Basset Fauve de Bretagne training routine around regular energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "basset-fauve-de-bretagne"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Basset Fauve de Bretagne Leash Training and Recall Guide"
 displayTitle: "Basset Fauve de Bretagne leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "basset-fauve-de-bretagne", "Basset Fauve de Bretagne", "medium", "regular", "moderate", "rough", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/basset-fauve-de-bretagne", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Basset Fauve de Bretagnes are moderate-to-train dogs that respond best to positive reinforcement.

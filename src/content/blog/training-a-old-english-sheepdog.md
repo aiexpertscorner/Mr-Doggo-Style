@@ -2,7 +2,7 @@
 title: "Old English Sheepdog Socialisation and Obedience Guide"
 description: "Build a Old English Sheepdog training routine around regular energy, breed temperament, leash skills, recall, and safe equipment choices."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "old-english-sheepdog"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Old English Sheepdog Socialisation and Obedience Guide"
 displayTitle: "Old English Sheepdog socialisation and obedience guide"
 titlePattern: "training-social"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "old-english-sheepdog", "Old English Sheepdog", "large", "regular", "difficult", "long", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/old-english-sheepdog", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Old English Sheepdogs rank **#63** in canine intelligence (Fair).

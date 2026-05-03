@@ -2,7 +2,7 @@
 title: "Giant Schnauzer Screening and Prevention Checklist"
 description: "Health-sensitive Giant Schnauzer guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "giant-schnauzer"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Giant Schnauzer Screening and Prevention Checklist"
 displayTitle: "Giant Schnauzer screening and prevention checklist"
 titlePattern: "health-screening"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "giant-schnauzer", "Giant Schnauzer", "large", "active", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/giant-schnauzer", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Giant Schnauzers are generally robust, athletic dogs, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

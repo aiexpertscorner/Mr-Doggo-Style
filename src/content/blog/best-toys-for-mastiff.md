@@ -2,7 +2,7 @@
 title: "Mastiff Puzzle Toy and Chew Guide"
 description: "Shortlist practical toys for Mastiff owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "mastiff"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Mastiff Puzzle Toy and Chew Guide"
 displayTitle: "Mastiff puzzle toy and chew guide"
 titlePattern: "toys-puzzle"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "mastiff", "Mastiff", "large", "regular", "easy", "short", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/mastiff", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Mastiff means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

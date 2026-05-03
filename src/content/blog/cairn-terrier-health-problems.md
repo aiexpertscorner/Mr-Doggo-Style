@@ -2,7 +2,7 @@
 title: "Cairn Terrier Preventive Care and Warning Signs"
 description: "Health-sensitive Cairn Terrier guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "cairn-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Cairn Terrier Preventive Care and Warning Signs"
 displayTitle: "Cairn Terrier preventive care and warning signs"
 titlePattern: "health-prevention"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "cairn-terrier", "Cairn Terrier", "small", "regular", "easy", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/cairn-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Cairn Terriers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

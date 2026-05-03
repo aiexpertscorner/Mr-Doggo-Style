@@ -2,7 +2,7 @@
 title: "Japanese Chin Supplement Safety and Medication Questions"
 description: "A careful Japanese Chin supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "japanese-chin"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Japanese Chin Supplement Safety and Medication Questions"
 displayTitle: "Japanese Chin supplement safety and medication questions"
 titlePattern: "supp-medication"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "japanese-chin", "Japanese Chin", "small", "regular", "difficult", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/japanese-chin", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Japanese Chins, as a small breed with regular energy and a lifespan of 10–12 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "German Shepherd Dog Supplement Guide for Regular Dogs"
 description: "Health-sensitive supplement guidance for German Shepherd Dog owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "german-shepherd-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "German Shepherd Dog Supplement Guide for Regular Dogs"
 displayTitle: "German Shepherd Dog supplement guide for regular dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "german-shepherd-dog", "German Shepherd Dog", "large", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/german-shepherd-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but German Shepherd Dogs, as a large breed with regular energy and a lifespan of 7–10 years, have specific supplementation needs worth knowing about. German Shepherd Dogs have known genetic health concerns including nerves, pancreas, blood (hemophilia), hip joints — targeted supplements address these directly.

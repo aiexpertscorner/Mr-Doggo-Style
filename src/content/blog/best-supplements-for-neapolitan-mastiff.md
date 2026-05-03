@@ -2,7 +2,7 @@
 title: "Neapolitan Mastiff Supplement Care Plan Questions"
 description: "Health-sensitive supplement guidance for Neapolitan Mastiff owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "neapolitan-mastiff"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Neapolitan Mastiff Supplement Care Plan Questions"
 displayTitle: "Neapolitan Mastiff supplement care plan questions"
 titlePattern: "supp-care-plan"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "neapolitan-mastiff", "Neapolitan Mastiff", "large", "regular", "moderate", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/neapolitan-mastiff", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Neapolitan Mastiffs, as a large breed with regular energy and a lifespan of 7–9 years, have specific supplementation needs worth knowing about.

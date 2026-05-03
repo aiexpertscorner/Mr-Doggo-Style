@@ -2,7 +2,7 @@
 title: "Pug Supplement Checklist for Safer Buying"
 description: "Compare supplement categories for Pug dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "pug"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Pug Supplement Checklist for Safer Buying"
 displayTitle: "Pug supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "pug", "Pug", "small", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pug", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Pugs, as a small breed with regular energy and a lifespan of 13–15 years, have specific supplementation needs worth knowing about. Pugs have known genetic health concerns including 'dry eye' — targeted supplements address these directly.

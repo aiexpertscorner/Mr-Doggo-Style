@@ -2,7 +2,7 @@
 title: "Yakutian Laika Leash Training and Recall Guide"
 description: "A practical Yakutian Laika training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "yakutian-laika"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Yakutian Laika Leash Training and Recall Guide"
 displayTitle: "Yakutian Laika leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "yakutian-laika", "Yakutian Laika", "medium", "active", "moderate", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/yakutian-laika", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Yakutian Laikas are moderate-to-train dogs that respond best to positive reinforcement.

@@ -2,7 +2,7 @@
 title: "Greyhound Dog Food Shopping Guide"
 description: "Breed-aware food guidance for Greyhound owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "greyhound"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Greyhound Dog Food Shopping Guide"
 displayTitle: "Greyhound dog food shopping guide"
 titlePattern: "food-shopping"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "greyhound", "Greyhound", "large", "active", "difficult", "short", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/greyhound", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Greyhound well isn't as simple as grabbing the bag with the highest rating. Greyhounds are large dogs with active energy, a Average lifespan of 9.4 years, and nutritional vulnerabilities that change across their life stages.

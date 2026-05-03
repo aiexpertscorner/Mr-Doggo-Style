@@ -2,7 +2,7 @@
 title: "Welsh Terrier Leash Training and Recall Guide"
 description: "A practical Welsh Terrier training plan covering foundation cues, socialisation, leash work, and common owner mistakes."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "welsh-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Welsh Terrier Leash Training and Recall Guide"
 displayTitle: "Welsh Terrier leash training and recall guide"
 titlePattern: "training-leash"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "welsh-terrier", "Welsh Terrier", "small", "active", "easy", "wiry", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/welsh-terrier", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Welsh Terriers are easy-to-train dogs that respond best to positive reinforcement.

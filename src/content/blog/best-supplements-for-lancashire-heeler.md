@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Lancashire Heeler"
 description: "Compare supplement categories for Lancashire Heeler dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "lancashire-heeler"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Lancashire Heeler"
 displayTitle: "Joint supplements to ask your vet about for Lancashire Heeler"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "lancashire-heeler", "Lancashire Heeler", "small", "active", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/lancashire-heeler", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Lancashire Heelers, as a small breed with active energy and a lifespan of 12–15 years, have specific supplementation needs worth knowing about.

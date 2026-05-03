@@ -2,7 +2,7 @@
 title: "Biewer Terrier Supplement Shopping Guide"
 description: "A careful Biewer Terrier supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "biewer-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Biewer Terrier Supplement Shopping Guide"
 displayTitle: "Biewer Terrier supplement shopping guide"
 titlePattern: "supp-shopping"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "biewer-terrier", "Biewer Terrier", "small", "calm", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/biewer-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Biewer Terriers, as a small breed with calm energy and a lifespan of 16–16 years, have specific supplementation needs worth knowing about.

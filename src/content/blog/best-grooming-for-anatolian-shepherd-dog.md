@@ -2,7 +2,7 @@
 title: "Anatolian Shepherd Dog Grooming Guide by Coat Type"
 description: "Shortlist Anatolian Shepherd Dog grooming products with coat care, double fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "anatolian-shepherd-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Anatolian Shepherd Dog Grooming Guide by Coat Type"
 displayTitle: "Anatolian Shepherd Dog grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "anatolian-shepherd-dog", "Anatolian Shepherd Dog", "large", "regular", "difficult", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/anatolian-shepherd-dog", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Anatolian Shepherd Dogs have a **double coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

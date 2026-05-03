@@ -2,7 +2,7 @@
 title: "Spinone Italiano Beds for Senior Comfort and Joint Support"
 description: "Compare bed options for Spinone Italiano dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "spinone-italiano"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Spinone Italiano Beds for Senior Comfort and Joint Support"
 displayTitle: "Spinone Italiano beds for senior comfort and joint support"
 titlePattern: "beds-senior"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "spinone-italiano", "Spinone Italiano", "medium", "active", "easy", "rough", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/spinone-italiano", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Spinone Italiano, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

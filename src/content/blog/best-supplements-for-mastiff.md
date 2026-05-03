@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for Mastiff"
 description: "Compare supplement categories for Mastiff dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "mastiff"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for Mastiff"
 displayTitle: "Joint supplements to ask your vet about for Mastiff"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "mastiff", "Mastiff", "large", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/mastiff", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Mastiffs, as a large breed with regular energy and a lifespan of 6–10 years, have specific supplementation needs worth knowing about. Mastiffs have known genetic health concerns including hip, heart problems — targeted supplements address these directly.

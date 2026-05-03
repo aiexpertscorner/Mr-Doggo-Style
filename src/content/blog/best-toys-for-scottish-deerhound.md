@@ -2,7 +2,7 @@
 title: "Scottish Deerhound Puzzle Toy and Chew Guide"
 description: "Compare toys for Scottish Deerhound dogs by regular energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "scottish-deerhound"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Scottish Deerhound Puzzle Toy and Chew Guide"
 displayTitle: "Scottish Deerhound puzzle toy and chew guide"
 titlePattern: "toys-puzzle"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "scottish-deerhound", "Scottish Deerhound", "large", "regular", "difficult", "rough", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/scottish-deerhound", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Scottish Deerhound means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

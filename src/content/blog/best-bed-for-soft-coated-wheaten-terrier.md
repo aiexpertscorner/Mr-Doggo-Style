@@ -2,7 +2,7 @@
 title: "Soft Coated Wheaten Terrier Beds for Senior Comfort and Joint Support"
 description: "Compare bed options for Soft Coated Wheaten Terrier dogs by medium sizing, support, washable covers, and long-term durability."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "soft-coated-wheaten-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Soft Coated Wheaten Terrier Beds for Senior Comfort and Joint Support"
 displayTitle: "Soft Coated Wheaten Terrier beds for senior comfort and joint support"
 titlePattern: "beds-senior"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "soft-coated-wheaten-terrier", "Soft Coated Wheaten Terrier", "medium", "active", "difficult", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/soft-coated-wheaten-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Soft Coated Wheaten Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

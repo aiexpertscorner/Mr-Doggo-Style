@@ -2,7 +2,7 @@
 title: "Swedish Lapphund Grooming Shopping Guide"
 description: "A breed-aware Swedish Lapphund grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "swedish-lapphund"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Swedish Lapphund Grooming Shopping Guide"
 displayTitle: "Swedish Lapphund grooming shopping guide"
 titlePattern: "groom-shopping"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "swedish-lapphund", "Swedish Lapphund", "medium", "regular", "moderate", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/swedish-lapphund", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Swedish Lapphunds have a **double coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

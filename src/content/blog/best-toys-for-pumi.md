@@ -2,7 +2,7 @@
 title: "Pumi Boredom Toys Worth Comparing"
 description: "Shortlist practical toys for Pumi owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "pumi"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Pumi Boredom Toys Worth Comparing"
 displayTitle: "Pumi boredom toys worth comparing"
 titlePattern: "toys-boredom"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "pumi", "Pumi", "medium", "active", "easy", "curly", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/pumi", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Pumi means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

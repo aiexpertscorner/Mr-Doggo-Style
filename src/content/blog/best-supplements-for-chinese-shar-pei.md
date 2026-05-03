@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Chinese Shar-Pei"
 description: "Compare supplement categories for Chinese Shar-Pei dogs while keeping medium-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "chinese-shar-pei"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Chinese Shar-Pei"
 displayTitle: "Skin and gut supplement options for Chinese Shar-Pei"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "chinese-shar-pei", "Chinese Shar-Pei", "medium", "regular", "moderate", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/chinese-shar-pei", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Chinese Shar-Peis, as a medium breed with regular energy and a lifespan of 8–12 years, have specific supplementation needs worth knowing about.

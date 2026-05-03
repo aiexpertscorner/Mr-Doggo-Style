@@ -2,7 +2,7 @@
 title: "Best Orthopedic Beds for Kuvasz"
 description: "A practical Kuvasz bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "kuvasz"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Orthopedic Beds for Kuvasz"
 displayTitle: "Orthopedic beds to compare for Kuvasz"
 titlePattern: "beds-best-ortho"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "kuvasz", "Kuvasz", "large", "regular", "difficult", "double", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/kuvasz", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a Kuvasz, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.

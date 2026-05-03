@@ -2,7 +2,7 @@
 title: "Cane Corso Training Plan for Active Dogs"
 description: "Train a Cane Corso with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "cane-corso"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Cane Corso Training Plan for Active Dogs"
 displayTitle: "Cane Corso training plan for active dogs"
 titlePattern: "training-energy"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "cane-corso", "Cane Corso", "medium", "active", "easy", "short", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/cane-corso", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Cane Corsos are easy-to-train dogs that respond best to positive reinforcement.

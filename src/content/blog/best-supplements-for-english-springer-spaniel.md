@@ -2,7 +2,7 @@
 title: "English Springer Spaniel Supplement Checklist for Safer Buying"
 description: "A careful English Springer Spaniel supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "english-springer-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "English Springer Spaniel Supplement Checklist for Safer Buying"
 displayTitle: "English Springer Spaniel supplement checklist for safer buying"
 titlePattern: "supp-owner-checklist"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "english-springer-spaniel", "English Springer Spaniel", "medium", "regular", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/english-springer-spaniel", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but English Springer Spaniels, as a medium breed with regular energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about. English Springer Spaniels have known genetic health concerns including hip, eye, skin problems; enzyme deficiency — targeted supplements address these directly.

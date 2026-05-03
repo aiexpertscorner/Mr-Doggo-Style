@@ -2,7 +2,7 @@
 title: "Health Concerns in Airedale Terrier: Owner Notes"
 description: "Review Airedale Terrier health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "airedale-terrier"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Tima Miroshnichenko on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/dog-getting-a-check-up-6235655/"
 imageSearchQuery: "Airedale Terrier dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "airedale-terrier", "Airedale Terrier", "large", "regular", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/airedale-terrier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Airedale Terriers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

@@ -2,7 +2,7 @@
 title: "Best Food for Samoyed Joint and Weight Support"
 description: "A practical Samoyed food guide for medium dogs, with nutrition notes, joint-support context, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "samoyed"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Best Food for Samoyed Joint and Weight Support"
 displayTitle: "Samoyed food picks for joint support and steady weight"
 titlePattern: "food-best-joint"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "samoyed", "Samoyed", "medium", "active", "difficult", "double", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/samoyed", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Samoyed well isn't as simple as grabbing the bag with the highest rating. Samoyeds are medium dogs with active energy, a Average lifespan of 12.4 years, and nutritional vulnerabilities that change across their life stages.

@@ -2,7 +2,7 @@
 title: "Poodle (Miniature) Toy Guide for Daily Enrichment"
 description: "Shortlist practical toys for Poodle (Miniature) owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "poodle-miniature"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Poodle (Miniature) Toy Guide for Daily Enrichment"
 displayTitle: "Poodle (Miniature) toy guide for daily enrichment"
 titlePattern: "toys-guide-daily"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "poodle-miniature", "Poodle (Miniature)", "small", "regular", "easy", "medium", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/poodle-miniature", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Poodle (Miniature) means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

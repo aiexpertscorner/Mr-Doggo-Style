@@ -2,7 +2,7 @@
 title: "Tibetan Spaniel Training by Temperament and Drive"
 description: "Train a Tibetan Spaniel with a structured roadmap for puppy foundations, recall, manners, enrichment, and gear checks."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Training"
 postType: "how-to"
 breedSlug: "tibetan-spaniel"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Tibetan Spaniel Training by Temperament and Drive"
 displayTitle: "Tibetan Spaniel training by temperament and drive"
 titlePattern: "training-temperament"
+cluster: "training"
+productFamilies: ["training"]
+awinTopicTags: ["training", "Training", "tibetan-spaniel", "Tibetan Spaniel", "small", "calm", "easy", "double", "behavior", "obedience", "recall", "leash", "harness", "gear", "crate-training", "safety"]
+amazonQueries: ["dog training treats", "no pull dog harness", "long leash for dog recall training", "dog crate training essentials", "orthopedic dog bed washable cover", "washable dog crate bed"]
+internalLinkTargets: ["/breeds/tibetan-spaniel", "/categories/training", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Tibetan Spaniels rank **#46** in canine intelligence (Average).

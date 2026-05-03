@@ -2,7 +2,7 @@
 title: "Best Toys for English Toy Spaniel: Enrichment and Chew Picks"
 description: "Compare toys for English Toy Spaniel dogs by regular energy, chewing style, safe play, and enrichment value."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "english-toy-spaniel"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Best Toys for English Toy Spaniel: Enrichment and Chew Picks"
 displayTitle: "Best toys for English Toy Spaniel enrichment and play"
 titlePattern: "toys-best-enrichment"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "english-toy-spaniel", "English Toy Spaniel", "small", "regular", "difficult", "silky", "enrichment", "training", "active", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/english-toy-spaniel", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a English Toy Spaniel means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

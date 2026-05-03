@@ -2,7 +2,7 @@
 title: "Curly-Coated Retriever Dog Food Shopping Guide"
 description: "Breed-aware food guidance for Curly-Coated Retriever owners, including formula fit, feeding routine, and vet-check reminders."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "curly-coated-retriever"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Curly-Coated Retriever Dog Food Shopping Guide"
 displayTitle: "Curly-Coated Retriever dog food shopping guide"
 titlePattern: "food-shopping"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "curly-coated-retriever", "Curly-Coated Retriever", "large", "active", "difficult", "curly", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/curly-coated-retriever", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Curly-Coated Retriever well isn't as simple as grabbing the bag with the highest rating. Curly-Coated Retrievers are large dogs with active energy, a Lifespan of 10–12 years, and nutritional vulnerabilities that change across their life stages.

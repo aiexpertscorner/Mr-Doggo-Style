@@ -2,7 +2,7 @@
 title: "Silky Terrier Nutrition Shortlist for Everyday Feeding"
 description: "Review Silky Terrier dog food choices by life stage, weight control, digestion, and small-breed needs."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "silky-terrier"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Silky Terrier Nutrition Shortlist for Everyday Feeding"
 displayTitle: "Silky Terrier nutrition shortlist for everyday feeding"
 titlePattern: "food-nutrition-shortlist"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "silky-terrier", "Silky Terrier", "small", "regular", "easy", "medium", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/silky-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Silky Terrier well isn't as simple as grabbing the bag with the highest rating. Silky Terriers are small dogs with regular energy, a Lifespan of 13–15 years, and nutritional vulnerabilities that change across their life stages.

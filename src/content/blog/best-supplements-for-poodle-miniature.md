@@ -2,7 +2,7 @@
 title: "Best Senior Supplements for Poodle (Miniature)"
 description: "Health-sensitive supplement guidance for Poodle (Miniature) owners, with joint, skin, gut, medication, and vet-check reminders."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "poodle-miniature"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Senior Supplements for Poodle (Miniature)"
 displayTitle: "Senior supplement questions for Poodle (Miniature)"
 titlePattern: "supp-best-senior"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "poodle-miniature", "Poodle (Miniature)", "small", "regular", "easy", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/poodle-miniature", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Poodle (Miniature)s, as a small breed with regular energy and a lifespan of 10–18 years, have specific supplementation needs worth knowing about.

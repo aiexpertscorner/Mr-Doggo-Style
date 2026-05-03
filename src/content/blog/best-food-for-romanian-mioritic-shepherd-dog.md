@@ -2,7 +2,7 @@
 title: "Romanian Mioritic Shepherd Dog Food Guide for Regular Energy Levels"
 description: "Compare dog food options for Romanian Mioritic Shepherd Dogs using breed size, regular energy, life stage, and health-sensitive buyer checks."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Dog Food"
 postType: "product-roundup"
 breedSlug: "romanian-mioritic-shepherd-dog"
@@ -29,6 +29,12 @@ medicalDisclaimer: true
 seoTitle: "Romanian Mioritic Shepherd Dog Food Guide for Regular Energy Levels"
 displayTitle: "Romanian Mioritic Shepherd Dog food guidance for regular energy levels"
 titlePattern: "food-active-calm"
+cluster: "dog-food"
+productFamilies: ["food", "dog-food"]
+awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "romanian-mioritic-shepherd-dog", "Romanian Mioritic Shepherd Dog", "large", "regular", "difficult", "medium", "nutrition", "feeding", "fresh-food", "raw-food", "sensitive-stomach", "treats", "bowls", "storage", "puppy", "senior-dog"]
+amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
+internalLinkTargets: ["/breeds/romanian-mioritic-shepherd-dog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Feeding a Romanian Mioritic Shepherd Dog well isn't as simple as grabbing the bag with the highest rating. Romanian Mioritic Shepherd Dogs are large dogs with regular energy, a Lifespan of 12–14 years, and nutritional vulnerabilities that change across their life stages.

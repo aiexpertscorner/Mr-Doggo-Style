@@ -2,7 +2,7 @@
 title: "Rat Terrier Grooming Kit: Brushes, Shampoo, Nail Tools"
 description: "Shortlist Rat Terrier grooming products with coat care, double fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "rat-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Rat Terrier Grooming Kit: Brushes, Shampoo, Nail Tools"
 displayTitle: "Rat Terrier grooming kit for coat, bath, and nails"
 titlePattern: "groom-kit"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "rat-terrier", "Rat Terrier", "small", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/rat-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Rat Terriers have a **double coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

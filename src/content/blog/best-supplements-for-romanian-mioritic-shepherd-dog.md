@@ -2,7 +2,7 @@
 title: "Romanian Mioritic Shepherd Dog Supplement Guide for Regular Dogs"
 description: "Compare supplement categories for Romanian Mioritic Shepherd Dogs while keeping large-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "romanian-mioritic-shepherd-dog"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Romanian Mioritic Shepherd Dog Supplement Guide for Regular Dogs"
 displayTitle: "Romanian Mioritic Shepherd Dog supplement guide for regular dogs"
 titlePattern: "supp-active"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "romanian-mioritic-shepherd-dog", "Romanian Mioritic Shepherd Dog", "large", "regular", "difficult", "medium"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/romanian-mioritic-shepherd-dog", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Romanian Mioritic Shepherd Dogs, as a large breed with regular energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "Cardigan Welsh Corgi Puzzle Toy and Chew Guide"
 description: "A breed-aware Cardigan Welsh Corgi toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "cardigan-welsh-corgi"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Cardigan Welsh Corgi Puzzle Toy and Chew Guide"
 displayTitle: "Cardigan Welsh Corgi puzzle toy and chew guide"
 titlePattern: "toys-puzzle"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "cardigan-welsh-corgi", "Cardigan Welsh Corgi", "medium", "active", "easy", "double", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/cardigan-welsh-corgi", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Cardigan Welsh Corgi means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

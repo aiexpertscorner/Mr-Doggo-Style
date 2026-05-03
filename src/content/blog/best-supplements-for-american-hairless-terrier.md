@@ -2,7 +2,7 @@
 title: "Best Joint Supplements for American Hairless Terrier"
 description: "Compare supplement categories for American Hairless Terrier dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "american-hairless-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Joint Supplements for American Hairless Terrier"
 displayTitle: "Joint supplements to ask your vet about for American Hairless Terrier"
 titlePattern: "supp-best-joint"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "american-hairless-terrier", "American Hairless Terrier", "small", "regular", "easy", "hairless"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/american-hairless-terrier", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but American Hairless Terriers, as a small breed with regular energy and a lifespan of 14–16 years, have specific supplementation needs worth knowing about.

@@ -2,7 +2,7 @@
 title: "Eurasier Vet Questions for Common Health Risks"
 description: "Review Eurasier health concerns, warning signs, breeder questions, and care-planning notes for owners."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "eurasier"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Eurasier Vet Questions for Common Health Risks"
 displayTitle: "Eurasier vet questions for common health risks"
 titlePattern: "health-vet-questions"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "eurasier", "Eurasier", "large", "regular", "easy", "double"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/eurasier", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Eurasiers are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.

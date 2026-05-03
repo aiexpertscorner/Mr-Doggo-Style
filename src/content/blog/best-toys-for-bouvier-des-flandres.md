@@ -2,7 +2,7 @@
 title: "Bouvier des Flandres Toys for Indoor Play, Fetch, and Chewing"
 description: "A breed-aware Bouvier des Flandres toy guide covering puzzle toys, chews, fetch, and daily enrichment routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "bouvier-des-flandres"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Bouvier des Flandres Toys for Indoor Play, Fetch, and Chewing"
 displayTitle: "Bouvier des Flandres toys for indoor play, fetch, and chewing"
 titlePattern: "toys-indoor-outdoor"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "bouvier-des-flandres", "Bouvier des Flandres", "large", "active", "easy", "rough", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/bouvier-des-flandres", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Bouvier des Flandres means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

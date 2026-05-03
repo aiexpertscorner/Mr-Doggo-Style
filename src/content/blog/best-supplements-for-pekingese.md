@@ -2,7 +2,7 @@
 title: "Pekingese Supplements for Joints, Skin, and Gut Health"
 description: "A careful Pekingese supplement guide focused on safety, labels, evidence, and questions to ask your veterinarian."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "pekingese"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Pekingese Supplements for Joints, Skin, and Gut Health"
 displayTitle: "Pekingese supplements for joints, skin, and gut health"
 titlePattern: "supp-joint-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "pekingese", "Pekingese", "small", "calm", "moderate", "long"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/pekingese", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Pekingeses, as a small breed with calm energy and a lifespan of 12–14 years, have specific supplementation needs worth knowing about. Pekingeses have known genetic health concerns including knee problems — targeted supplements address these directly.

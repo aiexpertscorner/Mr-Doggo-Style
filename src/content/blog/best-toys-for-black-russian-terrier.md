@@ -2,7 +2,7 @@
 title: "Durable Toys for Black Russian Terrier: Chew and Play Shortlist"
 description: "Shortlist practical toys for Black Russian Terrier owners with durability, safety, and boredom prevention in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Toys"
 postType: "product-roundup"
 breedSlug: "black-russian-terrier"
@@ -28,6 +28,12 @@ medicalDisclaimer: false
 seoTitle: "Durable Toys for Black Russian Terrier: Chew and Play Shortlist"
 displayTitle: "Durable toys to compare for Black Russian Terrier"
 titlePattern: "toys-durable"
+cluster: "toys"
+productFamilies: ["toys"]
+awinTopicTags: ["toys", "Toys", "black-russian-terrier", "Black Russian Terrier", "large", "active", "easy", "wiry", "enrichment", "training", "gear", "toy", "chew", "mental-stimulation", "puzzle", "high-energy", "fetch"]
+amazonQueries: ["dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/black-russian-terrier", "/categories/toys", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Choosing the wrong toy for a Black Russian Terrier means either a destroyed toy within minutes or a toy that gets ignored. Getting it right means a fulfilled, calmer, better-behaved dog.

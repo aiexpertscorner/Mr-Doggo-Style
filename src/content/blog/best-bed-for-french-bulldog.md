@@ -2,7 +2,7 @@
 title: "Best Orthopedic Beds for French Bulldog"
 description: "A practical French Bulldog bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Beds"
 postType: "product-roundup"
 breedSlug: "french-bulldog"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Orthopedic Beds for French Bulldog"
 displayTitle: "Orthopedic beds to compare for French Bulldog"
 titlePattern: "beds-best-ortho"
+cluster: "beds"
+productFamilies: ["beds"]
+awinTopicTags: ["beds", "Beds", "french-bulldog", "French Bulldog", "medium", "calm", "easy", "short", "sleep", "comfort", "home", "senior-dog", "bed", "orthopedic"]
+amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
+internalLinkTargets: ["/breeds/french-bulldog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 A dog spends 12–14 hours a day sleeping. For a French Bulldog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.

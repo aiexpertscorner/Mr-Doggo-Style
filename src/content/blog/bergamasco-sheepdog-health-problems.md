@@ -2,7 +2,7 @@
 title: "Bergamasco Sheepdog Common Conditions and Care Planning"
 description: "Health-sensitive Bergamasco Sheepdog guidance covering common risks, screening questions, insurance timing, and veterinary follow-up."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Health"
 postType: "health"
 breedSlug: "bergamasco-sheepdog"
@@ -35,8 +35,13 @@ imageSource: "pexels"
 imageCredit: "Photo by Mikhail Nilov on Pexels"
 imageCreditUrl: "https://www.pexels.com/photo/man-checking-on-a-dog-7468978/"
 imageSearchQuery: "Bergamasco Sheepdog dog veterinarian wellness"
+cluster: "health"
+productFamilies: ["health"]
+awinTopicTags: ["health", "Health", "bergamasco-sheepdog", "Bergamasco Sheepdog", "large", "calm", "easy", "corded"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bergamasco-sheepdog", "/categories/health", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
-
 
 Bergamasco Sheepdogs are generally even-tempered companions, but like every breed, they have predictable health vulnerabilities. Knowing what to watch for — and catching issues early — is the difference between a manageable condition and an expensive emergency.
 

@@ -2,7 +2,7 @@
 title: "Miniature Schnauzer Grooming for Shedding and Sensitive Skin"
 description: "A breed-aware Miniature Schnauzer grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "miniature-schnauzer"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Miniature Schnauzer Grooming for Shedding and Sensitive Skin"
 displayTitle: "Miniature Schnauzer grooming for shedding and sensitive skin"
 titlePattern: "groom-sensitive-skin"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "miniature-schnauzer", "Miniature Schnauzer", "small", "regular", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/miniature-schnauzer", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Miniature Schnauzers have a **wiry coat** that requires specialty/professional. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "Black Russian Terrier Bathing, Brushing, and Nail Care Guide"
 description: "A breed-aware Black Russian Terrier grooming guide covering brushes, shampoo, nail tools, and home-care routines."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "black-russian-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Black Russian Terrier Bathing, Brushing, and Nail Care Guide"
 displayTitle: "Black Russian Terrier bathing, brushing, and nail care guide"
 titlePattern: "groom-bath"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "black-russian-terrier", "Black Russian Terrier", "large", "active", "easy", "wiry"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/black-russian-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Black Russian Terriers have a **wiry coat** that requires daily brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

@@ -2,7 +2,7 @@
 title: "English Springer Spaniel Grooming Guide by Coat Type"
 description: "Shortlist English Springer Spaniel grooming products with coat care, silky fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "english-springer-spaniel"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "English Springer Spaniel Grooming Guide by Coat Type"
 displayTitle: "English Springer Spaniel grooming guide by coat type"
 titlePattern: "groom-guide"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "english-springer-spaniel", "English Springer Spaniel", "medium", "regular", "easy", "silky"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/english-springer-spaniel", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 English Springer Spaniels have a **silky coat** that requires weekly brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

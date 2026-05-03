@@ -2,7 +2,7 @@
 title: "Best Grooming Picks for Russian Tsvetnaya Bolonka Shedding"
 description: "Shortlist Russian Tsvetnaya Bolonka grooming products with coat care, short fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "russian-tsvetnaya-bolonka"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Best Grooming Picks for Russian Tsvetnaya Bolonka Shedding"
 displayTitle: "Grooming picks for Russian Tsvetnaya Bolonka shedding"
 titlePattern: "groom-best-shedding"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "russian-tsvetnaya-bolonka", "Russian Tsvetnaya Bolonka", "small", "regular", "easy", "short"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/russian-tsvetnaya-bolonka", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Russian Tsvetnaya Bolonkas have a **short coat** that requires 2-3 times a week brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.

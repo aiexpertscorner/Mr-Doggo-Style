@@ -2,7 +2,7 @@
 title: "Best Skin and Gut Supplements for Bichon Frise"
 description: "Compare supplement categories for Bichon Frise dogs while keeping small-breed needs and veterinary advice in view."
 pubDate: 2026-03-23
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Supplements"
 postType: "product-roundup"
 breedSlug: "bichon-frise"
@@ -27,6 +27,12 @@ medicalDisclaimer: true
 seoTitle: "Best Skin and Gut Supplements for Bichon Frise"
 displayTitle: "Skin and gut supplement options for Bichon Frise"
 titlePattern: "supp-best-skin-gut"
+cluster: "supplements"
+productFamilies: ["supplements"]
+awinTopicTags: ["supplements", "Supplements", "bichon-frise", "Bichon Frise", "small", "regular", "easy", "curly"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/bichon-frise", "/categories/supplements", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Not every dog needs supplements — but Bichon Frises, as a small breed with regular energy and a lifespan of 14–15 years, have specific supplementation needs worth knowing about.

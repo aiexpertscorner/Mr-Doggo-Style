@@ -2,7 +2,7 @@
 title: "Dandie Dinmont Terrier Grooming Routine and Tool Shortlist"
 description: "Shortlist Dandie Dinmont Terrier grooming products with coat care, rough fur, handling, and cleanup in view."
 pubDate: 2026-03-22
-updatedDate: 2026-05-02
+updatedDate: 2026-05-03
 category: "Grooming"
 postType: "product-roundup"
 breedSlug: "dandie-dinmont-terrier"
@@ -27,6 +27,12 @@ medicalDisclaimer: false
 seoTitle: "Dandie Dinmont Terrier Grooming Routine and Tool Shortlist"
 displayTitle: "Dandie Dinmont Terrier grooming routine and tool shortlist"
 titlePattern: "groom-routine"
+cluster: "grooming"
+productFamilies: ["grooming"]
+awinTopicTags: ["grooming", "Grooming", "dandie-dinmont-terrier", "Dandie Dinmont Terrier", "small", "regular", "difficult", "rough"]
+amazonQueries: []
+internalLinkTargets: ["/breeds/dandie-dinmont-terrier", "/categories/grooming", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
+indexInBlog: false
 ---
 
 Dandie Dinmont Terriers have a **rough coat** that requires daily brushing. Get this right and you'll have a healthier dog, less hair on your furniture, and the ability to spot skin issues, parasites, and lumps early — grooming is as much health monitoring as it is aesthetics.
