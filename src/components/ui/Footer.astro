@@ -1,12 +1,4 @@
 ---
-/**
- * src/components/ui/Footer.astro
- * Enhanced footer for PupWiki
- * - matches the newer authority + decision-support positioning
- * - uses site-config values
- * - keeps routing safe for the current repo structure
- */
-
 import {
   SITE_NAME,
   SITE_URL,
@@ -27,15 +19,6 @@ import {
 
 const year = new Date().getFullYear();
 
-/**
- * IMPORTANT:
- * The current Pupwiki branch does NOT yet have a dedicated /mixed-breeds hub route.
- * Mixed breeds currently render through /breeds/[slug].
- * So for now, keep the footer link pointed at /breeds.
- * Once /mixed-breeds exists, change this to that route.
- */
-const mixedBreedsHref = BREEDS_PAGE_PATH;
-
 const trustStats = [
   `${SITE_STATS?.breedCount ?? 277} breed guides`,
   `${SITE_STATS?.mixedBreedCount ?? 75} mixed breeds`,
@@ -47,130 +30,102 @@ const navSections = [
   {
     title: 'Discover',
     links: [
-      { label: 'All Breeds', href: BREEDS_PAGE_PATH },
-      { label: 'Mixed Breeds', href: mixedBreedsHref },
-      { label: 'Dog Names', href: DOG_NAMES_PAGE_PATH },
-      { label: 'Blog', href: '/blog' },
+      { label: 'All Breeds',    href: BREEDS_PAGE_PATH },
+      { label: 'Mixed Breeds',  href: BREEDS_PAGE_PATH },
+      { label: 'Dog Names',     href: DOG_NAMES_PAGE_PATH },
+      { label: 'Blog',          href: '/blog' },
     ],
   },
   {
     title: 'Care & Planning',
     links: [
-      { label: 'Health & Care', href: '/categories/health' },
-      { label: 'Training', href: '/categories/training' },
+      { label: 'Health & Care',    href: '/categories/health' },
+      { label: 'Training',         href: '/categories/training' },
       { label: 'Cost & Insurance', href: COST_CALCULATOR_PAGE_PATH },
-      { label: 'Reviews', href: '/blog' },
+      { label: 'Reviews',          href: '/blog' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About', href: ABOUT_PAGE_PATH },
+      { label: 'About',       href: ABOUT_PAGE_PATH },
       { label: 'Methodology', href: METHODOLOGY_PAGE_PATH },
-      { label: 'Disclosure', href: DISCLOSURE_PAGE_PATH },
-      { label: 'Privacy', href: PRIVACY_PAGE_PATH },
-      { label: 'Contact', href: CONTACT_PAGE_PATH },
+      { label: 'Disclosure',  href: DISCLOSURE_PAGE_PATH },
+      { label: 'Privacy',     href: PRIVACY_PAGE_PATH },
+      { label: 'Contact',     href: CONTACT_PAGE_PATH },
     ],
   },
 ];
 ---
 
-<footer
-  class="mt-16 border-t border-stone-200 bg-stone-50/70"
-  role="contentinfo"
->
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-5 lg:px-6 lg:py-16">
-    <div class="grid gap-10 lg:grid-cols-[1.35fr_1fr_1fr_1fr]">
-      <!-- Brand / trust column -->
-      <div class="max-w-md">
-        <a href="/" aria-label={`${SITE_NAME} home`} class="inline-flex items-center">
-          <img
-            src="/Pupwiki-logo.png"
-            alt={SITE_NAME}
-            class="h-11 w-auto sm:h-12"
-            loading="lazy"
-            decoding="async"
-          />
-        </a>
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="site-footer__inner">
 
-        <p class="mt-4 text-sm font-semibold tracking-wide text-slate-900">
-          {SITE_TAGLINE}
-        </p>
+      <div class="site-footer__grid">
 
-        <p class="mt-3 text-sm leading-6 text-slate-600">
-          {SITE_DESCRIPTION}
-        </p>
+        <!-- Brand column -->
+        <div class="site-footer__brand">
+          <a href="/" aria-label={`${SITE_NAME} home`}>
+            <img
+              src="/Pupwiki-logo.png"
+              alt={SITE_NAME}
+              class="site-brand__logo"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
 
-        <div class="mt-5 flex flex-wrap gap-2">
-          {trustStats.map((item) => (
-            <span class="inline-flex rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700">
-              {item}
-            </span>
-          ))}
+          <p class="site-footer__tagline">{SITE_TAGLINE}</p>
+          <p class="site-footer__desc">{SITE_DESCRIPTION}</p>
+
+          <div class="site-footer__stats">
+            {trustStats.map(item => (
+              <span class="badge">{item}</span>
+            ))}
+          </div>
+
+          <div class="site-footer__promise">
+            <p class="site-footer__promise-label">Editorial promise</p>
+            <p class="site-footer__promise-text">
+              PupWiki gives dog parents practical, transparent guidance for breed research,
+              care decisions, cost planning, and everyday dog ownership.
+            </p>
+          </div>
         </div>
 
-        <div class="mt-5 rounded-2xl border border-teal-100 bg-teal-50/70 p-4">
-          <p class="text-xs font-bold uppercase tracking-[0.14em] text-teal-800">
-            Editorial promise
-          </p>
-          <p class="mt-2 text-sm leading-6 text-slate-700">
-            PupWiki aims to give dog parents practical, transparent guidance for breed research,
-            care decisions, cost planning, and everyday dog ownership.
-          </p>
-        </div>
+        <!-- Nav columns -->
+        {navSections.map(section => (
+          <div>
+            <h3 class="site-footer__nav-title">{section.title}</h3>
+            <ul class="site-footer__nav-list">
+              {section.links.map(link => (
+                <li>
+                  <a href={link.href} class="site-footer__nav-link">{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
       </div>
 
-      <!-- Navigation columns -->
-      {navSections.map((section) => (
+      <!-- Bottom bar -->
+      <div class="site-footer__bottom">
         <div>
-          <h3 class="text-sm font-bold uppercase tracking-[0.14em] text-slate-900">
-            {section.title}
-          </h3>
-
-          <ul class="mt-4 space-y-3">
-            {section.links.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class="text-sm text-slate-600 transition-colors hover:text-slate-900"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-
-    <div class="mt-10 border-t border-stone-200 pt-6">
-      <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-        <div class="max-w-3xl">
-          <p class="text-sm leading-6 text-slate-600">
-            {AFFILIATE_DISCLOSURE_SHORT}
-          </p>
-          <p class="mt-2 text-xs leading-5 text-slate-500">
+          <p class="site-footer__disclosure">{AFFILIATE_DISCLOSURE_SHORT}</p>
+          <p class="site-footer__disclaimer">
             PupWiki content is for educational and informational purposes only and does not replace
             professional veterinary, behavioral, legal, or financial advice.
           </p>
         </div>
-
-        <div class="flex flex-col gap-2 text-xs text-slate-500 lg:items-end">
-          <a
-            href={`mailto:${SITE_EMAIL}`}
-            class="transition-colors hover:text-slate-700"
-          >
-            {SITE_EMAIL}
-          </a>
-          <p>© {year} {SITE_NAME}. All rights reserved.</p>
-          <a
-            href={SITE_URL}
-            class="transition-colors hover:text-slate-700"
-          >
-            {SITE_URL.replace(/^https?:\/\//, '')}
-          </a>
+        <div class="site-footer__meta">
+          <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
+          <p>&copy; {year} {SITE_NAME}. All rights reserved.</p>
+          <a href={SITE_URL}>{SITE_URL.replace(/^https?:\/\//, '')}</a>
         </div>
       </div>
+
     </div>
   </div>
 </footer>

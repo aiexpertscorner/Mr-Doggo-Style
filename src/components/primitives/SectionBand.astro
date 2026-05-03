@@ -1,0 +1,59 @@
+---
+/**
+ * SectionBand — section wrapper with optional header, background variant, and width control.
+ * Uses the grid.css section + container system.
+ */
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  actionHref?: string;
+  actionLabel?: string;
+  variant?: 'default' | 'soft' | 'muted' | 'warm' | 'navy';
+  size?: 'tight' | 'normal' | 'wide';
+  id?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  subtitle,
+  actionHref,
+  actionLabel,
+  variant = 'default',
+  size = 'normal',
+  id,
+} = Astro.props;
+
+const sectionClass = [
+  'section',
+  variant !== 'default' ? `section--${variant}` : '',
+  size === 'tight' ? 'section--tight' : '',
+].filter(Boolean).join(' ');
+
+const hasHeader = eyebrow || title || subtitle || (actionHref && actionLabel);
+---
+
+<section class={sectionClass} id={id}>
+  <div class={size === 'wide' ? 'container container--wide' : 'container'}>
+
+    {hasHeader && (
+      <div class="section-header">
+        <div class="section-header__meta">
+          {eyebrow && <span class="section-eyebrow">{eyebrow}</span>}
+          {title   && <h2 class="section-title">{title}</h2>}
+          {subtitle && <p class="section-subtitle">{subtitle}</p>}
+        </div>
+        {actionHref && actionLabel && (
+          <div class="section-header__actions">
+            <a href={actionHref} class="btn btn--outline btn--sm">{actionLabel}</a>
+          </div>
+        )}
+      </div>
+    )}
+
+    <slot />
+
+  </div>
+</section>

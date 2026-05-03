@@ -1,0 +1,150 @@
+---
+/**
+ * PartnerCard — affiliate/partner product card.
+ * Displays brand logo, product name, rating, and CTA.
+ * Uses AWIN-first policy: tidd.ly links preferred over Amazon.
+ */
+
+export interface Props {
+  name: string;
+  href: string;
+  logo?: string;
+  brand?: string;
+  rating?: number;
+  reviewCount?: number;
+  description?: string;
+  badge?: string;
+  price?: string;
+  ctaLabel?: string;
+  isSponsored?: boolean;
+}
+
+const {
+  name,
+  href,
+  logo,
+  brand,
+  rating,
+  reviewCount,
+  description,
+  badge,
+  price,
+  ctaLabel = 'View deal',
+  isSponsored = true,
+} = Astro.props;
+
+const stars = rating ? Math.round(rating) : 0;
+---
+
+<div class="partner-card card">
+  {(logo || brand) && (
+    <div class="partner-card__header">
+      {logo
+        ? <img src={logo} alt={brand ?? name} class="partner-card__logo" loading="lazy" decoding="async" />
+        : <span class="partner-card__brand-text">{brand}</span>
+      }
+      {badge && <span class="badge badge--accent">{badge}</span>}
+    </div>
+  )}
+
+  <div class="card__body">
+    <h3 class="card__title">{name}</h3>
+
+    {rating && (
+      <div class="partner-card__rating" aria-label={`${rating} out of 5 stars`}>
+        <span class="partner-card__stars" aria-hidden="true">
+          {'★'.repeat(stars)}{'☆'.repeat(5 - stars)}
+        </span>
+        {reviewCount && <span class="partner-card__count">({reviewCount})</span>}
+      </div>
+    )}
+
+    {description && <p class="card__desc">{description}</p>}
+
+    {price && <p class="partner-card__price">{price}</p>}
+  </div>
+
+  <div class="partner-card__footer">
+    <a
+      href={href}
+      class="btn btn--primary"
+      rel="nofollow sponsored"
+      target="_blank"
+      style="width:100%;justify-content:center;"
+    >
+      {ctaLabel}
+    </a>
+    {isSponsored && (
+      <p class="partner-card__disclosure">Sponsored</p>
+    )}
+  </div>
+</div>
+
+<style>
+.partner-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border-soft);
+  background: var(--color-bg-muted);
+  border-radius: calc(var(--card-radius) - 2px) calc(var(--card-radius) - 2px) 0 0;
+}
+
+.partner-card__logo {
+  height: 2rem;
+  width: auto;
+  max-width: 8rem;
+  object-fit: contain;
+}
+
+.partner-card__brand-text {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-heading);
+}
+
+.partner-card__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.partner-card__stars {
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  letter-spacing: 0.05em;
+}
+
+.partner-card__count {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+.partner-card__price {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-heading);
+}
+
+.partner-card__footer {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: auto;
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.partner-card__disclosure {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+</style>

@@ -1,0 +1,78 @@
+---
+/**
+ * ResourceGrid — grid of linked resource cards.
+ * Each item: title, description, href, optional icon/badge/meta.
+ */
+
+export interface ResourceItem {
+  title: string;
+  description?: string;
+  href: string;
+  icon?: string;
+  badge?: string;
+  meta?: string;
+  image?: string;
+}
+
+export interface Props {
+  items: ResourceItem[];
+  columns?: 2 | 3 | 4;
+  compact?: boolean;
+}
+
+const { items, columns = 3, compact = false } = Astro.props;
+
+const gridClass = compact ? 'auto-grid auto-grid--tight' : 'auto-grid';
+const minWidth = { 2: '280px', 3: '240px', 4: '200px' }[columns];
+---
+
+<ul
+  class={gridClass}
+  style={`--auto-grid-min: ${minWidth}`}
+  role="list"
+>
+  {items.map(item => (
+    <li>
+      <a href={item.href} class="resource-card card card--interactive">
+        {item.image ? (
+          <div class="card__media">
+            <img src={item.image} alt="" loading="lazy" decoding="async" />
+          </div>
+        ) : item.icon && (
+          <div class="resource-card__icon" aria-hidden="true">{item.icon}</div>
+        )}
+        <div class="card__body">
+          {item.badge && <span class="badge badge--accent">{item.badge}</span>}
+          <h3 class="card__title">{item.title}</h3>
+          {item.description && <p class="card__desc">{item.description}</p>}
+          {item.meta && (
+            <p class="resource-card__meta">{item.meta}</p>
+          )}
+        </div>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  height: 100%;
+}
+
+.resource-card__icon {
+  padding: var(--space-4) var(--space-5) 0;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.resource-card__meta {
+  margin-top: auto;
+  padding-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  font-weight: var(--weight-semi);
+}
+</style>
