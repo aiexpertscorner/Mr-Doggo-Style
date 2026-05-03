@@ -57,7 +57,7 @@ const commerceTags = [
     <p class="breed-eyebrow">Owner resources & partner picks</p>
     <h2 id="breed-commerce-title">Useful resources for {breedName} owners</h2>
     <p>
-      These modules connect breed intent with current partner data, product/service clusters and safe Amazon.com search support where relevant.
+      Breed-aware affiliate and shopping modules matched from PupWiki partner data, Amazon.com link data, and owner intent signals.
     </p>
   </div>
 
@@ -78,7 +78,7 @@ const commerceTags = [
 
   <div class="breed-commerce__grid">
     <AwinProductSlot
-      topicTags={[...commerceTags, 'food', 'nutrition', 'feeding']}
+      topicTags={[...commerceTags, 'food', 'nutrition', 'feeding', 'fresh-food', 'broth']}
       pageType="breed"
       category="dog-food"
       breedSize={breedSize}
@@ -108,8 +108,8 @@ const commerceTags = [
         breedSize={breedSize}
         breedEnergy={breedEnergy}
         breedCoat={breedCoat}
-        headline={`Amazon.com searches for ${breedName} owners`}
-        note="Use these as research starting points. Confirm size, seller, return policy, formula, and availability on Amazon before buying."
+        headline={`Amazon.com resources for ${breedName} owners`}
+        note="Amazon links are affiliate links. Use them as research starting points and confirm size, seller, return policy, formula, and availability on Amazon before buying."
         limit={3}
       />
     </div>
