@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "german-shepherd-dog", "German Shepherd Dog", "l
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/german-shepherd-dog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/11645726/pexels-photo-11645726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/11645726/pexels-photo-11645726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A calm German Shepherd dog laying on a textured gray surface, looking content."
+imageAlt: "A calm German Shepherd dog laying on a textured gray surface, looking content."
+imageSource: "pexels"
+imageCredit: "Photo by Inge Van den Heuvel on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/photo-of-a-german-shepherd-11645726/"
+imageSearchQuery: "German Shepherd Dog dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a German Shepherd Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

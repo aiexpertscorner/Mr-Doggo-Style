@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "dachshund", "Dachshund", "medium", "regular", "
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/dachshund", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/36422580/pexels-photo-36422580.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/36422580/pexels-photo-36422580.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A dachshund basks in the sunlight on a cozy dog bed indoors, exuding calm and warmth."
+imageAlt: "A dachshund basks in the sunlight on a cozy dog bed indoors, exuding calm and warmth."
+imageSource: "pexels"
+imageCredit: "Photo by Giovanna Kamimura on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dachshund-relaxing-in-sunlit-dog-bed-indoors-36422580/"
+imageSearchQuery: "Dachshund dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Dachshund, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

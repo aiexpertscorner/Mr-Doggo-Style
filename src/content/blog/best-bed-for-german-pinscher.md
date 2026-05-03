@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "german-pinscher", "German Pinscher", "medium", 
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/german-pinscher", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/20348444/pexels-photo-20348444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/20348444/pexels-photo-20348444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable dog peacefully sleeping with a colorful toy indoors, creating a cozy and loving scene."
+imageAlt: "Adorable dog peacefully sleeping with a colorful toy indoors, creating a cozy and loving scene."
+imageSource: "pexels"
+imageCredit: "Photo by Sonny Vermeer on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/little-brown-dog-enjoys-the-sun-with-her-toy-20348444/"
+imageSearchQuery: "German Pinscher dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a German Pinscher, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

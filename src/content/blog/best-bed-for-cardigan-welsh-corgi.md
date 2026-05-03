@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "cardigan-welsh-corgi", "Cardigan Welsh Corgi", 
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/cardigan-welsh-corgi", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/5264082/pexels-photo-5264082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5264082/pexels-photo-5264082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute corgi dog lying comfortably on a bed in a bright, cozy bedroom setting."
+imageAlt: "Cute corgi dog lying comfortably on a bed in a bright, cozy bedroom setting."
+imageSource: "pexels"
+imageCredit: "Photo by KATRIN  BOLOVTSOVA on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/cute-corgi-dog-lying-in-bed-5264082/"
+imageSearchQuery: "Cardigan Welsh Corgi dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Cardigan Welsh Corgi, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

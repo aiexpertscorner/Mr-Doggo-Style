@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "boxer", "Boxer", "large", "active", "easy", "sh
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/boxer", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/34349199/pexels-photo-34349199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/34349199/pexels-photo-34349199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable close-up of a Boxer dog's nose while sleeping, showcasing serene and peaceful canine rest."
+imageAlt: "Adorable close-up of a Boxer dog's nose while sleeping, showcasing serene and peaceful canine rest."
+imageSource: "pexels"
+imageCredit: "Photo by Aneta Goodyear on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-a-sleeping-boxer-dog-s-nose-34349199/"
+imageSearchQuery: "Boxer dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Boxer, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

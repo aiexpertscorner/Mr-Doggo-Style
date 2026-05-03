@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "cocker-spaniel", "Cocker Spaniel", "medium", "r
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/cocker-spaniel", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/8056880/pexels-photo-8056880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/8056880/pexels-photo-8056880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable close-up of a sleeping dog with a focus on its furry paw. Cozy and cute pet scene."
+imageAlt: "Adorable close-up of a sleeping dog with a focus on its furry paw. Cozy and cute pet scene."
+imageSource: "pexels"
+imageCredit: "Photo by Duygu  Basoglu on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/the-black-paw-of-a-pet-dog-8056880/"
+imageSearchQuery: "Cocker Spaniel dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Cocker Spaniel, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

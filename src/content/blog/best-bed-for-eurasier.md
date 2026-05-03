@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "eurasier", "Eurasier", "large", "regular", "eas
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/eurasier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/14224184/pexels-photo-14224184.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/14224184/pexels-photo-14224184.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A close-up of a Eurasier dog with fluffy fur, showcasing its serene expression in an outdoor setting."
+imageAlt: "A close-up of a Eurasier dog with fluffy fur, showcasing its serene expression in an outdoor setting."
+imageSource: "pexels"
+imageCredit: "Photo by JacLou- DL on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/brown-dog-in-close-up-photography-14224184/"
+imageSearchQuery: "Eurasier dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Eurasier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

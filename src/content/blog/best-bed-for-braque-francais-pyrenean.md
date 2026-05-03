@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "braque-francais-pyrenean", "Braque Francais Pyr
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/braque-francais-pyrenean", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/15628462/pexels-photo-15628462.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/15628462/pexels-photo-15628462.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute merle French Bulldog puppy sleeping on a dark blue sofa indoors."
+imageAlt: "Cute merle French Bulldog puppy sleeping on a dark blue sofa indoors."
+imageSource: "pexels"
+imageCredit: "Photo by Bo Ponomari on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/puppy-sleeping-15628462/"
+imageSearchQuery: "Braque Francais Pyrenean dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Braque Francais Pyrenean, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "golden-retriever", "Golden Retriever", "large",
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/golden-retriever", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/4458433/pexels-photo-4458433.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/4458433/pexels-photo-4458433.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A dog peacefully sleeping on a stylish cushion on a sunlit sofa indoors, creating a relaxing atmosphere."
+imageAlt: "A dog peacefully sleeping on a stylish cushion on a sunlit sofa indoors, creating a relaxing atmosphere."
+imageSource: "pexels"
+imageCredit: "Photo by Enrique on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/photo-of-brown-dog-lying-on-throw-pillow-4458433/"
+imageSearchQuery: "Golden Retriever dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Golden Retriever, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

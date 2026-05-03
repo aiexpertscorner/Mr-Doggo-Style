@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "flat-coated-retriever", "Flat-Coated Retriever"
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/flat-coated-retriever", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/25078644/pexels-photo-25078644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/25078644/pexels-photo-25078644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Detailed close-up of a dog's paws resting on a comfortable bed, featuring soft lighting and shallow depth of field."
+imageAlt: "Detailed close-up of a dog's paws resting on a comfortable bed, featuring soft lighting and shallow depth of field."
+imageSource: "pexels"
+imageCredit: "Photo by Su La Pyae on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/paws-of-dog-lying-down-25078644/"
+imageSearchQuery: "Flat-Coated Retriever dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Flat-Coated Retriever, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "german-shorthaired-pointer", "German Shorthaire
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/german-shorthaired-pointer", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/11424963/pexels-photo-11424963.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/11424963/pexels-photo-11424963.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A charming German Shorthaired Pointer dog lounging indoors, looking playfully upwards."
+imageAlt: "A charming German Shorthaired Pointer dog lounging indoors, looking playfully upwards."
+imageSource: "pexels"
+imageCredit: "Photo by Brixiv on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-shot-of-a-german-shorthaired-pointer-11424963/"
+imageSearchQuery: "German Shorthaired Pointer dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a German Shorthaired Pointer, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

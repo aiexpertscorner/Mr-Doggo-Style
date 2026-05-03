@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "chow-chow", "Chow Chow", "large", "regular", "m
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/chow-chow", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/20840675/pexels-photo-20840675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/20840675/pexels-photo-20840675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A fluffy white dog peacefully sleeping on grass, enjoying a sunny day outdoors."
+imageAlt: "A fluffy white dog peacefully sleeping on grass, enjoying a sunny day outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by Ivan B on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/white-fluffy-dog-sleeping-on-the-grass-20840675/"
+imageSearchQuery: "Chow Chow dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Chow Chow, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

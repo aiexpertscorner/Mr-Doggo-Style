@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "caucasian-shepherd-dog", "Caucasian Shepherd Do
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/caucasian-shepherd-dog", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/21928868/pexels-photo-21928868.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/21928868/pexels-photo-21928868.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Calm stray dog sleeping against a brick wall in Bornova, İzmir, Türkiye."
+imageAlt: "Calm stray dog sleeping against a brick wall in Bornova, İzmir, Türkiye."
+imageSource: "pexels"
+imageCredit: "Photo by Doğan Alpaslan  Demir on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/stray-dog-lying-down-and-sleeping-21928868/"
+imageSearchQuery: "Caucasian Shepherd Dog dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Caucasian Shepherd Dog, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

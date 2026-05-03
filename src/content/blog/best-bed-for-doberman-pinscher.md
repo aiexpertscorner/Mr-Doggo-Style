@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "doberman-pinscher", "Doberman Pinscher", "large
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/doberman-pinscher", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/5938112/pexels-photo-5938112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/5938112/pexels-photo-5938112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Doberman lying comfortably on a dog bed in a cozy indoor room with bookshelves."
+imageAlt: "A Doberman lying comfortably on a dog bed in a cozy indoor room with bookshelves."
+imageSource: "pexels"
+imageCredit: "Photo by Aysun Kahraman Öktem on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/cute-doberman-dog-lying-on-canine-bed-in-room-5938112/"
+imageSearchQuery: "Doberman Pinscher dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Doberman Pinscher, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for large breeds.
 

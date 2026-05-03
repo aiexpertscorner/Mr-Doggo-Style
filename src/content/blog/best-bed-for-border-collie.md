@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "border-collie", "Border Collie", "medium", "act
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/border-collie", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/2835842/pexels-photo-2835842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/2835842/pexels-photo-2835842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A serene white dog sleeping indoors on a wooden floor, surrounded by a cozy atmosphere."
+imageAlt: "A serene white dog sleeping indoors on a wooden floor, surrounded by a cozy atmosphere."
+imageSource: "pexels"
+imageCredit: "Photo by Harper Sunday on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/photo-of-dog-while-sleeping-2835842/"
+imageSearchQuery: "Border Collie dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Border Collie, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for medium breeds.
 

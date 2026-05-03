@@ -33,7 +33,16 @@ awinTopicTags: ["beds", "Beds", "boston-terrier", "Boston Terrier", "small", "re
 amazonQueries: ["orthopedic dog bed washable cover", "washable dog crate bed", "cooling dog bed", "dog puzzle toys enrichment", "durable dog chew toys", "dog fetch toys"]
 internalLinkTargets: ["/breeds/boston-terrier", "/categories/beds", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/33711318/pexels-photo-33711318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/33711318/pexels-photo-33711318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A cute Boston Terrier dog peacefully sleeping in a comfortable checkered bag."
+imageAlt: "A cute Boston Terrier dog peacefully sleeping in a comfortable checkered bag."
+imageSource: "pexels"
+imageCredit: "Photo by Gundula Vogel on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-boston-terrier-napping-in-a-cozy-bag-33711318/"
+imageSearchQuery: "Boston Terrier dog sleeping bed"
 ---
+
 
 A dog spends 12–14 hours a day sleeping. For a Boston Terrier, the quality of that surface directly affects joint health, sleep quality, and behaviour. Thin padding on a hard floor is a slow-developing health problem for small breeds.
 
