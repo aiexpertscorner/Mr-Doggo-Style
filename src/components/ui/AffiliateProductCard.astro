@@ -27,14 +27,12 @@ const { product, headline, variant = 'card' } = Astro.props;
 const numericPrice = Number(product.price);
 const hasPrice = Number.isFinite(numericPrice) && numericPrice > 0;
 const formattedPrice = hasPrice ? numericPrice.toFixed(2) : '';
-const merchant = product.merchant || 'AWIN partner';
-const category = product.category || 'Partner resource';
-const description = product.description || `Explore ${merchant} for current products, services, offers, and availability related to this PupWiki guide.`;
-const sourceLabel = product.source === 'awin-product-feed' ? 'Live AWIN feed' : product.source === 'awin-program-fallback' ? 'Partner deeplink' : 'Affiliate partner';
+const merchant = product.merchant || 'Partner';
+const category = product.category || 'Dog care resource';
+const description = product.description || `Visit ${merchant} to review current products, services, offers, and availability.`;
+const eyebrow = `PupWiki partner · ${merchant}`;
 const tags = Array.isArray(product.topicTags) ? product.topicTags.slice(0, 4) : [];
-const fitText = product.source === 'awin-program-fallback'
-  ? `${merchant} is matched as a relevant partner for this page intent. Use the partner site to confirm details, availability, and fit.`
-  : `Matched from PupWiki affiliate data using page topic, category, and product/service intent.`;
+const fitText = `Review the partner page for current details, availability, shipping, sizing, and whether it fits your dog’s needs.`;
 ---
 
 {variant === 'card' ? (
@@ -49,12 +47,12 @@ const fitText = product.source === 'awin-program-fallback'
     </div>
 
     <div class="affiliate-card__body">
-      <span class="affiliate-card__eyebrow">{sourceLabel} · {merchant}</span>
+      <span class="affiliate-card__eyebrow">{eyebrow}</span>
       <h3 class="affiliate-card__title">{product.name}</h3>
       <p class="affiliate-card__desc">{description.slice(0, 165)}{description.length > 165 ? '…' : ''}</p>
 
       <div class="affiliate-card__fit">
-        <strong>Why this appears here</strong>
+        <strong>Before you click</strong>
         <span>{fitText}</span>
       </div>
 
@@ -66,7 +64,7 @@ const fitText = product.source === 'awin-program-fallback'
       <div class="affiliate-card__footer">
         <span class="affiliate-card__price">{hasPrice ? `$${formattedPrice}` : 'Partner site'}</span>
         <a href={product.url} rel="nofollow sponsored noopener" target="_blank" class="affiliate-card__cta" data-affiliate-merchant={merchant} data-affiliate-product={product.id} data-affiliate-placement="card">
-          View partner offer →
+          Visit partner site →
         </a>
       </div>
 
@@ -80,13 +78,13 @@ const fitText = product.source === 'awin-program-fallback'
     </div>
 
     <div class="affiliate-card__body">
-      <span class="affiliate-card__eyebrow">{sourceLabel}</span>
+      <span class="affiliate-card__eyebrow">PupWiki partner</span>
       <h3 class="affiliate-card__title">{product.name}</h3>
       <p class="affiliate-card__desc">{merchant}</p>
     </div>
 
     <div class="affiliate-card__footer">
-      <a href={product.url} rel="nofollow sponsored noopener" target="_blank" class="affiliate-card__cta" data-affiliate-merchant={merchant} data-affiliate-product={product.id} data-affiliate-placement="compact">View →</a>
+      <a href={product.url} rel="nofollow sponsored noopener" target="_blank" class="affiliate-card__cta" data-affiliate-merchant={merchant} data-affiliate-product={product.id} data-affiliate-placement="compact">Visit →</a>
     </div>
   </article>
 )}
