@@ -1,7 +1,7 @@
 {
   "publisherId": "2861861",
   "countryCode": "US",
-  "syncedAt": "2026-05-03T01:53:08.464Z",
+  "syncedAt": "2026-05-03T05:52:08.192Z",
   "programs": [
     {
       "key": "brutus-broth",
@@ -58,10 +58,8 @@
         "category"
       ],
       "priority": 50,
-      "hasProductFeed": true,
-      "feedIds": [
-        "105633"
-      ],
+      "hasProductFeed": false,
+      "feedIds": [],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -124,10 +122,8 @@
         "homepage"
       ],
       "priority": 75,
-      "hasProductFeed": true,
-      "feedIds": [
-        "103192"
-      ],
+      "hasProductFeed": false,
+      "feedIds": [],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -198,7 +194,6 @@
       "priority": 85,
       "hasProductFeed": true,
       "feedIds": [
-        "88241",
         "93508"
       ],
       "hasCreatives": false,
@@ -265,10 +260,8 @@
         "category"
       ],
       "priority": 90,
-      "hasProductFeed": true,
-      "feedIds": [
-        "108549"
-      ],
+      "hasProductFeed": false,
+      "feedIds": [],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -327,10 +320,8 @@
         "category"
       ],
       "priority": 50,
-      "hasProductFeed": true,
-      "feedIds": [
-        "105980"
-      ],
+      "hasProductFeed": false,
+      "feedIds": [],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -1441,10 +1432,8 @@
       "relationship": "joined",
       "status": "Joined",
       "isActive": true,
-      "hasProductFeed": true,
-      "feedIds": [
-        "105633"
-      ],
+      "hasProductFeed": false,
+      "feedIds": [],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -1467,10 +1456,8 @@
       "relationship": "joined",
       "status": "Joined",
       "isActive": true,
-      "hasProductFeed": true,
-      "feedIds": [
-        "103192"
-      ],
+      "hasProductFeed": false,
+      "feedIds": [],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -1497,7 +1484,6 @@
       "isActive": true,
       "hasProductFeed": true,
       "feedIds": [
-        "88241",
         "93508"
       ],
       "hasCreatives": false,
@@ -1526,10 +1512,8 @@
       "relationship": "joined",
       "status": "Joined",
       "isActive": true,
-      "hasProductFeed": true,
-      "feedIds": [
-        "108549"
-      ],
+      "hasProductFeed": false,
+      "feedIds": [],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -1556,10 +1540,8 @@
       "relationship": "joined",
       "status": "Joined",
       "isActive": true,
-      "hasProductFeed": true,
-      "feedIds": [
-        "105980"
-      ],
+      "hasProductFeed": false,
+      "feedIds": [],
       "hasCreatives": false,
       "hasLogo": true,
       "productCount": 0,
@@ -2021,7 +2003,7 @@
   "stats": {
     "joined": 7,
     "pending": 18,
-    "feeds": 601,
+    "feeds": 0,
     "apiProducts": 0,
     "programOfferProducts": 7,
     "totalProducts": 9,
@@ -2029,8 +2011,8 @@
     "logoBanners": 7,
     "totalBanners": 13,
     "oauthTokenPresent": true,
-    "productFeedKeyPresent": true,
-    "feedListEndpointUsed": "productdata",
+    "productFeedKeyPresent": false,
+    "feedListEndpointUsed": null,
     "feedProductFetchFailures": 0,
     "experimentalCreativesEnabled": false,
     "warnings": [
@@ -2040,7 +2022,8 @@
       "programmedetails/119433 -> HTTP 429",
       "programmedetails/120007 -> HTTP 429",
       "programmedetails/120960 -> HTTP 429",
-      "programmedetails/122204 -> HTTP 429"
+      "programmedetails/122204 -> HTTP 429",
+      "No AWIN_PRODUCT_FEED_API_KEY; skipping Product Feed List download"
     ],
     "errors": []
   }
