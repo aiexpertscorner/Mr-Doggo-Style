@@ -1,7 +1,8 @@
 ---
 /**
- * HomeHeroClean.astro — PupWiki modern responsive hero.
- * Mobile-first, no inline styles, no horizontal overflow, image data enriched by Pexels when available.
+ * HomeHeroClean.astro — Canonical PupWiki homepage hero.
+ * Stable mobile-first hero with curated rotating dog photos.
+ * No inline styles. No remote runtime image API dependency. No layout shift.
  */
 
 import heroImageData from '../../data/home-hero-images.json';
@@ -31,34 +32,50 @@ const {
   eyebrow = 'Trusted guidance for dog parents',
   title = 'Research breeds, plan costs, and care smarter.',
   accent = 'All in one place.',
-  subtitle = 'PupWiki helps dog parents compare breeds and mixed breeds, understand care needs, plan costs, and make more confident ownership decisions.',
+  subtitle = 'PupWiki helps dog parents compare breeds, plan care costs, understand health context, and make more confident ownership decisions.',
   primaryCta = { label: 'Explore Dog Breeds', href: '/breeds' },
   secondaryCta = { label: 'Plan Costs', href: '/cost-calculator' },
-  imageSrc = 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1400&q=82&fit=crop',
-  imageAlt = 'Happy dogs outdoors',
+  imageSrc = 'https://images.pexels.com/photos/7932582/pexels-photo-7932582.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  imageAlt = 'Happy dog with owner',
   heroCardEyebrow = 'Decision support for dog parents',
-  heroCardText = 'Breed guides, mixed-breed profiles, cost calculators, training paths, and practical care resources in one place.',
+  heroCardText = 'Breed profiles, cost tools, care guidance, and practical next steps for real households.',
   trustItems = [],
   features = [],
   stats = [],
 } = Astro.props;
 
-const enrichedImages = Array.isArray((heroImageData as any).images) ? (heroImageData as any).images : [];
-const mainImage = enrichedImages[0] || { src: imageSrc, mobileSrc: imageSrc, alt: imageAlt, focal: 'center' };
-const sideImages = enrichedImages.slice(1, 4);
+type HeroImage = {
+  src?: string;
+  mobileSrc?: string;
+  alt?: string;
+  photographer?: string;
+  query?: string;
+};
+
+const enrichedImages = Array.isArray((heroImageData as any).images) ? (heroImageData as any).images as HeroImage[] : [];
+const fallbackImages: HeroImage[] = [
+  { src: imageSrc, mobileSrc: imageSrc, alt: imageAlt, query: 'dog owner lifestyle' },
+  { src: 'https://images.pexels.com/photos/4586632/pexels-photo-4586632.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', mobileSrc: 'https://images.pexels.com/photos/4586632/pexels-photo-4586632.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'Family relaxing at home with their dog', query: 'family with dog' },
+  { src: 'https://images.pexels.com/photos/5942484/pexels-photo-5942484.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', mobileSrc: 'https://images.pexels.com/photos/5942484/pexels-photo-5942484.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'Small dog playing with a toy at home', query: 'puppy enrichment' },
+];
+const images = (enrichedImages.length ? enrichedImages : fallbackImages)
+  .filter((image) => image?.src)
+  .slice(0, 5);
+const mainImage = images[0] || fallbackImages[0];
 const heroStats = stats.slice(0, 3);
 const heroFeatures = features.slice(0, 3);
 const quickLinks = [
+  { label: 'Breed finder', href: '/breeds', icon: '🐾' },
   { label: 'Puppy hub', href: '/categories/puppy', icon: '🐶' },
+  { label: 'Cost planner', href: '/cost-calculator', icon: '💰' },
   { label: 'Senior dogs', href: '/categories/senior-dogs', icon: '🐕‍🦺' },
-  { label: 'Dog food', href: '/categories/dog-food', icon: '🍖' },
 ];
 ---
 
 <section id={id} class="pw-hero" aria-labelledby={`${id}-title`}>
   <div class="pw-hero__inner">
-    <div class="pw-hero__grid">
-      <div class="pw-hero__content">
+    <div class="pw-hero__layout">
+      <div class="pw-hero__copy">
         <p class="pw-hero__eyebrow">{eyebrow}</p>
 
         <h1 id={`${id}-title`} class="pw-hero__title">
@@ -69,11 +86,11 @@ const quickLinks = [
         <p class="pw-hero__subtitle">{subtitle}</p>
 
         <div class="pw-hero__actions" aria-label="Primary homepage actions">
-          <a href={primaryCta.href} class="pw-btn pw-btn--primary">
-            {primaryCta.label}
-            <span aria-hidden="true">→</span>
+          <a href={primaryCta.href} class="pw-hero__btn pw-hero__btn--primary">
+            <span>{primaryCta.label}</span>
+            <b aria-hidden="true">→</b>
           </a>
-          <a href={secondaryCta.href} class="pw-btn pw-btn--outline">{secondaryCta.label}</a>
+          <a href={secondaryCta.href} class="pw-hero__btn pw-hero__btn--secondary">{secondaryCta.label}</a>
         </div>
 
         {trustItems.length > 0 && (
@@ -89,26 +106,43 @@ const quickLinks = [
         </nav>
       </div>
 
-      <div class="pw-hero__visual" aria-label="Dog care and breed research visuals">
-        <figure class="pw-hero__image-card pw-hero__image-card--main">
+      <div class="pw-hero__showcase" data-pw-home-hero-rotator data-images={JSON.stringify(images)}>
+        <figure class="pw-hero__photo-card">
           <picture>
             <source srcset={mainImage.mobileSrc || mainImage.src} media="(max-width: 640px)" />
-            <img src={mainImage.src || imageSrc} alt={mainImage.alt || imageAlt} width="760" height="620" loading="eager" decoding="async" fetchpriority="high" />
+            <img
+              src={mainImage.src}
+              alt={mainImage.alt || imageAlt}
+              width="940"
+              height="650"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              data-pw-home-hero-image
+            />
           </picture>
-          <div class="pw-hero__image-shade" aria-hidden="true"></div>
+          <div class="pw-hero__photo-overlay" aria-hidden="true"></div>
+
+          <div class="pw-hero__photo-topline" aria-hidden="true">
+            <span><i></i> Curated dog photos</span>
+            <strong data-pw-home-hero-count>1/{images.length}</strong>
+          </div>
+
           <figcaption class="pw-hero__insight-card">
             <span>{heroCardEyebrow}</span>
             <strong>{heroCardText}</strong>
           </figcaption>
-        </figure>
 
-        {sideImages.length > 0 && (
-          <div class="pw-hero__mini-strip" aria-hidden="true">
-            {sideImages.map((image) => (
-              <img src={image.mobileSrc || image.src} alt="" width="132" height="104" loading="lazy" decoding="async" />
-            ))}
-          </div>
-        )}
+          {images.length > 1 && (
+            <div class="pw-hero__rotator-controls" aria-label="Hero photo controls">
+              <button type="button" data-pw-home-hero-prev aria-label="Previous dog photo">←</button>
+              <div class="pw-hero__rotator-dots" data-pw-home-hero-dots aria-hidden="true">
+                {images.map((_, index) => <span class:list={[index === 0 && 'is-active']}></span>)}
+              </div>
+              <button type="button" data-pw-home-hero-next aria-label="Next dog photo">→</button>
+            </div>
+          )}
+        </figure>
 
         {heroStats.length > 0 && (
           <div class="pw-hero__stats" aria-label="PupWiki statistics">
@@ -138,3 +172,74 @@ const quickLinks = [
     )}
   </div>
 </section>
+
+<script is:inline>
+  (() => {
+    const root = document.querySelector('[data-pw-home-hero-rotator]');
+    if (!root || root.dataset.initialized === 'true') return;
+    root.dataset.initialized = 'true';
+
+    const img = root.querySelector('[data-pw-home-hero-image]');
+    const count = root.querySelector('[data-pw-home-hero-count]');
+    const dots = Array.from(root.querySelectorAll('[data-pw-home-hero-dots] span'));
+    const prev = root.querySelector('[data-pw-home-hero-prev]');
+    const next = root.querySelector('[data-pw-home-hero-next]');
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
+
+    if (!img) return;
+
+    let images = [];
+    try {
+      images = JSON.parse(root.getAttribute('data-images') || '[]').filter((item) => item && item.src);
+    } catch {
+      images = [];
+    }
+    if (images.length <= 1) return;
+
+    let index = 0;
+    let timer = null;
+    let paused = false;
+
+    const preload = (src) => new Promise((resolve, reject) => {
+      const image = new Image();
+      image.decoding = 'async';
+      image.onload = resolve;
+      image.onerror = reject;
+      image.src = src;
+    });
+
+    const render = async (nextIndex) => {
+      index = (nextIndex + images.length) % images.length;
+      const item = images[index];
+      if (!item?.src || img.getAttribute('src') === item.src) return;
+
+      try { await preload(item.src); } catch {}
+      img.classList.add('is-changing');
+      window.setTimeout(() => {
+        img.setAttribute('src', item.src);
+        img.setAttribute('alt', item.alt || 'Dog lifestyle photo');
+        count && (count.textContent = `${index + 1}/${images.length}`);
+        dots.forEach((dot, dotIndex) => dot.classList.toggle('is-active', dotIndex === index));
+        window.setTimeout(() => img.classList.remove('is-changing'), 160);
+      }, 140);
+    };
+
+    const start = () => {
+      if (reduceMotion || images.length <= 1) return;
+      window.clearInterval(timer);
+      timer = window.setInterval(() => {
+        if (!paused && !document.hidden) render(index + 1);
+      }, 5600);
+    };
+
+    prev?.addEventListener('click', () => { paused = true; render(index - 1); window.setTimeout(() => paused = false, 2200); });
+    next?.addEventListener('click', () => { paused = true; render(index + 1); window.setTimeout(() => paused = false, 2200); });
+    root.addEventListener('mouseenter', () => paused = true);
+    root.addEventListener('mouseleave', () => paused = false);
+    root.addEventListener('focusin', () => paused = true);
+    root.addEventListener('focusout', () => paused = false);
+    document.addEventListener('visibilitychange', () => document.hidden ? window.clearInterval(timer) : start());
+
+    start();
+  })();
+</script>
