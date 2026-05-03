@@ -152,24 +152,27 @@ function readerSection(copy, breed) {
   const size = breed.size_category || 'their size';
   const energy = breed.energy_level || 'daily';
   const coat = breed.coat_type || 'coat';
+  const facets = copy.facets || {};
   const heading = sectionHeadingFor(copy, breed);
+  const context = [facets.bodyContext, facets.homeFit, facets.handlingNote].filter(Boolean).join(' ');
   const bulletsByFamily = {
     food: [
       `Match calories and portions to a ${size} dog with ${energy} energy rather than choosing by marketing claims alone.`,
-      `Compare life-stage labels, protein source, digestibility notes, and whether the formula suits your dog’s current body condition.`,
+      `Compare life-stage labels, protein source, digestibility notes, and whether the formula suits your dog's current body condition.`,
+      `If you are planning for a future ${breed.name}, use food costs and feeding needs as part of your ownership budget.`,
       `For allergies, pancreatitis, kidney disease, prescription diets, or unexplained symptoms, involve your veterinarian before changing food.`,
     ],
-    toys: [`Choose toys that fit jaw size, play style, and chewing intensity.`, `Rotate puzzle toys, fetch toys, and calm chewing options so enrichment does not become repetitive.`, `Supervise new toys first and remove damaged pieces.`],
-    beds: [`Measure your dog from nose to tail base and add room for stretching, curling, and changing positions.`, `Prioritize washable covers, stable support, and non-slip placement for daily home use.`, `For stiffness or mobility changes, discuss comfort and pain with your veterinarian.`],
-    grooming: [`Match brushes and combs to the ${coat} coat instead of buying a generic kit.`, `Build a short routine around brushing, nail checks, ear checks, and bath timing.`, `Ask a groomer or veterinarian about irritated skin, sores, persistent itching, or sudden coat changes.`],
-    supplements: [`Treat supplements as optional support, not a replacement for diagnosis, diet, medication, or veterinary care.`, `Compare active ingredients, dose instructions, quality cues, and life-stage fit.`, `Ask your veterinarian about interactions if your dog takes medication or has a known condition.`],
-    health: [`Use breed-risk information as a planning tool, not as a diagnosis.`, `Track changes in appetite, movement, breathing, skin, stool, weight, and behavior.`, `Ask about screening, preventive care, insurance timing, and urgent symptoms.`],
-    training: [`Keep sessions short, repeatable, and reward-based.`, `Practice recall, leash skills, calm greetings, and settle work before harder distractions.`, `For fear, reactivity, guarding, or aggression, work with a qualified positive-reinforcement professional.`],
+    toys: [`Choose toys that fit jaw size, play style, and chewing intensity.`, `Rotate puzzle toys, fetch toys, and calm chewing options so enrichment does not become repetitive.`, `If you are still choosing a breed, use toy and enrichment needs to understand daily time commitment.`, `Supervise new toys first and remove damaged pieces.`],
+    beds: [`Measure your dog from nose to tail base and add room for stretching, curling, and changing positions.`, `Prioritize washable covers, stable support, and non-slip placement for daily home use.`, `Future owners should treat a sleep setup as part of the first-month budget, not an afterthought.`, `For stiffness or mobility changes, discuss comfort and pain with your veterinarian.`],
+    grooming: [`Match brushes and combs to the ${coat} coat instead of buying a generic kit.`, `Build a short routine around brushing, nail checks, ear checks, and bath timing.`, `If you are comparing breeds, include grooming time and service costs in the decision.`, `Ask a groomer or veterinarian about irritated skin, sores, persistent itching, or sudden coat changes.`],
+    supplements: [`Treat supplements as optional support, not a replacement for diagnosis, diet, medication, or veterinary care.`, `Compare active ingredients, dose instructions, quality cues, and life-stage fit.`, `Future owners should focus first on diet, vet care, insurance timing, and daily routine before adding supplements.`, `Ask your veterinarian about interactions if your dog takes medication or has a known condition.`],
+    health: [`Use breed-risk information as a planning tool, not as a diagnosis.`, `Track changes in appetite, movement, breathing, skin, stool, weight, and behavior.`, `If you are considering this breed, ask breeders, rescues, shelters, and vets about screening, insurance timing, and realistic care costs.`, `Ask about preventive care and which symptoms should be treated as urgent.`],
+    training: [`Keep sessions short, repeatable, and reward-based.`, `Practice recall, leash skills, calm greetings, and settle work before harder distractions.`, `If you are choosing a first dog, compare training needs against your time, confidence, and support network.`, `For fear, reactivity, guarding, or aggression, work with a qualified positive-reinforcement professional.`],
   };
   const bullets = bulletsByFamily[copy.familyKey] || [`Compare options against size, age, routine, and health context.`, `Check current details before buying.`, `Prioritize safe, practical choices over generic claims.`];
-  return [`## ${heading}`, '', `${breed.name} owners get the best results when they start with the dog in front of them: age, size, energy, coat, health history, and daily routine. Use this guide as a comparison framework, then confirm current details on the product or service page before making a decision.`, '', ...bullets.map((item) => `- ${item}`), ''].join('\n');
+  const intro = `${breed.name} guides are most useful when they start with the real dog or the real adoption decision: age, size, energy, coat, health context, daily routine and budget. ${context} Use this page as a comparison framework, then confirm current details on the product or service page before making a decision.`;
+  return [`## ${heading}`, '', intro.replace(/\s+/g, ' ').trim(), '', ...bullets.map((item) => `- ${item}`), ''].join('\n');
 }
-
 function hasReaderSection(body, copy, breed) {
   const headings = {
     food: [`How to choose food for a ${breed.name}`, `${breed.name} feeding fit checklist`, `What matters most for ${breed.name} nutrition`],
@@ -210,7 +213,7 @@ function cleanBody(body, copy, breed) {
   next = next.replace(/^\*\*\$?[\d,.]+(?:\.\d{2})? \| [^\n]+\*\*\r?\n\r?\n/gm, '');
   next = next.replace(/\| Price \|/g, '| Availability |');
   next = next.replace(/\| \$[\d,.]+(?:\.\d{2})? \|/g, '| Retailer page |');
-  next = next.replace(/\[Check current price(?: on Amazon)?(?: ->| →)?\]/g, (label) => {
+  next = next.replace(/\[Check current price(?: on Amazon)?(?: ->| â†’)?\]/g, (label) => {
     const options = ['View current Amazon availability', 'Check Amazon.com details', 'Compare on Amazon.com', 'See current Amazon listing'];
     return `[${options[hash(`${breed.slug}:${copy.familyKey}:${label}`) % options.length]}]`;
   });
@@ -222,6 +225,17 @@ function cleanBody(body, copy, breed) {
   next = next.replace(/## Why .+ Have Specific Nutrition Needs/g, `## ${copy.headings.why}`);
   next = next.replace(/## Why .+ Need Breed-Specific Toys/g, `## ${copy.headings.why}`);
   next = next.replace(/## Why .+ Need Specific Beds/g, `## ${copy.headings.why}`);
+  next = next.replace(/A dog spends 12\S*14 hours a day sleeping\.[^\n]*\n?/gi, '');
+  next = next.replace(/Starting with a quality orthopedic bed[^.]*prevents rather than reacts to joint issues\./gi, 'A supportive bed can be part of a comfort plan, especially for senior dogs or dogs that seem stiff after rest.');
+  next = next.replace(/one of the highest-return health investments/gi, 'a practical long-use comfort purchase');
+  next = next.replace(/Best lifestyle orthopedic bed[^.\n]*/gi, 'Comfort-focused supportive bed');
+  next = next.replace(/Brand recognition drives gift purchases/gi, 'Recognizable brand with broad availability');
+  next = next.replace(/Human mattress tech applied to dogs/gi, 'Supportive foam design made for dogs');
+  next = next.replace(/directly reduces vet bills associated with joint deterioration/gi, 'may support daily comfort, but it is not a substitute for veterinary care');
+  next = next.replace(/Prevention is significantly cheaper than treatment/gi, 'Preventive care is usually easier to plan than urgent care');
+  next = next.replace(/Best DNA test overall[^.\n]*/gi, 'DNA test option with broad breed and health-marker coverage');
+  next = next.replace(/Best OTC ear treatment[^.\n]*/gi, 'Ear-care product to discuss with your veterinarian when symptoms appear');
+  next = next.replace(/### First Aid [^\n]+/gi, '### First-aid basics');
   if (!hasReaderSection(next, copy, breed)) {
     const guideSection = readerSection(copy, breed);
     const firstHeading = next.search(/\n## /);
@@ -294,3 +308,4 @@ for (const filename of readdirSync(BLOG_DIR).filter((file) => file.endsWith('.md
 }
 
 console.log(JSON.stringify({ apply: APPLY, scanned, changed }, null, 2));
+

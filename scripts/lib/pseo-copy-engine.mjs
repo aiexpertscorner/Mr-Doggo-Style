@@ -26,7 +26,7 @@ const FAMILY_CONFIG = {
     ],
     descriptionTemplates: [
       (b, f) => `Compare dog food options for ${b.name} dogs using breed size, ${f.energy} energy, life stage, and health-sensitive buyer checks.`,
-      (b, f) => `A practical ${b.name} food guide for ${f.size} dogs, with nutrition notes, joint-support context, and current shopping modules.`,
+      (b, f) => `A practical ${b.name} food guide for ${f.size} dogs, with nutrition notes, joint-support context, and owner-friendly comparison checks.`,
       (b) => `Breed-aware food guidance for ${b.name} owners, including formula fit, feeding routine, and vet-check reminders.`,
       (b, f) => `Review ${b.name} dog food choices by life stage, weight control, digestion, and ${f.size}-breed needs.`,
     ],
@@ -91,7 +91,7 @@ const FAMILY_CONFIG = {
     ],
     descriptionTemplates: [
       (b, f) => `Compare bed options for ${b.name} dogs by ${f.size} sizing, support, washable covers, and long-term durability.`,
-      (b) => `A practical ${b.name} bed guide covering orthopedic support, sleep style, cleanup, and current shopping modules.`,
+      (b) => `A practical ${b.name} bed guide covering supportive comfort, sleep style, cleanup, and everyday home fit.`,
       (b) => `Shortlist dog beds for ${b.name} owners with joint comfort, crate fit, travel use, and cover care in view.`,
     ],
     h2: (b) => ({
@@ -262,6 +262,38 @@ function clean(value, fallback) {
   return text || fallback;
 }
 
+function numberRange(range, unit) {
+  if (!range || typeof range !== 'object') return '';
+  const min = Number(range.min_lbs ?? range.min_in ?? range.min);
+  const max = Number(range.max_lbs ?? range.max_in ?? range.max);
+  if (!Number.isFinite(min) || !Number.isFinite(max)) return '';
+  return min === max ? `${min} ${unit}` : `${min}-${max} ${unit}`;
+}
+
+function sentenceFromList(values, fallback) {
+  const cleanValues = values
+    .flatMap((value) => String(value || '').split(/[,;]+/))
+    .map((value) => value.trim())
+    .filter(Boolean)
+    .slice(0, 3);
+  if (cleanValues.length === 0) return fallback;
+  if (cleanValues.length === 1) return cleanValues[0];
+  return `${cleanValues.slice(0, -1).join(', ')} and ${cleanValues.at(-1)}`;
+}
+
+function getHomeFit(size, energy) {
+  if (/toy|small/i.test(size) && /calm|low|regular/i.test(energy)) return 'small-home friendly when daily walks and play are consistent';
+  if (/large|giant/i.test(size) && /active|high/i.test(energy)) return 'best matched with room to move, regular outdoor time, and predictable recovery space';
+  if (/active|high/i.test(energy)) return 'happiest with owners who can make movement and training part of the day';
+  return 'well suited to a steady home routine with daily walks, rest, and gentle enrichment';
+}
+
+function getHandlingNote(training) {
+  if (/easy|eager|high/i.test(training)) return 'usually responds well to short, upbeat sessions and clear household rules';
+  if (/independent|stubborn|hard|challenging/i.test(training)) return 'benefits from patient repetition, calm boundaries, and rewards that feel worth working for';
+  return 'does best when training stays short, kind, and consistent';
+}
+
 function normalizeBreedPhrase(text, breed = {}) {
   const name = String(breed.name || '').trim();
   if (!name || !name.endsWith(' Dog')) return text;
@@ -280,13 +312,30 @@ export function getBreedFacets(breed = {}) {
     breed.ranking_data?.genetic_ailment_names,
     breed.health_note,
   ].filter(Boolean).join(' ');
+  const size = clean(breed.size_category, 'all-size');
+  const energy = clean(breed.energy_level, 'regular');
+  const coat = clean(breed.coat_type, 'mixed');
+  const training = clean(breed.training_level, 'moderate');
+  const weight = numberRange(breed.weight, 'lb');
+  const height = numberRange(breed.height, 'in');
+  const life = numberRange(breed.life_expectancy, 'years');
+  const temperament = sentenceFromList([breed.temperament], 'steady companion temperament');
 
   return {
-    size: clean(breed.size_category, 'all-size'),
-    energy: clean(breed.energy_level, 'regular'),
-    coat: clean(breed.coat_type, 'mixed'),
-    training: clean(breed.training_level, 'moderate'),
+    size,
+    energy,
+    coat,
+    training,
     health: healthBlob || 'general wellness',
+    weight,
+    height,
+    life,
+    group: clean(breed.akc_group, 'companion dog'),
+    temperament,
+    homeFit: getHomeFit(size, energy),
+    handlingNote: getHandlingNote(training),
+    bodyContext: [weight && `typical adult weight around ${weight}`, height && `height around ${height}`, life && `life expectancy around ${life}`].filter(Boolean).join('; '),
+    coatCare: `${coat} coat care`,
   };
 }
 
@@ -339,6 +388,7 @@ export function buildPseoCopy(familyKey, breed = {}) {
     medicalDisclaimer: config.sensitivity === 'high',
     headings,
     intent: config.intent,
+    facets,
   };
 }
 
