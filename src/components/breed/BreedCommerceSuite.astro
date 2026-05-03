@@ -1,0 +1,121 @@
+---
+/**
+ * BreedCommerceSuite.astro
+ * Breed-aware commerce and partner routing module.
+ */
+
+import AwinProductSlot from '../affiliate/AwinProductSlot.astro';
+import AmazonProductSlot from '../amazon/AmazonProductSlot.astro';
+
+export interface PartnerClusterLink {
+  href: string;
+  label: string;
+  description?: string;
+  icon?: string;
+  tags?: string[];
+}
+
+export interface Props {
+  breedName: string;
+  breedSlug: string;
+  breedSize?: string;
+  breedEnergy?: string;
+  breedTraining?: string;
+  breedCoat?: string;
+  topicTags?: string[];
+  partnerClusters?: PartnerClusterLink[];
+  showAmazon?: boolean;
+}
+
+const {
+  breedName,
+  breedSlug,
+  breedSize,
+  breedEnergy,
+  breedTraining,
+  breedCoat,
+  topicTags = [],
+  partnerClusters = [],
+  showAmazon = true,
+} = Astro.props;
+
+const commerceTags = [
+  'breed',
+  'dog-owners',
+  breedSlug,
+  breedName,
+  breedSize,
+  breedEnergy,
+  breedTraining,
+  breedCoat,
+  ...topicTags,
+].filter(Boolean).map(String);
+---
+
+<section class="breed-commerce" aria-labelledby="breed-commerce-title">
+  <div class="breed-commerce__header">
+    <p class="breed-eyebrow">Owner resources & partner picks</p>
+    <h2 id="breed-commerce-title">Useful resources for {breedName} owners</h2>
+    <p>
+      These modules connect breed intent with current partner data, product/service clusters and safe Amazon.com search support where relevant.
+    </p>
+  </div>
+
+  {partnerClusters.length > 0 && (
+    <div class="breed-partner-clusters" aria-label="Related PupWiki partner clusters">
+      {partnerClusters.slice(0, 5).map((cluster) => (
+        <a href={cluster.href} class="breed-partner-cluster-card">
+          <span class="breed-partner-cluster-card__icon" aria-hidden="true">{cluster.icon || '🤝'}</span>
+          <span>
+            <strong>{cluster.label}</strong>
+            {cluster.description && <em>{cluster.description}</em>}
+          </span>
+          <b aria-hidden="true">→</b>
+        </a>
+      ))}
+    </div>
+  )}
+
+  <div class="breed-commerce__grid">
+    <AwinProductSlot
+      topicTags={[...commerceTags, 'food', 'nutrition', 'feeding']}
+      pageType="breed"
+      category="dog-food"
+      breedSize={breedSize}
+      breedEnergy={breedEnergy}
+      breedTraining={breedTraining}
+      headline={`${breedName} food, nutrition and feeding partners`}
+    />
+
+    <AwinProductSlot
+      topicTags={[...commerceTags, 'training', 'behavior', 'leash', 'harness', 'gear', 'safety']}
+      pageType="breed"
+      category="training"
+      breedSize={breedSize}
+      breedEnergy={breedEnergy}
+      breedTraining={breedTraining}
+      headline={`${breedName} training, walking and safety resources`}
+    />
+  </div>
+
+  {showAmazon && (
+    <div class="breed-commerce__amazon">
+      <AmazonProductSlot
+        topicTags={commerceTags}
+        pageType="breed"
+        pageSlug={`/breeds/${breedSlug}`}
+        category="dog-supplies"
+        breedSize={breedSize}
+        breedEnergy={breedEnergy}
+        breedCoat={breedCoat}
+        headline={`Amazon.com searches for ${breedName} owners`}
+        note="Use these as research starting points. Confirm size, seller, return policy, formula, and availability on Amazon before buying."
+        limit={3}
+      />
+    </div>
+  )}
+
+  <p class="breed-commerce__note">
+    Affiliate disclosure: PupWiki may earn from qualifying partner links. Product availability, prices, terms and policy details can change.
+  </p>
+</section>
