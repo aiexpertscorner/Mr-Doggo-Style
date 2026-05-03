@@ -36,16 +36,16 @@ import { existsSync } from 'fs';
 import { join } from 'path';
 
 const SITE = 'https://pupwiki.com';
-const ALL_BREEDS = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
+const allBreeds = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
 
 export function getStaticPaths() {
-  return ALL_BREEDS
+  return [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])]
     .filter((breed) => breed?.slug)
     .map((breed) => ({ params: { breed: breed.slug } }));
 }
 
 const { breed: slug } = Astro.params;
-const b = ALL_BREEDS.find((item) => item.slug === slug);
+const b = allBreeds.find((item) => item.slug === slug);
 if (!b) return Astro.redirect('/breeds');
 
 const isCrossbreed = Array.isArray(b.parent_breeds) && b.parent_breeds.length > 0;
