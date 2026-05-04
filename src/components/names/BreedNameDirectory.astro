@@ -1,0 +1,43 @@
+---
+import type { BreedNameProfile } from '../../lib/names/name-types';
+
+export interface Props {
+  byLetter: Record<string, BreedNameProfile[]>;
+  letters: string[];
+  breedCount: number;
+}
+
+const { byLetter, letters, breedCount } = Astro.props;
+---
+
+<section class="pw-names__section" aria-labelledby="all-breed-name-guides-title">
+  <div class="pw-names__section-header">
+    <p class="pw-names__eyebrow">All {breedCount} breeds</p>
+    <h2 id="all-breed-name-guides-title">Browse every breed name guide</h2>
+    <p>Use the A–Z directory to jump into a breed-specific naming page.</p>
+  </div>
+
+  <nav class="pw-names-letter-nav" aria-label="Browse dog name guides by letter">
+    {letters.map((letter) => <a href={`#names-letter-${letter}`}>{letter}</a>)}
+  </nav>
+
+  <div class="pw-names-letter-groups">
+    {letters.map((letter) => (
+      <section id={`names-letter-${letter}`} class="pw-names-letter-group" aria-labelledby={`names-letter-${letter}-title`}>
+        <div class="pw-names-letter-group__header">
+          <h3 id={`names-letter-${letter}-title`}>{letter}</h3>
+          <span aria-hidden="true"></span>
+        </div>
+
+        <div class="pw-names-directory-grid">
+          {byLetter[letter].map((breed) => (
+            <a href={`/dog-names/${breed.slug}`} class="pw-name-directory-link">
+              {breed.image && <img src={breed.image} alt="" width="40" height="40" loading="lazy" decoding="async" data-pw-image-fallback />}
+              <span>{breed.name}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</section>
