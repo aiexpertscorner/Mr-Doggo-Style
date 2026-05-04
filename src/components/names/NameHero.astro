@@ -1,0 +1,76 @@
+---
+import type { BreedNameProfile } from '../../lib/names/name-types';
+
+export interface Props {
+  stats: {
+    breedCount: number;
+    nameCount: number;
+    categoryCount: number;
+    inspirationCount: number;
+  };
+  breeds: BreedNameProfile[];
+}
+
+const { stats, breeds } = Astro.props;
+const searchBreeds = breeds.map((breed) => ({ name: breed.name, slug: breed.slug, image: breed.image })).slice(0, 600);
+---
+
+<section class="pw-names-hero" aria-labelledby="dog-names-title">
+  <div class="pw-names__container pw-names-hero__inner">
+    <div class="pw-names-hero__copy">
+      <p class="pw-names__eyebrow">Dog name finder</p>
+
+      <h1 id="dog-names-title" class="pw-names-hero__title">
+        Find a name that
+        <span>fits your dog.</span>
+      </h1>
+
+      <p class="pw-names-hero__lead">
+        Explore breed-aware dog name ideas by style, sound, inspiration, and everyday usability. Shortlist favorites, compare options, and find names that feel natural at home and in training.
+      </p>
+
+      <div class="pw-names-search" role="search" data-pw-breed-search>
+        <label class="sr-only" for="dog-name-breed-search">Search dog name guides by breed</label>
+        <input
+          id="dog-name-breed-search"
+          type="search"
+          placeholder="Search a breed, for example Golden Retriever…"
+          autocomplete="off"
+          data-pw-breed-search-input
+        />
+        <span class="pw-names-search__icon" aria-hidden="true">⌕</span>
+        <div class="pw-names-search__dropdown" hidden data-pw-breed-search-results></div>
+      </div>
+
+      <div class="pw-names-hero__stats" aria-label="Dog name finder highlights">
+        <article class="pw-names-stat">
+          <strong>{stats.breedCount}</strong>
+          <span>breed name guides</span>
+        </article>
+        <article class="pw-names-stat">
+          <strong>{stats.nameCount.toLocaleString()}+</strong>
+          <span>name entries</span>
+        </article>
+        <article class="pw-names-stat">
+          <strong>{stats.categoryCount}</strong>
+          <span>name styles</span>
+        </article>
+        <article class="pw-names-stat">
+          <strong>{stats.inspirationCount}</strong>
+          <span>inspiration types</span>
+        </article>
+      </div>
+    </div>
+
+    <aside class="pw-name-generator pw-name-generator--hero" aria-label="Dog name generator preview">
+      <div class="pw-name-generator__header">
+        <p class="pw-names__eyebrow">Breed-aware tool</p>
+        <h2>Generate dog names</h2>
+        <p>Choose a breed, style, sound, or inspiration. Favorites are saved on this device.</p>
+      </div>
+      <slot name="generator" />
+    </aside>
+  </div>
+</section>
+
+<script type="application/json" id="pw-breed-search-data" set:html={JSON.stringify(searchBreeds)} />

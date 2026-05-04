@@ -20,8 +20,8 @@
  * - AWIN_COUNTRY_CODE=US
  * - AWIN_FETCH_CREATIVES=true
  * - AWIN_PRODUCT_FEED_LIST_URL=<full feedList URL from Awin UI>
- * - AWIN_SYNC_DISABLED=true
- * - AWIN_ALLOW_FALLBACK_WRITE=true
+ * - AWIN_SYNC_DISABLED=false
+ * - AWIN_ALLOW_FALLBACK_WRITE=false
  */
 
 import { existsSync, readFileSync, writeFileSync } from 'fs';

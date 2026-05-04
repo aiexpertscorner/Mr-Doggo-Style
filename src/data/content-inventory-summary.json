@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-03T01:53:12.025Z",
+  "generatedAt": "2026-05-04T00:24:49.711Z",
   "totals": {
     "breeds": 277,
     "crossbreeds": 75,
     "blogPosts": 2375,
     "astroPages": 25,
-    "clusters": 8,
+    "clusters": 15,
     "awinJoinedPrograms": 7,
     "partnerProfilesGenerated": 7,
     "opportunities": 1000
@@ -242,6 +242,172 @@
       }
     },
     {
+      "id": "cluster:health",
+      "type": "cluster-hub",
+      "priorityScore": 97,
+      "cluster": "health",
+      "suggestedPath": "/categories/health",
+      "exists": false,
+      "reason": "Missing cluster hub for health.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.7,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [
+          "Brutus Broth"
+        ],
+        "amazonValidatedSeedLikely": true,
+        "amazonSearchFallback": false
+      }
+    },
+    {
+      "id": "cluster:grooming",
+      "type": "cluster-hub",
+      "priorityScore": 87,
+      "cluster": "grooming",
+      "suggestedPath": "/categories/grooming",
+      "exists": false,
+      "reason": "Missing cluster hub for grooming.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.7,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [],
+        "amazonValidatedSeedLikely": true,
+        "amazonSearchFallback": false
+      }
+    },
+    {
+      "id": "cluster:supplements",
+      "type": "cluster-hub",
+      "priorityScore": 82,
+      "cluster": "supplements",
+      "suggestedPath": "/categories/supplements",
+      "exists": false,
+      "reason": "Missing cluster hub for supplements.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.7,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [],
+        "amazonValidatedSeedLikely": false,
+        "amazonSearchFallback": false
+      }
+    },
+    {
+      "id": "cluster:dog-services",
+      "type": "cluster-hub",
+      "priorityScore": 82,
+      "cluster": "dog-services",
+      "suggestedPath": "/categories/dog-services",
+      "exists": false,
+      "reason": "Missing cluster hub for dog-services.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.7,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [],
+        "amazonValidatedSeedLikely": false,
+        "amazonSearchFallback": false
+      }
+    },
+    {
+      "id": "cluster:lifestyle",
+      "type": "cluster-hub",
+      "priorityScore": 92,
+      "cluster": "lifestyle",
+      "suggestedPath": "/categories/lifestyle",
+      "exists": false,
+      "reason": "Missing cluster hub for lifestyle.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.7,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [
+          "Crown and Paw",
+          "MyPetDMV - The original Pet Drivers License"
+        ],
+        "amazonValidatedSeedLikely": false,
+        "amazonSearchFallback": false
+      }
+    },
+    {
+      "id": "cluster:travel",
+      "type": "cluster-hub",
+      "priorityScore": 87,
+      "cluster": "travel",
+      "suggestedPath": "/categories/travel",
+      "exists": false,
+      "reason": "Missing cluster hub for travel.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.7,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [],
+        "amazonValidatedSeedLikely": true,
+        "amazonSearchFallback": false
+      }
+    },
+    {
+      "id": "cluster:home-cleanup",
+      "type": "cluster-hub",
+      "priorityScore": 82,
+      "cluster": "home-cleanup",
+      "suggestedPath": "/categories/home-cleanup",
+      "exists": false,
+      "reason": "Missing cluster hub for home-cleanup.",
+      "internalLinkTargets": [
+        "/categories",
+        "/blog"
+      ],
+      "sitemap": {
+        "include": true,
+        "priority": 0.7,
+        "changefreq": "weekly"
+      },
+      "monetization": {
+        "awinPrograms": [],
+        "amazonValidatedSeedLikely": false,
+        "amazonSearchFallback": false
+      }
+    },
+    {
       "id": "cluster:insurance",
       "type": "cluster-hub",
       "priorityScore": 40,
@@ -277,6 +443,13 @@
       "beds",
       "toys",
       "pupwiki-partners",
+      "health",
+      "grooming",
+      "supplements",
+      "dog-services",
+      "lifestyle",
+      "travel",
+      "home-cleanup",
       "insurance"
     ]
   }

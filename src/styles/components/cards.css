@@ -143,7 +143,7 @@
 }
 
 .badge--accent {
-  color: #9a3412;
+  color: var(--cat-food-text);
   background: var(--color-accent-subtle);
   border-color: rgba(255, 122, 0, 0.18);
 }

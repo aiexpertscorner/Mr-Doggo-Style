@@ -11,6 +11,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  normalizeMonetizationIntent,
+  normalizeReviewMethod,
+  sanitizePublicDogCopy,
+} from '../lib/public-content-contract.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const BLOG_DIR = path.join(ROOT, 'src/content/blog');
@@ -55,17 +60,11 @@ function yamlList(values) {
   return `[${Array.from(new Set((values || []).filter(Boolean).map(String))).map(quote).join(', ')}]`;
 }
 function clean(value) {
-  return String(value || '').replace(/\s+/g, ' ').trim();
+  return sanitizePublicDogCopy(String(value || '')).replace(/\s+/g, ' ').trim();
 }
 function unique(values) {
   return Array.from(new Set(values.filter(Boolean)));
 }
-function commissionLabel(program) {
-  const pct = (Array.isArray(program.commissionRange) ? program.commissionRange : []).find((item) => item?.type === 'percentage');
-  if (!pct) return 'AWIN commission terms';
-  return Number(pct.min) === Number(pct.max) ? `${pct.max}% commission` : `${pct.min}%–${pct.max}% commission`;
-}
-
 const awin = readJson('src/data/awin-programs.json', { programs: [] });
 const products = readJson('src/data/awin-products.json', []);
 const backlog = readJson('src/data/pseo-opportunity-backlog.json', { items: [] });
@@ -76,48 +75,63 @@ const programs = (awin.programs || []).filter((program) => program.relationship 
 const RULES = [
   {
     slug: 'dog-food-nutrition-partners',
-    title: 'Dog Food, Broth and Nutrition Partners',
+    title: 'Dog Food, Toppers and Feeding Help',
     tags: ['food', 'nutrition', 'feeding', 'fresh-food', 'raw-food', 'sensitive-stomach', 'broth', 'allergies', 'appliances'],
     amazonQueries: ['dog food storage container', 'slow feeder dog bowl', 'dog broth topper', 'freeze dried raw dog food'],
     internalTargets: ['/categories/dog-food', '/categories/puppy', '/categories/senior-dogs', '/breeds', '/cost-calculator'],
+    intent: 'food',
     sensitivity: 'high',
-    intro: 'Food and nutrition pages convert best when they help readers compare feeding style, ingredient fit, life stage, budget and preparation time without making medical claims.',
+    intro: 'Use this guide to compare dog food, toppers, storage, feeding tools and nutrition services by life stage, ingredient fit, preparation time, budget and veterinary context.',
   },
   {
     slug: 'dog-training-gear-safety-partners',
-    title: 'Dog Training, Recall, Harness and Safety Gear Partners',
+    title: 'Dog Training, Walking and Safety Help',
     tags: ['training', 'behavior', 'obedience', 'recall', 'leash', 'harness', 'working', 'active', 'gear', 'safety', 'fence'],
     amazonQueries: ['no pull dog harness', 'long leash recall training', 'dog training treats', 'dog training clicker'],
-    internalTargets: ['/categories/training', '/categories/puppy', '/categories/travel', '/breeds'],
+    internalTargets: ['/categories/training', '/categories/dog-services', '/categories/puppy', '/categories/travel', '/breeds'],
+    intent: 'training',
     sensitivity: 'medium',
-    intro: 'Training and safety pages should connect product choices to recall, leash manners, containment, active-dog routines and safer outings.',
+    intro: 'Use this guide to compare training support, walking gear, recall practice, containment, active-dog routines and safer outings without treating gear as a shortcut for kind training.',
   },
   {
     slug: 'personalized-dog-gifts-lifestyle-partners',
-    title: 'Personalized Dog Gifts, Portraits and Lifestyle Partners',
+    title: 'Personalized Dog Gifts and Everyday Dog Life',
     tags: ['gift', 'lifestyle', 'portrait', 'memorial', 'dog-names', 'apparel', 'accessories', 'id', 'license'],
     amazonQueries: ['personalized dog gifts', 'custom dog portrait', 'dog owner gifts', 'personalized dog id tag'],
     internalTargets: ['/categories/lifestyle', '/dog-names', '/categories/pupwiki-partners', '/breeds'],
+    intent: 'lifestyle',
     sensitivity: 'low',
-    intro: 'Lifestyle and gift pages work best when they match emotional intent around dog names, memorials, portraits, IDs, accessories and breed-inspired gifts.',
+    intro: 'Use this guide to compare personalized gifts, portraits, IDs, accessories and dog-owner keepsakes by meaning, quality, timing, sizing and everyday usefulness.',
   },
   {
     slug: 'dog-beds-comfort-home-partners',
-    title: 'Dog Beds, Comfort and Home Setup Partners',
+    title: 'Dog Beds, Comfort and Home Setup',
     tags: ['beds', 'bed', 'comfort', 'home', 'sleep', 'orthopedic', 'senior-dog'],
     amazonQueries: ['orthopedic dog bed washable cover', 'washable dog crate bed', 'senior dog bed', 'cooling dog bed'],
     internalTargets: ['/categories/beds', '/categories/senior-dogs', '/categories/puppy', '/breeds'],
+    intent: 'cost',
     sensitivity: 'medium',
-    intro: 'Bed and home comfort pages should help readers compare sizing, washable covers, senior comfort, crate fit, temperature and household setup.',
+    intro: 'Use this guide to compare beds, crate comfort, washable covers, senior comfort, cooling, travel rest and household setup by the dog\'s size and sleep style.',
   },
   {
     slug: 'dog-health-wellness-adjacent-partners',
-    title: 'Dog Health, Wellness and Vet-Adjacent Partner Resources',
+    title: 'Dog Health, Wellness and Vet-Care Planning',
     tags: ['health', 'wellness', 'care', 'nutrition', 'supplements', 'vet', 'insurance'],
     amazonQueries: ['dog first aid kit', 'dog dental care kit', 'senior dog comfort supplies'],
-    internalTargets: ['/categories/health', '/categories/senior-dogs', '/categories/insurance', '/disclosure'],
+    internalTargets: ['/categories/health', '/categories/dog-services', '/categories/senior-dogs', '/categories/insurance', '/disclosure'],
+    intent: 'vet-care',
     sensitivity: 'high',
-    intro: 'Health-adjacent pages need conservative language and should never present products or services as diagnosis or treatment.',
+    intro: 'Use this guide to compare health-adjacent resources, wellness routines, insurance timing and vet-care planning while keeping medical decisions with a veterinarian.',
+  },
+  {
+    slug: 'dog-services-care-planning',
+    title: 'Dog Services, Local Care and Booking Questions',
+    tags: ['service', 'services', 'vet', 'telehealth', 'grooming', 'training', 'boarding', 'walking', 'daycare', 'insurance', 'subscription'],
+    amazonQueries: [],
+    internalTargets: ['/categories/dog-services', '/categories/health', '/categories/training', '/categories/grooming', '/categories/insurance', '/breeds'],
+    intent: 'service',
+    sensitivity: 'high',
+    intro: 'Use this guide to compare dog services such as vet support, insurance, grooming appointments, training help, walking, boarding and care subscriptions. Later local pages can connect this same structure to maps and nearby providers.',
   },
 ];
 
@@ -131,13 +145,15 @@ function matches(obj, rule) {
   return rule.tags.some((tag) => tags.includes(slugify(tag)) || blob.includes(String(tag).replace(/-/g, ' ')) || blob.includes(slugify(tag)));
 }
 function productLine(product) {
-  const price = Number(product.price) > 0 ? ` — listed at $${Number(product.price).toFixed(2)} when imported` : '';
-  return `- **${product.name}** from ${product.merchant || 'partner'}${price}. ${clean(product.description).slice(0, 150)}${product.url ? ` [View partner listing](${product.url})` : ''}`;
+  const price = Number(product.price) > 0 ? ` - listed at $${Number(product.price).toFixed(2)} when last checked` : '';
+  return sanitizePublicDogCopy(`- **${product.name}** from ${product.merchant || 'brand'}${price}. ${clean(product.description).slice(0, 150)}${product.url ? ` [Review dog-fit details](${product.url})` : ''}`);
 }
 function partnerLine(program) {
-  const kpi = program.kpi || {};
-  const bits = [commissionLabel(program), kpi.epc ? `EPC ${kpi.epc}` : '', kpi.conversionRate ? `${kpi.conversionRate}% conversion signal` : '', program.hasProductFeed ? 'feed available' : 'deeplink partner'].filter(Boolean).join(' · ');
-  return `- **${program.name}** — ${bits}. [Visit partner](${program.deeplink || program.clickThroughUrl})`;
+  const details = [
+    program.primarySector,
+    program.hasProductFeed ? 'product or service details available' : 'brand details available',
+  ].filter(Boolean).join('; ');
+  return sanitizePublicDogCopy(`- **${program.name}** - ${details}. Useful to compare for fit, trust, availability, terms and dog-care purpose. [Review ${program.name}](${program.deeplink || program.clickThroughUrl})`);
 }
 function getClusters() {
   return RULES.map((rule) => {
@@ -171,42 +187,44 @@ function getBreedPages(clusters) {
 function renderCluster(cluster) {
   const tags = unique([cluster.slug, ...cluster.rule.tags, ...cluster.programs.flatMap((program) => program.topicTags || []), ...cluster.products.flatMap((product) => product.topicTags || [])]).map(slugify);
   const sensitive = cluster.rule.sensitivity === 'high';
-  const relatedLinks = cluster.internalLinkTargets.map((href) => `- [${titleCase(href.replace(/^\//, '').replace(/\//g, ' › '))}](${href})`).join('\n');
-  const body = `> **Affiliate disclosure:** PupWiki may earn from qualifying partner links. Partner availability, offers, product feeds and terms can change.
+  const relatedLinks = cluster.internalLinkTargets.map((href) => `- [${titleCase(href.replace(/^\//, '').replace(/\//g, ' > '))}](${href})`).join('\n');
+  const amazonCoverage = cluster.amazonQueries.length ? cluster.amazonQueries.map((query) => `- ${query}`).join('\n') : '- This journey is mainly service-led, so compare provider details, booking terms, coverage, reviews and dog fit before choosing.';
+  const body = `> **Reader-support note:** PupWiki may earn from qualifying partner links. Brand availability, offers, products and terms can change.
 ${sensitive ? '\n> **Health-sensitive note:** This page is for comparison and planning only. It does not provide veterinary, medical, insurance, or financial advice.\n' : ''}
-## What this partner cluster covers
+## What this guide helps you decide
 
 ${cluster.rule.intro}
 
-This page is generated from current active AWIN programme data, product rows, topic tags and conversion signals. It combines multiple relevant partners into one useful PupWiki commerce guide.
+It is written for people who already have a dog and for people still deciding whether a dog fits their home, time, budget and care expectations.
 
-## Active partners in this cluster
+## Dog brands and services to compare
 
 ${cluster.programs.map(partnerLine).join('\n')}
 
-## Product and service signals
+## Products and service details worth reviewing
 
-${cluster.products.length ? cluster.products.slice(0, 8).map(productLine).join('\n') : '- No detailed product-feed rows were available for this cluster yet, so PupWiki uses programme deeplinks, logos, topic tags and partner metadata as the initial commerce signal.'}
+${cluster.products.length ? cluster.products.slice(0, 8).map(productLine).join('\n') : '- This guide currently has brand or service coverage but limited detailed product rows. Start with provider fit, service terms, availability, reviews and dog-care purpose.'}
 
 ## How to compare these options
 
-- Match the product or service to the dog’s life stage, size, activity level and owner goal.
+- Match the product or service to the dog's life stage, size, activity level and owner goal.
 - Confirm shipping, availability, formula, sizing, subscription terms, return policy or service terms on the partner site.
+- If you are still choosing a dog, use these options to understand the real care, time and budget commitments behind ownership.
 - Treat price and availability as dynamic; do not rely on older imported data.
 
 ## Related PupWiki pages
 
 ${relatedLinks}
 
-## Amazon.com fallback search coverage
+## Extra comparison paths
 
-${cluster.amazonQueries.map((query) => `- ${query}`).join('\n')}
+${amazonCoverage}
 `;
   return `---
-title: ${quote(`${cluster.title} — PupWiki Partner Guide`)}
-seoTitle: ${quote(`${cluster.title} — Partner Guide, Product Signals and Deeplinks`)}
+title: ${quote(`${cluster.title} - PupWiki Dog Guide`)}
+seoTitle: ${quote(`${cluster.title} - Brands, Services and Dog-Fit Checks`)}
 displayTitle: ${quote(cluster.title)}
-description: ${quote(`Compare PupWiki partner resources for ${cluster.title.toLowerCase()}, including active AWIN programmes, product/service signals, deeplinks, Amazon.com fallback searches and related guides.`)}
+description: ${quote(`Compare dog-focused brands, products and services for ${cluster.title.toLowerCase()}, with practical checks for current and future dog owners.`)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 author: "The PupWiki Team"
@@ -221,9 +239,9 @@ amazonQueries: ${yamlList(cluster.amazonQueries)}
 internalLinkTargets: ${yamlList(cluster.internalLinkTargets)}
 generated: true
 indexInBlog: false
-reviewMethod: "awin-program-and-product-data-clustering"
+reviewMethod: ${quote(normalizeReviewMethod('product-data-comparison'))}
 claimSensitivity: ${quote(cluster.rule.sensitivity)}
-monetizationIntent: "partner-cluster"
+monetizationIntent: ${quote(normalizeMonetizationIntent(cluster.rule.intent || cluster.rule.tags[0] || 'service'))}
 affiliateDisclosure: true
 medicalDisclaimer: ${sensitive ? 'true' : 'false'}
 partnerProgramKeys: ${yamlList(cluster.programs.map((program) => program.key))}
@@ -235,31 +253,31 @@ ${body}`;
 }
 function renderBreedPage(item) {
   const breed = breeds.find((breedItem) => breedItem.slug === item.breedSlug);
-  const title = `${breed.name} ${titleCase(item.family)} Partner and Product Planning Guide`;
+  const title = `${breed.name} ${titleCase(item.family)} Dog-Care Decision Guide`;
   const tags = unique([item.family, item.cluster, item.commerceCluster, breed.slug, breed.name, ...item.programmes, ...item.amazonQueries]).map(slugify);
-  const body = `> **Affiliate disclosure:** PupWiki may earn from qualifying partner links.
+  const body = `> **Reader-support note:** PupWiki may earn from qualifying partner links.
 
-## Why this guide is linked to current partner data
+## Why this guide exists
 
-This page exists because PupWiki has active partner or product coverage for **${item.commerceClusterTitle}** and the content inventory identified a relevant gap for **${breed.name}**.
+This page helps ${breed.name} people compare useful brands, products and services for a real care decision. It is also useful if you are still deciding whether a ${breed.name} fits your home, budget and routine.
 
-Relevant partner programmes:
+Dog brands and services to review:
 
 ${item.programmes.map((name) => `- ${name}`).join('\n')}
 
-## Product/service signals to compare
+## Products and service details to compare
 
-${item.products.length ? item.products.map(productLine).join('\n') : '- Partner product rows are limited, so the page relies on active partner topic tags and deeplinks for now.'}
+${item.products.length ? item.products.map(productLine).join('\n') : '- Start with provider fit, service terms, availability, reviews and dog-care purpose. Product-level details may vary by brand and location.'}
 
-## Related PupWiki paths
+## Related PupWiki guides
 
-${item.internalLinkTargets.map((href) => `- [${titleCase(href.replace(/^\//, '').replace(/\//g, ' › '))}](${href})`).join('\n')}
+${item.internalLinkTargets.map((href) => `- [${titleCase(href.replace(/^\//, '').replace(/\//g, ' > '))}](${href})`).join('\n')}
 `;
   return `---
 title: ${quote(title)}
 seoTitle: ${quote(title)}
-displayTitle: ${quote(`${breed.name} ${titleCase(item.family)} planning guide`)}
-description: ${quote(`A PupWiki planning guide for ${breed.name} owners, generated from current partner coverage, product signals, internal links and commerce cluster data.`)}
+displayTitle: ${quote(`${breed.name} ${titleCase(item.family)} decision guide`)}
+description: ${quote(`A PupWiki guide for current and future ${breed.name} people comparing dog-care brands, products, services and practical next steps.`)}
 pubDate: ${TODAY}
 updatedDate: ${TODAY}
 author: "The PupWiki Team"
@@ -275,9 +293,9 @@ amazonQueries: ${yamlList(item.amazonQueries)}
 internalLinkTargets: ${yamlList(item.internalLinkTargets)}
 generated: true
 indexInBlog: false
-reviewMethod: "awin-backed-pseo-opportunity"
+reviewMethod: ${quote(normalizeReviewMethod('product-data-comparison'))}
 claimSensitivity: ${quote(item.monetization?.claimSensitivity || 'medium')}
-monetizationIntent: ${quote(item.family)}
+monetizationIntent: ${quote(normalizeMonetizationIntent(item.family))}
 affiliateDisclosure: true
 medicalDisclaimer: ${item.monetization?.claimSensitivity === 'high' ? 'true' : 'false'}
 breedSlug: ${quote(breed.slug)}
@@ -303,7 +321,7 @@ const skipped = [];
 for (const item of selected) {
   try {
     const slug = item.suggestedSlug || item.slug;
-    const markdown = item.kind === 'breed' ? renderBreedPage(item) : renderCluster(item);
+    const markdown = sanitizePublicDogCopy(item.kind === 'breed' ? renderBreedPage(item) : renderCluster(item));
     if (APPLY) fs.writeFileSync(path.join(BLOG_DIR, `${slug}.md`), markdown, 'utf8');
     generated.push({ kind: item.kind || 'cluster', slug, path: `/blog/${slug}`, priorityScore: item.priorityScore, programmes: item.programs?.map((program) => program.name) || item.programmes || [] });
   } catch (error) {
@@ -327,3 +345,4 @@ const summary = {
 };
 writeJson(APPLY ? 'src/data/pseo-generation-summary.json' : 'src/data/pseo-generation-summary.preview.json', summary);
 console.log(JSON.stringify(summary, null, 2));
+

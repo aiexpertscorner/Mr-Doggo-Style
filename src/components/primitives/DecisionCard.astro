@@ -1,0 +1,61 @@
+---
+/**
+ * DecisionCard — feature/benefit card with icon, title, description, optional CTA link.
+ * Uses the icon-card pattern from cards.css.
+ */
+
+export interface Props {
+  icon?: string;
+  title: string;
+  description: string;
+  href?: string;
+  ctaLabel?: string;
+  badge?: string;
+  variant?: 'default' | 'soft' | 'primary';
+}
+
+const {
+  icon,
+  title,
+  description,
+  href,
+  ctaLabel = 'Learn more',
+  badge,
+  variant = 'default',
+} = Astro.props;
+
+const defaultIcons: Record<string, string> = {
+  breeds:   '🐕',
+  health:   '🏥',
+  cost:     '💰',
+  training: '🎓',
+  food:     '🍖',
+  names:    '✏️',
+  care:     '❤️',
+  search:   '🔍',
+};
+
+const displayIcon = icon && (icon.length > 2 ? icon : (defaultIcons[icon] ?? icon));
+---
+
+<div class={`icon-card card${variant === 'soft' ? ' card--soft' : ''}${href ? ' card--interactive' : ''}`}>
+  {displayIcon && (
+    <div class="icon-card__icon" aria-hidden="true">{displayIcon}</div>
+  )}
+
+  {badge && <span class="badge badge--accent">{badge}</span>}
+
+  <div>
+    <h3 class="icon-card__title">{title}</h3>
+    <p class="icon-card__desc">{description}</p>
+  </div>
+
+  {href && (
+    <a href={href} class="card__link btn btn--link">
+      {ctaLabel}
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  )}
+</div>

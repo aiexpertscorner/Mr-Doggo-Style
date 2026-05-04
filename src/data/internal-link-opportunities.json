@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-03T01:53:12.025Z",
+  "generatedAt": "2026-05-04T00:24:49.711Z",
   "total": 2375,
   "items": [
     {
@@ -3824,7 +3824,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/akita"
       ]
     },
     {
@@ -3832,7 +3833,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/australian-shepherd"
       ]
     },
     {
@@ -3840,7 +3842,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/basset-hound"
       ]
     },
     {
@@ -3848,7 +3851,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/beagle"
       ]
     },
     {
@@ -3856,7 +3860,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/belgian-malinois"
       ]
     },
     {
@@ -3864,7 +3869,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/bernese-mountain-dog"
       ]
     },
     {
@@ -3872,7 +3878,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/bichon-frise"
       ]
     },
     {
@@ -3880,7 +3887,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/bloodhound"
       ]
     },
     {
@@ -3888,7 +3896,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/border-collie"
       ]
     },
     {
@@ -3896,7 +3905,9 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/categories/puppy",
+        "/breeds/boston-terrier"
       ]
     },
     {
@@ -3904,7 +3915,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/boxer"
       ]
     },
     {
@@ -3912,7 +3924,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/brittany"
       ]
     },
     {
@@ -3920,7 +3933,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/bulldog"
       ]
     },
     {
@@ -3928,7 +3942,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/cane-corso"
       ]
     },
     {
@@ -3936,7 +3951,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/cavalier-king-charles-spaniel"
       ]
     },
     {
@@ -3944,7 +3960,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/chesapeake-bay-retriever"
       ]
     },
     {
@@ -3952,7 +3969,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/chihuahua"
       ]
     },
     {
@@ -3960,7 +3978,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/cocker-spaniel"
       ]
     },
     {
@@ -3968,7 +3987,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/collie"
       ]
     },
     {
@@ -3976,7 +3996,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/dachshund"
       ]
     },
     {
@@ -3984,7 +4005,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/doberman-pinscher"
       ]
     },
     {
@@ -3992,7 +4014,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/english-springer-spaniel"
       ]
     },
     {
@@ -4000,7 +4023,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/french-bulldog"
       ]
     },
     {
@@ -4008,7 +4032,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/german-shepherd-dog"
       ]
     },
     {
@@ -4016,7 +4041,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/german-shorthaired-pointer"
       ]
     },
     {
@@ -4024,7 +4050,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/golden-retriever"
       ]
     },
     {
@@ -4032,7 +4059,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/great-dane"
       ]
     },
     {
@@ -4040,7 +4068,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/havanese"
       ]
     },
     {
@@ -4048,7 +4077,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/labrador-retriever"
       ]
     },
     {
@@ -4056,7 +4086,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/maltese"
       ]
     },
     {
@@ -4064,7 +4095,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/mastiff"
       ]
     },
     {
@@ -4072,7 +4104,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/miniature-american-shepherd"
       ]
     },
     {
@@ -4080,7 +4113,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/miniature-schnauzer"
       ]
     },
     {
@@ -4088,7 +4122,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/newfoundland"
       ]
     },
     {
@@ -4096,7 +4131,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/pembroke-welsh-corgi"
       ]
     },
     {
@@ -4104,7 +4140,9 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/categories/puppy",
+        "/breeds/pomeranian"
       ]
     },
     {
@@ -4112,7 +4150,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/poodle-miniature"
       ]
     },
     {
@@ -4120,7 +4159,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/poodle-standard"
       ]
     },
     {
@@ -4128,7 +4168,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/poodle-toy"
       ]
     },
     {
@@ -4136,7 +4177,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/portuguese-water-dog"
       ]
     },
     {
@@ -4144,7 +4186,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/pug"
       ]
     },
     {
@@ -4152,7 +4195,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/rhodesian-ridgeback"
       ]
     },
     {
@@ -4160,7 +4204,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/rottweiler"
       ]
     },
     {
@@ -4168,7 +4213,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/saint-bernard"
       ]
     },
     {
@@ -4176,7 +4222,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/shetland-sheepdog"
       ]
     },
     {
@@ -4184,7 +4231,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/shiba-inu"
       ]
     },
     {
@@ -4192,7 +4240,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/shih-tzu"
       ]
     },
     {
@@ -4200,7 +4249,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/siberian-husky"
       ]
     },
     {
@@ -4208,7 +4258,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/vizsla"
       ]
     },
     {
@@ -4216,7 +4267,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/weimaraner"
       ]
     },
     {
@@ -4224,7 +4276,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/west-highland-white-terrier"
       ]
     },
     {
@@ -4232,7 +4285,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/dog-food"
+        "/categories/dog-food",
+        "/breeds/yorkshire-terrier"
       ]
     },
     {
@@ -14375,7 +14429,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/akita"
       ]
     },
     {
@@ -14383,7 +14438,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/australian-shepherd"
       ]
     },
     {
@@ -14391,7 +14447,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/basset-hound"
       ]
     },
     {
@@ -14399,7 +14456,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/beagle"
       ]
     },
     {
@@ -14407,7 +14465,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/belgian-malinois"
       ]
     },
     {
@@ -14415,7 +14474,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/bernese-mountain-dog"
       ]
     },
     {
@@ -14423,7 +14483,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/bichon-frise"
       ]
     },
     {
@@ -14431,7 +14492,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/bloodhound"
       ]
     },
     {
@@ -14439,7 +14501,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/border-collie"
       ]
     },
     {
@@ -14447,7 +14510,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/boston-terrier"
       ]
     },
     {
@@ -14455,7 +14519,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/boxer"
       ]
     },
     {
@@ -14463,7 +14528,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/brittany"
       ]
     },
     {
@@ -14471,7 +14537,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/bulldog"
       ]
     },
     {
@@ -14479,7 +14546,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/cane-corso"
       ]
     },
     {
@@ -14487,7 +14555,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/cavalier-king-charles-spaniel"
       ]
     },
     {
@@ -14495,7 +14564,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/chesapeake-bay-retriever"
       ]
     },
     {
@@ -14503,7 +14573,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/chihuahua"
       ]
     },
     {
@@ -14511,7 +14582,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/cocker-spaniel"
       ]
     },
     {
@@ -14519,7 +14591,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/collie"
       ]
     },
     {
@@ -14527,7 +14600,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/dachshund"
       ]
     },
     {
@@ -14535,7 +14609,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/doberman-pinscher"
       ]
     },
     {
@@ -14543,7 +14618,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/english-springer-spaniel"
       ]
     },
     {
@@ -14551,7 +14627,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/french-bulldog"
       ]
     },
     {
@@ -14559,7 +14636,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/german-shepherd-dog"
       ]
     },
     {
@@ -14567,7 +14645,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/german-shorthaired-pointer"
       ]
     },
     {
@@ -14575,7 +14654,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/golden-retriever"
       ]
     },
     {
@@ -14583,7 +14663,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/great-dane"
       ]
     },
     {
@@ -14591,7 +14672,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/havanese"
       ]
     },
     {
@@ -14599,7 +14681,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/labrador-retriever"
       ]
     },
     {
@@ -14607,7 +14690,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/maltese"
       ]
     },
     {
@@ -14615,7 +14699,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/mastiff"
       ]
     },
     {
@@ -14623,7 +14708,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/miniature-american-shepherd"
       ]
     },
     {
@@ -14631,7 +14717,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/miniature-schnauzer"
       ]
     },
     {
@@ -14639,7 +14726,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/newfoundland"
       ]
     },
     {
@@ -14647,7 +14735,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/pembroke-welsh-corgi"
       ]
     },
     {
@@ -14655,7 +14744,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/pomeranian"
       ]
     },
     {
@@ -14663,7 +14753,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/poodle-miniature"
       ]
     },
     {
@@ -14671,7 +14762,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/poodle-standard"
       ]
     },
     {
@@ -14679,7 +14771,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/poodle-toy"
       ]
     },
     {
@@ -14687,7 +14780,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/portuguese-water-dog"
       ]
     },
     {
@@ -14695,7 +14789,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/pug"
       ]
     },
     {
@@ -14703,7 +14798,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/rhodesian-ridgeback"
       ]
     },
     {
@@ -14711,7 +14807,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/rottweiler"
       ]
     },
     {
@@ -14719,7 +14816,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/saint-bernard"
       ]
     },
     {
@@ -14727,7 +14825,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/shetland-sheepdog"
       ]
     },
     {
@@ -14735,7 +14834,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/shiba-inu"
       ]
     },
     {
@@ -14743,7 +14843,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/shih-tzu"
       ]
     },
     {
@@ -14751,7 +14852,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/siberian-husky"
       ]
     },
     {
@@ -14759,7 +14861,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/vizsla"
       ]
     },
     {
@@ -14767,7 +14870,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/weimaraner"
       ]
     },
     {
@@ -14775,7 +14879,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/west-highland-white-terrier"
       ]
     },
     {
@@ -14783,7 +14888,8 @@
       "recommendedTargets": [
         "/breeds",
         "/cost-calculator",
-        "/categories/toys"
+        "/categories/toys",
+        "/breeds/yorkshire-terrier"
       ]
     },
     {

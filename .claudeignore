@@ -1,0 +1,109 @@
+# .claudeignore — PupWiki Claude Code context slimming
+# Goal: keep Claude focused on source architecture, global design, pages, layouts,
+# components and active scripts while excluding heavy/generated/local artifacts.
+#
+# Temporarily comment out specific sections when a task needs that context.
+
+# Dependencies / package manager caches
+node_modules/
+.pnpm-store/
+.yarn/
+.npm/
+
+# Build output / generated framework artifacts
+dist/
+.output/
+out/
+build/
+.astro/
+.cache/
+.vercel/
+.wrangler/
+.netlify/
+
+# Test / coverage / reports
+coverage/
+playwright-report/
+test-results/
+.lighthouseci/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs / local debug files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Local exports, prompt packs, screenshots and downloadable artifacts
+exports/
+export/
+screenshots/
+screenshot/
+claude_code_migration_pack*/
+*_prompt_pack*/
+*.zip
+*.xlsx
+*.xls
+*.docx
+*.pdf
+
+# Large generated/static data that usually should not be sent to Claude by default
+# Keep these ignored for design/component/layout work. Unignore temporarily for data tasks.
+src/data/build/
+src/data/enrichment/
+src/data/osm/
+src/data/geo/
+src/data/places/
+src/data/cache/
+
+# Large content corpus. For blog/content audits, temporarily comment this section out
+# or ask Claude to inspect only specific slugs/files.
+src/content/blog/
+
+# Generated partner/product feeds and raw commerce dumps.
+# Use curated source files or specific components for normal frontend work.
+src/data/awin-products*.json
+src/data/amazon-products*.json
+src/data/affiliate-products*.json
+src/data/product*.json
+src/data/*feed*.json
+src/data/*cache*.json
+
+# Public generated assets that rarely help code refactors
+public/assets/
+public/images/generated/
+public/images/enriched/
+public/data/
+public/feeds/
+
+# Keep source scripts available by default, but ignore temporary/generated script outputs
+scripts/output/
+scripts/exports/
+scripts/tmp/
+scripts/.cache/
+
+# Optional: docs can be noisy. Keep audits/instructions in context only when needed.
+docs/archive/
+docs/exports/
+docs/generated/
+
+# Do NOT ignore core source folders:
+# src/pages/
+# src/layouts/
+# src/components/
+# src/styles/
+# src/lib/
+# scripts/  (except script output folders above)
+# package.json
+# astro.config.*
+# tailwind.config.*
+# tsconfig.json

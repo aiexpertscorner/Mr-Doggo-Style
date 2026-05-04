@@ -1,144 +1,76 @@
 ---
-/**
- * src/components/ui/Header.astro
- * Refined global header for PupWiki
- * - breed-first navigation
- * - stronger authority / trust alignment
- * - accessible mobile menu
- * - active link states
- */
-
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-  {
-    label: 'All Breeds',
-    href: '/breeds',
-    isActive: currentPath === '/breeds' || currentPath.startsWith('/breeds/'),
-  },
-  {
-    label: 'Dog Names',
-    href: '/dog-names',
-    isActive: currentPath === '/dog-names' || currentPath.startsWith('/dog-names/'),
-  },
-  {
-    label: 'Health & Care',
-    href: '/categories/health',
-    isActive:
-      currentPath === '/categories/health' ||
-      currentPath.startsWith('/categories/health/'),
-  },
-  {
-    label: 'Training',
-    href: '/categories/training',
-    isActive:
-      currentPath === '/categories/training' ||
-      currentPath.startsWith('/categories/training/'),
-  },
-  {
-    label: 'Reviews',
-    href: '/blog',
-    isActive: currentPath === '/blog' || currentPath.startsWith('/blog/'),
-  },
-  {
-    label: 'Breed Quiz',
-    href: '/breed-quiz',
-    isActive: currentPath === '/breed-quiz',
-  },
+  { label: 'All Breeds',   href: '/breeds',             isActive: currentPath === '/breeds' || currentPath.startsWith('/breeds/') },
+  { label: 'Dog Names',    href: '/dog-names',           isActive: currentPath === '/dog-names' || currentPath.startsWith('/dog-names/') },
+  { label: 'Health & Care',href: '/categories/health',   isActive: currentPath.startsWith('/categories/health') },
+  { label: 'Training',     href: '/categories/training', isActive: currentPath.startsWith('/categories/training') },
+  { label: 'Reviews',      href: '/blog',                isActive: currentPath === '/blog' || currentPath.startsWith('/blog/') },
+  { label: 'Breed Quiz',   href: '/breed-quiz',          isActive: currentPath === '/breed-quiz' },
 ];
 
 const utilityLinks = [
-  {
-    label: 'Methodology',
-    href: '/methodology',
-    isActive: currentPath === '/methodology',
-  },
-  {
-    label: 'About',
-    href: '/about',
-    isActive: currentPath === '/about',
-  },
+  { label: 'Methodology', href: '/methodology', isActive: currentPath === '/methodology' },
+  { label: 'About',       href: '/about',       isActive: currentPath === '/about' },
 ];
 
 const primaryCta = {
   label: 'Cost & Insurance',
-  href: '/cost-calculator',
-  isActive:
-    currentPath === '/cost-calculator' ||
-    currentPath.startsWith('/cost-calculator/'),
+  href:  '/cost-calculator',
+  isActive: currentPath === '/cost-calculator' || currentPath.startsWith('/cost-calculator/'),
 };
 
 const allMobileLinks = [...navLinks, ...utilityLinks];
 ---
 
-<header class="sticky top-0 z-50 border-b border-stone-200/80 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-  <div class="mx-auto max-w-7xl px-4 sm:px-5 lg:px-6">
-    <div class="flex h-[76px] items-center justify-between gap-4 sm:h-[84px] lg:h-[90px]">
+<header class="site-header">
+  <div class="container">
+    <div class="site-header__inner">
+
       <!-- Brand -->
-      <a
-        href="/"
-        class="flex min-w-0 items-center gap-3"
-        aria-label="PupWiki home"
-      >
+      <a href="/" class="site-brand" aria-label="PupWiki home">
         <img
           src="/Pupwiki-logo.png"
           alt="PupWiki"
-          class="block h-14 w-auto object-contain sm:h-14 lg:h-16"
+          class="site-brand__logo"
           loading="eager"
           decoding="async"
         />
-        <div class="hidden min-w-0 xl:block">
-          <span class="block truncate text-sm font-semibold tracking-wide text-slate-900">
-            PupWiki
-          </span>
-          <span class="block truncate text-xs text-slate-500">
-            Trusted guidance for dog parents
-          </span>
+        <div class="site-brand__meta">
+          <span class="site-brand__name">PupWiki</span>
+          <span class="site-brand__tagline">Trusted guidance for dog parents</span>
         </div>
       </a>
 
       <!-- Desktop navigation -->
-      <nav
-        class="hidden flex-1 items-center justify-center gap-1 lg:flex"
-        aria-label="Main navigation"
-      >
-        {navLinks.map((link) => (
+      <nav class="site-nav" aria-label="Main navigation">
+        {navLinks.map(link => (
           <a
             href={link.href}
             aria-current={link.isActive ? 'page' : undefined}
-            class:list={[
-              'rounded-xl px-3 py-2 text-sm font-medium transition-colors duration-200',
-              link.isActive
-                ? 'bg-teal-50 text-teal-800'
-                : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900',
-            ]}
+            class="site-nav__link"
           >
             {link.label}
           </a>
         ))}
       </nav>
 
-      <!-- Desktop right side -->
-      <div class="hidden items-center gap-2 lg:flex">
-        {utilityLinks.map((link) => (
+      <!-- Desktop right: utility links + CTA -->
+      <div class="site-header__actions">
+        {utilityLinks.map(link => (
           <a
             href={link.href}
             aria-current={link.isActive ? 'page' : undefined}
-            class:list={[
-              'rounded-xl px-3 py-2 text-sm font-medium transition-colors duration-200',
-              link.isActive
-                ? 'text-slate-900'
-                : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900',
-            ]}
+            class="site-nav__link site-nav__link--utility"
           >
             {link.label}
           </a>
         ))}
-
         <a
           href={primaryCta.href}
           aria-current={primaryCta.isActive ? 'page' : undefined}
-          class="inline-flex items-center justify-center rounded-xl bg-teal-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-[1px] hover:bg-teal-700"
+          class="btn btn--primary btn--sm"
         >
           {primaryCta.label}
         </a>
@@ -147,109 +79,69 @@ const allMobileLinks = [...navLinks, ...utilityLinks];
       <!-- Mobile toggle -->
       <button
         type="button"
-        class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-stone-200 bg-white text-slate-700 transition hover:bg-slate-50 lg:hidden"
+        class="site-header__toggle"
         aria-label="Toggle menu"
         aria-expanded="false"
         aria-controls="mobile-nav"
         data-nav-toggle
       >
-        <svg
-          data-icon-open
-          class="h-6 w-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2.2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
+        <svg data-icon-open  class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
-
-        <svg
-          data-icon-close
-          class="hidden h-6 w-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2.2"
-            d="M6 18L18 6M6 6l12 12"
-          />
+        <svg data-icon-close class="hidden h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
+
     </div>
   </div>
 
-  <!-- Mobile navigation -->
-  <div
-    id="mobile-nav"
-    class="hidden border-t border-stone-200 bg-white lg:hidden"
-    data-mobile-nav
-  >
-    <div class="mx-auto max-w-7xl px-4 pb-5 pt-3 sm:px-5">
-      <div class="mb-4 rounded-2xl border border-teal-100 bg-teal-50/70 px-4 py-3">
-        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
-          PupWiki
-        </p>
-        <p class="mt-1 text-sm text-slate-700">
-          Research breeds, compare costs, and care smarter.
-        </p>
-      </div>
+  <!-- Mobile panel -->
+  <div id="mobile-nav" class="mobile-panel hidden" data-mobile-nav>
+    <div class="container">
+      <div class="mobile-panel__inner">
 
-      <nav class="space-y-1" aria-label="Mobile navigation">
-        {allMobileLinks.map((link) => (
-          <a
-            href={link.href}
-            aria-current={link.isActive ? 'page' : undefined}
-            class:list={[
-              'block rounded-xl px-3 py-3 text-[15px] font-medium transition-colors',
-              link.isActive
-                ? 'bg-slate-100 text-slate-900'
-                : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900',
-            ]}
-          >
-            {link.label}
+        <div class="mobile-panel__brand-note">
+          <p class="mobile-panel__brand-label">PupWiki</p>
+          <p class="mobile-panel__brand-sub">Research breeds, compare costs, and care smarter.</p>
+        </div>
+
+        <nav class="mobile-panel__nav" aria-label="Mobile navigation">
+          {allMobileLinks.map(link => (
+            <a
+              href={link.href}
+              aria-current={link.isActive ? 'page' : undefined}
+              class="mobile-panel__link"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <div class="mobile-panel__cta">
+          <a href={primaryCta.href} class="btn btn--primary" style="width:100%;justify-content:center;">
+            {primaryCta.label}
           </a>
-        ))}
-      </nav>
+          <a href="/contact" class="btn btn--outline" style="width:100%;justify-content:center;">
+            Contact
+          </a>
+        </div>
 
-      <div class="mt-4 grid gap-2">
-        <a
-          href={primaryCta.href}
-          class="block rounded-xl bg-teal-600 px-4 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:bg-teal-700"
-        >
-          {primaryCta.label}
-        </a>
+        <div class="mobile-panel__legal">
+          <a href="/disclosure">Disclosure</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/methodology">Methodology</a>
+        </div>
 
-        <a
-          href="/contact"
-          class="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-        >
-          Contact
-        </a>
-      </div>
-
-      <div class="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-slate-500">
-        <a href="/disclosure" class="hover:text-slate-700">Disclosure</a>
-        <a href="/privacy" class="hover:text-slate-700">Privacy</a>
-        <a href="/methodology" class="hover:text-slate-700">Methodology</a>
       </div>
     </div>
   </div>
 </header>
 
 <script>
-  const toggle = document.querySelector('[data-nav-toggle]');
-  const nav = document.querySelector('[data-mobile-nav]');
-  const iconOpen = document.querySelector('[data-icon-open]');
+  const toggle   = document.querySelector('[data-nav-toggle]');
+  const nav      = document.querySelector('[data-mobile-nav]');
+  const iconOpen  = document.querySelector('[data-icon-open]');
   const iconClose = document.querySelector('[data-icon-close]');
 
   if (toggle && nav && iconOpen && iconClose) {
@@ -260,7 +152,6 @@ const allMobileLinks = [...navLinks, ...utilityLinks];
       toggle.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('overflow-hidden');
     };
-
     const openMenu = () => {
       nav.classList.remove('hidden');
       iconOpen.classList.add('hidden');
@@ -270,19 +161,11 @@ const allMobileLinks = [...navLinks, ...utilityLinks];
     };
 
     toggle.addEventListener('click', () => {
-      const isClosed = nav.classList.contains('hidden');
-      if (isClosed) openMenu();
-      else closeMenu();
+      nav.classList.contains('hidden') ? openMenu() : closeMenu();
     });
-
-    nav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && !nav.classList.contains('hidden')) {
-        closeMenu();
-      }
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !nav.classList.contains('hidden')) closeMenu();
     });
   }
 </script>

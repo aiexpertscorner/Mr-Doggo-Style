@@ -1,0 +1,33 @@
+---
+import type { BreedNameProfile } from '../../lib/names/name-types';
+
+export interface Props {
+  breeds: BreedNameProfile[];
+}
+
+const { breeds } = Astro.props;
+---
+
+<section class="pw-names__section" aria-labelledby="featured-breed-names-title">
+  <div class="pw-names__section-header">
+    <p class="pw-names__eyebrow">Popular breed guides</p>
+    <h2 id="featured-breed-names-title">Start with a breed-matched list</h2>
+    <p>Browse name ideas shaped around breed personality, sound, style, and everyday use.</p>
+  </div>
+
+  <div class="pw-names-feature-grid">
+    {breeds.map((breed) => (
+      <a href={`/dog-names/${breed.slug}`} class="pw-name-breed-card">
+        {breed.image ? (
+          <img src={breed.image} alt={breed.name} width="320" height="240" loading="lazy" decoding="async" data-pw-image-fallback />
+        ) : (
+          <div class="pw-name-breed-card__fallback" aria-hidden="true">🐕</div>
+        )}
+        <div class="pw-name-breed-card__body">
+          <h3>{breed.name}</h3>
+          <p>{breed.personalityLabel} · names →</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

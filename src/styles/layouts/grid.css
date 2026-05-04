@@ -92,12 +92,12 @@
 
 .auto-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--auto-grid-min, 260px), 100%), 1fr));
   gap: var(--space-6);
 }
 
 .auto-grid--tight {
-  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--auto-grid-min, 220px), 100%), 1fr));
   gap: var(--space-4);
 }
 

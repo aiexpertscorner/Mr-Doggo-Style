@@ -26,6 +26,10 @@ export type BlogLikeEntry = {
     category?: string;
     tags?: string[];
     pubDate?: Date | string;
+    indexInBlog?: boolean;
+    noIndex?: boolean;
+    generated?: boolean;
+    internalOnly?: boolean;
   };
 };
 
@@ -92,8 +96,18 @@ export function toIsoString(value: unknown) {
   return Number.isFinite(date.getTime()) ? date.toISOString() : undefined;
 }
 
+export function isPublicBlogEntry(post: BlogLikeEntry) {
+  // Emergency publishing guard: content marked as not for blog/category surfaces
+  // must not appear in public hubs. Direct article route applies the same rule.
+  if (post.data.indexInBlog === false) return false;
+  if (post.data.internalOnly === true) return false;
+  if (post.data.noIndex === true) return false;
+  return true;
+}
+
 export function getCategoryPosts(posts: BlogLikeEntry[], categorySlug: CategorySlug, meta: CategoryMeta) {
   return posts
+    .filter(isPublicBlogEntry)
     .filter((post) => {
       const postCategory = normalizeCategoryValue(post.data.category);
       const tags = Array.isArray(post.data.tags) ? post.data.tags.map(normalizeCategoryValue) : [];

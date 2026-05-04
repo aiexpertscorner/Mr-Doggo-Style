@@ -5,6 +5,7 @@
  */
 
 import Header from '../components/ui/Header.astro';
+import '../styles/main.css';
 import Footer from '../components/ui/Footer.astro';
 import {
   SITE_URL,
@@ -148,7 +149,8 @@ const jsonLdScripts = [organizationJsonLd, websiteJsonLd, webPageJsonLd, ...norm
 
     <title>{pageTitle}</title>
     <link rel="canonical" href={resolvedCanonicalUrl} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=pupwiki-2026-01" />
+    <link rel="mask-icon" href="/favicon.svg?v=pupwiki-2026-01" color="#15365f" />
     <link rel="alternate" type="application/rss+xml" href="/rss.xml" title={SITE_NAME} />
     <link rel="alternate" hrefLang={SITE_LANGUAGE} href={resolvedCanonicalUrl} />
     <meta property="og:locale" content={SITE_LOCALE} />
@@ -183,7 +185,7 @@ const jsonLdScripts = [organizationJsonLd, websiteJsonLd, webPageJsonLd, ...norm
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles/main.css" />
+    <!-- CSS is bundled via Astro import in frontmatter -->
 
     {jsonLdScripts.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}
     <slot name="head" />
