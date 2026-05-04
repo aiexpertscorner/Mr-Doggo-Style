@@ -271,6 +271,7 @@
   --sw-overlay:      rgba(10, 10, 10, 0.65);
   --sw-shadow-hard:  4px 4px 0 var(--sw-accent);
 
+  --sw-font-display: 'Anton', 'Impact', sans-serif;
   --sw-font-heading: 'Archivo Black', 'Arial Black', sans-serif;
   --sw-font-mono:    'Space Mono', monospace;
   --sw-font-body:    'Barlow Condensed', 'Barlow', sans-serif;

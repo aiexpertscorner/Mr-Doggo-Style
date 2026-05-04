@@ -9,23 +9,95 @@ const related = all
 const posts = related.length >= 2 ? related : all.filter(p => `/blog/${p.slug}` !== currentSlug).slice(0, 3);
 ---
 {posts.length > 0 && (
-  <div style="margin-top:3rem">
-    <h3 style="font-family:'Anton',sans-serif;font-size:1.75rem;text-transform:uppercase;color:var(--offwhite);margin:0 0 1.25rem;letter-spacing:-.02em">
-      MORE DROPS <span style="color:var(--lime)">YOU'LL WANT</span>
+  <div class="related-posts">
+    <h3 class="related-posts__heading">
+      MORE DROPS <span class="related-posts__heading-accent">YOU'LL WANT</span>
     </h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem">
+    <div class="related-posts__grid">
       {posts.map(post => (
-        <a href={`/blog/${post.slug}`}
-           style="display:block;background:var(--concrete);border:2px solid rgba(255,255,255,0.1);text-decoration:none;overflow:hidden;transition:all .15s"
-           onmouseover="this.style.borderColor='var(--lime)';this.style.transform='translate(-2px,-2px)';this.style.boxShadow='4px 4px 0 var(--lime)'"
-           onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='';this.style.boxShadow=''">
-          <div style="background:var(--concrete-light);height:80px;display:flex;align-items:center;justify-content:center;font-size:2rem;border-bottom:1px solid rgba(255,255,255,.06)">🐾</div>
-          <div style="padding:.75rem">
-            <span style="font-family:'Space Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.08em;color:var(--lime)">{post.data.category}</span>
-            <h4 style="font-family:'Archivo Black',sans-serif;font-size:.75rem;text-transform:uppercase;color:var(--offwhite);margin:.2rem 0 0;line-height:1.2">{post.data.title}</h4>
+        <a href={`/blog/${post.slug}`} class="related-post-card">
+          <div class="related-post-card__thumb">🐾</div>
+          <div class="related-post-card__body">
+            <span class="related-post-card__category">{post.data.category}</span>
+            <h4 class="related-post-card__title">{post.data.title}</h4>
           </div>
         </a>
       ))}
     </div>
   </div>
 )}
+
+<style>
+  .related-posts {
+    margin-top: var(--space-12);
+  }
+
+  .related-posts__heading {
+    font-family: var(--sw-font-display);
+    font-size: var(--text-3xl);
+    text-transform: uppercase;
+    color: var(--sw-text);
+    margin: 0 0 var(--space-5);
+    letter-spacing: var(--tracking-snug);
+  }
+
+  .related-posts__heading-accent {
+    color: var(--sw-accent);
+  }
+
+  /* min(220px, 100%) prevents column overflow on narrow viewports */
+  .related-posts__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+    gap: var(--space-4);
+  }
+
+  .related-post-card {
+    display: block;
+    background: var(--sw-bg);
+    border: 2px solid var(--sw-border);
+    text-decoration: none;
+    overflow: hidden;
+    transition:
+      border-color var(--transition-base),
+      transform var(--transition-base),
+      box-shadow var(--transition-base);
+  }
+
+  .related-post-card:hover {
+    border-color: var(--sw-accent);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--sw-shadow-hard);
+  }
+
+  .related-post-card__thumb {
+    background: var(--sw-bg-raised);
+    height: var(--space-20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-4xl);
+    border-bottom: 1px solid var(--sw-chip-bg);
+  }
+
+  .related-post-card__body {
+    padding: var(--space-3);
+  }
+
+  .related-post-card__category {
+    font-family: var(--sw-font-mono);
+    font-size: var(--sw-text-label);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label);
+    color: var(--sw-accent);
+  }
+
+  .related-post-card__title {
+    font-family: var(--sw-font-heading);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    color: var(--sw-text);
+    margin: var(--space-1) 0 0;
+    line-height: var(--leading-tight);
+  }
+</style>
