@@ -1,7 +1,7 @@
 ---
 /**
  * src/pages/blog/[slug].astro — PupWiki blog article route
- * Sprint 2 refinement: global article styles + reusable commerce suite + richer cluster links.
+ * Global article styles, reader-facing copy, and safe commerce placement.
  */
 
 import { getCollection } from 'astro:content';
@@ -17,13 +17,16 @@ import PageBannerSlot from '../../components/affiliate/PageBannerSlot.astro';
 import AwinProductSlot from '../../components/affiliate/AwinProductSlot.astro';
 import ArticleCommerceSuite from '../../components/blog/ArticleCommerceSuite.astro';
 import { getContentCluster } from '../../lib/content/contentClusterConfig';
+import { isPublicBlogEntry } from '../../lib/categories/categoryHelpers';
 
 const SITE = 'https://pupwiki.com';
 const ALL_BREEDS = [...(masterBreeds as any[]), ...(masterCrossbreeds as any[])];
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+  return (posts as any[])
+    .filter(isPublicBlogEntry)
+    .map((post) => ({ params: { slug: post.slug }, props: { post } }));
 }
 
 const { post } = Astro.props;
@@ -62,7 +65,6 @@ const breedSlug = fm.breedSlug || fm.breed_slug || null;
 const breed = breedSlug ? ALL_BREEDS.find((item) => item.slug === breedSlug) : null;
 const breedName = fm.breedName || fm.breed_name || breed?.name || '';
 const links = breedSlug ? (breedLinkMap as any)[breedSlug] || {} : {};
-const status = breedSlug ? (contentStatus as any)[breedSlug] || {} : {};
 const clusterSlug = fm.cluster || slugify(category);
 const cluster = getContentCluster(clusterSlug) || getContentCluster(normalize(category).replace(/\s+/g, '-'));
 
@@ -169,7 +171,7 @@ const relatedToolLinks = [
     <aside class="article-support-note not-prose" aria-label="Support content note">
       <div>
         <strong>Breed-support guide</strong>
-        <p>This article supports PupWiki’s breed research pages. For the complete ownership profile, costs, traits, health context, and related tools, start from the breed hub.</p>
+        <p>This guide is designed as supporting context for PupWiki’s breed pages. For the full ownership profile, costs, traits, health context, and related tools, start from the breed hub.</p>
       </div>
       {breedSlug && <a href={links.hub || `/breeds/${breedSlug}`}>View {breedName || 'breed'} hub →</a>}
     </aside>
@@ -203,8 +205,8 @@ const relatedToolLinks = [
       breedEnergy={breed?.energy_level || fm.breedEnergy}
       breedTraining={breed?.training_level}
       breedCoat={breed?.coat_type || fm.breedCoat}
-      heading={cluster ? `${cluster.shortTitle} products and partner resources` : 'Current partner and Amazon.com options'}
-      description="Matched from active AWIN data, validated Amazon links, and safe Amazon.com search templates. Always confirm size, availability, formula, seller and fit before purchase."
+      heading={cluster ? `${cluster.shortTitle} shopping checklist` : 'Shopping checklist'}
+      description="Use these resources as starting points only. Confirm size, formula, materials, seller, availability, and whether the product fits your dog before buying."
     />
   )}
 
@@ -217,7 +219,7 @@ const relatedToolLinks = [
         breedSize={breed?.size_category}
         breedEnergy={breed?.energy_level}
         breedTraining={breed?.training_level}
-        headline="Relevant partner resources"
+        headline="Relevant dog-care resource"
       />
     </div>
   )}
