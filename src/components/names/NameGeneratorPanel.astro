@@ -1,0 +1,144 @@
+---
+import type { BreedNameProfile, DogNameEntry } from '../../lib/names/name-types';
+
+export interface Props {
+  id?: string;
+  breeds?: BreedNameProfile[];
+  names: DogNameEntry[];
+  categories: string[];
+  inspirations: string[];
+  selectedBreed?: BreedNameProfile | null;
+  compact?: boolean;
+}
+
+const {
+  id = 'pw-name-generator',
+  breeds = [],
+  names,
+  categories,
+  inspirations,
+  selectedBreed = null,
+  compact = false,
+} = Astro.props;
+
+const generatorData = {
+  id,
+  selectedBreedSlug: selectedBreed?.slug || '',
+  selectedBreedName: selectedBreed?.name || '',
+  breeds: breeds.map((breed) => ({
+    name: breed.name,
+    slug: breed.slug,
+    size: breed.size,
+    energy: breed.energy,
+    temperament: breed.temperament,
+    styles: breed.styles,
+    inspirations: breed.inspirations,
+  })),
+  names,
+};
+---
+
+<div class:list={['pw-name-generator__body', compact && 'is-compact']} data-pw-name-generator={id}>
+  <form class="pw-name-generator__controls" data-pw-name-generator-form>
+    {breeds.length > 0 && !selectedBreed && (
+      <div class="pw-name-field">
+        <label for={`${id}-breed`}>Breed fit</label>
+        <select id={`${id}-breed`} data-gen-breed>
+          <option value="">Any breed</option>
+          {breeds.map((breed) => <option value={breed.slug}>{breed.name}</option>)}
+        </select>
+      </div>
+    )}
+
+    {selectedBreed && <input type="hidden" value={selectedBreed.slug} data-gen-breed />}
+
+    <div class="pw-name-field">
+      <label for={`${id}-gender`}>Name type</label>
+      <select id={`${id}-gender`} data-gen-gender>
+        <option value="any">Any</option>
+        <option value="boy">Boy</option>
+        <option value="girl">Girl</option>
+        <option value="neutral">Flexible / neutral</option>
+      </select>
+    </div>
+
+    <div class="pw-name-field">
+      <label for={`${id}-category`}>Style</label>
+      <select id={`${id}-category`} data-gen-category>
+        <option value="">Any style</option>
+        {categories.map((category) => <option value={category}>{category}</option>)}
+      </select>
+    </div>
+
+    <div class="pw-name-field">
+      <label for={`${id}-inspiration`}>Inspiration</label>
+      <select id={`${id}-inspiration`} data-gen-inspiration>
+        <option value="">Any inspiration</option>
+        {inspirations.map((inspiration) => <option value={inspiration}>{inspiration}</option>)}
+      </select>
+    </div>
+
+    <div class="pw-name-field">
+      <label for={`${id}-length`}>Name length</label>
+      <select id={`${id}-length`} data-gen-length>
+        <option value="any">Any length</option>
+        <option value="short">Short / easy call</option>
+        <option value="one-two">1–2 syllables</option>
+        <option value="long">Longer / distinctive</option>
+      </select>
+    </div>
+
+    <div class="pw-name-field">
+      <label for={`${id}-starts`}>Starts with</label>
+      <input id={`${id}-starts`} data-gen-starts maxlength="1" placeholder="Optional letter" />
+    </div>
+
+    <label class="pw-name-check">
+      <input type="checkbox" data-gen-avoid-commands checked />
+      <span>Avoid names that sound like common training cues</span>
+    </label>
+
+    <label class="pw-name-check">
+      <input type="checkbox" data-gen-breed-fit checked />
+      <span>{selectedBreed ? `Boost ${selectedBreed.name} style match` : 'Boost breed-matched style'}</span>
+    </label>
+
+    <div class="pw-name-generator__actions">
+      <button type="submit" class="pw-name-btn pw-name-btn--primary">
+        Generate names
+        <span aria-hidden="true">→</span>
+      </button>
+      <button type="button" class="pw-name-btn pw-name-btn--secondary" data-gen-surprise>
+        Surprise me
+      </button>
+    </div>
+  </form>
+
+  <div class="pw-name-generator__output" aria-live="polite">
+    <div class="pw-name-generator__output-header">
+      <div>
+        <h3>Generated names</h3>
+        <p data-gen-summary>Choose options and generate a name list.</p>
+      </div>
+      <button type="button" data-gen-copy class="pw-name-link-btn" aria-label="Copy generated names">Copy</button>
+    </div>
+
+    <div class="pw-name-results" data-gen-results></div>
+
+    <div class="pw-name-generator__utility">
+      <button type="button" class="pw-name-link-btn" data-gen-save-all>Save all</button>
+      <button type="button" class="pw-name-link-btn" data-gen-export>Export favorites</button>
+      <button type="button" class="pw-name-link-btn" data-gen-share>Share</button>
+    </div>
+  </div>
+
+  <div class="pw-name-favorites">
+    <div class="pw-name-favorites__header">
+      <h3>Favorites</h3>
+      <button type="button" class="pw-name-link-btn" data-gen-clear-favorites>Clear</button>
+    </div>
+    <div class="pw-name-favorites__list" data-gen-favorites></div>
+  </div>
+</div>
+
+<script type="application/json" data-pw-name-generator-data={id} set:html={JSON.stringify(generatorData)} />

@@ -1,0 +1,45 @@
+---
+/**
+ * src/layouts/NameLayout.astro
+ * Thin layout wrapper for PupWiki dog-name pages.
+ */
+
+import BaseLayout from './BaseLayout.astro';
+import { SITE_URL } from '../lib/site-config';
+
+type StructuredData = Record<string, unknown> | Array<Record<string, unknown>>;
+
+export interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  ogImage?: string;
+  structuredData?: StructuredData;
+  pageType?: 'website' | 'article' | 'collection' | 'tool' | 'profile';
+}
+
+const {
+  title,
+  description,
+  canonicalPath = '/dog-names',
+  ogImage,
+  structuredData = [],
+  pageType = 'collection',
+} = Astro.props;
+
+const canonicalUrl = canonicalPath.startsWith('http') ? canonicalPath : `${SITE_URL}${canonicalPath}`;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  ogImage={ogImage}
+  pageType={pageType}
+  bodyClass="pw-names-page"
+  structuredData={structuredData}
+>
+  <main class="pw-names" id="dog-names-content">
+    <slot />
+  </main>
+</BaseLayout>
