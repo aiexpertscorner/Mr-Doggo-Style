@@ -39,6 +39,7 @@ pnpm-debug.log*
 # OS / editor noise
 .DS_Store
 Thumbs.db
+*.bat
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
@@ -77,6 +78,9 @@ claude_code_migration_pack*/
 # Accidental token/style copies
 src/styles/tokens copy.css
 src/styles/* copy.css
+
+# Generated root-level reports
+/seo-report.json
 
 # Do NOT ignore source markdown/content/data globally.
 # These are intentionally trackable when they belong to the site:
