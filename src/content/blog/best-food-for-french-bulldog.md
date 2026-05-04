@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "french-bulldog", "F
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/french-bulldog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/35692179/pexels-photo-35692179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35692179/pexels-photo-35692179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "French Bulldog resting on a sunny pavement, showcasing relaxed pet demeanor."
+imageAlt: "French Bulldog resting on a sunny pavement, showcasing relaxed pet demeanor."
+imageSource: "pexels"
+imageCredit: "Photo by Sóc Năng Động on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/relaxed-french-bulldog-on-pavement-outdoors-35692179/"
+imageSearchQuery: "French Bulldog dog eating healthy food"
 ---
 
 Feeding a French Bulldog well isn't as simple as grabbing the bag with the highest rating. French Bulldogs are medium dogs with calm energy, a Average lifespan of 9 years, and nutritional vulnerabilities that change across their life stages.

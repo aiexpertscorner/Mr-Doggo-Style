@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "golden-retriever", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/golden-retriever", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/30810888/pexels-photo-30810888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/30810888/pexels-photo-30810888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up portrait of a Golden Retriever dog with soft focus outdoor backdrop."
+imageAlt: "Close-up portrait of a Golden Retriever dog with soft focus outdoor backdrop."
+imageSource: "pexels"
+imageCredit: "Photo by Masood Aslami on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/golden-retriever-portrait-in-natural-light-30810888/"
+imageSearchQuery: "Golden Retriever dog eating healthy food"
 ---
 
 Feeding a Golden Retriever well isn't as simple as grabbing the bag with the highest rating. Golden Retrievers are large dogs with active energy, a Average lifespan of 12 years, and nutritional vulnerabilities that change across their life stages.

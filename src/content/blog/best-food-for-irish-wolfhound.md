@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "irish-wolfhound", "
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/irish-wolfhound", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/37163902/pexels-photo-37163902.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/37163902/pexels-photo-37163902.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A large black dog with a harness stands on grass by a lake surrounded by hills."
+imageAlt: "A large black dog with a harness stands on grass by a lake surrounded by hills."
+imageSource: "pexels"
+imageCredit: "Photo by Josef Holub on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/large-black-dog-wearing-harness-by-a-lake-37163902/"
+imageSearchQuery: "Irish Wolfhound dog eating healthy food"
 ---
 
 Feeding a Irish Wolfhound well isn't as simple as grabbing the bag with the highest rating. Irish Wolfhounds are large dogs with regular energy, a Average lifespan of 6.9 years, and nutritional vulnerabilities that change across their life stages.

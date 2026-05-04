@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "miniature-bull-terr
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/miniature-bull-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/17037649/pexels-photo-17037649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/17037649/pexels-photo-17037649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Close-up portrait of a Bull Terrier dog with tongue out against a black background."
+imageAlt: "Close-up portrait of a Bull Terrier dog with tongue out against a black background."
+imageSource: "pexels"
+imageCredit: "Photo by Kenny Fotos CR on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-dog-head-17037649/"
+imageSearchQuery: "Miniature Bull Terrier dog eating healthy food"
 ---
 
 Feeding a Miniature Bull Terrier well isn't as simple as grabbing the bag with the highest rating. Miniature Bull Terriers are medium dogs with active energy, a Lifespan of 11–13 years, and nutritional vulnerabilities that change across their life stages.

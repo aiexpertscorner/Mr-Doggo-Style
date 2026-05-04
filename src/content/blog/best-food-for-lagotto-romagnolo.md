@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "lagotto-romagnolo",
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/lagotto-romagnolo", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/20066093/pexels-photo-20066093.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/20066093/pexels-photo-20066093.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Joyful Lagotto Romagnolo dog running through a vibrant green field in sunny rural setting."
+imageAlt: "Joyful Lagotto Romagnolo dog running through a vibrant green field in sunny rural setting."
+imageSource: "pexels"
+imageCredit: "Photo by Hans-Jörg B. on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-running-on-the-grass-20066093/"
+imageSearchQuery: "Lagotto Romagnolo dog eating healthy food"
 ---
 
 Feeding a Lagotto Romagnolo well isn't as simple as grabbing the bag with the highest rating. Lagotto Romagnolos are medium dogs with regular energy, a Lifespan of 15–17 years, and nutritional vulnerabilities that change across their life stages.

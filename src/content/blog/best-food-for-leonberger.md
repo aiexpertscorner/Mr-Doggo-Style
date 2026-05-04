@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "leonberger", "Leonb
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/leonberger", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/36537011/pexels-photo-36537011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/36537011/pexels-photo-36537011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Two Leonberger dogs enjoying a snowy day in the mountains with a stunning backdrop."
+imageAlt: "Two Leonberger dogs enjoying a snowy day in the mountains with a stunning backdrop."
+imageSource: "pexels"
+imageCredit: "Photo by Toki No Ori on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/leonbergers-in-snowy-mountain-landscape-36537011/"
+imageSearchQuery: "Leonberger dog eating healthy food"
 ---
 
 Feeding a Leonberger well isn't as simple as grabbing the bag with the highest rating. Leonbergers are large dogs with regular energy, a Lifespan of 9–9 years, and nutritional vulnerabilities that change across their life stages.

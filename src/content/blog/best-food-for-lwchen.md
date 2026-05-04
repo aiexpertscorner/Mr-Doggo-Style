@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "lwchen", "Löwchen"
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/lwchen", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/35219126/pexels-photo-35219126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/35219126/pexels-photo-35219126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Löwchen dog with long fur resting outdoors on a wooden surface during summer."
+imageAlt: "Löwchen dog with long fur resting outdoors on a wooden surface during summer."
+imageSource: "pexels"
+imageCredit: "Photo by Lorna Pauli on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/lowchen-dog-relaxing-outdoors-in-summer-35219126/"
+imageSearchQuery: "Löwchen dog eating healthy food"
 ---
 
 Feeding a Löwchen well isn't as simple as grabbing the bag with the highest rating. Löwchens are small dogs with regular energy, a Lifespan of 15–15 years, and nutritional vulnerabilities that change across their life stages.

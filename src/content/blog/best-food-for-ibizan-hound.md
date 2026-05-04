@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "ibizan-hound", "Ibi
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/ibizan-hound", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/20080179/pexels-photo-20080179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/20080179/pexels-photo-20080179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Portrait of a brown and white dog with a collar, looking thoughtful against a blurred background."
+imageAlt: "Portrait of a brown and white dog with a collar, looking thoughtful against a blurred background."
+imageSource: "pexels"
+imageCredit: "Photo by Marina Riijik on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-dog-20080179/"
+imageSearchQuery: "Ibizan Hound dog eating healthy food"
 ---
 
 Feeding a Ibizan Hound well isn't as simple as grabbing the bag with the highest rating. Ibizan Hounds are medium dogs with active energy, a Lifespan of 11–14 years, and nutritional vulnerabilities that change across their life stages.

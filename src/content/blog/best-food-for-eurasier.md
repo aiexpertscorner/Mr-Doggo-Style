@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "eurasier", "Eurasie
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/eurasier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/29134547/pexels-photo-29134547.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/29134547/pexels-photo-29134547.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A fluffy Eurasier dog sitting contentedly on grass in a sunny outdoor setting."
+imageAlt: "A fluffy Eurasier dog sitting contentedly on grass in a sunny outdoor setting."
+imageSource: "pexels"
+imageCredit: "Photo by JacLou- DL on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/fluffy-eurasier-enjoying-a-sunny-day-outdoors-29134547/"
+imageSearchQuery: "Eurasier dog eating healthy food"
 ---
 
 Feeding a Eurasier well isn't as simple as grabbing the bag with the highest rating. Eurasiers are large dogs with regular energy, a Lifespan of 12–16 years, and nutritional vulnerabilities that change across their life stages.

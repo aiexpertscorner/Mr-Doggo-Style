@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "japanese-spitz", "J
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/japanese-spitz", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/34404744/pexels-photo-34404744.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/34404744/pexels-photo-34404744.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable close-up of a fluffy white dog with pointed ears in a natural setting."
+imageAlt: "Adorable close-up of a fluffy white dog with pointed ears in a natural setting."
+imageSource: "pexels"
+imageCredit: "Photo by Alexas Fotos on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-portrait-of-a-fluffy-white-dog-outdoors-34404744/"
+imageSearchQuery: "Japanese Spitz dog eating healthy food"
 ---
 
 Feeding a Japanese Spitz well isn't as simple as grabbing the bag with the highest rating. Japanese Spitzs are small dogs with regular energy, a Lifespan of 12–14 years, and nutritional vulnerabilities that change across their life stages.

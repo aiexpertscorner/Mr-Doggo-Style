@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "miniature-american-
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/miniature-american-shepherd", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/32854630/pexels-photo-32854630.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/32854630/pexels-photo-32854630.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Detailed close-up of an attentive Australian Shepherd dog outdoors."
+imageAlt: "Detailed close-up of an attentive Australian Shepherd dog outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by DΛVΞ GΛRCIΛ on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-portrait-of-an-australian-shepherd-dog-32854630/"
+imageSearchQuery: "Miniature American Shepherd dog eating healthy food"
 ---
 
 Feeding a Miniature American Shepherd well isn't as simple as grabbing the bag with the highest rating. Miniature American Shepherds are medium dogs with active energy, a Lifespan of 12–13 years, and nutritional vulnerabilities that change across their life stages.

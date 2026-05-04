@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "irish-red-and-white
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/irish-red-and-white-setter", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/6510333/pexels-photo-6510333.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/6510333/pexels-photo-6510333.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable dog with brown fur lying on sandy coast near calm lake in sunny nature against cloudy sky and hilly terrain"
+imageAlt: "Adorable dog with brown fur lying on sandy coast near calm lake in sunny nature against cloudy sky and hilly terrain"
+imageSource: "pexels"
+imageCredit: "Photo by Lachlan  Ross on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/cute-irish-setter-on-shore-6510333/"
+imageSearchQuery: "Irish Red and White Setter dog eating healthy food"
 ---
 
 Feeding a Irish Red and White Setter well isn't as simple as grabbing the bag with the highest rating. Irish Red and White Setters are medium dogs with active energy, a Lifespan of 11–15 years, and nutritional vulnerabilities that change across their life stages.

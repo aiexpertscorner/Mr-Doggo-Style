@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "neapolitan-mastiff"
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/neapolitan-mastiff", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/34315/bordeaux-mastiff-dog-animal.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/34315/bordeaux-mastiff-dog-animal.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A French Bulldog enjoying a spring day in a green grassy field."
+imageAlt: "A French Bulldog enjoying a spring day in a green grassy field."
+imageSource: "pexels"
+imageCredit: "Photo by Pixabay on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/brown-short-haired-dog-on-green-ground-cover-plants-during-daytime-34315/"
+imageSearchQuery: "Neapolitan Mastiff dog eating healthy food"
 ---
 
 Feeding a Neapolitan Mastiff well isn't as simple as grabbing the bag with the highest rating. Neapolitan Mastiffs are large dogs with regular energy, a Lifespan of 7–9 years, and nutritional vulnerabilities that change across their life stages.

@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "great-dane", "Great
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/great-dane", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/8660788/pexels-photo-8660788.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/8660788/pexels-photo-8660788.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Side view of a Great Dane dog with a blurred nature background, showcasing its majestic presence."
+imageAlt: "Side view of a Great Dane dog with a blurred nature background, showcasing its majestic presence."
+imageSource: "pexels"
+imageCredit: "Photo by Paparazzi Ratzfatzzi on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/side-view-of-a-dog-8660788/"
+imageSearchQuery: "Great Dane dog eating healthy food"
 ---
 
 Feeding a Great Dane well isn't as simple as grabbing the bag with the highest rating. Great Danes are large dogs with active energy, a Average lifespan of 7 years, and nutritional vulnerabilities that change across their life stages.

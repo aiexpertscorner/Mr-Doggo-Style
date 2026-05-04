@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "finnish-lapphund", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/finnish-lapphund", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/29352513/pexels-photo-29352513.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/29352513/pexels-photo-29352513.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Finnish Lapphund dog with a fluffy coat by a serene water background."
+imageAlt: "A Finnish Lapphund dog with a fluffy coat by a serene water background."
+imageSource: "pexels"
+imageCredit: "Photo by JacLou- DL on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-a-finnish-lapphund-by-the-water-29352513/"
+imageSearchQuery: "Finnish Lapphund dog eating healthy food"
 ---
 
 Feeding a Finnish Lapphund well isn't as simple as grabbing the bag with the highest rating. Finnish Lapphunds are medium dogs with regular energy, a Lifespan of 12–15 years, and nutritional vulnerabilities that change across their life stages.

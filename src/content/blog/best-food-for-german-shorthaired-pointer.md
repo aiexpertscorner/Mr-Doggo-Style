@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "german-shorthaired-
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/german-shorthaired-pointer", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/11269657/pexels-photo-11269657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/11269657/pexels-photo-11269657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A German Shorthaired Pointer dog rests on a sandy surface outdoors, showing its distinctive coat and relaxed posture."
+imageAlt: "A German Shorthaired Pointer dog rests on a sandy surface outdoors, showing its distinctive coat and relaxed posture."
+imageSource: "pexels"
+imageCredit: "Photo by gabesdotphotos photographer on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/photo-of-dog-lying-on-brown-sand-11269657/"
+imageSearchQuery: "German Shorthaired Pointer dog eating healthy food"
 ---
 
 Feeding a German Shorthaired Pointer well isn't as simple as grabbing the bag with the highest rating. German Shorthaired Pointers are large dogs with active energy, a Average lifespan of 11.5 years, and nutritional vulnerabilities that change across their life stages.

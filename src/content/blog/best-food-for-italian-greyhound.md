@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "italian-greyhound",
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/italian-greyhound", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/16485353/pexels-photo-16485353.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/16485353/pexels-photo-16485353.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cute dog wrapped in a red plaid blanket, sitting on a holiday-themed couch."
+imageAlt: "Cute dog wrapped in a red plaid blanket, sitting on a holiday-themed couch."
+imageSource: "pexels"
+imageCredit: "Photo by Jacob Sierra on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-wrapped-in-a-red-checkered-blanket-16485353/"
+imageSearchQuery: "Italian Greyhound dog eating healthy food"
 ---
 
 Feeding a Italian Greyhound well isn't as simple as grabbing the bag with the highest rating. Italian Greyhounds are small dogs with regular energy, a Average lifespan of 10 years, and nutritional vulnerabilities that change across their life stages.

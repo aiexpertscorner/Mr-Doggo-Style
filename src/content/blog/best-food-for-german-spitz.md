@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "german-spitz", "Ger
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/german-spitz", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/36953700/pexels-photo-36953700.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/36953700/pexels-photo-36953700.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A cute fluffy dog panting happily outdoors, displaying playful charm."
+imageAlt: "A cute fluffy dog panting happily outdoors, displaying playful charm."
+imageSource: "pexels"
+imageCredit: "Photo by JacLou- DL on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/adorable-fluffy-dog-in-outdoor-setting-36953700/"
+imageSearchQuery: "German Spitz dog eating healthy food"
 ---
 
 Feeding a German Spitz well isn't as simple as grabbing the bag with the highest rating. German Spitzs are medium dogs with regular energy, a Lifespan of 13–15 years, and nutritional vulnerabilities that change across their life stages.

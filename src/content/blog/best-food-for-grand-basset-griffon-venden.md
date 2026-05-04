@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "grand-basset-griffo
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/grand-basset-griffon-venden", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/28811074/pexels-photo-28811074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/28811074/pexels-photo-28811074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A Wirehaired Pointing Griffon dog standing outdoors during fall."
+imageAlt: "A Wirehaired Pointing Griffon dog standing outdoors during fall."
+imageSource: "pexels"
+imageCredit: "Photo by Andreas Schnabl on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/wirehaired-pointing-griffon-standing-outdoors-28811074/"
+imageSearchQuery: "Grand Basset Griffon Vendéen dog eating healthy food"
 ---
 
 Feeding a Grand Basset Griffon Vendéen well isn't as simple as grabbing the bag with the highest rating. Grand Basset Griffon Vendéens are medium dogs with active energy, a Lifespan of 13–15 years, and nutritional vulnerabilities that change across their life stages.

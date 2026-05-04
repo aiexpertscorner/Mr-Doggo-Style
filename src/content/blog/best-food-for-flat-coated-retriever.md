@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "flat-coated-retriev
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/flat-coated-retriever", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/12486139/pexels-photo-12486139.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/12486139/pexels-photo-12486139.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Black dog enjoying a walk in a scenic snowy mountain landscape during early spring."
+imageAlt: "Black dog enjoying a walk in a scenic snowy mountain landscape during early spring."
+imageSource: "pexels"
+imageCredit: "Photo by Alina Bystrova on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/photo-of-a-black-dog-in-the-field-12486139/"
+imageSearchQuery: "Flat-Coated Retriever dog eating healthy food"
 ---
 
 Feeding a Flat-Coated Retriever well isn't as simple as grabbing the bag with the highest rating. Flat-Coated Retrievers are large dogs with active energy, a Average lifespan of 9 years, and nutritional vulnerabilities that change across their life stages.

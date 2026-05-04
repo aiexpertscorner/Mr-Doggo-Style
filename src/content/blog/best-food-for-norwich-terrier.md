@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "norwich-terrier", "
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/norwich-terrier", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/7210443/pexels-photo-7210443.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/7210443/pexels-photo-7210443.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "From above adorable Norwich Terrier dog with tongue out walking on asphalt path and looking away on sunny day"
+imageAlt: "From above adorable Norwich Terrier dog with tongue out walking on asphalt path and looking away on sunny day"
+imageSource: "pexels"
+imageCredit: "Photo by Blue Bird on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/cute-dog-walking-on-asphalt-road-7210443/"
+imageSearchQuery: "Norwich Terrier dog eating healthy food"
 ---
 
 Feeding a Norwich Terrier well isn't as simple as grabbing the bag with the highest rating. Norwich Terriers are small dogs with active energy, a Lifespan of 12–15 years, and nutritional vulnerabilities that change across their life stages.

@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "lhasa-apso", "Lhasa
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/lhasa-apso", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/12800450/pexels-photo-12800450.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/12800450/pexels-photo-12800450.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable Lhasa Apso dog standing on a path surrounded by nature."
+imageAlt: "Adorable Lhasa Apso dog standing on a path surrounded by nature."
+imageSource: "pexels"
+imageCredit: "Photo by Alexas Fotos on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/brown-dog-on-dirt-road-12800450/"
+imageSearchQuery: "Lhasa Apso dog eating healthy food"
 ---
 
 Feeding a Lhasa Apso well isn't as simple as grabbing the bag with the highest rating. Lhasa Apsos are small dogs with regular energy, a Average lifespan of 13.9 years, and nutritional vulnerabilities that change across their life stages.

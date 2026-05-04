@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "hamiltonstovare", "
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/hamiltonstovare", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/8434633/pexels-photo-8434633.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/8434633/pexels-photo-8434633.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A stainless steel dog bowl filled with dry dog treats on a wooden floor."
+imageAlt: "A stainless steel dog bowl filled with dry dog treats on a wooden floor."
+imageSource: "pexels"
+imageCredit: "Photo by MART  PRODUCTION on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/bowl-of-dog-food-8434633/"
+imageSearchQuery: "Hamiltonstovare dog eating healthy food"
 ---
 
 Feeding a Hamiltonstovare well isn't as simple as grabbing the bag with the highest rating. Hamiltonstovares are large dogs with active energy, a Lifespan of 14–17 years, and nutritional vulnerabilities that change across their life stages.

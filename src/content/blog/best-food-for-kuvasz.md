@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "kuvasz", "Kuvasz", 
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/kuvasz", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/27046439/pexels-photo-27046439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/27046439/pexels-photo-27046439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A white dog eats from a bowl on the grass outside, with a second bowl nearby."
+imageAlt: "A white dog eats from a bowl on the grass outside, with a second bowl nearby."
+imageSource: "pexels"
+imageCredit: "Photo by Magda Ehlers on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-with-bowls-of-food-27046439/"
+imageSearchQuery: "Kuvasz dog eating healthy food"
 ---
 
 Feeding a Kuvasz well isn't as simple as grabbing the bag with the highest rating. Kuvaszs are large dogs with regular energy, a Lifespan of 10–12 years, and nutritional vulnerabilities that change across their life stages.

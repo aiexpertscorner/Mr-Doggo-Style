@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "miniature-pinscher"
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/miniature-pinscher", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/11654885/pexels-photo-11654885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/11654885/pexels-photo-11654885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A cute Miniature Pinscher dog sitting among autumn leaves outdoors."
+imageAlt: "A cute Miniature Pinscher dog sitting among autumn leaves outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by adrian vieriu on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-shot-of-a-dog-11654885/"
+imageSearchQuery: "Miniature Pinscher dog eating healthy food"
 ---
 
 Feeding a Miniature Pinscher well isn't as simple as grabbing the bag with the highest rating. Miniature Pinschers are small dogs with regular energy, a Lifespan of 12–16 years, and nutritional vulnerabilities that change across their life stages.

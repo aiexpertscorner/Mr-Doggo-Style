@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "finnish-spitz", "Fi
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/finnish-spitz", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/10782387/pexels-photo-10782387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/10782387/pexels-photo-10782387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Profile of a Finnish Lapphund dog in a snowy backyard setting, showing off its thick fur coat."
+imageAlt: "Profile of a Finnish Lapphund dog in a snowy backyard setting, showing off its thick fur coat."
+imageSource: "pexels"
+imageCredit: "Photo by chickenbunny on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/dog-near-wooden-fence-in-close-up-photography-10782387/"
+imageSearchQuery: "Finnish Spitz dog eating healthy food"
 ---
 
 Feeding a Finnish Spitz well isn't as simple as grabbing the bag with the highest rating. Finnish Spitzs are medium dogs with active energy, a Lifespan of 13–15 years, and nutritional vulnerabilities that change across their life stages.

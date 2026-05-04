@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "icelandic-sheepdog"
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/icelandic-sheepdog", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/10935072/pexels-photo-10935072.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/10935072/pexels-photo-10935072.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "A beautiful Icelandic Sheepdog sitting in a snow-covered landscape in Moscow during daylight."
+imageAlt: "A beautiful Icelandic Sheepdog sitting in a snow-covered landscape in Moscow during daylight."
+imageSource: "pexels"
+imageCredit: "Photo by Nikita Igonkin on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/icelandic-sheepdog-close-up-photo-10935072/"
+imageSearchQuery: "Icelandic Sheepdog dog eating healthy food"
 ---
 
 Feeding a Icelandic Sheepdog well isn't as simple as grabbing the bag with the highest rating. Icelandic Sheepdogs are medium dogs with active energy, a Lifespan of 12–14 years, and nutritional vulnerabilities that change across their life stages.

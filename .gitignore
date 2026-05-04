@@ -25,3 +25,6 @@ yarn-error.log*
 .wrangler/
 src/styles/tokens copy.css
 /.claude
+*.md
+*.md
+/src/content/blog

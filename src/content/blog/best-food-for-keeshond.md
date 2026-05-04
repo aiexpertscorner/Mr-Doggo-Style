@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "keeshond", "Keeshon
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/keeshond", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/36953706/pexels-photo-36953706.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/36953706/pexels-photo-36953706.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Adorable Keeshond dog close-up with fluffy fur beside a mossy tree trunk outdoors."
+imageAlt: "Adorable Keeshond dog close-up with fluffy fur beside a mossy tree trunk outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by JacLou- DL on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/close-up-of-fluffy-keeshond-dog-by-tree-36953706/"
+imageSearchQuery: "Keeshond dog eating healthy food"
 ---
 
 Feeding a Keeshond well isn't as simple as grabbing the bag with the highest rating. Keeshonds are medium dogs with regular energy, a Lifespan of 12–15 years, and nutritional vulnerabilities that change across their life stages.

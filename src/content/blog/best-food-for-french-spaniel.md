@@ -35,6 +35,14 @@ awinTopicTags: ["food", "dog-food", "dog food", "Dog Food", "french-spaniel", "F
 amazonQueries: ["airtight dog food storage container", "slow feeder dog bowl", "puppy food small breed large breed", "senior dog food", "dog training treats", "no pull dog harness"]
 internalLinkTargets: ["/breeds/french-spaniel", "/categories/dog-food", "/cost-calculator", "/dog-names", "/categories/puppy", "/categories/senior-dogs", "/categories/insurance"]
 indexInBlog: false
+heroImage: "https://images.pexels.com/photos/34975281/pexels-photo-34975281.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+image: "https://images.pexels.com/photos/34975281/pexels-photo-34975281.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+heroImageAlt: "Cocker Spaniel dog rests on rocky terrain in Ogliastro with mountain backdrop. Beautiful day outdoors."
+imageAlt: "Cocker Spaniel dog rests on rocky terrain in Ogliastro with mountain backdrop. Beautiful day outdoors."
+imageSource: "pexels"
+imageCredit: "Photo by SlimMars 13 on Pexels"
+imageCreditUrl: "https://www.pexels.com/photo/cocker-spaniel-relaxing-in-ogliastro-scenery-34975281/"
+imageSearchQuery: "French Spaniel dog eating healthy food"
 ---
 
 Feeding a French Spaniel well isn't as simple as grabbing the bag with the highest rating. French Spaniels are medium dogs with regular energy, a Lifespan of 10–12 years, and nutritional vulnerabilities that change across their life stages.
