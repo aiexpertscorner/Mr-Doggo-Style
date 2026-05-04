@@ -1,5 +1,4 @@
 ---
-// BreedCard.astro — reads breed images from image-lookup.json
 import imageLookup from '../data/image-lookup.json';
 
 export interface Props {
@@ -29,80 +28,212 @@ const energyEmoji = {
   "Couch Potato":           "🛋️",
 }[energy?.category || ''] || "🐕";
 
-// Get real image from lookup JSON (populated by fetch-all-images.mjs)
 const lookupUrl = (imageLookup as any).breeds?.[slug];
 const hasImage  = lookupUrl && lookupUrl.startsWith('https://images.dog.ceo');
 ---
-<a href={href}
-   style={`display:flex;flex-direction:column;background:#222;border:2px solid rgba(255,255,255,.1);text-decoration:none;overflow:hidden;transition:all .15s`}
-   onmouseover="this.style.borderColor='#CCFF00';this.style.transform='translate(-2px,-2px)';this.style.boxShadow='4px 4px 0 #CCFF00'"
-   onmouseout="this.style.borderColor='rgba(255,255,255,.1)';this.style.transform='';this.style.boxShadow=''">
+<a href={href} class:list={['breed-card', { 'breed-card--compact': compact }]}>
 
-  <!-- Breed photo -->
-  <div style={`background:#1a1a1a;overflow:hidden;position:relative;${compact ? 'height:140px' : 'aspect-ratio:4/3'}`}>
-    {hasImage ? (
+  <div class="breed-card__media">
+    <!-- Placeholder sits at z-index 0; image covers it when loaded -->
+    <div class="breed-card__placeholder" aria-hidden="true">
+      <span class="breed-card__placeholder-emoji">🐕</span>
+      {!hasImage && <span class="breed-card__placeholder-name">{name}</span>}
+    </div>
+
+    {hasImage && (
       <img
         src={lookupUrl}
         alt={`${name} dog`}
         loading="lazy"
-        class="breed-card-img"
+        class="breed-card__img"
         data-slug={slug}
-        style="width:100%;height:100%;object-fit:cover;transition:transform .35s,filter .35s"
       />
-    ) : (
-      <!-- Placeholder while image-lookup.json hasn't been populated yet -->
-      <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.3rem;background:linear-gradient(135deg,#1a1a1a,#2a2a2a)">
-        <span style="font-size:2.5rem">🐕</span>
-        <span style="font-family:'Space Mono',monospace;font-size:.45rem;color:#444;text-transform:uppercase;letter-spacing:.06em">{name}</span>
-      </div>
     )}
-    <!-- Lime gradient overlay -->
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.65),transparent 50%);pointer-events:none"></div>
-    <!-- Popularity badge -->
+
+    <div class="breed-card__overlay" aria-hidden="true"></div>
+
     {popularity && popularity <= 20 && (
-      <div style="position:absolute;top:8px;left:8px;background:#CCFF00;color:#0A0A0A;font-family:'Archivo Black',sans-serif;font-size:.52rem;text-transform:uppercase;padding:.12rem .45rem;border:1px solid #0A0A0A">
-        #{popularity}
-      </div>
+      <div class="breed-card__badge">#{popularity}</div>
     )}
   </div>
 
-  <div style="padding:.82rem">
-    <h3 style="font-family:'Archivo Black',sans-serif;font-size:.8rem;text-transform:uppercase;color:#F0F0F0;margin:0 0 .18rem;line-height:1.2">{name}</h3>
+  <div class="breed-card__body">
+    <h3 class="breed-card__title">{name}</h3>
     {!compact && (
-      <p style="font-family:'Space Mono',monospace;font-size:.5rem;color:#555;text-transform:uppercase;margin:0 0 .4rem;letter-spacing:.04em">
+      <p class="breed-card__group">
         {group.replace(' Group','').replace(' Service','')}
       </p>
     )}
     {temperament && !compact && (
-      <p style="font-family:'Barlow Condensed',sans-serif;font-size:.78rem;color:#CCFF00;margin:0 0 .35rem;text-transform:uppercase;letter-spacing:.03em">
+      <p class="breed-card__temperament">
         {temperament.split(',')[0].trim()}
       </p>
     )}
-    <div style="display:flex;flex-wrap:wrap;gap:.28rem">
-      <span style="background:rgba(255,255,255,.06);font-family:'Archivo Black',sans-serif;font-size:.52rem;text-transform:uppercase;padding:.12rem .38rem;color:#888">{size_category}</span>
-      <span style="background:rgba(255,255,255,.06);font-family:'Archivo Black',sans-serif;font-size:.52rem;text-transform:uppercase;padding:.12rem .38rem;color:#888">{energyEmoji}</span>
+    <div class="breed-card__chips">
+      <span class="breed-card__chip">{size_category}</span>
+      <span class="breed-card__chip">{energyEmoji}</span>
     </div>
-    <div style="font-family:'Archivo Black',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;color:#CCFF00;margin-top:.55rem">VIEW GUIDE →</div>
+    <div class="breed-card__cta">VIEW GUIDE →</div>
   </div>
 </a>
 
+<style>
+  .breed-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--sw-bg);
+    border: 2px solid var(--sw-border);
+    text-decoration: none;
+    overflow: hidden;
+    transition:
+      border-color var(--transition-base),
+      transform var(--transition-base),
+      box-shadow var(--transition-base);
+  }
+
+  .breed-card:hover {
+    border-color: var(--sw-accent);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--sw-shadow-hard);
+  }
+
+  /* ── Media ──────────────────────────────────────────── */
+  .breed-card__media {
+    position: relative;
+    background: var(--sw-bg-deep);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .breed-card--compact .breed-card__media {
+    aspect-ratio: unset;
+    height: clamp(100px, 25vw, 140px);
+  }
+
+  /* ── Placeholder ────────────────────────────────────── */
+  .breed-card__placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--space-1);
+    background: linear-gradient(135deg, var(--sw-bg-deep), var(--sw-bg-raised));
+  }
+
+  .breed-card__placeholder-emoji {
+    font-size: var(--text-4xl);
+  }
+
+  .breed-card__placeholder-name {
+    font-family: var(--sw-font-mono);
+    font-size: var(--sw-text-nano);
+    color: var(--sw-text-faint);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label);
+  }
+
+  /* ── Image ──────────────────────────────────────────── */
+  .breed-card__img {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s, filter 0.35s;
+  }
+
+  .breed-card:hover .breed-card__img {
+    transform: scale(1.08);
+  }
+
+  /* ── Overlay & Badge ────────────────────────────────── */
+  .breed-card__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(to top, var(--sw-overlay), transparent 50%);
+    pointer-events: none;
+  }
+
+  .breed-card__badge {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+    z-index: 3;
+    background: var(--sw-accent);
+    color: var(--sw-midnight);
+    font-family: var(--sw-font-heading);
+    font-size: var(--sw-text-label);
+    text-transform: uppercase;
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--sw-midnight);
+  }
+
+  /* ── Body ───────────────────────────────────────────── */
+  .breed-card__body {
+    padding: var(--space-3);
+  }
+
+  .breed-card__title {
+    font-family: var(--sw-font-heading);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    color: var(--sw-text);
+    margin: 0 0 var(--space-1);
+    line-height: var(--leading-tight);
+  }
+
+  .breed-card__group {
+    font-family: var(--sw-font-mono);
+    font-size: var(--text-xs);
+    color: var(--sw-text-dim);
+    text-transform: uppercase;
+    margin: 0 0 var(--space-1);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .breed-card__temperament {
+    font-family: var(--sw-font-body);
+    font-size: var(--text-sm);
+    color: var(--sw-accent);
+    margin: 0 0 var(--space-1);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-snug);
+  }
+
+  .breed-card__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+  }
+
+  .breed-card__chip {
+    background: var(--sw-chip-bg);
+    font-family: var(--sw-font-heading);
+    font-size: var(--sw-text-label);
+    text-transform: uppercase;
+    padding: var(--space-1) var(--space-2);
+    color: var(--sw-text-muted);
+  }
+
+  .breed-card__cta {
+    font-family: var(--sw-font-heading);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label);
+    color: var(--sw-accent);
+    margin-top: var(--space-2);
+  }
+</style>
+
 <script>
-  document.querySelectorAll('img.breed-card-img').forEach(img => {
-    img.addEventListener('mouseover', () => {
-      img.style.transform = 'scale(1.08)';
-    });
-    img.addEventListener('mouseout', () => {
-      img.style.transform = '';
-    });
+  document.querySelectorAll('img.breed-card__img').forEach(img => {
     img.addEventListener('error', function() {
-      // Replace with emoji placeholder on error
-      const parent = this.parentElement;
-      if (parent) {
-        parent.innerHTML =
-          '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.3rem;background:linear-gradient(135deg,#1a1a1a,#2a2a2a)">' +
-          '<span style="font-size:2.5rem">🐕</span>' +
-          '</div>';
-      }
+      (this as HTMLImageElement).style.display = 'none';
     });
   });
 </script>

@@ -15,41 +15,162 @@ const { name, asin, price, rating = 4.7, badge = "Editor's Pick", image, tag = '
 const url = `https://www.amazon.com/dp/${asin}/?tag=${tag}`;
 ---
 
-<style>
-  .sidebar-img { transition: transform 0.25s ease; }
-  .sidebar-img-link:hover .sidebar-img { transform: scale(1.05); }
-  .sidebar-cta-btn:hover { opacity: 0.88; }
-</style>
+<div class="sidebar-widget">
+  <div class="sidebar-widget__badge">{badge}</div>
 
-<div style="border:1px solid var(--color-border);border-radius:var(--radius-2xl);background:var(--color-bg);overflow:hidden;box-shadow:var(--shadow-sm)">
-  <div style="background:var(--color-accent);padding:.35rem .9rem;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff">{badge}</div>
-  <a href={url} rel="nofollow sponsored" target="_blank" class="sidebar-img-link"
-     style="display:block;background:var(--color-bg-soft);overflow:hidden;aspect-ratio:1">
+  <a href={url} rel="nofollow sponsored" target="_blank" class="sidebar-widget__img-link">
     {image ? (
-      <img src={image} alt={name} loading="lazy" width="300" height="300" class="sidebar-img"
-           style="width:100%;height:100%;object-fit:contain;padding:.75rem;display:block" />
+      <img
+        src={image}
+        alt={name}
+        loading="lazy"
+        width="300"
+        height="300"
+        class="sidebar-widget__img"
+      />
     ) : (
-      <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center">
-        <span style="font-size:2.5rem">🐾</span>
+      <div class="sidebar-widget__placeholder">
+        <span class="sidebar-widget__placeholder-emoji">🐾</span>
       </div>
     )}
   </a>
-  <div style="padding:1.1rem">
-    <h4 style="font-size:.85rem;font-weight:700;color:var(--color-heading);margin:0 0 .4rem;line-height:1.3">{name}</h4>
-    <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem">
-      <span style="color:var(--color-accent);font-size:.8rem">{'★'.repeat(Math.round(rating))}</span>
-      {price && <span style="font-weight:700;color:var(--color-heading);font-size:.95rem">${price.toFixed(2)}</span>}
+
+  <div class="sidebar-widget__body">
+    <h4 class="sidebar-widget__name">{name}</h4>
+    <div class="sidebar-widget__meta">
+      <span class="sidebar-widget__stars">{'★'.repeat(Math.round(rating))}</span>
+      {price && <span class="sidebar-widget__price">${price.toFixed(2)}</span>}
     </div>
     {ENABLE_AMAZON_BUTTONS ? (
-      <a href={url} rel="nofollow sponsored" target="_blank" aria-label="Available at Amazon.com"
-        style="display:flex;justify-content:center;line-height:0;margin-bottom:.45rem">
-        <img src="/images/amazon/available-at-amazon.png" alt="Available at Amazon" height="36" loading="lazy" style="height:36px;width:auto;display:block" />
+      <a href={url} rel="nofollow sponsored" target="_blank"
+         aria-label="Available at Amazon.com"
+         class="sidebar-widget__amazon-link">
+        <img
+          src="/images/amazon/available-at-amazon.png"
+          alt="Available at Amazon"
+          height="36"
+          loading="lazy"
+          class="sidebar-widget__amazon-img"
+        />
       </a>
     ) : (
-      <a href={url} rel="nofollow sponsored" target="_blank" class="sidebar-cta-btn"
-        style="display:block;text-align:center;font-size:.8rem;font-weight:700;padding:.6rem;border-radius:var(--radius-xl);background:var(--color-accent);color:#fff;text-decoration:none;transition:opacity .2s">
+      <a href={url} rel="nofollow sponsored" target="_blank"
+         class="sidebar-widget__cta">
         Check price →
       </a>
     )}
   </div>
 </div>
+
+<style>
+  .sidebar-widget {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    background: var(--color-bg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .sidebar-widget__badge {
+    background: var(--color-accent);
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--sw-text-label);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-inverse);
+  }
+
+  .sidebar-widget__img-link {
+    display: block;
+    background: var(--color-bg-soft);
+    overflow: hidden;
+    aspect-ratio: 1;
+    transition: transform 0.25s ease;
+  }
+
+  .sidebar-widget__img-link:hover .sidebar-widget__img {
+    transform: scale(1.05);
+  }
+
+  .sidebar-widget__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: var(--space-3);
+    display: block;
+    transition: transform 0.25s ease;
+  }
+
+  .sidebar-widget__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-widget__placeholder-emoji {
+    font-size: var(--text-4xl);
+  }
+
+  .sidebar-widget__body {
+    padding: var(--space-4);
+  }
+
+  .sidebar-widget__name {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    color: var(--color-heading);
+    margin: 0 0 var(--space-2);
+    line-height: var(--leading-snug);
+  }
+
+  .sidebar-widget__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+
+  .sidebar-widget__stars {
+    color: var(--color-accent);
+    font-size: var(--text-sm);
+  }
+
+  .sidebar-widget__price {
+    font-weight: var(--weight-bold);
+    color: var(--color-heading);
+    font-size: var(--text-base);
+  }
+
+  .sidebar-widget__amazon-link {
+    display: flex;
+    justify-content: center;
+    line-height: 0;
+    margin-bottom: var(--space-2);
+  }
+
+  .sidebar-widget__amazon-img {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+
+  .sidebar-widget__cta {
+    display: block;
+    text-align: center;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-xl);
+    background: var(--color-accent);
+    color: var(--color-text-inverse);
+    text-decoration: none;
+    transition: opacity var(--transition-base);
+  }
+
+  .sidebar-widget__cta:hover {
+    opacity: 0.88;
+  }
+</style>
