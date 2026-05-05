@@ -30,7 +30,7 @@ const breadcrumbLd = JSON.stringify({
       <span class="inline-block font-sans text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style="background:var(--color-accent);color:white">
         Est. 2024
       </span>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4 leading-tight" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
+      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4 leading-tight" style="font-family:var(--font-serif);color:var(--color-heading)">
         About PupWiki
       </h1>
       <p class="font-sans text-lg max-w-2xl mx-auto leading-relaxed" style="color:var(--color-muted)">
@@ -45,7 +45,7 @@ const breadcrumbLd = JSON.stringify({
     <section class="grid md:grid-cols-2 gap-10 items-center">
       <div>
         <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:var(--color-accent)">Our story</p>
-        <h2 class="font-display text-3xl font-bold mb-5" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
+        <h2 class="font-display text-3xl font-bold mb-5" style="font-family:var(--font-serif);color:var(--color-heading)">
           Built out of frustration
         </h2>
         <div class="space-y-4 font-sans text-base leading-relaxed" style="color:var(--color-body-soft)">
@@ -63,8 +63,8 @@ const breadcrumbLd = JSON.stringify({
             ['125+', 'Products reviewed'],
             ['7,000+', 'Names curated'],
           ].map(([num, label]) => (
-            <div class="rounded-2xl p-3" style="background:white">
-              <div class="font-display text-2xl font-black" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-accent)">{num}</div>
+            <div class="rounded-2xl p-3" style="background:var(--color-bg)">
+              <div class="font-display text-2xl font-black" style="font-family:var(--font-serif);color:var(--color-accent)">{num}</div>
               <div class="font-sans text-xs mt-0.5" style="color:var(--color-muted)">{label}</div>
             </div>
           ))}
@@ -75,7 +75,7 @@ const breadcrumbLd = JSON.stringify({
     <!-- What makes us different -->
     <section>
       <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:var(--color-accent)">Our approach</p>
-      <h2 class="font-display text-3xl font-bold mb-8" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
+      <h2 class="font-display text-3xl font-bold mb-8" style="font-family:var(--font-serif);color:var(--color-heading)">
         What makes us different
       </h2>
       <div class="grid sm:grid-cols-2 gap-5">
@@ -111,7 +111,7 @@ const breadcrumbLd = JSON.stringify({
             body: 'Brands cannot pay to appear in our recommendations. Our top picks are determined by our scoring methodology. Full stop.',
           },
         ].map(item => (
-          <div class="rounded-2xl p-5" style="background:white;border:1px solid var(--color-border-warm)">
+          <div class="rounded-2xl p-5" style="background:var(--color-bg);border:1px solid var(--color-border-warm)">
             <div style="font-size:1.75rem;margin-bottom:0.75rem">{item.icon}</div>
             <h3 class="font-sans font-bold text-base mb-2" style="color:var(--color-heading)">{item.title}</h3>
             <p class="font-sans text-sm leading-relaxed" style="color:var(--color-muted)">{item.body}</p>
@@ -121,9 +121,9 @@ const breadcrumbLd = JSON.stringify({
     </section>
 
     <!-- What we cover -->
-    <section class="rounded-3xl p-8" style="background:white;border:1px solid var(--color-border-warm)">
+    <section class="rounded-3xl p-8" style="background:var(--color-bg);border:1px solid var(--color-border-warm)">
       <p class="font-sans text-xs font-bold uppercase tracking-widest mb-2" style="color:var(--color-accent)">Coverage</p>
-      <h2 class="font-display text-3xl font-bold mb-6" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
+      <h2 class="font-display text-3xl font-bold mb-6" style="font-family:var(--font-serif);color:var(--color-heading)">
         What we cover
       </h2>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -154,7 +154,7 @@ const breadcrumbLd = JSON.stringify({
       <div class="flex gap-4 items-start">
         <span style="font-size:2rem;flex-shrink:0">⚖️</span>
         <div>
-          <h2 class="font-display text-2xl font-bold mb-3" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
+          <h2 class="font-display text-2xl font-bold mb-3" style="font-family:var(--font-serif);color:var(--color-heading)">
             How we make money — transparently
           </h2>
           <div class="space-y-3 font-sans text-sm leading-relaxed" style="color:var(--color-body-soft)">
@@ -171,7 +171,7 @@ const breadcrumbLd = JSON.stringify({
 
     <!-- Contact CTA -->
     <section class="text-center">
-      <h2 class="font-display text-2xl font-bold mb-3" style="font-family:'Playfair Display',Georgia,serif;color:var(--color-heading)">
+      <h2 class="font-display text-2xl font-bold mb-3" style="font-family:var(--font-serif);color:var(--color-heading)">
         Questions or feedback?
       </h2>
       <p class="font-sans text-base mb-6" style="color:var(--color-muted)">

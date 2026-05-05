@@ -1,4 +1,6 @@
 ---
+import { SITE_LOGO, SITE_NAME, SITE_TAGLINE } from '../../lib/site-config';
+
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
@@ -29,17 +31,19 @@ const allMobileLinks = [...navLinks, ...utilityLinks];
     <div class="site-header__inner">
 
       <!-- Brand -->
-      <a href="/" class="site-brand" aria-label="PupWiki home">
+      <a href="/" class="site-brand" aria-label={`${SITE_NAME} home`}>
         <img
-          src="/Pupwiki-logo.png"
-          alt="PupWiki"
+          src={SITE_LOGO}
+          alt={SITE_NAME}
           class="site-brand__logo"
           loading="eager"
           decoding="async"
+          width="288"
+          height="88"
         />
         <div class="site-brand__meta">
-          <span class="site-brand__name">PupWiki</span>
-          <span class="site-brand__tagline">Trusted guidance for dog parents</span>
+          <span class="site-brand__name">{SITE_NAME}</span>
+          <span class="site-brand__tagline">{SITE_TAGLINE}</span>
         </div>
       </a>
 
@@ -102,7 +106,7 @@ const allMobileLinks = [...navLinks, ...utilityLinks];
       <div class="mobile-panel__inner">
 
         <div class="mobile-panel__brand-note">
-          <p class="mobile-panel__brand-label">PupWiki</p>
+          <p class="mobile-panel__brand-label">{SITE_NAME}</p>
           <p class="mobile-panel__brand-sub">Research breeds, compare costs, and care smarter.</p>
         </div>
 
