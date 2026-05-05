@@ -5,6 +5,7 @@ import {
   SITE_EMAIL,
   SITE_TAGLINE,
   SITE_DESCRIPTION,
+  SITE_LOGO,
   AFFILIATE_DISCLOSURE_SHORT,
   BREEDS_PAGE_PATH,
   DOG_NAMES_PAGE_PATH,
@@ -68,11 +69,13 @@ const navSections = [
         <div class="site-footer__brand">
           <a href="/" aria-label={`${SITE_NAME} home`}>
             <img
-              src="/Pupwiki-logo.png"
+              src={SITE_LOGO}
               alt={SITE_NAME}
               class="site-brand__logo"
               loading="lazy"
               decoding="async"
+              width="288"
+              height="88"
             />
           </a>
 
