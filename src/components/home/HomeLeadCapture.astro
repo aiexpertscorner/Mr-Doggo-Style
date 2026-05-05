@@ -49,9 +49,9 @@ const hasLiveForm = typeof formAction === 'string' && formAction.trim().length >
 
 <section id={id} class="py-12 sm:py-14 lg:py-16">
   <div class="mx-auto max-w-7xl px-4 sm:px-5 lg:px-6">
-    <div class="overflow-hidden rounded-3xl bg-slate-900 px-6 py-10 text-white sm:px-8 lg:px-10">
+    <div class="overflow-hidden rounded-3xl bg-[var(--color-surface-navy)] px-6 py-10 text-[var(--color-text-inverse)] sm:px-8 lg:px-10">
       <div class="mx-auto max-w-3xl text-center">
-        <p class="text-xs font-bold uppercase tracking-[0.16em] text-teal-300">
+        <p class="text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-accent)]">
           Email updates
         </p>
 
@@ -59,7 +59,7 @@ const hasLiveForm = typeof formAction === 'string' && formAction.trim().length >
           {title}
         </h2>
 
-        <p class="mt-4 text-base leading-7 text-slate-300">
+        <p class="mt-4 text-base leading-7 text-[var(--color-placeholder)]">
           {description}
         </p>
 
@@ -78,12 +78,12 @@ const hasLiveForm = typeof formAction === 'string' && formAction.trim().length >
               name="email"
               required
               placeholder={emailPlaceholder}
-              class="w-full rounded-xl border border-white/10 bg-white px-4 py-3 text-sm text-slate-900 outline-none ring-0 placeholder:text-slate-500"
+              class="w-full rounded-xl border border-white/10 bg-[var(--color-bg)] px-4 py-3 text-sm text-[var(--color-heading)] outline-none ring-0 placeholder:text-[var(--color-muted)]"
             />
 
             <button
               type="submit"
-              class="inline-flex items-center justify-center rounded-xl bg-teal-500 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-teal-400"
+              class="inline-flex items-center justify-center rounded-xl bg-[var(--color-accent)] px-5 py-3 text-sm font-bold text-[var(--color-text-inverse)] transition hover:bg-[var(--color-accent-hover)]"
             >
               {buttonLabel}
             </button>
@@ -92,21 +92,21 @@ const hasLiveForm = typeof formAction === 'string' && formAction.trim().length >
           <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a
               href={fallbackPrimary.href}
-              class="inline-flex items-center justify-center rounded-xl bg-teal-500 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-teal-400"
+              class="inline-flex items-center justify-center rounded-xl bg-[var(--color-accent)] px-5 py-3 text-sm font-bold text-[var(--color-text-inverse)] transition hover:bg-[var(--color-accent-hover)]"
             >
               {fallbackPrimary.label}
             </a>
 
             <a
               href={fallbackSecondary.href}
-              class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-[var(--color-text-inverse)] transition hover:bg-white/10"
             >
               {fallbackSecondary.label}
             </a>
           </div>
         )}
 
-        <p class="mt-4 text-xs leading-5 text-slate-400">
+        <p class="mt-4 text-xs leading-5 text-[var(--color-subtle)]">
           {disclaimer}
         </p>
       </div>
