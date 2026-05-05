@@ -5,53 +5,53 @@ const UPDATED = 'April 23, 2026';
 
 <BaseLayout
   title="Affiliate Disclosure — PupWiki"
-  description="Full affiliate disclosure for PupWiki. We earn commissions from Amazon Associates and selected AWIN affiliate partners. Read how this works."
+  description="Full affiliate disclosure for PupWiki. We earn commissions from Amazon Associates and selected affiliate partners. Read how this works."
   canonicalUrl="https://pupwiki.com/disclosure"
 >
 
   <!-- Hero -->
-  <div style="background:linear-gradient(to bottom,#f5e8d0,#fdf8f0);border-bottom:1px solid #e8ccaa">
+  <div class="disclosure-hero">
     <div class="max-w-3xl mx-auto px-4 py-14 sm:py-18">
-      <nav class="font-sans text-sm mb-6 flex items-center gap-1.5" style="color:#94a3b8">
-        <a href="/" class="hover:underline" style="color:#a0621c">Home</a>
+      <nav class="disclosure-breadcrumb">
+        <a href="/">Home</a>
         <span>›</span>
-        <span style="color:#475569">Affiliate Disclosure</span>
+        <span class="disclosure-breadcrumb__current">Affiliate Disclosure</span>
       </nav>
-      <h1 class="font-display text-4xl sm:text-5xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif;color:#1e293b">
+      <h1 class="disclosure-h1">
         Affiliate Disclosure
       </h1>
-      <p class="font-sans text-sm" style="color:#94a3b8">Last updated: {UPDATED}</p>
+      <p class="disclosure-date">Last updated: {UPDATED}</p>
     </div>
   </div>
 
   <div class="max-w-3xl mx-auto px-4 py-14">
 
     <!-- FTC notice banner -->
-    <div class="rounded-2xl p-5 mb-10 flex gap-4" style="background:linear-gradient(135deg,#fef3c7,#fdf8f0);border:2px solid #fbbf24">
-      <span style="font-size:1.5rem;flex-shrink:0">⚠️</span>
-      <div class="font-sans text-sm leading-relaxed" style="color:#92400e">
+    <div class="disclosure-ftc">
+      <span class="disclosure-ftc__icon">⚠️</span>
+      <div class="disclosure-ftc__body">
         <strong>Required disclosure:</strong> PupWiki participates in affiliate advertising programs. This page explains exactly how those relationships work and how they affect (and don't affect) our editorial decisions. This disclosure complies with FTC guidelines on endorsements and testimonials.
       </div>
     </div>
 
-    <div class="prose prose-lg max-w-none" style="font-family:'Source Serif 4',Georgia,serif;color:#475569">
+    <div class="disclosure-prose">
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Amazon Associates Program</h2>
+      <h2>Amazon Associates Program</h2>
       <p>PupWiki (pupwiki.com) is a participant in the <strong>Amazon Services LLC Associates Program</strong>, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
       <p>When you click a product link on our site that leads to Amazon and complete a qualifying purchase, we earn a small commission — typically between 1% and 4% of the purchase price for pet supply categories. <strong>The price you pay is exactly the same whether you use our link or navigate directly to Amazon.</strong> Amazon pays our commission from their own margin, not from yours.</p>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">AWIN Affiliate Partners</h2>
-      <p>PupWiki participates in affiliate programs through the <strong>AWIN affiliate network</strong>. This includes selected pet-focused brands and retailers that we have editorially assessed and chosen to feature. When you click an affiliate link to one of these partners and complete a qualifying purchase, we may earn a commission.</p>
-      <p>Current active AWIN partners include: JugBow, ChefPaw, Raw Wild, and Crown &amp; Paw. As with Amazon, the price you pay is not affected by using our affiliate links. Partner relationships are subject to change; this disclosure is updated when they do.</p>
+      <h2>Partner Affiliate Programs</h2>
+      <p>PupWiki participates in affiliate programs through a partner affiliate network. This includes selected pet-focused brands and retailers that we have editorially assessed and chosen to feature. When you click an affiliate link to one of these partners and complete a qualifying purchase, we may earn a commission.</p>
+      <p>Current active affiliate partners include: JugBow, ChefPaw, Raw Wild, and Crown &amp; Paw. As with Amazon, the price you pay is not affected by using our affiliate links. Partner relationships are subject to change; this disclosure is updated when they do.</p>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Other Affiliate Programs</h2>
+      <h2>Other Affiliate Programs</h2>
       <p>We may participate in additional affiliate programs from time to time, including programs offered by pet brands, DNA testing companies, GPS tracker manufacturers, and pet food subscription services. Any such relationship will be covered by this disclosure.</p>
       <p>All affiliate links on this site are functional links — they direct you to a product page where you can read full product details and purchase if you choose. We do not use affiliate link disguising or deceptive redirect practices.</p>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">How Affiliate Relationships Affect Our Reviews</h2>
+      <h2>How Affiliate Relationships Affect Our Reviews</h2>
       <p>The short answer: they don't — and here is why we can say that with confidence:</p>
 
-      <div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:0.75rem">
+      <div class="disclosure-check-list">
         {[
           'Our product scoring is based on a defined methodology applied before we know or consider affiliate commission rates.',
           'We include genuine cons in every review, including cons that may reduce conversion on that product.',
@@ -60,30 +60,189 @@ const UPDATED = 'April 23, 2026';
           'We do not accept payment from brands to improve their ranking in our recommendations.',
           'We link to the retailer offering the best overall value for the reader, regardless of which affiliate partner pays a higher commission.',
         ].map(item => (
-          <div style="display:flex;gap:0.75rem;align-items:flex-start;padding:0.75rem 1rem;background:#f0fdf4;border-radius:0.75rem;border:1px solid #bbf7d0">
-            <span style="color:#16a34a;font-weight:bold;flex-shrink:0">✓</span>
-            <p style="margin:0;font-size:0.875rem;line-height:1.6;color:#166534">{item}</p>
+          <div class="disclosure-check-item">
+            <span class="disclosure-check-icon">✓</span>
+            <p class="disclosure-check-text">{item}</p>
           </div>
         ))}
       </div>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Identifying Affiliate Links</h2>
-      <p>Affiliate links on PupWiki are typically displayed as buttons or inline text links labelled "Check price on Amazon," "View on [Partner]," or similar. You may also identify affiliate links by the tracking parameters in the URL (e.g. <code style="font-size:0.8rem;background:#f5f5f5;padding:2px 6px;border-radius:4px">?tag=aiexpertscorn-20</code> for Amazon links).</p>
+      <h2>Identifying Affiliate Links</h2>
+      <p>Affiliate links on PupWiki are typically displayed as buttons or inline text links labelled "Check price on Amazon," "View on [Partner]," or similar. You may also identify affiliate links by the tracking parameters in the URL (e.g. <code>?tag=aiexpertscorn-20</code> for Amazon links).</p>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Price Accuracy</h2>
+      <h2>Price Accuracy</h2>
       <p>Product prices displayed on this site are approximate and sourced from affiliate data feeds. Prices change frequently. <strong>Always verify the current price directly on the retailer's site before purchasing.</strong></p>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Sponsored Content</h2>
+      <h2>Sponsored Content</h2>
       <p>PupWiki does not currently publish sponsored reviews or paid brand partnerships. If this changes in the future, any sponsored content will be clearly labelled "Sponsored" at the top of the relevant page, in compliance with FTC guidelines.</p>
 
-      <h2 style="font-family:'Playfair Display',Georgia,serif;color:#1e293b;font-size:1.5rem;font-weight:700;margin-top:2rem;margin-bottom:1rem">Questions</h2>
-      <p>If you have any questions about our affiliate relationships or editorial policies, please <a href="/contact" style="color:#a0621c;font-weight:600">contact us</a>. We are committed to full transparency about how this site operates.</p>
+      <h2>Questions</h2>
+      <p>If you have any questions about our affiliate relationships or editorial policies, please <a href="/contact" class="disclosure-link">contact us</a>. We are committed to full transparency about how this site operates.</p>
     </div>
 
-    <div class="mt-10 pt-8 flex flex-wrap gap-4" style="border-top:1px solid #e8ccaa">
-      <a href="/about" class="font-sans text-sm font-semibold hover:underline" style="color:#a0621c">About us →</a>
-      <a href="/how-we-test" class="font-sans text-sm font-semibold hover:underline" style="color:#a0621c">How we test →</a>
-      <a href="/privacy" class="font-sans text-sm font-semibold hover:underline" style="color:#a0621c">Privacy policy →</a>
+    <div class="disclosure-footer">
+      <a href="/about" class="disclosure-footer__link">About us →</a>
+      <a href="/how-we-test" class="disclosure-footer__link">How we test →</a>
+      <a href="/privacy" class="disclosure-footer__link">Privacy policy →</a>
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  .disclosure-hero {
+    background: linear-gradient(to bottom, var(--color-surface-warm), var(--color-bg-soft));
+    border-bottom: 1px solid var(--color-border-warm);
+  }
+
+  .disclosure-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-bottom: var(--space-6);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-subtle);
+  }
+
+  .disclosure-breadcrumb a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .disclosure-breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .disclosure-breadcrumb__current {
+    color: var(--color-body-soft);
+  }
+
+  .disclosure-h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.25rem, 6vw, 3rem);
+    font-weight: var(--weight-bold);
+    color: var(--color-heading);
+    margin: 0 0 var(--space-4);
+    line-height: var(--leading-tight);
+  }
+
+  .disclosure-date {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-subtle);
+    margin: 0;
+  }
+
+  .disclosure-ftc {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    background: linear-gradient(135deg, var(--color-warning-light), var(--color-bg-soft));
+    border: 2px solid var(--color-warning);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-5);
+    margin-bottom: var(--space-10);
+  }
+
+  .disclosure-ftc__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .disclosure-ftc__body {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--color-body);
+  }
+
+  .disclosure-prose {
+    font-family: var(--font-serif);
+    color: var(--color-body-soft);
+  }
+
+  .disclosure-prose h2 {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-heading);
+    margin: var(--space-8) 0 var(--space-4);
+  }
+
+  .disclosure-prose p {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    margin: 0 0 var(--space-4);
+  }
+
+  .disclosure-prose strong {
+    color: var(--color-heading);
+  }
+
+  .disclosure-prose code {
+    font-size: 0.8rem;
+    background: var(--color-bg-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 2px 6px;
+    color: var(--color-heading);
+  }
+
+  .disclosure-link {
+    color: var(--color-accent);
+    font-weight: var(--weight-semi);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .disclosure-check-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin: var(--space-6) 0;
+  }
+
+  .disclosure-check-item {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-success-light);
+    border: 1px solid rgba(4, 120, 87, 0.20);
+    border-radius: var(--radius-xl);
+  }
+
+  .disclosure-check-icon {
+    color: var(--color-success);
+    font-weight: var(--weight-bold);
+    flex-shrink: 0;
+  }
+
+  .disclosure-check-text {
+    margin: 0;
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--color-body);
+  }
+
+  .disclosure-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-10);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border-warm);
+  }
+
+  .disclosure-footer__link {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semi);
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .disclosure-footer__link:hover {
+    text-decoration: underline;
+  }
+</style>
